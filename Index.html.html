@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HydEstate Pulse — Hyderabad Real Estate Projects, RERA Dates & Flat Prices</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+    .tab-active { background-color: #0f172a; color: #ffffff; }
+    .tab-inactive { background-color: #ffffff; color: #475569; }
+    .tab-inactive:hover { background-color: #f1f5f9; color: #0f172a; }
+    .custom-scroll::-webkit-scrollbar { height: 6px; width: 6px; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased min-h-screen flex flex-col">
+
+  <!-- Top Navigation -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-cyan-500 flex items-center justify-center text-white font-bold text-lg shadow-sm">
+          HE
+        </div>
+        <div>
+          <h1 class="text-lg sm:text-xl font-bold tracking-tight text-slate-900 leading-tight">HydEstate Pulse</h1>
+          <p class="text-xs text-slate-500">Hyderabad Apartments &amp; Villas • RERA Start &amp; End Dates • <span id="data-version-badge" class="font-semibold text-indigo-600">Verified Nov 2026</span></p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 flex-wrap">
+        <button id="btn-shortlist-filter" type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 transition">
+          <span>★ Shortlist</span>
+          <span id="shortlist-count" class="px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px]">0</span>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Primary Tabs -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-3 flex items-center gap-2 overflow-x-auto custom-scroll">
+      <button type="button" data-tab="projects" class="nav-tab tab-active px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap transition">
+        Projects &amp; Prices
+      </button>
+      <button type="button" data-tab="analytics" class="nav-tab tab-inactive border border-slate-200 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap transition">
+        Price &amp; Timeline Charts
+      </button>
+      <button type="button" data-tab="calculator" class="nav-tab tab-inactive border border-slate-200 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap transition">
+        Flat Cost &amp; Stamp Duty
+      </button>
+      <button type="button" data-tab="portals" class="nav-tab tab-inactive border border-slate-200 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap transition">
+        Official RERA &amp; Portals
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 space-y-6">
+
+    <!-- KPI Strip -->
+    <section class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+        <p class="text-xs font-medium text-slate-500">Matching Projects</p>
+        <p id="kpi-count" class="text-2xl font-bold text-slate-900 mt-1">9</p>
+        <p class="text-[11px] text-slate-500 mt-0.5">TG-RERA approved projects</p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+        <p class="text-xs font-medium text-slate-500">Avg Asking Rate</p>
+        <p id="kpi-avg-rate" class="text-2xl font-bold text-indigo-600 mt-1">₹8,572</p>
+        <p class="text-[11px] text-slate-500 mt-0.5">Per sq.ft (super built-up)</p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+        <p class="text-xs font-medium text-slate-500">Entry Flat Price</p>
+        <p id="kpi-min-price" class="text-2xl font-bold text-emerald-600 mt-1">₹0.70 Cr</p>
+        <p class="text-[11px] text-slate-500 mt-0.5">Lowest starting ticket</p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+        <p class="text-xs font-medium text-slate-500">Earliest Completion</p>
+        <p id="kpi-earliest" class="text-2xl font-bold text-amber-600 mt-1">Nov 2026</p>
+        <p class="text-[11px] text-slate-500 mt-0.5">Among filtered projects</p>
+      </div>
+    </section>
+
+    <!-- TAB 1: PROJECTS & PRICES -->
+    <section id="tab-projects" class="space-y-5">
+      <!-- Filter Panel -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-5 shadow-sm space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+          <div class="md:col-span-3">
+            <label for="filter-query" class="block text-xs font-semibold text-slate-600 mb-1">Search Project, Area, Builder or RERA</label>
+            <input id="filter-query" type="text" placeholder="e.g. Kokapet, Trivana, P024..." class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div class="md:col-span-2">
+            <label for="filter-type" class="block text-xs font-semibold text-slate-600 mb-1">Property Type</label>
+            <select id="filter-type" class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="All">All (Flats &amp; Villas)</option>
+              <option value="Apartment">Apartments / Flats</option>
+              <option value="Villa">Villas</option>
+            </select>
+          </div>
+          <div class="md:col-span-2">
+            <label for="filter-zone" class="block text-xs font-semibold text-slate-600 mb-1">Zone</label>
+            <select id="filter-zone" class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="All">All Zones</option>
+              <option value="West">West Hyderabad</option>
+              <option value="North-West">North-West</option>
+              <option value="North">North Hyderabad</option>
+              <option value="East">East Hyderabad</option>
+              <option value="South">South Hyderabad</option>
+            </select>
+          </div>
+          <div class="md:col-span-2">
+            <label for="filter-status" class="block text-xs font-semibold text-slate-600 mb-1">Stage</label>
+            <select id="filter-status" class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="All">All Stages</option>
+              <option value="New Launch">New Launch</option>
+              <option value="Under Construction">Under Construction</option>
+              <option value="Ready / Near Possession">Ready / Near Possession</option>
+            </select>
+          </div>
+          <div class="md:col-span-1">
+            <label for="filter-bhk" class="block text-xs font-semibold text-slate-600 mb-1">BHK</label>
+            <select id="filter-bhk" class="w-full px-2 py-2 text-sm rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="All">Any</option>
+              <option value="2">2 BHK</option>
+              <option value="3">3 BHK</option>
+              <option value="4">4 BHK</option>
+              <option value="5">5 BHK</option>
+            </select>
+          </div>
+          <div class="md:col-span-2">
+            <label for="filter-endyear" class="block text-xs font-semibold text-slate-600 mb-1">Possession By</label>
+            <select id="filter-endyear" class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="All">Any Year</option>
+              <option value="2026">By 2026</option>
+              <option value="2027">By 2027</option>
+              <option value="2028">By 2028</option>
+              <option value="2029">By 2029</option>
+              <option value="2030">By 2030</option>
+              <option value="2031">By 2031</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-slate-100">
+          <div class="flex items-center gap-3 flex-1 min-w-[220px] max-w-md">
+            <label for="filter-budget" class="text-xs font-semibold text-slate-600 whitespace-nowrap">Max Starting Price: <span id="budget-label" class="text-indigo-600 font-bold">₹10.00 Cr+</span></label>
+            <input id="filter-budget" type="range" min="0.75" max="10.0" step="0.25" value="10.0" class="w-full accent-indigo-600 cursor-pointer" />
+          </div>
+
+          <div class="flex items-center gap-2 flex-wrap">
+            <select id="sort-by" class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 bg-white text-slate-700">
+              <option value="price-asc">Sort: Lowest Price</option>
+              <option value="rate-asc">Sort: Lowest ₹/sq.ft</option>
+              <option value="rate-desc">Sort: Highest ₹/sq.ft</option>
+              <option value="end-asc">Sort: Earliest End Date</option>
+            </select>
+            <div class="inline-flex rounded-lg border border-slate-200 p-0.5 bg-slate-100">
+              <button id="view-cards" type="button" class="px-2.5 py-1 text-xs font-semibold rounded-md bg-white text-slate-900 shadow-sm">Cards</button>
+              <button id="view-table" type="button" class="px-2.5 py-1 text-xs font-semibold rounded-md text-slate-600 hover:text-slate-900">Table</button>
+            </div>
+            <button id="btn-reset-filters" type="button" class="px-2.5 py-1.5 text-xs font-semibold text-slate-500 hover:text-slate-900">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Container -->
+      <div id="projects-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+      <div id="projects-table-wrap" class="hidden bg-white rounded-2xl border border-slate-200 shadow-sm overflow-x-auto custom-scroll">
+        <table class="w-full text-left border-collapse min-w-[820px]">
+          <thead>
+            <tr class="bg-slate-50 border-b border-slate-200 text-[11px] font-bold uppercase tracking-wider text-slate-500">
+              <th class="py-3 px-4">Project &amp; Locality</th>
+              <th class="py-3 px-3">RERA ID</th>
+              <th class="py-3 px-3">Start Date</th>
+              <th class="py-3 px-3">End Date</th>
+              <th class="py-3 px-3">BHK &amp; Area</th>
+              <th class="py-3 px-3">Rate / sq.ft</th>
+              <th class="py-3 px-3">Flat Price</th>
+              <th class="py-3 px-4 text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="projects-table-body" class="divide-y divide-slate-100 text-sm"></tbody>
+        </table>
+      </div>
+
+      <div id="empty-state" class="hidden bg-white rounded-2xl border border-slate-200 p-10 text-center">
+        <p class="text-base font-semibold text-slate-800">No projects match your current filters</p>
+        <p class="text-sm text-slate-500 mt-1">Try increasing the max budget or resetting your zone/year filters.</p>
+        <button id="btn-empty-reset" type="button" class="mt-4 px-4 py-2 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700">Clear All Filters</button>
+      </div>
+    </section>
+
+    <!-- TAB 2: CHARTS -->
+    <section id="tab-analytics" class="hidden space-y-5">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+          <div class="mb-3">
+            <h2 class="text-base font-bold text-slate-900">Asking Rate Comparison (₹ / sq.ft)</h2>
+            <p class="text-xs text-slate-500">Super built-up asking rates across filtered Hyderabad projects</p>
+          </div>
+          <div class="relative h-72">
+            <canvas id="chart-rates"></canvas>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+          <div class="mb-3">
+            <h2 class="text-base font-bold text-slate-900">Flat Price Range (₹ Crores)</h2>
+            <p class="text-xs text-slate-500">Minimum to maximum flat ticket size per project</p>
+          </div>
+          <div class="relative h-72">
+            <canvas id="chart-prices"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+        <h2 class="text-base font-bold text-slate-900 mb-3">Hyderabad Locality Benchmarks (2026)</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <p class="text-xs font-semibold text-slate-500">Kokapet (Multistorey Avg)</p>
+            <p class="text-xl font-bold text-slate-900 mt-1">₹11,019 / sq.ft</p>
+            <p class="text-xs text-slate-500 mt-1">Luxury median asking rate: ₹12,663 / sq.ft</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <p class="text-xs font-semibold text-slate-500">Tellapur (Multistorey Avg)</p>
+            <p class="text-xl font-bold text-slate-900 mt-1">₹8,661 / sq.ft</p>
+            <p class="text-xs text-slate-500 mt-1">Strong family-sized 2 &amp; 3 BHK gated supply</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <p class="text-xs font-semibold text-slate-500">Telangana Urban Registration</p>
+            <p class="text-xl font-bold text-indigo-600 mt-1">7.5% Total</p>
+            <p class="text-xs text-slate-500 mt-1">5.5% Stamp Duty + 1.5% Transfer + 0.5% Fee</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: FLAT COST & STAMP DUTY CALCULATOR -->
+    <section id="tab-calculator" class="hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm space-y-4">
+          <div>
+            <h2 class="text-lg font-bold text-slate-900">Hyderabad Flat All-In Cost &amp; EMI Estimator</h2>
+            <p class="text-xs text-slate-500 mt-0.5">Calculate base flat cost, Telangana registration charges (7.5% urban), GST, and monthly EMI.</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="calc-project" class="block text-xs font-semibold text-slate-600 mb-1">Pre-fill from Project</label>
+              <select id="calc-project" class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 bg-white"></select>
+            </div>
+            <div>
+              <label for="calc-stage" class="block text-xs font-semibold text-slate-600 mb-1">Construction Stage (GST)</label>
+              <select id="calc-stage" class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 bg-white">
+                <option value="5">Under Construction (5% GST)</option>
+                <option value="0">Ready to Move / OC Received (0% GST)</option>
+              </select>
+            </div>
+            <div>
+              <label for="calc-area" class="block text-xs font-semibold text-slate-600 mb-1">Flat Area (sq.ft)</label>
+              <input id="calc-area" type="number" min="500" max="15000" step="50" value="1800" class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300" />
+            </div>
+            <div>
+              <label for="calc-rate" class="block text-xs font-semibold text-slate-600 mb-1">Base Rate (₹ / sq.ft)</label>
+              <input id="calc-rate" type="number" min="2000" max="30000" step="100" value="9500" class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300" />
+            </div>
+            <div>
+              <label for="calc-down" class="block text-xs font-semibold text-slate-600 mb-1">Down Payment (%)</label>
+              <input id="calc-down" type="number" min="10" max="90" step="5" value="20" class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300" />
+            </div>
+            <div>
+              <label for="calc-interest" class="block text-xs font-semibold text-slate-600 mb-1">Home Loan Rate (% p.a.) &amp; Tenure</label>
+              <div class="flex gap-2">
+                <input id="calc-interest" type="number" min="5" max="15" step="0.1" value="8.5" class="w-1/2 px-3 py-2 text-sm rounded-lg border border-slate-300" />
+                <select id="calc-tenure" class="w-1/2 px-2 py-2 text-sm rounded-lg border border-slate-300 bg-white">
+                  <option value="15">15 yrs</option>
+                  <option value="20" selected>20 yrs</option>
+                  <option value="25">25 yrs</option>
+                  <option value="30">30 yrs</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-slate-900 text-white rounded-2xl p-5 sm:p-6 shadow-sm flex flex-col justify-between space-y-5">
+          <div class="space-y-3">
+            <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Estimated Total Outflow</p>
+            <p id="calc-total" class="text-3xl font-extrabold text-white">₹1.92 Cr</p>
+
+            <div class="space-y-2 pt-3 border-t border-slate-800 text-sm">
+              <div class="flex justify-between">
+                <span class="text-slate-400">Base Flat Cost</span>
+                <span id="calc-base" class="font-semibold">₹1.71 Cr</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-400">Telangana Stamp Duty &amp; Reg (7.5%)</span>
+                <span id="calc-reg" class="font-semibold">₹12.83 L</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-400">GST</span>
+                <span id="calc-gst" class="font-semibold">₹8.55 L</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-700">
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-300 font-medium">Estimated Monthly EMI</span>
+              <span id="calc-emi" class="text-xl font-bold text-cyan-400">₹1,18,785</span>
+            </div>
+            <p id="calc-loan-note" class="text-[11px] text-slate-400 mt-1">Loan on 80% of base flat cost</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: OFFICIAL PORTALS -->
+    <section id="tab-portals" class="hidden space-y-4">
+      <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm space-y-5">
+        <div>
+          <h2 class="text-lg font-bold text-slate-900">Portal Suitability Guide for Hyderabad Real Estate</h2>
+          <p class="text-sm text-slate-600 mt-1">None of these portals provide an open public API for static websites, so each serves a distinct role alongside this tracker:</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl border border-indigo-200 bg-indigo-50/40 flex flex-col justify-between gap-3">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-700">Best For: Legal Start &amp; End Dates</span>
+                <span class="px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 text-[10px] font-bold">Primary Source</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 mt-1">TG-RERA Official Portal</h3>
+              <p class="text-xs text-slate-600 mt-1">11,412+ registered projects. Use for official registration/start dates, declared completion dates, sanctioned plans, and complaint orders. (Does not show market prices.)</p>
+            </div>
+            <a href="https://rerait.telangana.gov.in/SearchList/Search" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-3 py-2 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700">Open TG-RERA Project Search ↗</a>
+          </div>
+
+          <div class="p-4 rounded-xl border border-emerald-200 bg-emerald-50/40 flex flex-col justify-between gap-3">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-700">Best For: Govt Circle Rates &amp; EC</span>
+                <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">Official Valuation</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 mt-1">IGRS Telangana</h3>
+              <p class="text-xs text-slate-600 mt-1">Check government-fixed apartment composite rates (circle rates) by locality/door number for stamp duty (7.5% urban) and Encumbrance Certificates.</p>
+            </div>
+            <a href="https://registration.telangana.gov.in/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-3 py-2 rounded-lg bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-700">Open IGRS Telangana ↗</a>
+          </div>
+
+          <div class="p-4 rounded-xl border border-amber-200 bg-amber-50/40 flex flex-col justify-between gap-3">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-amber-700">Best For: Live Prices + RERA Tags</span>
+                <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[10px] font-bold">Most Suitable Market Feed</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 mt-1">99acres Hyderabad</h3>
+              <p class="text-xs text-slate-600 mt-1">Displays ₹/sq.ft rates, BHK/villa price ranges, RERA IDs, and possession timelines in one place.</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <a href="https://www.99acres.com/new-projects-in-hyderabad-ffid" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-amber-600 text-white text-xs font-semibold hover:bg-amber-700">Flats ↗</a>
+              <a href="https://www.99acres.com/new-villas-in-hyderabad-ffid" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-amber-600 text-white text-xs font-semibold hover:bg-amber-700">Villas ↗</a>
+              <a href="https://www.99acres.com/rera-registered-projects-in-telangana-ffid" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg border border-amber-300 bg-white text-amber-800 text-xs font-semibold hover:bg-amber-50">RERA Filter ↗</a>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl border border-cyan-200 bg-cyan-50/40 flex flex-col justify-between gap-3">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-cyan-700">Best For: Broadest Inventory</span>
+                <span class="px-2 py-0.5 rounded-full bg-cyan-100 text-cyan-800 text-[10px] font-bold">17,039+ Projects</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 mt-1">Housing.com Hyderabad</h3>
+              <p class="text-xs text-slate-600 mt-1">Largest project count with pre-launch, under-construction, and ready-to-move filters for both apartments and villas.</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <a href="https://housing.com/in/buy/hyderabad/projects/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-cyan-600 text-white text-xs font-semibold hover:bg-cyan-700">All Projects ↗</a>
+              <a href="https://housing.com/in/buy/hyderabad/villas-fid/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-cyan-600 text-white text-xs font-semibold hover:bg-cyan-700">Villas ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600">
+          <strong class="text-slate-900">Future-Proof Update Tip:</strong> When hosted on Netlify or GitHub Pages, this page automatically checks for an optional <code class="px-1 py-0.5 bg-slate-200 rounded">projects.json</code> file in the same folder. You can update prices or add new launches anytime by editing that JSON file without touching the website code.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Compare Sticky Bar -->
+  <div id="compare-bar" class="hidden sticky bottom-3 z-30 max-w-4xl w-[94%] mx-auto bg-slate-900 text-white rounded-2xl shadow-xl border border-slate-700 px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+    <div class="flex items-center gap-2 flex-wrap">
+      <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Compare (<span id="compare-count">0</span>/3):</span>
+      <div id="compare-chips" class="flex items-center gap-2 flex-wrap"></div>
+    </div>
+    <div class="flex items-center gap-2">
+      <button id="btn-open-compare" type="button" class="px-3.5 py-1.5 rounded-lg bg-cyan-500 text-slate-950 text-xs font-bold hover:bg-cyan-400 transition">Compare Now</button>
+      <button id="btn-clear-compare" type="button" class="px-2.5 py-1.5 rounded-lg text-xs text-slate-300 hover:text-white">Clear</button>
+    </div>
+  </div>
+
+  <!-- Project Detail Modal -->
+  <div id="detail-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <span id="modal-status" class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-indigo-50 text-indigo-700"></span>
+          <h3 id="modal-title" class="text-xl font-bold text-slate-900 mt-1"></h3>
+          <p id="modal-subtitle" class="text-sm text-slate-500"></p>
+        </div>
+        <button id="btn-close-detail" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 text-lg leading-none">&times;</button>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 text-sm bg-slate-50 p-4 rounded-xl border border-slate-200">
+        <div>
+          <p class="text-xs text-slate-500">Start / Launch Date</p>
+          <p id="modal-start" class="font-bold text-slate-900"></p>
+        </div>
+        <div>
+          <p class="text-xs text-slate-500">Ending / Possession Date</p>
+          <p id="modal-end" class="font-bold text-indigo-600"></p>
+        </div>
+        <div>
+          <p class="text-xs text-slate-500">Flat Price Range</p>
+          <p id="modal-price" class="font-bold text-emerald-700"></p>
+        </div>
+        <div>
+          <p class="text-xs text-slate-500">Asking Rate</p>
+          <p id="modal-rate" class="font-bold text-slate-900"></p>
+        </div>
+        <div>
+          <p class="text-xs text-slate-500">Configurations</p>
+          <p id="modal-bhk" class="font-semibold text-slate-800"></p>
+        </div>
+        <div>
+          <p class="text-xs text-slate-500">Flat Sizes (Super Area)</p>
+          <p id="modal-area" class="font-semibold text-slate-800"></p>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between gap-3 p-3 rounded-xl border border-slate-200 bg-white">
+        <div>
+          <p class="text-[11px] text-slate-500 font-semibold uppercase">TG-RERA Registration No.</p>
+          <p id="modal-rera" class="text-sm font-mono font-bold text-slate-900"></p>
+        </div>
+        <button id="btn-copy-rera" type="button" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-semibold text-slate-700">Copy ID</button>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-between gap-2 pt-2">
+        <button id="btn-modal-calc" type="button" class="px-4 py-2 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700">Estimate Flat Cost &amp; EMI</button>
+        <a href="https://rerait.telangana.gov.in/SearchList/Search" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-50">Verify on TG-RERA ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Compare Modal -->
+  <div id="compare-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-4xl w-full p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-bold text-slate-900">Side-by-Side Project Comparison</h3>
+        <button id="btn-close-compare" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 text-lg leading-none">&times;</button>
+      </div>
+      <div id="compare-table-container" class="overflow-x-auto custom-scroll"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="hidden fixed bottom-5 right-5 z-50 bg-slate-900 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-lg"></div>
+
+  <script>
+    const INITIAL_PROJECTS = [
+      {
+        id: 'asbl-broadway',
+        name: 'ASBL Broadway',
+        locality: 'Financial District / Nanakramguda',
+        zone: 'West',
+        builder: 'ASBL (Ashoka Builders)',
+        rera: 'P02400009684',
+        status: 'Under Construction',
+        startDate: 'May 2025',
+        endDate: 'May 2030',
+        endYear: 2030,
+        endSort: 203005,
+        bhks: ['3', '3.5'],
+        bhkLabel: '3, 3.5 BHK',
+        areaLabel: '2,035 – 2,650 sq.ft',
+        defaultSqft: 2390,
+        rateSqft: 10500,
+        minCr: 2.30,
+        maxCr: 2.78,
+        note: 'Builder target Dec 2029; RERA-linked date May 2030.'
+      },
+      {
+        id: 'rajapushpa-pristinia',
+        name: 'Rajapushpa Pristinia',
+        locality: 'Kokapet',
+        zone: 'West',
+        builder: 'Rajapushpa Properties',
+        rera: 'P02400006086',
+        status: 'Under Construction',
+        startDate: 'Mar 2023',
+        endDate: 'Feb 2028',
+        endYear: 2028,
+        endSort: 202802,
+        bhks: ['2', '3', '4'],
+        bhkLabel: '2, 3, 4 BHK',
+        areaLabel: '1,380 – 4,595 sq.ft',
+        defaultSqft: 1850,
+        rateSqft: 9500,
+        minCr: 1.22,
+        maxCr: 4.43,
+        note: '12.1 acres, 6 towers off Kokapet–Neopolis Road.'
+      },
+      {
+        id: 'rajapushpa-imperia',
+        name: 'Rajapushpa Imperia',
+        locality: 'Tellapur',
+        zone: 'West',
+        builder: 'Rajapushpa Properties',
+        rera: 'P01100003723',
+        status: 'Under Construction',
+        startDate: 'Jan 2022',
+        endDate: 'Sep 2027',
+        endYear: 2027,
+        endSort: 202709,
+        bhks: ['2', '3'],
+        bhkLabel: '2, 3 BHK',
+        areaLabel: '1,350 – 2,880 sq.ft',
+        defaultSqft: 1800,
+        rateSqft: 8500,
+        minCr: 1.15,
+        maxCr: 2.82,
+        note: '24 acres, 8 towers with 1.2L sq.ft clubhouse.'
+      },
+      {
+        id: 'radhey-skyverse',
+        name: 'Radhey Skyverse',
+        locality: 'Osman Nagar (Tellapur)',
+        zone: 'West',
+        builder: 'Radhey Constructions',
+        rera: 'P01100011168',
+        status: 'New Launch',
+        startDate: 'Jun 2026',
+        endDate: 'Jun 2031',
+        endYear: 2031,
+        endSort: 203106,
+        bhks: ['3', '4'],
+        bhkLabel: '3, 4 BHK',
+        areaLabel: '1,758 – 3,060 sq.ft',
+        defaultSqft: 2050,
+        rateSqft: 7600,
+        minCr: 1.33,
+        maxCr: 2.33,
+        note: '8 acres, 3 high-rise towers (47 floors).'
+      },
+      {
+        id: 'neo-towers',
+        name: 'Neo Towers',
+        locality: 'Neopolis, Kokapet',
+        zone: 'West',
+        builder: 'Neo Infra',
+        rera: 'P02400010006',
+        status: 'Under Construction',
+        startDate: 'Jul 2025',
+        endDate: 'Jul 2030',
+        endYear: 2030,
+        endSort: 203007,
+        bhks: ['3', '4'],
+        bhkLabel: '3, 4 BHK',
+        areaLabel: '2,235 – 4,565 sq.ft',
+        defaultSqft: 2600,
+        rateSqft: 10900,
+        minCr: 2.44,
+        maxCr: 4.98,
+        note: 'Luxury Neopolis high-rise residences.'
+      },
+      {
+        id: 'team4-aria',
+        name: 'Team4 Aria',
+        locality: 'Miyapur / Madinaguda',
+        zone: 'North-West',
+        builder: 'Team4 Life Spaces',
+        rera: 'P02400010543',
+        status: 'New Launch',
+        startDate: 'Jan 2026',
+        endDate: 'Jan 2031',
+        endYear: 2031,
+        endSort: 203101,
+        bhks: ['3', '3.5', '4'],
+        bhkLabel: '3, 3.5, 4 BHK',
+        areaLabel: '1,655 – 2,650 sq.ft',
+        defaultSqft: 1950,
+        rateSqft: 8200,
+        minCr: 1.32,
+        maxCr: 2.16,
+        note: '12.5 acres gated community on Miyapur–Madinaguda corridor.'
+      },
+      {
+        id: 'casagrand-hennessy',
+        name: 'Casagrand Hennessy',
+        locality: 'Kompally',
+        zone: 'North',
+        builder: 'Casagrand Builder',
+        rera: 'P02200010760',
+        status: 'New Launch',
+        startDate: 'Apr 2026',
+        endDate: 'Apr 2031',
+        endYear: 2031,
+        endSort: 203104,
+        bhks: ['3', '4'],
+        bhkLabel: '3, 4 BHK',
+        areaLabel: '1,827 – 2,694 sq.ft',
+        defaultSqft: 2100,
+        rateSqft: 6500,
+        minCr: 1.35,
+        maxCr: 1.98,
+        note: 'Low-density 3.72-acre community off NH-44.'
+      },
+      {
+        id: 'urbanrise-cloud33',
+        name: 'Urbanrise On Cloud 33',
+        locality: 'Bachupally',
+        zone: 'North',
+        builder: 'Urbanrise',
+        rera: 'P02200002793',
+        status: 'Ready / Near Possession',
+        startDate: 'Jul 2022',
+        endDate: 'Nov 2026',
+        endYear: 2026,
+        endSort: 202611,
+        bhks: ['2', '3', '4'],
+        bhkLabel: '2, 3, 4 BHK',
+        areaLabel: '1,110 – 2,021 sq.ft',
+        defaultSqft: 1550,
+        rateSqft: 8900,
+        minCr: 0.91,
+        maxCr: 1.70,
+        note: '9.15 acres, 5 towers of 33 floors; Phase 1 handover.'
+      },
+      {
+        id: 'ramky-one-orion',
+        name: 'Ramky One Orion',
+        locality: 'Pocharam, NH-163',
+        zone: 'East',
+        builder: 'Ramky Estates & Farms',
+        rera: 'P02200005803',
+        status: 'Under Construction',
+        startDate: 'Dec 2022',
+        endDate: 'Dec 2027',
+        endYear: 2027,
+        endSort: 202712,
+        bhks: ['3'],
+        bhkLabel: '3 BHK',
+        areaLabel: '1,227 – 1,819 sq.ft',
+        defaultSqft: 1450,
+        rateSqft: 6550,
+        minCr: 0.70,
+        maxCr: 1.00,
+        note: 'Value 3 BHK community near Pocharam IT SEZ.'
+      },
+      {
+        id: 'ghr-trivana',
+        name: 'GHR Trivana',
+        propertyType: 'Villa',
+        locality: 'Tukkuguda / Mankhal',
+        zone: 'South',
+        builder: 'GHR Infra',
+        rera: 'P02400009860',
+        status: 'Under Construction',
+        startDate: 'Feb 2025',
+        endDate: 'Feb 2030',
+        endYear: 2030,
+        endSort: 203002,
+        bhks: ['4', '5'],
+        bhkLabel: '4, 5 BHK Villa',
+        areaLabel: '3,855 – 4,397 sq.ft',
+        defaultSqft: 3855,
+        rateSqft: 10499,
+        minCr: 4.00,
+        maxCr: 4.62,
+        note: 'IGBC Gold boutique villa community off ORR & Airport corridor.'
+      },
+      {
+        id: 'sunyuga-villa-palazzo',
+        name: 'Sunyuga Villa Palazzo',
+        propertyType: 'Villa',
+        locality: 'Kompally',
+        zone: 'North',
+        builder: 'Sunyuga Infra Pvt Ltd',
+        rera: 'P02200005195',
+        status: 'Ready / Near Possession',
+        startDate: 'Nov 2021',
+        endDate: 'Dec 2024',
+        endYear: 2024,
+        endSort: 202412,
+        bhks: ['4'],
+        bhkLabel: '4 BHK Villa',
+        areaLabel: '3,334 – 4,750 sq.ft',
+        defaultSqft: 3500,
+        rateSqft: 8300,
+        minCr: 2.77,
+        maxCr: 3.94,
+        note: '8.65 acres, 101 ready-to-move luxury villas in North Hyderabad.'
+      },
+      {
+        id: 'greenmark-mayfair-sunrise',
+        name: 'Greenmark Mayfair Sunrise',
+        propertyType: 'Villa',
+        locality: 'Kollur, ORR Exit 2',
+        zone: 'West',
+        builder: 'Greenmark Developers',
+        rera: 'P01100005727',
+        status: 'Ready / Near Possession',
+        startDate: 'Nov 2022',
+        endDate: 'Dec 2026',
+        endYear: 2026,
+        endSort: 202612,
+        bhks: ['4', '5'],
+        bhkLabel: '4, 5 BHK Triplex Villa',
+        areaLabel: '3,888 – 6,111 sq.ft',
+        defaultSqft: 3888,
+        rateSqft: 11600,
+        minCr: 4.51,
+        maxCr: 7.31,
+        note: '66-acre resort-style gated villa township with 589 triplex homes.'
+      },
+      {
+        id: 'fiora-by-yashoda',
+        name: 'FIORA by Yashoda',
+        propertyType: 'Villa',
+        locality: 'Shankarpalli – Mokila',
+        zone: 'West',
+        builder: 'Yashoda Realty',
+        rera: 'P02400007915',
+        status: 'Under Construction',
+        startDate: 'Sep 2024',
+        endDate: 'Mar 2029',
+        endYear: 2029,
+        endSort: 202903,
+        bhks: ['4'],
+        bhkLabel: '4 BHK Villa',
+        areaLabel: '3,800 – 4,600 sq.ft',
+        defaultSqft: 3800,
+        rateSqft: 11050,
+        minCr: 4.20,
+        maxCr: 5.10,
+        note: '15-acre standalone villa community with 95 residences.'
+      },
+      {
+        id: 'sage-by-raghava',
+        name: 'Sage by Raghava',
+        propertyType: 'Villa',
+        locality: 'Kollur',
+        zone: 'West',
+        builder: 'Raghava',
+        rera: 'P02400006890',
+        status: 'Under Construction',
+        startDate: 'Feb 2024',
+        endDate: 'Jun 2028',
+        endYear: 2028,
+        endSort: 202806,
+        bhks: ['4'],
+        bhkLabel: '4 BHK Signature Villa',
+        areaLabel: '5,000 – 6,200 sq.ft',
+        defaultSqft: 5000,
+        rateSqft: 16500,
+        minCr: 8.25,
+        maxCr: 10.50,
+        note: '12-acre ultra-luxury architectural villa enclave with 82 homes.'
+      },
+      {
+        id: 'vertex-kingston-park',
+        name: 'Vertex Kingston Park',
+        propertyType: 'Villa',
+        locality: 'Nallagandla',
+        zone: 'West',
+        builder: 'Vertex Homes',
+        rera: 'P02400002807',
+        status: 'Under Construction',
+        startDate: 'Apr 2021',
+        endDate: 'Apr 2027',
+        endYear: 2027,
+        endSort: 202704,
+        bhks: ['4', '5'],
+        bhkLabel: '4, 5 BHK Triplex Villa',
+        areaLabel: '4,159 – 5,471 sq.ft',
+        defaultSqft: 4159,
+        rateSqft: 22000,
+        minCr: 9.15,
+        maxCr: 12.04,
+        note: '40-acre gated villa township in Nallagandla with 250 homes.'
+      },
+      {
+        id: 'aparna-sarovar-towers',
+        name: 'Aparna Sarovar Towers',
+        propertyType: 'Apartment',
+        locality: 'Nallagandla',
+        zone: 'West',
+        builder: 'Aparna Constructions',
+        rera: 'P02400007148',
+        status: 'Under Construction',
+        startDate: 'Jan 2024',
+        endDate: 'Aug 2028',
+        endYear: 2028,
+        endSort: 202808,
+        bhks: ['3', '4'],
+        bhkLabel: '3, 4 BHK',
+        areaLabel: '2,878 – 3,700 sq.ft',
+        defaultSqft: 2878,
+        rateSqft: 11000,
+        minCr: 3.16,
+        maxCr: 4.07,
+        note: '50-storey luxury towers on 5.66 acres with 585 units.'
+      },
+      {
+        id: 'avira-by-avr',
+        name: 'AVIRA by AVR',
+        propertyType: 'Apartment',
+        locality: 'Kokapet',
+        zone: 'West',
+        builder: 'AVR Developers',
+        rera: 'P02400011038',
+        status: 'New Launch',
+        startDate: 'Oct 2026',
+        endDate: 'Jun 2029',
+        endYear: 2029,
+        endSort: 202906,
+        bhks: ['3', '3.5'],
+        bhkLabel: '3, 3.5 BHK',
+        areaLabel: '2,285 – 2,815 sq.ft',
+        defaultSqft: 2285,
+        rateSqft: 8499,
+        minCr: 1.94,
+        maxCr: 2.39,
+        note: '1.91 acres, 172 units in Kokapet.'
+      },
+      {
+        id: 'vaishno-skyvue',
+        name: 'Vaishno Skyvue',
+        propertyType: 'Apartment',
+        locality: 'Kollur',
+        zone: 'West',
+        builder: 'Vaishno Group',
+        rera: 'P01100010545',
+        status: 'New Launch',
+        startDate: 'Jan 2026',
+        endDate: 'Jan 2031',
+        endYear: 2031,
+        endSort: 203101,
+        bhks: ['3'],
+        bhkLabel: '3 BHK',
+        areaLabel: '2,010 – 2,725 sq.ft',
+        defaultSqft: 2010,
+        rateSqft: 7000,
+        minCr: 1.41,
+        maxCr: 1.91,
+        note: 'High-rise 3 BHK apartments near Kollur ORR Exit.'
+      },
+      {
+        id: 'bhavya-evora',
+        name: 'Bhavya Evora',
+        propertyType: 'Villa',
+        locality: 'Kollur',
+        zone: 'West',
+        builder: 'Bhavya Constructions',
+        rera: 'P01100006350',
+        status: 'Under Construction',
+        startDate: 'Jul 2023',
+        endDate: 'Apr 2029',
+        endYear: 2029,
+        endSort: 202904,
+        bhks: ['4', '5'],
+        bhkLabel: '4, 5 BHK Villa',
+        areaLabel: '3,739 – 4,904 sq.ft',
+        defaultSqft: 3739,
+        rateSqft: 12300,
+        minCr: 4.30,
+        maxCr: 6.03,
+        note: '43-acre gated villa community at Kardanur, Kollur.'
+      },
+      {
+        id: 'hallmark-floresta',
+        name: 'Hallmark Floresta',
+        propertyType: 'Villa',
+        locality: 'Kollur / Patighanpur',
+        zone: 'West',
+        builder: 'Hallmark Builders',
+        rera: 'P01100007551',
+        status: 'Ready / Near Possession',
+        startDate: 'Jan 2024',
+        endDate: 'Oct 2026',
+        endYear: 2026,
+        endSort: 202610,
+        bhks: ['3', '4'],
+        bhkLabel: '3, 4 BHK Villa',
+        areaLabel: '2,700 – 4,605 sq.ft',
+        defaultSqft: 3200,
+        rateSqft: 11000,
+        minCr: 3.51,
+        maxCr: 4.54,
+        note: '13.46 acres, 166 G+2 villas off Nehru ORR.'
+      }
+    ];
+
+    const state = {
+      projects: [...INITIAL_PROJECTS],
+      activeTab: 'projects',
+      viewMode: 'cards',
+      shortlistOnly: false,
+      shortlistIds: (() => {
+        try {
+          const saved = localStorage.getItem('hydestate_shortlist');
+          return saved ? new Set(JSON.parse(saved)) : new Set();
+        } catch (e) { return new Set(); }
+      })(),
+      compareIds: [],
+      selectedProjectId: null,
+      filters: {
+        query: '',
+        propertyType: 'All',
+        zone: 'All',
+        status: 'All',
+        bhk: 'All',
+        endYear: 'All',
+        maxBudgetCr: 10.0,
+        sortBy: 'price-asc'
+      },
+      charts: { rates: null, prices: null }
+    };
+
+    const $ = (id) => document.getElementById(id);
+
+    function formatINR(num) {
+      return '₹' + Math.round(num).toLocaleString('en-IN');
+    }
+
+    function formatCr(cr) {
+      if (cr < 1) return '₹' + Math.round(cr * 100) + ' L';
+      return '₹' + cr.toFixed(2) + ' Cr';
+    }
+
+    function showToast(msg) {
+      const t = $('toast');
+      t.textContent = msg;
+      t.classList.remove('hidden');
+      clearTimeout(t._timer);
+      t._timer = setTimeout(() => t.classList.add('hidden'), 2400);
+    }
+
+    function getFilteredProjects() {
+      const { query, propertyType, zone, status, bhk, endYear, maxBudgetCr, sortBy } = state.filters;
+      const q = query.trim().toLowerCase();
+
+      const list = state.projects.filter((p) => {
+        const pType = p.propertyType || 'Apartment';
+        if (state.shortlistOnly && !state.shortlistIds.has(p.id)) return false;
+        if (propertyType !== 'All' && pType !== propertyType) return false;
+        if (zone !== 'All' && p.zone !== zone) return false;
+        if (status !== 'All' && p.status !== status) return false;
+        if (bhk !== 'All' && !p.bhks.includes(bhk)) return false;
+        if (endYear !== 'All' && p.endYear > parseInt(endYear, 10)) return false;
+        if (maxBudgetCr < 10.0 && p.minCr > maxBudgetCr) return false;
+        if (q) {
+          const hay = `${p.name} ${p.locality} ${p.builder} ${p.rera} ${p.zone}`.toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+
+      list.sort((a, b) => {
+        if (sortBy === 'price-asc') return a.minCr - b.minCr;
+        if (sortBy === 'rate-asc') return a.rateSqft - b.rateSqft;
+        if (sortBy === 'rate-desc') return b.rateSqft - a.rateSqft;
+        if (sortBy === 'end-asc') return a.endSort - b.endSort;
+        return 0;
+      });
+
+      return list;
+    }
+
+    function statusBadgeClass(status) {
+      if (status === 'New Launch') return 'bg-indigo-50 text-indigo-700 border-indigo-200';
+      if (status === 'Ready / Near Possession') return 'bg-emerald-50 text-emerald-700 border-emerald-200';
+      return 'bg-amber-50 text-amber-700 border-amber-200';
+    }
+
+    function renderKPIs(filtered) {
+      $('kpi-count').textContent = filtered.length;
+      if (filtered.length === 0) {
+        $('kpi-avg-rate').textContent = '—';
+        $('kpi-min-price').textContent = '—';
+        $('kpi-earliest').textContent = '—';
+        return;
+      }
+      const avgRate = filtered.reduce((sum, p) => sum + p.rateSqft, 0) / filtered.length;
+      const minPrice = Math.min(...filtered.map((p) => p.minCr));
+      const earliest = [...filtered].sort((a, b) => a.endSort - b.endSort)[0];
+
+      $('kpi-avg-rate').textContent = formatINR(avgRate);
+      $('kpi-min-price').textContent = formatCr(minPrice);
+      $('kpi-earliest').textContent = earliest.endDate;
+    }
+
+    function renderProjects() {
+      const filtered = getFilteredProjects();
+      renderKPIs(filtered);
+
+      const grid = $('projects-cards-grid');
+      const tableWrap = $('projects-table-wrap');
+      const tbody = $('projects-table-body');
+      const empty = $('empty-state');
+
+      if (filtered.length === 0) {
+        grid.classList.add('hidden');
+        tableWrap.classList.add('hidden');
+        empty.classList.remove('hidden');
+      } else {
+        empty.classList.add('hidden');
+        if (state.viewMode === 'cards') {
+          grid.classList.remove('hidden');
+          tableWrap.classList.add('hidden');
+        } else {
+          grid.classList.add('hidden');
+          tableWrap.classList.remove('hidden');
+        }
+      }
+
+      grid.innerHTML = filtered.map((p) => {
+        const isSaved = state.shortlistIds.has(p.id);
+        const isCompared = state.compareIds.includes(p.id);
+        return `
+          <article class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-4">
+            <div class="space-y-3">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <div class="flex items-center gap-1.5 flex-wrap">
+                    <span class="inline-block px-2 py-0.5 rounded-full text-[11px] font-bold ${(p.propertyType || 'Apartment') === 'Villa' ? 'bg-purple-50 text-purple-700 border border-purple-200' : 'bg-slate-100 text-slate-700 border border-slate-200'}">${p.propertyType || 'Apartment'}</span>
+                    <span class="inline-block px-2 py-0.5 rounded-full text-[11px] font-semibold border ${statusBadgeClass(p.status)}">${p.status}</span>
+                  </div>
+                  <h3 class="text-base font-bold text-slate-900 mt-1.5">${p.name}</h3>
+                  <p class="text-xs text-slate-500">${p.locality} • ${p.zone}</p>
+                </div>
+                <button type="button" data-action="shortlist" data-id="${p.id}" title="Shortlist" class="px-2 py-1 rounded-lg border text-xs font-semibold transition ${isSaved ? 'bg-amber-50 border-amber-300 text-amber-700' : 'bg-white border-slate-200 text-slate-500 hover:text-slate-800'}">
+                  ${isSaved ? '★ Saved' : '☆ Save'}
+                </button>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2 bg-slate-50 rounded-xl p-3 border border-slate-100">
+                <div>
+                  <p class="text-[11px] text-slate-500">Flat Price Range</p>
+                  <p class="text-sm font-bold text-emerald-700">${formatCr(p.minCr)} – ${formatCr(p.maxCr)}</p>
+                </div>
+                <div>
+                  <p class="text-[11px] text-slate-500">Asking Rate</p>
+                  <p class="text-sm font-bold text-slate-900">${formatINR(p.rateSqft)}/sq.ft</p>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between text-xs bg-indigo-50/60 border border-indigo-100 rounded-xl px-3 py-2">
+                <div>
+                  <span class="text-slate-500">Start:</span>
+                  <span class="font-bold text-slate-800">${p.startDate}</span>
+                </div>
+                <span class="text-indigo-400 font-bold">→</span>
+                <div>
+                  <span class="text-slate-500">End:</span>
+                  <span class="font-bold text-indigo-700">${p.endDate}</span>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between text-xs text-slate-600">
+                <span><strong>${p.bhkLabel}</strong> • ${p.areaLabel}</span>
+              </div>
+              <p class="text-[11px] font-mono text-slate-500">RERA: ${p.rera}</p>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-slate-100">
+              <button type="button" data-action="detail" data-id="${p.id}" class="flex-1 py-2 px-3 rounded-lg bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 transition">
+                View Details &amp; EMI
+              </button>
+              <button type="button" data-action="compare" data-id="${p.id}" class="py-2 px-3 rounded-lg border text-xs font-semibold transition ${isCompared ? 'bg-cyan-50 border-cyan-400 text-cyan-800' : 'border-slate-200 text-slate-700 hover:bg-slate-50'}">
+                ${isCompared ? '✓ Compared' : '+ Compare'}
+              </button>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      tbody.innerHTML = filtered.map((p) => {
+        const isCompared = state.compareIds.includes(p.id);
+        return `
+          <tr class="hover:bg-slate-50/80 transition">
+            <td class="py-3 px-4">
+              <p class="font-bold text-slate-900">${p.name} <span class="ml-1 px-1.5 py-0.5 rounded text-[10px] font-bold ${(p.propertyType || 'Apartment') === 'Villa' ? 'bg-purple-50 text-purple-700' : 'bg-slate-100 text-slate-600'}">${p.propertyType || 'Apartment'}</span></p>
+              <p class="text-xs text-slate-500">${p.locality} (${p.zone})</p>
+            </td>
+            <td class="py-3 px-3 font-mono text-xs text-slate-600">${p.rera}</td>
+            <td class="py-3 px-3 text-xs font-semibold text-slate-700">${p.startDate}</td>
+            <td class="py-3 px-3 text-xs font-bold text-indigo-700">${p.endDate}</td>
+            <td class="py-3 px-3 text-xs text-slate-700">
+              <span class="font-semibold">${p.bhkLabel}</span><br/>
+              <span class="text-slate-500">${p.areaLabel}</span>
+            </td>
+            <td class="py-3 px-3 text-xs font-bold text-slate-900">${formatINR(p.rateSqft)}</td>
+            <td class="py-3 px-3 text-xs font-bold text-emerald-700">${formatCr(p.minCr)} – ${formatCr(p.maxCr)}</td>
+            <td class="py-3 px-4 text-right space-x-1 whitespace-nowrap">
+              <button type="button" data-action="detail" data-id="${p.id}" class="px-2.5 py-1 rounded-md bg-slate-900 text-white text-xs font-semibold">Details</button>
+              <button type="button" data-action="compare" data-id="${p.id}" class="px-2.5 py-1 rounded-md border text-xs font-semibold ${isCompared ? 'bg-cyan-50 border-cyan-400 text-cyan-800' : 'border-slate-200 text-slate-600'}">${isCompared ? '✓' : 'Compare'}</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      renderCompareBar();
+      if (state.activeTab === 'analytics') renderCharts(filtered);
+    }
+
+    function renderCompareBar() {
+      const bar = $('compare-bar');
+      if (state.compareIds.length === 0) {
+        bar.classList.add('hidden');
+        return;
+      }
+      bar.classList.remove('hidden');
+      $('compare-count').textContent = state.compareIds.length;
+      $('compare-chips').innerHTML = state.compareIds.map((id) => {
+        const p = state.projects.find((x) => x.id === id);
+        if (!p) return '';
+        return `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-800 text-xs font-medium">${p.name} <button type="button" data-action="remove-compare" data-id="${id}" class="text-slate-400 hover:text-white">&times;</button></span>`;
+      }).join('');
+    }
+
+    function renderCharts(filtered) {
+      const data = filtered || getFilteredProjects();
+      const labels = data.map((p) => p.name);
+      const rates = data.map((p) => p.rateSqft);
+      const minPrices = data.map((p) => p.minCr);
+      const maxPrices = data.map((p) => p.maxCr);
+
+      if (state.charts.rates) state.charts.rates.destroy();
+      if (state.charts.prices) state.charts.prices.destroy();
+
+      const ctx1 = $('chart-rates').getContext('2d');
+      state.charts.rates = new Chart(ctx1, {
+        type: 'bar',
+        data: {
+          labels,
+          datasets: [{
+            label: 'Asking Rate (₹/sq.ft)',
+            data: rates,
+            backgroundColor: '#4f46e5',
+            borderRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          indexAxis: 'y',
+          plugins: { legend: { display: false } },
+          scales: { x: { beginAtZero: true } }
+        }
+      });
+
+      const ctx2 = $('chart-prices').getContext('2d');
+      state.charts.prices = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+          labels,
+          datasets: [
+            { label: 'Starting Price (₹ Cr)', data: minPrices, backgroundColor: '#10b981', borderRadius: 4 },
+            { label: 'Max Price (₹ Cr)', data: maxPrices, backgroundColor: '#0f172a', borderRadius: 4 }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: { y: { beginAtZero: true } }
+        }
+      });
+    }
+
+    function populateCalcDropdown() {
+      const sel = $('calc-project');
+      sel.innerHTML = `<option value="">Custom Input</option>` + state.projects.map((p) =>
+        `<option value="${p.id}">${p.name} (${formatINR(p.rateSqft)}/sq.ft)</option>`
+      ).join('');
+    }
+
+    function updateCalculator() {
+      const area = Math.max(0, parseFloat($('calc-area').value) || 0);
+      const rate = Math.max(0, parseFloat($('calc-rate').value) || 0);
+      const gstPct = parseFloat($('calc-stage').value) || 0;
+      const downPct = Math.min(95, Math.max(0, parseFloat($('calc-down').value) || 0));
+      const annualRate = Math.max(0, parseFloat($('calc-interest').value) || 0);
+      const years = parseInt($('calc-tenure').value, 10) || 20;
+
+      const baseCost = area * rate;
+      const regCost = baseCost * 0.075; // Telangana urban 7.5%
+      const gstCost = baseCost * (gstPct / 100);
+      const total = baseCost + regCost + gstCost;
+
+      const loanAmt = baseCost * (1 - downPct / 100);
+      const r = annualRate / 12 / 100;
+      const n = years * 12;
+      let emi = 0;
+      if (loanAmt > 0 && n > 0) {
+        emi = r === 0 ? loanAmt / n : (loanAmt * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      }
+
+      $('calc-base').textContent = formatCr(baseCost / 1e7);
+      $('calc-reg').textContent = formatINR(regCost);
+      $('calc-gst').textContent = formatINR(gstCost);
+      $('calc-total').textContent = formatCr(total / 1e7);
+      $('calc-emi').textContent = formatINR(emi);
+      $('calc-loan-note').textContent = `Loan of ${formatCr(loanAmt / 1e7)} (${100 - downPct}% of base flat cost)`;
+    }
+
+    function openDetailModal(id) {
+      const p = state.projects.find((x) => x.id === id);
+      if (!p) return;
+      state.selectedProjectId = id;
+      $('modal-status').textContent = p.status;
+      $('modal-title').textContent = p.name;
+      $('modal-subtitle').textContent = `${p.locality}, ${p.zone} Hyderabad • By ${p.builder}`;
+      $('modal-start').textContent = p.startDate;
+      $('modal-end').textContent = p.endDate;
+      $('modal-price').textContent = `${formatCr(p.minCr)} – ${formatCr(p.maxCr)}`;
+      $('modal-rate').textContent = `${formatINR(p.rateSqft)} / sq.ft`;
+      $('modal-bhk').textContent = p.bhkLabel;
+      $('modal-area').textContent = p.areaLabel;
+      $('modal-rera').textContent = p.rera;
+      $('detail-modal').classList.remove('hidden');
+    }
+
+    function openCompareModal() {
+      const items = state.compareIds.map((id) => state.projects.find((p) => p.id === id)).filter(Boolean);
+      if (items.length === 0) return;
+      const rows = [
+        ['Locality & Zone', (p) => `${p.locality} (${p.zone})`],
+        ['Builder', (p) => p.builder],
+        ['RERA ID', (p) => `<span class="font-mono text-xs">${p.rera}</span>`],
+        ['Stage', (p) => p.status],
+        ['Start Date', (p) => p.startDate],
+        ['Ending Date', (p) => `<strong class="text-indigo-700">${p.endDate}</strong>`],
+        ['Rate / sq.ft', (p) => formatINR(p.rateSqft)],
+        ['Flat Price Range', (p) => `<strong class="text-emerald-700">${formatCr(p.minCr)} – ${formatCr(p.maxCr)}</strong>`],
+        ['BHK & Sizes', (p) => `${p.bhkLabel}<br/><span class="text-xs text-slate-500">${p.areaLabel}</span>`]
+      ];
+      $('compare-table-container').innerHTML = `
+        <table class="w-full text-left border-collapse text-sm min-w-[540px]">
+          <thead>
+            <tr class="border-b border-slate-200 bg-slate-50">
+              <th class="py-2.5 px-3 text-xs font-bold text-slate-500">Attribute</th>
+              ${items.map((p) => `<th class="py-2.5 px-3 font-bold text-slate-900">${p.name}</th>`).join('')}
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            ${rows.map(([label, fn]) => `
+              <tr>
+                <td class="py-2.5 px-3 text-xs font-semibold text-slate-500">${label}</td>
+                ${items.map((p) => `<td class="py-2.5 px-3">${fn(p)}</td>`).join('')}
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+      $('compare-modal').classList.remove('hidden');
+    }
+
+    function switchTab(tabName) {
+      state.activeTab = tabName;
+      document.querySelectorAll('.nav-tab').forEach((btn) => {
+        const active = btn.dataset.tab === tabName;
+        btn.className = `nav-tab px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap transition ${active ? 'tab-active' : 'tab-inactive border border-slate-200'}`;
+      });
+      ['projects', 'analytics', 'calculator', 'portals'].forEach((t) => {
+        $('tab-' + t).classList.toggle('hidden', t !== tabName);
+      });
+      if (tabName === 'analytics') renderCharts();
+    }
+
+    // Event Listeners
+    document.querySelectorAll('.nav-tab').forEach((btn) => {
+      btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+    });
+
+    $('filter-query').addEventListener('input', (e) => { state.filters.query = e.target.value; renderProjects(); });
+    $('filter-type').addEventListener('change', (e) => { state.filters.propertyType = e.target.value; renderProjects(); });
+    $('filter-zone').addEventListener('change', (e) => { state.filters.zone = e.target.value; renderProjects(); });
+    $('filter-status').addEventListener('change', (e) => { state.filters.status = e.target.value; renderProjects(); });
+    $('filter-bhk').addEventListener('change', (e) => { state.filters.bhk = e.target.value; renderProjects(); });
+    $('filter-endyear').addEventListener('change', (e) => { state.filters.endYear = e.target.value; renderProjects(); });
+    $('sort-by').addEventListener('change', (e) => { state.filters.sortBy = e.target.value; renderProjects(); });
+    $('filter-budget').addEventListener('input', (e) => {
+      const val = parseFloat(e.target.value);
+      state.filters.maxBudgetCr = val;
+      $('budget-label').textContent = val >= 10 ? '₹10.00 Cr+' : formatCr(val);
+      renderProjects();
+    });
+
+    function resetAllFilters() {
+      state.shortlistOnly = false;
+      $('btn-shortlist-filter').classList.remove('ring-2', 'ring-amber-400');
+      state.filters = { query: '', propertyType: 'All', zone: 'All', status: 'All', bhk: 'All', endYear: 'All', maxBudgetCr: 10.0, sortBy: 'price-asc' };
+      $('filter-query').value = '';
+      $('filter-type').value = 'All';
+      $('filter-zone').value = 'All';
+      $('filter-status').value = 'All';
+      $('filter-bhk').value = 'All';
+      $('filter-endyear').value = 'All';
+      $('filter-budget').value = 10.0;
+      $('budget-label').textContent = '₹10.00 Cr+';
+      $('sort-by').value = 'price-asc';
+      renderProjects();
+    }
+
+    $('btn-reset-filters').addEventListener('click', resetAllFilters);
+    $('btn-empty-reset').addEventListener('click', resetAllFilters);
+
+    $('view-cards').addEventListener('click', () => {
+      state.viewMode = 'cards';
+      $('view-cards').className = 'px-2.5 py-1 text-xs font-semibold rounded-md bg-white text-slate-900 shadow-sm';
+      $('view-table').className = 'px-2.5 py-1 text-xs font-semibold rounded-md text-slate-600 hover:text-slate-900';
+      renderProjects();
+    });
+    $('view-table').addEventListener('click', () => {
+      state.viewMode = 'table';
+      $('view-table').className = 'px-2.5 py-1 text-xs font-semibold rounded-md bg-white text-slate-900 shadow-sm';
+      $('view-cards').className = 'px-2.5 py-1 text-xs font-semibold rounded-md text-slate-600 hover:text-slate-900';
+      renderProjects();
+    });
+
+    $('btn-shortlist-filter').addEventListener('click', () => {
+      state.shortlistOnly = !state.shortlistOnly;
+      $('btn-shortlist-filter').classList.toggle('ring-2', state.shortlistOnly);
+      $('btn-shortlist-filter').classList.toggle('ring-amber-400', state.shortlistOnly);
+      renderProjects();
+    });
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-action]');
+      if (!btn) return;
+      const action = btn.dataset.action;
+      const id = btn.dataset.id;
+
+      if (action === 'shortlist') {
+        if (state.shortlistIds.has(id)) state.shortlistIds.delete(id);
+        else state.shortlistIds.add(id);
+        try { localStorage.setItem('hydestate_shortlist', JSON.stringify([...state.shortlistIds])); } catch (err) {}
+        $('shortlist-count').textContent = state.shortlistIds.size;
+        renderProjects();
+      } else if (action === 'compare' || action === 'remove-compare') {
+        if (state.compareIds.includes(id)) {
+          state.compareIds = state.compareIds.filter((x) => x !== id);
+        } else {
+          if (state.compareIds.length >= 3) {
+            showToast('You can compare up to 3 projects at a time.');
+            return;
+          }
+          state.compareIds.push(id);
+        }
+        renderProjects();
+      } else if (action === 'detail') {
+        openDetailModal(id);
+      }
+    });
+
+    $('btn-close-detail').addEventListener('click', () => $('detail-modal').classList.add('hidden'));
+    $('btn-copy-rera').addEventListener('click', () => {
+      const code = $('modal-rera').textContent;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(code).catch(() => {});
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      showToast('Copied RERA ID: ' + code);
+    });
+
+    $('btn-modal-calc').addEventListener('click', () => {
+      const p = state.projects.find((x) => x.id === state.selectedProjectId);
+      if (p) {
+        $('calc-project').value = p.id;
+        $('calc-area').value = p.defaultSqft;
+        $('calc-rate').value = p.rateSqft;
+        $('calc-stage').value = p.status === 'Ready / Near Possession' ? '0' : '5';
+        updateCalculator();
+      }
+      $('detail-modal').classList.add('hidden');
+      switchTab('calculator');
+    });
+
+    $('btn-open-compare').addEventListener('click', openCompareModal);
+    $('btn-close-compare').addEventListener('click', () => $('compare-modal').classList.add('hidden'));
+    $('btn-clear-compare').addEventListener('click', () => { state.compareIds = []; renderProjects(); });
+
+    // Calculator listeners
+    $('calc-project').addEventListener('change', (e) => {
+      const p = state.projects.find((x) => x.id === e.target.value);
+      if (p) {
+        $('calc-area').value = p.defaultSqft;
+        $('calc-rate').value = p.rateSqft;
+        $('calc-stage').value = p.status === 'Ready / Near Possession' ? '0' : '5';
+      }
+      updateCalculator();
+    });
+    ['calc-area', 'calc-rate', 'calc-stage', 'calc-down', 'calc-interest', 'calc-tenure'].forEach((id) => {
+      $(id).addEventListener('input', updateCalculator);
+      $(id).addEventListener('change', updateCalculator);
+    });
+
+    // Future-proof optional external JSON feed (works when hosted alongside projects.json)
+    async function loadExternalFeed() {
+      try {
+        const res = await fetch('./projects.json', { cache: 'no-store' });
+        if (!res.ok) return;
+        const payload = await res.json();
+        const items = Array.isArray(payload) ? payload : payload.projects;
+        if (Array.isArray(items) && items.length > 0) {
+          state.projects = items;
+          if (payload.updatedAt) $('data-version-badge').textContent = 'Updated ' + payload.updatedAt;
+          populateCalcDropdown();
+          renderProjects();
+        }
+      } catch (e) { /* Uses built-in verified dataset when standalone */ }
+    }
+
+    // Init
+    $('shortlist-count').textContent = state.shortlistIds.size;
+    populateCalcDropdown();
+    updateCalculator();
+    renderProjects();
+    loadExternalFeed();
+  </script>
+</body>
+</html>
