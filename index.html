@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HydEstate Pulse — Hyderabad Real Estate Projects, RERA Dates & Flat Prices</title>
+  <title>The Way Prop India — Verified RERA Projects, Flat Prices & Bank Auctions</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,11 +25,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-2">
       <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
         <div class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-xl bg-gradient-to-br from-indigo-600 to-cyan-500 flex items-center justify-center text-white font-bold text-base sm:text-lg shadow-sm">
-          HE
+          TW
         </div>
         <div class="min-w-0">
-          <h1 class="text-base sm:text-xl font-bold tracking-tight text-slate-900 leading-tight truncate">HydEstate Pulse</h1>
-          <p class="text-[11px] sm:text-xs text-slate-500 truncate">Hyderabad Apartments &amp; Villas • RERA Dates • <span id="data-version-badge" class="font-semibold text-indigo-600">Verified Nov 2026</span></p>
+          <h1 class="text-base sm:text-xl font-bold tracking-tight text-slate-900 leading-tight truncate">The Way Prop India</h1>
+          <p class="text-[11px] sm:text-xs text-slate-500 truncate">thewaypropindia.com • RERA &amp; Auctions • <span id="data-version-badge" class="font-semibold text-indigo-600">Verified Nov 2026</span></p>
         </div>
       </div>
 
@@ -664,7 +664,7 @@
       <div class="space-y-2.5">
         <h3 class="text-sm font-bold text-white uppercase tracking-wider">About Us</h3>
         <p class="text-slate-400 leading-relaxed">
-          <strong class="text-white">HydEstate Pulse</strong> is an independent Hyderabad residential property tracker built to bring transparency to flat and villa buyers. We organize TG-RERA registration numbers, launch and possession timelines, and indicative ₹/sq.ft rates across West, North, East, and South Hyderabad.
+          <strong class="text-white">The Way Prop India</strong> (<span class="text-cyan-400">thewaypropindia.com</span>) is an independent Indian residential property tracker built to bring transparency to flat and villa buyers. We organize TG-RERA registration numbers, launch and possession timelines, and indicative ₹/sq.ft rates across West, North, East, and South Hyderabad.
         </p>
       </div>
 
@@ -678,7 +678,7 @@
       <div class="space-y-2.5">
         <h3 class="text-sm font-bold text-white uppercase tracking-wider">Contact Us</h3>
         <p class="text-slate-400 leading-relaxed">
-          For builder listings, sponsorship inquiries, or data corrections, reach us via your repository page or contact: <span class="text-cyan-400 font-semibold">contact@hydestatepulse.in</span>
+          For builder listings, sponsorship inquiries, or data corrections, contact us at: <span class="text-cyan-400 font-semibold">contact@thewaypropindia.com</span>
         </p>
         <p class="text-[11px] text-slate-500 pt-1">
           Disclaimer: Prices and timelines are indicative and sourced from public TG-RERA and market portals. This static site stores shortlists only in your own browser and collects no personal data.
@@ -686,7 +686,7 @@
       </div>
     </div>
     <div class="border-t border-slate-800 py-4 px-4 sm:px-6 lg:px-8 text-center text-[11px] text-slate-500">
-      © 2026 HydEstate Pulse • Hyderabad Apartments &amp; Villas Directory • Verify all documents on TG-RERA &amp; IGRS Telangana
+      © 2026 The Way Prop India • thewaypropindia.com • Verify all documents on TG-RERA &amp; IGRS Telangana
     </div>
   </footer>
 
@@ -2723,8 +2723,8 @@
       const leadName = fd.get('fullName') || '';
       const payload = {
         access_key: 'f2174076-d277-4002-ba9a-04c484ec4536',
-        from_name: 'HydEstate Pulse',
-        subject: `New HydEstate Pulse Enquiry: ${projName} — ${leadName}`,
+        from_name: 'The Way Prop India',
+        subject: `New The Way Prop India Enquiry: ${projName} — ${leadName}`,
         project: projName,
         name: leadName,
         phone: fd.get('phone') || '',
@@ -2902,7 +2902,7 @@
         return `You're welcome! Let me know if you want to compare projects, check another TG-RERA ID, or calculate EMI and stamp duty for any flat or villa.`;
       }
       if (q.includes('who are you') || q.includes('what can you do') || q === 'help' || q.includes('how are you')) {
-        return `I'm doing great, thanks for asking! I'm <strong>Sky AI</strong>, built into HydEstate Pulse to give you instant answers on <strong>${projects.length} TG-RERA verified Hyderabad projects</strong>, 18+ growth corridors, HMDA/GHMC/RERA rules, and all-in cost + EMI breakdowns. Try asking me a question or tap any quick pill above!`;
+        return `I'm doing great, thanks for asking! I'm <strong>Sky AI</strong>, built into The Way Prop India to give you instant answers on <strong>${projects.length} TG-RERA verified Hyderabad projects</strong>, 18+ growth corridors, HMDA/GHMC/RERA rules, and all-in cost + EMI breakdowns. Try asking me a question or tap any quick pill above!`;
       }
 
       // Follow-up pronoun resolution using skyState.lastProject
