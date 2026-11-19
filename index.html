@@ -136,7 +136,7 @@
       <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
         <p class="text-xs font-medium text-slate-500">Matching Projects</p>
         <p id="kpi-count" class="text-2xl font-bold text-slate-900 mt-1">9</p>
-        <p class="text-[11px] text-slate-500 mt-0.5">TG-RERA approved projects</p>
+        <p id="kpi-rera-subtitle" class="text-[11px] text-slate-500 mt-0.5">TG-RERA approved projects</p>
       </div>
       <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
         <p class="text-xs font-medium text-slate-500">Avg Asking Rate</p>
@@ -277,7 +277,7 @@
       </div>
 
       <!-- Quick Company Filter Chips -->
-      <div class="flex items-center gap-1.5 overflow-x-auto custom-scroll pb-1">
+      <div id="company-chips-bar" class="flex items-center gap-1.5 overflow-x-auto custom-scroll pb-1">
         <span class="text-[11px] font-semibold text-slate-500 shrink-0 mr-1">Companies:</span>
         <button type="button" data-company-chip="My Home" class="company-chip shrink-0 px-2.5 py-1 rounded-full bg-white border border-slate-200 text-[11px] font-semibold text-slate-700 hover:border-indigo-400 hover:text-indigo-700 transition">My Home</button>
         <button type="button" data-company-chip="Shapoorji" class="company-chip shrink-0 px-2.5 py-1 rounded-full bg-white border border-slate-200 text-[11px] font-semibold text-slate-700 hover:border-indigo-400 hover:text-indigo-700 transition">Shapoorji Pallonji</button>
@@ -3453,8 +3453,8 @@
         panel.classList.add('hidden');
         return;
       }
-      const allCompanyMatches = (state.projects || []).filter((p) => p.builder.toLowerCase().includes(q) || (q.includes('trump') && p.name.toLowerCase().includes('trump')) || (q.includes('tribeca') && p.name.toLowerCase().includes('trump')));
-      const isKnownCompany = bSelect !== '' || ['shapoorji', 'my home', 'sobha', 'raghava', 'candeur', 'sumadhura', 'mantri', 'vertex', 'rajapushpa', 'aparna', 'ghr', 'prestige', 'brigade', 'asbl', 'lansum', 'ramky', 'casagrand', 'urbanrise', 'tribeca'].some((k) => q.includes(k));
+      const allCompanyMatches = (state.projects || []).filter((p) => (p.city || 'Hyderabad') === state.activeCity && (p.builder.toLowerCase().includes(q) || (q.includes('trump') && p.name.toLowerCase().includes('trump')) || (q.includes('tribeca') && p.name.toLowerCase().includes('trump'))));
+      const isKnownCompany = bSelect !== '' || ['shapoorji', 'my home', 'sobha', 'raghava', 'candeur', 'sumadhura', 'mantri', 'vertex', 'rajapushpa', 'aparna', 'ghr', 'prestige', 'brigade', 'asbl', 'lansum', 'ramky', 'casagrand', 'urbanrise', 'tribeca', 'godrej', 'sattva', 'assetz', 'aratt'].some((k) => q.includes(k));
       if (allCompanyMatches.length === 0 && !isKnownCompany) {
         panel.classList.add('hidden');
         return;
@@ -3467,7 +3467,7 @@
       const shown = companyStageFilter === 'present' ? present : companyStageFilter === 'upcoming' ? upcoming : matches;
 
       const displayName = allCompanyMatches.length ? allCompanyMatches[0].builder : (bSelect || state.filters.query);
-      const zoneSuffix = activeZone !== 'All' ? ` in ${activeZone} Hyderabad` : '';
+      const zoneSuffix = activeZone !== 'All' ? ` in ${activeZone} ${state.activeCity}` : ` in ${state.activeCity}`;
       $('company-portfolio-title').textContent = `${displayName}${zoneSuffix} (${matches.length} Projects)`;
       $('comp-count-all').textContent = matches.length;
       $('comp-count-present').textContent = present.length;
@@ -3475,7 +3475,7 @@
 
       if (matches.length === 0) {
         const zonesAvail = [...new Set(allCompanyMatches.map((p) => p.zone))];
-        const availText = zonesAvail.length ? `Available in: <strong>${zonesAvail.join(', ')}</strong>.` : 'No active ongoing TG-RERA residential projects currently listed in Hyderabad.';
+        const availText = zonesAvail.length ? `Available in: <strong>${zonesAvail.join(', ')}</strong>.` : `No active ongoing RERA residential projects currently listed for this builder in ${state.activeCity}.`;
         $('company-portfolio-list').innerHTML = `<div class="col-span-full p-4 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900"><strong>No projects</strong> found for <strong>${displayName}</strong>${zoneSuffix}. ${availText}</div>`;
       } else {
         $('company-portfolio-list').innerHTML = shown.length
@@ -3499,17 +3499,17 @@
       panel.classList.remove('hidden');
     }
 
-    document.querySelectorAll('.company-chip').forEach((chip) => {
-      chip.addEventListener('click', () => {
-        const val = chip.getAttribute('data-company-chip');
-        $('filter-builder').value = val;
-        state.filters.builder = val;
-        $('filter-query').value = '';
-        state.filters.query = '';
-        companyStageFilter = 'all';
-        renderProjects();
-        renderCompanyPortfolio();
-      });
+    $('company-chips-bar').addEventListener('click', (e) => {
+      const chip = e.target.closest('[data-company-chip]');
+      if (!chip) return;
+      const val = chip.getAttribute('data-company-chip');
+      $('filter-builder').value = val;
+      state.filters.builder = val;
+      $('filter-query').value = '';
+      state.filters.query = '';
+      companyStageFilter = 'all';
+      renderProjects();
+      renderCompanyPortfolio();
     });
 
     $('filter-builder').addEventListener('change', (e) => {
@@ -4263,17 +4263,77 @@
           ? 'city-switch-btn inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 text-white text-xs font-semibold whitespace-nowrap shadow-sm transition'
           : 'city-switch-btn inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-indigo-300 hover:text-indigo-700 text-xs font-semibold whitespace-nowrap transition';
       });
+      const CITY_BUILDERS = {
+        Hyderabad: [
+          ['All', 'All Companies'], ['My Home', 'My Home Constructions'], ['Shapoorji', 'Shapoorji Pallonji'],
+          ['Sobha', 'Sobha Limited'], ['Raghava', 'Raghava Projects'], ['Candeur', 'Candeur Constructions'],
+          ['Sumadhura', 'Sumadhura Group'], ['Mantri', 'Mantri Developers'], ['Vertex', 'Vertex Homes'],
+          ['Rajapushpa', 'Rajapushpa Properties'], ['Aparna', 'Aparna Constructions'], ['GHR', 'GHR Infra'],
+          ['Prestige', 'Prestige Group'], ['Brigade', 'Brigade Group'], ['ASBL', 'ASBL'],
+          ['Lansum', 'Lansum Group'], ['Ramky', 'Ramky Estates'], ['Casagrand', 'Casagrand'],
+          ['Urbanrise', 'Urbanrise'], ['Tribeca', 'Trump / Tribeca']
+        ],
+        Bengaluru: [
+          ['All', 'All Companies'], ['Prestige', 'Prestige Group'], ['Sobha', 'Sobha Limited'],
+          ['Brigade', 'Brigade Group'], ['Godrej', 'Godrej Properties'], ['Sumadhura', 'Sumadhura Group'],
+          ['Candeur', 'Candeur Constructions'], ['Shapoorji', 'Shapoorji Pallonji'], ['Mantri', 'Mantri Developers'],
+          ['Aratt', 'Aratt Developers'], ['Sattva', 'Sattva Group'], ['Assetz', 'Assetz Property']
+        ]
+      };
+      const CITY_CHIPS = {
+        Hyderabad: [
+          ['My Home', 'My Home'], ['Shapoorji', 'Shapoorji Pallonji'], ['Sobha', 'Sobha'],
+          ['Candeur', 'Candeur'], ['Sumadhura', 'Sumadhura'], ['Mantri', 'Mantri'],
+          ['Vertex', 'Vertex Homes'], ['Raghava', 'Raghava'], ['Rajapushpa', 'Rajapushpa'],
+          ['GHR', 'GHR Infra'], ['Aparna', 'Aparna'], ['Brigade', 'Brigade'], ['Tribeca', 'Trump / Tribeca']
+        ],
+        Bengaluru: [
+          ['Prestige', 'Prestige'], ['Sobha', 'Sobha'], ['Brigade', 'Brigade'],
+          ['Godrej', 'Godrej'], ['Sumadhura', 'Sumadhura'], ['Candeur', 'Candeur'],
+          ['Shapoorji', 'Shapoorji Pallonji'], ['Mantri', 'Mantri'], ['Aratt', 'Aratt'],
+          ['Sattva', 'Sattva'], ['Assetz', 'Assetz']
+        ]
+      };
+
+      const bList = CITY_BUILDERS[city] || CITY_BUILDERS.Hyderabad;
+      $('filter-builder').innerHTML = bList.map(([v, lbl]) => `<option value="${v}">${lbl}</option>`).join('');
+
+      const cList = CITY_CHIPS[city] || CITY_CHIPS.Hyderabad;
+      $('company-chips-bar').innerHTML = '<span class="text-[11px] font-semibold text-slate-500 shrink-0 mr-1">Companies:</span>' +
+        cList.map(([v, lbl]) => `<button type="button" data-company-chip="${v}" class="company-chip shrink-0 px-2.5 py-1 rounded-full bg-white border border-slate-200 text-[11px] font-semibold text-slate-700 hover:border-indigo-400 hover:text-indigo-700 transition">${lbl}</button>`).join('');
+
       if (city === 'Bengaluru') {
         $('hero-rera-badge').textContent = 'Karnataka RERA Verified Directory';
         $('hero-min-badge').textContent = 'Starting at ₹64 Lakhs*';
         $('hero-title').textContent = 'Bengaluru Apartments & Villas';
         $('hero-subtitle').textContent = 'Compare official Karnataka RERA start & completion dates, ₹/sq.ft rates, and flat costs across East, North & South Bengaluru.';
+        $('kpi-rera-subtitle').textContent = 'Karnataka RERA approved projects';
+        $('filter-query').placeholder = 'e.g. Whitefield, Prestige, PRM/KA...';
+        $('filter-zone').innerHTML = `
+          <option value="All">All Zones</option>
+          <option value="East">East Bengaluru</option>
+          <option value="North">North Bengaluru</option>
+          <option value="South">South Bengaluru</option>
+          <option value="West">West Bengaluru</option>
+        `;
       } else {
         $('hero-rera-badge').textContent = 'TG-RERA Verified Directory';
         $('hero-min-badge').textContent = 'Starting at ₹70 Lakhs*';
         $('hero-title').textContent = 'Hyderabad Apartments & Villas';
         $('hero-subtitle').textContent = 'Compare official RERA start & completion dates, ₹/sq.ft rates, clubhouses, and all-in flat costs across Hyderabad.';
+        $('kpi-rera-subtitle').textContent = 'TG-RERA approved projects';
+        $('filter-query').placeholder = 'e.g. Kokapet, Trivana, P024...';
+        $('filter-zone').innerHTML = `
+          <option value="All">All Zones</option>
+          <option value="West">West Hyderabad</option>
+          <option value="North-West">North-West</option>
+          <option value="North">North Hyderabad</option>
+          <option value="East">East Hyderabad</option>
+          <option value="South">South Hyderabad</option>
+        `;
       }
+      $('filter-query').value = '';
+      state.filters.query = '';
       state.filters.builder = 'All';
       state.filters.zone = 'All';
       $('filter-builder').value = 'All';
