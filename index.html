@@ -755,8 +755,22 @@
           </div>
         </div>
         <div class="flex items-center gap-1.5 shrink-0">
+          <button id="btn-sky-settings" type="button" class="px-2.5 py-1 rounded-lg bg-white/15 hover:bg-white/25 text-[11px] font-semibold transition">⚙️ AI Mode</button>
           <button id="btn-clear-sky-ai" type="button" class="px-2.5 py-1 rounded-lg bg-white/15 hover:bg-white/25 text-[11px] font-semibold transition">Clear</button>
           <button id="btn-close-sky-ai" type="button" class="p-1.5 rounded-lg bg-white/15 hover:bg-white/25 text-white text-lg leading-none">&times;</button>
+        </div>
+      </div>
+
+      <div id="sky-ai-settings-panel" class="hidden px-4 py-3 bg-indigo-50 border-b border-indigo-200 text-xs space-y-2 shrink-0">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-bold text-indigo-950">Live Gemini AI Mode (Optional)</span>
+          <span id="sky-mode-badge" class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">Built-in Smart Mode Active</span>
+        </div>
+        <p class="text-[11px] text-slate-600">Sky AI works offline with full Hyderabad TG-RERA data. To enable live Google Gemini responses grounded in all project data, paste your Gemini API key (saved only in your browser) — <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer" class="text-indigo-700 font-semibold underline">Get a free key from Google AI Studio ↗</a>:</p>
+        <div class="flex gap-2">
+          <input id="sky-gemini-key" type="password" placeholder="Paste Gemini API key (optional)..." class="flex-1 px-2.5 py-1.5 rounded-lg border border-indigo-200 bg-white text-xs" />
+          <button id="btn-save-sky-key" type="button" class="px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700">Save</button>
+          <button id="btn-clear-sky-key" type="button" class="px-2.5 py-1.5 rounded-lg bg-white border border-slate-300 text-slate-700 font-semibold">Reset</button>
         </div>
       </div>
 
@@ -1960,21 +1974,64 @@
       $(id).addEventListener('change', updateCalculator);
     });
 
-    // Sky AI Knowledge & Query Engine
-    const SKY_AI_WELCOME = `Hi! I'm <strong>Sky AI</strong>. Ask me anything about Hyderabad real estate:<br>• <strong>Projects &amp; Builders:</strong> e.g. <em>"Trump Towers Hyderabad"</em>, <em>"Raghava projects"</em>, <em>"Brigade Barcelona"</em>, <em>"GHR Callisto"</em><br>• <strong>RERA &amp; Legal:</strong> e.g. <em>"Check RERA P02400010871"</em>, <em>"How to verify TG-RERA?"</em>, <em>"Stamp duty &amp; GST"</em><br>• <strong>Locations &amp; Budgets:</strong> e.g. <em>"Villas in Kollur"</em>, <em>"Kokapet vs Tellapur"</em>, <em>"Flats under 1.5 Cr"</em>`;
+    // Sky AI Knowledge & Query Engine (Claude/Gemini-style Hyderabad Real Estate Advisor + Optional Live Gemini)
+    function getSkyWelcome() {
+      const count = (state.projects || []).length;
+      return `Hi! I'm <strong>Sky AI</strong>, your Hyderabad real estate &amp; TG-RERA advisor. I have full details on <strong>${count} verified projects</strong>, 18+ Hyderabad localities, RERA &amp; HMDA rules, and stamp duty/EMI math.<br><br>Ask me anything like you would ask Gemini or Claude:<br>• <em>"Tell me everything about Trump Towers Hyderabad"</em><br>• <em>"How is Kokapet vs Kollur vs Kompally for investment?"</em><br>• <em>"Explain Carpet Area, UDS, OC, and HMDA vs DTCP"</em><br>• <em>"What is the EMI &amp; stamp duty for a ₹1.8 Cr flat?"</em>`;
+    }
+
+    const skyState = {
+      lastProject: null,
+      history: [],
+      geminiKey: (() => { try { return localStorage.getItem('hydestate_gemini_key') || ''; } catch (e) { return ''; } })()
+    };
+
+    const HYD_CORRIDORS = {
+      kokapet: { name: 'Kokapet & Neopolis', rate: '₹10,900 – ₹15,000/sq.ft (avg ₹11,019; luxury ₹12,663)', pros: 'ORR Exit 1, 10 mins to Financial District, 100+ acre HMDA Neopolis layout, highest luxury appreciation.', ideal: 'Ultra-luxury end-users & NRI investors (₹2.4 Cr – ₹16.8 Cr).' },
+      neopolis: { name: 'Neopolis (Kokapet SEZ)', rate: '₹10,900 – ₹14,500/sq.ft', pros: 'HMDA auctioned ultra-high-rise zone with 45m–60m wide roads, underground utilities, and direct ORR trumpet.', ideal: 'Flagship skyscraper & branded residence buyers.' },
+      tellapur: { name: 'Tellapur & Velimela', rate: '₹8,500 – ₹9,200/sq.ft (avg ₹8,661)', pros: 'Adjacent to Financial District & Gopanpally, upcoming Radial Roads, strong 2/3 BHK family demand.', ideal: 'IT families & long-term capital growth (₹0.85 Cr – ₹2.82 Cr).' },
+      kollur: { name: 'Kollur (ORR Exit 2)', rate: '₹7,000 – ₹16,500/sq.ft (high-rises ₹7k–₹8k; villas ₹11k–₹16.5k)', pros: 'Direct ORR Exit 2 access, largest gated villa & high-rise cluster in West Hyderabad.', ideal: 'Gated villa buyers & value high-rise upgrades (₹0.83 Cr – ₹10.5 Cr).' },
+      financial: { name: 'Financial District & Nanakramguda', rate: '₹10,000 – ₹13,100/sq.ft', pros: 'Walk-to-work IT/BFSI hub, 4–5% gross rental yield, strongest corporate tenant demand.', ideal: 'Rental yield investors & senior tech executives (₹2.3 Cr – ₹16.5 Cr).' },
+      nanakramguda: { name: 'Nanakramguda', rate: '₹10,000 – ₹12,500/sq.ft', pros: 'Heart of Financial District, ORR Junction, WaveRock & Amazon/Microsoft campuses nearby.', ideal: 'High rental yield & executive residences.' },
+      narsingi: { name: 'Narsingi & Puppalguda', rate: '₹8,500 – ₹11,800/sq.ft', pros: 'ORR Exit 18A, bridges Financial District with Jubilee Hills & Banjara Hills.', ideal: '3 & 4 BHK families wanting quick city + IT access.' },
+      puppalguda: { name: 'Puppalguda & Alkapur Township', rate: '₹8,500 – ₹11,500/sq.ft', pros: 'Established social infrastructure, close to Khajaguda & ORR, strong resale liquidity.', ideal: 'End-user 3 BHK families (₹1.37 Cr – ₹2.5 Cr).' },
+      nallagandla: { name: 'Nallagandla', rate: '₹9,500 – ₹22,000/sq.ft (premium towers & villas)', pros: 'Quiet residential hub near Lingampally MMTS, BHEL, and Gachibowli.', ideal: 'Established gated communities & luxury triplex villas.' },
+      gachibowli: { name: 'Gachibowli & Raidurg', rate: '₹11,000 – ₹14,500/sq.ft', pros: 'Prime IT/BioTech core, Raidurg Metro Terminus, Knowledge City & Biodiversity Junction.', ideal: 'Luxury apartments & top corporate rental demand.' },
+      kondapur: { name: 'Kondapur & Madhapur', rate: '₹9,500 – ₹13,500/sq.ft', pros: 'Central HITEC City access, Botanical Garden, top schools & hospitals.', ideal: 'Zero-commute tech professionals & high-demand rentals.' },
+      jubilee: { name: 'Jubilee Hills & Banjara Hills', rate: '₹15,000 – ₹25,000+/sq.ft', pros: 'Hyderabad\'s legacy ultra-prime addresses, boutique low-rise luxury & diplomatic proximity.', ideal: 'UHNI end-users & bespoke luxury residences.' },
+      mokila: { name: 'Mokila & Shankarpalli', rate: '₹7,500 – ₹11,500/sq.ft (villas)', pros: 'Green low-density villa belt along Shankarpalli Road, 20 mins to Neopolis.', ideal: 'Spacious gated villas & weekend-turned-primary homes.' },
+      kompally: { name: 'Kompally (North)', rate: '₹6,500 – ₹9,000/sq.ft', pros: 'NH-44 connectivity, green low-density villas & mid-segment apartments, 30–40% lower entry ticket than West.', ideal: 'Value buyers & North Hyderabad families (₹1.0 Cr – ₹3.94 Cr).' },
+      bachupally: { name: 'Bachupally & Miyapur (North-West)', rate: '₹6,800 – ₹8,900/sq.ft', pros: 'Miyapur Metro, ORR Exit 4A, major international schools & medical colleges.', ideal: 'Mid-segment 2 & 3 BHK families (₹0.91 Cr – ₹2.16 Cr).' },
+      tukkuguda: { name: 'Tukkuguda & Shamshabad (South)', rate: '₹9,500 – ₹10,500/sq.ft (luxury villas)', pros: '12 mins to RGIA Airport, E-City & Hardware/Pharma corridor, strong airport-led appreciation.', ideal: 'Long-term land/villa investors & frequent flyers (₹4.0 Cr+).' },
+      pocharam: { name: 'Pocharam & Uppal (East)', rate: '₹6,200 – ₹7,500/sq.ft', pros: 'Infosys SEZ, Warangal Highway, Uppal Metro access, most affordable 3 BHK gated communities.', ideal: 'First-time buyers under ₹1 Cr.' },
+      adibatla: { name: 'Adibatla & Bongloor (South-East)', rate: '₹5,500 – ₹7,500/sq.ft', pros: 'TCS Adibatla, Aerospace SEZ, Foxconn ecosystem & ORR Exit 13.', ideal: 'Long-term plot & budget housing investors.' }
+    };
 
     function escHtml(str) {
       return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     }
 
+    function updateSkyModeBadge() {
+      const badge = $('sky-mode-badge');
+      if (!badge) return;
+      if (skyState.geminiKey) {
+        badge.textContent = '⚡ Live Gemini AI Active';
+        badge.className = 'px-2 py-0.5 rounded-full bg-indigo-600 text-white text-[10px] font-bold';
+      } else {
+        badge.textContent = 'Built-in Smart Mode Active';
+        badge.className = 'px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold';
+      }
+    }
+
     function renderSkyProjectSnippet(p) {
+      const typeVal = p.type || p.propertyType || 'Apartment';
       const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name + ', ' + p.locality + ', Hyderabad, Telangana')}`;
       return `
-        <div class="mt-2 p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+        <div class="mt-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
           <div class="flex items-start justify-between gap-2">
             <div>
               <div class="font-bold text-slate-900 text-xs sm:text-sm">${escHtml(p.name)}</div>
-              <div class="text-[11px] text-slate-500">${escHtml(p.locality)} (${escHtml(p.zone)}) • ${escHtml(p.builder)} • ${escHtml(p.type)}</div>
+              <div class="text-[11px] text-slate-500">${escHtml(p.locality)} (${escHtml(p.zone)}) • ${escHtml(p.builder)} • ${escHtml(typeVal)}</div>
             </div>
             <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-50 text-indigo-700 shrink-0">${escHtml(p.status)}</span>
           </div>
@@ -1986,7 +2043,7 @@
             <div><span class="text-slate-500">RERA:</span> <strong class="font-mono text-slate-800">${escHtml(p.rera)}</strong></div>
             <div><span class="text-slate-500">Dates:</span> <strong class="text-slate-800">${escHtml(p.startDate)} → ${escHtml(p.endDate)}</strong></div>
           </div>
-          <div class="text-[11px] text-slate-600">${escHtml(p.highlights)}</div>
+          <div class="text-[11px] text-slate-600">${escHtml(p.highlights || p.note || '')}</div>
           <div class="flex flex-wrap gap-2 pt-1">
             <button type="button" data-sky-detail="${escHtml(p.id)}" class="px-2.5 py-1 rounded-lg bg-indigo-600 text-white text-[11px] font-semibold hover:bg-indigo-700">View Full Details &amp; EMI</button>
             <a href="${mapUrl}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 text-[11px] font-semibold hover:bg-emerald-100">Google Map ↗</a>
@@ -1995,9 +2052,75 @@
       `;
     }
 
+    function buildDetailedProjectReport(p) {
+      const typeVal = p.type || p.propertyType || 'Apartment';
+      const isReady = p.status === 'Ready / Near Possession';
+      const base = p.minCr * 10000000;
+      const allIn = (base * (1 + 0.075 + (isReady ? 0 : 0.05))) / 10000000;
+      const loan = base * 0.80;
+      const r = 8.5 / 12 / 100;
+      const emi = (loan * r * Math.pow(1 + r, 240)) / (Math.pow(1 + r, 240) - 1);
+      const corridor = Object.entries(HYD_CORRIDORS).find(([k]) => p.locality.toLowerCase().includes(k));
+      const locNote = corridor ? `${corridor[1].pros} Market rate here is typically ${corridor[1].rate}.` : `${p.zone} Hyderabad residential growth belt.`;
+
+      return `<div class="space-y-2">
+        <p><strong>${escHtml(p.name)} — Complete Project &amp; RERA Brief</strong></p>
+        <p>${escHtml(p.name)} is a <strong>${escHtml(p.status)}</strong> ${escHtml(typeVal.toLowerCase())} development by <strong>${escHtml(p.builder)}</strong> in <strong>${escHtml(p.locality)} (${escHtml(p.zone)} Hyderabad)</strong>.</p>
+        <ul class="list-disc pl-4 space-y-1">
+          <li><strong>Pricing &amp; All-In Estimate:</strong> Base ticket <strong>${formatCr(p.minCr)} – ${formatCr(p.maxCr)}</strong> at <strong>${formatINR(p.rateSqft)}/sq.ft</strong>. Starting all-in cost (with 7.5% registration${isReady ? ' + 0% GST' : ' + 5% GST'}) is roughly <strong>${formatCr(allIn)}</strong>, with an estimated 20-yr EMI of <strong>${formatINR(emi)}/mo</strong> (80% loan @ 8.5%).</li>
+          <li><strong>TG-RERA &amp; Timeline:</strong> Registered under <span class="font-mono font-semibold">${escHtml(p.rera)}</span>. Launched <strong>${escHtml(p.startDate)}</strong> with official RERA completion by <strong>${escHtml(p.endDate)}</strong>.</li>
+          <li><strong>Location &amp; Highlights:</strong> ${escHtml(locNote)} ${escHtml(p.highlights || p.note || '')}</li>
+        </ul>
+      </div>${renderSkyProjectSnippet(p)}`;
+    }
+
+    function buildCostBreakdownHtml(priceCr, isReady) {
+      const base = priceCr * 10000000;
+      const reg = base * 0.075;
+      const gst = isReady ? 0 : base * 0.05;
+      const total = base + reg + gst;
+      const loan = base * 0.80;
+      const r = 8.5 / 12 / 100;
+      const n = 240;
+      const emi = (loan * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      return `
+        <div class="space-y-2">
+          <p><strong>All-In Cost &amp; EMI Estimate for ₹${priceCr.toFixed(2)} Cr (${isReady ? 'Ready / 0% GST' : 'Under Construction / 5% GST'}):</strong></p>
+          <ul class="list-disc pl-4 space-y-1">
+            <li><strong>Base Price:</strong> ${formatCr(priceCr)}</li>
+            <li><strong>Telangana Registration (7.5%):</strong> ${formatINR(reg)} (5.5% Stamp Duty + 1.5% Transfer + 0.5% Reg. Fee)</li>
+            <li><strong>GST (${isReady ? '0%' : '5%'}):</strong> ${formatINR(gst)}</li>
+            <li><strong>Total All-In Outlay:</strong> <strong class="text-emerald-700">${formatCr(total / 10000000)}</strong></li>
+            <li><strong>Estimated EMI (80% Loan, 8.5% p.a., 20 yrs):</strong> <strong class="text-indigo-700">${formatINR(emi)} / month</strong></li>
+          </ul>
+          <p class="text-[11px] text-slate-500">Tip: Exclude clubhouse, corpus fund &amp; interior budgets (~₹6L–₹15L) separately when planning cashflow.</p>
+        </div>
+      `;
+    }
+
     function answerSkyAI(rawQuery) {
       const q = rawQuery.trim().toLowerCase();
       const projects = state.projects || [];
+
+      // 0. Natural greetings & conversational small talk
+      if (/^(hi+|hello+|hey+|hii+|namaste|good morning|good afternoon|good evening|hola|yo)[!.\s]*$/.test(q)) {
+        return `Hello! 👋 I'm <strong>Sky AI</strong>, your Hyderabad real estate &amp; TG-RERA assistant. Ask me about any project (like <em>Trump Towers</em>, <em>Brigade Barcelona</em>, <em>Raghava</em>, or <em>GHR Callisto</em>), locality rates in Kokapet/Kollur/Tellapur, TG-RERA verification, or EMI &amp; stamp duty math. What would you like to check today?`;
+      }
+      if (/^(thanks|thank you|thx|ok|okay|cool|great|nice|super)[!.\s]*$/.test(q)) {
+        return `You're welcome! Let me know if you want to compare projects, check another TG-RERA ID, or calculate EMI and stamp duty for any flat or villa.`;
+      }
+      if (q.includes('who are you') || q.includes('what can you do') || q === 'help' || q.includes('how are you')) {
+        return `I'm doing great, thanks for asking! I'm <strong>Sky AI</strong>, built into HydEstate Pulse to give you instant answers on <strong>${projects.length} TG-RERA verified Hyderabad projects</strong>, 18+ growth corridors, HMDA/GHMC/RERA rules, and all-in cost + EMI breakdowns. Try asking me a question or tap any quick pill above!`;
+      }
+
+      // Follow-up pronoun resolution using skyState.lastProject
+      if (skyState.lastProject && /\b(it|its|this|that|same project)\b/.test(q) && (q.includes('emi') || q.includes('cost') || q.includes('stamp') || q.includes('rera') || q.includes('date') || q.includes('map') || q.includes('detail'))) {
+        const p = skyState.lastProject;
+        if (q.includes('emi') || q.includes('cost') || q.includes('stamp')) {
+          return buildCostBreakdownHtml(p.minCr, p.status === 'Ready / Near Possession') + `<div class="mt-1 text-[11px] text-slate-500">Calculated on starting price of <strong>${escHtml(p.name)}</strong>.</div>`;
+        }
+        return buildDetailedProjectReport(p);
+      }
 
       // 1. Direct RERA ID match
       const reraMatch = rawQuery.toUpperCase().match(/P0[0-9]{9}/);
@@ -2005,111 +2128,194 @@
         const code = reraMatch[0];
         const found = projects.find((p) => p.rera.toUpperCase() === code);
         if (found) {
-          return `<div><strong>TG-RERA ID ${escHtml(code)}</strong> is registered to <strong>${escHtml(found.name)}</strong> (${escHtml(found.status)}):</div>${renderSkyProjectSnippet(found)}`;
+          skyState.lastProject = found;
+          return buildDetailedProjectReport(found);
         }
         const district = code.startsWith('P024') ? 'Ranga Reddy (West/South Hyderabad)' : code.startsWith('P011') ? 'Sangareddy (Kollur/Tellapur/Velimela belt)' : code.startsWith('P022') ? 'Medchal-Malkajgiri (North/East Hyderabad)' : 'Telangana';
-        return `<div><strong>${escHtml(code)}</strong> is not in the ${projects.length} featured HydEstate Pulse projects yet, but its prefix indicates <strong>${district}</strong>. Verify the official certificate, quarterly progress, and completion date directly on <a href="https://rerait.telangana.gov.in/SearchList/Search" target="_blank" rel="noopener noreferrer" class="text-indigo-600 font-semibold underline">TG-RERA Official Search ↗</a>.</div>`;
+        return `<div class="space-y-1.5"><p><strong>TG-RERA ID ${escHtml(code)}</strong> is not in our ${projects.length} featured listings yet, and its prefix indicates <strong>${district}</strong>.</p><p>You can inspect the official builder name, approved towers, quarterly progress, and completion date directly on <a href="https://rerait.telangana.gov.in/SearchList/Search" target="_blank" rel="noopener noreferrer" class="text-indigo-600 font-semibold underline">TG-RERA Official Search ↗</a>.</p></div>`;
       }
 
-      // 2. Compare or match specific project names
+      // 2. EMI / All-in Cost Calculation for explicit ₹ Cr amount
+      const emiAmountMatch = q.match(/(?:emi|cost|stamp|total|budget).*?([0-9]+(?:\.[0-9]+)?)\s*(?:cr|crore)/);
+      if (emiAmountMatch && (q.includes('emi') || q.includes('cost') || q.includes('stamp') || q.includes('monthly'))) {
+        const cr = parseFloat(emiAmountMatch[1]);
+        if (cr > 0 && cr < 100) {
+          return buildCostBreakdownHtml(cr, q.includes('ready'));
+        }
+      }
+
+      // 3. Match specific project names
       const matchedByName = projects.filter((p) => {
         const nameLower = p.name.toLowerCase();
-        const words = nameLower.split(/\s+/).filter((w) => w.length >= 4 && !['towers', 'hyderabad', 'raghava', 'aparna', 'rajapushpa'].includes(w));
+        const words = nameLower.split(/\s+/).filter((w) => w.length >= 4 && !['towers', 'hyderabad', 'raghava', 'aparna', 'rajapushpa', 'home', 'villa'].includes(w));
         return q.includes(nameLower) || words.some((w) => q.includes(w));
       });
 
-      if (matchedByName.length >= 2 && (q.includes('compare') || q.includes('vs') || q.includes('and'))) {
-        const top = matchedByName.slice(0, 4);
-        return `<div>Here is a side-by-side look at <strong>${top.map((p) => escHtml(p.name)).join(' vs ')}</strong>:</div>${top.map(renderSkyProjectSnippet).join('')}`;
+      if (matchedByName.length >= 2 && (q.includes('compare') || q.includes('vs') || q.includes('difference') || q.includes('better'))) {
+        const top = matchedByName.slice(0, 3);
+        const rows = top.map((p) => `<li><strong>${escHtml(p.name)}</strong> (${escHtml(p.locality)}): ${formatCr(p.minCr)}–${formatCr(p.maxCr)} at ${formatINR(p.rateSqft)}/sq.ft • Possession ${escHtml(p.endDate)} • RERA <span class="font-mono">${escHtml(p.rera)}</span></li>`).join('');
+        return `<div class="space-y-1.5"><p><strong>Detailed Comparison:</strong></p><ul class="list-disc pl-4 space-y-1">${rows}</ul></div>${top.map(renderSkyProjectSnippet).join('')}`;
       }
 
       if (matchedByName.length === 1) {
-        const p = matchedByName[0];
-        return `<div>Here are the verified TG-RERA details for <strong>${escHtml(p.name)}</strong>:</div>${renderSkyProjectSnippet(p)}`;
+        skyState.lastProject = matchedByName[0];
+        return buildDetailedProjectReport(matchedByName[0]);
       }
 
-      // 3. TG-RERA verification / legal / audit rules
+      // 4. Real Estate Terminology: Carpet Area, Super Built-Up, UDS, OC vs CC, HMDA vs GHMC vs DTCP
+      if (q.includes('carpet') || q.includes('super built') || q.includes('uds') || q.includes('undivided') || q.includes('hmda') || q.includes('dtcp') || q.includes('ghmc') || q.includes('occupancy') || q.includes('oc ') || q.endsWith('oc')) {
+        return `<div class="space-y-2">
+          <p><strong>Key Hyderabad Real Estate Terms Explained:</strong></p>
+          <ul class="list-disc pl-4 space-y-1">
+            <li><strong>Carpet Area vs Super Built-Up (SBA):</strong> Carpet area is usable interior floor space (RERA mandates quoting it); SBA adds walls, balconies, and ~25–32% common clubhouse/corridor loading.</li>
+            <li><strong>UDS (Undivided Share of Land):</strong> Your legal share of the project land. Higher UDS (or gated villas) drives stronger long-term land value.</li>
+            <li><strong>HMDA vs GHMC vs DTCP:</strong> <strong>GHMC</strong> governs core city limits; <strong>HMDA</strong> approves outer growth corridors (Kokapet, Tellapur, Kollur, Tukkuguda); <strong>DTCP</strong> applies to peripheral gram panchayats outside HMDA.</li>
+            <li><strong>OC (Occupancy Certificate):</strong> Issued after completion; once OC is received, <strong>0% GST</strong> applies (vs 5% during construction).</li>
+          </ul>
+        </div>`;
+      }
+
+      // 5. Home Loans, NRI Buying Rules & Capital Gains Tax
+      if (q.includes('loan') || q.includes('interest') || q.includes('nri') || q.includes('bank') || q.includes('sbi') || q.includes('hdfc') || q.includes('capital gain') || q.includes('section 54')) {
+        return `<div class="space-y-2">
+          <p><strong>Home Loans, NRI Rules &amp; Property Taxes in Hyderabad:</strong></p>
+          <ul class="list-disc pl-4 space-y-1">
+            <li><strong>Home Loan Rates (2026):</strong> Major banks (SBI, HDFC, ICICI) typically offer <strong>8.35% – 8.85% p.a.</strong> with up to 75–80% LTV on TG-RERA approved projects.</li>
+            <li><strong>NRI Buyers:</strong> NRIs/OCIs can freely buy residential flats and villas in India via NRE/NRO/FCNR accounts (no RBI permission needed); TDS applies on resale above ₹50L (1% for resident sellers, higher for NRI sellers unless lower-TDS certificate is obtained).</li>
+            <li><strong>Capital Gains (Sec 54):</strong> Long-term capital gains from selling a residential property held &gt;24 months can be reinvested into another residential property in India to claim exemption under Section 54.</li>
+          </ul>
+        </div>`;
+      }
+
+      // 6. Buyer Due Diligence / Legal Checklist / Filing a Complaint
+      if (q.includes('checklist') || q.includes('before buying') || q.includes('due diligence') || q.includes('safe') || q.includes('scam') || q.includes('complaint')) {
+        return `<div class="space-y-2">
+          <p><strong>Hyderabad Homebuyer Legal &amp; TG-RERA Checklist:</strong></p>
+          <ol class="list-decimal pl-4 space-y-1">
+            <li><strong>Verify TG-RERA ID:</strong> Never pay a booking token without confirming an active <span class="font-mono">P024/P011/P022</span> ID on <a href="https://rerait.telangana.gov.in/SearchList/Search" target="_blank" rel="noopener noreferrer" class="text-indigo-600 font-semibold underline">rerait.telangana.gov.in ↗</a> (TG-RERA fined unregistered projects up to ₹25L under Sec. 3 &amp; 59).</li>
+            <li><strong>Agreement Possession Date:</strong> Your Agreement for Sale date governs delay interest (typically SBI MCLR + 2% ≈ 10.85% p.a.).</li>
+            <li><strong>Verify HMDA/GHMC Sanction &amp; UDS:</strong> Confirm Undivided Share (UDS), Form-7 annual audit status, and litigation disclosures.</li>
+            <li><strong>Escrow Account:</strong> Pay only into the project's designated 70% RERA escrow account.</li>
+          </ol>
+        </div>`;
+      }
+
+      // 7. Investment / ROI / Villa vs Apartment / Rental Yield Advisory
+      if (q.includes('roi') || q.includes('invest') || q.includes('yield') || q.includes('appreciation') || q.includes('villa or apartment') || q.includes('villa vs apartment')) {
+        const budgetMatch = q.match(/([0-9]+(?:\.[0-9]+)?)\s*(?:cr|crore)/);
+        const budgetNote = budgetMatch ? `With a <strong>₹${budgetMatch[1]} Cr</strong> budget, ` : '';
+        let recs = [];
+        if (budgetMatch) {
+          const b = parseFloat(budgetMatch[1]);
+          recs = projects.filter((p) => p.minCr <= b * 1.15).sort((a, b2) => b2.minCr - a.minCr).slice(0, 2);
+        }
+        return `<div class="space-y-2">
+          <p><strong>Hyderabad 2026 Investment &amp; ROI Strategy:</strong></p>
+          <p>${budgetNote}West Hyderabad remains the primary liquidity engine, while North &amp; South offer lower entry bases:</p>
+          <ul class="list-disc pl-4 space-y-1">
+            <li><strong>Best Rental Yield (4%–5% gross):</strong> Financial District, Nanakramguda &amp; Gachibowli apartments (constant corporate tenant demand).</li>
+            <li><strong>Best Capital Appreciation (3–5 yr):</strong> Neopolis/Kokapet (Exit 1), Tellapur–Velimela (Exit 2), and Tukkuguda near RGIA Airport.</li>
+            <li><strong>Villas vs Apartments:</strong> Villas (Kollur, Tukkuguda, Kompally) offer higher land UDS appreciation; high-rise apartments offer better liquidity and easier rentals.</li>
+          </ul>
+          ${recs.length ? `<div class="pt-1 font-semibold text-xs text-indigo-700">Top RERA Matches Near Your Budget:</div>` + recs.map(renderSkyProjectSnippet).join('') : ''}
+        </div>`;
+      }
+
+      // 8. TG-RERA verification / legal / audit rules
       if (q.includes('rera') && !q.includes('list') && matchedByName.length === 0 && !q.includes('project')) {
         return `<div class="space-y-2">
-          <p><strong>How TG-RERA Works in Hyderabad:</strong></p>
+          <p><strong>TG-RERA Rules &amp; Verification in Hyderabad:</strong></p>
           <ul class="list-disc pl-4 space-y-1">
-            <li><strong>Verify Any Project:</strong> Search by project name or RERA ID on <a href="https://rerait.telangana.gov.in/SearchList/Search" target="_blank" rel="noopener noreferrer" class="text-indigo-600 font-semibold underline">rerait.telangana.gov.in ↗</a> to check sanctioned plans, land title, and legal completion dates.</li>
-            <li><strong>District Prefixes:</strong> <span class="font-mono">P024...</span> = Ranga Reddy (Kokapet, Financial District, Tukkuguda), <span class="font-mono">P011...</span> = Sangareddy (Kollur, Tellapur, Osman Nagar), <span class="font-mono">P022...</span> = Medchal-Malkajgiri (Kompally, Bachupally, Pocharam).</li>
-            <li><strong>Buyer Protection:</strong> Under TG-RERA Sections 3, 59 &amp; 63, builders cannot advertise or sell unregistered units (e.g., Nov 2026 enforcement fined unregistered projects up to ₹25L and ordered refunds with interest). Form-7 annual audits are due Dec 21, 2026.</li>
+            <li><strong>Verify Online:</strong> Search any project on <a href="https://rerait.telangana.gov.in/SearchList/Search" target="_blank" rel="noopener noreferrer" class="text-indigo-600 font-semibold underline">rerait.telangana.gov.in ↗</a> for sanctioned towers, litigation disclosures, and legal end dates.</li>
+            <li><strong>District Codes:</strong> <span class="font-mono">P024</span> = Ranga Reddy (Kokapet, FD, Tukkuguda), <span class="font-mono">P011</span> = Sangareddy (Kollur, Tellapur), <span class="font-mono">P022</span> = Medchal-Malkajgiri (Kompally, Bachupally, Pocharam).</li>
+            <li><strong>Latest Nov 2026 Updates:</strong> TG-RERA fined unregistered projects up to ₹25L, ordered 10.85% interest refunds, extended Form-7 annual audits to Dec 21, 2026, and set Nov 30, 2026 for 4-month extended projects.</li>
           </ul>
         </div>`;
       }
 
-      // 4. Stamp Duty, Registration, GST & IGRS
+      // 9. Stamp Duty, Registration, GST & IGRS
       if (q.includes('stamp') || q.includes('duty') || q.includes('registration') || q.includes('gst') || q.includes('igrs') || q.includes('tax')) {
         return `<div class="space-y-2">
-          <p><strong>Telangana Registration &amp; Tax Breakdown (Hyderabad Urban):</strong></p>
+          <p><strong>Telangana Registration &amp; GST Breakdown (Hyderabad Urban):</strong></p>
           <ul class="list-disc pl-4 space-y-1">
-            <li><strong>Total Registration Charge: 7.5%</strong> (5.5% Stamp Duty + 1.5% Transfer Duty + 0.5% Registration Fee) on agreement value or <a href="https://registration.telangana.gov.in/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 font-semibold underline">IGRS Telangana ↗</a> circle value, whichever is higher.</li>
-            <li><strong>GST:</strong> <strong>5%</strong> on under-construction residential flats/villas (without ITC); <strong>0% GST</strong> on Ready-to-Move properties that have received an Occupancy Certificate (OC).</li>
-            <li>Use the <strong>Flat Cost &amp; Stamp Duty</strong> tab in this app to calculate exact all-in cost and monthly EMI for any project.</li>
+            <li><strong>Total Registration: 7.5%</strong> (5.5% Stamp Duty + 1.5% Transfer Duty + 0.5% Registration Fee) via <a href="https://registration.telangana.gov.in/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 font-semibold underline">IGRS Telangana ↗</a>.</li>
+            <li><strong>GST:</strong> <strong>5%</strong> on under-construction homes; <strong>0% GST</strong> on Ready-to-Move homes with Occupancy Certificate (OC).</li>
+            <li>Ask me <em>"Calculate cost and EMI for 1.8 Cr"</em> or open the <strong>Flat Cost &amp; Stamp Duty</strong> tab for exact numbers.</li>
           </ul>
         </div>`;
       }
 
-      // 5. Location / Corridor Benchmarks
-      if ((q.includes('kokapet') && q.includes('tellapur')) || q.includes('benchmark') || q.includes('corridor') || q.includes('where to invest') || q.includes('best location')) {
+      // 10. Corridor / Locality Guide (single or multi-locality comparison)
+      const matchedCorridorKeys = Object.keys(HYD_CORRIDORS).filter((k) => q.includes(k));
+      if (matchedCorridorKeys.length >= 2) {
+        const items = matchedCorridorKeys.slice(0, 3).map((k) => {
+          const c = HYD_CORRIDORS[k];
+          return `<li><strong>${escHtml(c.name)}:</strong> ${escHtml(c.rate)} — ${escHtml(c.pros)} <em>Ideal for: ${escHtml(c.ideal)}</em></li>`;
+        }).join('');
+        return `<div class="space-y-2"><p><strong>Locality Comparison in Hyderabad (2026):</strong></p><ul class="list-disc pl-4 space-y-1">${items}</ul></div>`;
+      }
+
+      if (matchedCorridorKeys.length === 1 && (q.includes('about') || q.includes('rate') || q.includes('price') || q.includes('benchmark') || q.includes('how is') || q.split(/\s+/).length <= 3)) {
+        const k = matchedCorridorKeys[0];
+        const c = HYD_CORRIDORS[k];
+        const localProjs = projects.filter((p) => p.locality.toLowerCase().includes(k) || p.name.toLowerCase().includes(k)).slice(0, 3);
         return `<div class="space-y-2">
-          <p><strong>Hyderabad Growth Corridors &amp; 2026 Price Benchmarks:</strong></p>
+          <p><strong>${escHtml(c.name)} — 2026 Real Estate Overview:</strong></p>
           <ul class="list-disc pl-4 space-y-1">
-            <li><strong>Kokapet / Neopolis (West):</strong> Avg ~₹11,019/sq.ft (luxury median ₹12,663/sq.ft; ultra-luxury up to ₹15,000/sq.ft). Direct ORR Exit 1 &amp; Financial District access.</li>
-            <li><strong>Tellapur &amp; Kollur (West):</strong> Tellapur avg ~₹8,661/sq.ft; Kollur (ORR Exit 2) is Hyderabad's villa &amp; mid-luxury high-rise hotspot (₹7,000–₹16,500/sq.ft).</li>
-            <li><strong>Kompally &amp; Bachupally (North):</strong> ₹6,500–₹8,900/sq.ft with strong end-user villa &amp; gated demand along NH-44.</li>
-            <li><strong>Tukkuguda (South) &amp; Pocharam (East):</strong> Tukkuguda villa belt near RGIA Airport (₹10,499/sq.ft); Pocharam IT corridor offers value 3 BHKs around ₹6,550/sq.ft.</li>
+            <li><strong>Price Benchmark:</strong> ${escHtml(c.rate)}</li>
+            <li><strong>Connectivity &amp; Drivers:</strong> ${escHtml(c.pros)}</li>
+            <li><strong>Ideal Buyer Profile:</strong> ${escHtml(c.ideal)}</li>
           </ul>
+          ${localProjs.length ? `<div class="text-xs font-semibold text-indigo-700 pt-1">Featured TG-RERA Projects Here:</div>` + localProjs.map(renderSkyProjectSnippet).join('') : ''}
         </div>`;
       }
 
-      // 6. Dynamic Filter Search across Projects (Builder, Type, Zone, Locality, Budget, BHK, Year)
+      if (q.includes('benchmark') || q.includes('corridor') || q.includes('best location') || q.includes('areas in hyderabad')) {
+        const list = Object.values(HYD_CORRIDORS).slice(0, 8).map((c) => `<li><strong>${escHtml(c.name)}:</strong> ${escHtml(c.rate)} — ${escHtml(c.pros)}</li>`).join('');
+        return `<div><strong>Hyderabad Key Residential Corridors (2026):</strong><ul class="list-disc pl-4 mt-1.5 space-y-1">${list}</ul></div>`;
+      }
+
+      // 11. Dynamic Filter Search across Projects
       let filtered = [...projects];
       const filtersApplied = [];
 
-      // Builder filter
-      const builders = ['raghava', 'rajapushpa', 'ghr', 'prestige', 'tribeca', 'brigade', 'aparna', 'asbl', 'ramky', 'casagrand', 'urbanrise', 'vertex', 'hallmark', 'bhavya', 'greenmark', 'radhey', 'team4', 'sunyuga', 'yashoda', 'vaishno', 'avr', 'ira'];
+      const builders = ['raghava', 'rajapushpa', 'ghr', 'prestige', 'tribeca', 'brigade', 'aparna', 'asbl', 'ramky', 'casagrand', 'urbanrise', 'vertex', 'hallmark', 'bhavya', 'greenmark', 'radhey', 'team4', 'sunyuga', 'yashoda', 'vaishno', 'avr', 'ira', 'lansum', 'my home'];
       const matchedBuilder = builders.find((b) => q.includes(b));
       if (matchedBuilder) {
         filtered = filtered.filter((p) => p.builder.toLowerCase().includes(matchedBuilder) || p.name.toLowerCase().includes(matchedBuilder));
         filtersApplied.push(`builder "${matchedBuilder}"`);
       }
 
-      // Type filter
       if (q.includes('villa')) {
-        filtered = filtered.filter((p) => p.type === 'Villa');
+        filtered = filtered.filter((p) => (p.type || p.propertyType) === 'Villa');
         filtersApplied.push('Villas');
       } else if (q.includes('apartment') || q.includes('flat')) {
-        filtered = filtered.filter((p) => p.type === 'Apartment');
+        filtered = filtered.filter((p) => (p.type || p.propertyType || 'Apartment') === 'Apartment');
         filtersApplied.push('Apartments');
       }
 
-      // Zone / Locality filter
-      const locKeywords = ['kokapet', 'neopolis', 'tellapur', 'kollur', 'nanakramguda', 'financial district', 'raidurg', 'gachibowli', 'nallagandla', 'osman nagar', 'kompally', 'bachupally', 'miyapur', 'madinaguda', 'pocharam', 'tukkuguda', 'mankhal', 'mokila', 'shankarpalli', 'velimela'];
+      const locKeywords = ['kokapet', 'neopolis', 'tellapur', 'kollur', 'nanakramguda', 'financial district', 'raidurg', 'gachibowli', 'nallagandla', 'osman nagar', 'kompally', 'bachupally', 'miyapur', 'madinaguda', 'pocharam', 'tukkuguda', 'mankhal', 'mokila', 'shankarpalli', 'velimela', 'puppalaguda'];
       const matchedLoc = locKeywords.find((l) => q.includes(l));
       if (matchedLoc) {
         filtered = filtered.filter((p) => p.locality.toLowerCase().includes(matchedLoc) || p.name.toLowerCase().includes(matchedLoc));
         filtersApplied.push(matchedLoc);
-      } else if (/west/.test(q)) {
+      } else if (/\bwest\b/.test(q)) {
         filtered = filtered.filter((p) => p.zone === 'West');
         filtersApplied.push('West Hyderabad');
-      } else if (/north-west/.test(q)) {
+      } else if (/\bnorth-west\b/.test(q)) {
         filtered = filtered.filter((p) => p.zone === 'North-West');
         filtersApplied.push('North-West Hyderabad');
-      } else if (/north/.test(q)) {
+      } else if (/\bnorth\b/.test(q)) {
         filtered = filtered.filter((p) => p.zone === 'North');
         filtersApplied.push('North Hyderabad');
-      } else if (/south/.test(q)) {
+      } else if (/\bsouth\b/.test(q)) {
         filtered = filtered.filter((p) => p.zone === 'South');
         filtersApplied.push('South Hyderabad');
-      } else if (/east/.test(q)) {
+      } else if (/\beast\b/.test(q)) {
         filtered = filtered.filter((p) => p.zone === 'East');
         filtersApplied.push('East Hyderabad');
       }
 
-      // BHK filter
       const bhkMatch = q.match(/([2-6])(\.5)?\s*bhk/);
       if (bhkMatch) {
         const bhkNum = bhkMatch[1] + (bhkMatch[2] || '');
@@ -2117,7 +2323,6 @@
         filtersApplied.push(`${bhkNum} BHK`);
       }
 
-      // Budget filter
       const underMatch = q.match(/(?:under|below|within|max|less than)\s*₹?\s*([0-9]+(?:\.[0-9]+)?)\s*(?:cr|crore)?/);
       const aboveMatch = q.match(/(?:above|over|min|more than)\s*₹?\s*([0-9]+(?:\.[0-9]+)?)\s*(?:cr|crore)?/);
       if (underMatch) {
@@ -2131,43 +2336,68 @@
         filtersApplied.push(`above ₹${minBudget} Cr`);
       }
 
-      // Status / Ready filter
       if (q.includes('ready')) {
         filtered = filtered.filter((p) => p.status.toLowerCase().includes('ready'));
         filtersApplied.push('Ready / Near Possession');
       }
 
-      // Year filter
       const yearMatch = q.match(/202[6-9]|203[0-2]/);
       if (yearMatch) {
         filtered = filtered.filter((p) => p.endDate.includes(yearMatch[0]) || p.startDate.includes(yearMatch[0]));
         filtersApplied.push(`timeline ${yearMatch[0]}`);
       }
 
-      // Cheapest / Luxury sorting
       if (q.includes('cheap') || q.includes('lowest') || q.includes('affordable') || q.includes('budget')) {
         filtered.sort((a, b) => a.minCr - b.minCr);
         if (filtersApplied.length === 0) filtersApplied.push('most affordable');
-      } else if (q.includes('luxury') || q.includes('expensive') || q.includes('premium') || q.includes('highest')) {
+      } else if (q.includes('luxury') || q.includes('premium') || q.includes('expensive') || q.includes('highest')) {
         filtered.sort((a, b) => b.maxCr - a.maxCr);
         if (filtersApplied.length === 0) filtersApplied.push('ultra-luxury');
       }
 
       if (matchedByName.length > 1 && filtersApplied.length === 0) {
+        skyState.lastProject = matchedByName[0];
         return `<div>Found <strong>${matchedByName.length}</strong> matching projects:</div>${matchedByName.slice(0, 4).map(renderSkyProjectSnippet).join('')}`;
       }
 
       if (filtersApplied.length > 0) {
         if (filtered.length === 0) {
-          return `<div>No projects matched <strong>${escHtml(filtersApplied.join(', '))}</strong> in our current ${projects.length} TG-RERA listings. Try broadening your budget or location, or check <a href="https://rerait.telangana.gov.in/SearchList/Search" target="_blank" rel="noopener noreferrer" class="text-indigo-600 font-semibold underline">TG-RERA Official Search ↗</a>.</div>`;
+          return `<div>No projects matched <strong>${escHtml(filtersApplied.join(', '))}</strong> in our ${projects.length} TG-RERA listings. Try widening your budget or check <a href="https://rerait.telangana.gov.in/SearchList/Search" target="_blank" rel="noopener noreferrer" class="text-indigo-600 font-semibold underline">TG-RERA Official Search ↗</a>.</div>`;
         }
+        skyState.lastProject = filtered[0];
         const shown = filtered.slice(0, 4);
-        const extra = filtered.length > 4 ? `<div class="mt-2 text-[11px] text-slate-500">Showing top 4 of <strong>${filtered.length}</strong> matching projects. Use the search bar on the Projects tab to see all ${filtered.length}.</div>` : '';
+        const extra = filtered.length > 4 ? `<div class="mt-2 text-[11px] text-slate-500">Showing top 4 of <strong>${filtered.length}</strong> matches. Use the Projects tab filters to browse all ${filtered.length}.</div>` : '';
         return `<div>Found <strong>${filtered.length}</strong> project(s) for <strong>${escHtml(filtersApplied.join(', '))}</strong>:</div>${shown.map(renderSkyProjectSnippet).join('')}${extra}`;
       }
 
-      // Fallback helpful summary
-      return `<div>I currently track <strong>${projects.length} TG-RERA verified projects</strong> across Hyderabad (Apartments &amp; Villas). Try asking:<br>• <em>"Trump Towers Hyderabad"</em> or <em>"Brigade Barcelona"</em><br>• <em>"Raghava projects"</em> or <em>"Villas in Kollur"</em><br>• <em>"Projects under 2 Cr"</em> or <em>"How to verify TG-RERA?"</em><br>• <em>"Stamp duty and GST in Telangana"</em></div>`;
+      // Smart Fallback with direct Google & TG-RERA search links for any unlisted project/topic
+      const googleQuery = encodeURIComponent(rawQuery + ' Hyderabad real estate TG-RERA');
+      return `<div class="space-y-2">
+        <p>I didn't find an exact match for <strong>"${escHtml(rawQuery)}"</strong> in our ${projects.length} featured TG-RERA projects, but you can verify it instantly:</p>
+        <div class="flex flex-wrap gap-2">
+          <a href="https://www.google.com/search?q=${googleQuery}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold hover:bg-indigo-100">Search Google for "${escHtml(rawQuery)}" ↗</a>
+          <a href="https://rerait.telangana.gov.in/SearchList/Search" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold hover:bg-emerald-100">Verify on TG-RERA Portal ↗</a>
+        </div>
+        <p class="text-[11px] text-slate-500">Tip: For full open-ended Gemini answers on any unlisted project, tap <strong>⚙️ AI Mode</strong> above to connect a free Gemini API key.</p>
+      </div>`;
+    }
+
+    async function askLiveGemini(userQuery) {
+      const compactProjects = (state.projects || []).map((p) => `${p.name} | ${p.type || p.propertyType || 'Apartment'} | ${p.locality} (${p.zone}) | ${p.builder} | RERA: ${p.rera} | ${p.startDate}-${p.endDate} | ${p.bhkLabel} | ${p.areaLabel} | ₹${p.rateSqft}/sqft | ₹${p.minCr}-${p.maxCr} Cr | ${p.status}`).join('\n');
+      const systemPrompt = `You are Sky AI, an expert Hyderabad Real Estate & TG-RERA advisor (like Claude/Gemini). Answer clearly, concisely, and accurately using ONLY verified facts. Telangana urban registration is 7.5% (5.5% stamp duty + 1.5% transfer + 0.5% fee); GST is 5% under-construction, 0% ready with OC. TG-RERA portal: https://rerait.telangana.gov.in/SearchList/Search.\nVerified Projects:\n${compactProjects}`;
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(skyState.geminiKey)}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          systemInstruction: { parts: [{ text: systemPrompt }] },
+          contents: [{ role: 'user', parts: [{ text: userQuery }] }]
+        })
+      });
+      if (!res.ok) throw new Error('API error');
+      const data = await res.json();
+      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!text) throw new Error('Empty response');
+      return escHtml(text).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
     }
 
     function appendSkyMessage(role, htmlContent) {
@@ -2182,11 +2412,29 @@
       wrap.appendChild(bubble);
       box.appendChild(wrap);
       box.scrollTop = box.scrollHeight;
+      return bubble;
     }
 
     function initSkyAI() {
       const box = $('sky-ai-messages');
-      if (box.children.length === 0) appendSkyMessage('ai', SKY_AI_WELCOME);
+      if (box.children.length === 0) appendSkyMessage('ai', getSkyWelcome());
+      updateSkyModeBadge();
+    }
+
+    async function handleSkyQuery(text) {
+      appendSkyMessage('user', escHtml(text));
+      if (skyState.geminiKey) {
+        const thinking = appendSkyMessage('ai', '<span class="text-slate-400">✨ Sky AI is thinking...</span>');
+        try {
+          const liveHtml = await askLiveGemini(text);
+          thinking.innerHTML = liveHtml;
+          return;
+        } catch (err) {
+          thinking.innerHTML = answerSkyAI(text) + '<div class="mt-2 text-[10px] text-amber-700">Live Gemini key unavailable or rate-limited; answered using Built-in Smart Mode.</div>';
+          return;
+        }
+      }
+      appendSkyMessage('ai', answerSkyAI(text));
     }
 
     $('btn-open-sky-ai').addEventListener('click', () => {
@@ -2195,26 +2443,39 @@
       setTimeout(() => $('sky-ai-input').focus(), 60);
     });
     $('btn-close-sky-ai').addEventListener('click', () => $('sky-ai-modal').classList.add('hidden'));
+    $('btn-sky-settings').addEventListener('click', () => {
+      $('sky-ai-settings-panel').classList.toggle('hidden');
+      $('sky-gemini-key').value = skyState.geminiKey;
+    });
+    $('btn-save-sky-key').addEventListener('click', () => {
+      skyState.geminiKey = $('sky-gemini-key').value.trim();
+      try { localStorage.setItem('hydestate_gemini_key', skyState.geminiKey); } catch (e) {}
+      updateSkyModeBadge();
+      $('sky-ai-settings-panel').classList.add('hidden');
+      showToast(skyState.geminiKey ? 'Live Gemini AI Mode enabled!' : 'Built-in Smart Mode active.');
+    });
+    $('btn-clear-sky-key').addEventListener('click', () => {
+      skyState.geminiKey = '';
+      $('sky-gemini-key').value = '';
+      try { localStorage.removeItem('hydestate_gemini_key'); } catch (e) {}
+      updateSkyModeBadge();
+      showToast('Reverted to Built-in Smart Mode.');
+    });
     $('btn-clear-sky-ai').addEventListener('click', () => {
       $('sky-ai-messages').innerHTML = '';
-      appendSkyMessage('ai', SKY_AI_WELCOME);
+      skyState.lastProject = null;
+      appendSkyMessage('ai', getSkyWelcome());
     });
     $('sky-ai-form').addEventListener('submit', (e) => {
       e.preventDefault();
       const input = $('sky-ai-input');
       const text = input.value.trim();
       if (!text) return;
-      appendSkyMessage('user', escHtml(text));
       input.value = '';
-      const reply = answerSkyAI(text);
-      appendSkyMessage('ai', reply);
+      handleSkyQuery(text);
     });
     document.querySelectorAll('.sky-chip').forEach((chip) => {
-      chip.addEventListener('click', () => {
-        const text = chip.textContent.trim();
-        appendSkyMessage('user', escHtml(text));
-        appendSkyMessage('ai', answerSkyAI(text));
-      });
+      chip.addEventListener('click', () => handleSkyQuery(chip.textContent.trim()));
     });
     $('sky-ai-messages').addEventListener('click', (e) => {
       const btn = e.target.closest('[data-sky-detail]');
