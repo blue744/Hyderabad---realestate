@@ -1,6 +1,56 @@
 {
-  "updatedAt": "Nov 18, 2026",
+  "updatedAt": "Nov 19, 2026",
   "projects": [
+    {
+      "id": "my-home-nishada",
+      "name": "My Home Nishada",
+      "propertyType": "Apartment",
+      "locality": "Neopolis, Kokapet",
+      "zone": "West",
+      "builder": "My Home Constructions",
+      "rera": "P02400004696",
+      "status": "Ready / Near Possession",
+      "startDate": "May 2022",
+      "endDate": "Dec 2026",
+      "endYear": 2026,
+      "endSort": 202612,
+      "bhks": [
+        "3",
+        "3.5",
+        "4"
+      ],
+      "bhkLabel": "3, 3.5, 4 BHK",
+      "areaLabel": "3,450 – 4,617 sq.ft",
+      "defaultSqft": 3450,
+      "rateSqft": 12000,
+      "minCr": 4.28,
+      "maxCr": 5.82,
+      "note": "16.68-acre Neopolis resort-themed community; 8 towers (44 floors), 80% open space."
+    },
+    {
+      "id": "lansum-el-palacio",
+      "name": "Lansum EL Palacio",
+      "propertyType": "Apartment",
+      "locality": "Puppalaguda",
+      "zone": "West",
+      "builder": "Lansum Group",
+      "rera": "P02400009760",
+      "status": "Under Construction",
+      "startDate": "Dec 2025",
+      "endDate": "Dec 2029",
+      "endYear": 2029,
+      "endSort": 202912,
+      "bhks": [
+        "3"
+      ],
+      "bhkLabel": "3 BHK",
+      "areaLabel": "1,715 – 2,320 sq.ft",
+      "defaultSqft": 1715,
+      "rateSqft": 8921,
+      "minCr": 1.37,
+      "maxCr": 2.06,
+      "note": "3-acre Alkapur Township / Puppalaguda 2-tower project; 1 covered parking per unit."
+    },
     {
       "id": "prestige-golden-grove",
       "name": "Prestige Golden Grove",
