@@ -2,6 +2,56 @@
   "updatedAt": "Nov 19, 2026",
   "projects": [
     {
+      "id": "vertex-33-west",
+      "name": "Vertex 33 West",
+      "propertyType": "Apartment",
+      "locality": "Nallagandla",
+      "zone": "West",
+      "builder": "Vertex Homes",
+      "rera": "P02400006931",
+      "status": "Under Construction",
+      "startDate": "Sep 2023",
+      "endDate": "Aug 2028",
+      "endYear": 2028,
+      "endSort": 202808,
+      "bhks": [
+        "2",
+        "3"
+      ],
+      "bhkLabel": "2, 3 BHK",
+      "areaLabel": "1,360 – 2,080 sq.ft",
+      "defaultSqft": 1690,
+      "rateSqft": 8500,
+      "minCr": 1.16,
+      "maxCr": 2.05,
+      "note": "3 acres, 2 towers of 33 floors (524 units) near Old Mumbai Hwy, Nallagandla."
+    },
+    {
+      "id": "vertex-viraat",
+      "name": "Vertex Viraat",
+      "propertyType": "Apartment",
+      "locality": "Miyapur",
+      "zone": "North-West",
+      "builder": "Vertex Homes",
+      "rera": "P02400005475",
+      "status": "Under Construction",
+      "startDate": "2023",
+      "endDate": "Oct 2028",
+      "endYear": 2028,
+      "endSort": 202810,
+      "bhks": [
+        "2",
+        "3"
+      ],
+      "bhkLabel": "2, 3 BHK",
+      "areaLabel": "1,340 – 2,080 sq.ft",
+      "defaultSqft": 1650,
+      "rateSqft": 7611,
+      "minCr": 1.07,
+      "maxCr": 1.77,
+      "note": "8.75 acres, 6 towers of 30 floors (1,428 units) in Miyapur, NH-65."
+    },
+    {
       "id": "my-home-nishada",
       "name": "My Home Nishada",
       "propertyType": "Apartment",
