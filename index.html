@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Way Prop India — Verified RERA Projects, Flat Prices & Bank Auctions</title>
+  <title>The Way Prop India — Verified RERA Projects, Flat Prices &amp; Bank Auctions</title>
+  <meta name="description" content="Compare TG-RERA verified apartments, luxury villas, ₹/sq.ft rates, possession timelines, and SARFAESI bank auction properties across Hyderabad &amp; India on The Way Prop India." />
+  <link rel="canonical" href="https://thewaypropindia.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thewaypropindia.com/" />
+  <meta property="og:title" content="The Way Prop India — Verified RERA Projects &amp; Bank Auctions" />
+  <meta property="og:description" content="Track 41+ TG-RERA verified apartments, luxury villas, flat cost calculators, and SARFAESI bank auction flats in Hyderabad &amp; India." />
+  <meta property="og:site_name" content="The Way Prop India" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Way Prop India — Verified RERA Projects &amp; Bank Auctions" />
+  <meta name="twitter:description" content="Compare official RERA dates, ₹/sq.ft rates, luxury villas, and bank auction flats across Hyderabad &amp; India." />
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,6 +83,30 @@
   </header>
 
   <main class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 space-y-6">
+
+    <!-- Pan-India City Bar -->
+    <section aria-label="India Cities" class="flex items-center gap-2 overflow-x-auto custom-scroll pb-1">
+      <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 shrink-0 mr-1">India Hubs:</span>
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 text-white text-xs font-semibold whitespace-nowrap shadow-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        Hyderabad <span class="text-emerald-300 text-[10px]">(Live)</span>
+      </span>
+      <button type="button" data-city-soon="Bengaluru" class="city-soon-btn inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 hover:text-indigo-700 text-xs font-medium whitespace-nowrap transition">
+        Bengaluru <span class="text-[10px] text-slate-400">• Soon</span>
+      </button>
+      <button type="button" data-city-soon="Mumbai" class="city-soon-btn inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 hover:text-indigo-700 text-xs font-medium whitespace-nowrap transition">
+        Mumbai <span class="text-[10px] text-slate-400">• Soon</span>
+      </button>
+      <button type="button" data-city-soon="Pune" class="city-soon-btn inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 hover:text-indigo-700 text-xs font-medium whitespace-nowrap transition">
+        Pune <span class="text-[10px] text-slate-400">• Soon</span>
+      </button>
+      <button type="button" data-city-soon="Delhi-NCR" class="city-soon-btn inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 hover:text-indigo-700 text-xs font-medium whitespace-nowrap transition">
+        Delhi-NCR <span class="text-[10px] text-slate-400">• Soon</span>
+      </button>
+      <button type="button" data-city-soon="Chennai" class="city-soon-btn inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 hover:text-indigo-700 text-xs font-medium whitespace-nowrap transition">
+        Chennai <span class="text-[10px] text-slate-400">• Soon</span>
+      </button>
+    </section>
 
     <!-- Hero Banner -->
     <section class="relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-48 sm:h-60">
@@ -685,8 +719,12 @@
         </p>
       </div>
     </div>
-    <div class="border-t border-slate-800 py-4 px-4 sm:px-6 lg:px-8 text-center text-[11px] text-slate-500">
-      © 2026 The Way Prop India • thewaypropindia.com • Verify all documents on TG-RERA &amp; IGRS Telangana
+    <div class="border-t border-slate-800 py-4 px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 max-w-7xl mx-auto text-[11px] text-slate-500">
+      <span>© 2026 The Way Prop India • thewaypropindia.com • Verify all documents on TG-RERA &amp; IGRS Telangana</span>
+      <div class="flex items-center gap-4">
+        <button type="button" id="btn-open-privacy" class="text-slate-400 hover:text-cyan-400 underline underline-offset-2 transition">Privacy Policy</button>
+        <button type="button" id="btn-open-terms" class="text-slate-400 hover:text-cyan-400 underline underline-offset-2 transition">Terms &amp; RERA Disclaimer</button>
+      </div>
     </div>
   </footer>
 
@@ -3293,6 +3331,56 @@
         }
       } catch (e) { /* Uses built-in verified dataset when standalone */ }
     }
+
+    // City Soon buttons -> prefill enquiry modal
+    document.querySelectorAll('.city-soon-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const city = btn.getAttribute('data-city-soon');
+        openEnquireModal(city + ' RERA Launch Updates');
+      });
+    });
+
+    // Legal / AdSense Privacy & Terms Modal
+    const legalModal = document.createElement('div');
+    legalModal.id = 'legal-modal';
+    legalModal.className = 'hidden fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4';
+    legalModal.innerHTML = `
+      <div class="bg-white rounded-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-6 shadow-2xl border border-slate-200 space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+          <h3 id="legal-modal-title" class="text-base font-bold text-slate-900">Privacy Policy</h3>
+          <button type="button" id="legal-modal-close" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold">✕</button>
+        </div>
+        <div id="legal-modal-body" class="text-xs sm:text-sm text-slate-600 space-y-3 leading-relaxed"></div>
+      </div>
+    `;
+    document.body.appendChild(legalModal);
+
+    function openLegalModal(mode) {
+      const titleEl = $('legal-modal-title');
+      const bodyEl = $('legal-modal-body');
+      if (mode === 'privacy') {
+        titleEl.textContent = 'Privacy Policy — The Way Prop India';
+        bodyEl.innerHTML = `
+          <p><strong>1. Information We Collect:</strong> The Way Prop India (<strong>thewaypropindia.com</strong>) is a static informational property tracker. Your shortlisted projects and optional API preferences are stored locally in your own browser (<code>localStorage</code>).</p>
+          <p><strong>2. Enquiry Forms:</strong> When you voluntarily submit a project or auction enquiry form, your name, phone/WhatsApp number, and preference are transmitted securely via Web3Forms solely to respond to your request.</p>
+          <p><strong>3. Advertising &amp; Cookies (Google AdSense):</strong> Third-party vendors, including Google, may use cookies to serve ads based on a user's prior visits to this or other websites. You may opt out of personalized advertising by visiting Google Ads Settings.</p>
+          <p><strong>4. Contact:</strong> For data removal or privacy questions, email <span class="text-indigo-600 font-semibold">contact@thewaypropindia.com</span>.</p>
+        `;
+      } else {
+        titleEl.textContent = 'Terms & RERA Disclaimer';
+        bodyEl.innerHTML = `
+          <p><strong>1. Informational Purpose Only:</strong> All project timelines, TG-RERA numbers, ₹/sq.ft rates, and bank auction reserve prices shown on <strong>thewaypropindia.com</strong> are indicative and compiled from public RERA filings, bank notices, and market sources.</p>
+          <p><strong>2. Official Verification Required:</strong> Buyers and investors must independently verify all approvals, title deeds, encumbrance certificates, and auction terms directly on the official <strong>TG-RERA</strong> and <strong>IGRS Telangana</strong> portals or with the respective bank's Authorized Officer before making any payment.</p>
+          <p><strong>3. Updates &amp; Corrections:</strong> Developers or authorized representatives may request updates or corrections at <span class="text-indigo-600 font-semibold">contact@thewaypropindia.com</span>.</p>
+        `;
+      }
+      legalModal.classList.remove('hidden');
+    }
+
+    $('btn-open-privacy').addEventListener('click', () => openLegalModal('privacy'));
+    $('btn-open-terms').addEventListener('click', () => openLegalModal('terms'));
+    $('legal-modal-close').addEventListener('click', () => legalModal.classList.add('hidden'));
+    legalModal.addEventListener('click', (e) => { if (e.target === legalModal) legalModal.classList.add('hidden'); });
 
     // Init
     $('shortlist-count').textContent = state.shortlistIds.size;
