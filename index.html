@@ -2509,32 +2509,32 @@
       submitBtn.textContent = 'Sending...';
 
       const fd = new FormData(form);
+      const projName = fd.get('project') || 'General Hyderabad Enquiry';
+      const leadName = fd.get('fullName') || '';
       const payload = {
-        name: fd.get('fullName') || '',
+        access_key: 'f2174076-d277-4002-ba9a-04c484ec4536',
+        from_name: 'HydEstate Pulse',
+        subject: `New HydEstate Pulse Enquiry: ${projName} — ${leadName}`,
+        project: projName,
+        name: leadName,
         phone: fd.get('phone') || '',
-        project: fd.get('project') || 'General Hyderabad Enquiry',
         bhk: fd.get('bhk') || '',
-        zone: fd.get('zone') || '',
-        _subject: `New HydEstate Pulse Enquiry: ${fd.get('project') || 'Hyderabad'} — ${fd.get('fullName') || 'Lead'}`,
-        _template: 'table',
-        _captcha: 'false'
+        zone: fd.get('zone') || ''
       };
 
       try {
-        const dest = atob('c2VvdWxhY2Nlc3VzQGdtYWlsLmNvbQ==');
-        const res = await fetch(`https://formsubmit.co/ajax/${dest}`, {
+        const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(payload)
         });
-        if (!res.ok) throw new Error('Submit failed');
+        const resJson = await res.json().catch(() => ({}));
+        if (!res.ok || !resJson.success) throw new Error(resJson.message || 'Submission failed');
         $('enquire-modal').classList.add('hidden');
         form.reset();
         showToast('Thank you! Your enquiry has been sent. Our team will call you shortly.');
       } catch (err) {
-        $('enquire-modal').classList.add('hidden');
-        form.reset();
-        showToast('Enquiry received! Our team will reach out to you shortly.');
+        showToast('Could not send right now. Please check your connection and try again.');
       } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = origText;
