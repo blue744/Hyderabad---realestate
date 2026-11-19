@@ -57,6 +57,9 @@
       <button type="button" data-tab="premium" class="nav-tab tab-inactive border border-amber-300 bg-amber-50/60 text-amber-900 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap transition">
         👑 Premium
       </button>
+      <button type="button" data-tab="auctions" class="nav-tab tab-inactive border border-rose-300 bg-rose-50/60 text-rose-900 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap transition">
+        🔨 Bank Auctions
+      </button>
       <button type="button" data-tab="analytics" class="nav-tab tab-inactive border border-slate-200 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap transition">
         Price &amp; Timeline Charts
       </button>
@@ -286,6 +289,53 @@
         <p class="text-base font-semibold text-slate-800">No projects match your current filters</p>
         <p class="text-sm text-slate-500 mt-1">Try increasing the max budget or resetting your zone/year filters.</p>
         <button id="btn-empty-reset" type="button" class="mt-4 px-4 py-2 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700">Clear All Filters</button>
+      </div>
+    </section>
+
+    <!-- TAB: BANK AUCTION FLATS -->
+    <section id="tab-auctions" class="hidden space-y-5">
+      <div class="bg-gradient-to-r from-rose-950 via-slate-900 to-indigo-950 rounded-2xl p-6 sm:p-7 text-white shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <span class="inline-block px-2.5 py-1 rounded-full bg-rose-400/20 border border-rose-300/40 text-rose-200 text-[11px] font-bold uppercase tracking-wider">SARFAESI Act • Bank E-Auctions</span>
+          <h2 class="text-xl sm:text-2xl font-bold mt-2">Hyderabad Bank Auction Flats &amp; Houses</h2>
+          <p class="text-xs sm:text-sm text-slate-300 mt-1">Verified upcoming &amp; active bank foreclosure auctions across SBI, Canara Bank, HDFC, ICICI, Union Bank &amp; NBFCs (typically 15%–30% below market rate).</p>
+        </div>
+        <a href="https://baanknet.com/property-listing/Hyderabad/Flat" target="_blank" rel="noopener noreferrer" class="shrink-0 px-4 py-2.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white text-xs font-bold transition shadow-md text-center">Open Govt BAANKNET Portal ↗</a>
+      </div>
+
+      <!-- Bank Filter & Search -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+        <div class="flex items-center gap-1.5 overflow-x-auto custom-scroll pb-1 sm:pb-0">
+          <button type="button" data-bank-filter="All" class="bank-pill shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white">All Banks</button>
+          <button type="button" data-bank-filter="Canara" class="bank-pill shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Canara Bank</button>
+          <button type="button" data-bank-filter="HDFC" class="bank-pill shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">HDFC Bank</button>
+          <button type="button" data-bank-filter="ICICI" class="bank-pill shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">ICICI / NeoGrowth</button>
+          <button type="button" data-bank-filter="NBFC" class="bank-pill shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Chola / HDB</button>
+        </div>
+        <input id="auction-search" type="text" placeholder="Search area (e.g. Kukatpally, Hayathnagar)..." class="sm:w-64 px-3 py-1.5 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-500" />
+      </div>
+
+      <!-- Live Bank Auction Listings -->
+      <div id="auctions-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+      <!-- Official All-Bank E-Auction Directory -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm space-y-3">
+        <h3 class="text-base font-bold text-slate-900">Browse All Banks Live E-Auctions in Hyderabad</h3>
+        <p class="text-xs text-slate-600">Use these official portals to check live auction notices, KYC/EMD rules, and inspection dates for SBI, Union Bank, Bank of Baroda, PNB, Indian Bank, and private banks:</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <a href="https://baanknet.com/property-listing/Hyderabad/Flat" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl border border-indigo-200 bg-indigo-50/50 hover:bg-indigo-50 transition">
+            <div class="font-bold text-sm text-indigo-900">BAANKNET (Govt. PSB Portal) ↗</div>
+            <p class="text-[11px] text-slate-600 mt-1">Official DFS portal for SBI, Canara, Union Bank, Bank of Baroda, PNB &amp; Indian Bank flats in Hyderabad.</p>
+          </a>
+          <a href="https://findauction.in/bank-property/hyderabad" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl border border-rose-200 bg-rose-50/50 hover:bg-rose-50 transition">
+            <div class="font-bold text-sm text-rose-900">FindAuction Hyderabad (1,082+) ↗</div>
+            <p class="text-[11px] text-slate-600 mt-1">Daily SARFAESI notices across all public &amp; private banks with reserve price &amp; EMD schedules.</p>
+          </a>
+          <a href="https://foreclosureindia.com/bank-auctions/hyderabad" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl border border-emerald-200 bg-emerald-50/50 hover:bg-emerald-50 transition">
+            <div class="font-bold text-sm text-emerald-900">Foreclosure India (458+) ↗</div>
+            <p class="text-[11px] text-slate-600 mt-1">Active HDFC, Cholamandalam, HDB &amp; private bank residential auctions in Hyderabad.</p>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -2276,12 +2326,86 @@
         const active = btn.dataset.tab === tabName;
         btn.className = `nav-tab px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap transition ${active ? 'tab-active' : 'tab-inactive border border-slate-200'}`;
       });
-      ['projects', 'premium', 'analytics', 'calculator', 'portals'].forEach((t) => {
+      ['projects', 'premium', 'auctions', 'analytics', 'calculator', 'portals'].forEach((t) => {
         $('tab-' + t).classList.toggle('hidden', t !== tabName);
       });
       if (tabName === 'premium') renderPremiumTab();
+      if (tabName === 'auctions') renderAuctions();
       if (tabName === 'analytics') renderCharts();
     }
+
+    const AUCTION_LISTINGS = [
+      { id: 'auc-kukatpally-canara', title: 'Residential Flat — Kukatpally', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Kukatpally, North-West Hyderabad', reservePrice: '₹28.54 Lakh', emd: '₹2.85 Lakh (10%)', date: '30 Nov 2026', info: 'SARFAESI e-Auction • Check inspection & EMD deadline', url: 'https://findauction.in/auction/canarabank/flat-in-kukatpally-hyderabad-1858242' },
+      { id: 'auc-hayathnagar-canara', title: 'Residential Flat — Hayathnagar', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Hayathnagar, East Hyderabad', reservePrice: '₹45.00 Lakh', emd: '₹4.50 Lakh (10%)', date: '09 Dec 2026', info: 'SARFAESI e-Auction • East Hyderabad residential flat', url: 'https://findauction.in/auction/canarabank/flat-in-hayathnagar-hyderabad-1859303' },
+      { id: 'auc-hyd-canara-27', title: 'Residential Flat — Hyderabad (1851797)', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Hyderabad', reservePrice: '₹37.52 Lakh', emd: '₹3.75 Lakh (10%)', date: '27 Nov 2026', info: 'SARFAESI e-Auction • Active Nov 2026 notice', url: 'https://findauction.in/auction/canarabank/flat-in-hyderabad-1851797' },
+      { id: 'auc-hyd-canara-25', title: 'Residential Flat — Hyderabad (1851779)', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Hyderabad', reservePrice: '₹47.50 Lakh', emd: '₹4.75 Lakh (10%)', date: '25 Nov 2026', info: 'SARFAESI e-Auction • Active Nov 2026 notice', url: 'https://findauction.in/auction/canarabank/flat-in-hyderabad-1851779' },
+      { id: 'auc-domalguda-canara', title: 'Individual House — Domalguda (1,874 sq.ft)', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Domalguda, Central Hyderabad', reservePrice: '₹68.12 Lakh', emd: '₹6.81 Lakh (10%)', date: '23 Nov 2026', info: '1,874 sq.ft • Symbolic Possession', url: 'https://findauction.in/bank-property/hyderabad/all/all/7' },
+      { id: 'auc-vidyanagar-icici', title: 'Flat No. 403, Modern Towers (940 sq.ft)', bank: 'NeoGrowth / ICICI Bank', bankGroup: 'ICICI', locality: 'Vidyanagar, Adikmet, Hyderabad', reservePrice: '₹41.36 Lakh', emd: '₹4.14 Lakh', date: '07 Dec 2026', info: '940 sq.ft + 160 sq.ft car parking • 42.05 sq.yds UDS', url: 'https://www.bankeauctions.com/immovable-flat-hyderabad-244281' },
+      { id: 'auc-hdfc-2472978', title: 'HDFC Bank Auction Property (#2472978)', bank: 'HDFC Bank', bankGroup: 'HDFC', locality: 'Hyderabad', reservePrice: '₹27.35 Lakh', emd: '10% of Reserve', date: 'Active 2026', info: 'HDFC Bank residential foreclosure listing', url: 'https://foreclosureindia.com/bank-auctions/hyderabad' },
+      { id: 'auc-chola-2473104', title: 'Cholamandalam Auction Property (#2473104)', bank: 'Cholamandalam Finance', bankGroup: 'NBFC', locality: 'Hyderabad', reservePrice: '₹31.86 Lakh', emd: '10% of Reserve', date: 'Active 2026', info: 'NBFC residential foreclosure auction', url: 'https://foreclosureindia.com/bank-auctions/hyderabad' },
+      { id: 'auc-hdb-2473041', title: 'HDB Financial Property (#2473041)', bank: 'HDB Financial Services', bankGroup: 'NBFC', locality: 'Hyderabad', reservePrice: '₹2.10 Cr', emd: '10% of Reserve', date: 'Active 2026', info: 'High-value residential/commercial auction', url: 'https://foreclosureindia.com/bank-auctions/hyderabad' }
+    ];
+
+    let activeAuctionBank = 'All';
+
+    function renderAuctions() {
+      const q = ($('auction-search') ? $('auction-search').value : '').trim().toLowerCase();
+      const list = AUCTION_LISTINGS.filter((a) => {
+        if (activeAuctionBank !== 'All' && a.bankGroup !== activeAuctionBank) return false;
+        if (q && !`${a.title} ${a.bank} ${a.locality} ${a.info}`.toLowerCase().includes(q)) return false;
+        return true;
+      });
+      const grid = $('auctions-grid');
+      if (!grid) return;
+      grid.innerHTML = list.length
+        ? list.map((a) => `
+            <article class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex flex-col justify-between gap-3 hover:border-rose-300 transition">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="px-2.5 py-0.5 rounded-full bg-rose-50 text-rose-700 text-[10px] font-bold uppercase">${a.bank}</span>
+                  <span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 text-[10px] font-bold">Auction: ${a.date}</span>
+                </div>
+                <h4 class="font-bold text-slate-900 text-sm sm:text-base">${a.title}</h4>
+                <p class="text-xs text-slate-500">${a.locality}</p>
+                <div class="grid grid-cols-2 gap-2 p-2.5 rounded-xl bg-slate-50 text-xs">
+                  <div>
+                    <div class="text-[10px] text-slate-500">Reserve Price</div>
+                    <div class="font-bold text-emerald-700">${a.reservePrice}</div>
+                  </div>
+                  <div>
+                    <div class="text-[10px] text-slate-500">EMD Deposit</div>
+                    <div class="font-bold text-slate-900">${a.emd}</div>
+                  </div>
+                </div>
+                <p class="text-[11px] text-slate-600">${a.info}</p>
+              </div>
+              <div class="flex gap-2 pt-1">
+                <button type="button" data-auc-enquire="${a.title}" class="flex-1 px-3 py-2 rounded-xl bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 transition">Bid Help / Enquire</button>
+                <a href="${a.url}" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-semibold hover:bg-rose-100 transition">Notice ↗</a>
+              </div>
+            </article>
+          `).join('')
+        : '<div class="col-span-full bg-white rounded-2xl border border-slate-200 p-6 text-center text-xs text-slate-500">No auction properties match this bank or search filter. Try "All Banks" or check the BAANKNET portal below.</div>';
+    }
+
+    document.querySelectorAll('.bank-pill').forEach((pill) => {
+      pill.addEventListener('click', () => {
+        activeAuctionBank = pill.getAttribute('data-bank-filter');
+        document.querySelectorAll('.bank-pill').forEach((b) => {
+          const active = b.getAttribute('data-bank-filter') === activeAuctionBank;
+          b.className = `bank-pill shrink-0 px-3 py-1.5 rounded-lg text-xs transition ${active ? 'font-bold bg-slate-900 text-white' : 'font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200'}`;
+        });
+        renderAuctions();
+      });
+    });
+
+    $('auction-search').addEventListener('input', renderAuctions);
+    $('auctions-grid').addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-auc-enquire]');
+      if (!btn) return;
+      $('enquire-project').value = 'Bank Auction: ' + btn.getAttribute('data-auc-enquire');
+      $('enquire-modal').classList.remove('hidden');
+    });
 
     function renderPremiumCard(p) {
       const typeVal = p.type || p.propertyType || 'Apartment';
