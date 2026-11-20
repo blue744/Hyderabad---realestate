@@ -96,15 +96,15 @@
       <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 shrink-0 mr-1">India Hubs:</span>
       <button type="button" data-city="Hyderabad" class="city-switch-btn inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 text-white text-xs font-semibold whitespace-nowrap shadow-sm transition">
         <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-        Hyderabad <span class="text-emerald-300 text-[10px]">(41 Live)</span>
+        Hyderabad <span id="hub-count-Hyderabad" class="text-emerald-300 text-[10px]">(48 Live)</span>
       </button>
       <button type="button" data-city="Bengaluru" class="city-switch-btn inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-indigo-300 hover:text-indigo-700 text-xs font-semibold whitespace-nowrap transition">
         <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-        Bengaluru <span class="text-emerald-600 text-[10px]">(32 Live)</span>
+        Bengaluru <span id="hub-count-Bengaluru" class="text-emerald-600 text-[10px]">(32 Live)</span>
       </button>
       <button type="button" data-city="Mumbai" class="city-switch-btn inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-indigo-300 hover:text-indigo-700 text-xs font-semibold whitespace-nowrap transition">
         <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-        Mumbai <span class="text-emerald-600 text-[10px]">(24 Live)</span>
+        Mumbai <span id="hub-count-Mumbai" class="text-emerald-600 text-[10px]">(24 Live)</span>
       </button>
       <button type="button" data-city-soon="Pune" class="city-soon-btn inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 hover:text-indigo-700 text-xs font-medium whitespace-nowrap transition">
         Pune <span class="text-[10px] text-slate-400">• Soon</span>
@@ -157,12 +157,16 @@
     </section>
 
     <!-- AD_SLOT_1: Replace inner div with Google AdSense <ins class="adsbygoogle"> unit once approved -->
-    <section aria-label="Advertisement" class="bg-white rounded-xl border border-dashed border-slate-300 px-4 py-3 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center gap-3">
-        <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-500 text-[10px] font-bold uppercase tracking-wider">Ad / Sponsor Slot</span>
-        <p class="text-xs text-slate-600">Feature your Hyderabad RERA-approved project, home loan offer, or interior studio here.</p>
+    <section aria-label="Partner and Sponsor Slot" class="bg-white rounded-xl border border-dashed border-indigo-200 px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3 min-w-0">
+        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 text-[10px] font-bold uppercase tracking-wider shrink-0">Partner / Sponsor</span>
+        <p class="text-xs text-slate-600">Compare lowest SBI / HDFC home loan rates, book a free 3D interior quote, or feature your RERA project here.</p>
       </div>
-      <a href="#tab-portals" onclick="document.querySelector('[data-tab=portals]').click()" class="text-xs font-semibold text-indigo-600 hover:text-indigo-700 whitespace-nowrap">Advertise / Verify RERA →</a>
+      <div class="flex flex-wrap items-center gap-2 shrink-0">
+        <button id="btn-ad-loan-interior" type="button" onclick="openEnquireModal('Home Loan & Free 3D Interior Quote', { loan: true, interior: true })" class="px-3 py-1.5 rounded-lg bg-indigo-600 text-white text-xs font-bold hover:bg-indigo-700 transition whitespace-nowrap">Home Loan / Interior Quote →</button>
+        <button id="btn-ad-partner-top" type="button" onclick="openEnquireModal('Builder / Partner Sponsorship Enquiry', { loan: false, interior: false })" class="px-3 py-1.5 rounded-lg border border-indigo-200 bg-indigo-50/70 text-indigo-700 text-xs font-semibold hover:bg-indigo-100 transition whitespace-nowrap">Advertise / Partner →</button>
+        <a href="#tab-portals" onclick="document.querySelector('[data-tab=portals]').click()" class="text-xs font-semibold text-slate-500 hover:text-indigo-700 whitespace-nowrap ml-1">Verify RERA</a>
+      </div>
     </section>
 
     <!-- TAB 1: PROJECTS & PRICES -->
@@ -510,9 +514,10 @@
             <p id="calc-loan-note" class="text-[11px] text-slate-400 mt-1">Loan on 80% of base flat cost</p>
           </div>
           <!-- AD_SLOT_2: Home Loan Affiliate / Google AdSense unit -->
-          <div class="rounded-xl border border-dashed border-slate-700 bg-slate-800/40 p-3 text-center">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Partner / Ad Slot</span>
-            <p class="text-xs text-slate-300 mt-1">Add your Home Loan DSA / Bank affiliate link or AdSense unit here.</p>
+          <div class="rounded-xl border border-dashed border-cyan-500/40 bg-slate-800/60 p-3.5 text-center space-y-2">
+            <span class="inline-block px-2 py-0.5 rounded bg-cyan-500/15 text-cyan-300 text-[10px] font-bold uppercase tracking-wider">Home Loan &amp; Interior Partner</span>
+            <p class="text-xs text-slate-300">Need the lowest SBI / HDFC home loan rate or a free 3D interior quote (Livspace / DesignCafe / Local)?</p>
+            <button id="btn-calc-loan-quote" type="button" onclick="openEnquireModal('Home Loan & Free 3D Interior Quote', { loan: true, interior: true })" class="w-full py-2 px-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-bold transition">Get Free Loan &amp; Interior Quote →</button>
           </div>
         </div>
       </div>
@@ -929,6 +934,17 @@
               <option>South (Tukkuguda)</option>
             </select>
           </div>
+        </div>
+        <div class="rounded-xl bg-indigo-50/70 border border-indigo-100 p-3 space-y-2">
+          <p class="text-[11px] font-bold uppercase tracking-wider text-indigo-700">Free Value-Add Quotes (Optional)</p>
+          <label class="flex items-start gap-2 text-xs text-slate-700 cursor-pointer">
+            <input id="enquire-loan-quote" name="loanQuote" type="checkbox" value="Yes" class="mt-0.5 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500" />
+            <span>Also send me <strong>Lowest Home Loan Rates</strong> (HDFC / SBI / ICICI)</span>
+          </label>
+          <label class="flex items-start gap-2 text-xs text-slate-700 cursor-pointer">
+            <input id="enquire-interior-quote" name="interiorQuote" type="checkbox" value="Yes" class="mt-0.5 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500" />
+            <span>Also send me <strong>Free 3D Interior Quote</strong> (Livspace / DesignCafe / Local)</span>
+          </label>
         </div>
       </div>
       <div class="flex justify-end gap-2 pt-2">
@@ -3371,7 +3387,245 @@
       "minCr": 1.5,
       "maxCr": 5.64,
       "note": "India's first Net-Zero Waste + Energy residential community near Western Express Hwy."
-}
+},
+      {
+        "id": "lansum-el-palacio",
+        "name": "Lansum EL Palacio",
+        "propertyType": "Apartment",
+        "locality": "Puppalaguda",
+        "zone": "West",
+        "builder": "Lansum Group",
+        "rera": "P02400009760",
+        "status": "Under Construction",
+        "startDate": "Dec 2025",
+        "endDate": "Dec 2029",
+        "endYear": 2029,
+        "endSort": 202912,
+        "bhks": [
+          "3"
+        ],
+        "bhkLabel": "3 BHK",
+        "areaLabel": "1,715 – 2,320 sq.ft",
+        "defaultSqft": 1715,
+        "rateSqft": 8921,
+        "minCr": 1.37,
+        "maxCr": 2.06,
+        "note": "3-acre Alkapur Township / Puppalaguda 2-tower project; 1 covered parking per unit."
+      },
+      {
+        "id": "prestige-golden-grove",
+        "name": "Prestige Golden Grove",
+        "propertyType": "Apartment",
+        "locality": "Velimela, Tellapur–Kollur",
+        "zone": "West",
+        "builder": "Prestige Group",
+        "rera": "P01100010708",
+        "status": "New Launch",
+        "startDate": "Apr 2026",
+        "endDate": "Mar 2031",
+        "endYear": 2031,
+        "endSort": 203103,
+        "bhks": [
+          "2",
+          "3",
+          "3.5",
+          "4"
+        ],
+        "bhkLabel": "2, 3, 3.5, 4 BHK",
+        "areaLabel": "1,169 – 3,013 sq.ft",
+        "defaultSqft": 1850,
+        "rateSqft": 8750,
+        "minCr": 0.85,
+        "maxCr": 2.64,
+        "note": "28.7-acre township near ORR Exit 2; 10 towers of 52 floors."
+      },
+      {
+        "id": "brigade-gateway-neopolis",
+        "city": "Hyderabad",
+        "name": "Brigade Gateway Neopolis",
+        "type": "Apartment",
+        "propertyType": "Apartment",
+        "locality": "Neopolis, Kokapet",
+        "zone": "West",
+        "builder": "Brigade Group",
+        "rera": "P02400009142",
+        "status": "New Launch",
+        "startDate": "Nov 2024",
+        "endDate": "Dec 2029",
+        "endYear": 2029,
+        "endSort": 202912,
+        "bhks": [
+          "3",
+          "4",
+          "5"
+        ],
+        "bhkLabel": "3, 4, 5 BHK",
+        "areaLabel": "3,067 – 9,859 sq.ft",
+        "defaultSqft": 3100,
+        "rateSqft": 15800,
+        "minCr": 4.9,
+        "maxCr": 15.5,
+        "note": "9.7-acre mixed-use landmark with World Trade Center, InterContinental & Orion Mall."
+      },
+      {
+        "id": "rajapushpa-casa-luxura",
+        "city": "Hyderabad",
+        "name": "Rajapushpa Casa Luxura",
+        "type": "Apartment",
+        "propertyType": "Apartment",
+        "locality": "Neopolis, Kokapet",
+        "zone": "West",
+        "builder": "Rajapushpa Properties",
+        "rera": "P02400007302",
+        "status": "Under Construction",
+        "startDate": "Mar 2024",
+        "endDate": "Nov 2028",
+        "endYear": 2028,
+        "endSort": 202811,
+        "bhks": [
+          "4"
+        ],
+        "bhkLabel": "4 BHK",
+        "areaLabel": "5,500 – 7,000 sq.ft",
+        "defaultSqft": 5500,
+        "rateSqft": 13500,
+        "minCr": 7.45,
+        "maxCr": 9.45,
+        "note": "7.7-acre ultra-luxury 50-floor towers in Neopolis with 1.25 lakh sq.ft amenities."
+      },
+      {
+        "id": "rajapushpa-skyra",
+        "city": "Hyderabad",
+        "name": "Rajapushpa Skyra",
+        "type": "Apartment",
+        "propertyType": "Apartment",
+        "locality": "Neopolis, Kokapet",
+        "zone": "West",
+        "builder": "Rajapushpa Properties",
+        "rera": "P02400009520",
+        "status": "New Launch",
+        "startDate": "Jan 2025",
+        "endDate": "Apr 2030",
+        "endYear": 2030,
+        "endSort": 203004,
+        "bhks": [
+          "3",
+          "4"
+        ],
+        "bhkLabel": "3, 4 BHK",
+        "areaLabel": "2,700 – 3,900 sq.ft",
+        "defaultSqft": 2750,
+        "rateSqft": 12400,
+        "minCr": 3.41,
+        "maxCr": 4.9,
+        "note": "6.5-acre G+55 high-rise towers at Plot 7, Neopolis Kokapet."
+      },
+      {
+        "id": "prestige-clairemont-kokapet",
+        "city": "Hyderabad",
+        "name": "Prestige Clairemont",
+        "type": "Apartment",
+        "propertyType": "Apartment",
+        "locality": "Kokapet",
+        "zone": "West",
+        "builder": "Prestige Group",
+        "rera": "P02400005677",
+        "status": "Ready / Near Possession",
+        "startDate": "Feb 2023",
+        "endDate": "Jun 2026",
+        "endYear": 2026,
+        "endSort": 202606,
+        "bhks": [
+          "3",
+          "4"
+        ],
+        "bhkLabel": "3, 4 BHK",
+        "areaLabel": "1,989 – 4,060 sq.ft",
+        "defaultSqft": 2100,
+        "rateSqft": 9350,
+        "minCr": 1.86,
+        "maxCr": 3.75,
+        "note": "7.56-acre luxury gated community in Kokapet with 928 apartments & grand clubhouse."
+      },
+      {
+        "id": "vasavi-avasa-kompally",
+        "city": "Hyderabad",
+        "name": "Vasavi Avasa",
+        "type": "Villa",
+        "propertyType": "Villa",
+        "locality": "Kompally / Dundigal",
+        "zone": "North",
+        "builder": "Vasavi Group",
+        "rera": "P02200007195",
+        "status": "Under Construction",
+        "startDate": "Nov 2023",
+        "endDate": "Dec 2027",
+        "endYear": 2027,
+        "endSort": 202712,
+        "bhks": [
+          "4"
+        ],
+        "bhkLabel": "4 BHK",
+        "areaLabel": "4,339 – 4,503 sq.ft",
+        "defaultSqft": 4400,
+        "rateSqft": 12000,
+        "minCr": 5.21,
+        "maxCr": 5.4,
+        "note": "Luxury 4 BHK triplex villa community in North Hyderabad near ORR."
+      },
+      {
+        "id": "bharathi-horizon-kompally",
+        "city": "Hyderabad",
+        "name": "Bharathi Horizon",
+        "type": "Apartment",
+        "propertyType": "Apartment",
+        "locality": "Kompally",
+        "zone": "North",
+        "builder": "Bharathi Builders",
+        "rera": "P02200006340",
+        "status": "Under Construction",
+        "startDate": "Jun 2023",
+        "endDate": "Jun 2028",
+        "endYear": 2028,
+        "endSort": 202806,
+        "bhks": [
+          "3"
+        ],
+        "bhkLabel": "3 BHK",
+        "areaLabel": "1,945 – 2,400 sq.ft",
+        "defaultSqft": 2000,
+        "rateSqft": 7500,
+        "minCr": 1.46,
+        "maxCr": 1.8,
+        "note": "Spacious 3 BHK gated apartments in Kompally, North Hyderabad."
+      },
+      {
+        "id": "bhanodayas-crystal-kompally",
+        "city": "Hyderabad",
+        "name": "Bhanodayas Crystal",
+        "type": "Apartment",
+        "propertyType": "Apartment",
+        "locality": "Kompally",
+        "zone": "North",
+        "builder": "Bhanodaya Constructions",
+        "rera": "P02200007335",
+        "status": "Under Construction",
+        "startDate": "Dec 2023",
+        "endDate": "Sep 2028",
+        "endYear": 2028,
+        "endSort": 202809,
+        "bhks": [
+          "2",
+          "3"
+        ],
+        "bhkLabel": "2, 3 BHK",
+        "areaLabel": "1,320 – 1,825 sq.ft",
+        "defaultSqft": 1450,
+        "rateSqft": 6000,
+        "minCr": 0.79,
+        "maxCr": 1.09,
+        "note": "Value 2 & 3 BHK gated housing society in Kompally."
+      }
     ];
 
     const state = {
@@ -4734,17 +4988,23 @@
     $('btn-close-compare').addEventListener('click', () => $('compare-modal').classList.add('hidden'));
     $('btn-clear-compare').addEventListener('click', () => { state.compareIds = []; renderProjects(); });
 
-    $('btn-open-enquire').addEventListener('click', () => {
-      $('enquire-project').value = 'General Hyderabad Enquiry';
+    function openEnquireModal(projectLabel, opts = {}) {
+      $('enquire-project').value = projectLabel || 'General Hyderabad Enquiry';
+      if ($('enquire-loan-quote')) $('enquire-loan-quote').checked = !!opts.loan;
+      if ($('enquire-interior-quote')) $('enquire-interior-quote').checked = !!opts.interior;
       $('enquire-modal').classList.remove('hidden');
+    }
+    window.openEnquireModal = openEnquireModal;
+
+    $('btn-open-enquire').addEventListener('click', () => {
+      openEnquireModal('General Hyderabad Enquiry');
     });
     $('btn-close-enquire').addEventListener('click', () => $('enquire-modal').classList.add('hidden'));
     $('btn-cancel-enquire').addEventListener('click', () => $('enquire-modal').classList.add('hidden'));
     $('btn-modal-enquire').addEventListener('click', () => {
       const proj = state.projects.find((x) => x.id === state.selectedProjectId);
-      $('enquire-project').value = proj ? `${proj.name} (${proj.locality})` : 'General Hyderabad Enquiry';
       $('detail-modal').classList.add('hidden');
-      $('enquire-modal').classList.remove('hidden');
+      openEnquireModal(proj ? `${proj.name} (${proj.locality})` : 'General Hyderabad Enquiry');
     });
     $('enquire-form').addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -4765,7 +5025,9 @@
         name: leadName,
         phone: fd.get('phone') || '',
         bhk: fd.get('bhk') || '',
-        zone: fd.get('zone') || ''
+        zone: fd.get('zone') || '',
+        home_loan_quote: fd.get('loanQuote') ? 'Yes' : 'No',
+        interior_quote: fd.get('interiorQuote') ? 'Yes' : 'No'
       };
 
       try {
@@ -5313,6 +5575,18 @@
       openDetailModal(pid);
     });
 
+    function updateCityHubCounts() {
+      const counts = { Hyderabad: 0, Bengaluru: 0, Mumbai: 0 };
+      state.projects.forEach((p) => {
+        const c = p.city || 'Hyderabad';
+        if (counts[c] !== undefined) counts[c] += 1;
+      });
+      Object.entries(counts).forEach(([city, count]) => {
+        const el = $('hub-count-' + city);
+        if (el) el.textContent = `(${count} Live)`;
+      });
+    }
+
     // Future-proof optional external JSON feed (works when hosted alongside projects.json)
     async function loadExternalFeed() {
       try {
@@ -5325,6 +5599,7 @@
           INITIAL_PROJECTS.forEach((p) => mergedMap.set(p.id, p));
           items.forEach((p) => mergedMap.set(p.id, { ...(mergedMap.get(p.id) || {}), ...p }));
           state.projects = Array.from(mergedMap.values());
+          updateCityHubCounts();
           if (payload.updatedAt) $('data-version-badge').textContent = 'Updated ' + payload.updatedAt;
           populateCalcDropdown();
           renderProjects();
@@ -5515,6 +5790,7 @@
     populateCalcDropdown();
     updateCalculator();
     renderProjects();
+    updateCityHubCounts();
     loadExternalFeed();
   </script>
 </body>
