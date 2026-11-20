@@ -56,6 +56,11 @@
           <span class="hidden sm:inline">Shortlist</span>
           <span id="shortlist-count" class="px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px]">0</span>
         </button>
+        <button id="btn-open-post-property" type="button" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-300 bg-white text-slate-800 hover:border-emerald-500 hover:bg-emerald-50/40 transition shadow-sm">
+          <span class="hidden sm:inline">Post Property</span>
+          <span class="sm:hidden">Post</span>
+          <span class="px-1.5 py-0.5 rounded bg-emerald-600 text-white text-[9px] font-extrabold uppercase tracking-wider leading-none">FREE</span>
+        </button>
         <button id="btn-open-enquire" type="button" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white hover:bg-indigo-700 transition shadow-sm">
           <span>Enquire Now</span>
         </button>
@@ -950,6 +955,119 @@
       <div class="flex justify-end gap-2 pt-2">
         <button id="btn-cancel-enquire" type="button" class="px-4 py-2 rounded-lg border border-slate-300 text-xs font-semibold text-slate-700">Cancel</button>
         <button type="submit" class="px-4 py-2 rounded-lg bg-indigo-600 text-white text-xs font-bold hover:bg-indigo-700">Request Brochure &amp; Price Sheet</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Post Property FREE Modal -->
+  <div id="post-property-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <form id="post-property-form" class="bg-white rounded-2xl max-w-lg w-full p-5 sm:p-6 shadow-2xl space-y-3.5 my-auto max-h-[92vh] overflow-y-auto">
+      <div class="flex items-start justify-between gap-2">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold uppercase">
+            <span>Free Listing</span> • <span>RERA-Compliant</span>
+          </span>
+          <h3 class="text-lg font-bold text-slate-900 mt-1">Post Your Property FREE</h3>
+          <p class="text-xs text-slate-500">Submitted listings are verified before going live on The Way Prop India.</p>
+        </div>
+        <button id="btn-close-post-property" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 text-lg leading-none">&times;</button>
+      </div>
+
+      <div class="space-y-3 text-sm">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">I am a *</label>
+            <select id="post-poster-type" name="posterType" required class="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white">
+              <option value="Property Owner (Resale / Rent)">Property Owner (Resale / Rent)</option>
+              <option value="Builder / Developer">Builder / Developer</option>
+              <option value="RERA Registered Agent">RERA Registered Agent</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Listing For *</label>
+            <select name="listingFor" required class="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white">
+              <option value="For Sale">For Sale</option>
+              <option value="For Rent / Lease">For Rent / Lease</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">City *</label>
+            <select name="city" required class="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white">
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Bengaluru">Bengaluru</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Other Indian City">Other Indian City</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Locality / Area *</label>
+            <input name="locality" required type="text" placeholder="e.g. Kokapet, Whitefield, Thane" class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Project / Property Title *</label>
+          <input name="title" required type="text" placeholder="e.g. 3 BHK East-Facing Flat in My Home Apas" class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Type *</label>
+            <select name="propertyType" required class="w-full px-2.5 py-2 rounded-lg border border-slate-300 bg-white text-xs">
+              <option>Apartment</option>
+              <option>Villa</option>
+              <option>Plot / Land</option>
+              <option>Commercial</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">BHK *</label>
+            <select name="bhk" required class="w-full px-2.5 py-2 rounded-lg border border-slate-300 bg-white text-xs">
+              <option>1 BHK</option>
+              <option>2 BHK</option>
+              <option selected>3 BHK</option>
+              <option>4+ BHK</option>
+              <option>Plot / Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Area (sq.ft) *</label>
+            <input name="areaSqft" required type="text" placeholder="e.g. 1850" class="w-full px-2.5 py-2 rounded-lg border border-slate-300 text-xs" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Price (₹) *</label>
+            <input name="price" required type="text" placeholder="e.g. 1.65 Cr" class="w-full px-2.5 py-2 rounded-lg border border-slate-300 text-xs" />
+          </div>
+        </div>
+
+        <div>
+          <label id="post-rera-label" class="block text-xs font-semibold text-slate-600 mb-1">RERA ID (Optional for direct owner resale/rent)</label>
+          <input id="post-rera-input" name="reraId" type="text" placeholder="e.g. P0240000XXXX (Mandatory for Builders &amp; Agents)" class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Your Name *</label>
+            <input name="contactName" required type="text" placeholder="Full name" class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Phone / WhatsApp *</label>
+            <input name="phone" required type="tel" placeholder="+91 98XXXXXXXX" class="w-full px-3 py-2 rounded-lg border border-slate-300" />
+          </div>
+        </div>
+
+        <label class="flex items-start gap-2 rounded-xl bg-slate-50 border border-slate-200 p-3 text-xs text-slate-600 cursor-pointer">
+          <input name="legalConsent" required type="checkbox" value="Agreed" class="mt-0.5 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500" />
+          <span>I confirm these details are accurate, I am legally authorized to list this property (with a valid RERA ID if Builder/Agent), and I consent to buyers/The Way Prop India contacting me.</span>
+        </label>
+      </div>
+
+      <div class="flex justify-end gap-2 pt-1">
+        <button id="btn-cancel-post-property" type="button" class="px-4 py-2 rounded-lg border border-slate-300 text-xs font-semibold text-slate-700">Cancel</button>
+        <button type="submit" class="px-4 py-2 rounded-lg bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700">Submit Free Listing</button>
       </div>
     </form>
   </div>
@@ -5043,6 +5161,72 @@
         showToast('Thank you! Your enquiry has been sent. Our team will call you shortly.');
       } catch (err) {
         showToast('Could not send right now. Please check your connection and try again.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = origText;
+      }
+    });
+
+    // Post Property FREE modal listeners
+    $('btn-open-post-property').addEventListener('click', () => {
+      $('post-property-modal').classList.remove('hidden');
+    });
+    $('btn-close-post-property').addEventListener('click', () => $('post-property-modal').classList.add('hidden'));
+    $('btn-cancel-post-property').addEventListener('click', () => $('post-property-modal').classList.add('hidden'));
+    $('post-poster-type').addEventListener('change', (e) => {
+      const val = e.target.value;
+      const isDirectOwner = val.startsWith('Property Owner');
+      $('post-rera-input').required = !isDirectOwner;
+      $('post-rera-label').textContent = isDirectOwner
+        ? 'RERA ID (Optional for direct owner resale/rent)'
+        : (val.includes('Builder') ? 'Project RERA ID * (Mandatory for Builders)' : 'Agent RERA ID * (Mandatory for Agents)');
+    });
+    $('post-property-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const origText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      const fd = new FormData(form);
+      const title = fd.get('title') || 'Property Listing';
+      const city = fd.get('city') || 'Hyderabad';
+      const posterType = fd.get('posterType') || 'Owner';
+      const payload = {
+        access_key: 'f2174076-d277-4002-ba9a-04c484ec4536',
+        from_name: 'The Way Prop India',
+        subject: `New FREE Property Listing: ${title} (${city}) — ${posterType}`,
+        poster_type: posterType,
+        listing_for: fd.get('listingFor') || '',
+        city,
+        locality: fd.get('locality') || '',
+        title,
+        property_type: fd.get('propertyType') || '',
+        bhk: fd.get('bhk') || '',
+        area_sqft: fd.get('areaSqft') || '',
+        price: fd.get('price') || '',
+        rera_id: fd.get('reraId') || 'Not provided (Owner)',
+        contact_name: fd.get('contactName') || '',
+        phone: fd.get('phone') || '',
+        legal_consent: fd.get('legalConsent') ? 'Agreed' : 'No'
+      };
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const resJson = await res.json().catch(() => ({}));
+        if (!res.ok || !resJson.success) throw new Error(resJson.message || 'Submission failed');
+        $('post-property-modal').classList.add('hidden');
+        form.reset();
+        $('post-rera-input').required = false;
+        $('post-rera-label').textContent = 'RERA ID (Optional for direct owner resale/rent)';
+        showToast('Listing submitted! Our team will verify details/RERA and publish within 24 hours.');
+      } catch (err) {
+        showToast('Could not submit right now. Please check your connection and try again.');
       } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = origText;
