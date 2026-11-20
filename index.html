@@ -410,8 +410,8 @@
       </div>
 
       <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
-        <h2 class="text-base font-bold text-slate-900 mb-3">Hyderabad Locality Benchmarks (2026)</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+        <h2 id="benchmarks-title" class="text-base font-bold text-slate-900 mb-3">Hyderabad Locality Benchmarks (2026)</h2>
+        <div id="benchmarks-grid" class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
           <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
             <p class="text-xs font-semibold text-slate-500">Kokapet (Multistorey Avg)</p>
             <p class="text-xl font-bold text-slate-900 mt-1">₹11,019 / sq.ft</p>
@@ -670,7 +670,7 @@
       <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
         <div>
           <h2 class="text-lg font-bold text-slate-900">Smart &amp; Sustainable Community Standards</h2>
-          <p class="text-xs text-slate-500">Key features to look for in modern TG-RERA gated communities across Hyderabad</p>
+          <p id="standards-subtitle" class="text-xs text-slate-500">Key features to look for in modern TG-RERA gated communities across Hyderabad</p>
         </div>
         <span class="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-[11px] font-bold">IGBC Green &amp; EV Ready</span>
       </div>
@@ -704,10 +704,10 @@
 
     <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm">
       <div class="mb-4">
-        <h2 class="text-lg font-bold text-slate-900">Hyderabad Growth Corridors &amp; Connectivity</h2>
-        <p class="text-xs text-slate-500">Typical drive times from West &amp; ORR residential clusters (Kokapet, Tellapur, Kollur, Financial District)</p>
+        <h2 id="corridors-title" class="text-lg font-bold text-slate-900">Hyderabad Growth Corridors &amp; Connectivity</h2>
+        <p id="corridors-subtitle" class="text-xs text-slate-500">Typical drive times from West &amp; ORR residential clusters (Kokapet, Tellapur, Kollur, Financial District)</p>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+      <div id="corridors-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
         <div class="p-3 rounded-xl bg-indigo-50/50 border border-indigo-100 flex items-center justify-between">
           <span class="font-semibold text-slate-800">Financial District</span>
           <span class="font-bold text-indigo-700">10–20 mins</span>
@@ -2982,6 +2982,98 @@
       });
     }
 
+    function updateCityInsights(city) {
+      const isBlr = (city || state.activeCity) === 'Bengaluru';
+      if ($('benchmarks-title')) {
+        $('benchmarks-title').textContent = isBlr
+          ? 'Bengaluru Locality Benchmarks (2026)'
+          : 'Hyderabad Locality Benchmarks (2026)';
+      }
+      if ($('benchmarks-grid')) {
+        $('benchmarks-grid').innerHTML = isBlr ? `
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <p class="text-xs font-semibold text-slate-500">Whitefield &amp; Varthur (East Avg)</p>
+            <p class="text-xl font-bold text-slate-900 mt-1">₹12,537 / sq.ft</p>
+            <p class="text-xs text-slate-500 mt-1">ITPL &amp; ORR corridor; median ₹12,570 / sq.ft</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <p class="text-xs font-semibold text-slate-500">Hebbal, Yelahanka &amp; Hennur (North Avg)</p>
+            <p class="text-xl font-bold text-slate-900 mt-1">₹12,508 / sq.ft</p>
+            <p class="text-xs text-slate-500 mt-1">Airport &amp; Manyata belt; median ₹13,500 / sq.ft</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <p class="text-xs font-semibold text-slate-500">Karnataka Urban Registration (&gt; ₹45L)</p>
+            <p class="text-xl font-bold text-indigo-600 mt-1">7.6% Total</p>
+            <p class="text-xs text-slate-500 mt-1">5% Stamp Duty + 0.6% Cess/Surcharge + 2% Reg</p>
+          </div>` : `
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <p class="text-xs font-semibold text-slate-500">Kokapet (Multistorey Avg)</p>
+            <p class="text-xl font-bold text-slate-900 mt-1">₹11,019 / sq.ft</p>
+            <p class="text-xs text-slate-500 mt-1">Luxury median asking rate: ₹12,663 / sq.ft</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <p class="text-xs font-semibold text-slate-500">Tellapur (Multistorey Avg)</p>
+            <p class="text-xl font-bold text-slate-900 mt-1">₹8,661 / sq.ft</p>
+            <p class="text-xs text-slate-500 mt-1">Strong family-sized 2 &amp; 3 BHK gated supply</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <p class="text-xs font-semibold text-slate-500">Telangana Urban Registration</p>
+            <p class="text-xl font-bold text-indigo-600 mt-1">7.5% Total</p>
+            <p class="text-xs text-slate-500 mt-1">5.5% Stamp Duty + 1.5% Transfer + 0.5% Fee</p>
+          </div>`;
+      }
+      if ($('standards-subtitle')) {
+        $('standards-subtitle').textContent = isBlr
+          ? 'Key features to look for in modern K-RERA gated communities across Bengaluru'
+          : 'Key features to look for in modern TG-RERA gated communities across Hyderabad';
+      }
+      if ($('corridors-title')) {
+        $('corridors-title').textContent = isBlr
+          ? 'Bengaluru Growth Corridors & Connectivity'
+          : 'Hyderabad Growth Corridors & Connectivity';
+      }
+      if ($('corridors-subtitle')) {
+        $('corridors-subtitle').textContent = isBlr
+          ? 'Typical drive times from East, North & South residential clusters (Whitefield, Varthur, Hennur, Yelahanka, Sarjapur)'
+          : 'Typical drive times from West & ORR residential clusters (Kokapet, Tellapur, Kollur, Financial District)';
+      }
+      if ($('corridors-grid')) {
+        $('corridors-grid').innerHTML = isBlr ? `
+          <div class="p-3 rounded-xl bg-indigo-50/50 border border-indigo-100 flex items-center justify-between">
+            <span class="font-semibold text-slate-800">Whitefield / ITPL</span>
+            <span class="font-bold text-indigo-700">10–20 mins</span>
+          </div>
+          <div class="p-3 rounded-xl bg-indigo-50/50 border border-indigo-100 flex items-center justify-between">
+            <span class="font-semibold text-slate-800">Manyata Tech Park</span>
+            <span class="font-bold text-indigo-700">15–25 mins</span>
+          </div>
+          <div class="p-3 rounded-xl bg-indigo-50/50 border border-indigo-100 flex items-center justify-between">
+            <span class="font-semibold text-slate-800">ORR / Hebbal</span>
+            <span class="font-bold text-indigo-700">15–25 mins</span>
+          </div>
+          <div class="p-3 rounded-xl bg-indigo-50/50 border border-indigo-100 flex items-center justify-between">
+            <span class="font-semibold text-slate-800">Kempegowda Airport</span>
+            <span class="font-bold text-indigo-700">25–40 mins</span>
+          </div>` : `
+          <div class="p-3 rounded-xl bg-indigo-50/50 border border-indigo-100 flex items-center justify-between">
+            <span class="font-semibold text-slate-800">Financial District</span>
+            <span class="font-bold text-indigo-700">10–20 mins</span>
+          </div>
+          <div class="p-3 rounded-xl bg-indigo-50/50 border border-indigo-100 flex items-center justify-between">
+            <span class="font-semibold text-slate-800">HITEC City</span>
+            <span class="font-bold text-indigo-700">20–30 mins</span>
+          </div>
+          <div class="p-3 rounded-xl bg-indigo-50/50 border border-indigo-100 flex items-center justify-between">
+            <span class="font-semibold text-slate-800">Nehru ORR Exits</span>
+            <span class="font-bold text-indigo-700">2–5 mins</span>
+          </div>
+          <div class="p-3 rounded-xl bg-indigo-50/50 border border-indigo-100 flex items-center justify-between">
+            <span class="font-semibold text-slate-800">RGIA Airport</span>
+            <span class="font-bold text-indigo-700">30–45 mins</span>
+          </div>`;
+      }
+    }
+
     function populateCalcDropdown() {
       const sel = $('calc-project');
       const prevVal = sel.value;
@@ -3646,6 +3738,7 @@
       renderCompanyPortfolio();
       populateCalcDropdown();
       updateCalculator();
+      updateCityInsights(city);
     });
 
     $('filter-builder').addEventListener('change', (e) => {
