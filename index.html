@@ -5835,7 +5835,7 @@
         <div class="bg-white rounded-xl border border-slate-200/90 p-3.5 shadow-sm flex flex-col justify-between gap-2.5">
           <div>
             <div class="flex items-center justify-between gap-2">
-              <span class="px-2 py-0.5 rounded bg-rose-50 text-rose-700 text-[10px] font-bold uppercase">${escHtml(p.status || 'Active')}</span>
+              <span class="px-2 py-0.5 rounded-full border ${statusBadgeClass(p.status)} text-[10px] font-bold">${escHtml(p.status || 'Active')}</span>
               <span class="text-[10px] font-mono text-slate-400 truncate">${escHtml(p.rera || '')}</span>
             </div>
             <h4 class="text-sm font-bold text-slate-900 mt-1.5 truncate">${escHtml(p.name)}</h4>
