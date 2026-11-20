@@ -344,20 +344,21 @@
       <div class="bg-gradient-to-r from-rose-950 via-slate-900 to-indigo-950 rounded-2xl p-6 sm:p-7 text-white shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <span class="inline-block px-2.5 py-1 rounded-full bg-rose-400/20 border border-rose-300/40 text-rose-200 text-[11px] font-bold uppercase tracking-wider">SARFAESI Act • Bank E-Auctions</span>
-          <h2 class="text-xl sm:text-2xl font-bold mt-2">Hyderabad Bank Auction Flats &amp; Houses</h2>
-          <p class="text-xs sm:text-sm text-slate-300 mt-1">Verified upcoming &amp; active bank foreclosure auctions across SBI, Canara Bank, HDFC, ICICI, Union Bank &amp; NBFCs (typically 15%–30% below market rate).</p>
+          <h2 id="auctions-hero-title" class="text-xl sm:text-2xl font-bold mt-2">Hyderabad Bank Auction Flats &amp; Houses</h2>
+          <p id="auctions-hero-subtitle" class="text-xs sm:text-sm text-slate-300 mt-1">Verified upcoming &amp; active bank foreclosure auctions across SBI, Canara Bank, HDFC, ICICI, Union Bank &amp; NBFCs (typically 15%–30% below market rate).</p>
         </div>
-        <a href="https://baanknet.com/property-listing/Hyderabad/Flat" target="_blank" rel="noopener noreferrer" class="shrink-0 px-4 py-2.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white text-xs font-bold transition shadow-md text-center">Open Govt BAANKNET Portal ↗</a>
+        <a id="auctions-baanknet-btn" href="https://baanknet.com/property-listing/Hyderabad/Flat" target="_blank" rel="noopener noreferrer" class="shrink-0 px-4 py-2.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white text-xs font-bold transition shadow-md text-center">Open Govt BAANKNET Portal ↗</a>
       </div>
 
       <!-- Bank Filter & Search -->
       <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
         <div class="flex items-center gap-1.5 overflow-x-auto custom-scroll pb-1 sm:pb-0">
           <button type="button" data-bank-filter="All" class="bank-pill shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white">All Banks</button>
+          <button type="button" data-bank-filter="SBI" class="bank-pill shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">SBI / PSB</button>
           <button type="button" data-bank-filter="Canara" class="bank-pill shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Canara Bank</button>
           <button type="button" data-bank-filter="HDFC" class="bank-pill shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">HDFC Bank</button>
-          <button type="button" data-bank-filter="ICICI" class="bank-pill shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">ICICI / NeoGrowth</button>
-          <button type="button" data-bank-filter="NBFC" class="bank-pill shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Chola / HDB</button>
+          <button type="button" data-bank-filter="ICICI" class="bank-pill shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">ICICI / Axis / Private</button>
+          <button type="button" data-bank-filter="NBFC" class="bank-pill shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">NBFC / PNBHFL / HDB</button>
         </div>
         <input id="auction-search" type="text" placeholder="Search area (e.g. Kukatpally, Hayathnagar)..." class="sm:w-64 px-3 py-1.5 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-rose-500" />
       </div>
@@ -367,9 +368,9 @@
 
       <!-- Official All-Bank E-Auction Directory -->
       <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm space-y-3">
-        <h3 class="text-base font-bold text-slate-900">Browse All Banks Live E-Auctions in Hyderabad</h3>
+        <h3 id="auctions-dir-title" class="text-base font-bold text-slate-900">Browse All Banks Live E-Auctions in Hyderabad</h3>
         <p class="text-xs text-slate-600">Use these official portals to check live auction notices, KYC/EMD rules, and inspection dates for SBI, Union Bank, Bank of Baroda, PNB, Indian Bank, and private banks:</p>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div id="auctions-dir-cards" class="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <a href="https://baanknet.com/property-listing/Hyderabad/Flat" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl border border-indigo-200 bg-indigo-50/50 hover:bg-indigo-50 transition">
             <div class="font-bold text-sm text-indigo-900">BAANKNET (Govt. PSB Portal) ↗</div>
             <p class="text-[11px] text-slate-600 mt-1">Official DFS portal for SBI, Canara, Union Bank, Bank of Baroda, PNB &amp; Indian Bank flats in Hyderabad.</p>
@@ -4288,22 +4289,97 @@
     }
 
     const AUCTION_LISTINGS = [
-      { id: 'auc-kukatpally-canara', title: 'Residential Flat — Kukatpally', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Kukatpally, North-West Hyderabad', reservePrice: '₹28.54 Lakh', emd: '₹2.85 Lakh (10%)', date: '30 Nov 2026', info: 'SARFAESI e-Auction • Check inspection & EMD deadline', url: 'https://findauction.in/auction/canarabank/flat-in-kukatpally-hyderabad-1858242' },
-      { id: 'auc-hayathnagar-canara', title: 'Residential Flat — Hayathnagar', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Hayathnagar, East Hyderabad', reservePrice: '₹45.00 Lakh', emd: '₹4.50 Lakh (10%)', date: '09 Dec 2026', info: 'SARFAESI e-Auction • East Hyderabad residential flat', url: 'https://findauction.in/auction/canarabank/flat-in-hayathnagar-hyderabad-1859303' },
-      { id: 'auc-hyd-canara-27', title: 'Residential Flat — Hyderabad (1851797)', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Hyderabad', reservePrice: '₹37.52 Lakh', emd: '₹3.75 Lakh (10%)', date: '27 Nov 2026', info: 'SARFAESI e-Auction • Active Nov 2026 notice', url: 'https://findauction.in/auction/canarabank/flat-in-hyderabad-1851797' },
-      { id: 'auc-hyd-canara-25', title: 'Residential Flat — Hyderabad (1851779)', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Hyderabad', reservePrice: '₹47.50 Lakh', emd: '₹4.75 Lakh (10%)', date: '25 Nov 2026', info: 'SARFAESI e-Auction • Active Nov 2026 notice', url: 'https://findauction.in/auction/canarabank/flat-in-hyderabad-1851779' },
-      { id: 'auc-domalguda-canara', title: 'Individual House — Domalguda (1,874 sq.ft)', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Domalguda, Central Hyderabad', reservePrice: '₹68.12 Lakh', emd: '₹6.81 Lakh (10%)', date: '23 Nov 2026', info: '1,874 sq.ft • Symbolic Possession', url: 'https://findauction.in/bank-property/hyderabad/all/all/7' },
-      { id: 'auc-vidyanagar-icici', title: 'Flat No. 403, Modern Towers (940 sq.ft)', bank: 'NeoGrowth / ICICI Bank', bankGroup: 'ICICI', locality: 'Vidyanagar, Adikmet, Hyderabad', reservePrice: '₹41.36 Lakh', emd: '₹4.14 Lakh', date: '07 Dec 2026', info: '940 sq.ft + 160 sq.ft car parking • 42.05 sq.yds UDS', url: 'https://www.bankeauctions.com/immovable-flat-hyderabad-244281' },
-      { id: 'auc-hdfc-2472978', title: 'HDFC Bank Auction Property (#2472978)', bank: 'HDFC Bank', bankGroup: 'HDFC', locality: 'Hyderabad', reservePrice: '₹27.35 Lakh', emd: '10% of Reserve', date: 'Active 2026', info: 'HDFC Bank residential foreclosure listing', url: 'https://foreclosureindia.com/bank-auctions/hyderabad' },
-      { id: 'auc-chola-2473104', title: 'Cholamandalam Auction Property (#2473104)', bank: 'Cholamandalam Finance', bankGroup: 'NBFC', locality: 'Hyderabad', reservePrice: '₹31.86 Lakh', emd: '10% of Reserve', date: 'Active 2026', info: 'NBFC residential foreclosure auction', url: 'https://foreclosureindia.com/bank-auctions/hyderabad' },
-      { id: 'auc-hdb-2473041', title: 'HDB Financial Property (#2473041)', bank: 'HDB Financial Services', bankGroup: 'NBFC', locality: 'Hyderabad', reservePrice: '₹2.10 Cr', emd: '10% of Reserve', date: 'Active 2026', info: 'High-value residential/commercial auction', url: 'https://foreclosureindia.com/bank-auctions/hyderabad' }
+      // Hyderabad
+      { id: 'auc-kukatpally-canara', city: 'Hyderabad', title: 'Residential Flat — Kukatpally', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Kukatpally, North-West Hyderabad', reservePrice: '₹28.54 Lakh', emd: '₹2.85 Lakh (10%)', date: '30 Nov 2026', info: 'SARFAESI e-Auction • Check inspection & EMD deadline', url: 'https://findauction.in/auction/canarabank/flat-in-kukatpally-hyderabad-1858242' },
+      { id: 'auc-hayathnagar-canara', city: 'Hyderabad', title: 'Residential Flat — Hayathnagar', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Hayathnagar, East Hyderabad', reservePrice: '₹45.00 Lakh', emd: '₹4.50 Lakh (10%)', date: '09 Dec 2026', info: 'SARFAESI e-Auction • East Hyderabad residential flat', url: 'https://findauction.in/auction/canarabank/flat-in-hayathnagar-hyderabad-1859303' },
+      { id: 'auc-hyd-canara-27', city: 'Hyderabad', title: 'Residential Flat — Hyderabad (1851797)', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Hyderabad', reservePrice: '₹37.52 Lakh', emd: '₹3.75 Lakh (10%)', date: '27 Nov 2026', info: 'SARFAESI e-Auction • Active Nov 2026 notice', url: 'https://findauction.in/auction/canarabank/flat-in-hyderabad-1851797' },
+      { id: 'auc-hyd-canara-25', city: 'Hyderabad', title: 'Residential Flat — Hyderabad (1851779)', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Hyderabad', reservePrice: '₹47.50 Lakh', emd: '₹4.75 Lakh (10%)', date: '25 Nov 2026', info: 'SARFAESI e-Auction • Active Nov 2026 notice', url: 'https://findauction.in/auction/canarabank/flat-in-hyderabad-1851779' },
+      { id: 'auc-domalguda-canara', city: 'Hyderabad', title: 'Individual House — Domalguda (1,874 sq.ft)', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Domalguda, Central Hyderabad', reservePrice: '₹68.12 Lakh', emd: '₹6.81 Lakh (10%)', date: '23 Nov 2026', info: '1,874 sq.ft • Symbolic Possession', url: 'https://findauction.in/bank-property/hyderabad/all/all/7' },
+      { id: 'auc-vidyanagar-icici', city: 'Hyderabad', title: 'Flat No. 403, Modern Towers (940 sq.ft)', bank: 'NeoGrowth / ICICI Bank', bankGroup: 'ICICI', locality: 'Vidyanagar, Adikmet, Hyderabad', reservePrice: '₹41.36 Lakh', emd: '₹4.14 Lakh', date: '07 Dec 2026', info: '940 sq.ft + 160 sq.ft car parking • 42.05 sq.yds UDS', url: 'https://www.bankeauctions.com/immovable-flat-hyderabad-244281' },
+      { id: 'auc-hdfc-2472978', city: 'Hyderabad', title: 'HDFC Bank Auction Property (#2472978)', bank: 'HDFC Bank', bankGroup: 'HDFC', locality: 'Hyderabad', reservePrice: '₹27.35 Lakh', emd: '10% of Reserve', date: 'Active 2026', info: 'HDFC Bank residential foreclosure listing', url: 'https://foreclosureindia.com/bank-auctions/hyderabad' },
+      { id: 'auc-chola-2473104', city: 'Hyderabad', title: 'Cholamandalam Auction Property (#2473104)', bank: 'Cholamandalam Finance', bankGroup: 'NBFC', locality: 'Hyderabad', reservePrice: '₹31.86 Lakh', emd: '10% of Reserve', date: 'Active 2026', info: 'NBFC residential foreclosure auction', url: 'https://foreclosureindia.com/bank-auctions/hyderabad' },
+      { id: 'auc-hdb-2473041', city: 'Hyderabad', title: 'HDB Financial Property (#2473041)', bank: 'HDB Financial Services', bankGroup: 'NBFC', locality: 'Hyderabad', reservePrice: '₹2.10 Cr', emd: '10% of Reserve', date: 'Active 2026', info: 'High-value residential/commercial auction', url: 'https://foreclosureindia.com/bank-auctions/hyderabad' },
+
+      // Bengaluru
+      { id: 'auc-blr-canara-1', city: 'Bengaluru', title: 'Residential Flat — Bengaluru (1851507)', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Bengaluru', reservePrice: '₹38.00 Lakh', emd: '₹3.80 Lakh (10%)', date: '24 Nov 2026', info: 'SARFAESI e-Auction • Active Nov 2026 notice', url: 'https://findauction.in/auction/canarabank/flat-in-bangalore-1851507' },
+      { id: 'auc-blr-canara-2', city: 'Bengaluru', title: 'Residential Flat — Bengaluru (1851549)', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Bengaluru', reservePrice: '₹35.50 Lakh', emd: '₹3.55 Lakh (10%)', date: '24 Nov 2026', info: 'SARFAESI e-Auction • Active Nov 2026 notice', url: 'https://findauction.in/auction/canarabank/flat-in-bangalore-1851549' },
+      { id: 'auc-blr-sbi-krp', city: 'Bengaluru', title: 'Residential Flat — K R Puram (720 sq.ft)', bank: 'State Bank of India', bankGroup: 'SBI', locality: 'K R Puram, East Bengaluru', reservePrice: '₹81.00 Lakh', emd: '₹8.10 Lakh (10%)', date: '26 Nov 2026', info: '720 sq.ft • SBI SARFAESI e-Auction', url: 'https://findauction.in/bank-property/k+r+puram-bangalore' },
+      { id: 'auc-blr-indbank-kowd', city: 'Bengaluru', title: 'Residential Flat — Kowdenahalli, KR Puram', bank: 'Indian Bank', bankGroup: 'SBI', locality: 'Kowdenahalli, East Bengaluru', reservePrice: '₹68.00 Lakh', emd: '₹6.80 Lakh (10%)', date: '09 Dec 2026', info: 'Symbolic Possession • SARFAESI e-Auction', url: 'https://findauction.in/bank-property/k+r+puram-bangalore' },
+      { id: 'auc-blr-canara-krp', city: 'Bengaluru', title: 'Luxury Flat — K R Puram (2,100 sq.ft)', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'K R Puram, East Bengaluru', reservePrice: '₹1.50 Cr', emd: '₹15.00 Lakh (10%)', date: 'Active 2026', info: '2,100 sq.ft spacious flat • Re-auction', url: 'https://findauction.in/bank-property/k+r+puram-bangalore' },
+      { id: 'auc-blr-icici-anekal', city: 'Bengaluru', title: 'Indya Estates The Greens — Anekal', bank: 'ICICI Home Finance', bankGroup: 'ICICI', locality: 'Anekal, South Bengaluru', reservePrice: '₹29.25 Lakh', emd: '₹2.93 Lakh (10%)', date: '19 Dec 2026', info: 'Symbolic Possession • SARFAESI e-Auction', url: 'https://findauction.in/bank-property/bangalore' },
+      { id: 'auc-blr-deutsche-tetra', city: 'Bengaluru', title: 'Tetra Grand Green Apple Flat #204 (1,212 sq.ft)', bank: 'Deutsche Bank', bankGroup: 'ICICI', locality: 'Mariyannapalya, KR Puram Hobli, Bengaluru', reservePrice: '₹53.50 Lakh', emd: '₹5.35 Lakh (10%)', date: 'Active 2026', info: '1,212 sq.ft super built-up + 363 sq.ft UDS', url: 'https://www.bankeauctions.com/immovable-flat-bangalore-241826' },
+      { id: 'auc-blr-hdb-kalpatharu', city: 'Bengaluru', title: 'Kalpatharu Lake View Flat #011 (1,435 sq.ft)', bank: 'HDB Financial Services', bankGroup: 'NBFC', locality: 'Puttenahalli, South Bengaluru', reservePrice: '₹1.03 Cr', emd: '₹10.35 Lakh (10%)', date: 'Active 2026', info: '1,435 sq.ft super built-up • BBMP limits', url: 'https://www.bankeauctions.com/237675' },
+      { id: 'auc-blr-phoenix-welworth', city: 'Bengaluru', title: 'Provident Welworth City 3 BHK #708 (1,075 sq.ft)', bank: 'Phoenix ARC', bankGroup: 'NBFC', locality: 'Hesaraghatta Hobli, North Bengaluru', reservePrice: '₹35.52 Lakh', emd: '₹3.55 Lakh (10%)', date: 'Active 2026', info: '1,075 sq.ft built-up + 1 stilt car parking', url: 'https://www.bankeauctions.com/immovable-flat-bengaluru-241352' },
+
+      // Mumbai & MMR
+      { id: 'auc-mum-hdfc-amara', city: 'Mumbai', title: 'Residential Flat — Lodha Amara, Thane West', bank: 'HDFC Bank', bankGroup: 'HDFC', locality: 'Kolshet Road, Thane West, MMR', reservePrice: '₹27.50 Lakh', emd: '₹2.75 Lakh (10%)', date: '05 Dec 2026', info: 'SARFAESI e-Auction • Active Dec 2026 notice', url: 'https://findauction.in/auction/hdfcbank/flat-in-thane-west-mumbai-1845856' },
+      { id: 'auc-mum-sbi-thane', city: 'Mumbai', title: 'Residential Flat — Thane West', bank: 'State Bank of India', bankGroup: 'SBI', locality: 'Thane West, MMR', reservePrice: '₹90.00 Lakh', emd: '₹9.00 Lakh (10%)', date: 'Active 2026', info: 'SBI SARFAESI e-Auction • Residential flat', url: 'https://findauction.in/auction/hdfcbank/flat-in-thane-west-mumbai-1845856' },
+      { id: 'auc-mum-canara-kr', city: 'Mumbai', title: 'K R Heights Flat (1,148 sq.ft)', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Bhiwandi, MMR', reservePrice: '₹26.43 Lakh', emd: '₹2.64 Lakh (10%)', date: 'Active 2026', info: '1,148.41 sq.ft • Symbolic Possession', url: 'https://findauction.in/bank-property/mumbai+thane/all/all/15' },
+      { id: 'auc-mum-canara-casabella', city: 'Mumbai', title: 'Casa Bella Eleganta Flat', bank: 'Canara Bank', bankGroup: 'Canara', locality: 'Dombivli East, MMR', reservePrice: '₹24.63 Lakh', emd: '₹2.46 Lakh (10%)', date: 'Active 2026', info: 'Physical Possession • SARFAESI e-Auction', url: 'https://findauction.in/bank-property/mumbai+thane/all/all/15' },
+      { id: 'auc-mum-cbi-koparkhairane', city: 'Mumbai', title: 'Nikita Apartment Flat #203', bank: 'Central Bank of India', bankGroup: 'SBI', locality: 'Sector 5, Koparkhairane, Navi Mumbai', reservePrice: '₹28.00 Lakh', emd: '₹2.80 Lakh (10%)', date: 'Active 2026', info: '2nd Floor • DRT / SARFAESI Notice', url: 'https://www.bankeauctions.com/immovable-flat-mumbai-239833' },
+      { id: 'auc-mum-axis-andheri', city: 'Mumbai', title: 'Hilton Tower Flat #52 (533 sq.ft)', bank: 'Axis Bank', bankGroup: 'ICICI', locality: 'Sher-E-Punjab, Andheri East, Mumbai', reservePrice: '₹91.00 Lakh', emd: '₹9.10 Lakh (10%)', date: 'Active 2026', info: '533 sq.ft built-up • 5th Floor, Wing A', url: 'https://www.bankeauctions.com/immovable-flat-mumbai-233922' },
+      { id: 'auc-mum-deutsche-santacruz', city: 'Mumbai', title: 'Lavina Premises CHSL Flat #34 (870 sq.ft)', bank: 'Deutsche Bank', bankGroup: 'ICICI', locality: 'Tagore Nagar, Santacruz West, Mumbai', reservePrice: '₹3.40 Cr', emd: '₹34.00 Lakh (10%)', date: 'Active 2026', info: '870 sq.ft carpet area • 3rd Floor', url: 'https://www.bankeauctions.com/immovable-residential-mumbai-240472' },
+      { id: 'auc-mum-pnbhfl-panvel', city: 'Mumbai', title: 'Pioneer CHS Flat #1202 (12th Floor)', bank: 'PNB Housing Finance', bankGroup: 'NBFC', locality: 'Panvel, Navi Mumbai', reservePrice: '₹50.74 Lakh', emd: '₹5.07 Lakh (10%)', date: 'Active 2026', info: 'Wing A, Swami Nityanand Marg • SARFAESI', url: 'https://www.bankeauctions.com/immovable-residential-flat-mumbai-242958' },
+      { id: 'auc-mum-pnbhfl-bandra', city: 'Mumbai', title: 'Geetanjali CHSL Flat #604', bank: 'PNB Housing Finance', bankGroup: 'NBFC', locality: 'Kher Nagar, Bandra, Mumbai', reservePrice: '₹1.09 Cr', emd: '₹10.89 Lakh (10%)', date: 'Active 2026', info: '6th Floor, A Wing • Road No. 8', url: 'https://www.bankeauctions.com/immovable-flat-mumbai-240052' }
     ];
 
     let activeAuctionBank = 'All';
 
     function renderAuctions() {
+      const city = state.activeCity || 'Hyderabad';
+      const isBlr = city === 'Bengaluru';
+      const isMum = city === 'Mumbai';
+      if ($('auctions-hero-title')) {
+        $('auctions-hero-title').textContent = `${city} Bank Auction Flats & Houses`;
+      }
+      if ($('auctions-hero-subtitle')) {
+        $('auctions-hero-subtitle').textContent = isMum
+          ? 'Verified upcoming & active bank foreclosure auctions across Mumbai, Thane & Navi Mumbai (SBI, Canara, HDFC, Axis, PNBHFL).'
+          : isBlr
+            ? 'Verified upcoming & active bank foreclosure auctions across Bengaluru (SBI, Canara, Indian Bank, ICICI, HDB & NBFCs).'
+            : 'Verified upcoming & active bank foreclosure auctions across SBI, Canara Bank, HDFC, ICICI, Union Bank & NBFCs (typically 15%–30% below market rate).';
+      }
+      if ($('auctions-baanknet-btn')) {
+        $('auctions-baanknet-btn').href = isMum
+          ? 'https://baanknet.com/property-listing/Maharashtra/Mumbai'
+          : isBlr
+            ? 'https://baanknet.com/property-listing/Karnataka/Bengaluru'
+            : 'https://baanknet.com/property-listing/Hyderabad/Flat';
+      }
+      if ($('auction-search')) {
+        $('auction-search').placeholder = isMum
+          ? 'Search area (e.g. Thane, Bandra, Andheri)...'
+          : isBlr
+            ? 'Search area (e.g. K R Puram, Anekal, Puttenahalli)...'
+            : 'Search area (e.g. Kukatpally, Hayathnagar)...';
+      }
+      if ($('auctions-dir-title')) {
+        $('auctions-dir-title').textContent = `Browse All Banks Live E-Auctions in ${city}`;
+      }
+      if ($('auctions-dir-cards')) {
+        const baanknetUrl = isMum ? 'https://baanknet.com/property-listing/Maharashtra/Mumbai' : isBlr ? 'https://baanknet.com/property-listing/Karnataka/Bengaluru' : 'https://baanknet.com/property-listing/Hyderabad/Flat';
+        const findAucUrl = isMum ? 'https://findauction.in/bank-property/mumbai' : isBlr ? 'https://findauction.in/bank-property/bangalore' : 'https://findauction.in/bank-property/hyderabad';
+        const findAucLbl = isMum ? 'FindAuction Mumbai (10,700+) ↗' : isBlr ? 'FindAuction Bengaluru (2,090+) ↗' : 'FindAuction Hyderabad (1,082+) ↗';
+        const foreUrl = isMum ? 'https://foreclosureindia.com/bank-auctions/mumbai' : isBlr ? 'https://foreclosureindia.com/bank-auctions/bengaluru' : 'https://foreclosureindia.com/bank-auctions/hyderabad';
+        const foreLbl = isMum ? 'Foreclosure India Mumbai (629+) ↗' : isBlr ? 'Foreclosure India Bengaluru ↗' : 'Foreclosure India (458+) ↗';
+        $('auctions-dir-cards').innerHTML = `
+          <a href="${baanknetUrl}" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl border border-indigo-200 bg-indigo-50/50 hover:bg-indigo-50 transition">
+            <div class="font-bold text-sm text-indigo-900">BAANKNET (Govt. PSB Portal) ↗</div>
+            <p class="text-[11px] text-slate-600 mt-1">Official DFS portal for SBI, Canara, Union Bank, Bank of Baroda, PNB &amp; Indian Bank flats in ${city}.</p>
+          </a>
+          <a href="${findAucUrl}" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl border border-rose-200 bg-rose-50/50 hover:bg-rose-50 transition">
+            <div class="font-bold text-sm text-rose-900">${findAucLbl}</div>
+            <p class="text-[11px] text-slate-600 mt-1">Daily SARFAESI notices across all public &amp; private banks in ${city} with reserve price &amp; EMD schedules.</p>
+          </a>
+          <a href="${foreUrl}" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl border border-emerald-200 bg-emerald-50/50 hover:bg-emerald-50 transition">
+            <div class="font-bold text-sm text-emerald-900">${foreLbl}</div>
+            <p class="text-[11px] text-slate-600 mt-1">Active HDFC, PNB Housing, HDB &amp; private bank residential auctions in ${city}.</p>
+          </a>`;
+      }
+
       const q = ($('auction-search') ? $('auction-search').value : '').trim().toLowerCase();
       const list = AUCTION_LISTINGS.filter((a) => {
+        if ((a.city || 'Hyderabad') !== city) return false;
         if (activeAuctionBank !== 'All' && a.bankGroup !== activeAuctionBank) return false;
         if (q && !`${a.title} ${a.bank} ${a.locality} ${a.info}`.toLowerCase().includes(q)) return false;
         return true;
@@ -5375,6 +5451,7 @@
       updateCalculator();
       updateCityInsights(city);
       if (state.activeTab === 'premium') renderPremiumTab();
+      if (state.activeTab === 'auctions') renderAuctions();
       if (state.activeTab === 'analytics' && typeof renderAnalytics === 'function') renderAnalytics();
       showToast(`Showing ${city} RERA projects`);
     }
