@@ -297,12 +297,6 @@
         </div>
       </div>
 
-      <!-- Popular Locality Quick-Tap Pills (City-Aware) -->
-      <div id="locality-chips-bar" class="flex items-center gap-1.5 overflow-x-auto custom-scroll pb-1">
-        <span class="text-[11px] font-bold uppercase tracking-wider text-rose-600 shrink-0 mr-1">Popular:</span>
-        <div id="locality-chips-list" class="flex items-center gap-1.5"></div>
-      </div>
-
       <!-- Quick Company Filter Chips -->
       <div id="company-chips-bar" class="flex items-center gap-1.5 overflow-x-auto custom-scroll pb-1">
         <span class="text-[11px] font-semibold text-slate-500 shrink-0 mr-1">Companies:</span>
@@ -5820,35 +5814,11 @@
       openDetailModal(pid);
     });
 
-    const CITY_LOCALITIES = {
-      Hyderabad: ['Kokapet', 'Tellapur', 'Kollur', 'Kompally', 'Financial District', 'Tukkuguda'],
-      Bengaluru: ['Whitefield', 'Sarjapur', 'Hebbal', 'Devanahalli', 'Yelahanka'],
-      Mumbai: ['Worli', 'Thane', 'Kandivali', 'Wadala', 'Powai']
-    };
     const CITY_HOT_IDS = {
       Hyderabad: ['rajapushpa-casa-luxura', 'my-home-apas', 'prestige-clairemont-kokapet'],
       Bengaluru: ['prestige-raintree-park', 'sobha-neopolis', 'brigade-eternia'],
       Mumbai: ['lodha-divino-matunga', 'oberoi-sky-city-borivali', 'lnt-elixir-reserve-powai']
     };
-
-    function renderLocalityChips() {
-      const box = $('locality-chips-list');
-      if (!box) return;
-      const locs = CITY_LOCALITIES[state.activeCity] || CITY_LOCALITIES.Hyderabad;
-      box.innerHTML = locs.map((loc) => `
-        <button type="button" data-loc-chip="${escHtml(loc)}" class="loc-chip shrink-0 px-2.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-[11px] font-semibold text-rose-700 hover:bg-rose-600 hover:text-white transition">${escHtml(loc)}</button>
-      `).join('');
-      box.querySelectorAll('.loc-chip').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          const loc = btn.getAttribute('data-loc-chip');
-          $('filter-query').value = loc;
-          state.filters.query = loc;
-          renderProjects();
-          renderCompanyPortfolio();
-          window.trackEvent('search', { search_term: loc, city: state.activeCity });
-        });
-      });
-    }
 
     function renderHotProjects() {
       const grid = $('hot-projects-grid');
@@ -6027,7 +5997,6 @@
       state.filters.zone = 'All';
       $('filter-builder').value = 'All';
       $('filter-zone').value = 'All';
-      renderLocalityChips();
       renderHotProjects();
       renderProjects();
       renderCompanyPortfolio();
@@ -6100,7 +6069,6 @@
     updateCalculator();
     renderProjects();
     updateCityHubCounts();
-    renderLocalityChips();
     renderHotProjects();
     loadExternalFeed();
   </script>
