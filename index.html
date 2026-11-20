@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-NH8LJPXM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GTM-NH8LJPXM');
+    window.trackEvent = function(name, params) {
+      try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch (e) {}
+    };
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Way Prop India — Verified RERA Projects, Flat Prices &amp; Bank Auctions</title>
@@ -4564,6 +4575,7 @@
     function openDetailModal(id) {
       const p = state.projects.find((x) => x.id === id);
       if (!p) return;
+      window.trackEvent('view_project', { project_name: p.name, city: p.city || 'Hyderabad', locality: p.locality, rera_id: p.rera });
       state.selectedProjectId = id;
       $('modal-status').textContent = p.status;
       $('modal-title').textContent = p.name;
@@ -4990,7 +5002,19 @@
       if (btn) openDetailModal(btn.getAttribute('data-comp-detail'));
     });
 
-    $('filter-query').addEventListener('input', (e) => { state.filters.query = e.target.value; renderProjects(); renderCompanyPortfolio(); });
+    let _searchTrackTimer = null;
+    $('filter-query').addEventListener('input', (e) => {
+      state.filters.query = e.target.value;
+      renderProjects();
+      renderCompanyPortfolio();
+      clearTimeout(_searchTrackTimer);
+      const q = (e.target.value || '').trim();
+      if (q.length >= 2) {
+        _searchTrackTimer = setTimeout(() => {
+          window.trackEvent('search', { search_term: q, city: state.activeCity });
+        }, 900);
+      }
+    });
     $('filter-type').addEventListener('change', (e) => { state.filters.propertyType = e.target.value; renderProjects(); });
     $('filter-zone').addEventListener('change', (e) => { state.filters.zone = e.target.value; renderProjects(); renderCompanyPortfolio(); });
     $('filter-status').addEventListener('change', (e) => { state.filters.status = e.target.value; renderProjects(); });
@@ -5156,6 +5180,7 @@
         });
         const resJson = await res.json().catch(() => ({}));
         if (!res.ok || !resJson.success) throw new Error(resJson.message || 'Submission failed');
+        window.trackEvent('generate_lead', { lead_type: 'enquiry', project: projName, city: state.activeCity });
         $('enquire-modal').classList.add('hidden');
         form.reset();
         showToast('Thank you! Your enquiry has been sent. Our team will call you shortly.');
@@ -5220,6 +5245,7 @@
         });
         const resJson = await res.json().catch(() => ({}));
         if (!res.ok || !resJson.success) throw new Error(resJson.message || 'Submission failed');
+        window.trackEvent('generate_lead', { lead_type: 'post_property_free', city, poster_type: posterType });
         $('post-property-modal').classList.add('hidden');
         form.reset();
         $('post-rera-input').required = false;
@@ -5745,6 +5771,7 @@
       const input = $('sky-ai-input');
       const text = input.value.trim();
       if (!text) return;
+      window.trackEvent('sky_ai_query', { query: text.slice(0, 100), city: state.activeCity });
       input.value = '';
       handleSkyQuery(text);
     });
@@ -5795,6 +5822,7 @@
     // City Switcher (Hyderabad <-> Bengaluru)
     function switchCity(city) {
       state.activeCity = city;
+      window.trackEvent('select_city', { city });
       document.querySelectorAll('.city-switch-btn').forEach((btn) => {
         const isAct = btn.getAttribute('data-city') === city;
         btn.className = isAct
