@@ -52,8 +52,8 @@
           TW
         </div>
         <div class="min-w-0">
-          <h1 class="text-base sm:text-xl font-bold tracking-tight text-slate-900 leading-tight truncate">The Way Prop India</h1>
-          <p class="text-[11px] sm:text-xs text-slate-500 truncate">thewaypropindia.com • RERA &amp; Auctions • <span id="data-version-badge" class="font-semibold text-indigo-600">Verified Nov 2026</span></p>
+          <h1 class="text-sm sm:text-xl font-bold tracking-tight text-slate-900 leading-tight truncate">The Way Prop India</h1>
+          <p class="text-[10px] sm:text-xs text-slate-500 truncate">thewaypropindia.com • <span id="data-version-badge" class="font-semibold text-indigo-600">Verified Nov 2026</span></p>
         </div>
       </div>
 
@@ -62,7 +62,7 @@
           <span>𝕏</span>
           <span class="hidden md:inline">@thewaypropindia</span>
         </a>
-        <button id="btn-shortlist-filter" type="button" class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 transition">
+        <button id="btn-shortlist-filter" type="button" class="hidden sm:inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 transition">
           <span>★</span>
           <span class="hidden sm:inline">Shortlist</span>
           <span id="shortlist-count" class="px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px]">0</span>
@@ -152,22 +152,22 @@
     <section class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
       <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
         <p class="text-xs font-medium text-slate-500">Matching Projects</p>
-        <p id="kpi-count" class="text-2xl font-bold text-slate-900 mt-1">9</p>
+        <p id="kpi-count" class="text-2xl font-bold text-slate-900 mt-1">48</p>
         <p id="kpi-rera-subtitle" class="text-[11px] text-slate-500 mt-0.5">TG-RERA approved projects</p>
       </div>
       <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
         <p class="text-xs font-medium text-slate-500">Avg Asking Rate</p>
-        <p id="kpi-avg-rate" class="text-2xl font-bold text-indigo-600 mt-1">₹8,572</p>
+        <p id="kpi-avg-rate" class="text-2xl font-bold text-indigo-600 mt-1">₹10,318</p>
         <p class="text-[11px] text-slate-500 mt-0.5">Per sq.ft (super built-up)</p>
       </div>
       <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
         <p class="text-xs font-medium text-slate-500">Entry Flat Price</p>
-        <p id="kpi-min-price" class="text-2xl font-bold text-emerald-600 mt-1">₹0.70 Cr</p>
+        <p id="kpi-min-price" class="text-2xl font-bold text-emerald-600 mt-1">₹70 L</p>
         <p class="text-[11px] text-slate-500 mt-0.5">Lowest starting ticket</p>
       </div>
       <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
         <p class="text-xs font-medium text-slate-500">Earliest Completion</p>
-        <p id="kpi-earliest" class="text-2xl font-bold text-amber-600 mt-1">Nov 2026</p>
+        <p id="kpi-earliest" class="text-2xl font-bold text-amber-600 mt-1">Dec 2024</p>
         <p class="text-[11px] text-slate-500 mt-0.5">Among filtered projects</p>
       </div>
     </section>
@@ -1152,16 +1152,16 @@
 
   <!-- Toast Notification -->
   <!-- Floating Quick-Action Dock -->
-  <div id="floating-action-dock" class="fixed right-3 sm:right-5 bottom-5 z-40 flex flex-col items-end gap-2">
-    <button type="button" onclick="openEnquireModal('Schedule Site Visit Request', { loan: true, interior: false })" title="Schedule Site Visit" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-full bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold shadow-lg transition">
+  <div id="floating-action-dock" class="fixed right-2.5 sm:right-5 bottom-24 sm:bottom-6 z-40 flex flex-col items-end gap-2">
+    <button type="button" onclick="openEnquireModal('Schedule Site Visit Request', { loan: true, interior: false })" title="Schedule Site Visit" class="inline-flex items-center gap-1.5 p-2.5 sm:px-3.5 sm:py-2.5 rounded-full bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold shadow-lg transition opacity-95">
       <span>📅</span>
       <span class="hidden sm:inline">Book Site Visit</span>
     </button>
-    <button type="button" onclick="$('post-property-modal').classList.remove('hidden')" title="Post Property FREE" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-lg transition">
+    <button type="button" onclick="$('post-property-modal').classList.remove('hidden')" title="Post Property FREE" class="inline-flex items-center gap-1.5 p-2.5 sm:px-3.5 sm:py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-lg transition opacity-95">
       <span>🏠</span>
       <span class="hidden sm:inline">Post FREE</span>
     </button>
-    <button type="button" onclick="$('btn-open-sky-ai').click()" title="Ask Sky AI" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 hover:opacity-95 text-white text-xs font-bold shadow-lg transition">
+    <button type="button" onclick="$('btn-open-sky-ai').click()" title="Ask Sky AI" class="inline-flex items-center gap-1.5 p-2.5 sm:px-3.5 sm:py-2.5 rounded-full bg-gradient-to-r from-sky-500 to-indigo-600 hover:opacity-95 text-white text-xs font-bold shadow-lg transition opacity-95">
       <span>✨</span>
       <span class="hidden sm:inline">Sky AI</span>
     </button>
@@ -5836,7 +5836,7 @@
       if (!box) return;
       const locs = CITY_LOCALITIES[state.activeCity] || CITY_LOCALITIES.Hyderabad;
       box.innerHTML = locs.map((loc) => `
-        <button type="button" data-loc-chip="${escapeHtml(loc)}" class="loc-chip shrink-0 px-2.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-[11px] font-semibold text-rose-700 hover:bg-rose-600 hover:text-white transition">${escapeHtml(loc)}</button>
+        <button type="button" data-loc-chip="${escHtml(loc)}" class="loc-chip shrink-0 px-2.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-[11px] font-semibold text-rose-700 hover:bg-rose-600 hover:text-white transition">${escHtml(loc)}</button>
       `).join('');
       box.querySelectorAll('.loc-chip').forEach((btn) => {
         btn.addEventListener('click', () => {
@@ -5865,16 +5865,16 @@
         <div class="bg-white rounded-xl border border-slate-200/90 p-3.5 shadow-sm flex flex-col justify-between gap-2.5">
           <div>
             <div class="flex items-center justify-between gap-2">
-              <span class="px-2 py-0.5 rounded bg-rose-50 text-rose-700 text-[10px] font-bold uppercase">${escapeHtml(p.status || 'Active')}</span>
-              <span class="text-[10px] font-mono text-slate-400 truncate">${escapeHtml(p.rera || '')}</span>
+              <span class="px-2 py-0.5 rounded bg-rose-50 text-rose-700 text-[10px] font-bold uppercase">${escHtml(p.status || 'Active')}</span>
+              <span class="text-[10px] font-mono text-slate-400 truncate">${escHtml(p.rera || '')}</span>
             </div>
-            <h4 class="text-sm font-bold text-slate-900 mt-1.5 truncate">${escapeHtml(p.name)}</h4>
-            <p class="text-[11px] text-slate-500 truncate">${escapeHtml(p.locality)} • ${escapeHtml(p.bhkLabel || '')}</p>
+            <h4 class="text-sm font-bold text-slate-900 mt-1.5 truncate">${escHtml(p.name)}</h4>
+            <p class="text-[11px] text-slate-500 truncate">${escHtml(p.locality)} • ${escHtml(p.bhkLabel || '')}</p>
             <p class="text-xs font-extrabold text-indigo-700 mt-1">${formatCr(p.minCr)} – ${formatCr(p.maxCr)} <span class="font-medium text-slate-500">(₹${Number(p.rateSqft || 0).toLocaleString('en-IN')}/sq.ft)</span></p>
           </div>
           <div class="flex items-center gap-2 pt-1 border-t border-slate-100">
-            <button type="button" onclick="openEnquireModal('${escapeHtml(p.name)} (${escapeHtml(p.locality)})', { loan: true })" class="flex-1 py-1.5 px-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold transition">Book Site Visit</button>
-            <button type="button" onclick="openDetailModal('${escapeHtml(p.id)}')" class="py-1.5 px-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-700 text-[11px] font-semibold transition">Details</button>
+            <button type="button" onclick="openEnquireModal('${escHtml(p.name)} (${escHtml(p.locality)})', { loan: true })" class="flex-1 py-1.5 px-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold transition">Book Site Visit</button>
+            <button type="button" onclick="openDetailModal('${escHtml(p.id)}')" class="py-1.5 px-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-700 text-[11px] font-semibold transition">Details</button>
           </div>
         </div>
       `).join('');
