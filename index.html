@@ -436,8 +436,8 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
         <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm space-y-4">
           <div>
-            <h2 class="text-lg font-bold text-slate-900">Hyderabad Flat All-In Cost &amp; EMI Estimator</h2>
-            <p class="text-xs text-slate-500 mt-0.5">Calculate base flat cost, Telangana registration charges (7.5% urban), GST, and monthly EMI.</p>
+            <h2 id="calc-title" class="text-lg font-bold text-slate-900">Hyderabad Flat All-In Cost &amp; EMI Estimator</h2>
+            <p id="calc-subtitle" class="text-xs text-slate-500 mt-0.5">Calculate base flat cost, Telangana registration charges (7.5% urban), GST, and monthly EMI.</p>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -490,7 +490,7 @@
                 <span id="calc-base" class="font-semibold">₹1.71 Cr</span>
               </div>
               <div class="flex justify-between">
-                <span class="text-slate-400">Telangana Stamp Duty &amp; Reg (7.5%)</span>
+                <span id="calc-reg-label" class="text-slate-400">Telangana Stamp Duty &amp; Reg (7.5%)</span>
                 <span id="calc-reg" class="font-semibold">₹12.83 L</span>
               </div>
               <div class="flex justify-between">
@@ -2984,12 +2984,24 @@
 
     function populateCalcDropdown() {
       const sel = $('calc-project');
-      sel.innerHTML = `<option value="">Custom Input</option>` + state.projects.map((p) =>
+      const prevVal = sel.value;
+      const cityProjects = state.projects.filter((p) => (p.city || 'Hyderabad') === state.activeCity);
+      sel.innerHTML = `<option value="">Custom Input (${state.activeCity})</option>` + cityProjects.map((p) =>
         `<option value="${p.id}">${p.name} (${formatINR(p.rateSqft)}/sq.ft)</option>`
       ).join('');
+      if (cityProjects.some((p) => p.id === prevVal)) {
+        sel.value = prevVal;
+      } else {
+        sel.value = '';
+      }
     }
 
     function updateCalculator() {
+      const selectedId = $('calc-project') ? $('calc-project').value : '';
+      const selectedProj = selectedId ? state.projects.find((p) => p.id === selectedId) : null;
+      const calcCity = (selectedProj && selectedProj.city) ? selectedProj.city : state.activeCity;
+      const isBlr = calcCity === 'Bengaluru';
+
       const area = Math.max(0, parseFloat($('calc-area').value) || 0);
       const rate = Math.max(0, parseFloat($('calc-rate').value) || 0);
       const gstPct = parseFloat($('calc-stage').value) || 0;
@@ -2998,7 +3010,13 @@
       const years = parseInt($('calc-tenure').value, 10) || 20;
 
       const baseCost = area * rate;
-      const regCost = baseCost * 0.075; // Telangana urban 7.5%
+      let regPct = 7.5;
+      if (isBlr) {
+        if (baseCost > 0 && baseCost <= 2000000) regPct = 4.24;
+        else if (baseCost > 0 && baseCost <= 4500000) regPct = 5.36;
+        else regPct = 7.6; // Karnataka: 5% stamp duty + 0.5% cess + 0.1% surcharge + 2% reg
+      }
+      const regCost = baseCost * (regPct / 100);
       const gstCost = baseCost * (gstPct / 100);
       const total = baseCost + regCost + gstCost;
 
@@ -3008,6 +3026,22 @@
       let emi = 0;
       if (loanAmt > 0 && n > 0) {
         emi = r === 0 ? loanAmt / n : (loanAmt * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      }
+
+      if ($('calc-title')) {
+        $('calc-title').textContent = isBlr
+          ? 'Bengaluru Flat All-In Cost & EMI Estimator'
+          : 'Hyderabad Flat All-In Cost & EMI Estimator';
+      }
+      if ($('calc-subtitle')) {
+        $('calc-subtitle').textContent = isBlr
+          ? 'Calculate base flat cost, Karnataka stamp duty & registration (7.6% above ₹45L: 5% duty + 0.6% cess/surcharge + 2% reg), GST, and monthly EMI.'
+          : 'Calculate base flat cost, Telangana registration charges (7.5% urban), GST, and monthly EMI.';
+      }
+      if ($('calc-reg-label')) {
+        $('calc-reg-label').textContent = isBlr
+          ? `Karnataka Stamp Duty & Reg (${regPct}%)`
+          : 'Telangana Stamp Duty & Reg (7.5%)';
       }
 
       $('calc-base').textContent = formatCr(baseCost / 1e7);
@@ -3610,6 +3644,8 @@
       companyStageFilter = 'all';
       renderProjects();
       renderCompanyPortfolio();
+      populateCalcDropdown();
+      updateCalculator();
     });
 
     $('filter-builder').addEventListener('change', (e) => {
