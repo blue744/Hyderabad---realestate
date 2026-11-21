@@ -3536,5 +3536,67 @@
       "maxCr": 6.35,
       "note": "Luxury 3, 4 & 5 BHK residences in Sector 115, Noida; UPRERAPRJ256314."
     }
+  ],
+  "news": [
+    {
+      "id": "news-hmda-bachupally-nov2026",
+      "date": "Nov 21, 2026",
+      "city": "Hyderabad",
+      "category": "HMDA Auction",
+      "title": "HMDA Bachupally Plot E-Auction Sees Softer Bidding",
+      "summary": "HMDA's Nov 20 e-auction of 50 Bachupally plots averaged ₹49,737/sq.yd (down from ₹51,991 two months ago), with top bids easing to ₹60,500/sq.yd—signaling more selective buyer bidding in plotted layouts.",
+      "sourceName": "RegNews",
+      "url": "https://www.regnews.in/hmda-bachupally-auction-plot-prices-hyderabad"
+    },
+    {
+      "id": "news-sc-refund-litigation-nov2026",
+      "date": "Nov 20, 2026",
+      "city": "Pan-India",
+      "category": "Legal / Supreme Court",
+      "title": "Supreme Court Orders ₹1.57 Cr Refund With 9% Interest Over Undisclosed Litigation",
+      "summary": "The Supreme Court directed a developer to refund ₹1.57 crore with 9% annual interest for failing to disclose pending property litigation, reinforcing homebuyers' right to clear title disclosures.",
+      "sourceName": "TaxGuru",
+      "url": "https://taxguru.in/corporate-law/supreme-court-orders-rs-1-57-crore-refund-9-percent-interest-undisclosed-property-litigation.html"
+    },
+    {
+      "id": "news-tgrera-fines-nov2026",
+      "date": "Nov 18, 2026",
+      "city": "Hyderabad",
+      "category": "TG-RERA Order",
+      "title": "TG-RERA Fines Unregistered Project ₹25 Lakh & Orders Buyer Refunds",
+      "summary": "TG-RERA penalized Sanali IT Parks ₹25 lakh for marketing an unregistered Manchirevula project and ordered refunds with interest in multiple delay cases—reminding buyers to verify RERA IDs before booking.",
+      "sourceName": "PropNewz",
+      "url": "https://www.propnewz.com/blog/tg-rera-november-2026-orders-sanali-the-edge-rs-25-lakh-unregistered-project-refunds-with-interest-section-3-59-63-hyderabad-buyer-2026-11-18"
+    },
+    {
+      "id": "news-hmda-schedule-nov2026",
+      "date": "Nov 18, 2026",
+      "city": "Hyderabad",
+      "category": "HMDA Auction",
+      "title": "HMDA Nov 2026 E-Auctions: Inmulnarva, HUDA Heights & Neopolis",
+      "summary": "Following Bachupally, HMDA's November e-auction calendar continues with 45 plots in Inmulnarva (Nov 23), 8 plots in HUDA Heights (Nov 25), and large parcels in Neopolis & Moosapet (Nov 27).",
+      "sourceName": "Pavani Group",
+      "url": "https://pavanigroup.org/november-2026-hmda-land-auction-updates-opportunities-around-hyderabad/"
+    },
+    {
+      "id": "news-tgrera-ext-nov30",
+      "date": "Nov 16, 2026",
+      "city": "Hyderabad",
+      "category": "TG-RERA Notice",
+      "title": "TG-RERA 4-Month Force Majeure Extension Runs Until Nov 30",
+      "summary": "Registered projects with completion dates between Feb 28 and Jul 31, 2026 received an automatic extension until Nov 30, 2026 under Order No. 1414; buyers should confirm handover schedules in writing.",
+      "sourceName": "PropNewz",
+      "url": "https://www.propnewz.com/blog/tg-rera-order-1414-west-asia-four-month-extension-30-november-2026-registration-vs-agreement-possession-date-hyderabad-buyer-2026-11-16"
+    },
+    {
+      "id": "news-jll-q3-2026-prices",
+      "date": "Nov 10, 2026",
+      "city": "Pan-India",
+      "category": "Market Trend",
+      "title": "JLL Q3 2026: Bengaluru (+15%), Chennai (+12%) & NCR (+10%) Lead Price Gains",
+      "summary": "Residential capital values climbed across India's top cities in Q3 2026—led by Bengaluru (15%), Chennai (12%), Delhi-NCR (10%), Mumbai (8%), and Pune (6%)—driven by demand for larger premium homes.",
+      "sourceName": "The Realty Today",
+      "url": "https://therealtytoday.com/news/trt-data-lab/jll-housing-sales-up-6-in-nine-months-but-value-rises-15-as-buyers-pay-more-per-home"
+    }
   ]
 }
