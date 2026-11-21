@@ -23,7 +23,21 @@
       "rateSqft": 10900,
       "minCr": 2.82,
       "maxCr": 4.24,
-      "note": "13.52 acres facing Kokapet & Osman Sagar lakes; 6 towers (G+44 floors), 72,000 sq.ft clubhouse."
+      "note": "13.52 acres facing Kokapet & Osman Sagar lakes; 6 towers (G+44 floors), 72,000 sq.ft clubhouse.",
+      "clubhouse": {
+        "size": "72,000 sq.ft (6 floors)",
+        "details": "Terrace futsal court, gymnasium, aerobics hall, banquet hall, indoor games, badminton court, guest rooms, swimming pool, creche, pharmacy, spa and salon, cafe, and ATM."
+      },
+      "amenities": [
+        "Terrace Futsal Court",
+        "Swimming Pool",
+        "Sky Walk & Viewing Gallery",
+        "Tennis & Pickleball Courts",
+        "Half Basketball Court & Skating Rink",
+        "Outdoor Gym, Cycle & Jogging Track",
+        "Pet Zone & Temple",
+        "Amphitheatre & Children's Play Areas"
+      ]
     },
     {
       "id": "my-home-vipina",
@@ -49,7 +63,21 @@
       "rateSqft": 6300,
       "minCr": 0.83,
       "maxCr": 1.4,
-      "note": "20.61-acre podium community in Tellapur; 8 skyscraper towers (G+45 floors)."
+      "note": "20.61-acre podium community in Tellapur; 8 skyscraper towers (G+45 floors).",
+      "clubhouse": {
+        "size": "1,00,000 sq.ft (4 floors — Club Vipina)",
+        "details": "Club Vipina featuring a gymnasium, yoga and aerobics hall, meditation spaces, and indoor rejuvenation facilities."
+      },
+      "amenities": [
+        "Swimming Pool",
+        "Squash Court",
+        "Badminton Courts",
+        "Basketball Court",
+        "Cricket Practice Net",
+        "Skating Rink & Cycle Track",
+        "Outdoor Gym & Central Courtyard",
+        "Pet Zone & Kids' Play Area"
+      ]
     },
     {
       "id": "my-home-akrida",
@@ -75,7 +103,21 @@
       "rateSqft": 7500,
       "minCr": 1.04,
       "maxCr": 1.76,
-      "note": "Gopanpally lifestyle apartments with grand clubhouse & quick ORR/Financial District access."
+      "note": "Gopanpally lifestyle apartments with grand clubhouse & quick ORR/Financial District access.",
+      "clubhouse": {
+        "size": "1,05,000 sq.ft combined (Club Cotta 58,000 sq.ft + Club Terra)",
+        "details": "Two clubhouses connected by a skywalk with gym, multipurpose halls, yoga/aerobics hall, reading area, indoor badminton court, guest rooms, and terrace futsal & pickleball."
+      },
+      "amenities": [
+        "Swimming Pool & Sun Deck",
+        "Indoor & Outdoor Gymnasium",
+        "Badminton, Tennis & Basketball Courts",
+        "Terrace Futsal & Pickleball Courts",
+        "Cricket Practice Nets & Box Cricket",
+        "Skating Rink & Amphitheatre",
+        "Jogging & Cycling Tracks",
+        "Pet Zone & Children's Play Areas"
+      ]
     },
     {
       "id": "sobha-waterfront",
@@ -101,7 +143,21 @@
       "rateSqft": 14300,
       "minCr": 3.45,
       "maxCr": 5.83,
-      "note": "4-acre ultra-luxury lake-facing community near Hussain Sagar, Raj Bhavan Road; 238 residences."
+      "note": "4-acre ultra-luxury lake-facing community near Hussain Sagar, Raj Bhavan Road; 238 residences.",
+      "clubhouse": {
+        "size": "6-storeyed standalone clubhouse (sq.ft not disclosed)",
+        "details": "Grand lobby, rooftop/terrace swimming pool, multipurpose hall, sports lounge, gymnasium/fitness center, indoor games room, and yoga/aerobics room."
+      },
+      "amenities": [
+        "Rooftop Lakeview Deck",
+        "680m Jogging & Cycling Track",
+        "Multipurpose Sports Courts",
+        "Splash Pool & Harbour Plaza",
+        "Yoga & Meditation Pods",
+        "Outdoor Fitness Corner",
+        "Kids' Climbing Wall & Play Area",
+        "Serenity Podium & Linear Garden"
+      ]
     },
     {
       "id": "raghava-nova",
@@ -125,7 +181,21 @@
       "rateSqft": 8800,
       "minCr": 1.75,
       "maxCr": 2.45,
-      "note": "7.02 acres on Myscape Road, Financial District; 61-floor towers with Sky 62 deck."
+      "note": "7.02 acres on Myscape Road, Financial District; 61-floor towers with Sky 62 deck.",
+      "clubhouse": {
+        "size": "50,000–50,900 sq.ft (G+4 floors — Club Nova)",
+        "details": "Club Nova featuring a gymnasium, spa and salon, plush mini theatre, co-working spaces, exclusive coffee lounge, multipurpose party lounge, and indoor games zone."
+      },
+      "amenities": [
+        "Sky 62 (62nd-Floor Skydeck & Walking Track)",
+        "Tower-Connecting Skybridges",
+        "Swimming Pool & Rooftop Cabanas",
+        "Multiple Sports Courts",
+        "Miyawaki Forest with Aroma & Zen Gardens",
+        "Jogging Track",
+        "Kids' Play Areas & Creche",
+        "Retail Stores"
+      ]
     },
     {
       "id": "wave-by-raghava",
@@ -149,7 +219,21 @@
       "rateSqft": 7229,
       "minCr": 1.2,
       "maxCr": 1.49,
-      "note": "8.2 acres, 4 towers of 36 floors (1,290 units) with 19th-floor Sky Bridge & G+4 clubhouse."
+      "note": "8.2 acres, 4 towers of 36 floors (1,290 units) with 19th-floor Sky Bridge & G+4 clubhouse.",
+      "clubhouse": {
+        "size": "G+4 floors + 19th-floor Sky Bridge & Sky Clubs",
+        "details": "Clubhouse and tower sky clubs featuring a banquet hall, lounge, theatre, golf simulator, salon, bar, gymnasium, health club, and virtual reality gaming zones."
+      },
+      "amenities": [
+        "19th-Floor Sky Bridge & Individual Sky Clubs",
+        "Swimming Pool & Kids Pool",
+        "Bowling Alley & Rock Climbing Wall",
+        "Skating Rink & Badminton Court",
+        "Jogging Track & Landscaped Gardens",
+        "Multipurpose Hall & Party Area",
+        "Farmer's Market & Retail Spaces",
+        "Children's Play Area"
+      ]
     },
     {
       "id": "candeur-lakescape",
@@ -176,7 +260,21 @@
       "rateSqft": 9471,
       "minCr": 1.24,
       "maxCr": 2.3,
-      "note": "High-rise gated apartments overlooking lake in Kondapur near HITEC City."
+      "note": "High-rise gated apartments overlooking lake in Kondapur near HITEC City.",
+      "clubhouse": {
+        "size": "1,00,000 sq.ft (G+11 levels)",
+        "details": "Indoor badminton & squash courts, home theater, gym, spa & salon, sauna & steam bath, banquet & conference halls, billiards, table tennis, workstation, yoga room, cafe, supermarket, clinic, pharmacy, and day-care."
+      },
+      "amenities": [
+        "Swimming Pool",
+        "Terrace Football Court & Terrace Sitting",
+        "Tennis Court",
+        "Outdoor Gym & Jogging Track",
+        "Skating Rink & Amphitheatre",
+        "Barbeque Zone & Respite Area",
+        "Work Pods & Library",
+        "Car-Wash Facility"
+      ]
     },
     {
       "id": "candeur-crescent",
@@ -200,7 +298,21 @@
       "rateSqft": 9080,
       "minCr": 1.5,
       "maxCr": 2.41,
-      "note": "5.5 acres, 5 towers of 50 floors (1,230 units) in Serilingampally."
+      "note": "5.5 acres, 5 towers of 50 floors (1,230 units) in Serilingampally.",
+      "clubhouse": {
+        "size": "62,000 sq.ft (G+8 floors / 8-level standalone)",
+        "details": "8-storey standalone clubhouse featuring an infinity-style sky pool, gym, yoga/meditation zones, business centre/co-working, mini theatre, restaurant, spa & salon, clinic, ATM, and indoor games."
+      },
+      "amenities": [
+        "Infinity-Style Sky Pool & Swimming Pool",
+        "Gymnasium & Aerobics/Dance Room",
+        "Mini Theatre & Amphitheatre",
+        "Business Centre & Co-Working Workstations",
+        "Spa, Salon & Restaurant",
+        "Basketball, Badminton & Table Tennis Courts",
+        "Creche & Children's Play Area",
+        "Cycling Track & Landscaped Gardens"
+      ]
     },
     {
       "id": "sumadhura-palais-royale",
@@ -226,7 +338,21 @@
       "rateSqft": 12700,
       "minCr": 5.45,
       "maxCr": 8.63,
-      "note": "7.35 acres, 52-storey ultra-luxury towers with 85,000 sq.ft clubhouse in Khajaguda."
+      "note": "7.35 acres, 52-storey ultra-luxury towers with 85,000 sq.ft clubhouse in Khajaguda.",
+      "clubhouse": {
+        "size": "85,000 sq.ft Floating Clubhouse",
+        "details": "Suspended floating clubhouse accessible from all 3 wings with Michael Phelps Swimming Academy, Saurav Ghoshal Squash Academy, UFC Gyms, infinity pools, sky lounges, golf simulators, gourmet dining, wellness spa, business centre, and guest suites."
+      },
+      "amenities": [
+        "Sky Patios (Osman Sagar & Golconda Views)",
+        "Swimming Pool & Wellness Zone",
+        "Sports Zone",
+        "Multipurpose Hall",
+        "BBQ Deck",
+        "Jogging Track",
+        "2x Car Spas & Central Laundry",
+        "Miyawaki & Landscaped Gardens"
+      ]
     },
     {
       "id": "mantri-celestia",
@@ -251,7 +377,21 @@
       "rateSqft": 11600,
       "minCr": 0.83,
       "maxCr": 1.5,
-      "note": "11-acre ready gated community in Nanakramguda Financial District (resale/ready inventory)."
+      "note": "11-acre ready gated community in Nanakramguda Financial District (resale/ready inventory).",
+      "clubhouse": {
+        "size": "On-site Clubhouse (sq.ft not disclosed)",
+        "details": "Clubhouse with gymnasium, indoor games room, kids club, library and business centre, and cafeteria/food court."
+      },
+      "amenities": [
+        "Swimming Pool",
+        "Outdoor Tennis Courts",
+        "Cycling & Jogging Track",
+        "Flower Gardens & Park",
+        "Cafeteria / Food Court",
+        "Bank & ATM",
+        "Piped Gas & Power Backup",
+        "24x7 Security & Reserved Parking"
+      ]
     },
     {
       "id": "vertex-33-west",
@@ -276,7 +416,21 @@
       "rateSqft": 8500,
       "minCr": 1.16,
       "maxCr": 2.05,
-      "note": "3 acres, 2 towers of 33 floors (524 units) near Old Mumbai Hwy, Nallagandla."
+      "note": "3 acres, 2 towers of 33 floors (524 units) near Old Mumbai Hwy, Nallagandla.",
+      "clubhouse": {
+        "size": "38,000 sq.ft (6 floors — Club 33) + 60,000 sq.ft Joy Scape",
+        "details": "Grand lobby, terrace swimming pool with kids' pool, preview theatre, conference rooms, guest rooms, library, gymnasium, badminton courts, billiards, yoga/aerobics, spa, and coffee lounge."
+      },
+      "amenities": [
+        "60,000 sq.ft Joy Scape Stilt Podium",
+        "Terrace Swimming Pool",
+        "Sky Cafeteria",
+        "Multiple Sports Courts",
+        "Senior Citizen Walking Tracks",
+        "Children's Play Areas & Creche",
+        "EV Charging Points (each flat)",
+        "Landscaped Gardens & Water Bodies"
+      ]
     },
     {
       "id": "vertex-viraat",
@@ -301,7 +455,21 @@
       "rateSqft": 7611,
       "minCr": 1.07,
       "maxCr": 1.77,
-      "note": "8.75 acres, 6 towers of 30 floors (1,428 units) in Miyapur, NH-65."
+      "note": "8.75 acres, 6 towers of 30 floors (1,428 units) in Miyapur, NH-65.",
+      "clubhouse": {
+        "size": "Club Viraat + 60,000 sq.ft Joyscapes (sq.ft not disclosed)",
+        "details": "Preview theatre, squash courts, exclusive business lounges, cafe lounge, conference room, grocery store, spa and salon, gymnasium, and party hall."
+      },
+      "amenities": [
+        "Leisure Pool & Lap Pool",
+        "Futsal Court & Practice Cricket Pitch",
+        "Basketball, Tennis & Badminton Courts",
+        "Roller Skating Rink & Yoga Decks",
+        "Dedicated AC Bus Bays",
+        "E-Commerce Delivery & Car Wash Bays",
+        "Pet Zone & Senior Citizen Area",
+        "Jogging / Cycle Track & Lower Park"
+      ]
     },
     {
       "id": "my-home-nishada",
@@ -327,7 +495,21 @@
       "rateSqft": 12000,
       "minCr": 4.28,
       "maxCr": 5.82,
-      "note": "16.68-acre Neopolis resort-themed community; 8 towers (44 floors), 80% open space."
+      "note": "16.68-acre Neopolis resort-themed community; 8 towers (44 floors), 80% open space.",
+      "clubhouse": {
+        "size": "1,00,000+ sq.ft (4 floors — Club Nishada)",
+        "details": "Club Nishada featuring a temperature-controlled swimming pool, gymnasium, indoor badminton court, Zumba hall, aerobics hall, aerial yoga, multipurpose hall, and guest rooms."
+      },
+      "amenities": [
+        "Swimming Pool & Central Plaza Waterbody",
+        "Tennis Court",
+        "Jogging & Cycling Track",
+        "Paradise, Central Plaza & Zen Gardens",
+        "Amphitheatre",
+        "Aerial Yoga, Zumba & Aerobics Halls",
+        "100% DG Power Backup & Piped Gas",
+        "24x7 Surveillance & Intercom"
+      ]
     },
     {
       "id": "lansum-el-palacio",
@@ -351,7 +533,19 @@
       "rateSqft": 8921,
       "minCr": 1.37,
       "maxCr": 2.06,
-      "note": "3-acre Alkapur Township / Puppalaguda 2-tower project; 1 covered parking per unit."
+      "note": "3-acre Alkapur Township / Puppalaguda 2-tower project; 1 covered parking per unit.",
+      "clubhouse": {
+        "size": "40,000 sq.ft (6 levels)",
+        "details": "6-level clubhouse featuring a sky lounge, rooftop swimming pool, gymnasium, and co-working spaces."
+      },
+      "amenities": [
+        "Rooftop Swimming Pool",
+        "Sky Terrace & Landscaped Terraces",
+        "Sky Lounge",
+        "Co-Working Spaces",
+        "Gymnasium",
+        "Landscaped Gardens"
+      ]
     },
     {
       "id": "prestige-golden-grove",
@@ -378,7 +572,21 @@
       "rateSqft": 8750,
       "minCr": 0.85,
       "maxCr": 2.64,
-      "note": "28.7-acre township near ORR Exit 2; 10 towers of 52 floors."
+      "note": "28.7-acre township near ORR Exit 2; 10 towers of 52 floors.",
+      "clubhouse": {
+        "size": "1,50,000 sq.ft combined (Twin 75,000 sq.ft multi-level clubhouses)",
+        "details": "Temperature-controlled pools, large gym, spa/steam/sauna, badminton & squash courts, table tennis/billiards, mini-theatre, banquet halls, rooftop lounges, co-working lounges, business centre, crèche, hobby studio, and library."
+      },
+      "amenities": [
+        "11-Acre Central Park (80% Open Space)",
+        "Half-Olympic & Temperature-Controlled Pools",
+        "2 km Jogging & Cycling Tracks",
+        "Cricket Pitch, Basketball & Skating Rink",
+        "Open-Air Amphitheatre & BBQ Deck",
+        "Yoga & Meditation Decks",
+        "Age-Split Kids' Play Areas & Pet Park",
+        "Co-Working Lounges & Mini-Theatre"
+      ]
     },
     {
       "id": "asbl-broadway",
@@ -402,7 +610,21 @@
       "rateSqft": 10500,
       "minCr": 2.3,
       "maxCr": 2.78,
-      "note": "Builder target Dec 2029; RERA-linked date May 2030."
+      "note": "Builder target Dec 2029; RERA-linked date May 2030.",
+      "clubhouse": {
+        "size": "52,000 sq.ft (G+5 levels) + 55,000 sq.ft urban corridor",
+        "details": "G+5 clubhouse paired with a 55,000 sq.ft urban corridor housing gym, co-working spaces & lounge, banquet hall, indoor games, creche, health center, salon, and supermarket."
+      },
+      "amenities": [
+        "100 ft x 33 ft Swimming Pool",
+        "Gymnasium & Health Center",
+        "Co-Working Space & Resident Lounge",
+        "Multipurpose Party & Banquet Hall",
+        "Indoor Games (Table Tennis & Billiards)",
+        "Creche / Day Care & Kids Play Area",
+        "On-Site Salon & Supermarket",
+        "Jogging/Cycling Track & EV Charging"
+      ]
     },
     {
       "id": "rajapushpa-pristinia",
@@ -427,7 +649,21 @@
       "rateSqft": 9500,
       "minCr": 1.22,
       "maxCr": 4.43,
-      "note": "12.1 acres, 6 towers off Kokapet–Neopolis Road."
+      "note": "12.1 acres, 6 towers off Kokapet–Neopolis Road.",
+      "clubhouse": {
+        "size": "60,000 sq.ft + 70,000 sq.ft Elation Station",
+        "details": "Temperature-controlled pool on clubhouse terrace, indoor sports facilities, squash and badminton courts, party hall, yoga and aerobics deck, and work-from-home spaces."
+      },
+      "amenities": [
+        "Podium & Terrace Temperature-Controlled Pool",
+        "Tennis, Badminton & Squash Courts",
+        "Cricket Practice Net & Multipurpose Court",
+        "Jogging & Cycling Tracks",
+        "Skating Rink & Adventure Play Area",
+        "Amphitheatre & Outdoor Party Lawn",
+        "Pet Park & Leisure Pavilion",
+        "Onsite Clinic, Pharmacy & WFH Spaces"
+      ]
     },
     {
       "id": "rajapushpa-imperia",
@@ -451,7 +687,21 @@
       "rateSqft": 8500,
       "minCr": 1.15,
       "maxCr": 2.82,
-      "note": "24 acres, 8 towers with 1.2L sq.ft clubhouse."
+      "note": "24 acres, 8 towers with 1.2L sq.ft clubhouse.",
+      "clubhouse": {
+        "size": "1,20,000 sq.ft (G+4 floors — Club Palazzio)",
+        "details": "4 badminton courts, 2 squash courts, CrossFit arena, gym, salon & spa, 2 AV rooms, billiards lounge, restaurant, coffee lounge, co-working space, conference room, 8 guest suites, banquet hall, library, creche, grocery store, and clinic."
+      },
+      "amenities": [
+        "2 Swimming Pools with Deck",
+        "7.5-Acre Central Lawn & Traffic-Free Podium",
+        "Outdoor Gym & Golf Putting",
+        "Cricket Practice Nets & Sports Courts",
+        "Amphitheatre & Party Lawn with BBQ",
+        "Skating Rink & Cycling/Jogging Track",
+        "Pet Park & Kids' Play Area",
+        "EV Charging & Centralized Piped LPG"
+      ]
     },
     {
       "id": "radhey-skyverse",
@@ -475,7 +725,21 @@
       "rateSqft": 7600,
       "minCr": 1.33,
       "maxCr": 2.33,
-      "note": "8 acres, 3 high-rise towers (47 floors)."
+      "note": "8 acres, 3 high-rise towers (47 floors).",
+      "clubhouse": {
+        "size": "70,000+ sq.ft (G+4 levels)",
+        "details": "G+4 clubhouse with two swimming pools, complemented by three-level amenities across a vehicle-free Bali-themed podium, double stilt, and rooftop."
+      },
+      "amenities": [
+        "Two Swimming Pools",
+        "Gymnasium & Yoga/Meditation Area",
+        "Natural Pond & Bali-Themed Vehicle-Free Podium",
+        "Rock Climbing Wall",
+        "Tennis, Half Basketball & Cricket Nets",
+        "Mini Golf Course",
+        "Indoor Games (Billiards & Chess)",
+        "Pet Park, Barbeque Pit & Jogging Tracks"
+      ]
     },
     {
       "id": "neo-towers",
@@ -499,7 +763,21 @@
       "rateSqft": 10900,
       "minCr": 2.44,
       "maxCr": 4.98,
-      "note": "Luxury Neopolis high-rise residences."
+      "note": "Luxury Neopolis high-rise residences.",
+      "clubhouse": {
+        "size": "50,000 sq.ft Club Neo (1,04,000+ sq.ft total amenities)",
+        "details": "Club Neo anchors indoor recreation with gym, indoor games, yoga hall, conference hall, lounge, and creche, paired with 59th-floor rooftop infinity pool, sky gym, starlit cinema, and telescope point."
+      },
+      "amenities": [
+        "Rooftop Infinity Swimming Pool",
+        "Gymnasium, Sky Gym & Sky Trail",
+        "Mini Theatre / Starlit Cinema & Telescope Point",
+        "Squash Court, Cricket Pitch & Table Tennis",
+        "Indoor Games Room & Billiards",
+        "Yoga Hall & Sky Yoga Deck",
+        "Creche / Day Care & Conference Hall",
+        "Heli-Pad & Smart Home Automation"
+      ]
     },
     {
       "id": "team4-aria",
@@ -524,7 +802,21 @@
       "rateSqft": 8200,
       "minCr": 1.32,
       "maxCr": 2.16,
-      "note": "12.5 acres gated community on Miyapur–Madinaguda corridor."
+      "note": "12.5 acres gated community on Miyapur–Madinaguda corridor.",
+      "clubhouse": {
+        "size": "1,00,000 sq.ft combined (Club One G+5 + Club Priva)",
+        "details": "Club One and Club Priva featuring eight gyms, eight yoga zones, ten party facilities, seven tuition zones, temperature-controlled pools, and indoor sports complexes."
+      },
+      "amenities": [
+        "1+ Lakh sq.ft Vehicle-Free Social Podium",
+        "Three Swimming Pools (Olympic & Heated)",
+        "14 Sports Courts (Badminton, Pickleball, Squash)",
+        "2+ km Jogging Track",
+        "3.5+ Acres Central Courtyard",
+        "Amphitheatre, Library & Spa/Sauna",
+        "Tennis, Basketball & Cricket Pitch",
+        "20-ft Double-Height Stilt Amenities"
+      ]
     },
     {
       "id": "casagrand-hennessy",
@@ -548,7 +840,21 @@
       "rateSqft": 6500,
       "minCr": 1.35,
       "maxCr": 1.98,
-      "note": "Low-density 3.72-acre community off NH-44."
+      "note": "Low-density 3.72-acre community off NH-44.",
+      "clubhouse": {
+        "size": "15,000 sq.ft (5-storey)",
+        "details": "5-storey clubhouse with 1,571 sq.ft rooftop swimming pool, interactive gym, multipurpose hall with dining, AV room, VR gaming zone, co-working space, kids' lounge with rock climbing wall, indoor games, convenio store, and coffee station."
+      },
+      "amenities": [
+        "Rooftop Swimming Pool (1,571 sq.ft)",
+        "Sky Cinema, Stargazing & Sunset Decks",
+        "Elevated Yoga/Meditation Lawn",
+        "Rooftop Co-Working & BBQ Pavilion",
+        "Basketball, Sports Court & Tennis Wall",
+        "Outdoor Gym, CrossFit & Cycling Tracks",
+        "Pet Park, Zen & Reflexology Gardens",
+        "24/7 Power Backup, CCTV & WTP/STP"
+      ]
     },
     {
       "id": "urbanrise-cloud33",
@@ -573,7 +879,21 @@
       "rateSqft": 8900,
       "minCr": 0.91,
       "maxCr": 1.7,
-      "note": "9.15 acres, 5 towers of 33 floors; Phase 1 handover."
+      "note": "9.15 acres, 5 towers of 33 floors; Phase 1 handover.",
+      "clubhouse": {
+        "size": "85,000 sq.ft Royal Nizam's Clubhouse (2 clubhouses) + 70,000 sq.ft rooftop",
+        "details": "Moroccan-themed Royal Nizam's Clubhouse featuring co-working spaces, gym, swimming pool, party hall, café, supermarket, spa & salon, indoor games, and Urbanrise Genius learning hub."
+      },
+      "amenities": [
+        "Swimming Pool & Gymnasium",
+        "10 Rooftop Sky Lounges & Viewing Decks",
+        "Urbanrise Genius Learning Hub",
+        "Co-Working Spaces & Café",
+        "Mini Theatre & Amphitheatre",
+        "Spa, Salon & On-Site Supermarket",
+        "Cricket Practice Nets & Half Basketball Court",
+        "Outdoor Gym, Jogging Track & Hammock Park"
+      ]
     },
     {
       "id": "ramky-one-orion",
@@ -596,7 +916,21 @@
       "rateSqft": 6550,
       "minCr": 0.7,
       "maxCr": 1,
-      "note": "Value 3 BHK community near Pocharam IT SEZ."
+      "note": "Value 3 BHK community near Pocharam IT SEZ.",
+      "clubhouse": {
+        "size": "50,000 sq.ft",
+        "details": "50,000 sq.ft clubhouse housing a gym, multipurpose party hall, indoor games (billiards, table tennis, carrom, chess), spa & salon, library, café, creche, and supermarket."
+      },
+      "amenities": [
+        "Swimming Pool & Toddler Pool",
+        "Exclusive Mini Golf Course",
+        "Gymnasium, Outdoor Gym & Spa",
+        "Futsal, Mini Soccer & Cricket Nets",
+        "Badminton & Half Basketball Courts",
+        "Amphitheatre & Multipurpose Hall",
+        "Indoor Games (Billiards, TT, Chess & Carrom)",
+        "Creche, Library, Supermarket & EV Charging"
+      ]
     },
     {
       "id": "ghr-trivana",
@@ -621,7 +955,21 @@
       "rateSqft": 10499,
       "minCr": 4,
       "maxCr": 4.62,
-      "note": "IGBC Gold boutique villa community off ORR & Airport corridor."
+      "note": "IGBC Gold boutique villa community off ORR & Airport corridor.",
+      "clubhouse": {
+        "size": "15,000+ sq.ft",
+        "details": "Boutique clubhouse with reception lounge, multipurpose halls, gymnasium, aerobics/yoga hall, co-working space, indoor games (table tennis, billiards), hobby room, guest room, and supermarket."
+      },
+      "amenities": [
+        "Swimming Pool & Kids' Pool with Deck",
+        "Pickleball, Lawn Tennis & Basketball Courts",
+        "Cricket Pitch/Zones",
+        "Amphitheatre & Barbeque Area",
+        "Co-Working Space & Multipurpose Hall",
+        "EV Charging & Rooftop Solar Panels",
+        "Smart Home Lighting & Fan Automation",
+        "Grey Water Treatment & 24/7 Security"
+      ]
     },
     {
       "id": "sunyuga-villa-palazzo",
@@ -645,7 +993,21 @@
       "rateSqft": 8300,
       "minCr": 2.77,
       "maxCr": 3.94,
-      "note": "8.65 acres, 101 ready-to-move luxury villas in North Hyderabad."
+      "note": "8.65 acres, 101 ready-to-move luxury villas in North Hyderabad.",
+      "clubhouse": {
+        "size": "28,000 sq.ft (G+3)",
+        "details": "G+3 modern clubhouse edifice housing indoor recreational areas, gymnasium, and community/social facilities alongside the swimming pool deck."
+      },
+      "amenities": [
+        "Swimming Pool & Kids' Splash Pool",
+        "Gymnasium",
+        "Badminton & Half-Basketball Courts",
+        "Cricket Net Practice Pitch",
+        "Jogging, Strolling & Cycling Tracks",
+        "Yoga & Meditation Zone",
+        "Children's Play Area & Landscaped Parks",
+        "Solar Energy, 24/7 Backup & CCTV"
+      ]
     },
     {
       "id": "greenmark-mayfair-sunrise",
@@ -670,7 +1032,21 @@
       "rateSqft": 11600,
       "minCr": 4.51,
       "maxCr": 7.31,
-      "note": "66-acre resort-style gated villa township with 589 triplex homes."
+      "note": "66-acre resort-style gated villa township with 589 triplex homes.",
+      "clubhouse": {
+        "size": "1,00,000 sq.ft",
+        "details": "Fully furnished 1,00,000 sq.ft clubhouse featuring an 11,000 sq.ft gym, aerobics room, banquet hall, cafeteria/food court, library, crèche, home theatre, spa/jacuzzi, and indoor games room."
+      },
+      "amenities": [
+        "Swimming Pool",
+        "6 km Walking/Jogging & Cycling Track",
+        "7,500 sq.ft Lit Box Cricket & Football",
+        "Tennis, Basketball & Beach Volleyball",
+        "Dedicated Pet Park & Amphitheatre",
+        "Golf Putting & Racchabanda Seating",
+        "EV Charging Stations & Solar Panels",
+        "24/7 Power Backup, CCTV & STP/WTP"
+      ]
     },
     {
       "id": "fiora-by-yashoda",
@@ -694,7 +1070,21 @@
       "rateSqft": 11050,
       "minCr": 4.2,
       "maxCr": 5.1,
-      "note": "15-acre standalone villa community with 95 residences."
+      "note": "15-acre standalone villa community with 95 residences.",
+      "clubhouse": {
+        "size": "20,000+ sq.ft (dual-wing clubhouse)",
+        "details": "Dual-wing 20,000+ sq.ft clubhouse featuring an indoor badminton court, squash court, 2 banquet halls, gymnasium, home theatre, library, and indoor games."
+      },
+      "amenities": [
+        "Swimming Pool",
+        "Gymnasium & Yoga/Meditation Area",
+        "Indoor Badminton & Squash Courts",
+        "2 Banquet Halls & Party Lawn",
+        "Home Theatre & Library",
+        "Basketball Court, Skating Rink & Cricket Pitch",
+        "Amphitheatre, Barbeque & Pet Park",
+        "Solar-Powered Common Services & Jogging Track"
+      ]
     },
     {
       "id": "sage-by-raghava",
@@ -718,7 +1108,21 @@
       "rateSqft": 16500,
       "minCr": 8.25,
       "maxCr": 10.5,
-      "note": "12-acre ultra-luxury architectural villa enclave with 82 homes."
+      "note": "12-acre ultra-luxury architectural villa enclave with 82 homes.",
+      "clubhouse": {
+        "size": "28,500 sq.ft (G+3)",
+        "details": "G+3 clubhouse with grand lobby, mini bowling alley, gentleman's lounge, spa/sauna/salon, gym, banquet hall, business lounge, library, mini-theatre, outdoor café & terrace bar, crèche, and indoor games."
+      },
+      "amenities": [
+        "Swimming Pool & Kids' Pool",
+        "Mini Soccer, Tennis & Badminton Courts",
+        "Cricket Practice Net & Outdoor Gym",
+        "Rock Climbing Wall & Skate Park",
+        "Therapeutic, Zen & Reflexology Gardens",
+        "Amphitheatre & Party Lawn",
+        "Pet Area & Elevated Walkway",
+        "Smart Home Automation & 24/7 CCTV"
+      ]
     },
     {
       "id": "vertex-kingston-park",
@@ -743,7 +1147,21 @@
       "rateSqft": 22000,
       "minCr": 9.15,
       "maxCr": 12.04,
-      "note": "40-acre gated villa township in Nallagandla with 250 homes."
+      "note": "40-acre gated villa township in Nallagandla with 250 homes.",
+      "clubhouse": {
+        "size": "50,000 sq.ft (4 floors — Club Royale)",
+        "details": "Club Royale features an infinity pool with cabanas, spa & wellness center, preview theatre, library & business lounge, gym, aerobics/yoga room, squash court, billiards/TT, supermarket, clinic, salon, and crèche."
+      },
+      "amenities": [
+        "Infinity Pool with Cabanas & Party Lawn",
+        "Putting Green (Golf Practice)",
+        "Lawn Tennis, Basketball & Badminton",
+        "Cricket Pitch & Skating Rink",
+        "Amphitheatre & Senior Citizen Court",
+        "On-Site Supermarket, Clinic & Crèche",
+        "Landscaped Gardens & Gazebos",
+        "100% Power Backup & 24/7 Security"
+      ]
     },
     {
       "id": "aparna-sarovar-towers",
@@ -768,7 +1186,21 @@
       "rateSqft": 11000,
       "minCr": 3.16,
       "maxCr": 4.07,
-      "note": "50-storey luxury towers on 5.66 acres with 585 units."
+      "note": "50-storey luxury towers on 5.66 acres with 585 units.",
+      "clubhouse": {
+        "size": "52,932 sq.ft",
+        "details": "Grand clubhouse featuring a banquet hall, café lounge, preview theatre, business lounges & conference rooms, pool, gym & cardio studio, indoor badminton & squash courts, billiards, grocery store, bank/ATM, clinic, and 7 guest rooms."
+      },
+      "amenities": [
+        "Swimming Pool & Landscaped Gardens",
+        "Indoor Badminton & Squash Courts",
+        "Lawn Tennis Court & Football Ground",
+        "Amphitheatre & Party Lawn",
+        "Pet Park & Children's Play Area",
+        "Grocery Store, ATM, Clinic & 7 Guest Rooms",
+        "4 Car-Free Podiums & Car Wash Area",
+        "100% Backup, Piped Gas & Solar Fencing"
+      ]
     },
     {
       "id": "avira-by-avr",
@@ -793,7 +1225,21 @@
       "rateSqft": 8499,
       "minCr": 1.94,
       "maxCr": 2.39,
-      "note": "1.91 acres, 172 units in Kokapet."
+      "note": "1.91 acres, 172 units in Kokapet.",
+      "clubhouse": {
+        "size": "Avira Club / Fiesta Clubhouse (sq.ft not disclosed)",
+        "details": "Centrally air-conditioned clubhouse featuring a lobby, guest rooms, gym, Pilates/yoga studio, spa & steam room, co-working space, banquet/multipurpose hall, and indoor games room."
+      },
+      "amenities": [
+        "Swimming Pool & Sun Deck",
+        "Elevated Gymnasium & Pilates/Yoga Studio",
+        "Steam Room, Spa & Massage Room",
+        "Co-Working Space & Multipurpose Hall",
+        "Guest Rooms & Indoor Games Room",
+        "Rooftop Party Lawn, Gazebo & Terrace BBQ",
+        "Rock Climbing Wall, Skating Rink & Badminton Court",
+        "Creche / Day Care, Amphitheatre & Jogging Track"
+      ]
     },
     {
       "id": "vaishno-skyvue",
@@ -817,7 +1263,21 @@
       "rateSqft": 7000,
       "minCr": 1.41,
       "maxCr": 1.91,
-      "note": "High-rise 3 BHK apartments near Kollur ORR Exit."
+      "note": "High-rise 3 BHK apartments near Kollur ORR Exit.",
+      "clubhouse": {
+        "size": "G+5 (20.4m height, within 2,00,000 sq.ft lifestyle zone)",
+        "details": "Double-height glass-walled G+5 clubhouse with rooftop pool, gym, double-height badminton court, banquet hall, mini theatres, indoor games, co-working & business centre, library, crèche, guest rooms, sauna/steam, and clinic."
+      },
+      "amenities": [
+        "Rooftop Swimming Pool",
+        "Car-Free Podium with Miyawaki Forest",
+        "Double-Height Badminton & Pickleball",
+        "Open Gym, Jogging & Yoga Lawn",
+        "Clinic, Pharmacy, Supermarket & Pet Spa",
+        "Co-Working Space, Business Centre & Library",
+        "Amphitheatre, Party Lawn & Pet Park",
+        "6-Level Base Parking & 24/7 CCTV"
+      ]
     },
     {
       "id": "bhavya-evora",
@@ -842,7 +1302,21 @@
       "rateSqft": 12300,
       "minCr": 4.3,
       "maxCr": 6.03,
-      "note": "43-acre gated villa community at Kardanur, Kollur."
+      "note": "43-acre gated villa community at Kardanur, Kollur.",
+      "clubhouse": {
+        "size": "41,000 sq.ft (81,000 sq.ft across 2 clubhouses)",
+        "details": "Fully furnished clubhouse(s) and sports complex with temperature-controlled terrace pool, welcome lounge, gym, multipurpose hall, mini theatre, restaurant & cafe pavilion, indoor games, crèche, and salon."
+      },
+      "amenities": [
+        "Temperature-Controlled Terrace Pool",
+        "Sports Complex (Squash, Cricket, Skating)",
+        "Mini Golf & Bounce Park",
+        "Amphitheatre & Party Lawn",
+        "Yoga, Zen & Acupressure Pathways",
+        "Dog Park & Weekend Market Zone",
+        "Jogging & Cycling Lanes",
+        "100% Common Backup & EV Provision"
+      ]
     },
     {
       "id": "hallmark-floresta",
@@ -867,7 +1341,21 @@
       "rateSqft": 11000,
       "minCr": 3.51,
       "maxCr": 4.54,
-      "note": "13.46 acres, 166 G+2 villas off Nehru ORR."
+      "note": "13.46 acres, 166 G+2 villas off Nehru ORR.",
+      "clubhouse": {
+        "size": "22,820 sq.ft (multi-level)",
+        "details": "Multi-level clubhouse featuring a banquet hall, gymnasium, supermarket, swimming pool, and indoor games (pool table, table tennis)."
+      },
+      "amenities": [
+        "Swimming Pool",
+        "Outdoor Gym & Cycling Track",
+        "Badminton, Basketball & Tennis Courts",
+        "Cricket Pitch & Skating Rink",
+        "Pet Park & Children's Play Area",
+        "Yoga & Meditation Area with Pergolas",
+        "Building Management System & CCTV",
+        "24/7 Power Backup & STP"
+      ]
     },
     {
       "id": "linq-by-raghava",
@@ -891,7 +1379,21 @@
       "rateSqft": 8600,
       "minCr": 1.54,
       "maxCr": 2.05,
-      "note": "9 acres, 4 towers; target possession Aug 2030, RERA validity Jul 2031."
+      "note": "9 acres, 4 towers; target possession Aug 2030, RERA validity Jul 2031.",
+      "clubhouse": {
+        "size": "60,000 sq.ft clubhouse zone (5,50,000 sq.ft total amenities)",
+        "details": "Grand club lobby, gym & cardio studio, golf simulator, digital den gaming, private home theatre, library, co-working spaces, banquet hall, spa & salon, restaurant, guest rooms, badminton court, plus 40th/41st floor sky amenities."
+      },
+      "amenities": [
+        "Multi-Tier Swimming Pools",
+        "The Nest 40th & 41st Floor Sky Zone",
+        "The Celestia Sky Lounge (204m)",
+        "Golf Simulator & Digital Den Gaming",
+        "Amphitheatre, Meditation & Skydeck",
+        "Indoor Badminton & Sports Facilities",
+        "Party Deck, Banquet Hall & Co-Working",
+        "24/7 Power Backup & Gated Security"
+      ]
     },
     {
       "id": "raghava-cinq",
@@ -915,7 +1417,21 @@
       "rateSqft": 10070,
       "minCr": 3.5,
       "maxCr": 3.71,
-      "note": "5 towers of 61 floors on Road No. 2, Financial District."
+      "note": "5 towers of 61 floors on Road No. 2, Financial District.",
+      "clubhouse": {
+        "size": "55,000 sq.ft (5 floors + terrace; 3,46,000+ sq.ft total amenities)",
+        "details": "5-floor + terrace clubhouse featuring gym, salon & spa, jacuzzi, mini theatre, bowling alley, banquet hall, co-working space, cafeteria, crèche/day care, and indoor games."
+      },
+      "amenities": [
+        "Mid-Sky Swimming Pool & Lounge per Tower",
+        "Rooftop Infinity Pool & Sky Observatory",
+        "Rock-Climbing Wall & Skate Park",
+        "Tennis, Badminton, Squash & Basketball",
+        "Sensory Playground, Lounges & Pet Garden",
+        "Co-Working Space & Business Facilities",
+        "Jogging Track & Party Lawn",
+        "24/7 Security & Power Backup"
+      ]
     },
     {
       "id": "raghava-iris",
@@ -939,7 +1455,21 @@
       "rateSqft": 13100,
       "minCr": 7.13,
       "maxCr": 16.54,
-      "note": "7.38 acres, 3 ultra-luxury towers in Raidurg / Gachibowli."
+      "note": "7.38 acres, 3 ultra-luxury towers in Raidurg / Gachibowli.",
+      "clubhouse": {
+        "size": "52,000 sq.ft (5-storey)",
+        "details": "5-storied clubhouse featuring gymnasium, indoor games room, mini theatre, bowling alley, co-working space, banquet and multipurpose halls, spa and wellness zone, reading lounge, and crèche/day care."
+      },
+      "amenities": [
+        "Rooftop Sky Island / SkyDeck (3 Towers)",
+        "Infinity-Edge Swimming Pool",
+        "Squash, Badminton, Basketball & Tennis",
+        "Cricket Pitch & Jogging Track",
+        "Amphitheatre & Outdoor Party Lawns",
+        "Kids' Play Area & Senior Citizen Sitout",
+        "Smart Security & 24/7 CCTV",
+        "24/7 Power Backup, STP & Rainwater Harvesting"
+      ]
     },
     {
       "id": "ghr-callisto",
@@ -966,7 +1496,21 @@
       "rateSqft": 7500,
       "minCr": 0.83,
       "maxCr": 2.47,
-      "note": "8.3 acres, 4 towers, 1190 units, 70% open area & 50,000 sq.ft clubhouse."
+      "note": "8.3 acres, 4 towers, 1190 units, 70% open area & 50,000 sq.ft clubhouse.",
+      "clubhouse": {
+        "size": "50,000 sq.ft",
+        "details": "50,000 sq.ft clubhouse featuring gym, aerobics, conference room, banquet hall, business center with AV conference, library, mini theatre, spa, crèche, cafeteria, clinic, and indoor games (billiards, TT, foosball)."
+      },
+      "amenities": [
+        "Three Swimming Pools (Heated & Kids' Slides)",
+        "50 kW DC Fast EV Chargers",
+        "Amphitheatre, Party Lawn & BBQ Space",
+        "Tennis, Basketball, Squash & Badminton",
+        "Reflexology Park, Organic Farm & Pet Park",
+        "WFH Co-Working & Business Center",
+        "Rooftop Solar & Grey Water Treatment",
+        "Voice Home Automation & Biometric Locks"
+      ]
     },
     {
       "id": "trump-towers-hyderabad",
@@ -991,7 +1535,23 @@
       "rateSqft": 15000,
       "minCr": 5.04,
       "maxCr": 16.8,
-      "note": "Two 65-floor iconic towers on 4.05 acres with 450+ residences & sky bridge."
+      "note": "Two 65-floor iconic towers on 4.05 acres with 450+ residences & sky bridge.",
+      "clubhouse": {
+        "size": "1.5 Lakh sq.ft Sky Clubhouse (26th–29th Floor Sky Bridge)",
+        "details": "4-level Sky Clubhouse spanning the 26th–29th floor sky bridge with infinity-edge sky pool, indoor heated pool & pool bar, specialty restaurant, cigar lounge, private movie theatre, gaming arcade, spa & salon, and banquet hall."
+      },
+      "amenities": [
+        "1.5 Lakh sq.ft Sky Clubhouse (26th–29th Floor Sky Bridge)",
+        "Infinity-Edge Sky Pool & Indoor Heated Pool + Pool Bar",
+        "Private Lift Lobby (2 Elevators per Home)",
+        "Specialty Restaurant & Cigar Lounge",
+        "Private Movie Theatre & Gaming Arcade",
+        "Spa, Salon & Sauna",
+        "Gymnasium, Yoga & Pilates Studio",
+        "Business Centre & Banquet Hall",
+        "Kids' Club (Indoor & Outdoor)",
+        "Tennis Court, Badminton Court & Joggers Park"
+      ]
     },
     {
       "id": "brigade-barcelona",
@@ -1017,7 +1577,21 @@
       "rateSqft": 13870,
       "minCr": 3.87,
       "maxCr": 5.79,
-      "note": "4.04 acres, 52 floors, 666 Spanish-inspired residences & 7-level clubhouse."
+      "note": "4.04 acres, 52 floors, 666 Spanish-inspired residences & 7-level clubhouse.",
+      "clubhouse": {
+        "size": "5-level curated clubhouse (sq.ft not disclosed)",
+        "details": "5-level curated clubhouse featuring gym, indoor games lounge, mini theatre, co-working spaces, banquet hall, café & lounge, yoga studio, spa & salon, golf simulator, music room, dance studio, art gallery, and crèche."
+      },
+      "amenities": [
+        "Lake-View Heated Infinity Swimming Pool",
+        "Rooftop Sky Lounge / Viewing Deck (200m+)",
+        "Tennis, Pickleball & Basketball Courts",
+        "Jogging/Cycling Tracks & Rock Climbing",
+        "Pet's Park & Tranquil Lawn",
+        "Amphitheatre, Party Lawn & BBQ Zone",
+        "Reflexology Park & Natural Pond",
+        "24/7 Security, Piped Gas & STP"
+      ]
     },
     {
       "id": "prestige-raintree-park",
@@ -1042,7 +1616,21 @@
       "rateSqft": 12200,
       "minCr": 2.1,
       "maxCr": 3.85,
-      "note": "107-acre integrated Whitefield–Varthur township facing Varthur Lake."
+      "note": "107-acre integrated Whitefield–Varthur township facing Varthur Lake.",
+      "clubhouse": {
+        "size": "1,05,884 sq.ft (2 levels)",
+        "details": "Set within a 3-acre landscaped courtyard; houses three swimming pools (including a temperature-controlled indoor heated pool), spa, gymnasium, indoor play area, and snooker."
+      },
+      "amenities": [
+        "Heated Indoor Pool & 2 Swimming Pools",
+        "Gymnasium & Spa",
+        "Tennis & Squash Courts",
+        "Badminton Court & Cricket Pitch",
+        "Basketball Court & Skating Rink",
+        "Jogging & Cycling Track",
+        "Yoga/Meditation & Seniors' Corner",
+        "Day Care, Pet Corner & Bonfire Court"
+      ]
     },
     {
       "id": "prestige-evergreen",
@@ -1068,7 +1656,21 @@
       "rateSqft": 13800,
       "minCr": 1.6,
       "maxCr": 3.91,
-      "note": "Phase 2 township towers in Whitefield with 10 high-rise blocks."
+      "note": "Phase 2 township towers in Whitefield with 10 high-rise blocks.",
+      "clubhouse": {
+        "size": "1,00,000+ sq.ft",
+        "details": "Features a gymnasium, 3 swimming pools (including 1 heated indoor pool) with lounges, indoor games area, mini theatre, spa, sauna & salon, multipurpose party hall, and café & dining."
+      },
+      "amenities": [
+        "3 Swimming Pools (incl. Heated Indoor)",
+        "Gymnasium, Aerobics & Yoga Area",
+        "Mini Theatre & Indoor Games Area",
+        "Spa, Sauna & Salon",
+        "Multiple Outdoor Sports Courts",
+        "Jogging & Cycling Track",
+        "Kids' Play Area, Creche & Pet Park",
+        "Multipurpose Party Hall, Café & Retail"
+      ]
     },
     {
       "id": "prestige-park-grove",
@@ -1095,7 +1697,21 @@
       "rateSqft": 12500,
       "minCr": 0.92,
       "maxCr": 5.4,
-      "note": "72-acre master-planned Whitefield community with 19 towers up to 41 floors."
+      "note": "72-acre master-planned Whitefield community with 19 towers up to 41 floors.",
+      "clubhouse": {
+        "size": "57,500 sq.ft Central Park Club + Club Bellevue",
+        "details": "Dual-clubhouse setup with The Central Park Club and Club Bellevue, complemented by PEACE cultural centre (auditorium & arts studio), exclusive café, indoor games zones, and party hall."
+      },
+      "amenities": [
+        "PEACE Cultural Centre & Auditorium",
+        "Swimming Pools",
+        "Gymnasium & Yoga/Meditation Zone",
+        "Multiple Outdoor Sports Courts",
+        "Indoor Games & Amphitheatre",
+        "Jogging & Skating Track",
+        "30+ Acres Landscaped Gardens",
+        "Café & Party Hall"
+      ]
     },
     {
       "id": "prestige-lavender-fields",
@@ -1122,7 +1738,21 @@
       "rateSqft": 11500,
       "minCr": 1.1,
       "maxCr": 2.6,
-      "note": "18.2-acre community with 6 towers (31 floors) near Varthur tech belt."
+      "note": "18.2-acre community with 6 towers (31 floors) near Varthur tech belt.",
+      "clubhouse": {
+        "size": "50,000 sq.ft (40,616 sq.ft on Propsoch)",
+        "details": "Dedicated lifestyle clubhouse featuring indoor recreation such as snooker, party hall, and fitness/wellness facilities."
+      },
+      "amenities": [
+        "Swimming Pool",
+        "Gymnasium",
+        "Badminton & Tennis Courts",
+        "Basketball & Futsal Courts",
+        "Snooker & Indoor Games",
+        "Amphitheatre & Party Hall",
+        "Yoga Corner & Leisure Pathway",
+        "Pet Corner & Landscaped Gardens"
+      ]
     },
     {
       "id": "prestige-southern-star",
@@ -1149,7 +1779,21 @@
       "rateSqft": 11800,
       "minCr": 0.82,
       "maxCr": 3.2,
-      "note": "35-acre South Bengaluru township with 80% open green space."
+      "note": "35-acre South Bengaluru township with 80% open green space.",
+      "clubhouse": {
+        "size": "70,000 sq.ft",
+        "details": "Grand clubhouse featuring an indoor pool, leisure pool, gymnasium, spa, salon, dance/aerobics studio, coffee shop, co-working space, conference room, party & banquet halls, creche, indoor games, and guest rooms."
+      },
+      "amenities": [
+        "Indoor Pool & Leisure Swimming Pool",
+        "Gymnasium, Spa & Salon",
+        "Co-Working Space & Conference Room",
+        "Banquet Hall, Party Hall & Coffee Shop",
+        "Tennis & Basketball Courts",
+        "Amphitheatre & Billiards/Indoor Games",
+        "Jogging Track & Landscaped Gardens",
+        "Creche, Kids' Play & EV Charging"
+      ]
     },
     {
       "id": "prestige-dew-drops",
@@ -1175,7 +1819,21 @@
       "rateSqft": 13500,
       "minCr": 4.5,
       "maxCr": 8.0,
-      "note": "Boutique 5.5-acre enclave of 25 exclusive luxury villas in North Bengaluru."
+      "note": "Boutique 5.5-acre enclave of 25 exclusive luxury villas in North Bengaluru.",
+      "clubhouse": {
+        "size": "~10,000 sq.ft (exclusive to 25 villas)",
+        "details": "Low-density boutique clubhouse serving 25 villas, equipped with indoor recreation rooms, gymnasium, and a multipurpose hall."
+      },
+      "amenities": [
+        "Swimming Pool",
+        "Gymnasium",
+        "Multipurpose Hall",
+        "Indoor Games & Recreation Rooms",
+        "Outdoor Sports Court",
+        "Yoga & Meditation Zone",
+        "Jogging Track & Landscaped Gardens",
+        "Kids' Play Area"
+      ]
     },
     {
       "id": "sobha-neopolis",
@@ -1200,7 +1858,21 @@
       "rateSqft": 14500,
       "minCr": 2.3,
       "maxCr": 3.6,
-      "note": "26-acre Greek-themed luxury tower development off ORR–Panathur."
+      "note": "26-acre Greek-themed luxury tower development off ORR–Panathur.",
+      "clubhouse": {
+        "size": "77,850 sq.ft combined (3 Santorini-themed clubhouses)",
+        "details": "Three Santorini Island-themed clubhouses—Club Athinios, Club Santorini, and Club Syros—serving as indoor social, wellness, and recreation hubs."
+      },
+      "amenities": [
+        "Meandering Pool, Leisure Pool & Aqua Park",
+        "Floating Deck, Eco Pond & Bio Pond",
+        "Basketball & Tennis Courts",
+        "Fitness Corner, Jogging & Cycling Track",
+        "Skating Lane & Activity Field",
+        "Amphitheatre, Lawn & BBQ/Picnic Park",
+        "Outdoor Workspace & Reflexology Walk",
+        "Bonfire Court & Meditation Pads"
+      ]
     },
     {
       "id": "sobha-one-residences",
@@ -1227,7 +1899,21 @@
       "rateSqft": 14720,
       "minCr": 1.09,
       "maxCr": 3.55,
-      "note": "48-acre Sobha One World township with 3,484 luxury apartments across 14 wings."
+      "note": "48-acre Sobha One World township with 3,484 luxury apartments across 14 wings.",
+      "clubhouse": {
+        "size": "75,000 sq.ft (multi-level)",
+        "details": "Multi-level clubhouse featuring a double-height lobby, temperature-controlled swimming pools, gymnasium, spa & wellness centre, multi-cuisine café, party halls, mini theatre, indoor games room, and co-working spaces."
+      },
+      "amenities": [
+        "Temperature-Controlled Swimming Pools",
+        "Gymnasium & Spa/Wellness Centre",
+        "Mini Theatre & Indoor Games Room",
+        "Co-Working Spaces & Multi-Cuisine Café",
+        "Tennis, Badminton & Basketball Courts",
+        "Party Halls & Landscaped Gardens",
+        "Jogging Track & Cycling Path",
+        "Kids' Play Areas & EV Charging Bays"
+      ]
     },
     {
       "id": "sobha-victoria-park",
@@ -1252,7 +1938,21 @@
       "rateSqft": 11300,
       "minCr": 1.6,
       "maxCr": 3.85,
-      "note": "Victorian-themed 6.5-acre community with 300 flats and 19 row houses."
+      "note": "Victorian-themed 6.5-acre community with 300 flats and 19 row houses.",
+      "clubhouse": {
+        "size": "12,500 sq.ft",
+        "details": "Central clubhouse serving 300 apartments and 19 row houses, equipped with indoor games, fitness facilities, and a party hall."
+      },
+      "amenities": [
+        "Swimming Pool",
+        "Gymnasium",
+        "Games Room / Indoor Recreation",
+        "Outdoor Sports Courts",
+        "Amphitheatre & Celebration Plaza",
+        "Reflexology Deck",
+        "Jogging & Skating Track",
+        "Landscaped Gardens & Kids' Play Area"
+      ]
     },
     {
       "id": "brigade-eternia",
@@ -1279,7 +1979,21 @@
       "rateSqft": 14500,
       "minCr": 1.06,
       "maxCr": 4.46,
-      "note": "14-acre Yelahanka township with 80% open space and 12 towers."
+      "note": "14-acre Yelahanka township with 80% open space and 12 towers.",
+      "clubhouse": {
+        "size": "50,000+ sq.ft",
+        "details": "Grand clubhouse featuring a swimming pool, gymnasium, spa, miniplex/mini theatre, banquet halls, business centre, crèche, and indoor sports facilities."
+      },
+      "amenities": [
+        "Swimming Pool",
+        "Gymnasium & Spa",
+        "Miniplex / Mini Theatre",
+        "Banquet Halls & Business Centre",
+        "Indoor & Outdoor Sports Courts",
+        "Crèche & Children's Play Areas",
+        "Landscaped Gardens (80% Open Space)",
+        "EV Charging Stations"
+      ]
     },
     {
       "id": "brigade-valencia",
@@ -1307,7 +2021,20 @@
       "rateSqft": 10800,
       "minCr": 0.64,
       "maxCr": 2.85,
-      "note": "25-acre Spanish-themed integrated township off NH-44 near Electronic City."
+      "note": "25-acre Spanish-themed integrated township off NH-44 near Electronic City.",
+      "clubhouse": {
+        "size": "50,000 sq.ft (Clubhouse Cielo)",
+        "details": "Dedicated clubhouse (Clubhouse Cielo) featuring a gymnasium, badminton court, table tennis room, aerobics room, co-working space, and pantry."
+      },
+      "amenities": [
+        "Swimming Pool",
+        "Gymnasium & Open-Air Gym",
+        "Badminton & Table Tennis Room",
+        "Aerobics Room",
+        "Co-Working Space",
+        "Kids' Play Area",
+        "Green Buffer Zones & Landscaped Parks"
+      ]
     },
     {
       "id": "godrej-vanantara",
@@ -1333,7 +2060,21 @@
       "rateSqft": 12750,
       "minCr": 1.57,
       "maxCr": 4.1,
-      "note": "36-acre forest-themed high-rise township near NICE Road junction."
+      "note": "36-acre forest-themed high-rise township near NICE Road junction.",
+      "clubhouse": {
+        "size": "~1,02,600 sq.ft (G+2 floors)",
+        "details": "Resort-style G+2 clubhouse featuring a gymnasium, yoga & aerobics studios, spa, mini theatre, indoor games zones, and multipurpose hall."
+      },
+      "amenities": [
+        "Swimming Pools & Kids' Pool",
+        "Gymnasium, Yoga/Aerobics & Spa",
+        "Mini Theatre & Indoor Games Zones",
+        "Tennis & Basketball Courts",
+        "Cricket Practice Net",
+        "Walking, Jogging & Cycling Trails",
+        "Pet Park & Children's Play Areas",
+        "Retail Spaces & EV Charging"
+      ]
     },
     {
       "id": "godrej-woodscapes",
@@ -1360,7 +2101,21 @@
       "rateSqft": 13300,
       "minCr": 1.67,
       "maxCr": 4.73,
-      "note": "28.15-acre OMR township with 38/39-floor towers and 85% open green space."
+      "note": "28.15-acre OMR township with 38/39-floor towers and 85% open green space.",
+      "clubhouse": {
+        "size": "68,000 – 80,729 sq.ft",
+        "details": "Clubhouse featuring an indoor gymnasium, health club, library, indoor games room, squash court, and multipurpose party area."
+      },
+      "amenities": [
+        "Swimming Pool",
+        "Indoor Gymnasium & Health Club",
+        "Squash, Badminton & Lawn Tennis Courts",
+        "Basketball Court & Cricket Pitch",
+        "Amphitheatre & Library",
+        "Running Track & Skating Rink",
+        "Pet Park & Kids' Playground",
+        "Emerald Skywalk & Retail Area"
+      ]
     },
     {
       "id": "sattva-city",
@@ -1386,7 +2141,20 @@
       "rateSqft": 13500,
       "minCr": 1.82,
       "maxCr": 3.6,
-      "note": "50-acre airport-corridor township 500m from upcoming Doddajala Metro."
+      "note": "50-acre airport-corridor township 500m from upcoming Doddajala Metro.",
+      "clubhouse": {
+        "size": "50,000 sq.ft main clubhouse (2 floors, 4 clubhouses total)",
+        "details": "Four distinct clubhouses led by a 50,000 sq.ft, 2-floor central clubhouse housing modern gyms, indoor heated pools, co-working zones, senior citizen spaces, grocery shops, medical clinics, and cafés."
+      },
+      "amenities": [
+        "Indoor Heated Pools & Infinity Pools",
+        "Modern Gymnasiums",
+        "Co-Working Zones",
+        "Senior Citizen Spaces",
+        "Cafés & Grocery Shops",
+        "Medical Clinics",
+        "Landscaped Parks (84% Open Space)"
+      ]
     },
     {
       "id": "assetz-zen-sato",
@@ -1411,7 +2179,21 @@
       "rateSqft": 13750,
       "minCr": 2.97,
       "maxCr": 4.06,
-      "note": "Japanese-inspired 7-acre enclave 15 mins from Kempegowda International Airport."
+      "note": "Japanese-inspired 7-acre enclave 15 mins from Kempegowda International Airport.",
+      "clubhouse": {
+        "size": "~18,000 sq.ft",
+        "details": "Features a gymnasium, steam rooms, yoga room, billiards/pool table, table tennis, cards & board games room, crèche, salon, and party hall."
+      },
+      "amenities": [
+        "Swimming Pool & Kids' Pool",
+        "Gymnasium, Outdoor Gym & Steam Rooms",
+        "Paddle, Pickleball, Tennis & Badminton",
+        "Yoga Room & Jogging Track",
+        "Billiards, Table Tennis & Board Games",
+        "Amphitheatre & Party Hall",
+        "Crèche, Salon & Pets' Park",
+        "Farmers Market Space & Tree Court"
+      ]
     },
     {
       "id": "shapoorji-parkwest-sequoia",
@@ -1436,7 +2218,21 @@
       "rateSqft": 14900,
       "minCr": 2.6,
       "maxCr": 3.99,
-      "note": "46-acre central Bengaluru township close to Majestic, Chord Road & Metro."
+      "note": "46-acre central Bengaluru township close to Majestic, Chord Road & Metro.",
+      "clubhouse": {
+        "size": "56,000 sq.ft main + 25,000–26,000 sq.ft Sequoia clubhouse",
+        "details": "Dual-clubhouse setup combining the operational 56,000 sq.ft Parkwest clubhouse and an additional 25,000–26,000 sq.ft facility for Sequoia residents with gym, indoor squash & badminton, aerobics room, and indoor games."
+      },
+      "amenities": [
+        "Swimming Pool & Recreational Pool",
+        "Gymnasium & Aerobics Room",
+        "Indoor Squash & Badminton Courts",
+        "Outdoor Tennis & Multipurpose Courts",
+        "Indoor Games Room",
+        "Jogging & Cycling Track",
+        "Butterfly Park & Landscaped Park",
+        "Sky Amenities"
+      ]
     },
     {
       "id": "shapoorji-parkwest-cedar",
@@ -1463,7 +2259,21 @@
       "rateSqft": 15250,
       "minCr": 1.12,
       "maxCr": 2.85,
-      "note": "Near-possession tower inside Parkwest with Italian marble & IGBC certification."
+      "note": "Near-possession tower inside Parkwest with Italian marble & IGBC certification.",
+      "clubhouse": {
+        "size": "~56,000 sq.ft (5,200 sq.m — Club Uno) + 1,00,000 sq.ft sky amenities",
+        "details": "Club Uno township clubhouse featuring a swimming pool, gym, squash court, table tennis, snooker, card room, banquet hall, indoor sports hall, restaurant, guest rooms, library, salon, and relaxation lounge."
+      },
+      "amenities": [
+        "Club Uno (5,200 sq.m)",
+        "Swimming Pool",
+        "Gymnasium & Aerobics Zone",
+        "Squash, Tennis & Basketball Courts",
+        "Banquet Hall & Guest Rooms",
+        "Amphitheatre",
+        "Kids' Play Area & Senior Square",
+        "6.5-Acre Biodiversity Park & Track"
+      ]
     },
     {
       "id": "sumadhura-elysium",
@@ -1488,7 +2298,21 @@
       "rateSqft": 13750,
       "minCr": 2.5,
       "maxCr": 3.4,
-      "note": "14.78-acre Panathur community with 80% open space & 50,000 sq.ft clubhouse."
+      "note": "14.78-acre Panathur community with 80% open space & 50,000 sq.ft clubhouse.",
+      "clubhouse": {
+        "size": "50,000 sq.ft (G+2 floors)",
+        "details": "Three-level resort-style clubhouse housing a swimming pool, spa, gymnasium, billiards room, multipurpose halls, and working pods."
+      },
+      "amenities": [
+        "50,000 sq.ft Clubhouse (G+2)",
+        "Main Lap Pool & Kids' Pool",
+        "Gymnasium & Outdoor Calisthenics",
+        "Tennis Courts",
+        "Open Air Theatre & Party Lawn",
+        "Jogging & Skating Tracks",
+        "Pet Park & Pet Grooming Zone",
+        "Car-Free Landscaped Podium"
+      ]
     },
     {
       "id": "sumadhura-capitol-residences",
@@ -1513,7 +2337,21 @@
       "rateSqft": 13900,
       "minCr": 2.28,
       "maxCr": 3.1,
-      "note": "Low-density 405-unit project walking distance from Kadugodi Tree Park Metro."
+      "note": "Low-density 405-unit project walking distance from Kadugodi Tree Park Metro.",
+      "clubhouse": {
+        "size": "22,000 sq.ft",
+        "details": "Central clubhouse anchoring 40+ indoor and outdoor amenities, including a gymnasium, swimming pool, multipurpose halls, indoor games, and kids' play spaces."
+      },
+      "amenities": [
+        "22,000 sq.ft Clubhouse",
+        "Swimming Pool",
+        "Gymnasium & Outdoor Gym",
+        "Basketball & Badminton Courts",
+        "Skating Rink & Jogging Track",
+        "Pet Park",
+        "Butterfly & Enchanted Gardens",
+        "Party Lawn"
+      ]
     },
     {
       "id": "sumadhura-folium-ph4",
@@ -1538,7 +2376,21 @@
       "rateSqft": 15500,
       "minCr": 2.58,
       "maxCr": 3.8,
-      "note": "400 lakefront-style apartments on 6.15 acres in Whitefield."
+      "note": "400 lakefront-style apartments on 6.15 acres in Whitefield.",
+      "clubhouse": {
+        "size": "54,000 sq.ft (4 floors — Club Sumadhura)",
+        "details": "4-floor Club Sumadhura featuring Michael Phelps Swimming, Saina Nehwal Badminton, Saurav Ghosal Squash, Mahesh Bhupathi Tennis, Matrix Dance & UFC Fit Gym academies, plus golf simulator, co-working lounge, spa, crèche, and café."
+      },
+      "amenities": [
+        "Club Sumadhura (54,000 sq.ft, 4 floors)",
+        "Olympic-Size Pool (Michael Phelps Academy)",
+        "Badminton, Squash & Tennis Academies",
+        "UFC Fit Gym & Matrix Dance Academy",
+        "Golf Simulator & Mini Golf",
+        "Co-Working Lounge, Library & Café",
+        "Amphitheatre & Party Area",
+        "7+ Acre Landscape & Skating Track"
+      ]
     },
     {
       "id": "sumadhura-belfort",
@@ -1564,7 +2416,21 @@
       "rateSqft": 11500,
       "minCr": 1.38,
       "maxCr": 2.2,
-      "note": "New East Bengaluru launch off Soukya Road with modern clubhouse."
+      "note": "New East Bengaluru launch off Soukya Road with modern clubhouse.",
+      "clubhouse": {
+        "size": "22,000+ sq.ft",
+        "details": "Community clubhouse designed for fitness, recreation, and celebrations, featuring a gymnasium, indoor games room, spa & sauna, multipurpose party area, and co-working space."
+      },
+      "amenities": [
+        "22,000+ sq.ft Clubhouse",
+        "Swimming Pool",
+        "Gymnasium & Spa/Sauna",
+        "Basketball & Pickleball Courts",
+        "Cycling Track & Skating Rink",
+        "Amphitheatre",
+        "Pet Park & Pet Grooming Zone",
+        "Outdoor Workstations & Elders' Pavilion"
+      ]
     },
     {
       "id": "sumadhura-pramoda",
@@ -1589,7 +2455,21 @@
       "rateSqft": 11200,
       "minCr": 1.45,
       "maxCr": 2.4,
-      "note": "Well-connected RR Nagar residential tower close to Mysore Road Metro."
+      "note": "Well-connected RR Nagar residential tower close to Mysore Road Metro.",
+      "clubhouse": {
+        "size": "~20,000–25,000 sq.ft (Club URU)",
+        "details": "Carnatic culture-inspired clubhouse (Club URU) offering a gymnasium, yoga/aerobics studio, activity studio, spa/salon, crèche for toddlers, and community cultural spaces."
+      },
+      "amenities": [
+        "Carnatic-Inspired Club URU",
+        "Swimming Pool & Splash Pool",
+        "Gymnasium, CrossFit & Aqua Gym",
+        "Tennis, Badminton & Half-Basketball",
+        "Multipurpose Futsal/Volleyball Court",
+        "Jogging & Cycling Tracks",
+        "Pet Park with Equipment",
+        "Meditation Pavilion & 10+ Gardens"
+      ]
     },
     {
       "id": "candeur-landmark",
@@ -1614,7 +2494,21 @@
       "rateSqft": 11033,
       "minCr": 1.3,
       "maxCr": 2.2,
-      "note": "Popular Varthur–Gunjur high-rise community with ready & near-handover inventory."
+      "note": "Popular Varthur–Gunjur high-rise community with ready & near-handover inventory.",
+      "clubhouse": {
+        "size": "20,000 sq.ft",
+        "details": "Equipped clubhouse featuring a gymnasium, indoor games room (TT, billiards/snooker, chess, carrom), banquet hall, mini theatre, business center, and spa/sauna/steam/Ayurveda centre."
+      },
+      "amenities": [
+        "20,000 sq.ft Clubhouse",
+        "Swimming Pool & Kids' Pool",
+        "Gymnasium & Spa/Sauna/Steam",
+        "Badminton, Basketball & Volleyball",
+        "Cricket Pitch",
+        "Open-Air Amphitheatre",
+        "Skating Rink & Cycling/Jogging Track",
+        "Convenience Store & Day Care"
+      ]
     },
     {
       "id": "candeur-novo-gardenia",
@@ -1638,7 +2532,21 @@
       "rateSqft": 9900,
       "minCr": 1.48,
       "maxCr": 1.78,
-      "note": "3.2-acre G+14 boutique community with 332 spacious 3 BHK apartments."
+      "note": "3.2-acre G+14 boutique community with 332 spacious 3 BHK apartments.",
+      "clubhouse": {
+        "size": "15,026 sq.ft",
+        "details": "Community clubhouse featuring a swimming pool, indoor games, mini theatre, party hall, and indoor entertainment zones."
+      },
+      "amenities": [
+        "15,026 sq.ft Clubhouse",
+        "Swimming Pool",
+        "Outdoor Gym & Yoga/Meditation Area",
+        "Badminton Court & Cricket Pitch",
+        "Rock Climbing Wall & Skating Rink",
+        "Amphitheatre & Party Lawn",
+        "Pet Garden & Senior Citizen Park",
+        "Kids' Play Zone"
+      ]
     },
     {
       "id": "candeur-icon",
@@ -1665,7 +2573,21 @@
       "rateSqft": 10250,
       "minCr": 1.28,
       "maxCr": 2.45,
-      "note": "14-tower East Bengaluru township off Varthur–Sarjapur CDP Road."
+      "note": "14-tower East Bengaluru township off Varthur–Sarjapur CDP Road.",
+      "clubhouse": {
+        "size": "~1,00,000 sq.ft combined (across 3 clubhouses)",
+        "details": "Decentralized triple-clubhouse framework across the 24-acre township featuring an infinity pool, gymnasium, squash court, indoor games, and social/fitness lounges."
+      },
+      "amenities": [
+        "Three Clubhouses (~1,00,000 sq.ft)",
+        "Infinity Pool",
+        "Gymnasium & Yoga/Meditation Decks",
+        "Tennis, Badminton & Squash Courts",
+        "Cricket Pitch",
+        "Amphitheatre & Hobby Zones",
+        "Kids' Play Area & Day Care",
+        "On-Site Commercial Block & Store"
+      ]
     },
     {
       "id": "mantri-serenity",
@@ -1690,7 +2612,21 @@
       "rateSqft": 13450,
       "minCr": 1.35,
       "maxCr": 3.2,
-      "note": "19-acre Kanakapura Road community right beside Green Line Metro stations."
+      "note": "19-acre Kanakapura Road community right beside Green Line Metro stations.",
+      "clubhouse": {
+        "size": "70,000 sq.ft ('The Lotus')",
+        "details": "The Lotus clubhouse featuring a temperature-controlled indoor swimming pool with jacuzzi, aqua gym, telemedicine facility, 3 banquet halls, gaming zone, home concierge, and gymnasium."
+      },
+      "amenities": [
+        "70,000 sq.ft 'The Lotus' Clubhouse",
+        "Heated Indoor Pool with Jacuzzi",
+        "Aqua Gym & Gymnasium",
+        "3 Banquet Halls & Gaming Zone",
+        "Tennis & Basketball Courts",
+        "Jogging / Walking Trail",
+        "Butterfly, Sensory & Herb Gardens",
+        "Telemedicine & Home Concierge"
+      ]
     },
     {
       "id": "mantri-webcity",
@@ -1715,7 +2651,21 @@
       "rateSqft": 11206,
       "minCr": 1.04,
       "maxCr": 1.95,
-      "note": "Smart-living North Bengaluru gated community near Manyata Tech Park."
+      "note": "Smart-living North Bengaluru gated community near Manyata Tech Park.",
+      "clubhouse": {
+        "size": "45,000 sq.ft (centrally air-conditioned)",
+        "details": "Centrally air-conditioned clubhouse featuring a business center, karaoke room, mini theatre, digital library, billiards, yoga room, salon, and Nirvana spa (steam, sauna, massage)."
+      },
+      "amenities": [
+        "45,000 sq.ft A/C Clubhouse",
+        "Swimming Pool & Toddlers' Pool",
+        "Fitness Center & Nirvana Spa",
+        "Squash, Tennis & Basketball Courts",
+        "Mini Theatre & Karaoke Room",
+        "Digital Library & Business Center",
+        "Amphitheatre & Party Lawn",
+        "Two Rooftop Helipads"
+      ]
     },
     {
       "id": "aratt-alchemy-essence",
@@ -1741,7 +2691,21 @@
       "rateSqft": 9800,
       "minCr": 1.16,
       "maxCr": 1.67,
-      "note": "Boutique 2.5-acre North Bengaluru community of 188 apartments."
+      "note": "Boutique 2.5-acre North Bengaluru community of 188 apartments.",
+      "clubhouse": {
+        "size": "18,836 sq.ft",
+        "details": "Clubhouse featuring an indoor gymnasium, heated pool, cafe/restaurant, games room, spa & salon, banquet hall, co-working space, and creche."
+      },
+      "amenities": [
+        "18,836 sq.ft Clubhouse",
+        "Heated Swimming Pool",
+        "Indoor & Outdoor Gymnasium",
+        "Badminton, Basketball & Tennis",
+        "Cricket Pitch & Jogging/Skating Track",
+        "Spa & Salon",
+        "Co-Working Space & Banquet Hall",
+        "Kids' Play Area, Creche & Reflexology"
+      ]
     },
     {
       "id": "aratt-cityscapes",
@@ -1768,7 +2732,21 @@
       "rateSqft": 7968,
       "minCr": 1.46,
       "maxCr": 3.03,
-      "note": "10.34-acre Budigere Cross township featuring independent villas & apartments."
+      "note": "10.34-acre Budigere Cross township featuring independent villas & apartments.",
+      "clubhouse": {
+        "size": "Equipped Community Clubhouse (sq.ft not disclosed)",
+        "details": "Equipped community clubhouse featuring a gymnasium, indoor games arena, yoga/aerobics area, mini theatre, and multipurpose party hall."
+      },
+      "amenities": [
+        "Equipped Clubhouse",
+        "Swimming Pool",
+        "Gymnasium & Yoga/Aerobics Area",
+        "Indoor Games & Mini Theatre",
+        "Multiple Outdoor Sports Courts",
+        "Jogging Track",
+        "Kids' Play Area & Creche",
+        "Amphitheatre & Retail Spaces"
+      ]
     },
     {
       "id": "aratt-alchemy-one",
@@ -1793,7 +2771,21 @@
       "rateSqft": 9500,
       "minCr": 0.87,
       "maxCr": 1.36,
-      "note": "Completed 23-floor tower on Old Madras Road ready for possession."
+      "note": "Completed 23-floor tower on Old Madras Road ready for possession.",
+      "clubhouse": {
+        "size": "10,000 sq.ft",
+        "details": "Fully equipped clubhouse featuring a health center, co-working spaces, gymnasium, indoor games area, and multipurpose party hall."
+      },
+      "amenities": [
+        "10,000 sq.ft Clubhouse",
+        "Swimming Pool",
+        "Gymnasium & Health Center",
+        "Co-Working Spaces",
+        "Outdoor Sports Courts",
+        "Jogging Track",
+        "Amphitheatre & Party Area",
+        "Kids' Play Area & Retail Spaces"
+      ]
     },
     {
       "id": "godrej-florenne",
@@ -1819,7 +2811,21 @@
       "rateSqft": 12639,
       "minCr": 4.85,
       "maxCr": 6.77,
-      "note": "20-acre enclave of 242 private-lift luxury row houses with open-to-sky courtyards."
+      "note": "20-acre enclave of 242 private-lift luxury row houses with open-to-sky courtyards.",
+      "clubhouse": {
+        "size": "Central Villa Clubhouse (sq.ft not disclosed)",
+        "details": "Central clubhouse featuring a swimming pool & kids' pool, gymnasium, yoga & meditation pavilion, mini theatre, indoor games room, banquet/party hall, and co-working & business lounge."
+      },
+      "amenities": [
+        "Central Clubhouse",
+        "Swimming Pool & Kids' Pool",
+        "Padel Court & Tennis Court",
+        "Box Cricket & Basketball Court",
+        "Mini Theatre & Co-Working Lounge",
+        "Amphitheatre & Celebration Lawns",
+        "Pet Park & Kids' Play Area",
+        "Nature Trails & Private Villa Lifts"
+      ]
     },
     {
       "id": "godrej-athena",
@@ -1845,7 +2851,21 @@
       "rateSqft": 17200,
       "minCr": 2.42,
       "maxCr": 3.78,
-      "note": "Greco-Roman low-rise luxury community of 330 homes near Indiranagar."
+      "note": "Greco-Roman low-rise luxury community of 330 homes near Indiranagar.",
+      "clubhouse": {
+        "size": "22,000 sq.ft (Roman Pantheon-inspired)",
+        "details": "Roman Pantheon-inspired clubhouse featuring a temperature-controlled swimming pool, gymnasium, sauna & steam room, indoor games (table tennis, chess), multipurpose party hall, and guest house."
+      },
+      "amenities": [
+        "22,000 sq.ft Pantheon Clubhouse",
+        "Heated Swimming Pool & Toddlers' Pool",
+        "Gymnasium & Sauna/Steam Room",
+        "Badminton & Tennis Courts",
+        "Greco-Roman Amphitheatre",
+        "Skate Park & Jogging Track",
+        "Kids' Play & Senior Citizen Zone",
+        "100% EV Charging Provision"
+      ]
     },
     {
       "id": "lodha-divino-matunga",
@@ -1873,7 +2893,21 @@
       "rateSqft": 54000,
       "minCr": 3.32,
       "maxCr": 9.08,
-      "note": "Luxury residences off Eastern Express Highway with Jain temple, grand clubhouse & Matunga Greens."
+      "note": "Luxury residences off Eastern Express Highway with Jain temple, grand clubhouse & Matunga Greens.",
+      "clubhouse": {
+        "size": "35,000+ sq.ft (Gymkhana-inspired)",
+        "details": "Gymkhana-inspired clubhouse featuring a 5,700 sq.ft café, 4,000 sq.ft gym, 3,600 sq.ft indoor games room, 7,500 sq.ft party halls, steam room, and guest rooms."
+      },
+      "amenities": [
+        "20m Heated Swimming Pool & Deck",
+        "10,000 sq.ft Central Multipurpose Lawn",
+        "Outdoor Cinema / Digital Screen",
+        "4,500 sq.ft Kids' Play Village",
+        "Indoor Basketball & Badminton Courts",
+        "Cricket Turf & Futsal Court",
+        "WFH Cabanas & 3,200 sq.ft Terrace",
+        "Jain Temple (Adjacent)"
+      ]
     },
     {
       "id": "lodha-bellevue-mahalaxmi",
@@ -1902,7 +2936,21 @@
       "rateSqft": 59801,
       "minCr": 5.04,
       "maxCr": 17.8,
-      "note": "5-acre South Mumbai urban forest enclave overlooking Mahalaxmi Racecourse & Arabian Sea."
+      "note": "5-acre South Mumbai urban forest enclave overlooking Mahalaxmi Racecourse & Arabian Sea.",
+      "clubhouse": {
+        "size": "20,000–25,000+ sq.ft (within 66,000+ sq.ft amenity zone)",
+        "details": "Multi-tier grand clubhouse featuring a double-height lounge, library, co-working suites, 200+ capacity banquet hall, indoor games & VR zone, cards room, café & alfresco dining, and guest suites."
+      },
+      "amenities": [
+        "Olympic Heated Pool & 3 Pools",
+        "2.5-Acre Urban Forest (85% Open)",
+        "Technogym Studio & Pilates Room",
+        "Outdoor Tennis, Basketball & Futsal",
+        "4 Indoor Sports & Squash Courts",
+        "Private Preview Cinema Theatre",
+        "Kids' Adventure Garden & Crèche",
+        "Senior Citizen Reflexology Path"
+      ]
     },
     {
       "id": "lodha-lumis-wadala",
@@ -1929,7 +2977,20 @@
       "rateSqft": 38500,
       "minCr": 4.25,
       "maxCr": 6.5,
-      "note": "Final luxury tower at 20-acre New Cuffe Parade with 75,000 sq.ft clubhouse & Eastern Freeway access."
+      "note": "Final luxury tower at 20-acre New Cuffe Parade with 75,000 sq.ft clubhouse & Eastern Freeway access.",
+      "clubhouse": {
+        "size": "75,000 sq.ft (New Cuffe Parade Grand Clubhouse)",
+        "details": "Grand 75,000 sq.ft township clubhouse at New Cuffe Parade featuring a fully-equipped gymnasium, indoor games lounge, library, business lounge, and wellness centre."
+      },
+      "amenities": [
+        "Olympic-Length Pool & Multiple Pools",
+        "Cricket Pitch & Mini Golf",
+        "Multi-Sport Courts",
+        "Elevated Jogging Track",
+        "Harmony Garden",
+        "Jain Temple & Ganesha Temple",
+        "24x7 Gated Security"
+      ]
     },
     {
       "id": "oberoi-sky-city-borivali",
@@ -1956,7 +3017,20 @@
       "rateSqft": 50200,
       "minCr": 4.7,
       "maxCr": 12.0,
-      "note": "25-acre integrated development with Sky City Mall, Metro Line 7 access & SGNP views."
+      "note": "25-acre integrated development with Sky City Mall, Metro Line 7 access & SGNP views.",
+      "clubhouse": {
+        "size": "Multi-level Sky City Club (within 7-acre amenity space)",
+        "details": "Sky City Club spans across multiple levels within a 7-acre exclusive amenity space, offering 30+ facilities including a mini theatre, party hall, billiards table, and dedicated children's corner."
+      },
+      "amenities": [
+        "Swimming Pool",
+        "Gymnasium / Fitness Center",
+        "Skating Rink",
+        "Rock-Climbing Section",
+        "Meditation Centers & Terraced Gardens",
+        "Dedicated Children's Play Area",
+        "On-Site Convenience Store"
+      ]
     },
     {
       "id": "oberoi-elysian-goregaon",
@@ -1983,7 +3057,21 @@
       "rateSqft": 54900,
       "minCr": 8.5,
       "maxCr": 14.5,
-      "note": "Flagship Oberoi Garden City towers near Oberoi Mall, Westin & Aarey greens."
+      "note": "Flagship Oberoi Garden City towers near Oberoi Mall, Westin & Aarey greens.",
+      "clubhouse": {
+        "size": "Integrated Oberoi Garden City Clubhouse (sq.ft not disclosed)",
+        "details": "Integrated luxury clubhouse featuring a banquet hall, mini cinema theatre, cafeteria/food court, indoor games room, indoor squash & badminton courts, and health club with steam/jacuzzi."
+      },
+      "amenities": [
+        "Swimming Pool & Kids' Splash Pool",
+        "Gymnasium",
+        "Outdoor Tennis & Sports Courts",
+        "Cricket Net Practice",
+        "Jogging & Cycling Track",
+        "Yoga & Meditation Area",
+        "Event Space & Amphitheatre",
+        "Landscaped Gardens"
+      ]
     },
     {
       "id": "oberoi-forestville-thane",
@@ -2010,7 +3098,20 @@
       "rateSqft": 19900,
       "minCr": 1.87,
       "maxCr": 3.8,
-      "note": "Biophilic 18-acre luxury forest community on Kolshet Road with 5-star hospitality amenities."
+      "note": "Biophilic 18-acre luxury forest community on Kolshet Road with 5-star hospitality amenities.",
+      "clubhouse": {
+        "size": "~30,000 sq.ft (biophilic-themed)",
+        "details": "Biophilic-themed clubhouse within the 18-acre township featuring a gymnasium, golf simulator, squash courts, yoga/dance studio, and indoor games area."
+      },
+      "amenities": [
+        "Swimming Pool",
+        "Cricket Net & Futsal Court",
+        "Multi-Purpose Sports Court",
+        "Rock Climbing Wall & Skating Rink",
+        "Outdoor Gym & Jogging Path",
+        "Landscaped Gardens",
+        "Children's Play Area"
+      ]
     },
     {
       "id": "godrej-reserve-kandivali",
@@ -2038,7 +3139,21 @@
       "rateSqft": 32500,
       "minCr": 2.35,
       "maxCr": 7.25,
-      "note": "18.6-acre forest-themed flagship off Western Express Highway & Akurli Metro."
+      "note": "18.6-acre forest-themed flagship off Western Express Highway & Akurli Metro.",
+      "clubhouse": {
+        "size": "~57,000 sq.ft",
+        "details": "Resort-style ~57,000 sq.ft clubhouse featuring banquet halls, mini theatre/AV room, indoor games, library, co-working space, guest suites, poolside café, spa & salon (sauna/steam/jacuzzi), and crèche."
+      },
+      "amenities": [
+        "Olympic Lap Pool, Heated Pool & Aqua Gym",
+        "~6 Acres Two-Level Landscaped Greens",
+        "500-Seat Amphitheatre",
+        "Squash, Badminton & Basketball Courts",
+        "Cricket Turf & Rock-Climbing Wall",
+        "Jogging & Cycling Tracks",
+        "Kids' Adventure Play Area",
+        "Multi-Tier Security & Access Control"
+      ]
     },
     {
       "id": "godrej-vistas-vikhroli",
@@ -2066,7 +3181,21 @@
       "rateSqft": 39500,
       "minCr": 3.49,
       "maxCr": 6.39,
-      "note": "Mangrove & creek-facing luxury towers inside The Trees, Vikhroli off Eastern Express Hwy."
+      "note": "Mangrove & creek-facing luxury towers inside The Trees, Vikhroli off Eastern Express Hwy.",
+      "clubhouse": {
+        "size": "15,000 sq.ft",
+        "details": "15,000 sq.ft clubhouse featuring a mini theatre, banquet hall, indoor games area (table tennis, chess, carrom), art & hobby space, and fully equipped gymnasium."
+      },
+      "amenities": [
+        "Heated Infinity Pool & Jacuzzi",
+        "Sky Bridge Lounge & Rooftop Workspace",
+        "Stargazing Pavilion & Viewing Deck",
+        "Indoor Badminton & Squash Courts",
+        "Net Cricket Turf",
+        "Outdoor Café & Maze Garden",
+        "Organic Farming Zone & Yoga Lawn",
+        "5-Tier Security System"
+      ]
     },
     {
       "id": "godrej-horizon-wadala",
@@ -2093,7 +3222,21 @@
       "rateSqft": 44000,
       "minCr": 3.29,
       "maxCr": 5.78,
-      "note": "5-storeyed clubhouse & rooftop infinity pool overlooking Five Gardens & Eastern Harbour."
+      "note": "5-storeyed clubhouse & rooftop infinity pool overlooking Five Gardens & Eastern Harbour.",
+      "clubhouse": {
+        "size": "5-storeyed Clubhouse (sq.ft not disclosed)",
+        "details": "5-storeyed clubhouse featuring a banquet hall, gymnasium, library, indoor games room, squash court, steam & massage room, and sky lounge."
+      },
+      "amenities": [
+        "Infinity-Edge Swimming Pool",
+        "Mini Golf",
+        "Box Cricket & Badminton Court",
+        "Jogging Track",
+        "Landscaped Zen Garden & Sit-Outs",
+        "Amphitheatre & Theatre",
+        "Crèche & Children's Play Area",
+        "Yoga / Meditation Area"
+      ]
     },
     {
       "id": "lnt-elixir-reserve-powai",
@@ -2121,7 +3264,20 @@
       "rateSqft": 39500,
       "minCr": 3.18,
       "maxCr": 9.3,
-      "note": "20-acre forest, hillock & Powai Lake facing residences along JVLR."
+      "note": "20-acre forest, hillock & Powai Lake facing residences along JVLR.",
+      "clubhouse": {
+        "size": "40,000 sq.ft (elevated clubhouse)",
+        "details": "40,000 sq.ft elevated clubhouse featuring a multi-purpose/banquet hall, library, indoor games room (table tennis, carrom), and fully equipped gymnasium with spa."
+      },
+      "amenities": [
+        "Swimming Pool",
+        "Amphitheatre",
+        "Meditation Zone",
+        "Landscaped Gardens",
+        "Jogging Track",
+        "Dedicated Children's Play Area",
+        "24x7 Security & Covered Parking"
+      ]
     },
     {
       "id": "lnt-rejuve-360-mulund",
@@ -2149,7 +3305,20 @@
       "rateSqft": 32000,
       "minCr": 1.98,
       "maxCr": 4.2,
-      "note": "Wellness-centric high-rise on LBS Marg with 30+ amenities & SGNP hill views."
+      "note": "Wellness-centric high-rise on LBS Marg with 30+ amenities & SGNP hill views.",
+      "clubhouse": {
+        "size": "Wellness-Themed Clubhouse (sq.ft not disclosed)",
+        "details": "Wellness-themed clubhouse featuring a gymnasium, spa and massage centre, cafeteria, indoor games room, and squash court."
+      },
+      "amenities": [
+        "Swimming Pool with Party Deck",
+        "Aqua Gym",
+        "Tennis, Basketball & Football Courts",
+        "Yoga / Meditation & Herb Garden",
+        "Jogging Track",
+        "Party Lawn & Amphitheatre",
+        "Children's Play Area"
+      ]
     },
     {
       "id": "rustomjee-crown-prabhadevi",
@@ -2177,7 +3346,20 @@
       "rateSqft": 73000,
       "minCr": 9.53,
       "maxCr": 25.26,
-      "note": "5.75-acre ultra-luxury gated estate in Prabhadevi with Bandra-Worli Sea Link views."
+      "note": "5.75-acre ultra-luxury gated estate in Prabhadevi with Bandra-Worli Sea Link views.",
+      "clubhouse": {
+        "size": "Luxury Clubhouse (sq.ft not disclosed)",
+        "details": "Fully furnished luxury clubhouse featuring a lounge area, grand banquet hall, mini-theatre, indoor gaming rooms (billiards, squash courts, table tennis), and state-of-the-art gymnasium."
+      },
+      "amenities": [
+        "Infinity, Heated & Kids' Pools",
+        "CloudWalk Elevated Pathway",
+        "Pool Amphitheatre & Zen Gardens",
+        "Badminton & Multi-Play Courts",
+        "Spa, Steam & Sauna",
+        "Kids' Activity Centres & Play Zones",
+        "24/7 Manned Security & Concierge"
+      ]
     },
     {
       "id": "rustomjee-seasons-bkc",
@@ -2205,7 +3387,20 @@
       "rateSqft": 62000,
       "minCr": 6.53,
       "maxCr": 8.75,
-      "note": "3.8-acre gated enclave in MIG Colony, Bandra East just 5 mins from BKC."
+      "note": "3.8-acre gated enclave in MIG Colony, Bandra East just 5 mins from BKC.",
+      "clubhouse": {
+        "size": "Community Clubhouse (3.8-acre gated estate)",
+        "details": "Community clubhouse featuring a banquet hall, mini/home theatre, indoor games room, fully-equipped gym, health café, and performance studio."
+      },
+      "amenities": [
+        "Swimming Pool",
+        "Forest Walk & Jogging Track",
+        "Tennis & Multipurpose Sports Courts",
+        "Maze Garden & Open-to-Sky Podium",
+        "Toddlers' Creative Studio & Play Area",
+        "Senior Citizen Reflexology Path",
+        "Alfresco Dining Area"
+      ]
     },
     {
       "id": "kalpataru-vienta-kandivali",
@@ -2233,7 +3428,20 @@
       "rateSqft": 40300,
       "minCr": 3.07,
       "maxCr": 6.93,
-      "note": "42-storey twin towers in Thakur Village with infinity pool & SGNP greens."
+      "note": "42-storey twin towers in Thakur Village with infinity pool & SGNP greens.",
+      "clubhouse": {
+        "size": "Podium/Club-Level Clubhouse (sq.ft not disclosed)",
+        "details": "Clubhouse featuring a mini-theatre, lounge, state-of-the-art gymnasium, indoor badminton court, squash court, yoga/meditation room, spa, and party hall with pantry."
+      },
+      "amenities": [
+        "Hydrozone (Family, Fitness & Kids' Pools)",
+        "Multipurpose Sports Court",
+        "Dusk Lounge & Party Deck with BBQ",
+        "Organic Garden & Alfresco Fitness",
+        "Kids' Zone & Grandparents' Nook",
+        "High Street Retail Plaza",
+        "Multi-Tier Safety & Security"
+      ]
     },
     {
       "id": "runwal-bliss-kanjurmarg",
@@ -2261,7 +3469,20 @@
       "rateSqft": 28500,
       "minCr": 1.19,
       "maxCr": 3.71,
-      "note": "36-acre integrated township with 5-acre Central Park near Kanjurmarg Station & JVLR."
+      "note": "36-acre integrated township with 5-acre Central Park near Kanjurmarg Station & JVLR.",
+      "clubhouse": {
+        "size": "20,000 sq.ft",
+        "details": "20,000 sq.ft clubhouse featuring an art & music room, indoor games room, mini theatre, and fitness/wellness spaces."
+      },
+      "amenities": [
+        "5+ Acre Central Park",
+        "Swimming Pool",
+        "Yoga Pavilion",
+        "Tennis Court",
+        "Skating Rink",
+        "Jogging Track",
+        "Retail, School & Office Spaces"
+      ]
     },
     {
       "id": "runwal-pinnacle-mulund",
@@ -2289,7 +3510,20 @@
       "rateSqft": 30900,
       "minCr": 1.43,
       "maxCr": 3.11,
-      "note": "67-storey towers by Hafeez Contractor on Goregaon-Mulund Link Road near Fortis."
+      "note": "67-storey towers by Hafeez Contractor on Goregaon-Mulund Link Road near Fortis.",
+      "clubhouse": {
+        "size": "20,000 sq.ft (2 levels)",
+        "details": "Two-level 20,000 sq.ft clubhouse featuring a gymnasium, billiards/pool room, mini theatre, party hall, business centre, library, spa/jacuzzi, squash court, aerobics/yoga room, and crèche."
+      },
+      "amenities": [
+        "Swimming Pool & Kids' Pool",
+        "Rooftop Sky Deck (~200m) & Open Gym",
+        "Rooftop Jogging, BBQ & Stargazing",
+        "Half-Basketball & Open Badminton",
+        "Kids' Play Area",
+        "Jain Temple",
+        "Convenience Retail"
+      ]
     },
     {
       "id": "piramal-aranya-byculla",
@@ -2318,7 +3552,21 @@
       "rateSqft": 58000,
       "minCr": 3.45,
       "maxCr": 11.9,
-      "note": "Overlooking 60-acre Rani Baug botanical gardens & Eastern Harbour."
+      "note": "Overlooking 60-acre Rani Baug botanical gardens & Eastern Harbour.",
+      "clubhouse": {
+        "size": "~1,00,000 sq.ft recreational/clubhouse space",
+        "details": "Lavish clubhouse and ~1 lakh sq.ft recreational space featuring a gymnasium, squash court, library and business centre, spa treatment room, and meditation room."
+      },
+      "amenities": [
+        "Three Pools (incl. 5-Lane Lap Pool)",
+        "Cricket Pitch & Multipurpose Court",
+        "Amphitheatre",
+        "Outdoor Café & Barbecue Area",
+        "Yoga Decks & Jogging Track",
+        "Dog / Pet Park",
+        "Skating Track & Children's Play Area",
+        "Herbal Garden"
+      ]
     },
     {
       "id": "piramal-revanta-mulund",
@@ -2346,7 +3594,21 @@
       "rateSqft": 28816,
       "minCr": 2.39,
       "maxCr": 4.49,
-      "note": "12-acre luxury enclave overlooking 25,000-acre Sanjay Gandhi National Park."
+      "note": "12-acre luxury enclave overlooking 25,000-acre Sanjay Gandhi National Park.",
+      "clubhouse": {
+        "size": "~30,000+ sq.ft (Club RASA ~20,000 + Club RAHA ~10,000 sq.ft)",
+        "details": "Two multi-storeyed clubhouses: Club RASA (~20,000 sq.ft) for fitness & sports (pool, squash, gym, spa & salon) and Club RAHA (~10,000 sq.ft) for leisure & family (mini theatre, banquet hall, crèche)."
+      },
+      "amenities": [
+        "Two Swimming Pools",
+        "Cycling & Jogging Track",
+        "Badminton & Multipurpose Play Court",
+        "Cricket Pitch & Rock-Climbing Walls",
+        "Indoor Games Room",
+        "Café Lounge",
+        "Yoga & Meditation Deck",
+        "Outdoor Gym & Kids' Play Area"
+      ]
     },
     {
       "id": "prestige-jasdan-classic",
@@ -2374,7 +3636,21 @@
       "rateSqft": 58300,
       "minCr": 5.15,
       "maxCr": 13.95,
-      "note": "Twin 45-storey towers in South Mumbai with Racecourse & harbour views."
+      "note": "Twin 45-storey towers in South Mumbai with Racecourse & harbour views.",
+      "clubhouse": {
+        "size": "Exclusive Residents-Only Clubhouse (233 families)",
+        "details": "Residents-only clubhouse featuring a community/banquet hall, gym & cardio zone, luxury spa & hammam, squash & badminton courts, billiards room, mini theatre, and business centre."
+      },
+      "amenities": [
+        "Elevated Infinity-Edge Pool & Café",
+        "Miyawaki Green Zone",
+        "Rooftop Sports Arena & Court",
+        "Yoga & Meditation Deck",
+        "Senior Citizen Enclave",
+        "Pet Park",
+        "Dedicated Kids' Play Area",
+        "EV Charging & Smart Home Automation"
+      ]
     },
     {
       "id": "prestige-ocean-towers",
@@ -2401,7 +3677,21 @@
       "rateSqft": 113000,
       "minCr": 28.25,
       "maxCr": 62.7,
-      "note": "Ultra-luxury sea-facing residences on Maharshi Karve Road overlooking Queen's Necklace."
+      "note": "Ultra-luxury sea-facing residences on Maharshi Karve Road overlooking Queen's Necklace.",
+      "clubhouse": {
+        "size": "Multi-level E-Deck Podium Clubhouse (pool on 8th podium level)",
+        "details": "Multi-level podium clubhouse on the E-Deck featuring a private indoor pool, gymnasium, pilates/yoga studio, squash & badminton courts, spa & salon, café, business centre, toddlers' zone, and banquet hall."
+      },
+      "amenities": [
+        "~320 sq.m Infinity Pool (8th Level)",
+        "~1,120 sq.m Podium Greens & Lawns",
+        "Party Lawn with Barbeque Zone",
+        "Fitness Track",
+        "Kids' Play Area & Swing Gallery",
+        "Pet Park",
+        "Senior Citizen Area",
+        "Multi-Level Basement Parking"
+      ]
     },
     {
       "id": "raymond-ten-x-habitat",
@@ -2428,7 +3718,20 @@
       "rateSqft": 22900,
       "minCr": 1.15,
       "maxCr": 2.6,
-      "note": "14-acre gated township in Thane West near Viviana Mall & Cadbury Junction Metro."
+      "note": "14-acre gated township in Thane West near Viviana Mall & Cadbury Junction Metro.",
+      "clubhouse": {
+        "size": "25,000–26,500 sq.ft",
+        "details": "Grand 25,000–26,500 sq.ft clubhouse featuring a spa and sauna, mini theatre, tea house, board games room, music room, squash court, and table tennis room."
+      },
+      "amenities": [
+        "Lap Pool & Kids' Pool",
+        "5 Acres Central Landscape Greens",
+        "Skating Rink",
+        "Party Lawn",
+        "Gymnasium",
+        "Badminton & Tennis Courts",
+        "24x7 Security"
+      ]
     },
     {
       "id": "shapoorji-skyraa-thane",
@@ -2455,7 +3758,20 @@
       "rateSqft": 18800,
       "minCr": 2.57,
       "maxCr": 3.18,
-      "note": "High-rise luxury deck residences overlooking Yeoor Hills & Upvan Lake."
+      "note": "High-rise luxury deck residences overlooking Yeoor Hills & Upvan Lake.",
+      "clubhouse": {
+        "size": "51st-Level Sky Clubhouse ('Float')",
+        "details": "Clubhouse 'Float' on the 51st level with rooftop sky lounge, gym, cross-fit/pilates/tai-chi rooms, spa/sauna/jacuzzi, golf simulator, electronic gaming, music room, library, tropical aquarium, and rooftop BBQ."
+      },
+      "amenities": [
+        "Main Lap, Family & Children's Pools",
+        "Adventure Climbing Wall & Cricket Pitch",
+        "Multi-Purpose Sports Court",
+        "Crèche & Art and Crafts Room",
+        "Pocket Gardens & Urban Farming Zone",
+        "Senior Corner & Reflexology Area",
+        "On-Site Retail ('The Impulse')"
+      ]
     },
     {
       "id": "hiranandani-westgate-thane",
@@ -2483,7 +3799,19 @@
       "rateSqft": 28000,
       "minCr": 1.3,
       "maxCr": 5.54,
-      "note": "Neo-classical landmark township on Ghodbunder Road with upcoming Metro Line 4 access."
+      "note": "Neo-classical landmark township on Ghodbunder Road with upcoming Metro Line 4 access.",
+      "clubhouse": {
+        "size": "30,000 sq.ft (multilevel Grand Clubhouse)",
+        "details": "30,000 sq.ft multilevel Grand Clubhouse featuring a bowling alley, indoor swimming pool, gym with Pilates & CrossFit, aerobic & yoga studios, badminton court, steam room, and activity plaza."
+      },
+      "amenities": [
+        "Beach Pool, Splash Pool & Aqua Gym",
+        "Tennis, Paddle, Pickleball & Basketball",
+        "6+ Acre Podium & 2+ Acres Play Courts",
+        "Koi Pond, Canopy Walk & Senses Garden",
+        "Jogging Loop & Nature Playground",
+        "Children's Play Area"
+      ]
     },
     {
       "id": "mahindra-vista-kandivali",
@@ -2512,7 +3840,21 @@
       "rateSqft": 34500,
       "minCr": 1.5,
       "maxCr": 5.64,
-      "note": "India's first Net-Zero Waste + Energy residential community near Western Express Hwy."
+      "note": "India's first Net-Zero Waste + Energy residential community near Western Express Hwy.",
+      "clubhouse": {
+        "size": "~28,000 sq.ft (biophilic-roof 'Club Inspire')",
+        "details": "~28,000 sq.ft biophilic-roof clubhouse ('Club Inspire') featuring a multipurpose hall, mini theatre, business centre, gym/pilates/yoga studio, squash & badminton courts, TT & indoor games, kids' play zone, and guest rooms."
+      },
+      "amenities": [
+        "Infinity Pool & Kids' Pool on Podium",
+        "3.53 Acres Greens with 1,400+ Trees",
+        "Multipurpose Sports Court & Outdoor Gym",
+        "Skating Park & Kids' Play Area",
+        "Barbeque Pavilion & Seasonal Pond",
+        "Pet Park & Nature Trail",
+        "Multi-Tier Security & EV Parking",
+        "Convenience & High-Street Retail"
+      ]
     },
     {
       "id": "brigade-gateway-neopolis",
@@ -2540,7 +3882,21 @@
       "rateSqft": 15800,
       "minCr": 4.9,
       "maxCr": 15.5,
-      "note": "9.7-acre mixed-use landmark with World Trade Center, InterContinental & Orion Mall."
+      "note": "9.7-acre mixed-use landmark with World Trade Center, InterContinental & Orion Mall.",
+      "clubhouse": {
+        "size": "50,000–51,000+ sq.ft multistoried + 33rd-floor Oasis Deck",
+        "details": "Multistoried luxury clubhouse and 33rd-floor Oasis Deck with swimming pool, gym, squash & badminton courts, mini theatre, co-working & conference area, coffee station, supermarket, and banquet hall."
+      },
+      "amenities": [
+        "Swimming Pool & Landscaped Decks",
+        "33rd-Floor Exclusive Oasis Deck",
+        "Gymnasium & Aerobics/Yoga Area",
+        "Squash, Badminton & Sports Courts",
+        "Mini Theatre & Amphitheatre",
+        "Co-Working Space & Coffee Station",
+        "Supermarket, Creche & Kids Play Area",
+        "Integrated WTC, Orion Mall & InterContinental Hotel"
+      ]
     },
     {
       "id": "rajapushpa-casa-luxura",
@@ -2566,7 +3922,21 @@
       "rateSqft": 13500,
       "minCr": 7.45,
       "maxCr": 9.45,
-      "note": "7.7-acre ultra-luxury 50-floor towers in Neopolis with 1.25 lakh sq.ft amenities."
+      "note": "7.7-acre ultra-luxury 50-floor towers in Neopolis with 1.25 lakh sq.ft amenities.",
+      "clubhouse": {
+        "size": "60,000 sq.ft Sky-Deck clubhouse (~1.25 Lakh sq.ft total amenities)",
+        "details": "Sky-Deck clubhouse featuring terrace-view swimming pool, gym, AV preview theatre, badminton & squash courts, banquet hall, guest suites, spa & sauna, coffee lounge, creche, and sunset observatory gallery."
+      },
+      "amenities": [
+        "Swimming Pool with Terrace Views",
+        "Sky Deck with Sunset Observatory Gallery",
+        "Gymnasium, Calisthenics & Yoga Deck",
+        "AV Preview Theatre & Banquet Hall",
+        "Badminton, Squash, Basketball & Tennis Courts",
+        "Spa, Sauna, Salon & Guest Suites",
+        "Coffee Lounge, Wi-Fi Pod & Creche",
+        "Pet Park, Chess Garden & Kids Play Areas"
+      ]
     },
     {
       "id": "rajapushpa-skyra",
@@ -2593,7 +3963,21 @@
       "rateSqft": 12400,
       "minCr": 3.41,
       "maxCr": 4.9,
-      "note": "6.5-acre G+55 high-rise towers at Plot 7, Neopolis Kokapet."
+      "note": "6.5-acre G+55 high-rise towers at Plot 7, Neopolis Kokapet.",
+      "clubhouse": {
+        "size": "60,000 sq.ft (G+6 levels) + 1,15,000 sq.ft total lifestyle space",
+        "details": "7-level (G+6) clubhouse featuring a temperature-controlled swimming pool, comprehensive spa, mini theatre, indoor games (table tennis, snooker/billiards), dance room, library, and conference room."
+      },
+      "amenities": [
+        "Temperature-Controlled Swimming Pool & Kids' Pool",
+        "Comprehensive Spa & Gymnasium",
+        "Mini Theatre & Dance Room",
+        "Tennis, Badminton & Squash Courts",
+        "Basketball & Volleyball Courts",
+        "Skating Rink & Jogging/Cycle Track",
+        "Observatory Deck & Party Lawn",
+        "Kids' Play Area, Pet Area & Senior Citizen Area"
+      ]
     },
     {
       "id": "prestige-clairemont-kokapet",
@@ -2620,7 +4004,21 @@
       "rateSqft": 9350,
       "minCr": 1.86,
       "maxCr": 3.75,
-      "note": "7.56-acre luxury gated community in Kokapet with 928 apartments & grand clubhouse."
+      "note": "7.56-acre luxury gated community in Kokapet with 928 apartments & grand clubhouse.",
+      "clubhouse": {
+        "size": "59,364 sq.ft (6 levels)",
+        "details": "6-level clubhouse with banquet & party halls, mini theatre, spa & salon, health club, indoor games & billiards, workstations, discussion rooms, and guest bedrooms."
+      },
+      "amenities": [
+        "Swimming Pool with Deck",
+        "Gymnasium & Outdoor Gym",
+        "Squash, Badminton & Lawn Tennis Courts",
+        "Basketball Court, Net Cricket & Skate Park",
+        "Mini Theatre & Banquet/Party Hall",
+        "Spa, Salon & Health Club",
+        "Workstations & Guest Bedrooms",
+        "Creche, Clinic, Pharmacy & Pet Park"
+      ]
     },
     {
       "id": "vasavi-avasa-kompally",
@@ -2646,7 +4044,21 @@
       "rateSqft": 12000,
       "minCr": 5.21,
       "maxCr": 5.4,
-      "note": "Luxury 4 BHK triplex villa community in North Hyderabad near ORR."
+      "note": "Luxury 4 BHK triplex villa community in North Hyderabad near ORR.",
+      "clubhouse": {
+        "size": "9,198 sq.ft (exclusive to 59 villas)",
+        "details": "Exclusive low-density clubhouse serving 59 families with gymnasium, indoor games room (chess, indoor games), and community lounge."
+      },
+      "amenities": [
+        "Swimming Pool",
+        "Gymnasium",
+        "Badminton Court",
+        "Volleyball Court & Cricket Pitch",
+        "Skating Rink",
+        "Zen Garden & Landscaped Park",
+        "Children's Play Area",
+        "Solar Water Heaters & Water Purification Plant"
+      ]
     },
     {
       "id": "bharathi-horizon-kompally",
@@ -2672,7 +4084,21 @@
       "rateSqft": 7500,
       "minCr": 1.46,
       "maxCr": 1.8,
-      "note": "Spacious 3 BHK gated apartments in Kompally, North Hyderabad."
+      "note": "Spacious 3 BHK gated apartments in Kompally, North Hyderabad.",
+      "clubhouse": {
+        "size": "Dedicated Clubhouse + Level 10 Rooftop Skydeck (sq.ft not disclosed)",
+        "details": "Features a multipurpose banquet hall, private mini theatre, gymnasium, yoga/meditation hall, and indoor games lounge (table tennis, billiards/snooker, chess, carrom)."
+      },
+      "amenities": [
+        "Level 10 Rooftop Infinity Pool & Splash Zone",
+        "Landscaped Garden on Every Floor",
+        "Private Mini Theatre & Banquet Hall",
+        "Gym & Indoor Games Lounge",
+        "Cricket Pitch & Practice Nets",
+        "EV Charging Stations at Stilt Level",
+        "Biometric Staff Access & 24/7 CCTV",
+        "Gazebos, Senior Plaza & Jogging Track"
+      ]
     },
     {
       "id": "bhanodayas-crystal-kompally",
@@ -2699,7 +4125,21 @@
       "rateSqft": 6000,
       "minCr": 0.79,
       "maxCr": 1.09,
-      "note": "Value 2 & 3 BHK gated housing society in Kompally."
+      "note": "Value 2 & 3 BHK gated housing society in Kompally.",
+      "clubhouse": {
+        "size": "50,000+ sq.ft (Club Crystal)",
+        "details": "Club Crystal features a multipurpose/banquet hall, mini-theatre, indoor badminton & squash courts, gymnasium, library, and guest accommodation."
+      },
+      "amenities": [
+        "Swimming Pool & Kids' Splash Pool",
+        "Indoor Squash & Badminton Courts",
+        "Outdoor Tennis Courts",
+        "Gymnasium & Mini-Theatre",
+        "Banquet Hall & Guest Accommodation",
+        "EV Charging & Car-Washing Facility",
+        "Senior Citizen Concierge & 24/7 Ambulance",
+        "1,400-Acre Reserve Forest Views & Temple"
+      ]
     },
     {
       "id": "vajra-west-city-osman-nagar",
@@ -2724,7 +4164,21 @@
       "rateSqft": 7500,
       "minCr": 1.06,
       "maxCr": 1.52,
-      "note": "High-rise apartment community in Osman Nagar / Tellapur corridor; TG-RERA P01100009793."
+      "note": "High-rise apartment community in Osman Nagar / Tellapur corridor; TG-RERA P01100009793.",
+      "clubhouse": {
+        "size": "1,47,000 sq.ft (G+7 floors / 8 levels)",
+        "details": "8-level vertical clubhouse with double-height banquet hall, 2 preview theatres, 3 party halls, gym/yoga/aerobics, co-working & restaurant, 11 guest rooms, preschool & tuition rooms, spas/salons, and terrace 175-ft infinity pool."
+      },
+      "amenities": [
+        "175-ft Rooftop Infinity Pool & Kids' Pool",
+        "2 Preview Theatres & 3 Party Halls",
+        "Co-Working Space & 11 Guest Rooms",
+        "Preschool, 7 Tuition Rooms & Hobby Rooms",
+        "Elevated Tennis, Pickleball & Courts",
+        "600-ft Forest Bath Walking Track",
+        "Elevated Pet Park & Amphitheatre",
+        "Basement EV Charging & Car-Wash"
+      ]
     },
     {
       "id": "rajapushpa-sierra-tellapur",
@@ -2749,7 +4203,21 @@
       "rateSqft": 7499,
       "minCr": 0.97,
       "maxCr": 1.92,
-      "note": "Tellapur new launch by Rajapushpa Properties; RERA completion target Dec 2030 (P01100010033)."
+      "note": "Tellapur new launch by Rajapushpa Properties; RERA completion target Dec 2030 (P01100010033).",
+      "clubhouse": {
+        "size": "1,50,000 sq.ft Clubhouse & Sports Complex",
+        "details": "Expansive clubhouse & sports complex with 2 banquet halls, mini banquet hall, 2 preview theatres, 14 furnished guest suites, spa & salon, coffee lounge, library, hobby room, and indoor sports courts."
+      },
+      "amenities": [
+        "Two Outdoor Swimming Pools",
+        "2 Preview Theatres & 2 Banquet Halls",
+        "14 Well-Furnished Guest Suites",
+        "3 Tennis, 4 Badminton & 2 Squash Courts",
+        "2 Pickleball Courts, Basketball & Futsal",
+        "Skating Rink & Cricket Practice Pitch",
+        "Spa & Salon, Coffee Lounge & Library",
+        "Creche, Toddler Space & Senior Citizen Room"
+      ]
     },
     {
       "id": "asbl-landmark-kukatpally",
@@ -2775,7 +4243,21 @@
       "rateSqft": 8600,
       "minCr": 1.43,
       "maxCr": 2.29,
-      "note": "Premium 3, 3.5 & 4 BHK residences in Kukatpally; TG-RERA P02200008770."
+      "note": "Premium 3, 3.5 & 4 BHK residences in Kukatpally; TG-RERA P02200008770.",
+      "clubhouse": {
+        "size": "~52,000 sq.ft (G+4 floors)",
+        "details": "5-level (G+4) clubhouse featuring banquet hall & pantry, yoga/aerobics room & salon, guest suites, co-working space, indoor badminton & TT rooms, and rooftop lounge with outdoor party area."
+      },
+      "amenities": [
+        "Swimming Pool & Gymnasium",
+        "Co-Working Space & Banquet Hall",
+        "Guest Rooms & Suites",
+        "Indoor Badminton, Squash & Table Tennis",
+        "Half Basketball Court & Cricket Nets",
+        "Yoga/Aerobics Studio & Salon",
+        "Cycling & Jogging Track",
+        "Pharmacy, Shopping Center & Car Wash Area"
+      ]
     },
     {
       "id": "casagrand-vybe-rajendra-nagar",
@@ -2799,7 +4281,21 @@
       "rateSqft": 12100,
       "minCr": 3.96,
       "maxCr": 6.52,
-      "note": "Luxury 5 BHK villa community in Gaganpahad / Rajendra Nagar; TG-RERA P02400010759."
+      "note": "Luxury 5 BHK villa community in Gaganpahad / Rajendra Nagar; TG-RERA P02400010759.",
+      "clubhouse": {
+        "size": "40,000 sq.ft (Two multi-storeyed clubhouses)",
+        "details": "Duo multi-storeyed clubhouses housing a banquet hall, mini theatre, 2 business centers, conference room, learning center, dance & music rooms, salon & spa, gaming arcade, and creche."
+      },
+      "amenities": [
+        "3,600 sq.ft Swimming Pool & Cabanas",
+        "Mini Theatre, Gaming Arcade & Sky Cinema",
+        "2 Business Centers & Outdoor Coworking",
+        "Tennis, Half Basketball & Cricket Nets",
+        "Amphitheatre, Campfire Zone & BBQ Pods",
+        "Pet Park, Reflexology & Themed Gardens",
+        "Salon, Spa, Dance & Music Rooms",
+        "Casagrand International School Campus"
+      ]
     },
     {
       "id": "arkala-life-tukkuguda",
@@ -2825,7 +4321,21 @@
       "rateSqft": 5600,
       "minCr": 0.61,
       "maxCr": 1.0,
-      "note": "Gated apartment project in Tukkuguda near ORR Exit 14; Ph-1 P02400005619 & Ph-2 P02400011310."
+      "note": "Gated apartment project in Tukkuguda near ORR Exit 14; Ph-1 P02400005619 & Ph-2 P02400011310.",
+      "clubhouse": {
+        "size": "15,000 sq.ft",
+        "details": "15,000 sq.ft clubhouse offering 40+ amenities including a spa, salon, chill-out lounge, conference room, gymnasium, and indoor games."
+      },
+      "amenities": [
+        "Infinity Swimming Pool",
+        "Indoor Badminton Court & Sports Block",
+        "Basketball Court & Skating Rink",
+        "Cricket Practice Pitch",
+        "Spa, Salon & Chill-Out Lounge",
+        "Barbecue Area & Multipurpose Lawn",
+        "Conference Room & Gymnasium",
+        "Children's Play Area & Walking Tracks"
+      ]
     },
     {
       "id": "eipl-cornerstone-puppalaguda",
@@ -2851,7 +4361,21 @@
       "rateSqft": 9058,
       "minCr": 1.32,
       "maxCr": 2.28,
-      "note": "Ready/near-possession apartment community in Puppalaguda near Financial District; TG-RERA P02400005057."
+      "note": "Ready/near-possession apartment community in Puppalaguda near Financial District; TG-RERA P02400005057.",
+      "clubhouse": {
+        "size": "56,500+ sq.ft",
+        "details": "56,500+ sq.ft clubhouse featuring a mini banquet hall, business lounge, café & lounge spaces, guest accommodation, gym, yoga/meditation studio, and indoor badminton, squash, table tennis & billiards."
+      },
+      "amenities": [
+        "Family Swimming Pool & Kids' Pool",
+        "Indoor Badminton, Squash, TT & Billiards",
+        "Outdoor Tennis & Basketball Courts",
+        "Cricket Practice Net & Amphitheatre",
+        "Gymnasium, Aerobics & Yoga Studio",
+        "Mini Banquet Hall & Guest Suites",
+        "Convenience Store, ATM & Central Lawn",
+        "EV Charging, Rainwater Harvesting & WTP"
+      ]
     },
     {
       "id": "geras-island-of-joy-kharadi",
@@ -2878,7 +4402,21 @@
       "rateSqft": 12900,
       "minCr": 0.89,
       "maxCr": 2.33,
-      "note": "ChildCentric homes in Kharadi, East Pune; MahaRERA P52100052259."
+      "note": "ChildCentric homes in Kharadi, East Pune; MahaRERA P52100052259.",
+      "clubhouse": {
+        "size": "40,000+ sq.ft (across 3 exclusive clubhouses)",
+        "details": "3 clubhouses featuring a bowling alley, mini theatre, half-Olympic heated pool, squash & badminton courts, table tennis, snooker, PlayStation room, cloud kitchen, gym, and yoga/aerobics room."
+      },
+      "amenities": [
+        "Private Go-Kart Race Track",
+        "Elevated Wave Pool with DJ Console",
+        "Half-Olympic Heated Pool & Kids' Pool",
+        "Bowling Alley & Mini Theatre",
+        "Squash, Badminton & Tennis Courts",
+        "Cricket Practice Nets & Skating Rink",
+        "Pet Park with Pet Care Area",
+        "EV Fast-Charging & 4+ Acres Open Space"
+      ]
     },
     {
       "id": "rohan-ekam-balewadi",
@@ -2905,7 +4443,21 @@
       "rateSqft": 15600,
       "minCr": 1.42,
       "maxCr": 3.36,
-      "note": "Biophilic high-rise apartments in Balewadi, West Pune; MahaRERA P52100052298."
+      "note": "Biophilic high-rise apartments in Balewadi, West Pune; MahaRERA P52100052298.",
+      "clubhouse": {
+        "size": "Clubhouse + 40+ Ground & Sky Enclaves (sq.ft not disclosed)",
+        "details": "Includes indoor games, library, party hall, conference room, guest house, and gym, complemented by sky-level hammocks, co-working spaces, and riverside lounges."
+      },
+      "amenities": [
+        "Lap Pool, Kids' Pool & Reflecting Pools",
+        "Gymnasium & Outdoor Fitness Stations",
+        "Cricket Pitch, Football Field & Tennis Courts",
+        "Badminton, Squash & Mini Golf Putting",
+        "Co-Working Spaces, Library & Amphitheater",
+        "Organic Farming, Pet Grooming & Guest House",
+        "Yoga Decks & Reflexology Path",
+        "70% Open Space along Mula Riverfront"
+      ]
     },
     {
       "id": "godrej-the-greenfront-hinjewadi",
@@ -2932,7 +4484,20 @@
       "rateSqft": 13900,
       "minCr": 1.32,
       "maxCr": 3.32,
-      "note": "Godrej township residences in Hinjewadi Phase 1; MahaRERA P52100079064."
+      "note": "Godrej township residences in Hinjewadi Phase 1; MahaRERA P52100079064.",
+      "clubhouse": {
+        "size": "28,000 sq.ft across 2 clubhouses (up to 32,000 sq.ft cited)",
+        "details": "2 clubhouses featuring an indoor heated pool with spacious deck, resident lounge, gymnasium, squash court, table tennis, and indoor games rooms."
+      },
+      "amenities": [
+        "2 Clubhouses with Resident Lounge",
+        "Indoor Heated Pool & Outdoor Pool",
+        "Gymnasium",
+        "Squash Court & Table Tennis",
+        "12+ Acres of Central Greens",
+        "Children's Playgrounds",
+        "Digital Door Locks & 24x7 Security"
+      ]
     },
     {
       "id": "godrej-evergreen-square-hinjewadi",
@@ -2958,7 +4523,21 @@
       "rateSqft": 14200,
       "minCr": 0.96,
       "maxCr": 1.53,
-      "note": "Metro-connected 2 & 3 BHK homes in Hinjewadi Phase 3; MahaRERA P52100078240."
+      "note": "Metro-connected 2 & 3 BHK homes in Hinjewadi Phase 3; MahaRERA P52100078240.",
+      "clubhouse": {
+        "size": "27,000 sq.ft",
+        "details": "Houses 40+ lifestyle features including a 6,000 sq.ft co-working space/lounge, rooftop swimming pool, gymnasium, spa, cafe/coffee bar, dance room, library, and indoor games."
+      },
+      "amenities": [
+        "27,000 sq.ft Clubhouse & 6,000 sq.ft Co-Working",
+        "Swimming Pool & Kids' Pool",
+        "Gymnasium, Spa & Dance Room",
+        "Badminton, Net Cricket & Basketball Courts",
+        "Amphitheatre, Celebration Lawn & BBQ Area",
+        "450+ Trees across 3.5 Acres Greens",
+        "Pet Park, Crèche & Senior Citizen Area",
+        "1 Lakh sq.ft Retail Hub (115+ stores)"
+      ]
     },
     {
       "id": "nyati-evoque-kalyani-nagar",
@@ -2984,7 +4563,21 @@
       "rateSqft": 23500,
       "minCr": 3.58,
       "maxCr": 4.33,
-      "note": "Ultra-luxury 3 & 4 BHK residences in Kalyani Nagar; MahaRERA P52100056152."
+      "note": "Ultra-luxury 3 & 4 BHK residences in Kalyani Nagar; MahaRERA P52100056152.",
+      "clubhouse": {
+        "size": "Elitus Club (2 indoor + 1 outdoor podium levels) & Skyview Rooftop Lounge",
+        "details": "Features a multipurpose hall with party lawn, double-height badminton court, mini theater, indoor gym, squash court, yoga room, and rooftop bowling alley & sky gazing deck."
+      },
+      "amenities": [
+        "Elitus Club & Skyview Rooftop Lounge",
+        "Swimming Pool, Kids' Pool & Jacuzzi",
+        "Double-Height Badminton & Squash Courts",
+        "Rooftop Bowling Alley & Mini Theater",
+        "Indoor & Outdoor Gym + Yoga & Zumba",
+        "Net Cricket & Half Basketball Court",
+        "Sky Gazing Deck & Acupressure Pathway",
+        "High-Street Retail Spaces"
+      ]
     },
     {
       "id": "lodha-bella-vita-nibm",
@@ -3011,7 +4604,21 @@
       "rateSqft": 13300,
       "minCr": 1.1,
       "maxCr": 2.29,
-      "note": "11-tower gated community off NIBM Road, South Pune; MahaRERA P52100024215."
+      "note": "11-tower gated community off NIBM Road, South Pune; MahaRERA P52100024215.",
+      "clubhouse": {
+        "size": "15,000 sq.ft",
+        "details": "Grand clubhouse featuring a gymnasium, health club with steam, indoor games (table tennis, carrom, chess), library with business centre, activity rooms, crèche, and café with outdoor seating."
+      },
+      "amenities": [
+        "15,000 sq.ft Grand Clubhouse & Café",
+        "Swimming Pools",
+        "Rooftop Sports Field (Football, Volleyball, Basketball)",
+        "Rooftop Athletic Track",
+        "Health Club with Steam & Gymnasium",
+        "Amphitheatre & Party Lawn",
+        "70% Open Spaces with Orchards & Tree Houses",
+        "Pet's Park, Crèche & Temple"
+      ]
     },
     {
       "id": "vtp-altamira-kharadi",
@@ -3036,7 +4643,21 @@
       "rateSqft": 11900,
       "minCr": 1.1,
       "maxCr": 1.72,
-      "note": "4-tower G+35 residential project near EON IT Park, Kharadi; MahaRERA P52100079807."
+      "note": "4-tower G+35 residential project near EON IT Park, Kharadi; MahaRERA P52100079807.",
+      "clubhouse": {
+        "size": "Double-height glass facade clubhouse (sq.ft not disclosed)",
+        "details": "Features a double-height glass facade with a premium gymnasium, indoor games (including table tennis), and lifestyle lounge spaces."
+      },
+      "amenities": [
+        "Double-Height Glass Facade Clubhouse",
+        "Swimming Pool",
+        "Multi-Tiered Cascading Waterfall Landscape",
+        "Box Cricket, Cricket Pitch & Putt-Putt Golf",
+        "Basketball, Volleyball & Squash Courts",
+        "Skating Rink & Jogging Track",
+        "Children's Play Area & Garden",
+        "Smart Home Automation (App & Alexa)"
+      ]
     },
     {
       "id": "tej-elevia-baner",
@@ -3062,7 +4683,21 @@
       "rateSqft": 15500,
       "minCr": 1.06,
       "maxCr": 1.85,
-      "note": "Sky-deck towers on Pancard Club Road, Baner; MahaRERA P52100018143."
+      "note": "Sky-deck towers on Pancard Club Road, Baner; MahaRERA P52100018143.",
+      "clubhouse": {
+        "size": "Clubhouse + Exclusive Sky Deck / Sky Lounge (sq.ft not disclosed)",
+        "details": "Includes a clubhouse with multipurpose hall, indoor games area, gymnasium, co-working zone, crèche/day care, and an elevated Sky Deck featuring Sky Lounge, Sky Walk, and Sky Katta."
+      },
+      "amenities": [
+        "Clubhouse, Multipurpose Hall & Indoor Games",
+        "Sky Deck with Sky Lounge & Sky Walk",
+        "Swimming Pool & Toddler Pool",
+        "Gymnasium & Yoga/Meditation Zone",
+        "Co-Working Zone & Crèche",
+        "Multipurpose Court & Amphitheatre",
+        "Terrace Garden, Pet Zone & Senior Area",
+        "EV Charging & Video Door Security"
+      ]
     },
     {
       "id": "mahindra-rivenza-hinjewadi",
@@ -3089,7 +4724,21 @@
       "rateSqft": 12900,
       "minCr": 0.89,
       "maxCr": 2.19,
-      "note": "New launch in Hinjewadi IT belt by Mahindra Lifespaces; MahaRERA PR1261012602102."
+      "note": "New launch in Hinjewadi IT belt by Mahindra Lifespaces; MahaRERA PR1261012602102.",
+      "clubhouse": {
+        "size": "44,000+ sq.ft (across 2 clubhouses)",
+        "details": "Part of 2.65 lakh+ sq.ft of amenity spaces; features a modern gymnasium, glass roof library, and indoor lifestyle/social lounges."
+      },
+      "amenities": [
+        "2 Grand Clubhouses (44,000+ sq.ft)",
+        "Temperature-Regulated Pool with Sunken Bar",
+        "Glass Roof Library & Modern Gymnasium",
+        "Futsal Court & Multipurpose Court",
+        "Yoga Lawn & Exercise Deck",
+        "Barbeque Deck & Signature Swings",
+        "Kids' Play Area",
+        "9+ Acres of Landscaped Green Spaces"
+      ]
     },
     {
       "id": "kolte-patil-vyana-sinhagad-road",
@@ -3115,7 +4764,20 @@
       "rateSqft": 11500,
       "minCr": 1.02,
       "maxCr": 1.45,
-      "note": "21-acre riverside development on Sinhagad Road; MahaRERA PM1261012600748."
+      "note": "21-acre riverside development on Sinhagad Road; MahaRERA PM1261012600748.",
+      "clubhouse": {
+        "size": "19,750 sq.ft (approx.)",
+        "details": "Contemporary clubhouse with step seating entrance, wellness and leisure zones, indoor recreation, and social gathering spaces within a 47,000 sq.ft dedicated amenity zone."
+      },
+      "amenities": [
+        "19,750 sq.ft Clubhouse with Step Seating",
+        "84 ft x 27 ft Adult Pool & Kids' Pool",
+        "Pickleball Court & Outdoor Recreation",
+        "Central Landscaped Boulevard & Plazas",
+        "River-Facing Greens with NDA Hill Views",
+        "Children's Play Areas & Family Zones",
+        "EV Charging Provision (30% of spots)"
+      ]
     },
     {
       "id": "prestige-palm-court-madhavaram",
@@ -3141,7 +4803,21 @@
       "rateSqft": 8750,
       "minCr": 1.0,
       "maxCr": 1.65,
-      "note": "8-acre, 910-unit gated community in Madhavaram; TNRERA/29/BLG/0265/2026."
+      "note": "8-acre, 910-unit gated community in Madhavaram; TNRERA/29/BLG/0265/2026.",
+      "clubhouse": {
+        "size": "33,000+ sq.ft (3-storey / G+4 levels)",
+        "details": "Central clubhouse featuring a double-height lobby, rooftop swimming pool, gymnasium, badminton court, indoor games, mini theatre / AV room, aerobics studio, co-working spaces, multipurpose hall, creche, and supermarket."
+      },
+      "amenities": [
+        "Rooftop Swimming Pool & Kids' Pool",
+        "A/C Gymnasium & Health Club",
+        "Indoor Badminton & Table Tennis",
+        "Mini Theatre / AV Room & Multipurpose Hall",
+        "Tennis, Basketball, Paddle & Cricket Nets",
+        "Skating Rink & Jogging/Cycling Track",
+        "Yoga & Meditation Deck with Reflexology Path",
+        "Amphitheatre, Pet Park & EV Charging"
+      ]
     },
     {
       "id": "tvs-emerald-avalon-pallavaram",
@@ -3168,7 +4844,21 @@
       "rateSqft": 9700,
       "minCr": 0.99,
       "maxCr": 2.56,
-      "note": "200 Feet Radial Road community in Zamin Pallavaram; TNRERA/35/BLG/0343/2026."
+      "note": "200 Feet Radial Road community in Zamin Pallavaram; TNRERA/35/BLG/0343/2026.",
+      "clubhouse": {
+        "size": "34,061 sq.ft",
+        "details": "Grand clubhouse featuring a multipurpose/party hall, AV room / mini theatre, library, business centre / co-working spaces, gymnasium, indoor badminton & squash courts, table tennis, and gaming arcade."
+      },
+      "amenities": [
+        "34,061 sq.ft Grand Clubhouse",
+        "25m Resort-Style Lap Pool & Kids' Pool",
+        "Indoor Badminton & Glass-Back Squash Courts",
+        "Rooftop Tennis & Pickleball Courts",
+        "Gymnasium & Yoga Deck",
+        "AV Room, Library & Business Centre",
+        "Gaming Arcade & Table Tennis",
+        "Amphitheatre & Senior Citizen Sit-Out"
+      ]
     },
     {
       "id": "casagrand-mercury-perambur",
@@ -3195,7 +4885,21 @@
       "rateSqft": 7999,
       "minCr": 0.81,
       "maxCr": 3.01,
-      "note": "20-acre, 1,678-unit landmark opposite Binny Mills, Perambur; TN/29/BUILDING/055/2024."
+      "note": "20-acre, 1,678-unit landmark opposite Binny Mills, Perambur; TN/29/BUILDING/055/2024.",
+      "clubhouse": {
+        "size": "89,000 sq.ft (10 storeys — Club Celest)",
+        "details": "10-storey clubhouse featuring a multipurpose & banquet hall, AV theatre, café, food court & bar counter, gymnasium, digital workout zone, steam room, salon, squash & badminton courts, and business/learning centre."
+      },
+      "amenities": [
+        "3 Swimming Pools (3,700 sq.ft) & Cabanas",
+        "Gymnasium, Digital Workout & Outdoor Gym",
+        "Basketball, Futsal, Tennis & Volleyball",
+        "Squash, Badminton & Table Tennis",
+        "AV Theatre, Sky Cinema & Amphitheatre",
+        "Miyawaki Forest, Bird Park & Reflexology",
+        "Business Centre, Learning Centre & Café",
+        "EV Charging, Car Wash Bay & Clinic"
+      ]
     },
     {
       "id": "casagrand-highcity-tambaram",
@@ -3221,7 +4925,21 @@
       "rateSqft": 6100,
       "minCr": 0.53,
       "maxCr": 0.9,
-      "note": "41-acre integrated township on Chennai ORR with 5-acre clubhouse; TNRERA/1/BLG/0156/2026."
+      "note": "41-acre integrated township on Chennai ORR with 5-acre clubhouse; TNRERA/1/BLG/0156/2026.",
+      "clubhouse": {
+        "size": "57,000 sq.ft (G+2 + rooftop, part of 6-acre sports hub)",
+        "details": "G+2 clubhouse with double-height banquet hall, mini theatre, VR & gaming lounge, snooker/TT, scholar's lounge with reading pods, co-working space, creche, plus rooftop Sky Deck, Skyline Café, and Zen Terrace."
+      },
+      "amenities": [
+        "21,000 sq.ft Pool Deck (Lap, Lazy & Jacuzzi)",
+        "Indoor Olympic Pool & Raised Glass Pool",
+        "6-Acre Sports Hub (Futsal, Bowling, Squash, Pickleball)",
+        "3.5-Acre Tropical & Miyawaki Forest Walk",
+        "Double-Height Banquet Hall & 3 Mini Theatres",
+        "Co-Working Space & Scholar's Lounge",
+        "Kids' Rock Climbing Wall & Creche",
+        "EV Charging, Pet Park & International School"
+      ]
     },
     {
       "id": "casagrand-reva-pammal",
@@ -3248,7 +4966,21 @@
       "rateSqft": 5200,
       "minCr": 0.64,
       "maxCr": 1.34,
-      "note": "Pallavaram-Kundrathur Road gated community; TN/1/Building/0179/2025."
+      "note": "Pallavaram-Kundrathur Road gated community; TN/1/Building/0179/2025.",
+      "clubhouse": {
+        "size": "15,000 sq.ft",
+        "details": "Indoor clubhouse featuring a multipurpose hall, mini theatre, reading lounge, coffee station, business & learning centre, gym, Zumba & aerial yoga floor, indoor games (Xbox, snooker, TT, indoor mini golf), and creche."
+      },
+      "amenities": [
+        "7,800 sq.ft Swimming Pool & Cabanas",
+        "15,000 sq.ft Clubhouse & Mini Theatre",
+        "Gymnasium, CrossFit, Zumba & Aerial Yoga",
+        "Terrace Gym, Terrace Cinema & Sunset Deck",
+        "Sports Court, Cricket Net & Skating Rink",
+        "Business Centre, Reading Lounge & Store",
+        "Pet Park & Herbal Gardens",
+        "EV Charging Bay & Car Wash Bay"
+      ]
     },
     {
       "id": "appaswamy-kamadhenu-mylapore",
@@ -3274,7 +5006,21 @@
       "rateSqft": 26000,
       "minCr": 6.0,
       "maxCr": 9.76,
-      "note": "Bespoke luxury residences in Mylapore, Central Chennai; TNRERA/29/BLG/0270/2025."
+      "note": "Bespoke luxury residences in Mylapore, Central Chennai; TNRERA/29/BLG/0270/2025.",
+      "clubhouse": {
+        "size": "On-site Clubhouse (sq.ft not disclosed)",
+        "details": "On-site clubhouse featuring a fitness centre, banquet/party hall, steam room, indoor games area, kids' play area, and swimming pool."
+      },
+      "amenities": [
+        "Swimming Pool & Clubhouse",
+        "Fitness Centre & Steam Room",
+        "Banquet / Party Hall & Indoor Games",
+        "Kids' Play Area & Park Benches",
+        "100% Power Backup",
+        "Reticulated Gas & Digital Water Meters",
+        "Access-Controlled Doors, RFID & CCTV",
+        "Drivers' Waiting Room & Help Toilets"
+      ]
     },
     {
       "id": "radiance-eternity-thoraipakkam",
@@ -3300,7 +5046,21 @@
       "rateSqft": 12199,
       "minCr": 2.2,
       "maxCr": 3.52,
-      "note": "215-unit luxury OMR community in Thoraipakkam; TN/29/Building/0206/2025."
+      "note": "215-unit luxury OMR community in Thoraipakkam; TN/29/Building/0206/2025.",
+      "clubhouse": {
+        "size": "2,000 sq.ft (Block B, 22nd Floor + Terrace)",
+        "details": "Elevated 22nd-floor clubhouse in Block B with indoor gathering room, AV room, co-working space, gym, creche with ball pit, and indoor games (pool table, TT, foosball, air hockey, chess)."
+      },
+      "amenities": [
+        "22nd-Floor Rooftop Swimming Pool & Lounge",
+        "Indoor Gymnasium & Outdoor Gym",
+        "Co-Working Space & AV Room",
+        "Multi-Purpose Court & Cricket Net",
+        "Rock Climbing Wall, Kids' Play & Sand Pit",
+        "Open Yoga Deck & Barbeque Counter",
+        "Double-Height Entrance Lobby & ATM",
+        "EV Charging & 100% Solar Common Lighting"
+      ]
     },
     {
       "id": "urbanrise-game-changer-siruseri",
@@ -3325,7 +5085,21 @@
       "rateSqft": 6800,
       "minCr": 0.7,
       "maxCr": 0.99,
-      "note": "Near SIPCOT IT Park, Siruseri OMR; TN/35/Building/0397/2023."
+      "note": "Near SIPCOT IT Park, Siruseri OMR; TN/35/Building/0397/2023.",
+      "clubhouse": {
+        "size": "43,000–45,000 sq.ft (Cosmo Club)",
+        "details": "Central lifestyle clubhouse featuring co-working spaces, board rooms, banquet/multipurpose hall, mini theatre, indoor games, and Urbanrise Genius indoor kids' learning spaces."
+      },
+      "amenities": [
+        "43,000 sq.ft Clubhouse & Co-Working Spaces",
+        "Swimming Pool & Children's Pool",
+        "Gymnasium & Yoga/Meditation Zones",
+        "Mini Theatre, Banquet Hall & Amphitheatre",
+        "Lawn Tennis, Play Court & Jogging Track",
+        "75,000 sq.ft Rooftop Amenities & Lawn",
+        "Kids' Learning Zone & Play Area",
+        "24/7 Security, CCTV & IGBC Gold Certified"
+      ]
     },
     {
       "id": "dlf-the-dahlias-sector-54",
@@ -3351,7 +5125,21 @@
       "rateSqft": 80000,
       "minCr": 65.0,
       "maxCr": 100.0,
-      "note": "Ultra-luxury residences on Golf Course Road, Sector 54; HARERA GGM/872/604/2024/99."
+      "note": "Ultra-luxury residences on Golf Course Road, Sector 54; HARERA GGM/872/604/2024/99.",
+      "clubhouse": {
+        "size": "2,00,000 – 4,00,000 sq.ft (Dual West & East Clubhouses)",
+        "details": "Dual social hubs featuring a 12,000 sq.ft gymnasium, luxury spa, fine-dining restaurants, private lounges, party hall, mini theatre, and hospitality-led concierge & valet services."
+      },
+      "amenities": [
+        "Indoor & Outdoor Infinity Swimming Pools",
+        "Luxury Wellness Spa & Yoga Spaces",
+        "12,000 sq.ft Fitness Center & Gym",
+        "Fine-Dining Restaurants & Private Lounges",
+        "Tennis & Squash Courts",
+        "Mini Theatre & Party Hall",
+        "Concierge, Valet & In-Residence Dining",
+        "Landscaped Gardens & Multi-Tier Security"
+      ]
     },
     {
       "id": "godrej-sora-sector-53",
@@ -3377,7 +5165,21 @@
       "rateSqft": 32000,
       "minCr": 9.3,
       "maxCr": 13.6,
-      "note": "Luxury Golf Course Road belt residences by Hafeez Contractor; HARERA GGM/976/708/2025/79."
+      "note": "Luxury Golf Course Road belt residences by Hafeez Contractor; HARERA GGM/976/708/2025/79.",
+      "clubhouse": {
+        "size": "25,000 sq.ft (Shiki Clubhouse, tiered Japanese design)",
+        "details": "Japanese Shibui-inspired Shiki Clubhouse featuring an onsen-style pool and jacuzzis, rooftop infinity pool, spa, Japanese tea lounge/café, private screening theater, cigar club, private dining salon, and indoor sports."
+      },
+      "amenities": [
+        "Shiki Clubhouse with Japanese Onsen Pool",
+        "Rooftop Infinity Pool & Water Cabanas",
+        "Luxury Spa & Sauna",
+        "Gymnasium & Yoga/Meditation Areas",
+        "Squash, Badminton, Padel & Tennis Courts",
+        "Japanese Tea Lounge & Private Dining Salon",
+        "Private Screening Theater & Billiards",
+        "Triple-Height Shibui Lobby & Genkan Lobbies"
+      ]
     },
     {
       "id": "sobha-crescent-sector-63a",
@@ -3403,7 +5205,21 @@
       "rateSqft": 24250,
       "minCr": 4.83,
       "maxCr": 7.59,
-      "note": "Golf Course Extension Road launch by Sobha; HARERA GGM/1054/786/2026/26."
+      "note": "Golf Course Extension Road launch by Sobha; HARERA GGM/1054/786/2026/26.",
+      "clubhouse": {
+        "size": "1,00,000 sq.ft",
+        "details": "Grand luxury clubhouse featuring a spa, Japanese Onsen pool, 50m lap and leisure pool, gymnasium, indoor games, party hall, and lounge spaces."
+      },
+      "amenities": [
+        "1,00,000 sq.ft Clubhouse with Onsen Pool",
+        "50m Olympic-Length Lap Pool & Kids' Pool",
+        "The Jetty, Bio Pond & Floating Decks",
+        "430m Nature Trail & Reflexology Walk",
+        "65m Skating Rink & Outdoor Fitness Deck",
+        "Tennis, Badminton, Basketball & TT Courts",
+        "Central Plaza, BBQ Deck & Gazebo Cove",
+        "Pet Park & Organic Waste Converter"
+      ]
     },
     {
       "id": "m3m-crown-sector-111",
@@ -3429,7 +5245,21 @@
       "rateSqft": 14800,
       "minCr": 2.17,
       "maxCr": 3.66,
-      "note": "15-acre Dwarka Expressway development near Delhi border; HARERA GGM/687/419/2023/31."
+      "note": "15-acre Dwarka Expressway development near Delhi border; HARERA GGM/687/419/2023/31.",
+      "clubhouse": {
+        "size": "75,000 sq.ft (Waterfront Club)",
+        "details": "Lakeside Waterfront Club with terraced gardens, rooftop seating, 14,000 sq.ft lagoon-style swimming pool, pool-side café, multi-cuisine restaurant, spa, gym, library, snooker, mini theatre, squash court, and boxing ring."
+      },
+      "amenities": [
+        "75,000 sq.ft Lakeside Waterfront Club",
+        "14,000 sq.ft Lagoon Pool & Pool-Side Café",
+        "Multi-Cuisine Restaurant & Rooftop Seating",
+        "Gymnasium, Spa, Yoga & Meditation Zone",
+        "Squash, Tennis, Badminton & Boxing Ring",
+        "Mini Theatre, Snooker & Library",
+        "5.5-Acre Landscape with 1.1 km Walkway",
+        "Zen, Mist & Bamboo Themed Gardens"
+      ]
     },
     {
       "id": "smartworld-one-dxp-sector-113",
@@ -3456,7 +5286,21 @@
       "rateSqft": 19500,
       "minCr": 3.58,
       "maxCr": 5.85,
-      "note": "16-acre luxury community on Dwarka Expressway; HARERA GGM/842/574/2024/69."
+      "note": "16-acre luxury community on Dwarka Expressway; HARERA GGM/842/574/2024/69.",
+      "clubhouse": {
+        "size": "1,00,000 – 1,25,000 sq.ft (Social Club + Sports Club)",
+        "details": "Dual-clubhouse ecosystem separating social/lifestyle venues (restaurant, café, bakery, private dining, salon & spa, 24x7 co-working space) from a dedicated sports-only club."
+      },
+      "amenities": [
+        "Dual Clubhouses (Social & Sports Clubs)",
+        "24x7 Co-Working Space",
+        "Blue Lagoon Central Vista & Free-Form Pool",
+        "Kids' Aqua & Terra Play Zones",
+        "Gymnasium, Salon, Spa & Wellness Zones",
+        "Restaurant, Café & Private Dining",
+        "Badminton, Tennis, Basketball & Cricket",
+        "Schneider Smart Home Automation"
+      ]
     },
     {
       "id": "max-estate-128-noida",
@@ -3482,7 +5326,21 @@
       "rateSqft": 27500,
       "minCr": 11.35,
       "maxCr": 32.77,
-      "note": "10-acre low-density wellness residences on Noida Expressway; UPRERAPRJ446459."
+      "note": "10-acre low-density wellness residences on Noida Expressway; UPRERAPRJ446459.",
+      "clubhouse": {
+        "size": "~46,000 sq.ft ('The Hub at Estate 128')",
+        "details": "Centrally located 'The Hub at Estate 128' combining an indoor club and outdoor sports complex with a swimming pool, spa, all-day dining, multipurpose hall, and sports courts."
+      },
+      "amenities": [
+        "~46,000 sq.ft 'The Hub' Clubhouse & Spa",
+        "Swimming Pool & Plaza with Cabanas",
+        "Paddle Tennis, Lawn Tennis & Cricket Net",
+        "Jogging Path & Cycling Track",
+        "Grand Mountain Amphitheatre & Courtyard",
+        "Agrarian Fields, Orchards & Banyan Court",
+        "Dedicated Pet Park & Kids' Play Area",
+        "Car-Free Surface with Lower-Ground Drop-Offs"
+      ]
     },
     {
       "id": "max-estate-105-noida",
@@ -3507,7 +5365,21 @@
       "rateSqft": 24000,
       "minCr": 8.64,
       "maxCr": 11.52,
-      "note": "37-floor luxury towers in Sector 105, Noida; UPRERAPRJ529777/03/2026."
+      "note": "37-floor luxury towers in Sector 105, Noida; UPRERAPRJ529777/03/2026.",
+      "clubhouse": {
+        "size": "72,000+ sq.ft ('The Hub' & Indoor Sports Block)",
+        "details": "Movement-focused community clubhouse and indoor sports block featuring an indoor swimming pool & toddlers' pool, spa & sauna, gym & kids' gym, rock climbing wall, padel tennis, pickleball, squash, and indoor badminton."
+      },
+      "amenities": [
+        "72,000+ sq.ft 'The Hub' & Sports Block",
+        "Elevated Jogging Track Looping Estate",
+        "Indoor Swimming Pool & Toddlers' Pool",
+        "Rock Climbing, Padel, Pickleball & Squash",
+        "Indoor Badminton & Table Tennis Zone",
+        "Gymnasium, Kids' Gym, Spa & Sauna",
+        "Car-Free Ground Plaza & 1-Acre Podium Green",
+        "Tree House, Jungle Gym & Retail"
+      ]
     },
     {
       "id": "ivory-county-sector-115-noida",
@@ -3534,7 +5406,21 @@
       "rateSqft": 16200,
       "minCr": 3.1,
       "maxCr": 6.35,
-      "note": "Luxury 3, 4 & 5 BHK residences in Sector 115, Noida; UPRERAPRJ256314."
+      "note": "Luxury 3, 4 & 5 BHK residences in Sector 115, Noida; UPRERAPRJ256314.",
+      "clubhouse": {
+        "size": "1,13,000 sq.ft (65,000 sq.ft Aurus + 48,000 sq.ft Ivory Gold)",
+        "details": "Twin multi-level clubhouses featuring a temperature-controlled indoor swimming pool, fine-dining restaurant and bistro, mini-theater, spa/jacuzzi/steam, gym, indoor badminton & squash courts, banquet halls, and reading lounge."
+      },
+      "amenities": [
+        "Twin Clubhouses Totaling 1,13,000 sq.ft",
+        "4-Acre Lagoon & 11 Acres Central Greens",
+        "Temperature-Controlled Indoor Pool & Jacuzzi",
+        "Fine-Dining Restaurant, Bistro & Mini-Theater",
+        "Gymnasium, Spa, Steam & Yoga Decks",
+        "Badminton, Squash, Basketball & Tennis",
+        "Amphitheatre, Library & Banquet Halls",
+        "Senior Citizen Area & Multi-Tier Security"
+      ]
     }
   ],
   "news": [
