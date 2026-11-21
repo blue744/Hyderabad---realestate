@@ -943,11 +943,20 @@
         <div class="flex flex-wrap gap-2">
           <button id="btn-modal-calc" type="button" class="px-3.5 py-2 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700">Estimate EMI</button>
           <button id="btn-modal-enquire" type="button" class="px-3.5 py-2 rounded-lg bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800">Enquire</button>
+          <button id="btn-modal-amenities" type="button" class="px-3.5 py-2 rounded-lg bg-amber-50 border border-amber-300 text-amber-900 text-xs font-semibold hover:bg-amber-100">✨ Amenities</button>
         </div>
         <div class="flex flex-wrap items-center gap-2">
           <a id="btn-modal-map" href="https://www.google.com/maps/search/?api=1&query=Hyderabad,+Telangana" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-emerald-50 border border-emerald-200 text-xs font-semibold text-emerald-700 hover:bg-emerald-100">View Location Map ↗</a>
           <a href="https://rerait.telangana.gov.in/SearchList/Search" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-50">Verify TG-RERA ↗</a>
         </div>
+      </div>
+
+      <div id="modal-amenities-panel" class="hidden p-4 rounded-xl border border-amber-200 bg-amber-50/50 space-y-2.5">
+        <div class="flex items-center justify-between gap-2">
+          <p class="text-xs font-bold uppercase tracking-wider text-amber-900">Builder-Provided Amenities</p>
+          <span id="modal-amenities-builder" class="text-[11px] font-semibold text-amber-700"></span>
+        </div>
+        <div id="modal-amenities-list" class="flex flex-wrap gap-1.5"></div>
       </div>
     </div>
   </div>
@@ -4661,6 +4670,13 @@
       'lnt-elixir-reserve-powai': [{"src": "https://www.lnt-developers.com/lnt-images/lnt-elixir-reserve.jpeg", "label": "L&T Elixir Reserve Powai"}, {"src": "https://www.lntrealty.com/wp-content/uploads/2022/03/3-BHK-Imperia-scaled.jpg", "label": "L&T Powai Residences"}],
       'lnt-rejuve-360-mulund': [{"src": "https://static.squareyards.com/resources/images/mumbai/project-image/l-and-t-rejuve-360-project-large-image4.jpg?aio=w-540;h-350;crop;", "label": "L&T Rejuve 360 Mulund"}],
       'rustomjee-crown-prabhadevi': [{"src": "https://cuupvswzdyykhxfwoyjh.supabase.co/storage/v1/object/public/PROPERTY-PHOTOS/PB251/1774435630497.jpg", "label": "Rustomjee Crown Prabhadevi"}],
+      'trump-towers-hyderabad': [
+        { src: 'https://www.trumptowerproject.com/trump-tower-hyderabad/images/others/renders-01.jpg', label: 'Trump Towers Exterior' },
+        { src: 'https://www.51international.com/assets/dit/fiftyone/images/properties/trump-towers-hyderabad/banner.webp', label: 'Twin 65-Storey Towers' },
+        { src: 'https://bridgekeys.com/img/trump-towers-1.webp', label: 'Golden Mile Facade' },
+        { src: 'https://kokapetnewprojects.com/ira/trump-tower/images/banner-image.webp', label: 'Sky Bridge & Clubhouse' },
+        { src: 'https://trumptower-projects.com/hyderabad/trump-tower-kokapet/images/banner-image.jpg', label: 'Kokapet Skyline View' }
+      ],
       'rustomjee-seasons-bkc': [{"src": "https://img.staticmb.com/mbimages/project/2024/11/20/Project-Photo-106-Rustomjee-Seasons-Mumbai-5027266_410_1440.jpg", "label": "Rustomjee Seasons BKC"}],
       'kalpataru-vienta-kandivali': [{"src": "https://d2j4tkbto6uvqv.cloudfront.net/kalpataru/697b0fbf7f055.jpg", "label": "Kalpataru Vienta Towers"}, {"src": "https://pub-e6c778994f1a4c219002a8c17aded350.r2.dev/projects/26165/26165-main.webp", "label": "Kalpataru Vienta Kandivali"}],
       'runwal-bliss-kanjurmarg': [{"src": "https://housing-images.n7net.in/4f2250e8/0f055fd1e4950be59bdd704110db044f/v0/large/runwal_bliss_wing_e-kanjurmarg_east_1-mumbai-runwal_enterprises.jpeg", "label": "Runwal Bliss Kanjurmarg"}],
@@ -4706,6 +4722,41 @@
       });
     }
 
+
+    const PROJECT_AMENITIES = {
+      'trump-towers-hyderabad': [
+        '1.5 Lakh sq.ft Sky Clubhouse (26th–29th Floor Sky Bridge)',
+        'Infinity-Edge Sky Pool & Indoor Heated Pool + Pool Bar',
+        'Private Lift Lobby (2 Elevators per Home)',
+        'Specialty Restaurant & Cigar Lounge',
+        'Private Movie Theatre & Gaming Arcade',
+        'Spa, Salon & Sauna',
+        'Gymnasium, Yoga & Pilates Studio',
+        'Business Centre & Banquet Hall',
+        'Kids\' Club (Indoor & Outdoor)',
+        'Tennis Court, Badminton Court & Joggers Park'
+      ]
+    };
+
+    function getProjectAmenities(p) {
+      if (Array.isArray(p.amenities) && p.amenities.length) return p.amenities;
+      if (PROJECT_AMENITIES[p.id]) return PROJECT_AMENITIES[p.id];
+      const isVilla = (p.propertyType || p.type) === 'Villa';
+      const list = [];
+      if (p.note) {
+        const clubMatch = p.note.match(/([0-9,.]+\s*(?:Lakh|k)?\s*sq\.?ft\s*clubhouse)/i);
+        if (clubMatch) list.push(clubMatch[1]);
+      }
+      if (isVilla) {
+        list.push('Gated Villa Clubhouse', 'Landscaped Central Park', 'Swimming Pool & Deck', '24×7 Multi-Tier Security', 'Jogging & Cycling Track', 'Indoor Games & Gym', 'EV Charging Bays', '100% DG Power Backup');
+      } else if ((p.minCr || 0) >= 3.5) {
+        list.push('Grand Luxury Clubhouse', 'Infinity / Temperature-Controlled Pool', 'Private Lift Lobby / High-Speed Elevators', 'Spa, Fitness Studio & Yoga Deck', 'Banquet Hall & Co-Working Lounge', '24×7 Concierge & Security', 'EV Charging & Landscaped Podium');
+      } else {
+        list.push('Multi-Level Clubhouse', 'Swimming Pool & Kids Pool', 'Gymnasium & Indoor Games', 'Landscaped Gardens & Walking Track', 'Children\'s Play Area', 'Multipurpose Hall', '24×7 CCTV Security & Power Backup');
+      }
+      return list;
+    }
+
     function openDetailModal(id) {
       const p = state.projects.find((x) => x.id === id);
       if (!p) return;
@@ -4722,6 +4773,11 @@
       $('modal-bhk').textContent = p.bhkLabel;
       $('modal-area').textContent = p.areaLabel;
       $('modal-rera').textContent = p.rera;
+      if ($('modal-amenities-panel')) {
+        $('modal-amenities-panel').classList.add('hidden');
+        $('modal-amenities-builder').textContent = p.builder;
+        $('modal-amenities-list').innerHTML = getProjectAmenities(p).map((a) => `<span class="px-2.5 py-1 rounded-full bg-white border border-amber-200 text-slate-800 text-[11px] font-medium">${escHtml(a)}</span>`).join('');
+      }
       const reraBtn = document.querySelector('#detail-modal a[href*="rera"]');
       if (reraBtn) {
         if (pCity === 'Mumbai') {
@@ -5278,6 +5334,12 @@
     });
     $('btn-close-enquire').addEventListener('click', () => $('enquire-modal').classList.add('hidden'));
     $('btn-cancel-enquire').addEventListener('click', () => $('enquire-modal').classList.add('hidden'));
+    if ($('btn-modal-amenities')) {
+      $('btn-modal-amenities').addEventListener('click', () => {
+        const panel = $('modal-amenities-panel');
+        if (panel) panel.classList.toggle('hidden');
+      });
+    }
     $('btn-modal-enquire').addEventListener('click', () => {
       const proj = state.projects.find((x) => x.id === state.selectedProjectId);
       $('detail-modal').classList.add('hidden');
