@@ -14,18 +14,39 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Way Prop India — Verified RERA Projects, Flat Prices &amp; Bank Auctions</title>
-  <meta name="description" content="Compare TG-RERA verified apartments, luxury villas, ₹/sq.ft rates, possession timelines, and SARFAESI bank auction properties across Hyderabad &amp; India on The Way Prop India." />
+  <title>The Way Prop India — 136+ Verified RERA Projects, Flat Prices &amp; Bank Auctions</title>
+  <meta name="description" content="Compare 136+ RERA-verified apartments &amp; luxury villas, ₹/sq.ft rates, clubhouse sizes, possession timelines, and SARFAESI bank auctions across Hyderabad, Bengaluru, Mumbai, Pune, Chennai &amp; Delhi-NCR." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://thewaypropindia.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://thewaypropindia.com/" />
-  <meta property="og:title" content="The Way Prop India — Verified RERA Projects &amp; Bank Auctions" />
-  <meta property="og:description" content="Track 41+ TG-RERA verified apartments, luxury villas, flat cost calculators, and SARFAESI bank auction flats in Hyderabad &amp; India." />
+  <meta property="og:title" content="The Way Prop India — 136+ Verified RERA Projects &amp; Bank Auctions" />
+  <meta property="og:description" content="Compare 136+ RERA-verified apartments, luxury villas, clubhouse sizes, flat cost calculators, and bank auctions across 6 major Indian cities." />
   <meta property="og:site_name" content="The Way Prop India" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@thewaypropindia" />
-  <meta name="twitter:title" content="The Way Prop India — Verified RERA Projects &amp; Bank Auctions" />
-  <meta name="twitter:description" content="Compare official RERA dates, ₹/sq.ft rates, luxury villas, and bank auction flats across Hyderabad &amp; India." />
+  <meta name="twitter:title" content="The Way Prop India — 136+ Verified RERA Projects &amp; Bank Auctions" />
+  <meta name="twitter:description" content="Compare RERA dates, ₹/sq.ft rates, clubhouse sizes, luxury villas &amp; bank auctions across Hyderabad, Bengaluru, Mumbai, Pune, Chennai &amp; Delhi-NCR." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "The Way Prop India",
+        "url": "https://thewaypropindia.com/",
+        "sameAs": ["https://x.com/thewaypropindia"],
+        "email": "contactthewaypropindia@gmail.com"
+      },
+      {
+        "@type": "WebSite",
+        "name": "The Way Prop India",
+        "url": "https://thewaypropindia.com/",
+        "description": "Independent Indian residential property tracker covering 136+ RERA-verified projects across Hyderabad, Bengaluru, Mumbai, Pune, Chennai, and Delhi-NCR."
+      }
+    ]
+  }
+  </script>
   <meta name="google-adsense-account" content="ca-pub-7772564609272134" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7772564609272134" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
@@ -6697,6 +6718,21 @@
     updateCityHubCounts();
     renderHotProjects();
     loadExternalFeed();
+
+    // Deep-link support for /?project=<id> from static SEO project pages
+    function handleProjectQueryParam() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const pid = params.get('project');
+        if (!pid) return;
+        const proj = state.projects.find((x) => x.id === pid);
+        if (!proj) return;
+        const pCity = proj.city || 'Hyderabad';
+        if (state.activeCity !== pCity && typeof switchCity === 'function') switchCity(pCity);
+        openDetailModal(pid);
+      } catch (e) {}
+    }
+    handleProjectQueryParam();
   </script>
 </body>
 </html>
