@@ -26,7 +26,12 @@
   <meta property="og:title" content="The Way Prop India — 146+ Verified RERA Projects &amp; Bank Auctions" />
   <meta property="og:description" content="Compare 146+ RERA-verified apartments, luxury villas, clubhouse sizes, flat cost calculators, and bank auctions across 6 major Indian cities." />
   <meta property="og:site_name" content="The Way Prop India" />
+  <meta property="og:image" content="https://thewaypropindia.com/og-preview.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpeg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://thewaypropindia.com/og-preview.jpg" />
   <meta name="twitter:site" content="@thewaypropindia" />
   <meta name="twitter:title" content="The Way Prop India — 146+ Verified RERA Projects &amp; Bank Auctions" />
   <meta name="twitter:description" content="Compare RERA dates, ₹/sq.ft rates, clubhouse sizes, luxury villas &amp; bank auctions across Hyderabad, Bengaluru, Mumbai, Pune, Chennai &amp; Delhi-NCR." />
@@ -191,6 +196,14 @@
         </div>
       </div>
     </section>
+
+    <!-- Buyer Trust Caption -->
+    <div class="rounded-xl bg-gradient-to-r from-indigo-50 via-cyan-50 to-emerald-50 border border-indigo-200/70 px-4 py-2.5 flex items-center justify-between gap-2 flex-wrap shadow-sm">
+      <p class="text-xs sm:text-sm font-semibold text-slate-800">
+        💡 <span class="text-indigo-700 font-bold">Before you buy a flat or villa,</span> compare RERA dates, real ₹/sq.ft prices &amp; clubhouses here—with zero broker spam.
+      </p>
+      <a href="/comparisons/index.html" class="text-xs font-bold text-indigo-700 hover:underline whitespace-nowrap">Compare Projects &rarr;</a>
+    </div>
 
     <!-- KPI Strip -->
     <section class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
@@ -5243,7 +5256,16 @@
         ['Ending Date', (p) => `<strong class="text-indigo-700">${p.endDate}</strong>`],
         ['Rate / sq.ft', (p) => formatINR(p.rateSqft)],
         ['Flat Price Range', (p) => `<strong class="text-emerald-700">${formatCr(p.minCr)} – ${formatCr(p.maxCr)}</strong>`],
-        ['BHK & Sizes', (p) => `${p.bhkLabel}<br/><span class="text-xs text-slate-500">${p.areaLabel}</span>`]
+        ['BHK & Sizes', (p) => `${p.bhkLabel}<br/><span class="text-xs text-slate-500">${p.areaLabel}</span>`],
+        ['Clubhouse', (p) => {
+          const ch = getProjectClubhouse(p);
+          if (!ch) return '<span class="text-xs text-slate-400">Details on RERA / Brochure</span>';
+          return `<strong class="text-slate-800">${ch.size || 'Clubhouse'}</strong>${ch.details ? `<br/><span class="text-xs text-slate-500">${ch.details}</span>` : ''}`;
+        }],
+        ['Amenities', (p) => {
+          const am = getProjectAmenities(p) || [];
+          return am.length ? `<span class="text-xs text-slate-600 leading-relaxed">${am.slice(0, 6).join(' • ')}</span>` : '—';
+        }]
       ];
       $('compare-table-container').innerHTML = `
         <table class="w-full text-left border-collapse text-sm min-w-[540px]">
@@ -5260,9 +5282,26 @@
                 ${items.map((p) => `<td class="py-2.5 px-3">${fn(p)}</td>`).join('')}
               </tr>
             `).join('')}
+            <tr class="bg-slate-50/70">
+              <td class="py-3 px-3 text-xs font-semibold text-slate-600">Action</td>
+              ${items.map((p) => `
+                <td class="py-3 px-3">
+                  <button type="button" data-compare-enquire="${p.id}" class="w-full px-3 py-2 rounded-lg text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white transition shadow-sm">
+                    Enquire Now
+                  </button>
+                </td>
+              `).join('')}
+            </tr>
           </tbody>
         </table>
       `;
+      $('compare-table-container').querySelectorAll('[data-compare-enquire]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const proj = state.projects.find((x) => x.id === btn.getAttribute('data-compare-enquire'));
+          $('compare-modal').classList.add('hidden');
+          openEnquireModal(proj ? proj.name : 'Project Enquiry');
+        });
+      });
       $('compare-modal').classList.remove('hidden');
     }
 
