@@ -102,6 +102,9 @@
       <button type="button" data-tab="portals" class="nav-tab tab-inactive border border-slate-200 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap transition">
         Official RERA &amp; Portals
       </button>
+      <button type="button" data-tab="news" class="nav-tab tab-inactive border border-emerald-300 bg-emerald-50/60 text-emerald-900 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap transition">
+        📰 News &amp; RERA Alerts
+      </button>
     </div>
   </header>
 
@@ -724,6 +727,28 @@
       </div>
     </section>
 
+    <!-- TAB: Real Estate News & RERA Alerts -->
+    <section id="tab-news" class="hidden space-y-5">
+      <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-bold uppercase tracking-wider">Verified Market Briefs</span>
+            <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 mt-1.5">Real Estate News &amp; RERA Alerts</h2>
+            <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Original buyer-focused summaries of TG-RERA orders, HMDA e-auctions, Supreme Court rulings &amp; city price trends, with direct source links.</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-1.5" id="news-filter-bar">
+            <button type="button" data-news-filter="All" class="news-filter-btn px-3 py-1.5 rounded-lg bg-slate-900 text-white text-xs font-semibold transition">All Updates</button>
+            <button type="button" data-news-filter="Hyderabad" class="news-filter-btn px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-700 hover:border-indigo-300 text-xs font-semibold transition">Hyderabad &amp; TG-RERA</button>
+            <button type="button" data-news-filter="Pan-India" class="news-filter-btn px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-700 hover:border-indigo-300 text-xs font-semibold transition">Pan-India &amp; Legal</button>
+          </div>
+        </div>
+        <div id="news-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        <p class="text-[11px] text-slate-400 pt-2 border-t border-slate-100">
+          Editorial Note: All summaries above are original brief digests for informational purposes. Click any source link to read the full original report or official authority notice.
+        </p>
+      </div>
+    </section>
+
   </main>
 
   <!-- Smart & Sustainable Living + Location Advantages (Callisto-inspired showcase) -->
@@ -791,19 +816,33 @@
   </section>
 
   <!-- Site Footer: About Us, Investing in Future, Contact Us -->
+  <!-- Bottom Real Estate News Strip -->
+  <section aria-label="Latest Real Estate News" class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+    <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+        <div>
+          <h2 class="text-base sm:text-lg font-bold text-slate-900">📰 Latest Real Estate News &amp; RERA Alerts</h2>
+          <p class="text-xs text-slate-500">Quick daily market digests with direct links to original reports</p>
+        </div>
+        <button type="button" onclick="switchTab('news'); window.scrollTo({top:0, behavior:'smooth'});" class="px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-semibold transition">View All News →</button>
+      </div>
+      <div id="bottom-news-grid" class="grid grid-cols-1 md:grid-cols-3 gap-3"></div>
+    </div>
+  </section>
+
   <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 mt-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-xs sm:text-sm">
       <div class="space-y-2.5">
         <h3 class="text-sm font-bold text-white uppercase tracking-wider">About Us</h3>
         <p class="text-slate-400 leading-relaxed">
-          <strong class="text-white">The Way Prop India</strong> (<span class="text-cyan-400">thewaypropindia.com</span>) is an independent Indian residential property tracker built to bring transparency to flat and villa buyers. We organize TG-RERA registration numbers, launch and possession timelines, and indicative ₹/sq.ft rates across West, North, East, and South Hyderabad.
+          <strong class="text-white">The Way Prop India</strong> (<span class="text-cyan-400">thewaypropindia.com</span>) is an independent Indian residential property tracker built to bring transparency to flat and villa buyers. We organize RERA registration numbers, launch and possession timelines, and indicative ₹/sq.ft rates across Hyderabad, Bengaluru, Mumbai, Pune, Chennai, and Delhi-NCR.
         </p>
       </div>
 
       <div class="space-y-2.5">
         <h3 class="text-sm font-bold text-white uppercase tracking-wider">Investing in the Future</h3>
         <p class="text-slate-400 leading-relaxed">
-          Hyderabad's growth along the Outer Ring Road, Financial District, Neopolis, Tellapur, Kollur, and Kompally makes long-term planning essential. Always verify official RERA completion dates, IGRS circle rates, and all-in registration costs before committing capital.
+          Long-term growth across India's top corridors—<strong class="text-slate-200">Hyderabad</strong> (ORR, Neopolis, Tellapur, Kompally), <strong class="text-slate-200">Bengaluru</strong> (Whitefield, Hebbal, Sarjapur), <strong class="text-slate-200">Mumbai</strong> (Thane, Navi Mumbai, Central), <strong class="text-slate-200">Pune</strong> (Hinjewadi, Kharadi, Baner), <strong class="text-slate-200">Chennai</strong> (OMR, Pallavaram, Madhavaram), and <strong class="text-slate-200">Delhi-NCR</strong> (Gurugram, Dwarka Expressway, Noida)—makes careful planning essential. Always verify official state RERA completion dates, circle rates, and all-in registration costs before committing capital.
         </p>
       </div>
 
@@ -4759,12 +4798,13 @@
         const active = btn.dataset.tab === tabName;
         btn.className = `nav-tab px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap transition ${active ? 'tab-active' : 'tab-inactive border border-slate-200'}`;
       });
-      ['projects', 'premium', 'auctions', 'analytics', 'calculator', 'portals'].forEach((t) => {
+      ['projects', 'premium', 'auctions', 'analytics', 'calculator', 'portals', 'news'].forEach((t) => {
         $('tab-' + t).classList.toggle('hidden', t !== tabName);
       });
       if (tabName === 'premium') renderPremiumTab();
       if (tabName === 'auctions') renderAuctions();
       if (tabName === 'analytics') renderCharts();
+      if (tabName === 'news') renderNews();
     }
 
     const AUCTION_LISTINGS = [
@@ -5947,6 +5987,7 @@
           updateCityHubCounts();
           renderHotProjects();
           if (payload.updatedAt) $('data-version-badge').textContent = 'Updated ' + payload.updatedAt;
+          if (Array.isArray(payload.news) && payload.news.length > 0) { state.news = payload.news; renderNews(); }
           populateCalcDropdown();
           renderProjects();
           if (state.activeTab === 'premium') renderPremiumTab();
@@ -6202,8 +6243,54 @@
     $('legal-modal-close').addEventListener('click', () => legalModal.classList.add('hidden'));
     legalModal.addEventListener('click', (e) => { if (e.target === legalModal) legalModal.classList.add('hidden'); });
 
+
+    const INITIAL_NEWS = [{"id": "news-hmda-bachupally-nov2026", "date": "Nov 21, 2026", "city": "Hyderabad", "category": "HMDA Auction", "title": "HMDA Bachupally Plot E-Auction Sees Softer Bidding", "summary": "HMDA's Nov 20 e-auction of 50 Bachupally plots averaged ₹49,737/sq.yd (down from ₹51,991 two months ago), with top bids easing to ₹60,500/sq.yd—signaling more selective buyer bidding in plotted layouts.", "sourceName": "RegNews", "url": "https://www.regnews.in/hmda-bachupally-auction-plot-prices-hyderabad"}, {"id": "news-sc-refund-litigation-nov2026", "date": "Nov 20, 2026", "city": "Pan-India", "category": "Legal / Supreme Court", "title": "Supreme Court Orders ₹1.57 Cr Refund With 9% Interest Over Undisclosed Litigation", "summary": "The Supreme Court directed a developer to refund ₹1.57 crore with 9% annual interest for failing to disclose pending property litigation, reinforcing homebuyers' right to clear title disclosures.", "sourceName": "TaxGuru", "url": "https://taxguru.in/corporate-law/supreme-court-orders-rs-1-57-crore-refund-9-percent-interest-undisclosed-property-litigation.html"}, {"id": "news-tgrera-fines-nov2026", "date": "Nov 18, 2026", "city": "Hyderabad", "category": "TG-RERA Order", "title": "TG-RERA Fines Unregistered Project ₹25 Lakh & Orders Buyer Refunds", "summary": "TG-RERA penalized Sanali IT Parks ₹25 lakh for marketing an unregistered Manchirevula project and ordered refunds with interest in multiple delay cases—reminding buyers to verify RERA IDs before booking.", "sourceName": "PropNewz", "url": "https://www.propnewz.com/blog/tg-rera-november-2026-orders-sanali-the-edge-rs-25-lakh-unregistered-project-refunds-with-interest-section-3-59-63-hyderabad-buyer-2026-11-18"}, {"id": "news-hmda-schedule-nov2026", "date": "Nov 18, 2026", "city": "Hyderabad", "category": "HMDA Auction", "title": "HMDA Nov 2026 E-Auctions: Inmulnarva, HUDA Heights & Neopolis", "summary": "Following Bachupally, HMDA's November e-auction calendar continues with 45 plots in Inmulnarva (Nov 23), 8 plots in HUDA Heights (Nov 25), and large parcels in Neopolis & Moosapet (Nov 27).", "sourceName": "Pavani Group", "url": "https://pavanigroup.org/november-2026-hmda-land-auction-updates-opportunities-around-hyderabad/"}, {"id": "news-tgrera-ext-nov30", "date": "Nov 16, 2026", "city": "Hyderabad", "category": "TG-RERA Notice", "title": "TG-RERA 4-Month Force Majeure Extension Runs Until Nov 30", "summary": "Registered projects with completion dates between Feb 28 and Jul 31, 2026 received an automatic extension until Nov 30, 2026 under Order No. 1414; buyers should confirm handover schedules in writing.", "sourceName": "PropNewz", "url": "https://www.propnewz.com/blog/tg-rera-order-1414-west-asia-four-month-extension-30-november-2026-registration-vs-agreement-possession-date-hyderabad-buyer-2026-11-16"}, {"id": "news-jll-q3-2026-prices", "date": "Nov 10, 2026", "city": "Pan-India", "category": "Market Trend", "title": "JLL Q3 2026: Bengaluru (+15%), Chennai (+12%) & NCR (+10%) Lead Price Gains", "summary": "Residential capital values climbed across India's top cities in Q3 2026—led by Bengaluru (15%), Chennai (12%), Delhi-NCR (10%), Mumbai (8%), and Pune (6%)—driven by demand for larger premium homes.", "sourceName": "The Realty Today", "url": "https://therealtytoday.com/news/trt-data-lab/jll-housing-sales-up-6-in-nine-months-but-value-rises-15-as-buyers-pay-more-per-home"}];
+    state.news = INITIAL_NEWS.slice();
+    state.newsFilter = 'All';
+
+    function renderNews() {
+      const items = (state.news || []).filter((n) => state.newsFilter === 'All' || n.city === state.newsFilter);
+      const cardHtml = (n) => `
+        <article class="p-4 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-indigo-200 transition flex flex-col justify-between gap-3">
+          <div>
+            <div class="flex items-center justify-between gap-2 text-[11px]">
+              <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold">${escHtml(n.category)}</span>
+              <span class="text-slate-400 font-medium">${escHtml(n.date)} • ${escHtml(n.city)}</span>
+            </div>
+            <h3 class="text-sm font-bold text-slate-900 mt-2 leading-snug">${escHtml(n.title)}</h3>
+            <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">${escHtml(n.summary)}</p>
+          </div>
+          <a href="${escHtml(n.url)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-indigo-300 text-indigo-700 text-xs font-semibold transition">
+            <span>Read on ${escHtml(n.sourceName)}</span>
+            <span>↗</span>
+          </a>
+        </article>`;
+      if ($('news-grid')) {
+        $('news-grid').innerHTML = items.length ? items.map(cardHtml).join('') : '<p class="text-xs text-slate-500 col-span-full">No news items for this filter.</p>';
+      }
+      if ($('bottom-news-grid')) {
+        $('bottom-news-grid').innerHTML = (state.news || []).slice(0, 3).map(cardHtml).join('');
+      }
+    }
+
+    if ($('news-filter-bar')) {
+      $('news-filter-bar').addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-news-filter]');
+        if (!btn) return;
+        state.newsFilter = btn.getAttribute('data-news-filter');
+        document.querySelectorAll('.news-filter-btn').forEach((b) => {
+          const act = b.getAttribute('data-news-filter') === state.newsFilter;
+          b.className = act
+            ? 'news-filter-btn px-3 py-1.5 rounded-lg bg-slate-900 text-white text-xs font-semibold transition'
+            : 'news-filter-btn px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-700 hover:border-indigo-300 text-xs font-semibold transition';
+        });
+        renderNews();
+      });
+    }
+
     // Init
     $('shortlist-count').textContent = state.shortlistIds.size;
+    renderNews();
     populateCalcDropdown();
     updateCalculator();
     renderProjects();
