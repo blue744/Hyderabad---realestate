@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.google.com/search?q=https://thewaypropindia.com/sitemap.xml
+Sitemap: https://thewaypropindia.com/sitemap.xml
