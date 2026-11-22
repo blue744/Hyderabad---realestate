@@ -5893,5 +5893,135 @@
       "sourceName": "The Realty Today",
       "url": "https://therealtytoday.com/news/trt-data-lab/jll-housing-sales-up-6-in-nine-months-but-value-rises-15-as-buyers-pay-more-per-home"
     }
+  ],
+  "regPulse": [
+    {
+      "id": "oct-2026",
+      "label": "October 2026",
+      "cards": [
+        {
+          "label": "Oct 2026 Registrations",
+          "value": "5,318 Homes",
+          "sub": "₹4,395 Cr (-14% YoY vol)",
+          "accent": "text-amber-300"
+        },
+        {
+          "label": "Jan–Oct 2026 Cumulative",
+          "value": "61,033 Homes",
+          "sub": "₹44,305 Cr (+3% YoY value)",
+          "accent": "text-white"
+        },
+        {
+          "label": "Top District (Oct 2026)",
+          "value": "Rangareddy 52%",
+          "sub": "Medchal 29% • Hyd 18% • SGR 1%",
+          "accent": "text-amber-300"
+        },
+        {
+          "label": "₹1 Cr+ Segment (Oct)",
+          "value": "59% of Value",
+          "sub": "25% of registered units",
+          "accent": "text-white"
+        }
+      ],
+      "sourceLabel": "Metro India / Knight Frank (Nov 12, 2026)",
+      "sourceUrl": "https://www.metroindia.net/news/articlenews/hyderabad-residential-registrations-remain-stable-47021"
+    },
+    {
+      "id": "sep-2026",
+      "label": "September 2026",
+      "cards": [
+        {
+          "label": "Sep 2026 Registrations",
+          "value": "5,620 Homes",
+          "sub": "₹4,487 Cr (-15% YoY vol)",
+          "accent": "text-amber-300"
+        },
+        {
+          "label": "Jan–Sep 2026 Cumulative",
+          "value": "55,715 Homes",
+          "sub": "₹39,910 Cr (+4% YoY value)",
+          "accent": "text-white"
+        },
+        {
+          "label": "₹1 Cr+ Segment (Sep)",
+          "value": "56% of Value",
+          "sub": "Up from 54% a year earlier",
+          "accent": "text-amber-300"
+        },
+        {
+          "label": "Mid & Budget Bands",
+          "value": "₹50L–1Cr: -6%",
+          "sub": "Below ₹50L: -20% YoY",
+          "accent": "text-white"
+        }
+      ],
+      "sourceLabel": "Telangana Today / PropNewz (Oct 2026)",
+      "sourceUrl": "https://www.propnewz.com/blog/hyderabad-september-2026-registrations-fall-15-percent-knight-frank-what-buyers-should-read-hyderabad-buyer-2026-10-28"
+    },
+    {
+      "id": "aug-2026",
+      "label": "August 2026",
+      "cards": [
+        {
+          "label": "Aug 2026 Registrations",
+          "value": "5,937 Homes",
+          "sub": "₹4,576 Cr (-9% YoY vol)",
+          "accent": "text-amber-300"
+        },
+        {
+          "label": "Jan–Aug 2026 Cumulative",
+          "value": "50,095 Homes",
+          "sub": "₹35,423 Cr total value",
+          "accent": "text-white"
+        },
+        {
+          "label": "Weighted Avg Price",
+          "value": "₹4,964 / sq.ft",
+          "sub": "+8% YoY registered avg",
+          "accent": "text-amber-300"
+        },
+        {
+          "label": "Market Coverage",
+          "value": "4 Districts",
+          "sub": "Hyd, Rangareddy, Medchal, SGR",
+          "accent": "text-white"
+        }
+      ],
+      "sourceLabel": "Knight Frank / PropNewz (Sep 2026)",
+      "sourceUrl": "https://www.propnewz.com/blog/hyderabad-september-2026-registrations-fall-15-percent-knight-frank-what-buyers-should-read-hyderabad-buyer-2026-10-28"
+    },
+    {
+      "id": "ytd-2026",
+      "label": "Jan–Oct 2026 (YTD)",
+      "cards": [
+        {
+          "label": "10-Month Registrations",
+          "value": "61,033 Homes",
+          "sub": "-1% YoY vs 61,699 in 2025",
+          "accent": "text-amber-300"
+        },
+        {
+          "label": "Total Registered Value",
+          "value": "₹44,305 Cr",
+          "sub": "+3% YoY vs ₹43,048 Cr in 2025",
+          "accent": "text-white"
+        },
+        {
+          "label": "₹1 Cr+ Value Share",
+          "value": "51% of Value",
+          "sub": "20% of units (+6% value YoY)",
+          "accent": "text-amber-300"
+        },
+        {
+          "label": "Below ₹50L Share",
+          "value": "55% of Units",
+          "sub": "₹50L–₹1Cr: 25% of units",
+          "accent": "text-white"
+        }
+      ],
+      "sourceLabel": "Hindustan Times / Knight Frank (Nov 12, 2026)",
+      "sourceUrl": "https://www.hindustantimes.com/real-estate/hyderabad-records-61-033-home-registrations-down-1-in-jan-oct-2026-transaction-value-rises-3-to-44-305-crore-101794486335820.html"
+    }
   ]
 }
