@@ -1,5 +1,5 @@
 {
-  "updatedAt": "Nov 21, 2026",
+  "updatedAt": "Nov 22, 2026",
   "projects": [
     {
       "id": "my-home-apas",
@@ -5761,9 +5761,78 @@
         "2-Basement + 5-Podium Parking",
         "24/7 Security & Power Backup"
       ]
+    },
+    {
+      "id": "mak-fern-tukkuguda",
+      "name": "MAK Fern",
+      "propertyType": "Villa",
+      "locality": "Tukkuguda",
+      "zone": "South",
+      "city": "Hyderabad",
+      "builder": "MAK Projects",
+      "rera": "P02400010645",
+      "status": "New Launch",
+      "startDate": "Sep 2026",
+      "endDate": "Dec 2030",
+      "endYear": 2030,
+      "endSort": 203012,
+      "bhks": [
+        4
+      ],
+      "bhkLabel": "4 BHK",
+      "areaLabel": "4,525 – 7,762 sq.ft",
+      "defaultSqft": 5220,
+      "rateSqft": 13000,
+      "minCr": 6.79,
+      "maxCr": 10.09,
+      "note": "15-acre gated community of 109 boutique G+2 4BHK + Home Theatre villas 5 mins from ORR Exit 14 (Tukkuguda); 30,000 sq.ft Club Fernessa.",
+      "clubhouse": {
+        "size": "30,000 sq.ft Clubhouse",
+        "details": "Club Fernessa across 15 acres (109 G+2 4BHK + Home Theatre villas, 40 ft wide roads, landscaped gardens)."
+      },
+      "amenities": [
+        "30,000 sq.ft Club Fernessa",
+        "Gymnasium",
+        "Badminton Court",
+        "Indoor Games",
+        "40 ft Wide Roads",
+        "Landscaped Gardens",
+        "24/7 CCTV Security",
+        "Power Backup"
+      ]
     }
   ],
   "news": [
+    {
+      "id": "news-mak-fern-nov2026",
+      "date": "Nov 22, 2026",
+      "city": "Hyderabad",
+      "category": "New Launch",
+      "title": "MAK Projects Launches MAK Fern 15-Acre Villa Community in Tukkuguda",
+      "summary": "MAK Projects unveiled MAK Fern (TG-RERA: P02400010645), a 15-acre gated community of 109 boutique G+2 4BHK + Home Theatre villas 5 mins from ORR Exit 14, priced from ₹6.79 Cr.",
+      "sourceName": "India Education Diary",
+      "url": "https://indiaeducationdiary.in/mak-projects-launches-mak-fern-a-15-acre-luxury-gated-villa-community-near-tukkuguda-hyderabad/"
+    },
+    {
+      "id": "news-hyd-inventory-nov2026",
+      "date": "Nov 22, 2026",
+      "city": "Hyderabad",
+      "category": "Market Trend",
+      "title": "Hyderabad Unsold Housing Inventory Overhang Reaches 28–30 Months",
+      "summary": "Anarock and CRE Matrix data cited by ThePrint shows 28–30 months of unsold inventory in Hyderabad (longest among top 7 metros), giving homebuyers stronger negotiating power.",
+      "sourceName": "ThePrint",
+      "url": "https://theprint.in/ground-reports/inside-hyderabads-housing-glut-unsold-homes-skyscrapers-without-residents/3103958/"
+    },
+    {
+      "id": "news-nhb-tier2-nov2026",
+      "date": "Nov 22, 2026",
+      "city": "All India",
+      "category": "Housing Finance",
+      "title": "NHB Proposes Separate ₹15 Lakh Affordable Loan Category for Tier-II, III Cities",
+      "summary": "National Housing Bank approached the Department of Financial Services to classify housing loans up to ₹15 lakh in smaller cities as affordable housing to widen buyer credit.",
+      "sourceName": "Constro Facilitator",
+      "url": "https://constrofacilitator.com/nhb-seeks-new-affordable-housing-loan-category-for-tier-ii-iii-cities/"
+    },
     {
       "id": "news-hmda-bachupally-nov2026",
       "date": "Nov 21, 2026",
