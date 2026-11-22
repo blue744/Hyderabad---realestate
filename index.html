@@ -334,19 +334,6 @@
       </div>
     </section>
 
-    <!-- AD_SLOT_1: Replace inner div with Google AdSense <ins class="adsbygoogle"> unit once approved -->
-    <section id="partner-sponsor-bar" aria-label="Partner and Sponsor Slot" class="bg-white rounded-xl border border-dashed border-indigo-200 px-4 py-3 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center gap-3 min-w-0">
-        <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 text-[10px] font-bold uppercase tracking-wider shrink-0">Partner / Sponsor</span>
-        <p class="text-xs text-slate-600">Compare lowest SBI / HDFC home loan rates, book a free 3D interior quote, or feature your RERA project here.</p>
-      </div>
-      <div class="flex flex-wrap items-center gap-2 shrink-0">
-        <button id="btn-ad-loan-interior" type="button" onclick="openEnquireModal('Home Loan & Free 3D Interior Quote', { loan: true, interior: true })" class="px-3 py-1.5 rounded-lg bg-indigo-600 text-white text-xs font-bold hover:bg-indigo-700 transition whitespace-nowrap">Home Loan / Interior Quote →</button>
-        <button id="btn-ad-partner-top" type="button" onclick="openEnquireModal('Builder / Partner Sponsorship Enquiry', { loan: false, interior: false })" class="px-3 py-1.5 rounded-lg border border-indigo-200 bg-indigo-50/70 text-indigo-700 text-xs font-semibold hover:bg-indigo-100 transition whitespace-nowrap">Advertise / Partner →</button>
-        <a href="#tab-portals" onclick="document.querySelector('[data-tab=portals]').click()" class="text-xs font-semibold text-slate-500 hover:text-indigo-700 whitespace-nowrap ml-1">Verify RERA</a>
-      </div>
-    </section>
-
     <!-- TAB 1: PROJECTS & PRICES -->
     <section id="tab-projects" class="space-y-5">
       <!-- Buyer Demand Section -->
@@ -1065,7 +1052,9 @@
     <div id="seo-hub-links" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 text-xs text-slate-500 flex flex-wrap gap-x-4 gap-y-1.5">
       <strong class="text-slate-700">Explore Directories:</strong>
       <a href="/news/index.html" class="text-indigo-600 hover:underline font-medium">Real Estate &amp; Construction News</a>
-      <a href="/privacy.html" class="hover:text-amber-700 hover:underline">Privacy Policy</a> •
+      <a href="/about.html" class="hover:text-amber-700 hover:underline">About Us</a> •
+          <a href="/privacy.html" class="hover:text-amber-700 hover:underline">Privacy Policy</a> •
+          <a href="/terms.html" class="hover:text-amber-700 hover:underline">Terms</a> •
           <a href="/trends/hyderabad-price-trends-2026.html" class="text-indigo-600 hover:underline font-medium">Hyderabad Price Trends</a>
       <a href="/comparisons/index.html" class="text-indigo-600 hover:underline font-medium">Project Comparisons</a>
       <a href="/builders/prestige-group.html" class="hover:underline">Prestige Group</a>
@@ -5814,7 +5803,6 @@
       if ($('unified-search-bar')) $('unified-search-bar').classList.toggle('hidden', !isProjects);
       if ($('buyer-caption-bar')) $('buyer-caption-bar').classList.toggle('hidden', !isProjects);
       if ($('kpi-strip-section')) $('kpi-strip-section').classList.toggle('hidden', !isProjects);
-      if ($('partner-sponsor-bar')) $('partner-sponsor-bar').classList.toggle('hidden', !isProjects);
       if ($('city-hubs-bar')) $('city-hubs-bar').classList.toggle('hidden', isNews || tabName === 'portals' || tabName === 'calculator');
       if (tabName === 'premium') renderPremiumTab();
       if (tabName === 'auctions') renderAuctions();
