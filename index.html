@@ -1408,6 +1408,63 @@
     </div>
   </div>
 
+
+  <!-- Member Sign In / Register Modal -->
+  <div id="auth-modal" class="hidden fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl border border-slate-200 shadow-2xl max-w-md w-full overflow-hidden">
+      <div class="bg-slate-900 px-5 py-4 flex items-center justify-between border-b border-amber-400/30">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-slate-800 border border-amber-400 flex items-center justify-center font-bold text-sm">
+            <span class="text-amber-400">T</span><span class="text-white">W</span>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-white">Login / Register</h3>
+            <p class="text-[11px] text-amber-300">Save shortlists &amp; get verified RERA updates</p>
+          </div>
+        </div>
+        <button type="button" onclick="$('auth-modal').classList.add('hidden')" class="text-slate-400 hover:text-white text-xl font-bold leading-none">&times;</button>
+      </div>
+
+      <div class="p-5 space-y-4">
+        <button type="button" onclick="signInWithGoogleNow()" class="w-full flex items-center justify-center gap-2.5 px-4 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-sm font-bold text-slate-800 shadow-sm transition">
+          <span class="text-base font-extrabold text-amber-600">G</span>
+          <span>Continue with Google</span>
+        </button>
+
+        <div class="flex items-center gap-3">
+          <div class="h-px flex-1 bg-slate-200"></div>
+          <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">or register with mobile</span>
+          <div class="h-px flex-1 bg-slate-200"></div>
+        </div>
+
+        <form id="member-login-form" class="space-y-3" onsubmit="submitMemberLogin(event)">
+          <div>
+            <label for="member-name" class="block text-xs font-semibold text-slate-700 mb-1">Full Name *</label>
+            <input id="member-name" type="text" required placeholder="e.g. Rajesh Kumar" class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-400" />
+          </div>
+          <div>
+            <label for="member-phone" class="block text-xs font-semibold text-slate-700 mb-1">Mobile Number *</label>
+            <div class="flex">
+              <span class="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-slate-300 bg-slate-100 text-xs font-bold text-slate-700">+91</span>
+              <input id="member-phone" type="tel" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit mobile number" class="w-full px-3 py-2 text-sm rounded-r-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-400" />
+            </div>
+          </div>
+          <div>
+            <label for="member-email" class="block text-xs font-semibold text-slate-700 mb-1">Email (optional)</label>
+            <input id="member-email" type="email" placeholder="name@example.com" class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-400" />
+          </div>
+          <label class="flex items-start gap-2 text-[11px] text-slate-600 cursor-pointer">
+            <input type="checkbox" required checked class="mt-0.5 accent-amber-500" />
+            <span>I agree to the <a href="/privacy.html" target="_blank" class="text-amber-700 font-semibold underline">Privacy Policy</a>. Zero broker spam.</span>
+          </label>
+          <button type="submit" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 text-sm font-extrabold shadow-sm transition">
+            Continue &amp; Save Profile
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification -->
   <!-- Floating Quick-Action Dock -->
   <div id="floating-action-dock" class="fixed right-2.5 sm:right-5 bottom-24 sm:bottom-6 z-40 flex flex-col items-end gap-2">
@@ -6224,6 +6281,15 @@
     $('btn-clear-compare').addEventListener('click', () => { state.compareIds = []; renderProjects(); });
 
     function openEnquireModal(projectLabel, opts = {}) {
+      const savedMember = (() => { try { return JSON.parse(localStorage.getItem('tw_member') || 'null'); } catch (e) { return null; } })();
+      const fnInput = document.querySelector('#enquire-form input[name="fullName"]');
+      const phInput = document.querySelector('#enquire-form input[name="phone"]');
+      if (fnInput && !fnInput.value) {
+        fnInput.value = window._fbUser?.displayName || savedMember?.name || '';
+      }
+      if (phInput && !phInput.value && savedMember?.phone) {
+        phInput.value = savedMember.phone;
+      }
       $('enquire-project').value = projectLabel || 'General Hyderabad Enquiry';
       if ($('enquire-loan-quote')) $('enquire-loan-quote').checked = !!opts.loan;
       if ($('enquire-interior-quote')) $('enquire-interior-quote').checked = !!opts.interior;
@@ -7314,6 +7380,24 @@
             lbl.textContent = (user.displayName || 'Account').split(' ')[0];
             av.textContent = '✓';
             window._fbUser = user;
+            try {
+              const notifyKey = 'tw_notified_' + user.uid;
+              if (!localStorage.getItem(notifyKey)) {
+                localStorage.setItem(notifyKey, '1');
+                fetch('https://api.web3forms.com/submit', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                  body: JSON.stringify({
+                    access_key: 'f2174076-d277-4002-ba9a-04c484ec4536',
+                    from_name: 'The Way Prop India',
+                    subject: 'New Google Sign-In: ' + (user.displayName || user.email),
+                    name: user.displayName || 'Buyer',
+                    email: user.email || '',
+                    signed_in_at: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+                  })
+                }).catch(() => {});
+              }
+            } catch (e) {}
           } else {
             lbl.textContent = 'Sign In';
             av.textContent = '👤';
@@ -7323,21 +7407,69 @@
       } catch (e) { console.warn('Firebase auth init skipped:', e); }
     }
 
+    function syncMemberBadge() {
+      const lbl = document.getElementById('auth-label');
+      const av = document.getElementById('auth-avatar');
+      if (!lbl || !av) return;
+      const savedMember = (() => { try { return JSON.parse(localStorage.getItem('tw_member') || 'null'); } catch (e) { return null; } })();
+      const displayName = window._fbUser?.displayName || savedMember?.name || '';
+      if (displayName) {
+        lbl.textContent = displayName.split(' ')[0];
+        av.textContent = '✓';
+      } else {
+        lbl.textContent = 'Sign In';
+        av.textContent = '👤';
+      }
+    }
+
     window.handleAuthClick = async function() {
-      if (!FIREBASE_CONFIG.apiKey || FIREBASE_CONFIG.apiKey.startsWith('PASTE_')) {
-        if (typeof showToast === 'function') {
-          showToast('Shortlist saved in your browser! Connect Firebase Config to enable Google Sign-In.');
-        }
+      const savedMember = (() => { try { return JSON.parse(localStorage.getItem('tw_member') || 'null'); } catch (e) { return null; } })();
+      if (window._fbUser || savedMember) {
+        if (window._fbUser && window._fbSignOut) await window._fbSignOut();
+        localStorage.removeItem('tw_member');
+        syncMemberBadge();
+        if (typeof showToast === 'function') showToast('Signed out');
         return;
       }
-      if (window._fbUser && window._fbSignOut) {
-        await window._fbSignOut();
-        if (typeof showToast === 'function') showToast('Signed out');
-      } else if (window._fbSignIn) {
+      document.getElementById('auth-modal')?.classList.remove('hidden');
+    };
+
+    window.signInWithGoogleNow = async function() {
+      document.getElementById('auth-modal')?.classList.add('hidden');
+      if (window._fbSignIn) {
         await window._fbSignIn();
         if (typeof showToast === 'function') showToast('Signed in with Google');
       }
     };
+
+    window.submitMemberLogin = async function(e) {
+      e.preventDefault();
+      const name = document.getElementById('member-name')?.value.trim() || '';
+      const phone = document.getElementById('member-phone')?.value.trim() || '';
+      const email = document.getElementById('member-email')?.value.trim() || '';
+      if (!name || !phone) return;
+      localStorage.setItem('tw_member', JSON.stringify({ name, phone, email }));
+      document.getElementById('auth-modal')?.classList.add('hidden');
+      syncMemberBadge();
+      if (typeof showToast === 'function') showToast(`Welcome, ${name.split(' ')[0]}!`);
+      try {
+        await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            access_key: 'f2174076-d277-4002-ba9a-04c484ec4536',
+            from_name: 'The Way Prop India',
+            subject: `New Member Sign-In (Mobile): ${name} (+91 ${phone})`,
+            name,
+            phone: '+91 ' + phone,
+            email: email || 'Not provided',
+            signed_in_at: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+          })
+        });
+      } catch (err) {}
+    };
+
+    syncMemberBadge();
 
     initFirebaseAuth();
   </script>
