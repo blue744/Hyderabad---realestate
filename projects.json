@@ -1,5 +1,5 @@
 {
-  "updatedAt": "Nov 22, 2026",
+  "updatedAt": "Nov 23, 2026",
   "projects": [
     {
       "id": "my-home-apas",
@@ -5800,9 +5800,201 @@
         "24/7 CCTV Security",
         "Power Backup"
       ]
+    },
+    {
+      "id": "asbl-legacy-rtc-x-roads",
+      "name": "ASBL Legacy",
+      "propertyType": "Apartment",
+      "locality": "RTC X Roads",
+      "zone": "Central",
+      "city": "Hyderabad",
+      "builder": "ASBL",
+      "rera": "P02500011162",
+      "status": "New Launch",
+      "startDate": "Sep 2026",
+      "endDate": "Jul 2031",
+      "endYear": 2031,
+      "endSort": 203107,
+      "bhks": [
+        3,
+        4
+      ],
+      "bhkLabel": "3 & 4 BHK",
+      "areaLabel": "1,970 – 3,015 sq.ft",
+      "defaultSqft": 1970,
+      "rateSqft": 6999,
+      "minCr": 1.38,
+      "maxCr": 2.11,
+      "note": "7.97-acre central Hyderabad high-rise with 3 G+50 towers (1,537 homes) 2 mins from RTC X Roads Metro; ₹6,999/sq.ft OTP base (standard launch pricing from ₹1.99 Cr+); ₹800 Cr launch-day sales.",
+      "clubhouse": {
+        "size": "74,000 sq.ft Clubhouse",
+        "details": "74,000 sq.ft clubhouse within ~1.70 lakh sq.ft amenity zone across 7.97 acres (73.25% open space, terrace swimming pool, co-working spaces, banquet hall, 17,000 sq.ft Festival Lawn)."
+      },
+      "amenities": [
+        "74,000 sq.ft Clubhouse",
+        "Terrace Swimming Pool",
+        "Gymnasium",
+        "Badminton & Pickleball Courts",
+        "Co-Working Spaces",
+        "17,000 sq.ft Festival Lawn",
+        "24/7 Security",
+        "Power Backup"
+      ]
+    },
+    {
+      "id": "brigade-autograph-floris-whitefield",
+      "name": "Brigade Autograph Floris",
+      "propertyType": "Apartment",
+      "locality": "Whitefield-Kadugodi Rd",
+      "zone": "East",
+      "city": "Bengaluru",
+      "builder": "Brigade Group",
+      "rera": "PRM/KA/RERA/1251/446/PR/071126/009091",
+      "status": "New Launch",
+      "startDate": "Nov 2026",
+      "endDate": "Jun 2032",
+      "endYear": 2032,
+      "endSort": 203206,
+      "bhks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "bhkLabel": "1, 2, 3 & 4 BHK",
+      "areaLabel": "692 – 2,623 sq.ft",
+      "defaultSqft": 1220,
+      "rateSqft": 14700,
+      "minCr": 1.07,
+      "maxCr": 3.99,
+      "note": "First residential phase (1,898 homes across 5 G+48 towers on 20.67 acres) of Brigade's ~40-acre mixed-use township on Whitefield–Kadugodi Rd; all-inclusive launch pricing.",
+      "clubhouse": {
+        "size": "Clubhouse 1 (Floris Exclusive)",
+        "details": "Exclusive Floris Clubhouse 1 with gym, swimming pool, indoor games & yoga zone, plus 3+ acre central park, 2 tennis & pickleball courts, amphitheatre, and township retail/hotel plaza."
+      },
+      "amenities": [
+        "Clubhouse 1",
+        "3+ Acre Central Park",
+        "Swimming Pool",
+        "Gymnasium",
+        "Tennis & Pickleball Courts",
+        "Amphitheatre",
+        "24/7 Security",
+        "Power Backup"
+      ]
+    },
+    {
+      "id": "eldeco-7-peaks-residences-omicron-1a",
+      "name": "Eldeco 7 Peaks Residences",
+      "propertyType": "Apartment",
+      "locality": "Omicron 1A, Greater Noida",
+      "zone": "Greater Noida",
+      "city": "Delhi-NCR",
+      "builder": "Eldeco Group",
+      "rera": "UPRERAPRJ106523/01/2026",
+      "status": "Under Construction",
+      "startDate": "Jan 2026",
+      "endDate": "Nov 2030",
+      "endYear": 2030,
+      "endSort": 203011,
+      "bhks": [
+        3,
+        4
+      ],
+      "bhkLabel": "3 & 4 BHK",
+      "areaLabel": "1,825 – 2,850 sq.ft",
+      "defaultSqft": 1825,
+      "rateSqft": 13500,
+      "minCr": 2.15,
+      "maxCr": 3.42,
+      "note": "7.37-acre low-density development (716 homes across 7 towers, 4 units/floor, 80% open space) in Sector Omicron 1A, Greater Noida; RERA completion Nov 14, 2030.",
+      "clubhouse": {
+        "size": "1,00,000 sq.ft Club Courtyard",
+        "details": "1,00,000 sq.ft multi-level Club Courtyard featuring 4 swimming pools (lap, tropical, semi-outdoor heated & kids' beach pool), mini theatre, banquet hall, business suites, and Miyawaki forest."
+      },
+      "amenities": [
+        "1,00,000 sq.ft Club Courtyard",
+        "4 Swimming Pools",
+        "Mini Theatre",
+        "Pickleball & Badminton Courts",
+        "Gymnasium",
+        "Miyawaki Forest",
+        "24/7 Security",
+        "Power Backup"
+      ]
     }
   ],
   "news": [
+    {
+      "id": "news-hmda-miyapur-khanamet-nov2026",
+      "date": "Nov 23, 2026",
+      "city": "Hyderabad",
+      "category": "Land Auction",
+      "title": "Telangana Plans ₹40,000 Cr Miyapur Auction (386 Acres) & ₹600 Cr Khanamet/Mokila Sales",
+      "summary": "HMDA prepared a draft ~220-plot layout across 386 encroachment-free acres in Miyapur targeting ₹40,000 Cr, alongside Dec 14–21 e-auctions in Khanamet (₹99 Cr/acre base), Mokila (61 plots), Kokapet, and Banjara Hills.",
+      "sourceName": "Hyderabad Mail",
+      "url": "https://hyderabadmail.com/telangana-miyapur-land-auction-40000-crore-hmda-386-acres/"
+    },
+    {
+      "id": "news-birla-estates-niyaara-nov2026",
+      "date": "Nov 23, 2026",
+      "city": "Mumbai",
+      "category": "Developer Pipeline",
+      "title": "Birla Niyaara Tower C Slips to Q2 FY28; Aditya Birla Real Estate Targets ₹15,000 Cr by FY29",
+      "summary": "Birla Estates CEO K T Jithendran set a ₹15,000 Cr annual pre-sales goal by FY29 across MMR, Delhi-NCR, Pune, and Bengaluru, while noting Birla Niyaara Tower C's launch shifted to next fiscal after redesign.",
+      "sourceName": "Synergy Infracon",
+      "url": "https://synergyinfracon.com/news/birla-estates-sets-15000-crore-fy29-sales-goal-as-mumbai-supply-lags"
+    },
+    {
+      "id": "news-asbl-legacy-rtc-nov2026",
+      "date": "Nov 22, 2026",
+      "city": "Hyderabad",
+      "category": "New Launch",
+      "title": "ASBL Legacy at RTC X Roads Records ₹800 Cr Launch-Day Sales Across Three G+50 Towers",
+      "summary": "ASBL's central Hyderabad high-rise (TG-RERA: P02500011162) clocked ₹800 Cr in launch-day bookings across 3 & 4 BHK homes (1,970–3,015 sq.ft), with RERA completion set for Jul 2031.",
+      "sourceName": "Synergy Infracon",
+      "url": "https://synergyinfracon.com/news/rs-800-crore-launch-day-sales-at-rtc-x-roads-signal-demand-for-gated-towers"
+    },
+    {
+      "id": "news-brigade-autograph-floris-nov2026",
+      "date": "Nov 22, 2026",
+      "city": "Bengaluru",
+      "category": "New Launch",
+      "title": "Brigade Opens 1,898-Home Floris Phase at Brigade Autograph on Whitefield–Kadugodi Rd",
+      "summary": "Registered under K-RERA (PRM/KA/RERA/1251/446/PR/071126/009091), Brigade Autograph Floris offers 1–4 BHK apartments from ₹1.07 Cr to ₹3.99 Cr all-inclusive with Jun 2032 possession.",
+      "sourceName": "Synergy Infracon",
+      "url": "https://synergyinfracon.com/news/brigade-opens-1898-home-floris-phase-in-whitefield-kadugodi-road-corridor"
+    },
+    {
+      "id": "news-maharera-redshift-nov2026",
+      "date": "Nov 19, 2026",
+      "city": "Pune",
+      "category": "RERA Order",
+      "title": "MahaRERA Orders Pune's Redshift Buildcon to Execute Conveyance for 204 Buyers in 60 Days",
+      "summary": "MahaRERA directed Redshift Buildcon to register building conveyance for 204 Bloomville flat buyers in Hinjawadi within 60 days and rectify structural defects under Section 14(3) at no cost.",
+      "sourceName": "Moneylife",
+      "url": "https://www.moneylife.in/article/punes-redshift-buildcon-ordered-to-execute-conveyance-of-2-bloomville-buildings-within-60-days/82220.html"
+    },
+    {
+      "id": "news-tn-affordable-tnrera-nov2026",
+      "date": "Nov 19, 2026",
+      "city": "Chennai",
+      "category": "Policy & RERA",
+      "title": "Tamil Nadu Approves ₹1,401.75 Cr Chennai Housing Plan & Amends TN RERA Rules",
+      "summary": "Tamil Nadu cleared 6,157 EWS/LIG tenements across nine Chennai locations worth ₹1,401.75 Cr following its Nov 6, 2026 amendment to the Tamil Nadu RERA Rules, 2017.",
+      "sourceName": "Luxura Habitat",
+      "url": "https://luxurahabitat.com/blog/chennai-affordable-housing-6157-tenements-november-2026/"
+    },
+    {
+      "id": "news-hspcb-godrej-tnrera-nov2026",
+      "date": "Nov 18, 2026",
+      "city": "Delhi-NCR",
+      "category": "Regulatory",
+      "title": "HSPCB Orders Closure of Godrej Properties' Sector 3 Gurugram Site; TNRERA Fines ₹1 Lakh",
+      "summary": "Haryana State Pollution Control Board ordered work halted at Godrej Properties' Sector 3 Gurugram housing site over dust-control norms, while TNRERA imposed a ₹1 lakh penalty over unauthorized Coimbatore ads.",
+      "sourceName": "ET Realty",
+      "url": "https://realty.economictimes.indiatimes.com/news/regulatory/hspcb-orders-closure-of-godrej-properties-gurugram-project-tamil-nadu-rera-penalises-coimbatore-project/135947829"
+    },
     {
       "id": "news-mak-fern-nov2026",
       "date": "Nov 22, 2026",
