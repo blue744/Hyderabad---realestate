@@ -1,5 +1,5 @@
 {
-  "updatedAt": "Nov 23, 2026",
+  "updatedAt": "Nov 24, 2026",
   "projects": [
     {
       "id": "my-home-apas",
@@ -5922,9 +5922,219 @@
         "24/7 Security",
         "Power Backup"
       ]
+    },
+    {
+      "id": "mak-rosewood-villas-thummaloor",
+      "name": "MAK Rosewood Villas",
+      "propertyType": "Villa",
+      "locality": "Thummaloor",
+      "zone": "South",
+      "city": "Hyderabad",
+      "builder": "MAK Projects",
+      "rera": "P02400010997",
+      "status": "New Launch",
+      "startDate": "Mar 2026",
+      "endDate": "Mar 2031",
+      "endYear": 2031,
+      "endSort": 203103,
+      "bhks": [
+        4
+      ],
+      "bhkLabel": "4 BHK",
+      "areaLabel": "3,599 – 4,333 sq.ft",
+      "defaultSqft": 3599,
+      "rateSqft": 13000,
+      "minCr": 4.68,
+      "maxCr": 5.63,
+      "note": "4.7-acre boutique gated villa community (38 G+2 4 BHK villas) by MAK Prime along Srisailam Highway near ORR Exit 14 & Future City; ₹13,000/sq.ft launch pricing.",
+      "clubhouse": {
+        "size": "Clubhouse Included",
+        "details": "Resident clubhouse with modern gymnasium, swimming pool, landscaped parks, indoor games, and 24/7 gated security."
+      },
+      "amenities": [
+        "Clubhouse",
+        "Swimming Pool",
+        "Gymnasium",
+        "Landscaped Parks",
+        "Indoor Games",
+        "Children's Play Area",
+        "24/7 Security",
+        "Power Backup"
+      ]
+    },
+    {
+      "id": "supreme-boulevard-chembur",
+      "name": "Supreme Boulevard",
+      "propertyType": "Apartment",
+      "locality": "Chembur",
+      "zone": "Eastern Suburbs",
+      "city": "Mumbai",
+      "builder": "Supreme Universal",
+      "rera": "PR1180002400026",
+      "status": "Under Construction",
+      "startDate": "Oct 2024",
+      "endDate": "Jul 2029",
+      "endYear": 2029,
+      "endSort": 202907,
+      "bhks": [
+        2,
+        3,
+        4
+      ],
+      "bhkLabel": "2, 3 & 4 BHK",
+      "areaLabel": "758 – 1,962 sq.ft",
+      "defaultSqft": 1200,
+      "rateSqft": 38357,
+      "minCr": 3.05,
+      "maxCr": 7.7,
+      "note": "5-acre freehold gated community on Deonar Village Road, Chembur with four 34-storey towers and 600+ trees; Phase 2 Tower C (131 homes, ₹700 Cr GDV) launched Nov 2026.",
+      "clubhouse": {
+        "size": "15,000 sq.ft Clubhouse",
+        "details": "15,000 sq.ft resort-style clubhouse with swimming pool, gymnasium, indoor games, landscaped gardens (600+ trees), and 30+ lifestyle amenities."
+      },
+      "amenities": [
+        "15,000 sq.ft Clubhouse",
+        "Swimming Pool",
+        "Gymnasium",
+        "Landscaped Gardens",
+        "600+ Trees",
+        "Children's Play Area",
+        "24/7 Security",
+        "Power Backup"
+      ]
+    },
+    {
+      "id": "embassy-one-residences-mekhri-circle",
+      "name": "Embassy ONE Residences",
+      "propertyType": "Apartment",
+      "locality": "Mekhri Circle, Bellary Rd",
+      "zone": "North",
+      "city": "Bengaluru",
+      "builder": "Embassy Group",
+      "rera": "PRM/KA/RERA/1251/309/PR/171014/000619",
+      "status": "New Launch",
+      "startDate": "Nov 2026",
+      "endDate": "Apr 2027",
+      "endYear": 2027,
+      "endSort": 202704,
+      "bhks": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "bhkLabel": "2, 3, 4 & 5 BHK",
+      "areaLabel": "2,688 – 7,529 sq.ft",
+      "defaultSqft": 3739,
+      "rateSqft": 37420,
+      "minCr": 7.52,
+      "maxCr": 24.32,
+      "note": "59 ultra-luxury bare-shell residences (2 homes/floor with private lift lobbies) in the 30-storey North Tower at Mekhri Circle, Bellary Road; ₹1,400 Cr GDV launched Nov 2026.",
+      "clubhouse": {
+        "size": "Owners Lounge & Fifth Key",
+        "details": "Private Owners Lounge, temperature-controlled swimming pool, squash court, yoga studio, media room, and Embassy Fifth Key concierge, private chef & in-home spa services."
+      },
+      "amenities": [
+        "Owners Lounge",
+        "Temperature-Controlled Pool",
+        "Fifth Key Concierge",
+        "Private Lift Lobby",
+        "Squash Court",
+        "Gymnasium",
+        "Yoga Studio",
+        "24/7 Security"
+      ]
+    },
+    {
+      "id": "navins-krishna-cove-porur",
+      "name": "Navin's Krishna Cove",
+      "propertyType": "Apartment",
+      "locality": "Porur",
+      "zone": "Central Chennai",
+      "city": "Chennai",
+      "builder": "Navin's",
+      "rera": "TNRERA/29/BLG/0268/2026",
+      "status": "New Launch",
+      "startDate": "Aug 2026",
+      "endDate": "Dec 2028",
+      "endYear": 2028,
+      "endSort": 202812,
+      "bhks": [
+        2,
+        3
+      ],
+      "bhkLabel": "2 & 3 BHK",
+      "areaLabel": "1,084 – 1,412 sq.ft",
+      "defaultSqft": 1084,
+      "rateSqft": 13361,
+      "minCr": 1.45,
+      "maxCr": 1.84,
+      "note": "Boutique low-density stilt+5 residential building of 15 homes in Thiraviyam Nagar, Porur (~750 m from Porur Bypass Metro); construction started Aug 2026.",
+      "clubhouse": {
+        "size": "Boutique Community Amenities",
+        "details": "Low-density boutique residence featuring concierge desk, EV charging points, solar power for common areas, rainwater harvesting, and 24/7 CCTV security."
+      },
+      "amenities": [
+        "Concierge",
+        "EV Charging Points",
+        "Solar Power Common Areas",
+        "Rainwater Harvesting",
+        "CCTV Surveillance",
+        "Covered Stilt Parking"
+      ]
     }
   ],
   "news": [
+    {
+      "id": "news-brigade-secunderabad-land-nov2026",
+      "date": "Nov 24, 2026",
+      "city": "Hyderabad",
+      "category": "Land Acquisition",
+      "title": "Brigade Group Acquires 2.25-Acre Secunderabad Site for ₹180 Cr Between MG Road & Necklace Road",
+      "summary": "Brigade Enterprises completed an outright ₹180 Cr purchase of a 2.25-acre Secunderabad parcel (sale deed registered Nov 23, 2026) for a premium residential project with ~₹1,000 Cr revenue potential.",
+      "sourceName": "Synergy Infracon",
+      "url": "https://synergyinfracon.com/news/brigade-buys-225-acre-secunderabad-site-between-mg-road-and-necklace-road"
+    },
+    {
+      "id": "news-supreme-boulevard-towerc-nov2026",
+      "date": "Nov 24, 2026",
+      "city": "Mumbai",
+      "category": "New Launch",
+      "title": "Supreme Universal Launches Tower C (131 Homes, ₹700 Cr GDV) at Supreme Boulevard, Chembur",
+      "summary": "Phase 2 Tower C of MahaRERA-registered Supreme Boulevard (PR1180002400026) on Deonar Village Road opens with 2, 3 & 4 BHK homes starting at ₹3.05 Cr and Jul 2029 possession.",
+      "sourceName": "Livemint",
+      "url": "https://www.livemint.com/industry/real-estate/supreme-universal-launches-131-new-chembur-homes-eyes-700-crore-revenue-from-second-phase-11795456819570.html"
+    },
+    {
+      "id": "news-mumbai-tunnel-network-nov2026",
+      "date": "Nov 24, 2026",
+      "city": "Mumbai",
+      "category": "Infrastructure",
+      "title": "Maharashtra Approves ₹53,928 Cr Mumbai Underground Tunnel Network Linking BKC & Airport",
+      "summary": "Cleared by the Maharashtra CM, MMRDA's proposed underground road tunnels will connect BKC, Dharavi, the Bandra-Worli Sea Link, and Mumbai Airport to ease surface congestion.",
+      "sourceName": "Square Yards",
+      "url": "https://www.squareyards.com/blog/a-new-way-to-beat-mumbai-traffic-rs-53928-crore-tunnel-plan-approved"
+    },
+    {
+      "id": "news-sc-lotus-greens-noida-nov2026",
+      "date": "Nov 23, 2026",
+      "city": "Delhi-NCR",
+      "category": "Policy & RERA",
+      "title": "Supreme Court Directs Noida Authority to Register 7,802 Lotus Greens Sports City Flats",
+      "summary": "The Supreme Court ordered tripartite conveyance registrations for 7,802 Sector 150 Noida flats (Plot SC-02/H&I) within six weeks, exempting the plot from the 20% lien rule.",
+      "sourceName": "BuildersFriend",
+      "url": "https://www.buildersfriend.in/details/supreme-court-clears-registration-of-7802-lotus-greens-flats-in-noida-sports-city"
+    },
+    {
+      "id": "news-alliance-eternis-oc-nov2026",
+      "date": "Nov 23, 2026",
+      "city": "Mumbai",
+      "category": "Handover & OC",
+      "title": "Alliance City Developers Hands Over Alliance Eternis in Borivali West After Full OC",
+      "summary": "Following receipt of full Occupation Certificate, Alliance City Developers completed handover of the 14-storey Alliance Eternis tower (MahaRERA: P51800076690) ahead of its Apr 2027 deadline.",
+      "sourceName": "RealtyNMore",
+      "url": "https://realtynmore.com/alliance-city-developers-hands-over-alliance-eterni/"
+    },
     {
       "id": "news-hmda-miyapur-khanamet-nov2026",
       "date": "Nov 23, 2026",
