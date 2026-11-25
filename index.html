@@ -7373,20 +7373,55 @@
     renderHotProjects();
     loadExternalFeed();
 
-    // Deep-link support for /?project=<id> from static SEO project pages
-    function handleProjectQueryParam() {
+    // Deep-link support for /?tab=calculator (or ?tab=emi / #calculator / #emi) and /?project=<id>
+    function handleDeepLinkParams() {
       try {
         const params = new URLSearchParams(window.location.search);
+        const rawTab = (params.get('tab') || '').toLowerCase();
+        const rawHash = (window.location.hash || '').replace(/^#/, '').toLowerCase();
         const pid = params.get('project');
-        if (!pid) return;
-        const proj = state.projects.find((x) => x.id === pid);
-        if (!proj) return;
-        const pCity = proj.city || 'Hyderabad';
-        if (state.activeCity !== pCity && typeof switchCity === 'function') switchCity(pCity);
-        openDetailModal(pid);
+        const proj = pid ? state.projects.find((x) => x.id === pid) : null;
+
+        if (proj) {
+          const pCity = proj.city || 'Hyderabad';
+          if (state.activeCity !== pCity && typeof switchCity === 'function') switchCity(pCity);
+        }
+
+        const isEmiLink =
+          rawTab === 'calculator' ||
+          rawTab === 'emi' ||
+          rawTab === 'emi-calculator' ||
+          rawHash === 'calculator' ||
+          rawHash === 'tab-calculator' ||
+          rawHash === 'emi' ||
+          rawHash === 'emi-calculator';
+
+        if (isEmiLink) {
+          if (proj) {
+            if ($('calc-project')) $('calc-project').value = proj.id;
+            if ($('calc-area')) $('calc-area').value = proj.defaultSqft;
+            if ($('calc-rate')) $('calc-rate').value = proj.rateSqft;
+            if ($('calc-stage')) $('calc-stage').value = proj.status === 'Ready / Near Possession' ? '0' : '5';
+            if (typeof updateCalculator === 'function') updateCalculator();
+          }
+          if (typeof switchTab === 'function') switchTab('calculator');
+          const calcSection = $('tab-calculator');
+          if (calcSection) calcSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+
+        if (rawTab && ['projects', 'premium', 'auctions', 'analytics', 'calculator', 'portals', 'news'].includes(rawTab)) {
+          if (typeof switchTab === 'function') switchTab(rawTab);
+          return;
+        }
+
+        if (proj) {
+          openDetailModal(pid);
+        }
       } catch (e) {}
     }
-    handleProjectQueryParam();
+    handleDeepLinkParams();
+    window.addEventListener('hashchange', handleDeepLinkParams);
   </script>
 
   <!-- Optional Firebase Google Sign-In (Paste your Firebase Web Config below to activate) -->
