@@ -1,5 +1,5 @@
 {
-  "updatedAt": "Nov 23, 2026",
+  "updatedAt": "Nov 25, 2026",
   "projects": [
     {
       "id": "my-home-apas",
@@ -5922,9 +5922,431 @@
         "24/7 Security",
         "Power Backup"
       ]
+    },
+    {
+      "id": "mak-rosewood-villas-thummaloor",
+      "name": "MAK Rosewood Villas",
+      "propertyType": "Villa",
+      "locality": "Thummaloor",
+      "zone": "South",
+      "city": "Hyderabad",
+      "builder": "MAK Projects",
+      "rera": "P02400010997",
+      "status": "New Launch",
+      "startDate": "Mar 2026",
+      "endDate": "Mar 2031",
+      "endYear": 2031,
+      "endSort": 203103,
+      "bhks": [
+        4
+      ],
+      "bhkLabel": "4 BHK",
+      "areaLabel": "3,599 – 4,333 sq.ft",
+      "defaultSqft": 3599,
+      "rateSqft": 13000,
+      "minCr": 4.68,
+      "maxCr": 5.63,
+      "note": "4.7-acre boutique gated villa community (38 G+2 4 BHK villas) by MAK Prime along Srisailam Highway near ORR Exit 14 & Future City; ₹13,000/sq.ft launch pricing.",
+      "clubhouse": {
+        "size": "Clubhouse Included",
+        "details": "Resident clubhouse with modern gymnasium, swimming pool, landscaped parks, indoor games, and 24/7 gated security."
+      },
+      "amenities": [
+        "Clubhouse",
+        "Swimming Pool",
+        "Gymnasium",
+        "Landscaped Parks",
+        "Indoor Games",
+        "Children's Play Area",
+        "24/7 Security",
+        "Power Backup"
+      ]
+    },
+    {
+      "id": "supreme-boulevard-chembur",
+      "name": "Supreme Boulevard",
+      "propertyType": "Apartment",
+      "locality": "Chembur",
+      "zone": "Eastern Suburbs",
+      "city": "Mumbai",
+      "builder": "Supreme Universal",
+      "rera": "PR1180002400026",
+      "status": "Under Construction",
+      "startDate": "Oct 2024",
+      "endDate": "Jul 2029",
+      "endYear": 2029,
+      "endSort": 202907,
+      "bhks": [
+        2,
+        3,
+        4
+      ],
+      "bhkLabel": "2, 3 & 4 BHK",
+      "areaLabel": "758 – 1,962 sq.ft",
+      "defaultSqft": 1200,
+      "rateSqft": 38357,
+      "minCr": 3.05,
+      "maxCr": 7.7,
+      "note": "5-acre freehold gated community on Deonar Village Road, Chembur with four 34-storey towers and 600+ trees; Phase 2 Tower C (131 homes, ₹700 Cr GDV) launched Nov 2026.",
+      "clubhouse": {
+        "size": "15,000 sq.ft Clubhouse",
+        "details": "15,000 sq.ft resort-style clubhouse with swimming pool, gymnasium, indoor games, landscaped gardens (600+ trees), and 30+ lifestyle amenities."
+      },
+      "amenities": [
+        "15,000 sq.ft Clubhouse",
+        "Swimming Pool",
+        "Gymnasium",
+        "Landscaped Gardens",
+        "600+ Trees",
+        "Children's Play Area",
+        "24/7 Security",
+        "Power Backup"
+      ]
+    },
+    {
+      "id": "embassy-one-residences-mekhri-circle",
+      "name": "Embassy ONE Residences",
+      "propertyType": "Apartment",
+      "locality": "Mekhri Circle, Bellary Rd",
+      "zone": "North",
+      "city": "Bengaluru",
+      "builder": "Embassy Group",
+      "rera": "PRM/KA/RERA/1251/309/PR/171014/000619",
+      "status": "New Launch",
+      "startDate": "Nov 2026",
+      "endDate": "Apr 2027",
+      "endYear": 2027,
+      "endSort": 202704,
+      "bhks": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "bhkLabel": "2, 3, 4 & 5 BHK",
+      "areaLabel": "2,688 – 7,529 sq.ft",
+      "defaultSqft": 3739,
+      "rateSqft": 37420,
+      "minCr": 7.52,
+      "maxCr": 24.32,
+      "note": "59 ultra-luxury bare-shell residences (2 homes/floor with private lift lobbies) in the 30-storey North Tower at Mekhri Circle, Bellary Road; ₹1,400 Cr GDV launched Nov 2026.",
+      "clubhouse": {
+        "size": "Owners Lounge & Fifth Key",
+        "details": "Private Owners Lounge, temperature-controlled swimming pool, squash court, yoga studio, media room, and Embassy Fifth Key concierge, private chef & in-home spa services."
+      },
+      "amenities": [
+        "Owners Lounge",
+        "Temperature-Controlled Pool",
+        "Fifth Key Concierge",
+        "Private Lift Lobby",
+        "Squash Court",
+        "Gymnasium",
+        "Yoga Studio",
+        "24/7 Security"
+      ]
+    },
+    {
+      "id": "navins-krishna-cove-porur",
+      "name": "Navin's Krishna Cove",
+      "propertyType": "Apartment",
+      "locality": "Porur",
+      "zone": "Central Chennai",
+      "city": "Chennai",
+      "builder": "Navin's",
+      "rera": "TNRERA/29/BLG/0268/2026",
+      "status": "New Launch",
+      "startDate": "Aug 2026",
+      "endDate": "Dec 2028",
+      "endYear": 2028,
+      "endSort": 202812,
+      "bhks": [
+        2,
+        3
+      ],
+      "bhkLabel": "2 & 3 BHK",
+      "areaLabel": "1,084 – 1,412 sq.ft",
+      "defaultSqft": 1084,
+      "rateSqft": 13361,
+      "minCr": 1.45,
+      "maxCr": 1.84,
+      "note": "Boutique low-density stilt+5 residential building of 15 homes in Thiraviyam Nagar, Porur (~750 m from Porur Bypass Metro); construction started Aug 2026.",
+      "clubhouse": {
+        "size": "Boutique Community Amenities",
+        "details": "Low-density boutique residence featuring concierge desk, EV charging points, solar power for common areas, rainwater harvesting, and 24/7 CCTV security."
+      },
+      "amenities": [
+        "Concierge",
+        "EV Charging Points",
+        "Solar Power Common Areas",
+        "Rainwater Harvesting",
+        "CCTV Surveillance",
+        "Covered Stilt Parking"
+      ]
+    },
+    {
+      "id": "max-estates-the-bungalows-sector-59",
+      "name": "Max Estates The Bungalows",
+      "propertyType": "Apartment",
+      "locality": "Sector 59, Golf Course Ext Rd",
+      "zone": "Gurugram",
+      "city": "Delhi-NCR",
+      "builder": "Max Estates",
+      "rera": "RERA-GRG-2322-2026",
+      "status": "New Launch",
+      "startDate": "Nov 2026",
+      "endDate": "May 2034",
+      "endYear": 2034,
+      "endSort": 203405,
+      "bhks": [
+        4,
+        5
+      ],
+      "bhkLabel": "4 & 4.5 BHK, Penthouses",
+      "areaLabel": "2,722 – 6,409 sq.ft (Carpet)",
+      "defaultSqft": 5000,
+      "rateSqft": 29000,
+      "minCr": 15.0,
+      "maxCr": 28.5,
+      "note": "7.25-acre (8.19-acre HRERA) ultra-luxury bare-shell project off Golf Course Extension Rd (243 homes in 2 G+42 towers, 3/floor with private lift lobbies); Phase 1 (131 homes, ₹2,319 Cr GDV) sold out Nov 2026.",
+      "clubhouse": {
+        "size": "90,000+ sq.ft Clubhouse",
+        "details": "Standalone 90,000+ sq.ft clubhouse (₹151 Cr budget) across six lifestyle worlds with swimming pool, spa/sauna, gymnasium, sports courts, banquet hall, business centre, restaurant/bar, and 5.4 acres of car-free gardens."
+      },
+      "amenities": [
+        "90,000+ sq.ft Clubhouse",
+        "Swimming Pool",
+        "Gymnasium",
+        "Spa & Sauna",
+        "Private Lift Lobbies",
+        "Sports Courts",
+        "Banquet Hall",
+        "IGBC Platinum Pre-Certified",
+        "24/7 Security"
+      ]
+    },
+    {
+      "id": "rustomjee-vista-bay-parel-extension",
+      "name": "Rustomjee Vista Bay",
+      "propertyType": "Apartment",
+      "locality": "Parel Extension (Sewri)",
+      "zone": "South Mumbai",
+      "city": "Mumbai",
+      "builder": "Rustomjee",
+      "rera": "PR1170002501979",
+      "status": "New Launch",
+      "startDate": "Mar 2026",
+      "endDate": "Jan 2031",
+      "endYear": 2031,
+      "endSort": 203101,
+      "bhks": [
+        2,
+        3
+      ],
+      "bhkLabel": "2 & 3 BHK",
+      "areaLabel": "753 – 1,372 sq.ft (Carpet)",
+      "defaultSqft": 969,
+      "rateSqft": 49700,
+      "minCr": 3.59,
+      "maxCr": 6.44,
+      "note": "1.52-acre eastern waterfront tower (2 wings, 33–34 floors, ~195 homes, 4/wing) designed by Hafeez Contractor with Arabian Sea & Atal Setu views, 10'4\" ceiling height, and Miyawaki forest.",
+      "clubhouse": {
+        "size": "3-Tier Sky & Podium Amenities",
+        "details": "Three-tier amenities across ground, elevated deck & rooftop featuring a temperature-controlled half-Olympic rooftop infinity pool, mini theatre, gymnasium, banquet hall, and party lawn."
+      },
+      "amenities": [
+        "Rooftop Infinity Pool",
+        "Mini Theatre",
+        "Gymnasium",
+        "Banquet Hall",
+        "Miyawaki Forest",
+        "Sky Lounge",
+        "Senior-Friendly Washrooms",
+        "24/7 Security"
+      ]
+    },
+    {
+      "id": "prestige-avon-thanisandra",
+      "name": "Prestige Avon",
+      "propertyType": "Apartment",
+      "locality": "Thanisandra Main Rd, Bellahalli",
+      "zone": "North",
+      "city": "Bengaluru",
+      "builder": "Prestige Group",
+      "rera": "PRM/KA/RERA/1251/309/PR/131126/009097",
+      "status": "New Launch",
+      "startDate": "Nov 2026",
+      "endDate": "Dec 2030",
+      "endYear": 2030,
+      "endSort": 203012,
+      "bhks": [
+        2,
+        3
+      ],
+      "bhkLabel": "2 & 3 BHK",
+      "areaLabel": "1,297 – 2,157 sq.ft",
+      "defaultSqft": 1782,
+      "rateSqft": 12800,
+      "minCr": 1.7,
+      "maxCr": 2.8,
+      "note": "3.16-acre K-RERA approved community (260 homes, 4/floor across 3 towers of 18–25 floors) launched Nov 20, 2026 with ₹550 Cr GDV; ~6 km from Manyata Tech Park.",
+      "clubhouse": {
+        "size": "Clubhouse with Rooftop Pool",
+        "details": "Dedicated modern clubhouse with rooftop swimming pool, indoor & outdoor gyms, multipurpose hall, pickleball & multipurpose sports courts, climbing wall, jogging track, and pet park."
+      },
+      "amenities": [
+        "Clubhouse",
+        "Rooftop Swimming Pool",
+        "Indoor & Outdoor Gym",
+        "Pickleball Court",
+        "Multipurpose Court",
+        "Climbing Wall",
+        "Pet Park",
+        "24/7 Security"
+      ]
+    },
+    {
+      "id": "abhee-city-urban-glenn-gunjur",
+      "name": "Abhee City Urban Glenn",
+      "propertyType": "Apartment",
+      "locality": "Gunjur, Varthur–Sarjapur Rd",
+      "zone": "East",
+      "city": "Bengaluru",
+      "builder": "Abhee Ventures",
+      "rera": "PRM/KA/RERA/1251/308/PR/250826/008887",
+      "status": "New Launch",
+      "startDate": "Aug 2026",
+      "endDate": "Dec 2033",
+      "endYear": 2033,
+      "endSort": 203312,
+      "bhks": [
+        2,
+        3,
+        4
+      ],
+      "bhkLabel": "2, 2.5, 3, 3.5 & 4.5 BHK",
+      "areaLabel": "1,180 – 2,600 sq.ft",
+      "defaultSqft": 1475,
+      "rateSqft": 10499,
+      "minCr": 1.19,
+      "maxCr": 2.76,
+      "note": "45-acre Scotland-themed township (~3,000 homes across 14 2B+G+35 towers, 85% open space) next to Greenwood High; Phase I (566 homes) & Phase II (1,000 homes) K-RERA registered.",
+      "clubhouse": {
+        "size": "1,50,000+ sq.ft (4 Clubhouses)",
+        "details": "Four themed clubhouses totalling 1.5 lakh+ sq.ft (including Club Inverness for wellness and Club Glasgow for sports), 3-acre private golf feature, man-made lake, swimming pool, and gymnasium."
+      },
+      "amenities": [
+        "1.5L+ sq.ft (4 Clubhouses)",
+        "3-Acre Golf Feature",
+        "Man-Made Lake",
+        "Swimming Pool",
+        "Gymnasium",
+        "85% Open Space",
+        "Landscaped Parks",
+        "24/7 Security"
+      ]
     }
   ],
   "news": [
+    {
+      "id": "news-knight-frank-naredco-sentiment-nov2026",
+      "date": "Nov 25, 2026",
+      "city": "Pan-India",
+      "category": "Market Trends",
+      "title": "Knight Frank–NAREDCO Sentiment Index Climbs to 56 as Launch & Price Outlook Firm",
+      "summary": "In its 50th edition (Q3 2026), the Current Sentiment Score rose to 56 (from 48) and Future Sentiment Score climbed to 58 (from 50), with 84% expecting stable or higher prices over six months.",
+      "sourceName": "Synergy Infracon",
+      "url": "https://synergyinfracon.com/news/india-property-sentiment-climbs-to-56-as-launch-and-price-outlook-firm"
+    },
+    {
+      "id": "news-narep-summit-delhi-nov2026",
+      "date": "Nov 25, 2026",
+      "city": "Delhi-NCR",
+      "category": "Policy & RERA",
+      "title": "NAREP Real Estate Summit 2026 Convenes DDA & RERA Chairpersons in New Delhi",
+      "summary": "The National Association of Real Estate Professionals hosts the DDA Vice Chairman and multiple RERA Chairpersons on Nov 25 under 'The Next Billion Square Feet' theme on transparency and policy.",
+      "sourceName": "Ghar.tv",
+      "url": "https://www.ghar.tv/blog/narep-real-estate-summit-2026-delhi-to-host-key-property-policy-dialogue/artid9225"
+    },
+    {
+      "id": "news-max-estates-bungalows-sales-nov2026",
+      "date": "Nov 24, 2026",
+      "city": "Delhi-NCR",
+      "category": "New Launch",
+      "title": "Max Estates' 'The Bungalows' in Gurugram Clocks ₹2,319 Cr Phase 1 Sell-Out",
+      "summary": "HRERA-registered Sector 59 project (RERA-GRG-2322-2026) sold out all 131 Phase 1 residences across 7.7 lakh sq.ft; the 7.25-acre development has 243 homes in two G+42 towers.",
+      "sourceName": "Construction Week India",
+      "url": "https://www.constructionweekonline.in/business/max-estates-the-bungalows-clocks-%E2%82%B92319-cr-in-sales"
+    },
+    {
+      "id": "news-divyasree-hdfc-platform-nov2026",
+      "date": "Nov 24, 2026",
+      "city": "Chennai",
+      "category": "Investment",
+      "title": "DivyaSree & HDFC Capital Launch ₹1,500 Cr Residential Platform for Chennai, Bengaluru & Hyderabad",
+      "summary": "The joint residential platform targets ₹6,750 Cr in potential gross development value over 3–4 years to expand housing supply across Chennai, Bengaluru, and Hyderabad.",
+      "sourceName": "PropertyInside",
+      "url": "https://propertyinside.in/%E2%82%B91500-crore-residential-push-divyasree-hdfc-capital-target-chennai/"
+    },
+    {
+      "id": "news-indiramma-towers-rera-nov2026",
+      "date": "Nov 24, 2026",
+      "city": "Hyderabad",
+      "category": "Policy & RERA",
+      "title": "Telangana Housing Board's Indiramma Towers Receive First-Ever TG-RERA Approvals",
+      "summary": "Marking a first for state-led housing in Telangana, TG-RERA approved Indiramma Towers (480 flats per constituency across 16 of 26 ORR constituencies), enabling beneficiary bank loans.",
+      "sourceName": "INDToday",
+      "url": "https://indtoday.com/indiramma-house-towers-receive-rera-approvals/"
+    },
+    {
+      "id": "news-brigade-secunderabad-land-nov2026",
+      "date": "Nov 24, 2026",
+      "city": "Hyderabad",
+      "category": "Land Acquisition",
+      "title": "Brigade Group Acquires 2.25-Acre Secunderabad Site for ₹180 Cr Between MG Road & Necklace Road",
+      "summary": "Brigade Enterprises completed an outright ₹180 Cr purchase of a 2.25-acre Secunderabad parcel (sale deed registered Nov 23, 2026) for a premium residential project with ~₹1,000 Cr revenue potential.",
+      "sourceName": "Synergy Infracon",
+      "url": "https://synergyinfracon.com/news/brigade-buys-225-acre-secunderabad-site-between-mg-road-and-necklace-road"
+    },
+    {
+      "id": "news-supreme-boulevard-towerc-nov2026",
+      "date": "Nov 24, 2026",
+      "city": "Mumbai",
+      "category": "New Launch",
+      "title": "Supreme Universal Launches Tower C (131 Homes, ₹700 Cr GDV) at Supreme Boulevard, Chembur",
+      "summary": "Phase 2 Tower C of MahaRERA-registered Supreme Boulevard (PR1180002400026) on Deonar Village Road opens with 2, 3 & 4 BHK homes starting at ₹3.05 Cr and Jul 2029 possession.",
+      "sourceName": "Livemint",
+      "url": "https://www.livemint.com/industry/real-estate/supreme-universal-launches-131-new-chembur-homes-eyes-700-crore-revenue-from-second-phase-11795456819570.html"
+    },
+    {
+      "id": "news-mumbai-tunnel-network-nov2026",
+      "date": "Nov 24, 2026",
+      "city": "Mumbai",
+      "category": "Infrastructure",
+      "title": "Maharashtra Approves ₹53,928 Cr Mumbai Underground Tunnel Network Linking BKC & Airport",
+      "summary": "Cleared by the Maharashtra CM, MMRDA's proposed underground road tunnels will connect BKC, Dharavi, the Bandra-Worli Sea Link, and Mumbai Airport to ease surface congestion.",
+      "sourceName": "Square Yards",
+      "url": "https://www.squareyards.com/blog/a-new-way-to-beat-mumbai-traffic-rs-53928-crore-tunnel-plan-approved"
+    },
+    {
+      "id": "news-sc-lotus-greens-noida-nov2026",
+      "date": "Nov 23, 2026",
+      "city": "Delhi-NCR",
+      "category": "Policy & RERA",
+      "title": "Supreme Court Directs Noida Authority to Register 7,802 Lotus Greens Sports City Flats",
+      "summary": "The Supreme Court ordered tripartite conveyance registrations for 7,802 Sector 150 Noida flats (Plot SC-02/H&I) within six weeks, exempting the plot from the 20% lien rule.",
+      "sourceName": "BuildersFriend",
+      "url": "https://www.buildersfriend.in/details/supreme-court-clears-registration-of-7802-lotus-greens-flats-in-noida-sports-city"
+    },
+    {
+      "id": "news-alliance-eternis-oc-nov2026",
+      "date": "Nov 23, 2026",
+      "city": "Mumbai",
+      "category": "Handover & OC",
+      "title": "Alliance City Developers Hands Over Alliance Eternis in Borivali West After Full OC",
+      "summary": "Following receipt of full Occupation Certificate, Alliance City Developers completed handover of the 14-storey Alliance Eternis tower (MahaRERA: P51800076690) ahead of its Apr 2027 deadline.",
+      "sourceName": "RealtyNMore",
+      "url": "https://realtynmore.com/alliance-city-developers-hands-over-alliance-eterni/"
+    },
     {
       "id": "news-hmda-miyapur-khanamet-nov2026",
       "date": "Nov 23, 2026",
