@@ -94,13 +94,13 @@
         </div>
       </a>
 
-      <!-- Right-Side Controls: Sign In | Post Property FREE | ✨ Sky AI | ☰ Menu -->
-      <div class="flex items-center gap-1 sm:gap-2 shrink-0">
+      <!-- Right-Side Controls: Sign In | Post Property FREE | ☰ Menu (Sky AI removed from top bar) -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
         
         <!-- Sign In Button -->
         <button
           onclick="openModal('signin')"
-          class="inline-flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-full border border-slate-200 bg-white hover:bg-slate-50 active:scale-95 transition text-[11px] sm:text-xs font-semibold text-slate-700 shadow-2xs"
+          class="inline-flex items-center gap-1 px-2.5 sm:px-3.5 py-1.5 rounded-full border border-slate-200 bg-white hover:bg-slate-50 active:scale-95 transition text-[11px] sm:text-xs font-semibold text-slate-700 shadow-2xs"
           aria-label="Sign In"
         >
           <svg class="w-3.5 h-3.5 text-sky-600 shrink-0" viewBox="0 0 24 24" fill="currentColor">
@@ -112,7 +112,7 @@
         <!-- Post Property FREE Pill -->
         <button
           onclick="openPostPropertyModal('Owner Direct Listing')"
-          class="inline-flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-full border border-slate-200 bg-white hover:border-emerald-300 hover:bg-emerald-50/40 active:scale-95 transition text-[11px] sm:text-xs font-semibold text-slate-800 shadow-2xs"
+          class="inline-flex items-center gap-1 px-2.5 sm:px-3.5 py-1.5 rounded-full border border-slate-200 bg-white hover:border-emerald-300 hover:bg-emerald-50/40 active:scale-95 transition text-[11px] sm:text-xs font-semibold text-slate-800 shadow-2xs"
           aria-label="Post Property Free"
         >
           <span class="hidden md:inline text-sky-700 font-bold">Post Property</span>
@@ -122,21 +122,11 @@
           </span>
         </button>
 
-        <!-- Dark Gold-Accented ✨ Sky AI Pill Button -->
-        <button
-          onclick="openSkyAI()"
-          class="inline-flex items-center gap-1 px-2.5 sm:px-3.5 py-1.5 rounded-full bg-[#0F172A] hover:bg-slate-800 border border-amber-400/50 text-amber-300 active:scale-95 transition text-[11px] sm:text-xs font-bold shadow-sm"
-          aria-label="Open Sky AI Assistant"
-        >
-          <span class="text-amber-300 text-xs leading-none">✨</span>
-          <span>Sky AI</span>
-        </button>
-
-        <!-- Dedicated ☰ Menu Button Immediately to the Right of Sky AI -->
+        <!-- Dedicated ☰ Menu Button on Far Right -->
         <button
           id="menuToggleBtn"
           onclick="toggleMenuDrawer(true)"
-          class="inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-slate-200 bg-slate-50 hover:bg-slate-100 active:scale-95 transition text-slate-800 shrink-0"
+          class="inline-flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 bg-slate-50 hover:bg-slate-100 active:scale-95 transition text-slate-800 shrink-0"
           aria-label="Open Navigation Menu"
           aria-expanded="false"
         >
@@ -182,20 +172,20 @@
           <span>Price Trends</span>
         </button>
         <button
+          data-tab="news"
+          onclick="switchMainTab('news')"
+          class="nav-pill shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-semibold bg-white border border-sky-200 text-sky-900 hover:bg-sky-50 transition"
+        >
+          <span>📰</span>
+          <span>RERA News</span>
+        </button>
+        <button
           data-tab="emi-calculator"
           onclick="navigateFromMenu('emi-calculator')"
           class="nav-pill shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition"
         >
           <span>🧮</span>
           <span>EMI Calculator</span>
-        </button>
-        <button
-          data-tab="news"
-          onclick="switchMainTab('news')"
-          class="nav-pill shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition"
-        >
-          <span>📰</span>
-          <span>RERA News</span>
         </button>
       </div>
     </div>
@@ -388,7 +378,7 @@
       <!-- NEWS, ABOUT, PRIVACY, TERMS -->
       <div class="py-2">
         <a href="#news" onclick="navigateFromMenu('news')" class="px-5 py-2.5 flex items-center justify-between text-sm font-medium text-slate-700 hover:bg-slate-50">
-          <span>RERA &amp; Construction News</span>
+          <span>RERA News &amp; Orders</span>
           <span class="px-1.5 py-0.5 rounded bg-sky-100 text-sky-800 text-[9px] font-bold">NOV 2026</span>
         </a>
         <a href="#about" onclick="navigateFromMenu('about')" class="px-5 py-2.5 flex items-center justify-between text-sm font-medium text-slate-700 hover:bg-slate-50">
@@ -429,240 +419,429 @@
   <main id="top" class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-5 lg:px-8 py-3.5 sm:py-6 space-y-4 sm:space-y-6">
 
     <!-- =================================================================== -->
-    <!-- 3. INDIA HUBS CITY SWITCHER                                         -->
+    <!-- 3. INDIA HUBS CITY SWITCHER (Clean, Single Row)                     -->
     <!-- =================================================================== -->
-    <section class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
-      <span class="text-[11px] font-bold tracking-wider uppercase text-slate-500 shrink-0 mr-1">
-        INDIA HUBS:
-      </span>
-      <button
-        id="hubBtnHyderabad"
-        onclick="selectCityHub('Hyderabad')"
-        class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#0F172A] text-white shadow-xs transition"
-      >
-        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-        <span>Hyderabad</span>
-        <span class="text-emerald-400 font-semibold">(67 Live)</span>
-      </button>
-      <button
-        id="hubBtnBengaluru"
-        onclick="selectCityHub('Bengaluru')"
-        class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition"
-      >
-        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-        <span>Bengaluru</span>
-        <span class="text-emerald-600 font-semibold">(36 Live)</span>
-      </button>
+    <section class="flex items-center justify-between gap-2 py-0.5 overflow-x-auto no-scrollbar">
+      <div class="flex items-center gap-2 shrink-0">
+        <span class="text-[11px] font-bold tracking-wider uppercase text-slate-500 mr-1">
+          INDIA HUBS:
+        </span>
+        <button
+          id="hubBtnHyderabad"
+          onclick="selectCityHub('Hyderabad')"
+          class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#0F172A] text-white shadow-xs transition"
+        >
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>Hyderabad</span>
+          <span class="text-emerald-400 font-semibold">(67 Live)</span>
+        </button>
+        <button
+          id="hubBtnBengaluru"
+          onclick="selectCityHub('Bengaluru')"
+          class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition"
+        >
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>Bengaluru</span>
+          <span class="text-emerald-600 font-semibold">(36 Live)</span>
+        </button>
+        <button
+          id="hubBtnAll"
+          onclick="selectCityHub('ALL')"
+          class="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition"
+        >
+          <span>All Hubs (103)</span>
+        </button>
+      </div>
     </section>
 
     <!-- =================================================================== -->
-    <!-- 4. HERO BANNER & MULTI-MODE SEARCH CARD                             -->
+    <!-- VIEW A: PROJECTS & PRICES DIRECTORY (Bank Auctions Strictly Hidden) -->
     <!-- =================================================================== -->
-    <section class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
-      
-      <!-- Dark Architectural Hero Card -->
-      <div class="lg:col-span-7 relative rounded-2xl overflow-hidden bg-slate-900 shadow-soft min-h-[220px] sm:min-h-[255px] flex flex-col justify-between p-5 sm:p-7">
-        <img
-          src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80"
-          onerror="this.style.display='none'"
-          alt="Luxury High-Rise Apartments"
-          class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/75 to-slate-900/50"></div>
+    <div id="projectsDirectoryView" class="space-y-4 sm:space-y-6">
 
-        <!-- Top Verification Pills -->
-        <div class="relative z-10 flex flex-wrap items-center gap-2">
-          <span id="heroReraBadge" class="px-3 py-1 rounded-full text-[10px] sm:text-xs font-extrabold tracking-wider uppercase bg-sky-950/80 text-sky-300 border border-sky-400/30 backdrop-blur-xs">
-            TG-RERA VERIFIED DIRECTORY
-          </span>
-          <span id="heroPriceBadge" class="px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold bg-emerald-950/85 text-emerald-300 border border-emerald-400/30 backdrop-blur-xs">
-            Starting at ₹61 Lakhs*
-          </span>
-          <span class="px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-white/10 text-slate-200 border border-white/20 backdrop-blur-xs">
-            No Broker Spam
-          </span>
+      <!-- 4. ARCHITECTURAL HERO BANNER + SEARCH CARD -->
+      <section class="space-y-3.5">
+        <div class="relative rounded-3xl overflow-hidden bg-slate-900 shadow-soft min-h-[210px] sm:min-h-[250px] flex items-end">
+          <img
+            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1400&q=80"
+            onerror="this.src='https://placehold.co/1200x500/0F172A/FACC15?text=The+Way+Prop+India'"
+            alt="RERA Verified High-Rise Apartments"
+            class="absolute inset-0 w-full h-full object-cover opacity-45"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-900/35"></div>
+
+          <div class="relative z-10 p-5 sm:p-7 w-full space-y-2.5">
+            <div class="flex flex-wrap items-center gap-2">
+              <span id="heroReraBadge" class="px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/40 text-sky-200 text-[10px] sm:text-xs font-bold tracking-wider uppercase">
+                TG-RERA VERIFIED DIRECTORY
+              </span>
+              <span id="heroPriceBadge" class="px-3 py-1 rounded-full bg-emerald-500/25 border border-emerald-400/40 text-emerald-200 text-[10px] sm:text-xs font-bold">
+                Starting at ₹61 Lakhs*
+              </span>
+              <span class="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-slate-200 text-[10px] sm:text-xs font-medium">
+                No Broker Spam
+              </span>
+            </div>
+
+            <h1 id="heroTitle" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+              Hyderabad Apartments &amp; Villas
+            </h1>
+
+            <p id="heroSubtitle" class="text-xs sm:text-sm text-slate-200 max-w-2xl leading-relaxed">
+              Compare official RERA start &amp; completion dates, ₹/sq.ft rates, amenities, and all-in flat costs across Hyderabad.
+            </p>
+          </div>
         </div>
 
-        <!-- Headline & Subtitle -->
-        <div class="relative z-10 mt-6 sm:mt-8">
-          <h1 id="heroTitle" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
-            Hyderabad Apartments &amp; Villas
-          </h1>
-          <p id="heroSubtitle" class="mt-2 text-xs sm:text-sm text-slate-200/95 max-w-2xl leading-relaxed">
-            Compare official RERA start &amp; completion dates, ₹/sq.ft rates, amenities, and all-in flat costs across Hyderabad.
-          </p>
-        </div>
-      </div>
-
-      <!-- Right Column: Compare Projects Strip + Multi-Mode Search Card -->
-      <div class="lg:col-span-5 flex flex-col gap-3 justify-between">
-        
-        <!-- Light Mint Info Callout Bar -->
-        <div class="rounded-2xl bg-gradient-to-r from-sky-50 via-emerald-50/70 to-teal-50 border border-sky-200/70 p-3.5 shadow-2xs">
-          <p class="text-xs text-slate-700 leading-relaxed font-medium">
+        <!-- Zero-Spam Tip Callout Strip -->
+        <div class="rounded-2xl bg-sky-50/90 border border-sky-200/70 px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <p class="text-xs sm:text-[13px] text-slate-700 leading-snug">
             <span class="mr-1">💡</span>
-            <strong class="text-indigo-700 font-bold">Before you buy a flat or villa,</strong> compare RERA dates, real ₹/sq.ft prices &amp; amenities here—with zero broker spam.
+            <strong class="text-indigo-700 font-semibold">Before you buy a flat or villa,</strong>
+            compare RERA dates, real ₹/sq.ft prices &amp; amenities here—with zero broker spam.
           </p>
           <button
             onclick="scrollToProjects()"
-            class="mt-1.5 inline-flex items-center gap-1 text-xs font-bold text-indigo-700 hover:text-indigo-900 transition"
+            class="self-start sm:self-auto shrink-0 text-xs font-bold text-indigo-700 hover:text-indigo-900 inline-flex items-center gap-1"
           >
             <span>Compare Projects</span>
             <span>→</span>
           </button>
         </div>
 
-        <!-- Multi-Mode Search Card (Buy | Rent | Commercial | Plots) -->
-        <div class="rounded-2xl bg-white border border-slate-200/90 p-3.5 sm:p-4 shadow-card space-y-2.5">
-          
-          <!-- Search Intent Mode Tabs -->
-          <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
-            <button type="button" data-mode="Buy" onclick="setSearchMode('Buy')" class="search-mode-btn flex-1 py-1.5 rounded-lg text-xs font-extrabold bg-[#0F172A] text-white shadow-2xs transition">
-              Buy
-            </button>
-            <button type="button" data-mode="Rent" onclick="setSearchMode('Rent')" class="search-mode-btn flex-1 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">
-              Rent
-            </button>
-            <button type="button" data-mode="Commercial" onclick="setSearchMode('Commercial')" class="search-mode-btn flex-1 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">
-              Commercial
-            </button>
-            <button type="button" data-mode="Plots" onclick="setSearchMode('Plots')" class="search-mode-btn flex-1 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">
-              Plots
-            </button>
+        <!-- Multi-Field Search Card (NO magnifying glass icon inside) -->
+        <div class="rounded-2xl bg-white border border-slate-200/90 shadow-card p-3.5 sm:p-4 space-y-2.5">
+          <!-- Mode Pills: Buy | Rent | Commercial | Plots -->
+          <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl">
+            <button type="button" data-mode="Buy" onclick="setSearchMode('Buy')" class="search-mode-btn flex-1 py-1.5 rounded-lg text-xs font-extrabold bg-[#0F172A] text-white shadow-2xs transition">Buy</button>
+            <button type="button" data-mode="Rent" onclick="setSearchMode('Rent')" class="search-mode-btn flex-1 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">Rent</button>
+            <button type="button" data-mode="Commercial" onclick="setSearchMode('Commercial')" class="search-mode-btn flex-1 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">Commercial</button>
+            <button type="button" data-mode="Plots" onclick="setSearchMode('Plots')" class="search-mode-btn flex-1 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">Plots</button>
           </div>
 
-          <!-- Locality / Project Search -->
-          <div class="relative flex items-center border-b border-slate-100 pb-2 pt-0.5">
-            <span class="text-rose-500 text-base mr-2.5 shrink-0">📍</span>
-            <input
-              id="searchLocalityInput"
-              type="text"
-              oninput="applyFilters()"
-              placeholder="Search locality or project (e.g. Kokapet, Nanakramguda, Kompally)"
-              class="w-full text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-none bg-transparent"
-            />
-            <button id="clearSearchBtn" onclick="clearSearchInput()" class="hidden text-xs text-slate-400 hover:text-slate-700 px-1.5">✕</button>
-          </div>
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-2.5">
+            <!-- Locality Input -->
+            <div class="md:col-span-5 flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200/80 focus-within:border-slate-900 focus-within:bg-white transition">
+              <span class="text-rose-500 text-sm shrink-0">📍</span>
+              <input
+                id="searchLocalityInput"
+                type="text"
+                oninput="applyFilters()"
+                placeholder="Search locality or project (e.g. Nanakramguda, Puppalaguda, Kompally)"
+                class="w-full bg-transparent text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none"
+              />
+              <button id="clearSearchBtn" onclick="clearSearchInput()" class="hidden text-xs text-slate-400 hover:text-slate-700 font-bold">✕</button>
+            </div>
 
-          <!-- Property Type / BHK Selector -->
-          <div class="relative flex items-center border-b border-slate-100 pb-2">
-            <span class="text-amber-600 text-base mr-2.5 shrink-0">🏠</span>
-            <select
-              id="filterBhkSelect"
-              onchange="applyFilters()"
-              class="w-full text-xs sm:text-sm font-semibold text-slate-800 bg-transparent focus:outline-none cursor-pointer"
-            >
-              <option value="ALL">Flat / Villa • Any BHK</option>
-              <option value="2 BHK">Apartment • 2 BHK</option>
-              <option value="3 BHK">Apartment • 3 BHK</option>
-              <option value="4 BHK">Luxury Apartment • 4 BHK</option>
-              <option value="Villa">Gated Community • Villa</option>
-              <option value="Plot">HMDA / BMRDA Open Plot</option>
+            <!-- Configuration Select -->
+            <div class="md:col-span-3 flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200/80">
+              <span class="text-sm shrink-0">🏠</span>
+              <select
+                id="filterBhkSelect"
+                onchange="applyFilters()"
+                class="w-full bg-transparent text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none cursor-pointer"
+              >
+                <option value="ALL">Flat / Villa • Any BHK</option>
+                <option value="2 BHK">2 BHK Apartment</option>
+                <option value="3 BHK">3 BHK Apartment</option>
+                <option value="4 BHK">4 BHK Sky Villa</option>
+                <option value="Villa">Independent / Gated Villa</option>
+                <option value="Plot">HMDA / BMRDA Open Plot</option>
+              </select>
+            </div>
+
+            <!-- Budget Select -->
+            <div class="md:col-span-2 flex items-center gap-2 px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200/80">
+              <span class="text-amber-600 font-bold text-sm shrink-0">₹</span>
+              <select
+                id="filterBudgetSelect"
+                onchange="applyFilters()"
+                class="w-full bg-transparent text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none cursor-pointer"
+              >
+                <option value="ALL">Any Budget</option>
+                <option value="100">Under ₹1 Cr</option>
+                <option value="200">₹1 Cr – ₹2 Cr</option>
+                <option value="350">₹2 Cr – ₹3.5 Cr</option>
+                <option value="9999">₹3.5 Cr+ Luxury</option>
+              </select>
+            </div>
+
+            <!-- Search CTA Button (Clean text, NO magnifying glass icon) -->
+            <div class="md:col-span-2">
+              <button
+                onclick="applyFilters(); scrollToProjects();"
+                class="w-full h-full py-2.5 px-3 rounded-xl bg-[#FACC15] hover:bg-[#EAB308] active:scale-[0.99] text-slate-950 font-extrabold text-xs sm:text-sm shadow-sm flex items-center justify-center transition"
+              >
+                <span id="searchCtaLabel">Search Verified Buy Projects</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5A. KEY METRIC CARDS (4-Card Grid) -->
+      <section class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div class="rounded-2xl bg-white border border-slate-200/80 p-3.5 sm:p-4 shadow-2xs">
+          <div class="text-[11px] sm:text-xs font-medium text-slate-500">Matching Projects</div>
+          <div id="metricCount" class="mt-1 text-2xl sm:text-3xl font-extrabold text-slate-900">67</div>
+          <div id="metricReraLabel" class="mt-1 text-[11px] text-slate-500">TG-RERA approved projects</div>
+        </div>
+
+        <div class="rounded-2xl bg-white border border-slate-200/80 p-3.5 sm:p-4 shadow-2xs">
+          <div class="text-[11px] sm:text-xs font-medium text-slate-500">Avg Asking Rate</div>
+          <div id="metricAvgRate" class="mt-1 text-2xl sm:text-3xl font-extrabold text-indigo-600">₹10,350</div>
+          <div class="mt-1 text-[11px] text-slate-500">Per sq.ft (super built-up)</div>
+        </div>
+
+        <div class="rounded-2xl bg-white border border-slate-200/80 p-3.5 sm:p-4 shadow-2xs">
+          <div class="text-[11px] sm:text-xs font-medium text-slate-500">Entry Flat Price</div>
+          <div id="metricEntryPrice" class="mt-1 text-2xl sm:text-3xl font-extrabold text-emerald-600">₹61 L</div>
+          <div class="mt-1 text-[11px] text-slate-500">Base price excl. registration</div>
+        </div>
+
+        <div class="rounded-2xl bg-white border border-slate-200/80 p-3.5 sm:p-4 shadow-2xs">
+          <div class="text-[11px] sm:text-xs font-medium text-slate-500">Earliest Completion</div>
+          <div id="metricCompletion" class="mt-1 text-2xl sm:text-3xl font-extrabold text-amber-600">Dec 2026</div>
+          <div class="mt-1 text-[11px] text-slate-500">Official RERA handover</div>
+        </div>
+      </section>
+
+      <!-- 5B. VERIFIED RERA PROJECT / RENTAL LISTINGS -->
+      <section id="projectsSection" class="space-y-3.5 pt-1">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h2 id="sectionHeading" class="text-lg sm:text-xl font-extrabold text-slate-900">
+              TG-RERA Verified Projects in Hyderabad
+            </h2>
+            <p id="sectionSubheading" class="text-xs text-slate-500">Transparent base ₹/sq.ft rates, RERA IDs &amp; official possession timelines</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <select id="sortSelect" onchange="applyFilters()" class="px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-700 focus:outline-none">
+              <option value="featured">Sort: Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rate-asc">₹/sq.ft: Lowest First</option>
             </select>
           </div>
+        </div>
 
-          <!-- Budget Selector -->
-          <div class="relative flex items-center pb-0.5">
-            <span class="text-amber-500 font-bold text-base mr-3 ml-0.5 shrink-0">₹</span>
-            <select
-              id="filterBudgetSelect"
-              onchange="applyFilters()"
-              class="w-full text-xs sm:text-sm font-semibold text-slate-800 bg-transparent focus:outline-none cursor-pointer"
-            >
-              <option value="ALL">Any Budget</option>
-              <option value="100">Under ₹1 Crore (or Under ₹35k/mo Rent)</option>
-              <option value="200">₹1 Cr – ₹2 Crore (or ₹35k–₹65k/mo Rent)</option>
-              <option value="350">₹2 Cr – ₹3.5 Crore (or ₹65k–₹1.2L/mo Rent)</option>
-              <option value="9999">₹3.5 Crore &amp; Above</option>
-            </select>
+        <!-- Cards Container -->
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </section>
+
+      <!-- 5D. PRICE TRENDS / CHARTS SECTION -->
+      <section id="charts" class="space-y-4 pt-2">
+        <div class="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 shadow-card">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+            <div>
+              <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">📈 Micro-Market ₹/sq.ft Price Trends (2023 – 2026)</h2>
+              <p class="text-xs text-slate-500">Weighted average RERA registered transaction &amp; builder asking rates across key corridors</p>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold">
+              +14.8% YoY Growth
+            </span>
           </div>
 
-          <!-- Full-Width Warm Gold Search CTA Button -->
-          <button
-            onclick="applyFilters(); scrollToProjects();"
-            class="w-full py-2.5 rounded-xl bg-[#FACC15] hover:bg-[#EAB308] active:scale-[0.99] text-slate-950 font-extrabold text-xs sm:text-sm shadow-sm flex items-center justify-center gap-2 transition"
-          >
-            <span>🔍</span>
-            <span id="searchCtaLabel">Search Verified Buy Projects</span>
-          </button>
+          <div id="priceTrendsBars" class="space-y-4 mt-4">
+            <!-- Populated dynamically -->
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- =================================================================== -->
-    <!-- 5A. KEY METRIC CARDS (4-Card Grid)                                  -->
-    <!-- =================================================================== -->
-    <section class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-      <div class="rounded-2xl bg-white border border-slate-200/80 p-3.5 sm:p-4 shadow-2xs">
-        <div class="text-[11px] sm:text-xs font-medium text-slate-500">Matching Projects</div>
-        <div id="metricCount" class="mt-1 text-2xl sm:text-3xl font-extrabold text-slate-900">67</div>
-        <div id="metricReraLabel" class="mt-1 text-[11px] text-slate-500">TG-RERA approved projects</div>
-      </div>
+      <!-- 5E. DEDICATED INTERACTIVE EMI CALCULATOR SECTION (#emi-calculator) -->
+      <section id="emi-calculator" class="space-y-4 pt-2">
+        <div class="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 shadow-card">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-5">
+            <div>
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[10px] font-extrabold uppercase tracking-wider">🧮 Home Loan Planner</span>
+              <h2 class="mt-1 text-lg sm:text-xl font-extrabold text-slate-900">Home Loan EMI &amp; Interest Split Calculator</h2>
+              <p id="emiProjectContext" class="text-xs text-slate-500">Adjust loan amount, bank interest rate &amp; tenure to plan your monthly outflow</p>
+            </div>
+            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
+              SBI / HDFC / ICICI Rates from 8.35%
+            </span>
+          </div>
 
-      <div class="rounded-2xl bg-white border border-slate-200/80 p-3.5 sm:p-4 shadow-2xs">
-        <div class="text-[11px] sm:text-xs font-medium text-slate-500">Avg Asking Rate</div>
-        <div id="metricAvgRate" class="mt-1 text-2xl sm:text-3xl font-extrabold text-indigo-600">₹10,350</div>
-        <div class="mt-1 text-[11px] text-slate-500">Per sq.ft (super built-up)</div>
-      </div>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <!-- Sliders Column -->
+            <div class="lg:col-span-7 space-y-4">
+              <div>
+                <div class="flex justify-between text-xs font-bold mb-1.5">
+                  <span class="text-slate-700">Loan Amount</span>
+                  <span id="inlineLoanVal" class="text-indigo-700 font-extrabold">₹100 Lakhs (₹1.00 Cr)</span>
+                </div>
+                <input id="inlineLoanRange" type="range" min="20" max="500" step="5" value="100" oninput="calculateInlineEMI()" class="w-full cursor-pointer" />
+                <div class="flex justify-between text-[10px] text-slate-400 mt-0.5">
+                  <span>₹20 L</span>
+                  <span>₹2.5 Cr</span>
+                  <span>₹5.0 Cr</span>
+                </div>
+              </div>
 
-      <div class="rounded-2xl bg-white border border-slate-200/80 p-3.5 sm:p-4 shadow-2xs">
-        <div class="text-[11px] sm:text-xs font-medium text-slate-500">Entry Flat Price</div>
-        <div id="metricEntryPrice" class="mt-1 text-2xl sm:text-3xl font-extrabold text-emerald-600">₹61 L</div>
-        <div class="mt-1 text-[11px] text-slate-500">Base price excl. registration</div>
-      </div>
+              <div>
+                <div class="flex justify-between text-xs font-bold mb-1.5">
+                  <span class="text-slate-700">Interest Rate (% p.a.)</span>
+                  <span id="inlineRateVal" class="text-indigo-700 font-extrabold">8.5%</span>
+                </div>
+                <input id="inlineRateRange" type="range" min="7.0" max="11.5" step="0.05" value="8.5" oninput="calculateInlineEMI()" class="w-full cursor-pointer" />
+                <div class="flex justify-between text-[10px] text-slate-400 mt-0.5">
+                  <span>7.0%</span>
+                  <span>9.25%</span>
+                  <span>11.5%</span>
+                </div>
+              </div>
 
-      <div class="rounded-2xl bg-white border border-slate-200/80 p-3.5 sm:p-4 shadow-2xs">
-        <div class="text-[11px] sm:text-xs font-medium text-slate-500">Earliest Completion</div>
-        <div id="metricCompletion" class="mt-1 text-2xl sm:text-3xl font-extrabold text-amber-600">Dec 2026</div>
-        <div class="mt-1 text-[11px] text-slate-500">Official RERA handover</div>
-      </div>
-    </section>
+              <div>
+                <div class="flex justify-between text-xs font-bold mb-1.5">
+                  <span class="text-slate-700">Loan Tenure (Years)</span>
+                  <span id="inlineTenureVal" class="text-indigo-700 font-extrabold">20 Years</span>
+                </div>
+                <input id="inlineTenureRange" type="range" min="5" max="30" step="1" value="20" oninput="calculateInlineEMI()" class="w-full cursor-pointer" />
+                <div class="flex justify-between text-[10px] text-slate-400 mt-0.5">
+                  <span>5 Yrs</span>
+                  <span>15 Yrs</span>
+                  <span>30 Yrs</span>
+                </div>
+              </div>
+            </div>
 
-    <!-- =================================================================== -->
-    <!-- 5B. VERIFIED RERA PROJECT / RENTAL LISTINGS                         -->
-    <!-- =================================================================== -->
-    <section id="projectsSection" class="space-y-3.5 pt-1">
-      <div class="flex flex-wrap items-center justify-between gap-2">
-        <div>
-          <h2 id="sectionHeading" class="text-lg sm:text-xl font-extrabold text-slate-900">
-            TG-RERA Verified Projects in Hyderabad
-          </h2>
-          <p id="sectionSubheading" class="text-xs text-slate-500">Transparent base ₹/sq.ft rates, RERA IDs &amp; official possession timelines</p>
+            <!-- Result & Principal/Interest Visual Bar -->
+            <div class="lg:col-span-5 rounded-2xl bg-[#0F172A] text-white p-5 space-y-4">
+              <div class="text-center">
+                <div class="text-xs text-slate-300 font-medium">Estimated Monthly EMI</div>
+                <div id="inlineMonthlyOutput" class="mt-1 text-3xl sm:text-4xl font-extrabold text-amber-400">₹86,782</div>
+                <div class="text-[11px] text-slate-400 mt-0.5">per month</div>
+              </div>
+
+              <!-- Visual Split Bar -->
+              <div class="space-y-1.5">
+                <div class="w-full h-3 rounded-full bg-slate-800 overflow-hidden flex">
+                  <div id="emiPrincipalBar" class="bg-emerald-400 h-full transition-all" style="width: 48%"></div>
+                  <div id="emiInterestBar" class="bg-amber-400 h-full transition-all" style="width: 52%"></div>
+                </div>
+                <div class="flex justify-between text-[11px]">
+                  <span class="flex items-center gap-1.5 text-emerald-300 font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    Principal: <strong id="inlinePrincipalOut">₹1.00 Cr</strong>
+                  </span>
+                  <span class="flex items-center gap-1.5 text-amber-300 font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                    Interest: <strong id="inlineInterestOut">₹1.08 Cr</strong>
+                  </span>
+                </div>
+              </div>
+
+              <div class="pt-2 border-t border-slate-800 flex items-center justify-between text-xs">
+                <span class="text-slate-400">Total Amount Payable</span>
+                <span id="inlineTotalOut" class="font-extrabold text-white">₹2.08 Cr</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="flex items-center gap-2">
-          <select id="sortSelect" onchange="applyFilters()" class="px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-700 focus:outline-none">
-            <option value="featured">Sort: Featured</option>
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>
-            <option value="rate-asc">₹/sq.ft: Lowest First</option>
-          </select>
+      </section>
+
+      <!-- 5F. GOVT REGISTRATION PULSE (Moved to VERY BOTTOM of Home Page above Footer) -->
+      <section id="govtRegistrationPulse" class="rounded-2xl bg-[#0F172A] text-white p-5 sm:p-6 shadow-soft border border-slate-800 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="flex flex-wrap items-center gap-2">
+            <h2 class="text-lg sm:text-xl font-extrabold text-white tracking-tight">Govt Registration Pulse</h2>
+            <span class="px-2.5 py-0.5 rounded-full bg-amber-400/15 border border-amber-400/40 text-amber-300 text-[10px] font-extrabold tracking-wider uppercase">
+              IGRS TELANGANA DATA
+            </span>
+          </div>
+          <div class="flex items-center gap-2">
+            <label for="igrsPeriodSelect" class="text-xs text-slate-300 font-medium">Period:</label>
+            <select
+              id="igrsPeriodSelect"
+              onchange="updateIgrsPulse()"
+              class="px-3 py-1.5 rounded-xl bg-slate-800/90 border border-slate-600 text-amber-300 font-bold text-xs focus:outline-none focus:border-amber-400 cursor-pointer"
+            >
+              <option value="oct2026" selected>October 2026</option>
+              <option value="fy2025">Full Year 2025 (Last Year)</option>
+              <option value="ytd2026">Jan–Oct 2026 Cumulative</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <!-- Cards Container -->
-      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <!-- Populated dynamically via JS -->
-      </div>
-    </section>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Official residential property registrations across Hyderabad, Rangareddy, Medchal-Malkajgiri &amp; Sangareddy
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <!-- Card 1 -->
+          <div class="rounded-2xl bg-slate-800/60 border border-slate-700/80 p-4">
+            <div id="igrsCard1Label" class="text-xs text-slate-400 font-medium">Oct 2026 Registrations</div>
+            <div id="igrsCard1Value" class="mt-1 text-2xl sm:text-3xl font-extrabold text-amber-400">5,318 Homes</div>
+            <div id="igrsCard1Sub" class="mt-1 text-[11px] text-slate-300">₹4,395 Cr (-14% YoY vol)</div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="rounded-2xl bg-slate-800/60 border border-slate-700/80 p-4">
+            <div id="igrsCard2Label" class="text-xs text-slate-400 font-medium">Last Year (2025) Full Year Sold</div>
+            <div id="igrsCard2Value" class="mt-1 text-2xl sm:text-3xl font-extrabold text-white">75,222 Homes</div>
+            <div id="igrsCard2Sub" class="mt-1 text-[11px] text-emerald-400 font-semibold">₹50,890 Cr • Jan–Oct 2026: 61,033 (₹44,305 Cr)</div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="rounded-2xl bg-slate-800/60 border border-slate-700/80 p-4">
+            <div id="igrsCard3Label" class="text-xs text-slate-400 font-medium">Top District (Oct 2026)</div>
+            <div id="igrsCard3Value" class="mt-1 text-xl sm:text-2xl font-extrabold text-amber-400 leading-tight">Rangareddy 52%</div>
+            <div id="igrsCard3Sub" class="mt-1 text-[11px] text-slate-300">Medchal 29% • Hyd 18% • SGR 1%</div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="rounded-2xl bg-slate-800/60 border border-slate-700/80 p-4">
+            <div id="igrsCard4Label" class="text-xs text-slate-400 font-medium">₹1 Cr+ Luxury Segment</div>
+            <div id="igrsCard4Value" class="mt-1 text-xl sm:text-2xl font-extrabold text-white leading-tight">59% of Value</div>
+            <div id="igrsCard4Sub" class="mt-1 text-[11px] text-slate-300">20% of Jan–Oct units • Kokapet leads</div>
+          </div>
+        </div>
+
+        <div class="text-[11px] text-slate-400 pt-1">
+          Source: Telangana Registration &amp; Stamps Dept (IGRS) data compiled by Knight Frank India — <span class="text-amber-300 font-semibold">Avg ₹5,184/sq.ft (Jan–Oct 2026)</span>
+        </div>
+      </section>
+
+    </div>
 
     <!-- =================================================================== -->
-    <!-- 5C. BANK AUCTIONS SECTION (SARFAESI / E-Auction Verified Deals)     -->
+    <!-- VIEW B: DEDICATED BANK AUCTIONS VIEW (Shown ONLY on Bank Auctions)  -->
     <!-- =================================================================== -->
-    <section id="auctions" class="space-y-4 pt-2">
+    <section id="auctions" class="hidden space-y-4">
+      <div class="flex items-center justify-between gap-2">
+        <button
+          onclick="switchMainTab('projects')"
+          class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-xs font-extrabold text-slate-800 shadow-2xs transition"
+        >
+          <span>←</span>
+          <span>Back to Projects &amp; Prices</span>
+        </button>
+        <span id="auctionCityPill" class="px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-rose-900 text-xs font-bold">
+          Hyderabad Auctions
+        </span>
+      </div>
+
       <div class="rounded-2xl bg-gradient-to-r from-rose-950 via-slate-900 to-slate-900 text-white p-5 sm:p-6 shadow-soft">
         <div class="flex flex-wrap items-center justify-between gap-3">
           <div>
             <span class="px-2.5 py-1 rounded-full bg-rose-500/20 border border-rose-400/30 text-rose-300 text-[11px] font-bold uppercase tracking-wider">
               🔨 SARFAESI E-Auction Directory
             </span>
-            <h2 class="mt-2 text-xl sm:text-2xl font-extrabold">Bank Auction Properties (15%–30% Below Market)</h2>
+            <h2 id="auctionHeading" class="mt-2 text-xl sm:text-2xl font-extrabold">Bank Auction Properties in Hyderabad (15%–30% Below Market)</h2>
             <p class="mt-1 text-xs sm:text-sm text-slate-300 max-w-2xl">
-              Direct PSU &amp; Private Bank reserve price listings in Hyderabad &amp; Bengaluru with EMD amounts, inspection dates, and clear title status.
+              Direct PSU &amp; Private Bank reserve price listings with EMD amounts, inspection dates, and clear title status.
             </p>
           </div>
-          <button onclick="openSkyAI('Show me active Bank Auction properties under ₹1.5 Cr')" class="px-4 py-2 rounded-xl bg-amber-400 text-slate-950 font-bold text-xs shadow-sm hover:bg-amber-300 transition">
-            ✨ Ask Sky AI About Auctions
-          </button>
+          <div class="flex items-center gap-2">
+            <button onclick="selectCityHub('ALL')" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold text-xs transition">
+              Show All Cities
+            </button>
+            <button onclick="openSkyAI('Show me active Bank Auction properties in ' + currentCity)" class="px-4 py-2 rounded-xl bg-amber-400 text-slate-950 font-bold text-xs shadow-sm hover:bg-amber-300 transition">
+              ✨ Ask Sky AI
+            </button>
+          </div>
         </div>
       </div>
 
@@ -672,170 +851,131 @@
     </section>
 
     <!-- =================================================================== -->
-    <!-- 5D. PRICE TRENDS / CHARTS SECTION                                   -->
+    <!-- VIEW C: DEDICATED RERA NEWS & ORDERS VIEW (Shown ONLY on RERA News) -->
     <!-- =================================================================== -->
-    <section id="charts" class="space-y-4 pt-2">
-      <div class="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 shadow-card">
-        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-          <div>
-            <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">📈 Micro-Market ₹/sq.ft Price Trends (2023 – 2026)</h2>
-            <p class="text-xs text-slate-500">Weighted average RERA registered transaction &amp; builder asking rates across key corridors</p>
-          </div>
-          <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold">
-            +14.8% YoY Growth
-          </span>
-        </div>
-
-        <div id="priceTrendsBars" class="space-y-4 mt-4">
-          <!-- Populated dynamically -->
-        </div>
-      </div>
-    </section>
-
-    <!-- =================================================================== -->
-    <!-- 5E. DEDICATED INTERACTIVE EMI CALCULATOR SECTION (#emi-calculator)  -->
-    <!-- =================================================================== -->
-    <section id="emi-calculator" class="space-y-4 pt-2">
-      <div class="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 shadow-card">
-        <div class="flex flex-wrap items-center justify-between gap-2 mb-5">
-          <div>
-            <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[10px] font-extrabold uppercase tracking-wider">🧮 Home Loan Planner</span>
-            <h2 class="mt-1 text-lg sm:text-xl font-extrabold text-slate-900">Home Loan EMI &amp; Interest Split Calculator</h2>
-            <p id="emiProjectContext" class="text-xs text-slate-500">Adjust loan amount, bank interest rate &amp; tenure to plan your monthly outflow</p>
-          </div>
-          <span class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
-            SBI / HDFC / ICICI Rates from 8.35%
-          </span>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-          <!-- Sliders Column -->
-          <div class="lg:col-span-7 space-y-4">
-            <div>
-              <div class="flex justify-between text-xs font-bold mb-1.5">
-                <span class="text-slate-700">Loan Amount</span>
-                <span id="inlineLoanVal" class="text-indigo-700 font-extrabold">₹100 Lakhs (₹1.00 Cr)</span>
-              </div>
-              <input id="inlineLoanRange" type="range" min="20" max="500" step="5" value="100" oninput="calculateInlineEMI()" class="w-full cursor-pointer" />
-              <div class="flex justify-between text-[10px] text-slate-400 mt-0.5">
-                <span>₹20 L</span>
-                <span>₹2.5 Cr</span>
-                <span>₹5.0 Cr</span>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs font-bold mb-1.5">
-                <span class="text-slate-700">Interest Rate (% p.a.)</span>
-                <span id="inlineRateVal" class="text-indigo-700 font-extrabold">8.5%</span>
-              </div>
-              <input id="inlineRateRange" type="range" min="7.0" max="11.5" step="0.05" value="8.5" oninput="calculateInlineEMI()" class="w-full cursor-pointer" />
-              <div class="flex justify-between text-[10px] text-slate-400 mt-0.5">
-                <span>7.0%</span>
-                <span>9.25%</span>
-                <span>11.5%</span>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs font-bold mb-1.5">
-                <span class="text-slate-700">Loan Tenure (Years)</span>
-                <span id="inlineTenureVal" class="text-indigo-700 font-extrabold">20 Years</span>
-              </div>
-              <input id="inlineTenureRange" type="range" min="5" max="30" step="1" value="20" oninput="calculateInlineEMI()" class="w-full cursor-pointer" />
-              <div class="flex justify-between text-[10px] text-slate-400 mt-0.5">
-                <span>5 Yrs</span>
-                <span>15 Yrs</span>
-                <span>30 Yrs</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Result & Principal/Interest Visual Bar -->
-          <div class="lg:col-span-5 rounded-2xl bg-[#0F172A] text-white p-5 space-y-4">
-            <div class="text-center">
-              <div class="text-xs text-slate-300 font-medium">Estimated Monthly EMI</div>
-              <div id="inlineMonthlyOutput" class="mt-1 text-3xl sm:text-4xl font-extrabold text-amber-400">₹86,782</div>
-              <div class="text-[11px] text-slate-400 mt-0.5">per month</div>
-            </div>
-
-            <!-- Visual Split Bar -->
-            <div class="space-y-1.5">
-              <div class="w-full h-3 rounded-full bg-slate-800 overflow-hidden flex">
-                <div id="emiPrincipalBar" class="bg-emerald-400 h-full transition-all" style="width: 48%"></div>
-                <div id="emiInterestBar" class="bg-amber-400 h-full transition-all" style="width: 52%"></div>
-              </div>
-              <div class="flex justify-between text-[11px]">
-                <span class="flex items-center gap-1.5 text-emerald-300 font-semibold">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                  Principal: <strong id="inlinePrincipalOut">₹1.00 Cr</strong>
-                </span>
-                <span class="flex items-center gap-1.5 text-amber-300 font-semibold">
-                  <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-                  Interest: <strong id="inlineInterestOut">₹1.08 Cr</strong>
-                </span>
-              </div>
-            </div>
-
-            <div class="pt-2 border-t border-slate-800 flex items-center justify-between text-xs">
-              <span class="text-slate-400">Total Amount Payable</span>
-              <span id="inlineTotalOut" class="font-extrabold text-white">₹2.08 Cr</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =================================================================== -->
-    <!-- 5F. LATEST TG-RERA & REAL ESTATE NEWS FEED (#news)                  -->
-    <!-- =================================================================== -->
-    <section id="news" class="space-y-3.5 pt-2">
-      <div class="flex items-center justify-between">
-        <div>
-          <h2 class="text-lg sm:text-xl font-extrabold text-slate-900">📰 Latest TG-RERA &amp; Real Estate Regulatory News</h2>
-          <p class="text-xs text-slate-500">Verified November 2026 compliance orders, approvals &amp; registration insights</p>
-        </div>
-        <span class="px-2.5 py-1 rounded-full bg-sky-50 text-sky-700 border border-sky-200 text-[11px] font-bold">Nov 2026 Feed</span>
+    <section id="news" class="hidden space-y-4">
+      <div class="flex items-center justify-between gap-2">
+        <button
+          onclick="switchMainTab('projects')"
+          class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-xs font-extrabold text-slate-800 shadow-2xs transition"
+        >
+          <span>←</span>
+          <span>Back to Projects &amp; Prices</span>
+        </button>
+        <span class="px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-900 text-xs font-bold">
+          Nov 2026 TG-RERA Docket
+        </span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <article class="rounded-2xl bg-white border border-slate-200 p-4 shadow-2xs space-y-2">
-          <div class="flex items-center justify-between text-[10px] font-bold">
-            <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">TG-RERA APPROVAL</span>
-            <span class="text-slate-400">Nov 21, 2026</span>
+      <div class="rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-5 sm:p-6 shadow-soft">
+        <span class="px-2.5 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-[11px] font-bold uppercase tracking-wider">
+          📰 Official Regulatory &amp; Compliance Feed
+        </span>
+        <h2 class="mt-2 text-xl sm:text-2xl font-extrabold">TG-RERA &amp; Real Estate Regulatory News</h2>
+        <p class="mt-1 text-xs sm:text-sm text-slate-300 max-w-2xl">
+          Latest Telangana RERA penalty orders, buyer refund directives, and official project registration approvals updated through November 25, 2026.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- News 1: Nov 25, 2026 Aliens Developers -->
+        <article class="rounded-2xl bg-white border border-slate-200 p-4 sm:p-5 shadow-card space-y-2.5 flex flex-col justify-between">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-[10px] font-bold">
+              <span class="px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-800">PENALTY &amp; REFUND ORDER</span>
+              <span class="text-slate-400">Nov 25, 2026</span>
+            </div>
+            <h3 class="font-extrabold text-sm sm:text-base text-slate-900 leading-snug">
+              TG-RERA Fines Aliens Developers ₹2 Crore &amp; Orders ₹42L Refund with 10.85% Interest
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Telangana RERA imposed a ₹2 crore penalty on Aliens Developers and directed a ₹42 lakh refund with 10.85% annual interest to homebuyers over prolonged delays in executing agreements and handing over possession at Aliens Space Station.
+            </p>
           </div>
-          <h3 class="font-extrabold text-sm text-slate-900 leading-snug">
-            Indiramma Towers &amp; West Corridor High-Rises Receive Fresh TG-RERA Project Clearances
-          </h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Telangana RERA published its November 2026 approval docket covering residential towers across Kollur, Tellapur, and Nanakramguda with mandatory escrow milestones.
-          </p>
+          <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Project: <strong>Aliens Space Station</strong></span>
+            <span class="text-rose-700 font-bold">10.85% p.a. Interest</span>
+          </div>
         </article>
 
-        <article class="rounded-2xl bg-white border border-slate-200 p-4 shadow-2xs space-y-2">
-          <div class="flex items-center justify-between text-[10px] font-bold">
-            <span class="px-2 py-0.5 rounded bg-rose-100 text-rose-800">COMPLIANCE ORDER</span>
-            <span class="text-slate-400">Nov 16, 2026</span>
+        <!-- News 2: Nov 25, 2026 Sandstone Infra -->
+        <article class="rounded-2xl bg-white border border-slate-200 p-4 sm:p-5 shadow-card space-y-2.5 flex flex-col justify-between">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-[10px] font-bold">
+              <span class="px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-800">BUYER REFUND DIRECTIVE</span>
+              <span class="text-slate-400">Nov 25, 2026</span>
+            </div>
+            <h3 class="font-extrabold text-sm sm:text-base text-slate-900 leading-snug">
+              TG-RERA Orders Sandstone Infra to Refund ₹47 Lakh with 10.85% Annual Interest Within 60 Days
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Finding failure to register plots in Shankarpally as promised, TG-RERA directed Sandstone Infra to refund ₹47 lakh along with 10.85% annual interest to the allottee within a strict 60-day compliance window.
+            </p>
           </div>
-          <h3 class="font-extrabold text-sm text-slate-900 leading-snug">
-            TG-RERA Penalizes Unregistered Pre-Launch Marketing &amp; Enforces QR Display on Brochures
-          </h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Builders and channel partners must prominently display scannable RERA registration QR codes on all digital ads before collecting expression-of-interest deposits.
-          </p>
+          <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Corridor: <strong>Shankarpally</strong></span>
+            <span class="text-rose-700 font-bold">60-Day Deadline</span>
+          </div>
         </article>
 
-        <article class="rounded-2xl bg-white border border-slate-200 p-4 shadow-2xs space-y-2">
-          <div class="flex items-center justify-between text-[10px] font-bold">
-            <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-800">MARKET TRENDS</span>
-            <span class="text-slate-400">Nov 09, 2026</span>
+        <!-- News 3: Nov 25, 2026 ELV Projects -->
+        <article class="rounded-2xl bg-white border border-slate-200 p-4 sm:p-5 shadow-card space-y-2.5 flex flex-col justify-between">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-[10px] font-bold">
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900">COMPLETION DIRECTIVE</span>
+              <span class="text-slate-400">Nov 25, 2026</span>
+            </div>
+            <h3 class="font-extrabold text-sm sm:text-base text-slate-900 leading-snug">
+              TG-RERA Gives ELV Projects 6 Months to Finish Pending Amenities &amp; Secure OC for Adibatla Flats
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Addressing resident association complaints at Adibatla, TG-RERA granted ELV Projects a 6-month timeline to complete pending clubhouse and infrastructure amenities and obtain the Occupancy Certificate (OC).
+            </p>
           </div>
-          <h3 class="font-extrabold text-sm text-slate-900 leading-snug">
-            Hyderabad Property Registrations Surge 16% YoY Driven by ₹1 Cr–₹2.5 Cr Gated 3 BHK Demand
-          </h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Nanakramguda, Puppalaguda, and Kompally recorded strong end-user registrations as buyers prioritize RERA-verified delivery track records.
-          </p>
+          <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Location: <strong>Adibatla</strong></span>
+            <span class="text-amber-800 font-bold">OC Compliance</span>
+          </div>
+        </article>
+
+        <!-- News 4: Nov 24, 2026 Indiramma Towers -->
+        <article class="rounded-2xl bg-white border border-slate-200 p-4 sm:p-5 shadow-card space-y-2.5 flex flex-col justify-between">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-[10px] font-bold">
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">TG-RERA APPROVAL</span>
+              <span class="text-slate-400">Nov 24, 2026</span>
+            </div>
+            <h3 class="font-extrabold text-sm sm:text-base text-slate-900 leading-snug">
+              Indiramma Towers Built by Telangana Housing Board Receive Official TG-RERA Approval Certificates
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Telangana Housing Board's flagship Indiramma Towers residential developments received formal TG-RERA registration certificates, bringing state housing towers under mandatory RERA milestone tracking.
+            </p>
+          </div>
+          <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Developer: <strong>Telangana Housing Board</strong></span>
+            <span class="text-emerald-700 font-bold">RERA Certified</span>
+          </div>
+        </article>
+
+        <!-- News 5: Nov 18, 2026 Sanali IT Parks -->
+        <article class="rounded-2xl bg-white border border-slate-200 p-4 sm:p-5 shadow-card space-y-2.5 flex flex-col justify-between">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-[10px] font-bold">
+              <span class="px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-800">UNREGISTERED MARKETING FINE</span>
+              <span class="text-slate-400">Nov 18, 2026</span>
+            </div>
+            <h3 class="font-extrabold text-sm sm:text-base text-slate-900 leading-snug">
+              TG-RERA Imposes ₹25 Lakh Penalty on Sanali IT Parks for Marketing Unregistered 'Sanali The Edge'
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              TG-RERA slapped a ₹25 lakh fine on Sanali IT Parks for advertising and soliciting bookings for 'Sanali The Edge' at Manchirevula prior to securing mandatory RERA project registration.
+            </p>
+          </div>
+          <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Location: <strong>Manchirevula</strong></span>
+            <span class="text-rose-700 font-bold">₹25L Penalty</span>
+          </div>
         </article>
       </div>
     </section>
@@ -1302,6 +1442,17 @@
         emdAmount: '₹21.50 Lakhs'
       },
       {
+        id: 'auc-4',
+        bank: 'Union Bank of India',
+        title: '3 BHK Gated Apartment (1,620 sq.ft) • Kompally',
+        city: 'Hyderabad',
+        reservePrice: '₹64 Lakhs',
+        marketValue: '₹84 Lakhs',
+        discount: '24% Below Market',
+        auctionDate: '29 Dec 2026',
+        emdAmount: '₹6.40 Lakhs'
+      },
+      {
         id: 'auc-3',
         bank: 'Canara Bank',
         title: '3 BHK Flat (1,690 sq.ft) • Whitefield',
@@ -1311,96 +1462,174 @@
         discount: '23% Below Market',
         auctionDate: '27 Dec 2026',
         emdAmount: '₹10.50 Lakhs'
-      }
-    ];
+      },
+      {
+        id: 'auc-5',
+        bank: 'ICICI Bank Ltd',
+        title: '3 BHK Luxury Flat (1,920 sq.ft) • Yelahanka North',
+    // 3. Switch City Hub (Hyderabad / Bengaluru / ALL)
+    function selectCityHub(city) {
+      currentCity = city;
+      const btnHyd = document.getElementById('hubBtnHyderabad');
+      const btnBlr = document.getElementById('hubBtnBengaluru');
+      const btnAll = document.getElementById('hubBtnAll');
 
-    const PRICE_TRENDS = [
-      { locality: 'Nanakramguda / Financial Dist (Hyd)', rate2023: 8400, rate2026: 11200, growth: '+33.3%' },
-      { locality: 'Puppalaguda / Kokapet (Hyd)', rate2023: 8800, rate2026: 11500, growth: '+30.7%' },
-      { locality: 'Kompally North Corridor (Hyd)', rate2023: 4800, rate2026: 6250, growth: '+30.2%' },
-      { locality: 'Whitefield – Varthur (Blr)', rate2023: 9600, rate2026: 12900, growth: '+34.3%' },
-      { locality: 'Yelahanka – Hebbal North (Blr)', rate2023: 6900, rate2026: 8850, growth: '+28.2%' }
-    ];
+      const activeClass = 'shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#0F172A] text-white shadow-xs transition';
+      const inactiveClass = 'shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition';
 
-    // App State
-    let currentCity = 'Hyderabad';
-    let currentSearchMode = 'Buy';
-    let statusSubFilter = 'ALL';
-    let activeTab = 'projects';
+      btnHyd.className = city === 'Hyderabad' ? activeClass : inactiveClass;
+      btnBlr.className = city === 'Bengaluru' ? activeClass : inactiveClass;
+      btnAll.className = city === 'ALL' ? activeClass : inactiveClass;
 
-    // Initialize on load
-    window.addEventListener('DOMContentLoaded', () => {
-      renderProjects();
-      renderAuctions();
-      renderPriceTrends();
-      calculateInlineEMI();
-      handleDeepLink();
-    });
+      const pulseSection = document.getElementById('govtRegistrationPulse');
 
-    window.addEventListener('hashchange', handleDeepLink);
+      if (city === 'Hyderabad') {
+        pulseSection.classList.remove('hidden');
 
-    // 1. Slide-Over Menu Drawer Toggle & Accordions
-    function toggleMenuDrawer(open) {
-      const backdrop = document.getElementById('menuBackdrop');
-      const drawer = document.getElementById('menuDrawer');
-      const toggleBtn = document.getElementById('menuToggleBtn');
+        document.getElementById('heroReraBadge').textContent = 'TG-RERA VERIFIED DIRECTORY';
+        document.getElementById('heroPriceBadge').textContent = 'Starting at ₹61 Lakhs*';
+        document.getElementById('heroTitle').textContent = 'Hyderabad Apartments & Villas';
+        document.getElementById('heroSubtitle').textContent = 'Compare official RERA start & completion dates, ₹/sq.ft rates, amenities, and all-in flat costs across Hyderabad.';
+        document.getElementById('searchLocalityInput').placeholder = 'Search locality or project (e.g. Nanakramguda, Puppalaguda, Kompally)';
 
-      if (open) {
-        backdrop.classList.remove('hidden');
-        requestAnimationFrame(() => {
-          backdrop.classList.remove('opacity-0');
-          drawer.classList.remove('translate-x-full');
-        });
-        toggleBtn.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
+        document.getElementById('metricCount').textContent = '67';
+        document.getElementById('metricReraLabel').textContent = 'TG-RERA approved projects';
+        document.getElementById('metricAvgRate').textContent = '₹10,350';
+        document.getElementById('metricEntryPrice').textContent = '₹61 L';
+        document.getElementById('metricCompletion').textContent = 'Dec 2026';
+      } else if (city === 'Bengaluru') {
+        pulseSection.classList.add('hidden');
+
+        document.getElementById('heroReraBadge').textContent = 'K-RERA VERIFIED DIRECTORY';
+        document.getElementById('heroPriceBadge').textContent = 'Starting at ₹68 Lakhs*';
+        document.getElementById('heroTitle').textContent = 'Bengaluru Apartments & Villas';
+        document.getElementById('heroSubtitle').textContent = 'Compare Karnataka RERA completion dates, ₹/sq.ft rates, and zero-spam builder pricing across Bengaluru.';
+        document.getElementById('searchLocalityInput').placeholder = 'Search locality or project (e.g. Whitefield, Sarjapur Road, Yelahanka)';
+
+        document.getElementById('metricCount').textContent = '36';
+        document.getElementById('metricReraLabel').textContent = 'K-RERA approved projects';
+        document.getElementById('metricAvgRate').textContent = '₹9,850';
+        document.getElementById('metricEntryPrice').textContent = '₹68 L';
+        document.getElementById('metricCompletion').textContent = 'Ready';
       } else {
-        backdrop.classList.add('opacity-0');
-        drawer.classList.add('translate-x-full');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-        setTimeout(() => {
-          backdrop.classList.add('hidden');
-        }, 260);
+        pulseSection.classList.remove('hidden');
+
+        document.getElementById('heroReraBadge').textContent = 'TG-RERA & K-RERA VERIFIED';
+        document.getElementById('heroPriceBadge').textContent = 'Starting at ₹61 Lakhs*';
+        document.getElementById('heroTitle').textContent = 'Hyderabad & Bengaluru Apartments & Villas';
+        document.getElementById('heroSubtitle').textContent = 'Compare official RERA start & completion dates, ₹/sq.ft rates, and amenities across India’s top IT hubs.';
+        document.getElementById('searchLocalityInput').placeholder = 'Search locality or project across Hyderabad & Bengaluru';
+
+        document.getElementById('metricCount').textContent = '103';
+        document.getElementById('metricReraLabel').textContent = 'Verified TG-RERA & K-RERA projects';
+        document.getElementById('metricAvgRate').textContent = '₹10,150';
+        document.getElementById('metricEntryPrice').textContent = '₹61 L';
+        document.getElementById('metricCompletion').textContent = 'Ready';
+      }
+
+      applyFilters();
+      renderAuctions();
+    }
+
+    // 3B. Govt Registration Pulse Interactive Period Selector (Oct 2026 vs FY 2025 vs YTD 2026)
+    function updateIgrsPulse() {
+      const period = document.getElementById('igrsPeriodSelect').value;
+      const c1Label = document.getElementById('igrsCard1Label');
+      const c1Val = document.getElementById('igrsCard1Value');
+      const c1Sub = document.getElementById('igrsCard1Sub');
+      const c2Label = document.getElementById('igrsCard2Label');
+      const c2Val = document.getElementById('igrsCard2Value');
+      const c2Sub = document.getElementById('igrsCard2Sub');
+      const c3Label = document.getElementById('igrsCard3Label');
+      const c3Val = document.getElementById('igrsCard3Value');
+      const c3Sub = document.getElementById('igrsCard3Sub');
+      const c4Label = document.getElementById('igrsCard4Label');
+      const c4Val = document.getElementById('igrsCard4Value');
+      const c4Sub = document.getElementById('igrsCard4Sub');
+
+      if (period === 'oct2026') {
+        c1Label.textContent = 'Oct 2026 Registrations';
+        c1Val.textContent = '5,318 Homes';
+        c1Sub.textContent = '₹4,395 Cr (-14% YoY vol)';
+        c2Label.textContent = 'Last Year (2025) Full Year Sold';
+        c2Val.textContent = '75,222 Homes';
+        c2Sub.textContent = '₹50,890 Cr • Jan–Oct 2026: 61,033 (₹44,305 Cr)';
+        c3Label.textContent = 'Top District (Oct 2026)';
+        c3Val.textContent = 'Rangareddy 52%';
+        c3Sub.textContent = 'Medchal 29% • Hyd 18% • SGR 1%';
+        c4Label.textContent = '₹1 Cr+ Luxury Segment';
+        c4Val.textContent = '59% of Value';
+        c4Sub.textContent = '20% of Jan–Oct units • Kokapet leads';
+      } else if (period === 'fy2025') {
+        c1Label.textContent = 'Full Year 2025 Homes Sold';
+        c1Val.textContent = '75,222 Homes';
+        c1Sub.textContent = '₹50,890 Cr Total Registered Value';
+        c2Label.textContent = 'Jan–Oct 2026 Cumulative';
+        c2Val.textContent = '61,033 Homes';
+        c2Sub.textContent = '₹44,305 Cr (+3% YoY value, ₹5,184/sf)';
+        c3Label.textContent = 'Top District (FY 2025)';
+        c3Val.textContent = 'Rangareddy 48%';
+        c3Sub.textContent = 'Medchal 37% • Hyd 14% • SGR 1%';
+        c4Label.textContent = '₹1 Cr+ Luxury Segment';
+        c4Val.textContent = '59% of Value';
+        c4Sub.textContent = 'Kokapet leading luxury deals';
+      } else {
+        c1Label.textContent = 'Jan–Oct 2026 Cumulative';
+        c1Val.textContent = '61,033 Homes';
+        c1Sub.textContent = '₹44,305 Cr (+3% YoY value, avg ₹5,184/sq.ft)';
+        c2Label.textContent = 'Last Year (2025) Full Year Sold';
+        c2Val.textContent = '75,222 Homes';
+        c2Sub.textContent = '₹50,890 Cr Full Year Benchmark';
+        c3Label.textContent = 'Top District (Jan–Oct 2026)';
+        c3Val.textContent = 'Rangareddy 52%';
+        c3Sub.textContent = 'Medchal 29% • Hyd 18% • SGR 1%';
+        c4Label.textContent = '₹1 Cr+ Luxury Segment';
+        c4Val.textContent = '59% of Value';
+        c4Sub.textContent = '20% of Jan–Oct units • Kokapet leads';
       }
     }
+    // 5. Switch Secondary Navigation Tabs (Strict Separation: Projects & Prices vs Bank Auctions vs RERA News)
+    function switchMainTab(tab) {
+      activeTab = tab;
 
-    function toggleDrawerAccordion(panelId, chevronId) {
-      const panel = document.getElementById(panelId);
-      const chevron = document.getElementById(chevronId);
-      const isHidden = panel.classList.contains('hidden');
-      panel.classList.toggle('hidden', !isHidden);
-      chevron.classList.toggle('open', isHidden);
-    }
+      document.querySelectorAll('.nav-pill').forEach(btn => {
+        const isCurrent = btn.getAttribute('data-tab') === tab;
+        btn.className = isCurrent
+          ? 'nav-pill shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-semibold bg-[#0F172A] text-white shadow-2xs transition'
+          : 'nav-pill shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition';
+      });
 
-    // Handle Buy / Rent / Plots selections from Menu Drawer
-    function applyDrawerIntent(mode, statusFilter, bhkValue) {
-      toggleMenuDrawer(false);
-      setSearchMode(mode);
-      statusSubFilter = statusFilter;
-      document.getElementById('filterBhkSelect').value = bhkValue;
-      switchMainTab('projects');
-      applyFilters();
-      scrollToProjects();
-    }
+      const projectsView = document.getElementById('projectsDirectoryView');
+      const auctionsView = document.getElementById('auctions');
+      const newsView = document.getElementById('news');
 
-    // 2. Menu Navigation & Deep-Link Router
-    function navigateFromMenu(target) {
-      toggleMenuDrawer(false);
-      window.location.hash = target;
+      if (tab === 'auctions') {
+        projectsView.classList.add('hidden');
+        newsView.classList.add('hidden');
+        auctionsView.classList.remove('hidden');
+        renderAuctions();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
 
-      if (target === 'projects') {
-        switchMainTab('projects');
-        scrollToProjects();
-      } else if (target === 'auctions') {
-        switchMainTab('auctions');
-      } else if (target === 'charts') {
-        switchMainTab('charts');
-      } else if (target === 'emi-calculator') {
-        document.getElementById('emi-calculator').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else if (target === 'news') {
-        switchMainTab('news');
-      } else if (['about', 'privacy', 'terms'].includes(target)) {
-        openModal(target);
+      if (tab === 'news') {
+        projectsView.classList.add('hidden');
+        auctionsView.classList.add('hidden');
+        newsView.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
+      // For Projects & Prices, Premium, Charts: show Projects view & hide Bank Auctions and RERA News
+      auctionsView.classList.add('hidden');
+      newsView.classList.add('hidden');
+      projectsView.classList.remove('hidden');
+
+      if (tab === 'projects' || tab === 'premium') {
+        applyFilters();
+        if (tab === 'premium') scrollToProjects();
+      } else if (tab === 'charts') {
+        document.getElementById('charts').scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
 
@@ -1476,20 +1705,7 @@
       document.querySelectorAll('.search-mode-btn').forEach(btn => {
         const isCurrent = btn.getAttribute('data-mode') === mode;
         btn.className = isCurrent
-          ? 'search-mode-btn flex-1 py-1.5 rounded-lg text-xs font-extrabold bg-[#0F172A] text-white shadow-2xs transition'
-          : 'search-mode-btn flex-1 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition';
-      });
-
-      const ctaLabel = document.getElementById('searchCtaLabel');
-      if (mode === 'Buy') ctaLabel.textContent = 'Search Verified Buy Projects';
-      else if (mode === 'Rent') ctaLabel.textContent = 'Search Zero-Brokerage Rentals';
-      else if (mode === 'Commercial') ctaLabel.textContent = 'Search Grade-A Commercial Spaces';
-      else ctaLabel.textContent = 'Search HMDA / BMRDA Open Plots';
-
-      applyFilters();
-    }
-
-    // 5. Switch Secondary Navigation Tabs
+    // 5. Switch Secondary Navigation Tabs (Strict Separation: Projects & Prices vs Bank Auctions)
     function switchMainTab(tab) {
       activeTab = tab;
 
@@ -1500,11 +1716,24 @@
           : 'nav-pill shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition';
       });
 
+      const projectsView = document.getElementById('projectsDirectoryView');
+      const auctionsView = document.getElementById('auctions');
+
+      if (tab === 'auctions') {
+        projectsView.classList.add('hidden');
+        auctionsView.classList.remove('hidden');
+        renderAuctions();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
+      // For Projects & Prices, Premium, Charts, News: show Projects view & hide Bank Auctions
+      auctionsView.classList.add('hidden');
+      projectsView.classList.remove('hidden');
+
       if (tab === 'projects' || tab === 'premium') {
         applyFilters();
-        scrollToProjects();
-      } else if (tab === 'auctions') {
-        document.getElementById('auctions').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (tab === 'premium') scrollToProjects();
       } else if (tab === 'charts') {
         document.getElementById('charts').scrollIntoView({ behavior: 'smooth', block: 'start' });
       } else if (tab === 'news') {
@@ -1538,7 +1767,9 @@
 
       document.getElementById('clearSearchBtn').classList.toggle('hidden', query.length === 0);
 
-      let filtered = PROJECTS_DATA.filter(p => p.city === currentCity);
+      let filtered = currentCity === 'ALL'
+        ? [...PROJECTS_DATA]
+        : PROJECTS_DATA.filter(p => p.city === currentCity);
 
       if (currentSearchMode === 'Rent') {
         filtered = filtered.filter(p => p.mode === 'Rent');
@@ -1580,26 +1811,26 @@
       if (sortBy === 'price-asc') filtered.sort((a, b) => a.startingLakhs - b.startingLakhs);
       if (sortBy === 'price-desc') filtered.sort((a, b) => b.startingLakhs - a.startingLakhs);
       if (sortBy === 'rate-asc') filtered.sort((a, b) => a.ratePerSqft - b.ratePerSqft);
-
-      const reraPrefix = currentCity === 'Hyderabad' ? 'TG-RERA' : 'K-RERA';
+      const cityLabel = currentCity === 'ALL' ? 'Hyderabad & Bengaluru' : currentCity;
+      const reraPrefix = currentCity === 'Hyderabad' ? 'TG-RERA' : (currentCity === 'Bengaluru' ? 'K-RERA' : 'RERA');
       if (currentSearchMode === 'Rent') {
-        document.getElementById('sectionHeading').textContent = `Zero-Brokerage Owner Rentals in ${currentCity}`;
+        document.getElementById('sectionHeading').textContent = `Zero-Brokerage Owner Rentals in ${cityLabel}`;
         document.getElementById('sectionSubheading').textContent = 'Verified direct-owner flats & villas near IT corridors with zero brokerage';
       } else if (currentSearchMode === 'Plots') {
-        document.getElementById('sectionHeading').textContent = `HMDA / BMRDA & ${reraPrefix} Approved Plots in ${currentCity}`;
+        document.getElementById('sectionHeading').textContent = `HMDA / BMRDA & ${reraPrefix} Approved Plots in ${cityLabel}`;
         document.getElementById('sectionSubheading').textContent = 'Clear-title villa plots with LP numbers and spot registration';
       } else {
         document.getElementById('sectionHeading').textContent =
           activeTab === 'premium'
-            ? `👑 Premium Luxury Projects in ${currentCity}`
-            : `${reraPrefix} Verified Projects in ${currentCity}`;
+            ? `👑 Premium Luxury Projects in ${cityLabel}`
+            : `${reraPrefix} Verified Projects in ${cityLabel}`;
         document.getElementById('sectionSubheading').textContent = 'Transparent base ₹/sq.ft rates, RERA IDs & official possession timelines';
       }
 
       renderProjects(filtered);
     }
 
-    function renderProjects(list = PROJECTS_DATA.filter(p => p.city === currentCity && p.mode === 'Buy')) {
+    function renderProjects(list = PROJECTS_DATA.filter(p => (currentCity === 'ALL' || p.city === currentCity) && p.mode === 'Buy')) {
       const grid = document.getElementById('projectsGrid');
       if (list.length === 0) {
         grid.innerHTML = `
@@ -1680,7 +1911,15 @@
 
     function renderAuctions() {
       const grid = document.getElementById('auctionsGrid');
-      grid.innerHTML = BANK_AUCTIONS.map(auc => `
+      const filteredAuctions = currentCity === 'ALL'
+        ? BANK_AUCTIONS
+        : BANK_AUCTIONS.filter(auc => auc.city === currentCity);
+
+      const cityText = currentCity === 'ALL' ? 'Hyderabad & Bengaluru' : currentCity;
+      document.getElementById('auctionCityPill').textContent = `${cityText} Auctions (${filteredAuctions.length})`;
+      document.getElementById('auctionHeading').textContent = `Bank Auction Properties in ${cityText} (15%–30% Below Market)`;
+
+      grid.innerHTML = filteredAuctions.map(auc => `
         <div class="rounded-2xl bg-white border border-slate-200 p-4 shadow-card space-y-3">
           <div class="flex items-center justify-between">
             <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-800 font-bold text-[11px]">🏦 ${auc.bank}</span>
