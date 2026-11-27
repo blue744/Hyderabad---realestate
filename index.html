@@ -48,18 +48,9 @@
       </a>
 
       <div class="flex items-center gap-1 sm:gap-2 shrink-0">
-        <button id="headerSignInBtn" type="button" onclick="openAuthModal()" class="inline-flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 text-[11px] sm:text-xs font-semibold transition shadow-2xs">
-          <svg class="w-3.5 h-3.5 text-sky-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 10a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 1114 0H3z" /></svg>
-          <span id="headerSignInLabel">Sign In</span>
-        </button>
-
-        <button type="button" onclick="openPostModal()" class="inline-flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-900 text-[11px] sm:text-xs font-bold transition shadow-2xs">
+        <button type="button" onclick="openPostModal()" class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-900 text-[11px] sm:text-xs font-bold transition shadow-2xs">
           <span>Post<span class="hidden lg:inline"> Property</span></span>
           <span class="px-1.5 py-0.5 rounded-md bg-emerald-600 text-white text-[9px] sm:text-[10px] font-extrabold tracking-wide uppercase">FREE</span>
-        </button>
-
-        <button type="button" onclick="openSkyAiModal()" class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-full bg-[#0F172A] hover:bg-slate-800 text-amber-300 border border-amber-400/40 text-[11px] sm:text-xs font-extrabold transition shadow-xs">
-          <span>✨</span><span>Sky AI</span>
         </button>
 
         <button id="menuToggleBtn" type="button" aria-label="Open Navigation Menu" aria-expanded="false" onclick="toggleMenuDrawer(true)" class="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-900 transition shadow-2xs">
@@ -168,7 +159,7 @@
 
     <div id="view-projects" class="space-y-5">
       <section class="relative overflow-hidden rounded-3xl bg-[#0F172A] text-white shadow-lg">
-        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&amp;fit=crop&amp;w=1400&amp;q=75" alt="Modern High-Rise Residential Towers" onerror="this.style.display='none'" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity" />
+        <img src="https://thewaypropindia.com/assets/hero-skyline.jpg" alt="Modern High-Rise Residential Towers" onerror="this.style.display='none'" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity" />
         <div class="relative z-10 p-5 sm:p-8 bg-gradient-to-r from-[#0F172A]/95 via-[#0F172A]/85 to-[#0F172A]/65">
           <div class="flex flex-wrap items-center gap-2 mb-3">
             <span id="heroReraBadge" class="px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/40 text-sky-200 text-[11px] font-extrabold tracking-wide uppercase">TG-RERA VERIFIED DIRECTORY</span>
@@ -437,17 +428,55 @@
     let visibleLimit = 18;
     let showAllActive = false;
 
-    const CITY_IMAGES = {
-      Hyderabad: [
-        'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=75',
-        'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=75',
-        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=75',
-        'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=75',
-        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=75',
-        'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=75'
-      ],
-      Plot: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=75',
-      Commercial: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=75'
+    function slugifyProjectName(name) {
+      return String(name || 'project')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '');
+    }
+
+    function makeReraElevationSvg(name, builder, reraId) {
+      const safeName = String(name || '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
+      const safeBuilder = String(builder || '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
+      const safeRera = String(reraId || '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#0F172A"/>
+            <stop offset="60%" stop-color="#1E293B"/>
+            <stop offset="100%" stop-color="#0B132B"/>
+          </linearGradient>
+        </defs>
+        <rect width="800" height="420" fill="url(#g)"/>
+        <g opacity="0.16" fill="#94A3B8">
+          <rect x="470" y="75" width="75" height="295" rx="4"/>
+          <rect x="560" y="45" width="90" height="325" rx="4"/>
+          <rect x="665" y="95" width="70" height="275" rx="4"/>
+        </g>
+        <rect x="40" y="38" width="185" height="28" rx="14" fill="#10B981" fill-opacity="0.22" stroke="#10B981"/>
+        <text x="132" y="56" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="#6EE7B7" text-anchor="middle">RERA VERIFIED PROJECT</text>
+        <text x="40" y="220" font-family="Inter,Arial,sans-serif" font-size="30" font-weight="800" fill="#FFFFFF">${safeName}</text>
+        <text x="40" y="256" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="600" fill="#FBBF24">By ${safeBuilder}</text>
+        <text x="40" y="292" font-family="monospace" font-size="14" fill="#CBD5E1">RERA: ${safeRera}</text>
+      </svg>`;
+      return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+    }
+
+    window.handleOriginalProjectPhotoError = function(imgEl, slug, name, builder, reraId) {
+      const step = Number(imgEl.dataset.step || '0');
+      if (step === 0) {
+        imgEl.dataset.step = '1';
+        imgEl.src = `https://thewaypropindia.com/assets/projects/${slug}.jpg`;
+      } else if (step === 1) {
+        imgEl.dataset.step = '2';
+        imgEl.src = `https://thewaypropindia.com/images/projects/${slug}.jpg`;
+      } else if (step === 2) {
+        imgEl.dataset.step = '3';
+        imgEl.src = `https://thewaypropindia.com/assets/projects/${slug}.webp`;
+      } else {
+        imgEl.onerror = null;
+        imgEl.src = makeReraElevationSvg(name, builder, reraId);
+      }
     };
 
     function formatPriceRange(minLakhs, maxLakhs, mode) {
@@ -461,8 +490,9 @@
       let idx = 0;
       function add(city, mode, status, name, builder, locality, reraId, bhk, configLabel, ratePerSqft, minLakhs, maxLakhs, startDate, completion, premium, amenities) {
         idx += 1;
-        const img = mode === 'Plots' ? CITY_IMAGES.Plot : (mode === 'Commercial' ? CITY_IMAGES.Commercial : CITY_IMAGES.Hyderabad[idx % CITY_IMAGES.Hyderabad.length]);
-        list.push({ id: `${city.toLowerCase().replace(/\s+/g, '-')}-${idx}`, city, mode, status, name, builder, locality, reraId, bhk, configLabel, ratePerSqft, startingLakhs: minLakhs, priceDisplay: formatPriceRange(minLakhs, maxLakhs, mode), startDate, completion, premium, amenities, image: img });
+        const slug = slugifyProjectName(name);
+        const img = `/assets/projects/${slug}.jpg`;
+        list.push({ id: `${city.toLowerCase().replace(/\s+/g, '-')}-${idx}`, slug, city, mode, status, name, builder, locality, reraId, bhk, configLabel, ratePerSqft, startingLakhs: minLakhs, priceDisplay: formatPriceRange(minLakhs, maxLakhs, mode), startDate, completion, premium, amenities, image: img });
       }
 
       add('Hyderabad', 'Buy', 'Ready / Near Possession', 'Candeur Crescent', 'Candeur Developers', 'Serilingampally • West', 'P02500004515', ['3 BHK'], '3 BHK • 1,652 – 2,656 sq.ft', 9080, 150, 241, '2022', 'Dec 2026', true, ['50 Floors • 62K Sq.ft Clubhouse']);
@@ -631,9 +661,22 @@
       const grid = document.getElementById('projectsGrid');
       if (!grid) return;
       const displayed = showAllActive ? projects : projects.slice(0, visibleLimit);
-      grid.innerHTML = displayed.map((proj) => `
+      grid.innerHTML = displayed.map((proj) => {
+        const safeName = proj.name.replace(/'/g, "\\'");
+        const safeBuilder = proj.builder.replace(/'/g, "\\'");
+        return `
         <article class="rounded-3xl bg-white border border-slate-200 overflow-hidden shadow-xs flex flex-col justify-between p-4 space-y-3">
-          <img src="${proj.image}" alt="${proj.name}" class="w-full h-40 object-cover rounded-2xl" />
+          <div class="relative w-full h-44 rounded-2xl overflow-hidden bg-slate-900">
+            <img
+              src="${proj.image}"
+              alt="${proj.name} official project photo"
+              loading="lazy"
+              data-step="0"
+              onerror="handleOriginalProjectPhotoError(this, '${proj.slug}', '${safeName}', '${safeBuilder}', '${proj.reraId}')"
+              class="w-full h-full object-cover"
+            />
+            ${proj.premium ? '<span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 text-[10px] font-extrabold shadow-xs">👑 PREMIUM</span>' : ''}
+          </div>
           <div>
             <div class="text-[11px] font-bold text-emerald-700">${proj.city} • ${proj.status}</div>
             <h3 class="text-base font-extrabold text-slate-900">${proj.name}</h3>
@@ -645,12 +688,17 @@
           </div>
           <div class="text-[11px] font-mono text-slate-500">RERA: ${proj.reraId} • End: ${proj.completion}</div>
           <div class="flex items-center gap-1.5">
-            <button type="button" onclick="openCostSheetModal('${proj.id}')" class="flex-1 py-2 px-3 rounded-xl bg-[#0F172A] text-white text-xs font-extrabold">View Details &amp; EMI</button>
-            <button type="button" onclick="toggleCompareProject('${proj.id}')" class="py-2 px-2.5 rounded-xl border border-slate-200 text-xs font-extrabold">+ Compare</button>
-            <a href="${buildWhatsAppShareUrl(proj)}" target="_blank" rel="noopener noreferrer" class="py-2 px-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-extrabold">WA</a>
+            <button type="button" onclick="openCostSheetModal('${proj.id}')" class="flex-1 py-2.5 px-3 rounded-xl bg-[#0F172A] text-white text-xs font-extrabold">View Details &amp; EMI</button>
+            <button type="button" onclick="toggleCompareProject('${proj.id}')" class="py-2.5 px-2.5 rounded-xl border border-slate-200 text-xs font-extrabold">+ Compare</button>
+            <a href="${buildWhatsAppShareUrl(proj)}" target="_blank" rel="noopener noreferrer" aria-label="Share ${proj.name} on WhatsApp" title="Share on WhatsApp" class="shrink-0 w-9 h-9 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 flex items-center justify-center transition">
+              <svg class="w-4 h-4 fill-emerald-600" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.52 3.48A11.86 11.86 0 0012.07 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.6 5.95L0 24l6.33-1.66a11.86 11.86 0 005.74 1.46h.01c6.56 0 11.9-5.34 11.9-11.91 0-3.18-1.24-6.17-3.46-8.41zM12.08 21.8h-.01a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.76.99 1-3.66-.23-.38a9.85 9.85 0 01-1.51-5.25c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 012.89 7c0 5.45-4.44 9.88-9.88 9.88zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/>
+              </svg>
+            </a>
           </div>
         </article>
-      `).join('');
+      `;
+      }).join('');
     }
 
     function renderAuctions() {
