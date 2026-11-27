@@ -9,7 +9,6 @@
   <meta property="og:description" content="Compare official RERA dates, ₹/sq.ft rates, SARFAESI bank auctions & all-in flat costs across Hyderabad, Bengaluru, Chennai, Delhi NCR & Pune." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://thewaypropindia.com/" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80" />
   <link id="canonicalLink" rel="canonical" href="https://thewaypropindia.com/" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,26 +20,22 @@
       background-color: #F4F6FA;
       color: #0F172A;
       -webkit-tap-highlight-color: transparent;
+      padding-bottom: 76px;
     }
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-    input[type="range"] {
-      accent-color: #0F172A;
-    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    input[type="range"] { accent-color: #0F172A; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col overflow-x-hidden selection:bg-amber-200 selection:text-slate-900">
 
-  <!-- TOP HEADER BAR (Clean: Post FREE + ☰ Menu only) -->
+  <!-- =====================================================================
+       1. TOP HEADER BAR (Clean: TW Brand + Post Property FREE + ☰ Menu)
+       ===================================================================== -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 h-16 flex items-center justify-between gap-2">
       <a href="#top" onclick="resetHomeView(event)" class="flex items-center gap-2 min-w-0 shrink">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#0F172A] flex items-center justify-center shrink-0 shadow-xs border border-amber-400/30">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#0F172A] flex items-center justify-center shrink-0 shadow-xs border border-amber-400/40">
           <span class="text-amber-400 font-extrabold text-sm sm:text-base tracking-tight">TW</span>
         </div>
         <div class="min-w-0">
@@ -51,7 +46,7 @@
 
       <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
         <button type="button" onclick="openPostModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-900 text-xs font-bold transition shadow-2xs">
-          <span>Post<span class="hidden sm:inline"> Property</span></span>
+          <span>Post Property</span>
           <span class="px-1.5 py-0.5 rounded-md bg-emerald-600 text-white text-[10px] font-extrabold tracking-wide uppercase">FREE</span>
         </button>
 
@@ -74,17 +69,19 @@
     </div>
   </header>
 
-  <!-- SLIDE-OVER NAVIGATION DRAWER -->
+  <!-- =====================================================================
+       2. SLIDE-OVER NAVIGATION DRAWER
+       ===================================================================== -->
   <div id="menuBackdrop" onclick="toggleMenuDrawer(false)" class="fixed inset-0 z-50 bg-slate-950/50 backdrop-blur-xs hidden opacity-0 transition-opacity duration-200"></div>
   <aside id="menuDrawer" aria-label="Site Menu" class="fixed top-0 right-0 bottom-0 z-50 w-[88%] max-w-sm bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-out flex flex-col">
-    <div class="p-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between gap-2">
+    <div class="p-4 bg-[#0F172A] text-white flex items-center justify-between gap-2">
       <div class="min-w-0">
-        <p id="drawerGreeting" class="text-xs font-bold text-slate-900 leading-snug">Sign in to get a personalised feed!</p>
-        <p class="text-[11px] text-slate-500">Zero broker spam • RERA alerts</p>
+        <p id="drawerGreeting" class="text-xs font-extrabold text-amber-300 leading-snug">The Way Prop India • Menu</p>
+        <p class="text-[11px] text-slate-300">Zero broker spam • RERA verified</p>
       </div>
       <div class="flex items-center gap-2 shrink-0">
-        <button id="drawerLoginBtn" type="button" onclick="toggleMenuDrawer(false); openAuthModal();" class="px-3.5 py-1.5 rounded-full bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition shadow-xs">Login</button>
-        <button type="button" aria-label="Close Menu" onclick="toggleMenuDrawer(false)" class="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 text-sm font-bold">✕</button>
+        <button id="drawerLoginBtn" type="button" onclick="toggleMenuDrawer(false); openAuthModal();" class="px-3.5 py-1.5 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-extrabold transition shadow-xs">Sign In</button>
+        <button type="button" aria-label="Close Menu" onclick="toggleMenuDrawer(false)" class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-200 hover:bg-slate-700 text-sm font-bold">✕</button>
       </div>
     </div>
 
@@ -134,6 +131,9 @@
         <button type="button" onclick="toggleMenuDrawer(false); switchMainTab('projects');" class="w-full px-4 py-3 text-left text-sm font-semibold text-slate-800 hover:bg-slate-50 flex items-center justify-between">
           <span>Projects &amp; Prices</span><span id="drawerTotalBadge" class="text-xs font-bold text-emerald-700">184 Live</span>
         </button>
+        <button type="button" onclick="toggleMenuDrawer(false); openActivityModal();" class="w-full px-4 py-3 text-left text-sm font-semibold text-slate-800 hover:bg-slate-50 flex items-center justify-between">
+          <span>Saved Shortlist &amp; Activity</span><span id="drawerSavedBadge" class="text-xs font-bold text-amber-700">0 Saved</span>
+        </button>
         <button type="button" onclick="toggleMenuDrawer(false); switchMainTab('premium');" class="w-full px-4 py-3 text-left text-sm font-semibold text-slate-800 hover:bg-slate-50 flex items-center justify-between">
           <span>Premium Projects</span><span class="text-xs font-bold text-amber-700">👑 Curated</span>
         </button>
@@ -149,7 +149,9 @@
     </div>
   </aside>
 
-  <!-- MAIN CONTENT CONTAINER -->
+  <!-- =====================================================================
+       3. MAIN CONTENT CONTAINER
+       ===================================================================== -->
   <main id="top" class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 py-4 space-y-5">
     <!-- 5-CITY INDIA HUBS SWITCHER -->
     <section aria-label="India Hubs City Switcher" class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
@@ -164,26 +166,69 @@
 
     <!-- VIEW A: PROJECTS & PRICES -->
     <div id="view-projects" class="space-y-5">
-      <section class="relative overflow-hidden rounded-3xl bg-[#0F172A] text-white shadow-lg">
-        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1400&q=75" alt="Modern High-Rise Residential Towers" onerror="this.style.display='none'" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity" />
-        <div class="relative z-10 p-5 sm:p-8 bg-gradient-to-r from-[#0F172A]/95 via-[#0F172A]/85 to-[#0F172A]/65">
-          <div class="flex flex-wrap items-center gap-2 mb-3">
-            <span id="heroReraBadge" class="px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/40 text-sky-200 text-[11px] font-extrabold tracking-wide uppercase">TG-RERA VERIFIED DIRECTORY</span>
-            <span id="heroPriceBadge" class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-200 text-[11px] font-bold">Starting at ₹44 Lakhs*</span>
-            <span id="heroDailySyncBadge" class="px-3 py-1 rounded-full bg-amber-400/20 border border-amber-300/40 text-amber-200 text-[11px] font-bold">● Live Sync • 27 Nov 2026</span>
+      <!-- HERO BANNER WITH INTEGRATED FLOATING SEARCH BAR -->
+      <div>
+        <section class="relative overflow-hidden rounded-3xl bg-[#0F172A] text-white shadow-lg pb-6">
+          <div class="relative z-10 p-5 sm:p-8 bg-gradient-to-br from-[#0F172A] via-[#131F3A] to-[#1E293B]">
+            <div class="flex flex-wrap items-center gap-2 mb-3">
+              <span id="heroReraBadge" class="px-3 py-1 rounded-full bg-amber-400/20 border border-amber-300/40 text-amber-200 text-[11px] font-extrabold tracking-wide uppercase">TG-RERA VERIFIED DIRECTORY</span>
+              <span id="heroPriceBadge" class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-200 text-[11px] font-bold">Starting at ₹44 Lakhs*</span>
+              <span id="heroDailySyncBadge" class="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-slate-200 text-[11px] font-bold">● Live Sync • 27 Nov 2026</span>
+            </div>
+            <h1 id="heroTitle" class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2">Hyderabad Apartments, Villas &amp; Plots</h1>
+            <p id="heroSubtitle" class="text-xs sm:text-sm text-slate-200 max-w-2xl leading-relaxed">Compare official TG-RERA start &amp; completion dates, ₹/sq.ft rates, amenities, and all-in flat costs across 81 verified projects in Hyderabad.</p>
           </div>
-          <h1 id="heroTitle" class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2">Hyderabad Apartments, Villas &amp; Plots</h1>
-          <p id="heroSubtitle" class="text-xs sm:text-sm text-slate-200 max-w-2xl leading-relaxed">Compare official TG-RERA start &amp; completion dates, ₹/sq.ft rates, amenities, and all-in flat costs across 81 verified projects in Hyderabad.</p>
-        </div>
-      </section>
+        </section>
 
-      <div class="rounded-2xl bg-indigo-50/90 border border-indigo-100 p-3.5 sm:px-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-        <p class="text-xs sm:text-sm text-slate-800 leading-snug"><span class="font-bold text-indigo-700">💡 Before you buy a flat or villa,</span> compare RERA dates, real ₹/sq.ft prices &amp; amenities side-by-side here—with zero broker spam.</p>
-        <button type="button" onclick="openCompareModal()" class="self-start sm:self-auto shrink-0 text-xs font-extrabold text-indigo-700 hover:text-indigo-900">Compare Projects →</button>
+        <!-- INTEGRATED FLOATING SEARCH BAR + RECENT SEARCHES STRIP -->
+        <div class="relative z-20 -mt-6 px-2 sm:px-6 max-w-4xl mx-auto space-y-2.5">
+          <div class="flex items-center gap-2 bg-white rounded-2xl border-2 border-[#0F172A] shadow-xl p-1.5 pl-3.5 focus-within:ring-4 focus-within:ring-amber-400/35 transition">
+            <svg class="w-4 h-4 text-[#0F172A] shrink-0" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            <input
+              id="heroFloatingSearchInput"
+              type="text"
+              oninput="syncSearchInputs(this.value)"
+              onkeydown="if(event.key==='Enter'){applyFilters(true);}"
+              placeholder='Search "3 BHK in Kokapet, Neopolis, Candeur or RERA ID..."'
+              class="w-full bg-transparent text-xs sm:text-sm font-semibold text-slate-900 placeholder:text-slate-400 focus:outline-none truncate"
+            />
+            <button type="button" onclick="applyFilters(true)" class="shrink-0 px-3.5 py-2 rounded-xl bg-[#0F172A] hover:bg-slate-800 text-amber-300 text-xs font-extrabold transition">
+              Search
+            </button>
+          </div>
+
+          <div class="flex items-center gap-2 overflow-x-auto no-scrollbar px-1">
+            <span class="shrink-0 inline-flex items-center gap-1 text-[11px] font-bold text-slate-500">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <span>Recent:</span>
+            </span>
+            <div id="recentSearchChips" class="flex items-center gap-1.5">
+              <button type="button" onclick="quickRecentSearch('Hyderabad', 'Kokapet')" class="shrink-0 px-3 py-1 rounded-xl bg-white border border-slate-200 hover:border-slate-400 text-slate-800 text-[11px] font-semibold shadow-2xs transition">Buy Projects in Kokapet, Hyderabad</button>
+              <button type="button" onclick="quickRecentSearch('Bengaluru', 'Aratt')" class="shrink-0 px-3 py-1 rounded-xl bg-white border border-slate-200 hover:border-slate-400 text-slate-800 text-[11px] font-semibold shadow-2xs transition">Aratt Developers Bengaluru</button>
+              <button type="button" onclick="quickRecentSearch('Hyderabad', 'Tellapur')" class="shrink-0 px-3 py-1 rounded-xl bg-white border border-slate-200 hover:border-slate-400 text-slate-800 text-[11px] font-semibold shadow-2xs transition">3 BHK Tellapur TG-RERA</button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- MULTI-MODE SEARCH BOX -->
-      <section class="rounded-3xl bg-white border border-slate-200/90 p-4 sm:p-5 shadow-sm space-y-3.5">
+      <!-- DEVELOPER SHOWCASE BAR (Opens Real Builder Elevation Gallery & Developer Page) -->
+      <section class="rounded-2xl bg-white border border-slate-200/90 p-3.5 sm:px-5 shadow-2xs space-y-2.5">
+        <div class="flex items-center justify-between gap-2">
+          <div class="text-xs font-extrabold uppercase tracking-wider text-slate-700">
+            🏢 Verified RERA Builders &amp; Real Project Galleries
+          </div>
+          <span class="text-[11px] font-semibold text-emerald-700">Official Builder Elevations</span>
+        </div>
+        <div id="developerPillStrip" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-0.5"></div>
+      </section>
+
+      <div class="rounded-2xl bg-amber-50/90 border border-amber-200/80 p-3.5 sm:px-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <p class="text-xs sm:text-sm text-slate-800 leading-snug"><span class="font-bold text-slate-950">💡 Before you buy a flat or villa,</span> compare RERA dates, real ₹/sq.ft prices &amp; amenities side-by-side here—with zero broker spam.</p>
+        <button type="button" onclick="openCompareModal()" class="self-start sm:self-auto shrink-0 text-xs font-extrabold text-amber-900 hover:text-slate-950 underline underline-offset-2">Compare Projects →</button>
+      </div>
+
+      <!-- MULTI-MODE SEARCH & FILTER BOX -->
+      <section id="advancedSearchBox" class="rounded-3xl bg-white border border-slate-200/90 p-4 sm:p-5 shadow-sm space-y-3.5">
         <div class="grid grid-cols-4 gap-1.5 bg-slate-100 p-1 rounded-2xl">
           <button id="modeBtn-Buy" type="button" onclick="setSearchMode('Buy')" class="py-2 rounded-xl text-xs font-extrabold bg-[#0F172A] text-white shadow-2xs transition">Buy</button>
           <button id="modeBtn-Rent" type="button" onclick="setSearchMode('Rent')" class="py-2 rounded-xl text-xs font-bold text-slate-600 hover:text-slate-900 transition">Rent</button>
@@ -194,7 +239,7 @@
         <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
           <div class="md:col-span-5 flex items-center gap-2.5 px-3.5 py-3 rounded-2xl bg-slate-50 border border-slate-200 focus-within:border-slate-900 focus-within:bg-white transition">
             <span class="text-sm shrink-0">📍</span>
-            <input id="searchLocalityInput" type="text" oninput="applyFilters()" placeholder="Search locality, project or RERA ID..." class="w-full bg-transparent text-xs sm:text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none" />
+            <input id="searchLocalityInput" type="text" oninput="syncSearchInputs(this.value)" placeholder="Filter locality, project or RERA ID..." class="w-full bg-transparent text-xs sm:text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none" />
           </div>
           <div class="md:col-span-4 flex items-center gap-2.5 px-3.5 py-3 rounded-2xl bg-slate-50 border border-slate-200">
             <span class="text-sm shrink-0">🏠</span>
@@ -372,7 +417,9 @@
     </div>
   </main>
 
-  <!-- COMPLETE DARK FOOTER (ABOUT US • INVESTING IN THE FUTURE • CONTACT US • PRIVACY & TERMS) -->
+  <!-- =====================================================================
+       4. COMPLETE DARK FOOTER
+       ===================================================================== -->
   <footer class="mt-10 bg-[#0B1120] text-slate-300 border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10 space-y-6">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -423,9 +470,42 @@
     </div>
   </footer>
 
+  <!-- =====================================================================
+       5. DISTINCTIVE BOTTOM DOCK BAR: Home | Search | Sell/Rent FREE | Activity | Menu
+       ===================================================================== -->
+  <nav aria-label="Bottom Mobile Navigation" class="fixed bottom-0 inset-x-0 z-40 bg-[#0F172A]/95 backdrop-blur-md border-t border-slate-800 shadow-2xl">
+    <div class="max-w-3xl mx-auto px-2 py-1.5 grid grid-cols-5 items-center text-center">
+      <button id="bottomBtn-home" type="button" onclick="bottomNavAction('home')" class="flex flex-col items-center justify-center py-1 rounded-xl text-amber-400 transition">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3l9 7.5V21a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1V10.5L12 3z" /></svg>
+        <span class="text-[10px] font-extrabold mt-0.5">Home</span>
+      </button>
+
+      <button id="bottomBtn-search" type="button" onclick="bottomNavAction('search')" class="flex flex-col items-center justify-center py-1 rounded-xl text-slate-300 hover:text-amber-300 transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+        <span class="text-[10px] font-bold mt-0.5">Search</span>
+      </button>
+
+      <button id="bottomBtn-sell" type="button" onclick="bottomNavAction('sell')" class="relative flex flex-col items-center justify-center py-1 rounded-xl text-slate-200 hover:text-amber-300 transition">
+        <span class="px-1.5 py-0.2 rounded bg-emerald-500 text-slate-950 text-[8.5px] font-extrabold uppercase tracking-wider leading-tight">FREE</span>
+        <span class="text-[10px] font-extrabold text-white mt-0.5">Sell/Rent</span>
+      </button>
+
+      <button id="bottomBtn-activity" type="button" onclick="bottomNavAction('activity')" class="relative flex flex-col items-center justify-center py-1 rounded-xl text-slate-300 hover:text-amber-300 transition">
+        <span id="bottomActivityCount" class="hidden absolute top-0.5 right-4 sm:right-8 px-1.5 rounded-full bg-amber-400 text-slate-950 text-[9px] font-extrabold">0</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+        <span class="text-[10px] font-bold mt-0.5">Activity</span>
+      </button>
+
+      <button id="bottomBtn-menu" type="button" onclick="bottomNavAction('menu')" class="flex flex-col items-center justify-center py-1 rounded-xl text-slate-300 hover:text-amber-300 transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        <span class="text-[10px] font-bold mt-0.5">Menu</span>
+      </button>
+    </div>
+  </nav>
+
   <!-- FLOATING COMPARE DOCK -->
-  <div id="compareDock" class="fixed bottom-3 left-3 right-3 z-40 hidden justify-center pointer-events-none">
-    <div class="pointer-events-auto w-full max-w-4xl rounded-2xl bg-[#0F172A]/95 text-white border border-slate-700 shadow-2xl p-3 flex items-center justify-between gap-2.5">
+  <div id="compareDock" class="fixed bottom-16 left-3 right-3 z-40 hidden justify-center pointer-events-none">
+    <div class="pointer-events-auto w-full max-w-4xl rounded-2xl bg-[#0F172A]/95 text-white border border-amber-400/50 shadow-2xl p-3 flex items-center justify-between gap-2.5">
       <div class="flex items-center gap-2 overflow-x-auto no-scrollbar"><span id="compareDockBadge" class="px-2.5 py-1 rounded-lg bg-amber-400 text-slate-950 text-[11px] font-extrabold">Compare (0/3)</span><div id="compareDockChips" class="flex items-center gap-1.5"></div></div>
       <div class="flex items-center gap-2 shrink-0"><button type="button" onclick="clearCompareList()" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold">Clear</button><button id="compareNowBtn" type="button" onclick="openCompareModal()" class="px-4 py-1.5 rounded-xl bg-[#FBBF24] text-slate-950 text-xs font-extrabold">Compare Now</button></div>
     </div>
@@ -433,11 +513,29 @@
 
   <div id="appToast" class="fixed top-20 left-1/2 -translate-x-1/2 z-50 hidden px-4 py-2.5 rounded-full bg-slate-900 text-white text-xs font-bold shadow-xl"></div>
 
-  <!-- MODAL 1: PROJECT RERA COST SHEET -->
+  <!-- =====================================================================
+       MODALS (Developer Page Gallery, Cost Sheet, Compare, Activity, Auth, Post, Info)
+       ===================================================================== -->
+  <!-- MODAL 0: REAL DEVELOPER PAGE & ORIGINAL PROJECT PHOTOS -->
+  <div id="developerModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-4 bg-slate-950/65 backdrop-blur-xs">
+    <div class="w-full max-w-4xl rounded-3xl bg-white shadow-2xl border border-slate-200 overflow-hidden max-h-[92vh] flex flex-col">
+      <div class="px-5 py-4 bg-[#0F172A] text-white flex items-center justify-between gap-2">
+        <div>
+          <span class="px-2 py-0.5 rounded bg-amber-400 text-slate-950 text-[10px] font-extrabold uppercase">RERA Developer Profile</span>
+          <h3 id="devModalTitle" class="text-base sm:text-lg font-extrabold mt-1">Builder Portfolio</h3>
+  <!-- MODAL 1: PROJECT RERA COST SHEET & 6-PHOTO GALLERY -->
   <div id="costSheetModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-4 bg-slate-950/60 backdrop-blur-xs">
     <div class="w-full max-w-lg rounded-3xl bg-white shadow-2xl border border-slate-200 overflow-hidden max-h-[92vh] flex flex-col">
       <div class="px-5 py-4 border-b border-slate-100 flex items-center justify-between"><h3 id="modalCostTitle" class="text-sm sm:text-base font-extrabold text-slate-900 truncate">Project • RERA Cost Sheet</h3><button type="button" onclick="closeModal('costSheetModal')" class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 font-bold text-sm">✕</button></div>
       <div class="p-5 overflow-y-auto space-y-4">
+        <!-- 6-Photo Project Gallery Strip -->
+        <div class="space-y-2">
+          <div class="relative h-48 sm:h-52 rounded-2xl bg-slate-900 overflow-hidden border border-slate-200">
+            <img id="modalMainGalleryImg" src="" alt="Project Gallery View" class="w-full h-full object-cover transition duration-200" />
+            <span id="modalGalleryCaption" class="absolute bottom-2.5 left-2.5 px-2.5 py-1 rounded-lg bg-slate-950/80 text-white text-[11px] font-bold">1 / 6 • Main Elevation</span>
+          </div>
+          <div id="modalThumbStrip" class="grid grid-cols-6 gap-1.5"></div>
+        </div>
         <div class="rounded-2xl bg-[#0F172A] text-white p-4 space-y-1"><div id="modalBuilderLoc" class="text-xs font-bold text-amber-400"></div><div id="modalBasePriceBig" class="text-xl font-extrabold"></div><div id="modalReraPossession" class="text-[11px] text-slate-300"></div></div>
         <div class="rounded-2xl border border-slate-200 divide-y divide-slate-100 text-xs sm:text-sm">
           <div class="px-4 py-3 flex justify-between"><span id="costBaseLabel"></span><strong id="costBaseVal"></strong></div>
@@ -479,7 +577,21 @@
     </div>
   </div>
 
-  <!-- MODAL 3: SIGN IN -->
+  <!-- MODAL 3: ACTIVITY (Saved Shortlist) -->
+  <div id="activityModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/60 backdrop-blur-xs">
+    <div class="w-full max-w-lg rounded-3xl bg-white shadow-2xl border border-slate-200 overflow-hidden max-h-[85vh] flex flex-col">
+      <div class="px-5 py-4 bg-[#0F172A] text-white flex items-center justify-between">
+        <div>
+          <h3 class="text-sm sm:text-base font-extrabold">Your Activity &amp; Saved Shortlist</h3>
+          <p class="text-[11px] text-amber-300">Saved RERA projects &amp; comparison queue</p>
+        </div>
+        <button type="button" onclick="closeModal('activityModal')" class="w-8 h-8 rounded-full bg-slate-800 text-slate-200 font-bold text-sm">✕</button>
+      </div>
+      <div id="activityModalBody" class="p-5 overflow-y-auto space-y-3 text-xs"></div>
+    </div>
+  </div>
+
+  <!-- MODAL 4: SIGN IN -->
   <div id="authModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/60">
     <div class="w-full max-w-md rounded-3xl bg-white p-5 sm:p-6 shadow-2xl border border-slate-200 space-y-4">
       <div class="flex items-center justify-between"><h3 class="text-base font-extrabold text-slate-900">Sign In to The Way Prop India</h3><button type="button" onclick="closeModal('authModal')" class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 font-bold text-sm">✕</button></div>
@@ -491,11 +603,17 @@
     </div>
   </div>
 
-  <!-- MODAL 4: POST PROPERTY FREE -->
+  <!-- MODAL 5: POST PROPERTY FREE -->
   <div id="postModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/60">
     <div class="w-full max-w-md rounded-3xl bg-white p-5 sm:p-6 shadow-2xl border border-slate-200 space-y-4">
       <div class="flex items-center justify-between"><h3 id="postModalTitle" class="text-base font-extrabold text-slate-900">Post Property FREE</h3><button type="button" onclick="closeModal('postModal')" class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 font-bold text-sm">✕</button></div>
       <form onsubmit="handlePostSubmit(event)" class="space-y-3">
+        <select class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-800">
+          <option>Sell Residential Apartment / Villa</option>
+          <option>Rent / Lease Property</option>
+          <option>Sell Open Plot (HMDA / BMRDA / RERA)</option>
+          <option>Builder RERA Project Onboarding</option>
+        </select>
         <input type="text" required placeholder="Project / Locality & RERA ID" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs" />
         <input type="text" required placeholder="Expected Price & Owner Contact" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs" />
         <div id="postSuccessMsg" class="hidden p-3 rounded-xl bg-emerald-50 text-xs font-bold text-emerald-800">✅ Submitted for FREE listing!</div>
@@ -504,7 +622,7 @@
     </div>
   </div>
 
-  <!-- MODAL 5: INFO / LEGAL MODAL -->
+  <!-- MODAL 6: INFO / LEGAL MODAL -->
   <div id="infoModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/60">
     <div class="w-full max-w-md rounded-3xl bg-white p-5 sm:p-6 shadow-2xl border border-slate-200 space-y-3">
       <div class="flex items-center justify-between"><h3 id="infoModalTitle" class="text-base font-extrabold text-slate-900">Info</h3><button type="button" onclick="closeModal('infoModal')" class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 font-bold text-sm">✕</button></div>
@@ -529,25 +647,140 @@
       compareIds = JSON.parse(localStorage.getItem('tw_compare_ids') || '[]');
     } catch (e) {}
 
-    // Real High-Resolution Architectural Photos (used seamlessly when local /assets/projects/<slug>.jpg is not yet uploaded)
-    const ARCHITECTURAL_GALLERY = [
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80'
-    ];
-    const PLOT_PHOTO = 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80';
-    const VILLA_PHOTO = 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=900&q=80';
+    // =========================================================================
+    // LIVE ORIGINAL BUILDER 6-PHOTO PROJECT GALLERY LOADER
+    // =========================================================================
+    const LIVE_PROJECT_GALLERY_CACHE = {};
+    const GALLERY_LABELS = ['Main Elevation', 'Towers & Skyline', 'Clubhouse', 'Master Plan', 'Amenities Deck', 'Community Greens'];
 
     function slugifyProjectName(name) {
       return String(name || 'project').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
     }
+
+    function makeReraAngleSvg(projectName, builderName, reraId, angleIdx) {
+      const safeP = String(projectName || '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
+      const safeB = String(builderName || '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
+      const label = GALLERY_LABELS[angleIdx % GALLERY_LABELS.length];
+      const palettes = [
+        ['#0F172A', '#1E293B', '#FBBF24'],
+        ['#111827', '#1F2937', '#38BDF8'],
+        ['#0B132B', '#1C2541', '#34D399'],
+        ['#172554', '#1E3A8A', '#FBBF24'],
+        ['#18181B', '#27272A', '#A78BFA'],
+        ['#064E3B', '#065F46', '#FDE047']
+      ];
+      const [c1, c2, accent] = palettes[angleIdx % palettes.length];
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+        <defs><linearGradient id="g${angleIdx}" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="${c1}"/><stop offset="100%" stop-color="${c2}"/></linearGradient></defs>
+        <rect width="800" height="420" fill="url(#g${angleIdx})"/>
+        <g opacity="0.14" fill="${accent}"><rect x="520" y="70" width="60" height="310" rx="4"/><rect x="595" y="45" width="75" height="335" rx="4"/><rect x="685" y="95" width="55" height="285" rx="4"/></g>
+        <rect x="40" y="44" width="235" height="26" rx="13" fill="${accent}" fill-opacity="0.18" stroke="${accent}"/>
+        <text x="157" y="61" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="800" fill="${accent}" text-anchor="middle">${(angleIdx + 1)}/6 • ${label.toUpperCase()}</text>
+        <text x="40" y="210" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="800" fill="#FFFFFF">${safeP}</text>
+        <text x="40" y="246" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="600" fill="${accent}">By ${safeB}</text>
+        <text x="40" y="280" font-family="monospace" font-size="13" fill="#CBD5E1">RERA ID: ${reraId}</text>
+      </svg>`;
+      return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+    }
+
+    function getDefaultSixPhotos(proj) {
+      if (LIVE_PROJECT_GALLERY_CACHE[proj.slug]) return LIVE_PROJECT_GALLERY_CACHE[proj.slug];
+      const base = 'https://thewaypropindia.com';
+      return [
+        `${base}/assets/projects/${proj.slug}.jpg`,
+        `${base}/assets/projects/${proj.slug}-2.jpg`,
+        `${base}/assets/projects/${proj.slug}-3.jpg`,
+        `${base}/assets/projects/${proj.slug}-4.jpg`,
+        `${base}/assets/projects/${proj.slug}-5.jpg`,
+        `${base}/assets/projects/${proj.slug}-6.jpg`
+      ];
+    }
+
+    async function hydrateRealProjectPhotos(projects) {
+      const baseOrigin = window.location.origin.includes('thewaypropindia.com')
+        ? window.location.origin
+        : 'https://thewaypropindia.com';
+
+      for (const proj of projects) {
+        if (LIVE_PROJECT_GALLERY_CACHE[proj.slug]) {
+          applyGalleryToCard(proj, LIVE_PROJECT_GALLERY_CACHE[proj.slug]);
+          continue;
+        }
+        try {
+          const resp = await fetch(`${baseOrigin}/projects/${proj.slug}.html`);
+          if (!resp.ok) continue;
+          const html = await resp.text();
+          const doc = new DOMParser().parseFromString(html, 'text/html');
+          const ogImg = doc.querySelector('meta[property="og:image"]')?.getAttribute('content');
+          const domImgs = Array.from(doc.querySelectorAll('img'))
+            .map((im) => im.getAttribute('src'))
+            .filter((src) => src && !src.startsWith('data:') && !src.includes('logo'));
+
+          const combined = [ogImg, ...domImgs]
+            .filter(Boolean)
+            .map((raw) => raw.startsWith('http') ? raw : new URL(raw, `${baseOrigin}/projects/${proj.slug}.html`).href);
+          const uniqueReal = Array.from(new Set(combined));
+
+          if (uniqueReal.length) {
+            const sixSet = [];
+            for (let i = 0; i < 6; i++) {
+              sixSet.push(uniqueReal[i] || `${baseOrigin}/assets/projects/${proj.slug}-${i + 1}.jpg`);
+            }
+            LIVE_PROJECT_GALLERY_CACHE[proj.slug] = sixSet;
+            applyGalleryToCard(proj, sixSet);
+          }
+        } catch (err) {}
+      }
+    }
+
+    function applyGalleryToCard(proj, sixUrls) {
+      const mainImg = document.getElementById('proj-img-' + proj.id);
+      if (mainImg && sixUrls[0]) mainImg.src = sixUrls[0];
+      sixUrls.forEach((url, idx) => {
+        const thumb = document.getElementById(`proj-thumb-${proj.id}-${idx}`);
+        if (thumb) thumb.src = url;
+      });
+    }
+
+    window.switchCardPhoto = function (projectId, idx, thumbEl) {
+      const mainImg = document.getElementById('proj-img-' + projectId);
+      const badge = document.getElementById('proj-photo-badge-' + projectId);
+      if (mainImg && thumbEl) {
+        mainImg.src = thumbEl.src;
+      }
+      if (badge) {
+        badge.textContent = `${idx + 1}/6 • ${GALLERY_LABELS[idx]}`;
+      }
+      for (let i = 0; i < 6; i++) {
+        const t = document.getElementById(`proj-thumb-${projectId}-${i}`);
+        if (t) {
+          t.classList.toggle('ring-2', i === idx);
+          t.classList.toggle('ring-amber-400', i === idx);
+          t.classList.toggle('opacity-100', i === idx);
+          t.classList.toggle('opacity-70', i !== idx);
+        }
+      }
+    };
+
+    window.handleRealProjectImgFallback = function (imgEl, slug, name, builder, reraId, angleIdx) {
+      const step = parseInt(imgEl.dataset.step || '0', 10);
+      const idx = Number(angleIdx || 0);
+      const base = 'https://thewaypropindia.com';
+      const suffix = idx === 0 ? '' : `-${idx + 1}`;
+      if (step === 0) {
+        imgEl.dataset.step = '1';
+        imgEl.src = `${base}/images/projects/${slug}${suffix}.jpg`;
+      } else if (step === 1) {
+        imgEl.dataset.step = '2';
+        imgEl.src = `${base}/assets/projects/${slug}${suffix}.webp`;
+      } else if (step === 2) {
+        imgEl.dataset.step = '3';
+        imgEl.src = `${base}/projects/images/${slug}${suffix}.jpg`;
+      } else {
+        imgEl.onerror = null;
+        imgEl.src = makeReraAngleSvg(name, builder, reraId, idx);
+      }
+    };
 
     function formatPriceRange(minLakhs, maxLakhs, mode) {
       if (mode === 'Rent') {
@@ -568,16 +801,13 @@
       function add(city, mode, status, name, builder, locality, reraId, bhk, configLabel, ratePerSqft, minLakhs, maxLakhs, startDate, completion, premium, amenities) {
         idx += 1;
         const slug = slugifyProjectName(name);
-        const photoUrl = mode === 'Plots'
-          ? PLOT_PHOTO
-          : (bhk.includes('Villa') ? VILLA_PHOTO : ARCHITECTURAL_GALLERY[idx % ARCHITECTURAL_GALLERY.length]);
         list.push({
           id: `${city.toLowerCase().replace(/\s+/g, '-')}-${idx}`,
           slug, city, mode, status, name, builder, locality, reraId, bhk, configLabel,
           ratePerSqft, startingLakhs: minLakhs, maxLakhs,
           priceDisplay: formatPriceRange(minLakhs, maxLakhs, 'Buy'),
           startDate, completion, premium, amenities,
-          image: photoUrl
+          primaryPhoto: `https://thewaypropindia.com/assets/projects/${slug}.jpg`
         });
       }
 
@@ -646,7 +876,6 @@
       add('Hyderabad', 'Buy', 'Under Construction', 'Sahiti Sarvani Elite', 'Sahiti Infra', 'Ameenpur – Miyapur Belt', 'P01100005309', ['2 BHK', '3 BHK'], '2 & 3 BHK Value Apartments', 5600, 64, 98, '2023', 'Jun 2027', false, ['12 Mins to Miyapur Metro', 'Clubhouse & Pool']);
       add('Hyderabad', 'Buy', 'Under Construction', 'Modi Emerald Heights', 'Modi Builders', 'Ghatkesar – Uppal Corridor', 'P02200005514', ['2 BHK', '3 BHK'], '2 & 3 BHK Affordable Gated Flats', 4500, 48, 72, '2023', 'Mar 2027', false, ['Near Infosys Pocharam', 'HMDA & TG-RERA Approved']);
       add('Hyderabad', 'Buy', 'Under Construction', 'Giridhari Prospera', 'Giridhari Homes', 'Kismatpur – Bandlaguda Jagir', 'P02400005719', ['2 BHK', '3 BHK'], '2 & 3 BHK Riverside Apartments', 6900, 82, 132, '2023', 'Sep 2027', false, ['10 Mins to Financial District via ORR', 'Clubhouse & Gym']);
-      // Newly added missed Hyderabad TG-RERA developers
       add('Hyderabad', 'Buy', 'Under Construction', 'Arkala Life', 'Arkala Infra', 'Tukkuguda • South Hyderabad', 'P02400005619', ['2 BHK', '3 BHK'], '2, 2.5 & 3 BHK • 1,112 – 1,825 sq.ft', 5600, 61, 100, '2023', 'Nov 2028', false, ['Tukkuguda ORR Exit 14', '10 Mins to RGIA']);
       add('Hyderabad', 'Buy', 'Under Construction', 'GHR Callisto', 'GHR Infra', 'Kollur • West Hyderabad', 'P01100004554', ['2 BHK', '3 BHK', '4 BHK'], '2, 2.5, 3 & 4 BHK • 1,195 – 3,585 sq.ft', 7500, 83, 247, '2022', 'Jun 2027', false, ['Kollur ORR Exit 2', '55,000 sq.ft Clubhouse']);
       add('Hyderabad', 'Buy', 'Ready to Move', 'Mantri Celestia', 'Mantri Developers', 'Nanakramguda, Financial District', 'REA02400000010', ['2 BHK', '3 BHK'], '2 & 3 BHK • 850 – 1,198 sq.ft', 11600, 83, 150, '2018', 'Ready to Move', false, ['OC Received • Zero GST', 'Heart of Financial District']);
@@ -805,11 +1034,192 @@
       { authority: 'TN-RERA & K-RERA', date: '19 Nov 2026', title: 'Occupancy Certificate (OC) & Corpus Fund transfer rules tightened for Bengaluru & Chennai towers', summary: 'Developers must hand over audited association corpus funds and common area maintenance accounts within 90 days of OC issuance.' }
     ];
 
+    // =========================================================================
+    // DEVELOPER GALLERY MODAL & BUILDER STRIP (Shows Real Project Photos)
+    // =========================================================================
+    function populateDeveloperStrip() {
+      const strip = document.getElementById('developerPillStrip');
+      if (!strip) return;
+      const cityList = currentCity === 'ALL' ? PROJECTS_DATA : PROJECTS_DATA.filter((p) => p.city === currentCity);
+      const counts = {};
+      cityList.forEach((p) => { counts[p.builder] = (counts[p.builder] || 0) + 1; });
+      const builders = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+
+      strip.innerHTML = builders.map((b) => `
+        <button
+          type="button"
+          onclick="openDeveloperGallery('${b.replace(/'/g, "\\'")}')"
+          class="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 hover:bg-[#0F172A] hover:text-white border border-slate-200 text-slate-800 text-xs font-bold transition"
+        >
+          <span>${b}</span>
+          <span class="px-1.5 py-0.2 rounded-md bg-amber-100 text-amber-900 text-[10px] font-extrabold">${counts[b]}</span>
+        </button>
+      `).join('');
+    }
+
+    function openDeveloperGallery(builderName) {
+      const items = PROJECTS_DATA.filter((p) => p.builder === builderName);
+      document.getElementById('devModalTitle').textContent = `${builderName} (${items.length} Verified Projects)`;
+      document.getElementById('devModalSub').textContent = `Official RERA portfolio & real elevation photos across ${[...new Set(items.map((x) => x.city))].join(', ')}`;
+
+      const body = document.getElementById('developerModalBody');
+      body.innerHTML = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          ${items.map((p) => {
+            const sixPhotos = getDefaultSixPhotos(p);
+            const safeName = p.name.replace(/'/g, "\\'");
+            const safeBuilder = p.builder.replace(/'/g, "\\'");
+            return `
+              <div class="rounded-2xl border border-slate-200 overflow-hidden bg-white shadow-xs flex flex-col">
+                <div class="relative h-44 bg-slate-900">
+                  <img
+                    id="dev-main-${p.id}"
+                    src="${sixPhotos[0]}"
+                    alt="${p.name} real project elevation"
+                    data-step="0"
+                    onerror="handleRealProjectImgFallback(this, '${p.slug}', '${safeName}', '${safeBuilder}', '${p.reraId}', 0)"
+                    class="w-full h-full object-cover"
+                  />
+                  <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-md bg-slate-950/80 text-white text-[10px] font-bold">${p.city} • ${p.status}</span>
+                  <span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-slate-950/80 text-amber-300 text-[10px] font-extrabold">6 Photos</span>
+                </div>
+                <div class="grid grid-cols-6 gap-1 p-1.5 bg-slate-900">
+                  ${sixPhotos.map((u, i) => `
+                    <img
+                      src="${u}"
+                      alt="${p.name} view ${i + 1}"
+                      data-step="0"
+                      onclick="document.getElementById('dev-main-${p.id}').src=this.src"
+                      onerror="handleRealProjectImgFallback(this, '${p.slug}', '${safeName}', '${safeBuilder}', '${p.reraId}', ${i})"
+                      class="h-10 w-full object-cover rounded cursor-pointer border border-slate-700 hover:border-amber-400"
+                    />
+                  `).join('')}
+                </div>
+                <div class="p-3.5 space-y-2 flex-1 flex flex-col justify-between">
+                  <div>
+                    <div class="font-extrabold text-sm text-slate-900">${p.name}</div>
+                    <div class="text-[11px] text-slate-500">${p.locality}</div>
+                    <div class="text-xs font-extrabold text-emerald-700 mt-1">${p.priceDisplay} (@ ₹${p.ratePerSqft.toLocaleString('en-IN')}/sq.ft)</div>
+                    <div class="text-[10.5px] font-mono text-slate-500 mt-0.5">RERA: ${p.reraId} • Possession: ${p.completion}</div>
+                  </div>
+                  <div class="flex items-center gap-1.5 pt-2">
+                    <button type="button" onclick="closeModal('developerModal'); openCostSheetModal('${p.id}');" class="flex-1 py-2 px-3 rounded-xl bg-[#0F172A] text-white text-xs font-extrabold">View Details &amp; EMI</button>
+                    <a href="${buildWhatsAppShareUrl(p)}" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center" title="Share on WhatsApp">
+                      <svg class="w-4 h-4 fill-emerald-600" viewBox="0 0 24 24"><path d="M20.52 3.48A11.86 11.86 0 0012.07 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.6 5.95L0 24l6.33-1.66a11.86 11.86 0 005.74 1.46h.01c6.56 0 11.9-5.34 11.9-11.91 0-3.18-1.24-6.17-3.46-8.41zM12.08 21.8h-.01a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.76.99 1-3.66-.23-.38a9.85 9.85 0 01-1.51-5.25c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 012.89 7c0 5.45-4.44 9.88-9.88 9.88zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+      openModal('developerModal');
+      hydrateRealProjectPhotos(items);
+    }
+
+    // =========================================================================
+    // SEARCH SYNC, RECENT SEARCHES & BOTTOM NAVIGATION HANDLERS
+    // =========================================================================
+    function syncSearchInputs(val) {
+      const heroInp = document.getElementById('heroFloatingSearchInput');
+      const boxInp = document.getElementById('searchLocalityInput');
+      if (heroInp && heroInp.value !== val) heroInp.value = val;
+      if (boxInp && boxInp.value !== val) boxInp.value = val;
+      applyFilters(false);
+    }
+
+    function quickRecentSearch(city, keyword) {
+      selectCityHub(city);
+      syncSearchInputs(keyword);
+      applyFilters(true);
+    }
+
+    function setBottomActive(key) {
+      ['home', 'search', 'sell', 'activity', 'menu'].forEach((k) => {
+        const btn = document.getElementById('bottomBtn-' + k);
+        if (!btn) return;
+        if (k === key) {
+          btn.classList.remove('text-slate-300', 'text-slate-200');
+          btn.classList.add('text-amber-400');
+        } else {
+          btn.classList.remove('text-amber-400');
+          btn.classList.add('text-slate-300');
+        }
+      });
+    }
+
+    function bottomNavAction(action) {
+      setBottomActive(action);
+      if (action === 'home') {
+        resetHomeView();
+      } else if (action === 'search') {
+        switchMainTab('projects');
+        const inp = document.getElementById('heroFloatingSearchInput');
+        if (inp) {
+          inp.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(() => inp.focus(), 250);
+        }
+      } else if (action === 'sell') {
+        openPostModal('Sell or Rent Property FREE');
+      } else if (action === 'activity') {
+        openActivityModal();
+      } else if (action === 'menu') {
+        toggleMenuDrawer(true);
+      }
+    }
+
+    function updateActivityBadges() {
+      const count = savedIds.length;
+      const bBadge = document.getElementById('bottomActivityCount');
+      const dBadge = document.getElementById('drawerSavedBadge');
+      if (bBadge) {
+        bBadge.textContent = String(count);
+        bBadge.classList.toggle('hidden', count === 0);
+      }
+      if (dBadge) {
+        dBadge.textContent = `${count} Saved`;
+      }
+    }
+
+    function openActivityModal() {
+      const body = document.getElementById('activityModalBody');
+      if (!body) return;
+      const savedProjects = savedIds.map((id) => PROJECTS_DATA.find((p) => p.id === id)).filter(Boolean);
+
+      if (!savedProjects.length) {
+        body.innerHTML = `
+          <div class="text-center py-6 space-y-3">
+            <div class="text-2xl">☆</div>
+            <div class="font-extrabold text-slate-900 text-sm">No Saved Projects Yet</div>
+            <p class="text-slate-500">Tap <strong>☆ Save</strong> on any RERA project card to build your personal shortlist here.</p>
+            <button type="button" onclick="closeModal('activityModal'); switchMainTab('projects');" class="px-4 py-2 rounded-full bg-[#0F172A] text-white font-bold">Browse 184 RERA Projects</button>
+          </div>
+        `;
+      } else {
+        body.innerHTML = savedProjects.map((p) => `
+          <div class="p-3.5 rounded-2xl border border-slate-200 flex items-center justify-between gap-3">
+            <div class="min-w-0">
+              <div class="font-extrabold text-slate-900 truncate">${p.name}</div>
+              <div class="text-[11px] text-slate-500 truncate">${p.locality} • ${p.priceDisplay}</div>
+              <div class="text-[10px] font-mono text-slate-400">RERA: ${p.reraId}</div>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="closeModal('activityModal'); openCostSheetModal('${p.id}');" class="px-3 py-1.5 rounded-xl bg-[#0F172A] text-white font-bold">Cost Sheet</button>
+              <button type="button" onclick="toggleSaveProject('${p.id}'); openActivityModal();" class="px-2.5 py-1.5 rounded-xl bg-rose-50 text-rose-700 font-bold">✕</button>
+            </div>
+          </div>
+        `).join('');
+      }
+      openModal('activityModal');
+    }
+
     function persistUserLists() {
       try {
         localStorage.setItem('tw_saved_ids', JSON.stringify(savedIds));
         localStorage.setItem('tw_compare_ids', JSON.stringify(compareIds));
       } catch (e) {}
+      updateActivityBadges();
     }
 
     function showToast(msg) {
@@ -819,14 +1229,6 @@
       el.classList.remove('hidden');
       clearTimeout(window.__toastTimer);
       window.__toastTimer = setTimeout(() => el.classList.add('hidden'), 2600);
-    }
-
-    function updateSeoHeadMetadata(titleText, descText, canonicalUrl) {
-      document.title = titleText;
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.setAttribute('content', descText);
-      const canon = document.getElementById('canonicalLink');
-      if (canon) canon.setAttribute('href', canonicalUrl);
     }
 
     function toggleMenuDrawer(open) {
@@ -893,6 +1295,7 @@
 
     function resetHomeView(event) {
       if (event) event.preventDefault();
+      setBottomActive('home');
       selectCityHub('Hyderabad');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -932,12 +1335,12 @@
       });
 
       const cityConfigs = {
-        Hyderabad: { reraBadge: 'TG-RERA VERIFIED DIRECTORY', priceBadge: 'Starting at ₹44 Lakhs*', title: 'Hyderabad Apartments, Villas & Plots', subtitle: `Compare official TG-RERA start & completion dates, ₹/sq.ft rates, amenities, and all-in flat costs across ${counts.Hyderabad} verified projects in Hyderabad.`, count: String(counts.Hyderabad), reraLabel: 'TG-RERA approved projects', avgRate: '₹10,350', entry: '₹44 L', completion: 'Dec 2026' },
-        Bengaluru: { reraBadge: 'K-RERA VERIFIED DIRECTORY', priceBadge: 'Starting at ₹69 Lakhs*', title: 'Bengaluru Apartments, Villas & Plots', subtitle: `Compare official Karnataka RERA registration IDs, handover timelines, and ₹/sq.ft rates across ${counts.Bengaluru} verified projects including Aratt Developers, Prestige, Embassy & Sobha.`, count: String(counts.Bengaluru), reraLabel: 'K-RERA approved projects', avgRate: '₹11,240', entry: '₹69 L', completion: 'Ready' },
-        Chennai: { reraBadge: 'TN-RERA VERIFIED DIRECTORY', priceBadge: 'Starting at ₹59 Lakhs*', title: 'Chennai Apartments, Villas & Plots', subtitle: `Compare official TN-RERA registration IDs, possession dates, and ₹/sq.ft rates across ${counts.Chennai} verified projects in OMR, Adyar, Guindy, Anna Nagar & Mogappair.`, count: String(counts.Chennai), reraLabel: 'TN-RERA approved projects', avgRate: '₹10,890', entry: '₹59 L', completion: 'Ready' },
-        'Delhi NCR': { reraBadge: 'HRERA / UP-RERA / DELHI RERA', priceBadge: 'Starting at ₹95 Lakhs*', title: 'Delhi NCR Apartments, Villas & Plots', subtitle: `Compare official HRERA, UP-RERA & Delhi RERA filings across ${counts['Delhi NCR']} verified projects in Gurugram, Noida, Yamuna Exp & Dwarka.`, count: String(counts['Delhi NCR']), reraLabel: 'HRERA / UP-RERA approved projects', avgRate: '₹15,620', entry: '₹95 L', completion: 'Ready' },
-        Pune: { reraBadge: 'MAHARERA VERIFIED DIRECTORY', priceBadge: 'Starting at ₹79 Lakhs*', title: 'Pune Apartments & Villas', subtitle: `Compare official MahaRERA registration IDs across ${counts.Pune} verified projects in Hinjewadi, Baner, Balewadi, Kharadi & Wakad.`, count: String(counts.Pune), reraLabel: 'MahaRERA approved projects', avgRate: '₹10,750', entry: '₹79 L', completion: 'Dec 2026' },
-        ALL: { reraBadge: 'ALL-INDIA RERA VERIFIED', priceBadge: 'Starting at ₹44 Lakhs*', title: 'Hyd, Blr, Chennai, Delhi NCR & Pune', subtitle: `Compare official RERA completion dates and ₹/sq.ft rates across ${totalAll} verified projects across 5 hubs.`, count: String(totalAll), reraLabel: 'Verified RERA projects across 5 hubs', avgRate: '₹11,420', entry: '₹44 L', completion: 'Ready' }
+        Hyderabad: { reraBadge: 'TG-RERA VERIFIED DIRECTORY', priceBadge: 'Starting at ₹44 Lakhs*', title: 'Hyderabad Apartments, Villas & Plots', subtitle: `Compare official TG-RERA start & completion dates, ₹/sq.ft rates, amenities, and all-in flat costs across ${counts.Hyderabad} verified projects in Hyderabad.`, count: String(counts.Hyderabad), reraLabel: 'TG-RERA approved projects', avgRate: '₹10,350', entry: '₹44 L', completion: 'Dec 2026', searchHint: 'Search "3 BHK in Kokapet, Neopolis, Candeur or RERA ID..."' },
+        Bengaluru: { reraBadge: 'K-RERA VERIFIED DIRECTORY', priceBadge: 'Starting at ₹69 Lakhs*', title: 'Bengaluru Apartments, Villas & Plots', subtitle: `Compare official Karnataka RERA registration IDs, handover timelines, and ₹/sq.ft rates across ${counts.Bengaluru} verified projects including Aratt Developers, Prestige, Embassy & Sobha.`, count: String(counts.Bengaluru), reraLabel: 'K-RERA approved projects', avgRate: '₹11,240', entry: '₹69 L', completion: 'Ready', searchHint: 'Search "3 BHK in Whitefield, Aratt, Prestige or K-RERA..."' },
+        Chennai: { reraBadge: 'TN-RERA VERIFIED DIRECTORY', priceBadge: 'Starting at ₹59 Lakhs*', title: 'Chennai Apartments, Villas & Plots', subtitle: `Compare official TN-RERA registration IDs, possession dates, and ₹/sq.ft rates across ${counts.Chennai} verified projects in OMR, Adyar, Guindy, Anna Nagar & Mogappair.`, count: String(counts.Chennai), reraLabel: 'TN-RERA approved projects', avgRate: '₹10,890', entry: '₹59 L', completion: 'Ready', searchHint: 'Search "3 BHK in OMR, Adyar, Casagrand or TN-RERA..."' },
+        'Delhi NCR': { reraBadge: 'HRERA / UP-RERA / DELHI RERA', priceBadge: 'Starting at ₹95 Lakhs*', title: 'Delhi NCR Apartments, Villas & Plots', subtitle: `Compare official HRERA, UP-RERA & Delhi RERA filings across ${counts['Delhi NCR']} verified projects in Gurugram, Noida, Yamuna Exp & Dwarka.`, count: String(counts['Delhi NCR']), reraLabel: 'HRERA / UP-RERA approved projects', avgRate: '₹15,620', entry: '₹95 L', completion: 'Ready', searchHint: 'Search "4 BHK in Gurugram, Noida Sec 146, DLF..."' },
+        Pune: { reraBadge: 'MAHARERA VERIFIED DIRECTORY', priceBadge: 'Starting at ₹79 Lakhs*', title: 'Pune Apartments & Villas', subtitle: `Compare official MahaRERA registration IDs across ${counts.Pune} verified projects in Hinjewadi, Baner, Balewadi, Kharadi & Wakad.`, count: String(counts.Pune), reraLabel: 'MahaRERA approved projects', avgRate: '₹10,750', entry: '₹79 L', completion: 'Dec 2026', searchHint: 'Search "3 BHK in Hinjewadi, Kharadi, Lodha..."' },
+        ALL: { reraBadge: 'ALL-INDIA RERA VERIFIED', priceBadge: 'Starting at ₹44 Lakhs*', title: 'Hyd, Blr, Chennai, Delhi NCR & Pune', subtitle: `Compare official RERA completion dates and ₹/sq.ft rates across ${totalAll} verified projects across 5 hubs.`, count: String(totalAll), reraLabel: 'Verified RERA projects across 5 hubs', avgRate: '₹11,420', entry: '₹44 L', completion: 'Ready', searchHint: 'Search "Project, Builder, Locality or RERA ID..."' }
       };
 
       const cfg = cityConfigs[city] || cityConfigs.Hyderabad;
@@ -945,6 +1348,8 @@
       document.getElementById('heroPriceBadge').textContent = cfg.priceBadge;
       document.getElementById('heroTitle').textContent = cfg.title;
       document.getElementById('heroSubtitle').textContent = cfg.subtitle;
+      const heroInp = document.getElementById('heroFloatingSearchInput');
+      if (heroInp) heroInp.placeholder = cfg.searchHint;
       document.getElementById('metricCount').textContent = cfg.count;
       document.getElementById('metricReraLabel').textContent = cfg.reraLabel;
       document.getElementById('metricAvgRate').textContent = cfg.avgRate;
@@ -952,6 +1357,7 @@
       document.getElementById('metricCompletion').textContent = cfg.completion;
 
       populateBuilderDropdown();
+      populateDeveloperStrip();
       if (activeTab === 'auctions') renderAuctions();
       else switchMainTab('projects');
     }
@@ -974,7 +1380,7 @@
         `🛏️ Config: ${proj.configLabel}`,
         `📋 RERA ID: ${proj.reraId}`,
         `🗓️ Possession: ${proj.completion}`,
-        `🔗 Verified on https://thewaypropindia.com/?project=${encodeURIComponent(proj.id)}`
+        `🔗 Full Project & Photos: https://thewaypropindia.com/projects/${proj.slug}.html`
       ].join('\n');
       return `https://wa.me/?text=${encodeURIComponent(text)}`;
     }
@@ -988,7 +1394,7 @@
         showToast('Removed from shortlist');
       } else {
         savedIds.push(id);
-        showToast('★ Saved to your shortlist');
+        showToast('★ Saved to Activity Shortlist');
       }
       persistUserLists();
       applyFilters(false);
@@ -1086,7 +1492,7 @@
     }
 
     function resetAllFilters() {
-      document.getElementById('searchLocalityInput').value = '';
+      syncSearchInputs('');
       document.getElementById('filterBhkSelect').value = 'ALL';
       document.getElementById('filterBudgetSelect').value = 'ALL';
       document.getElementById('filterBuilderSelect').value = 'ALL';
@@ -1168,20 +1574,43 @@
         const priceShown = currentSearchMode === 'Rent'
           ? formatPriceRange(proj.startingLakhs, proj.maxLakhs, 'Rent')
           : proj.priceDisplay;
+        const sixPhotos = getDefaultSixPhotos(proj);
+        const safeName = proj.name.replace(/'/g, "\\'");
+        const safeBuilder = proj.builder.replace(/'/g, "\\'");
 
         return `
         <article class="rounded-3xl bg-white border ${isCompared ? 'border-amber-400 ring-2 ring-amber-300/60' : 'border-slate-200/90'} overflow-hidden shadow-xs hover:shadow-md transition flex flex-col">
-          <div class="relative h-44 bg-slate-900 overflow-hidden">
-            <img
-              src="${proj.image}"
-              alt="${proj.name} by ${proj.builder}"
-              loading="lazy"
-              onerror="this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80'"
-              class="w-full h-full object-cover"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-transparent to-transparent"></div>
-            ${proj.premium ? '<span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-amber-400 text-slate-950 text-[10px] font-extrabold shadow-xs">👑 PREMIUM</span>' : ''}
-            <span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded-md bg-slate-950/75 text-white text-[10.5px] font-bold">${proj.builder}</span>
+          <div class="bg-slate-950">
+            <div class="relative h-44 bg-slate-900 overflow-hidden">
+              <img
+                id="proj-img-${proj.id}"
+                src="${sixPhotos[0]}"
+                alt="${proj.name} by ${proj.builder} real elevation"
+                loading="lazy"
+                data-step="0"
+                onerror="handleRealProjectImgFallback(this, '${proj.slug}', '${safeName}', '${safeBuilder}', '${proj.reraId}', 0)"
+                class="w-full h-full object-cover transition duration-200"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-transparent to-transparent pointer-events-none"></div>
+              <span id="proj-photo-badge-${proj.id}" class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-slate-950/80 text-white text-[10px] font-bold">1/6 • Main Elevation</span>
+              ${proj.premium ? '<span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-amber-400 text-slate-950 text-[10px] font-extrabold shadow-xs">👑 PREMIUM</span>' : ''}
+              <button type="button" onclick="openDeveloperGallery('${safeBuilder}')" class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded-md bg-slate-950/80 hover:bg-amber-400 hover:text-slate-950 text-white text-[10.5px] font-bold transition">${proj.builder} ↗</button>
+            </div>
+            <!-- 6-Photo Interactive Thumbnail Strip -->
+            <div class="grid grid-cols-6 gap-1 p-1.5 bg-slate-950 border-t border-slate-800">
+              ${sixPhotos.map((u, idx) => `
+                <img
+                  id="proj-thumb-${proj.id}-${idx}"
+                  src="${u}"
+                  alt="${proj.name} ${GALLERY_LABELS[idx]}"
+                  loading="lazy"
+                  data-step="0"
+                  onclick="switchCardPhoto('${proj.id}', ${idx}, this)"
+                  onerror="handleRealProjectImgFallback(this, '${proj.slug}', '${safeName}', '${safeBuilder}', '${proj.reraId}', ${idx})"
+                  class="h-10 w-full object-cover rounded-md cursor-pointer transition ${idx === 0 ? 'ring-2 ring-amber-400 opacity-100' : 'opacity-70 hover:opacity-100'}"
+                />
+              `).join('')}
+            </div>
           </div>
 
           <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
@@ -1198,7 +1627,7 @@
 
               <div>
                 <h3 class="text-base sm:text-lg font-extrabold text-slate-900 leading-tight">${proj.name}</h3>
-                <p class="text-xs text-slate-500 font-medium mt-0.5">${proj.locality} • <span class="text-slate-600">${proj.builder}</span></p>
+                <p class="text-xs text-slate-500 font-medium mt-0.5">${proj.locality} • <button type="button" onclick="openDeveloperGallery('${safeBuilder}')" class="text-slate-700 hover:underline font-semibold">${proj.builder}</button></p>
               </div>
 
               <div class="rounded-2xl bg-slate-50 border border-slate-100 p-3 grid grid-cols-2 gap-2">
@@ -1251,6 +1680,9 @@
         </article>
       `;
       }).join('');
+
+      // Dynamically resolve authentic project photos from /projects/<slug>.html
+      hydrateRealProjectPhotos(displayed);
     }
 
     function renderAuctions() {
@@ -1308,6 +1740,30 @@
     function openCostSheetModal(id) {
       const p = PROJECTS_DATA.find((x) => x.id === id);
       if (!p) return;
+      const sixPhotos = getDefaultSixPhotos(p);
+      const safeName = p.name.replace(/'/g, "\\'");
+      const safeBuilder = p.builder.replace(/'/g, "\\'");
+      const mainModalImg = document.getElementById('modalMainGalleryImg');
+      const modalCaption = document.getElementById('modalGalleryCaption');
+      const thumbStrip = document.getElementById('modalThumbStrip');
+      if (mainModalImg) {
+        mainModalImg.dataset.step = '0';
+        mainModalImg.onerror = function () { handleRealProjectImgFallback(this, p.slug, safeName, safeBuilder, p.reraId, 0); };
+        mainModalImg.src = sixPhotos[0];
+      }
+      if (modalCaption) modalCaption.textContent = `1 / 6 • ${GALLERY_LABELS[0]}`;
+      if (thumbStrip) {
+        thumbStrip.innerHTML = sixPhotos.map((u, idx) => `
+          <img
+            src="${u}"
+            alt="${p.name} ${GALLERY_LABELS[idx]}"
+            data-step="0"
+            onclick="document.getElementById('modalMainGalleryImg').src=this.src; document.getElementById('modalGalleryCaption').textContent='${idx + 1} / 6 • ${GALLERY_LABELS[idx]}';"
+            onerror="handleRealProjectImgFallback(this, '${p.slug}', '${safeName}', '${safeBuilder}', '${p.reraId}', ${idx})"
+            class="h-12 w-full object-cover rounded-lg cursor-pointer border border-slate-200 hover:border-amber-500"
+          />
+        `).join('');
+      }
       const baseLakhs = p.startingLakhs;
       const infraLakhs = p.mode === 'Plots' ? 2 : Math.max(8, Math.round(baseLakhs * 0.08));
       const isReady = p.status.toLowerCase().includes('ready');
@@ -1412,9 +1868,7 @@
       }
 
       if (queryParam) {
-        const searchBox = document.getElementById('searchLocalityInput');
-        if (searchBox) searchBox.value = queryParam;
-        applyFilters(false);
+        syncSearchInputs(queryParam);
       }
 
       if (tabParam && ['projects', 'premium', 'auctions', 'trends', 'emi', 'news'].includes(tabParam)) {
@@ -1430,6 +1884,7 @@
       }
 
       updateCompareDock();
+      updateActivityBadges();
       calculateEmi();
     });
   </script>
