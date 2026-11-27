@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Way Prop India | RERA Verified Property Directory &amp; All-In Prices</title>
+  <meta name="description" content="Compare official TG-RERA, K-RERA, TN-RERA, HRERA, UP-RERA & MahaRERA start & completion dates, ₹/sq.ft rates, and all-in flat costs across India." />
+  <meta property="og:title" content="The Way Prop India | RERA Verified Property Directory & All-In Prices" />
+  <meta property="og:description" content="Compare official RERA dates, ₹/sq.ft rates, SARFAESI bank auctions & all-in flat costs across Hyderabad, Bengaluru, Chennai, Delhi NCR & Pune." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thewaypropindia.com/" />
+  <link id="canonicalLink" rel="canonical" href="https://thewaypropindia.com/" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,7 +35,6 @@
 </head>
 <body class="min-h-screen flex flex-col overflow-x-hidden selection:bg-amber-200 selection:text-slate-900">
 
-  <!-- Top Header Bar -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 h-16 flex items-center justify-between gap-2">
       <a href="#top" onclick="resetHomeView(event)" class="flex items-center gap-2 min-w-0 shrink">
@@ -37,89 +42,44 @@
           <span class="text-amber-400 font-extrabold text-sm sm:text-base tracking-tight">TW</span>
         </div>
         <div class="min-w-0">
-          <div class="text-xs sm:text-sm font-extrabold text-slate-900 truncate leading-tight">
-            The Way Prop India
-          </div>
-          <div class="text-[10px] sm:text-[11px] font-medium text-slate-500 truncate leading-tight">
-            thewaypropindia.com
-          </div>
+          <div class="text-xs sm:text-sm font-extrabold text-slate-900 truncate leading-tight">The Way Prop India</div>
+          <div class="text-[10px] sm:text-[11px] font-medium text-slate-500 truncate leading-tight">thewaypropindia.com</div>
         </div>
       </a>
 
       <div class="flex items-center gap-1 sm:gap-2 shrink-0">
-        <button
-          id="headerSignInBtn"
-          type="button"
-          onclick="openAuthModal()"
-          class="inline-flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 text-[11px] sm:text-xs font-semibold transition shadow-2xs"
-        >
-          <svg class="w-3.5 h-3.5 text-sky-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 10a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 1114 0H3z" />
-          </svg>
+        <button id="headerSignInBtn" type="button" onclick="openAuthModal()" class="inline-flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 text-[11px] sm:text-xs font-semibold transition shadow-2xs">
+          <svg class="w-3.5 h-3.5 text-sky-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 10a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 1114 0H3z" /></svg>
           <span id="headerSignInLabel">Sign In</span>
         </button>
 
-        <button
-          type="button"
-          onclick="openPostModal()"
-          class="inline-flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-900 text-[11px] sm:text-xs font-bold transition shadow-2xs"
-        >
+        <button type="button" onclick="openPostModal()" class="inline-flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-900 text-[11px] sm:text-xs font-bold transition shadow-2xs">
           <span>Post<span class="hidden lg:inline"> Property</span></span>
-          <span class="px-1.5 py-0.5 rounded-md bg-emerald-600 text-white text-[9px] sm:text-[10px] font-extrabold tracking-wide uppercase">
-            FREE
-          </span>
+          <span class="px-1.5 py-0.5 rounded-md bg-emerald-600 text-white text-[9px] sm:text-[10px] font-extrabold tracking-wide uppercase">FREE</span>
         </button>
 
-        <button
-          type="button"
-          onclick="openSkyAiModal()"
-          class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-full bg-[#0F172A] hover:bg-slate-800 text-amber-300 border border-amber-400/40 text-[11px] sm:text-xs font-extrabold transition shadow-xs"
-        >
-          <span>✨</span>
-          <span>Sky AI</span>
+        <button type="button" onclick="openSkyAiModal()" class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-full bg-[#0F172A] hover:bg-slate-800 text-amber-300 border border-amber-400/40 text-[11px] sm:text-xs font-extrabold transition shadow-xs">
+          <span>✨</span><span>Sky AI</span>
         </button>
 
-        <button
-          id="menuToggleBtn"
-          type="button"
-          aria-label="Open Navigation Menu"
-          aria-expanded="false"
-          onclick="toggleMenuDrawer(true)"
-          class="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-900 transition shadow-2xs"
-        >
-          <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
+        <button id="menuToggleBtn" type="button" aria-label="Open Navigation Menu" aria-expanded="false" onclick="toggleMenuDrawer(true)" class="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-900 transition shadow-2xs">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
         </button>
       </div>
     </div>
 
-    <!-- Category Pill Strip -->
     <div class="border-t border-slate-100 bg-white">
       <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2.5 flex items-center gap-2 overflow-x-auto no-scrollbar">
-        <button id="tab-projects" type="button" onclick="switchMainTab('projects')" class="shrink-0 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-[#0F172A] text-white shadow-xs transition">
-          <span>Projects &amp; Prices</span>
-        </button>
-        <button id="tab-premium" type="button" onclick="switchMainTab('premium')" class="shrink-0 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-white border border-amber-300/80 text-amber-900 hover:bg-amber-50 transition">
-          <span>👑 Premium</span>
-        </button>
-        <button id="tab-auctions" type="button" onclick="switchMainTab('auctions')" class="shrink-0 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-white border border-rose-200 text-rose-800 hover:bg-rose-50 transition">
-          <span>🔨 Bank Auctions</span>
-        </button>
-        <button id="tab-trends" type="button" onclick="switchMainTab('trends')" class="shrink-0 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition">
-          <span>📈 Price Trends</span>
-        </button>
-        <button id="tab-emi" type="button" onclick="switchMainTab('emi')" class="shrink-0 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition">
-          <span>🧮 EMI Calculator</span>
-        </button>
-        <button id="tab-news" type="button" onclick="switchMainTab('news')" class="shrink-0 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition">
-          <span>📰 RERA News</span>
-        </button>
+        <button id="tab-projects" type="button" onclick="switchMainTab('projects')" class="shrink-0 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-[#0F172A] text-white shadow-xs transition"><span>Projects &amp; Prices</span></button>
+        <button id="tab-premium" type="button" onclick="switchMainTab('premium')" class="shrink-0 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-white border border-amber-300/80 text-amber-900 hover:bg-amber-50 transition"><span>👑 Premium</span></button>
+        <button id="tab-auctions" type="button" onclick="switchMainTab('auctions')" class="shrink-0 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-white border border-rose-200 text-rose-800 hover:bg-rose-50 transition"><span>🔨 Bank Auctions</span></button>
+        <button id="tab-trends" type="button" onclick="switchMainTab('trends')" class="shrink-0 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition"><span>📈 Price Trends</span></button>
+        <button id="tab-emi" type="button" onclick="switchMainTab('emi')" class="shrink-0 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition"><span>🧮 EMI Calculator</span></button>
+        <button id="tab-news" type="button" onclick="switchMainTab('news')" class="shrink-0 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition"><span>📰 RERA News</span></button>
       </div>
     </div>
   </header>
 
-  <!-- Slide-Over Navigation Drawer -->
   <div id="menuBackdrop" onclick="toggleMenuDrawer(false)" class="fixed inset-0 z-50 bg-slate-950/50 backdrop-blur-xs hidden opacity-0 transition-opacity duration-200"></div>
   <aside id="menuDrawer" aria-label="Site Menu" class="fixed top-0 right-0 bottom-0 z-50 w-[88%] max-w-sm bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-out flex flex-col">
     <div class="p-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between gap-2">
@@ -178,99 +138,32 @@
 
       <div class="py-1">
         <button type="button" onclick="toggleMenuDrawer(false); switchMainTab('projects');" class="w-full px-4 py-3 text-left text-sm font-semibold text-slate-800 hover:bg-slate-50 flex items-center justify-between">
-          <span>Projects &amp; Prices</span>
-          <span id="drawerTotalBadge" class="text-xs font-bold text-emerald-700">184 Live</span>
+          <span>Projects &amp; Prices</span><span id="drawerTotalBadge" class="text-xs font-bold text-emerald-700">184 Live</span>
         </button>
         <button type="button" onclick="toggleMenuDrawer(false); switchMainTab('premium');" class="w-full px-4 py-3 text-left text-sm font-semibold text-slate-800 hover:bg-slate-50 flex items-center justify-between">
-          <span>Premium Projects</span>
-          <span class="text-xs font-bold text-amber-700">👑 Curated</span>
+          <span>Premium Projects</span><span class="text-xs font-bold text-amber-700">👑 Curated</span>
         </button>
         <button type="button" onclick="toggleMenuDrawer(false); switchMainTab('auctions');" class="w-full px-4 py-3 text-left text-sm font-semibold text-slate-800 hover:bg-slate-50 flex items-center justify-between">
-          <span>Bank Auctions</span>
-          <span class="text-[11px] font-bold text-rose-600">SARFAESI</span>
+          <span>Bank Auctions</span><span class="text-[11px] font-bold text-rose-600">SARFAESI</span>
         </button>
         <button type="button" onclick="toggleMenuDrawer(false); switchMainTab('trends');" class="w-full px-4 py-3 text-left text-sm font-semibold text-slate-800 hover:bg-slate-50">Price Trends &amp; Charts</button>
         <button type="button" onclick="toggleMenuDrawer(false); switchMainTab('emi');" class="w-full px-4 py-3 text-left text-sm font-semibold text-slate-800 hover:bg-slate-50">Home Loan EMI Calculator</button>
         <button type="button" onclick="toggleMenuDrawer(false); switchMainTab('news');" class="w-full px-4 py-3 text-left text-sm font-semibold text-slate-800 hover:bg-slate-50 flex items-center justify-between">
-          <span>RERA News &amp; Orders</span>
-          <span class="px-1.5 py-0.5 rounded bg-amber-100 text-amber-900 text-[10px] font-bold">NOV 2026</span>
+          <span>RERA News &amp; Orders</span><span class="px-1.5 py-0.5 rounded bg-amber-100 text-amber-900 text-[10px] font-bold">NOV 2026</span>
         </button>
-      </div>
-
-      <div class="p-4 bg-slate-50/60">
-        <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 mb-2.5">Official RERA Verification Portals</div>
-        <div class="space-y-2 text-xs">
-          <a href="https://rera.telangana.gov.in" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200 hover:border-slate-300">
-            <div><div class="font-bold text-slate-900">TG-RERA (Telangana)</div><div class="text-[11px] text-slate-500">rera.telangana.gov.in</div></div>
-            <span class="text-slate-400 font-bold">↗</span>
-          </a>
-          <a href="https://rera.karnataka.gov.in" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200 hover:border-slate-300">
-            <div><div class="font-bold text-slate-900">Karnataka RERA (K-RERA)</div><div class="text-[11px] text-slate-500">rera.karnataka.gov.in</div></div>
-            <span class="text-slate-400 font-bold">↗</span>
-          </a>
-          <a href="https://maharera.maharashtra.gov.in" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200 hover:border-slate-300">
-            <div><div class="font-bold text-slate-900">MahaRERA (Pune &amp; Maharashtra)</div><div class="text-[11px] text-slate-500">maharera.maharashtra.gov.in</div></div>
-            <span class="text-slate-400 font-bold">↗</span>
-          </a>
-          <a href="https://rera.tn.gov.in" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200 hover:border-slate-300">
-            <div><div class="font-bold text-slate-900">TN-RERA (Tamil Nadu)</div><div class="text-[11px] text-slate-500">rera.tn.gov.in</div></div>
-            <span class="text-slate-400 font-bold">↗</span>
-          </a>
-          <a href="https://www.up-rera.in" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200 hover:border-slate-300">
-            <div><div class="font-bold text-slate-900">UP-RERA / HRERA / Delhi RERA</div><div class="text-[11px] text-slate-500">up-rera.in • haryanarera.gov.in • rera.delhi.gov.in</div></div>
-            <span class="text-slate-400 font-bold">↗</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="p-4 flex flex-wrap gap-3 text-xs font-semibold text-slate-500">
-        <button type="button" onclick="toggleMenuDrawer(false); openInfoModal('About Us');" class="hover:text-slate-900">About Us</button>
-        <span>•</span>
-        <button type="button" onclick="toggleMenuDrawer(false); openInfoModal('Privacy Policy');" class="hover:text-slate-900">Privacy Policy</button>
-        <span>•</span>
-        <button type="button" onclick="toggleMenuDrawer(false); openInfoModal('Terms of Use');" class="hover:text-slate-900">Terms</button>
       </div>
     </div>
   </aside>
 
-  <!-- Main Content -->
   <main id="top" class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 py-4 space-y-5">
     <section aria-label="India Hubs City Switcher" class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
       <span class="shrink-0 text-[11px] font-extrabold uppercase tracking-wider text-slate-400 pr-1">INDIA HUBS:</span>
-
-      <button id="hubBtnHyderabad" type="button" onclick="selectCityHub('Hyderabad')" class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#0F172A] text-white shadow-xs transition">
-        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-        <span>Hyderabad</span>
-        <span id="hubCountHyderabad" class="text-emerald-300 font-semibold">(81 Live)</span>
-      </button>
-
-      <button id="hubBtnBengaluru" type="button" onclick="selectCityHub('Bengaluru')" class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition">
-        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-        <span>Bengaluru</span>
-        <span id="hubCountBengaluru" class="text-emerald-600 font-semibold">(37 Live)</span>
-      </button>
-
-      <button id="hubBtnChennai" type="button" onclick="selectCityHub('Chennai')" class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition">
-        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-        <span>Chennai</span>
-        <span id="hubCountChennai" class="text-emerald-600 font-semibold">(22 Live)</span>
-      </button>
-
-      <button id="hubBtnDelhi" type="button" onclick="selectCityHub('Delhi NCR')" class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition">
-        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-        <span>Delhi NCR</span>
-        <span id="hubCountDelhi" class="text-emerald-600 font-semibold">(22 Live)</span>
-      </button>
-
-      <button id="hubBtnPune" type="button" onclick="selectCityHub('Pune')" class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition">
-        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-        <span>Pune</span>
-        <span id="hubCountPune" class="text-emerald-600 font-semibold">(22 Live)</span>
-      </button>
-
-      <button id="hubBtnAll" type="button" onclick="selectCityHub('ALL')" class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition">
-        <span id="hubCountAll">All Hubs (184)</span>
-      </button>
+      <button id="hubBtnHyderabad" type="button" onclick="selectCityHub('Hyderabad')" class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#0F172A] text-white shadow-xs transition"><span class="w-2 h-2 rounded-full bg-emerald-400"></span><span>Hyderabad</span><span id="hubCountHyderabad" class="text-emerald-300 font-semibold">(81 Live)</span></button>
+      <button id="hubBtnBengaluru" type="button" onclick="selectCityHub('Bengaluru')" class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><span>Bengaluru</span><span id="hubCountBengaluru" class="text-emerald-600 font-semibold">(37 Live)</span></button>
+      <button id="hubBtnChennai" type="button" onclick="selectCityHub('Chennai')" class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><span>Chennai</span><span id="hubCountChennai" class="text-emerald-600 font-semibold">(22 Live)</span></button>
+      <button id="hubBtnDelhi" type="button" onclick="selectCityHub('Delhi NCR')" class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><span>Delhi NCR</span><span id="hubCountDelhi" class="text-emerald-600 font-semibold">(22 Live)</span></button>
+      <button id="hubBtnPune" type="button" onclick="selectCityHub('Pune')" class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><span>Pune</span><span id="hubCountPune" class="text-emerald-600 font-semibold">(22 Live)</span></button>
+      <button id="hubBtnAll" type="button" onclick="selectCityHub('ALL')" class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition"><span id="hubCountAll">All Hubs (184)</span></button>
     </section>
 
     <div id="view-projects" class="space-y-5">
@@ -280,7 +173,7 @@
           <div class="flex flex-wrap items-center gap-2 mb-3">
             <span id="heroReraBadge" class="px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/40 text-sky-200 text-[11px] font-extrabold tracking-wide uppercase">TG-RERA VERIFIED DIRECTORY</span>
             <span id="heroPriceBadge" class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-200 text-[11px] font-bold">Starting at ₹44 Lakhs*</span>
-            <span class="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-slate-200 text-[11px] font-semibold">No Broker Spam</span>
+            <span class="px-3 py-1 rounded-full bg-amber-400/20 border border-amber-300/40 text-amber-200 text-[11px] font-bold">● Live Sync • 27 Nov 2026</span>
           </div>
           <h1 id="heroTitle" class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2">Hyderabad Apartments, Villas &amp; Plots</h1>
           <p id="heroSubtitle" class="text-xs sm:text-sm text-slate-200 max-w-2xl leading-relaxed">Compare official TG-RERA start &amp; completion dates, ₹/sq.ft rates, amenities, and all-in flat costs across verified projects in Hyderabad.</p>
@@ -288,9 +181,7 @@
       </section>
 
       <div class="rounded-2xl bg-indigo-50/90 border border-indigo-100 p-3.5 sm:px-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-        <p class="text-xs sm:text-sm text-slate-800 leading-snug">
-          <span class="font-bold text-indigo-700">💡 Before you buy a flat or villa,</span> compare RERA dates, real ₹/sq.ft prices &amp; amenities side-by-side here—with zero broker spam.
-        </p>
+        <p class="text-xs sm:text-sm text-slate-800 leading-snug"><span class="font-bold text-indigo-700">💡 Before you buy a flat or villa,</span> compare RERA dates, real ₹/sq.ft prices &amp; amenities side-by-side here—with zero broker spam.</p>
         <button type="button" onclick="openCompareModal()" class="self-start sm:self-auto shrink-0 text-xs font-extrabold text-indigo-700 hover:text-indigo-900">Compare Projects →</button>
       </div>
 
@@ -305,9 +196,8 @@
         <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
           <div class="md:col-span-5 flex items-center gap-2.5 px-3.5 py-3 rounded-2xl bg-slate-50 border border-slate-200 focus-within:border-slate-900 focus-within:bg-white transition">
             <span class="text-sm shrink-0">📍</span>
-            <input id="searchLocalityInput" type="text" oninput="applyFilters()" placeholder="Search locality, project or RERA ID (e.g. Kokapet, Tellapur, Aratt...)" class="w-full bg-transparent text-xs sm:text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none" />
+            <input id="searchLocalityInput" type="text" oninput="applyFilters()" placeholder="Search locality, project or RERA ID..." class="w-full bg-transparent text-xs sm:text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none" />
           </div>
-
           <div class="md:col-span-4 flex items-center gap-2.5 px-3.5 py-3 rounded-2xl bg-slate-50 border border-slate-200">
             <span class="text-sm shrink-0">🏠</span>
             <select id="filterBhkSelect" onchange="applyFilters()" class="w-full bg-transparent text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none">
@@ -319,7 +209,6 @@
               <option value="Plot">HMDA / BMRDA Open Plots</option>
             </select>
           </div>
-
           <div class="md:col-span-3 flex items-center gap-2.5 px-3.5 py-3 rounded-2xl bg-slate-50 border border-slate-200">
             <span class="text-sm shrink-0 font-bold text-amber-600">₹</span>
             <select id="filterBudgetSelect" onchange="applyFilters()" class="w-full bg-transparent text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none">
@@ -335,11 +224,8 @@
         <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
           <div class="sm:col-span-5 flex items-center gap-2 px-3.5 py-2.5 rounded-2xl bg-slate-50 border border-slate-200">
             <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 shrink-0">Builder:</span>
-            <select id="filterBuilderSelect" onchange="applyFilters()" class="w-full bg-transparent text-xs font-bold text-slate-800 focus:outline-none">
-              <option value="ALL">All RERA Builders</option>
-            </select>
+            <select id="filterBuilderSelect" onchange="applyFilters()" class="w-full bg-transparent text-xs font-bold text-slate-800 focus:outline-none"><option value="ALL">All RERA Builders</option></select>
           </div>
-
           <div class="sm:col-span-7 flex items-center gap-2">
             <button id="searchCtaBtn" type="button" onclick="applyFilters(true)" class="flex-1 py-3 px-5 rounded-2xl bg-[#FBBF24] hover:bg-amber-400 active:scale-[0.99] text-slate-950 text-xs sm:text-sm font-extrabold tracking-tight shadow-sm transition">Search Verified Projects</button>
             <button type="button" onclick="resetAllFilters()" class="px-3.5 py-3 rounded-2xl border border-slate-200 bg-white hover:bg-slate-50 text-xs font-bold text-slate-600">Reset</button>
@@ -410,377 +296,131 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
-          <div class="rounded-2xl bg-slate-800/75 border border-slate-700/80 p-4">
-            <div id="pulsePrimaryLabel" class="text-[11px] font-semibold text-slate-400">Oct 2026 Registrations</div>
-            <div id="pulsePrimaryValue" class="text-2xl font-extrabold text-amber-400 mt-1">5,318 Homes</div>
-            <div id="pulsePrimarySub" class="text-xs text-slate-300 mt-1">₹4,395 Cr (-14% YoY vol)</div>
-          </div>
-          <div class="rounded-2xl bg-slate-800/75 border border-slate-700/80 p-4">
-            <div class="text-[11px] font-semibold text-slate-400">Last Year 2025 Sold (Full Year)</div>
-            <div class="text-2xl font-extrabold text-emerald-400 mt-1">75,222 Homes</div>
-            <div class="text-xs text-slate-300 mt-1">₹50,890 Cr total registered value</div>
-          </div>
-          <div class="rounded-2xl bg-slate-800/75 border border-slate-700/80 p-4">
-            <div class="text-[11px] font-semibold text-slate-400">Jan–Oct 2026 Cumulative</div>
-            <div class="text-2xl font-extrabold text-white mt-1">61,033 Homes</div>
-            <div class="text-xs text-slate-300 mt-1">₹44,305 Cr (+3% YoY value)</div>
-          </div>
-          <div class="rounded-2xl bg-slate-800/75 border border-slate-700/80 p-4">
-            <div class="text-[11px] font-semibold text-slate-400">Top District &amp; ₹1 Cr+ Luxury Share</div>
-            <div class="text-lg font-extrabold text-amber-300 mt-1">Rangareddy 52% • 59% Value</div>
-            <div class="text-xs text-slate-300 mt-1">Medchal 29% • Hyd 18% • SGR 1% (25% units ≥₹1 Cr)</div>
-          </div>
-        </div>
-
-        <div class="text-[11px] text-slate-400 flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-slate-800">
-          <span>Source: Telangana Registration &amp; Stamps Dept (IGRS) data compiled by Knight Frank India — Nov 2026</span>
-          <span class="text-amber-300/90 font-semibold">Kokapet &amp; Neopolis lead ₹1 Cr+ registrations</span>
+          <div class="rounded-2xl bg-slate-800/75 border border-slate-700/80 p-4"><div id="pulsePrimaryLabel" class="text-[11px] font-semibold text-slate-400">Oct 2026 Registrations</div><div id="pulsePrimaryValue" class="text-2xl font-extrabold text-amber-400 mt-1">5,318 Homes</div><div id="pulsePrimarySub" class="text-xs text-slate-300 mt-1">₹4,395 Cr (-14% YoY vol)</div></div>
+          <div class="rounded-2xl bg-slate-800/75 border border-slate-700/80 p-4"><div class="text-[11px] font-semibold text-slate-400">Last Year 2025 Sold (Full Year)</div><div class="text-2xl font-extrabold text-emerald-400 mt-1">75,222 Homes</div><div class="text-xs text-slate-300 mt-1">₹50,890 Cr total registered value</div></div>
+          <div class="rounded-2xl bg-slate-800/75 border border-slate-700/80 p-4"><div class="text-[11px] font-semibold text-slate-400">Jan–Oct 2026 Cumulative</div><div class="text-2xl font-extrabold text-white mt-1">61,033 Homes</div><div class="text-xs text-slate-300 mt-1">₹44,305 Cr (+3% YoY value)</div></div>
+          <div class="rounded-2xl bg-slate-800/75 border border-slate-700/80 p-4"><div class="text-[11px] font-semibold text-slate-400">Top District &amp; ₹1 Cr+ Luxury Share</div><div class="text-lg font-extrabold text-amber-300 mt-1">Rangareddy 52% • 59% Value</div><div class="text-xs text-slate-300 mt-1">Medchal 29% • Hyd 18% • SGR 1% (25% units ≥₹1 Cr)</div></div>
         </div>
       </section>
     </div>
 
     <div id="view-auctions" class="hidden space-y-4">
       <div class="rounded-3xl bg-white border border-rose-200 p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <div>
-          <div class="flex items-center gap-2 mb-1">
-            <span class="px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-800 text-[11px] font-extrabold uppercase">SARFAESI E-AUCTION DIRECTORY</span>
-            <span id="auctionCityPill" class="px-2.5 py-0.5 rounded-full bg-slate-900 text-white text-[11px] font-bold">Hyderabad</span>
-          </div>
-          <h2 id="auctionHeading" class="text-xl font-extrabold text-slate-900">Verified Bank Auction Properties in Hyderabad</h2>
-          <p class="text-xs text-slate-500 mt-0.5">Direct PSU &amp; Private Bank SARFAESI notices • 20%–30% below prevailing market rates • Clear title verification.</p>
-        </div>
-        <button type="button" onclick="switchMainTab('projects')" class="self-start sm:self-auto shrink-0 px-4 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition">← Back to Projects &amp; Prices</button>
+        <div><h2 id="auctionHeading" class="text-xl font-extrabold text-slate-900">Verified Bank Auction Properties</h2></div>
+        <button type="button" onclick="switchMainTab('projects')" class="px-4 py-2 rounded-full bg-slate-900 text-white text-xs font-bold">← Back to Projects &amp; Prices</button>
       </div>
       <div id="auctionsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
     </div>
 
     <div id="view-trends" class="hidden space-y-4">
       <div class="rounded-3xl bg-white border border-slate-200 p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <div>
-          <span class="px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-800 text-[11px] font-extrabold uppercase">3-YEAR MICRO-MARKET BENCHMARKS</span>
-          <h2 class="text-xl font-extrabold text-slate-900 mt-1">₹/sq.ft Capital Appreciation &amp; Valuation Index (2023 vs 2026)</h2>
-          <p class="text-xs text-slate-500 mt-0.5">Registered weighted-average transaction rates across Hyderabad, Bengaluru, Chennai, Delhi NCR &amp; Pune.</p>
-        </div>
-        <button type="button" onclick="switchMainTab('projects')" class="self-start sm:self-auto shrink-0 px-4 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition">← Back to Projects &amp; Prices</button>
+        <div><h2 class="text-xl font-extrabold text-slate-900">₹/sq.ft Capital Appreciation (2023 vs 2026)</h2></div>
+        <button type="button" onclick="switchMainTab('projects')" class="px-4 py-2 rounded-full bg-slate-900 text-white text-xs font-bold">← Back to Projects &amp; Prices</button>
       </div>
       <div id="trendsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
     </div>
 
     <div id="view-emi" class="hidden space-y-4">
       <div class="rounded-3xl bg-white border border-slate-200 p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <div>
-          <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[11px] font-extrabold uppercase">HOME LOAN PLANNER</span>
-          <h2 class="text-xl font-extrabold text-slate-900 mt-1">Interactive Home Loan EMI Calculator</h2>
-          <p id="emiProjectBanner" class="text-xs text-slate-500 mt-0.5">Adjust loan amount, interest rate (SBI / HDFC / ICICI slabs), and tenure to inspect your monthly EMI.</p>
-        </div>
-        <button type="button" onclick="switchMainTab('projects')" class="self-start sm:self-auto shrink-0 px-4 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition">← Back to Projects &amp; Prices</button>
+        <div><h2 class="text-xl font-extrabold text-slate-900">Interactive Home Loan EMI Calculator</h2><p id="emiProjectBanner" class="text-xs text-slate-500 mt-0.5">Adjust loan amount, interest rate, and tenure.</p></div>
+        <button type="button" onclick="switchMainTab('projects')" class="px-4 py-2 rounded-full bg-slate-900 text-white text-xs font-bold">← Back to Projects &amp; Prices</button>
       </div>
-
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
         <div class="lg:col-span-7 rounded-3xl bg-white border border-slate-200 p-5 sm:p-6 space-y-5 shadow-sm">
-          <div>
-            <div class="flex justify-between text-xs font-bold mb-2">
-              <span class="text-slate-600">Home Loan Amount</span>
-              <span id="emiAmountDisplay" class="text-slate-900 text-sm font-extrabold">₹85,00,000 (₹85 L)</span>
-            </div>
-            <input id="emiAmountRange" type="range" min="1500000" max="60000000" step="500000" value="8500000" oninput="calculateEmi()" class="w-full cursor-pointer" />
-            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
-              <span>₹15 Lakhs</span><span>₹3 Crore</span><span>₹6 Crore</span>
-            </div>
-          </div>
-
-          <div>
-            <div class="flex justify-between text-xs font-bold mb-2">
-              <span class="text-slate-600">Interest Rate (% p.a.)</span>
-              <span id="emiRateDisplay" class="text-slate-900 text-sm font-extrabold">8.45%</span>
-            </div>
-            <input id="emiRateRange" type="range" min="7.25" max="11.50" step="0.05" value="8.45" oninput="calculateEmi()" class="w-full cursor-pointer" />
-            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
-              <span>7.25%</span><span>9.25%</span><span>11.50%</span>
-            </div>
-          </div>
-
-          <div>
-            <div class="flex justify-between text-xs font-bold mb-2">
-              <span class="text-slate-600">Loan Tenure (Years)</span>
-              <span id="emiTenureDisplay" class="text-slate-900 text-sm font-extrabold">20 Years</span>
-            </div>
-            <input id="emiTenureRange" type="range" min="5" max="30" step="1" value="20" oninput="calculateEmi()" class="w-full cursor-pointer" />
-            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
-              <span>5 Yrs</span><span>15 Yrs</span><span>30 Yrs</span>
-            </div>
-          </div>
+          <div><div class="flex justify-between text-xs font-bold mb-2"><span>Home Loan Amount</span><span id="emiAmountDisplay">₹85,00,000</span></div><input id="emiAmountRange" type="range" min="1500000" max="60000000" step="500000" value="8500000" oninput="calculateEmi()" class="w-full" /></div>
+          <div><div class="flex justify-between text-xs font-bold mb-2"><span>Interest Rate (% p.a.)</span><span id="emiRateDisplay">8.45%</span></div><input id="emiRateRange" type="range" min="7.25" max="11.50" step="0.05" value="8.45" oninput="calculateEmi()" class="w-full" /></div>
+          <div><div class="flex justify-between text-xs font-bold mb-2"><span>Loan Tenure (Years)</span><span id="emiTenureDisplay">20 Years</span></div><input id="emiTenureRange" type="range" min="5" max="30" step="1" value="20" oninput="calculateEmi()" class="w-full" /></div>
         </div>
-
-        <div class="lg:col-span-5 rounded-3xl bg-[#0F172A] text-white p-5 sm:p-6 flex flex-col justify-between space-y-5 shadow-lg">
-          <div>
-            <div class="text-xs font-semibold text-slate-400">Estimated Monthly EMI</div>
-            <div id="emiMonthlyResult" class="text-3xl sm:text-4xl font-extrabold text-amber-400 mt-1">₹73,504</div>
-            <div class="text-[11px] text-slate-400 mt-1">Indicative reducing-balance monthly installment</div>
-          </div>
-
-          <div class="space-y-2">
-            <div class="h-3 w-full rounded-full bg-slate-800 overflow-hidden flex">
-              <div id="emiPrincipalBar" class="bg-emerald-400 h-full transition-all duration-300" style="width: 48%"></div>
-              <div id="emiInterestBar" class="bg-amber-400 h-full transition-all duration-300" style="width: 52%"></div>
-            </div>
-            <div class="flex justify-between text-xs">
-              <span class="text-emerald-300 font-semibold">● Principal: <strong id="emiPrincipalVal">₹85.0 L</strong></span>
-              <span class="text-amber-300 font-semibold">● Total Interest: <strong id="emiInterestVal">₹91.4 L</strong></span>
-            </div>
-          </div>
-
-          <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs">
-            <span class="text-slate-400">Total Amount Payable</span>
-            <span id="emiTotalPayable" class="text-base font-extrabold text-white">₹1.76 Cr</span>
-          </div>
+        <div class="lg:col-span-5 rounded-3xl bg-[#0F172A] text-white p-5 sm:p-6 space-y-4">
+          <div class="text-xs text-slate-400">Estimated Monthly EMI</div>
+          <div id="emiMonthlyResult" class="text-3xl font-extrabold text-amber-400">₹73,504</div>
+          <div class="h-3 w-full rounded-full bg-slate-800 overflow-hidden flex"><div id="emiPrincipalBar" class="bg-emerald-400 h-full" style="width:48%"></div><div id="emiInterestBar" class="bg-amber-400 h-full" style="width:52%"></div></div>
+          <div class="flex justify-between text-xs"><span>Principal: <strong id="emiPrincipalVal">₹85.0 L</strong></span><span>Interest: <strong id="emiInterestVal">₹91.4 L</strong></span></div>
+          <div class="pt-3 border-t border-slate-800 flex justify-between text-xs"><span>Total Payable</span><strong id="emiTotalPayable">₹1.76 Cr</strong></div>
         </div>
       </div>
     </div>
 
     <div id="view-news" class="hidden space-y-4">
       <div class="rounded-3xl bg-white border border-slate-200 p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <div>
-          <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[11px] font-extrabold uppercase">NOVEMBER 2026 REGULATORY DESK</span>
-          <h2 class="text-xl font-extrabold text-slate-900 mt-1">TG-RERA, MahaRERA &amp; TNRERA Orders &amp; Regulatory Updates</h2>
-          <p class="text-xs text-slate-500 mt-0.5">Official adjudicating orders, project completion extensions, and buyer protection rulings.</p>
-        </div>
-        <button type="button" onclick="switchMainTab('projects')" class="self-start sm:self-auto shrink-0 px-4 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition">← Back to Projects &amp; Prices</button>
+        <div><h2 class="text-xl font-extrabold text-slate-900">RERA Orders &amp; Regulatory Updates</h2></div>
+        <button type="button" onclick="switchMainTab('projects')" class="px-4 py-2 rounded-full bg-slate-900 text-white text-xs font-bold">← Back to Projects &amp; Prices</button>
       </div>
       <div id="newsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
     </div>
   </main>
 
-  <!-- Floating Compare Dock -->
   <div id="compareDock" class="fixed bottom-3 left-3 right-3 z-40 hidden justify-center pointer-events-none">
-    <div class="pointer-events-auto w-full max-w-4xl rounded-2xl bg-[#0F172A]/95 backdrop-blur-md text-white border border-slate-700 shadow-2xl p-3 sm:px-4 sm:py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
-      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar">
-        <span id="compareDockBadge" class="shrink-0 px-2.5 py-1 rounded-lg bg-amber-400 text-slate-950 text-[11px] font-extrabold">Compare (0/3)</span>
-        <div id="compareDockChips" class="flex items-center gap-1.5"></div>
-      </div>
-      <div class="flex items-center justify-end gap-2 shrink-0">
-        <button type="button" onclick="clearCompareList()" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition">Clear</button>
-        <button id="compareNowBtn" type="button" onclick="openCompareModal()" class="px-4 py-1.5 rounded-xl bg-[#FBBF24] hover:bg-amber-400 text-slate-950 text-xs font-extrabold shadow-xs transition">Compare Now</button>
-      </div>
+    <div class="pointer-events-auto w-full max-w-4xl rounded-2xl bg-[#0F172A]/95 text-white border border-slate-700 shadow-2xl p-3 flex items-center justify-between gap-2.5">
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar"><span id="compareDockBadge" class="px-2.5 py-1 rounded-lg bg-amber-400 text-slate-950 text-[11px] font-extrabold">Compare (0/3)</span><div id="compareDockChips" class="flex items-center gap-1.5"></div></div>
+      <div class="flex items-center gap-2 shrink-0"><button type="button" onclick="clearCompareList()" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 text-xs font-bold">Clear</button><button id="compareNowBtn" type="button" onclick="openCompareModal()" class="px-4 py-1.5 rounded-xl bg-[#FBBF24] text-slate-950 text-xs font-extrabold">Compare Now</button></div>
     </div>
   </div>
 
-  <div id="appToast" class="fixed top-20 left-1/2 -translate-x-1/2 z-50 hidden px-4 py-2.5 rounded-full bg-slate-900 text-white text-xs font-bold shadow-xl border border-slate-700"></div>
+  <div id="appToast" class="fixed top-20 left-1/2 -translate-x-1/2 z-50 hidden px-4 py-2.5 rounded-full bg-slate-900 text-white text-xs font-bold shadow-xl"></div>
 
-  <footer class="mt-10 bg-white border-t border-slate-200 pb-16 sm:pb-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-      <div class="flex items-center gap-2">
-        <span class="w-6 h-6 rounded-lg bg-[#0F172A] text-amber-400 font-extrabold text-[10px] flex items-center justify-center">TW</span>
-        <span class="font-bold text-slate-800">The Way Prop India</span>
-        <span>• RERA Verified Directory (Hyd • Blr • Chennai • Delhi NCR • Pune)</span>
-      </div>
-      <div class="flex items-center gap-4 font-semibold">
-        <button type="button" onclick="openInfoModal('About Us')" class="hover:text-slate-900">About</button>
-        <button type="button" onclick="openInfoModal('Privacy Policy')" class="hover:text-slate-900">Privacy</button>
-        <button type="button" onclick="openInfoModal('Terms of Use')" class="hover:text-slate-900">Terms</button>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Modals -->
-  <div id="costSheetModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-4 bg-slate-950/60 backdrop-blur-xs">
+  <div id="costSheetModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-4 bg-slate-950/60">
     <div class="w-full max-w-lg rounded-3xl bg-white shadow-2xl border border-slate-200 overflow-hidden max-h-[92vh] flex flex-col">
-      <div class="px-5 py-4 border-b border-slate-100 flex items-center justify-between gap-2">
-        <h3 id="modalCostTitle" class="text-sm sm:text-base font-extrabold text-slate-900 truncate">Project • RERA Cost Sheet</h3>
-        <button type="button" aria-label="Close Cost Sheet" onclick="closeModal('costSheetModal')" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 text-sm font-bold shrink-0">✕</button>
-      </div>
-
+      <div class="px-5 py-4 border-b border-slate-100 flex items-center justify-between"><h3 id="modalCostTitle" class="text-sm sm:text-base font-extrabold text-slate-900 truncate">Project • RERA Cost Sheet</h3><button type="button" onclick="closeModal('costSheetModal')" class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 font-bold text-sm">✕</button></div>
       <div class="p-5 overflow-y-auto space-y-4">
-        <div class="rounded-2xl bg-[#0F172A] text-white p-4 space-y-1.5">
-          <div id="modalBuilderLoc" class="text-xs font-bold text-amber-400">Builder • Locality</div>
-          <div id="modalBasePriceBig" class="text-xl sm:text-2xl font-extrabold text-white">₹61 Lakhs onwards (Base)</div>
-          <div id="modalReraPossession" class="text-[11px] text-slate-300">RERA ID: P02200006019 • Possession: Mar 2027</div>
+        <div class="rounded-2xl bg-[#0F172A] text-white p-4 space-y-1"><div id="modalBuilderLoc" class="text-xs font-bold text-amber-400"></div><div id="modalBasePriceBig" class="text-xl font-extrabold"></div><div id="modalReraPossession" class="text-[11px] text-slate-300"></div></div>
+        <div class="rounded-2xl border border-slate-200 divide-y divide-slate-100 text-xs sm:text-sm">
+          <div class="px-4 py-3 flex justify-between"><span id="costBaseLabel"></span><strong id="costBaseVal"></strong></div>
+          <div class="px-4 py-3 flex justify-between"><span>Clubhouse, Infra &amp; Parking</span><strong id="costInfraVal"></strong></div>
+          <div class="px-4 py-3 flex justify-between"><span id="costGstLabel"></span><strong id="costGstVal"></strong></div>
+          <div class="px-4 py-3 flex justify-between"><span>Stamp Duty &amp; Registration (~7.6%)</span><strong id="costRegVal"></strong></div>
+          <div class="px-4 py-3.5 bg-emerald-50 flex justify-between rounded-b-2xl"><span class="font-extrabold text-emerald-900">Estimated All-In Outflow</span><strong id="costTotalVal" class="text-emerald-700"></strong></div>
         </div>
-
-        <div id="costBreakupContainer" class="space-y-2.5">
-          <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">ESTIMATED ALL-IN FLAT COST BREAKUP</div>
-          <div class="rounded-2xl border border-slate-200 divide-y divide-slate-100 text-xs sm:text-sm">
-            <div class="px-4 py-3 flex justify-between items-center">
-              <span id="costBaseLabel" class="text-slate-600">Base Apartment Cost (@ ₹5,400/sq.ft)</span>
-              <span id="costBaseVal" class="font-bold text-slate-900">₹61 Lakhs</span>
-            </div>
-            <div class="px-4 py-3 flex justify-between items-center">
-              <span class="text-slate-600">Clubhouse, Infra &amp; Car Parking</span>
-              <span id="costInfraVal" class="font-bold text-slate-900">₹8 Lakhs</span>
-            </div>
-            <div class="px-4 py-3 flex justify-between items-center">
-              <span id="costGstLabel" class="text-slate-600">GST (5% Under-Construction)</span>
-              <span id="costGstVal" class="font-bold text-slate-900">₹3 Lakhs</span>
-            </div>
-            <div class="px-4 py-3 flex justify-between items-center">
-              <span class="text-slate-600">Stamp Duty &amp; Registration (~7.6%)</span>
-              <span id="costRegVal" class="font-bold text-slate-900">₹5 Lakhs</span>
-            </div>
-            <div class="px-4 py-3.5 bg-emerald-50/90 flex justify-between items-center rounded-b-2xl">
-              <span class="font-extrabold text-emerald-900">Estimated All-In Outflow</span>
-              <span id="costTotalVal" class="text-base font-extrabold text-emerald-700">₹77 Lakhs</span>
-            </div>
-          </div>
-        </div>
-
-        <form id="projectEnquiryForm" onsubmit="submitProjectEnquiry(event)" class="hidden rounded-2xl bg-slate-50 border border-slate-200 p-4 space-y-3">
-          <div class="flex items-center justify-between">
-            <div class="text-xs font-extrabold text-slate-900">Direct Builder Desk • Zero Broker Spam</div>
-            <button type="button" onclick="toggleEnquiryForm(false)" class="text-[11px] font-bold text-slate-500 hover:text-slate-800">Cancel</button>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-            <input id="enqName" type="text" required placeholder="Your Full Name" class="px-3 py-2 rounded-xl bg-white border border-slate-200 text-xs font-medium focus:outline-none focus:border-slate-900" />
-            <input id="enqPhone" type="tel" required placeholder="10-digit Mobile Number" class="px-3 py-2 rounded-xl bg-white border border-slate-200 text-xs font-medium focus:outline-none focus:border-slate-900" />
-          </div>
-          <select id="enqPurpose" class="w-full px-3 py-2 rounded-xl bg-white border border-slate-200 text-xs font-semibold text-slate-700">
-            <option>Request Official Cost Sheet &amp; Floor Plans</option>
-            <option>Schedule Free Site Visit This Weekend</option>
-            <option>Check RERA Documents &amp; Bank Loan Tie-Ups</option>
-          </select>
-          <button type="submit" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-extrabold transition">Confirm Direct Callback</button>
-        </form>
-
-        <div id="projectEnquirySuccess" class="hidden rounded-2xl bg-emerald-50 border border-emerald-200 p-3.5 text-xs text-emerald-900 font-semibold">
-          ✅ Direct builder callback registered! Your number is masked from third-party brokers.
-        </div>
-
-        <div>
-          <a id="modalWhatsAppShareBtn" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-2xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs font-extrabold flex items-center justify-center gap-2 transition">
-            <span>Share Project Cost Sheet on WhatsApp</span>
-          </a>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
-          <button id="modalCalcEmiBtn" type="button" class="py-3 px-4 rounded-2xl bg-[#FBBF24] hover:bg-amber-400 text-slate-950 text-xs font-extrabold flex items-center justify-center gap-1.5 shadow-xs transition">
-            <span>🧮</span><span>Calculate EMI for this Project</span>
-          </button>
-          <button type="button" onclick="toggleEnquiryForm(true)" class="py-3 px-4 rounded-2xl bg-[#0F172A] hover:bg-slate-800 text-white text-xs font-extrabold flex items-center justify-center gap-1.5 shadow-xs transition">
-            <span>📞</span><span>Enquire / Request Callback</span>
-          </button>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <button id="modalCalcEmiBtn" type="button" class="py-3 px-4 rounded-2xl bg-[#FBBF24] text-slate-950 text-xs font-extrabold">🧮 Calculate EMI for this Project</button>
+          <a id="modalWhatsAppShareBtn" href="#" target="_blank" rel="noopener noreferrer" class="py-3 px-4 rounded-2xl bg-emerald-600 text-white text-xs font-extrabold text-center">Share on WhatsApp</a>
         </div>
       </div>
     </div>
   </div>
 
-  <div id="compareModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-4 bg-slate-950/65 backdrop-blur-xs">
+  <div id="compareModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-4 bg-slate-950/65">
     <div class="w-full max-w-5xl rounded-3xl bg-white shadow-2xl border border-slate-200 overflow-hidden max-h-[92vh] flex flex-col">
-      <div class="px-5 py-4 bg-[#0F172A] text-white flex items-center justify-between gap-2">
-        <div>
-          <h3 class="text-sm sm:text-base font-extrabold">Side-by-Side RERA Project Comparison (Up to 3 Projects)</h3>
-          <p class="text-[11px] text-slate-300">Compare official RERA dates, ₹/sq.ft base rates, configurations, and all-in costs.</p>
-        </div>
-        <button type="button" onclick="closeModal('compareModal')" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-sm shrink-0">✕</button>
-      </div>
+      <div class="px-5 py-4 bg-[#0F172A] text-white flex items-center justify-between"><h3 class="text-sm sm:text-base font-extrabold">Side-by-Side RERA Project Comparison (Up to 3)</h3><button type="button" onclick="closeModal('compareModal')" class="w-8 h-8 rounded-full bg-slate-800 text-slate-200 font-bold text-sm">✕</button></div>
       <div id="compareModalBody" class="p-4 sm:p-6 overflow-auto flex-1"></div>
-      <div class="px-5 py-3.5 bg-slate-50 border-t border-slate-200 flex flex-wrap items-center justify-between gap-2">
-        <button type="button" onclick="clearCompareList(); closeModal('compareModal');" class="px-4 py-2 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 text-xs font-bold text-slate-700">Clear Selection</button>
-        <div class="flex items-center gap-2">
-          <a id="shareCompareWhatsAppBtn" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-extrabold inline-flex items-center gap-1.5 shadow-xs transition">Share Comparison on WhatsApp</a>
-          <button type="button" onclick="closeModal('compareModal')" class="px-4 py-2 rounded-xl bg-slate-900 text-white text-xs font-bold">Done</button>
-        </div>
-      </div>
+      <div class="px-5 py-3.5 bg-slate-50 border-t border-slate-200 flex justify-end gap-2"><a id="shareCompareWhatsAppBtn" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-emerald-600 text-white text-xs font-extrabold">Share Comparison on WhatsApp</a><button type="button" onclick="closeModal('compareModal')" class="px-4 py-2 rounded-xl bg-slate-900 text-white text-xs font-bold">Done</button></div>
     </div>
   </div>
 
-  <div id="authModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/60 backdrop-blur-xs">
+  <div id="authModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/60">
     <div class="w-full max-w-md rounded-3xl bg-white p-5 sm:p-6 shadow-2xl border border-slate-200 space-y-4">
-      <div class="flex items-center justify-between">
-        <h3 class="text-base font-extrabold text-slate-900">Sign In to The Way Prop India</h3>
-        <button type="button" onclick="closeModal('authModal')" class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 font-bold text-sm">✕</button>
-      </div>
+      <div class="flex items-center justify-between"><h3 class="text-base font-extrabold text-slate-900">Sign In</h3><button type="button" onclick="closeModal('authModal')" class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 font-bold text-sm">✕</button></div>
       <form onsubmit="handleSignInSubmit(event)" class="space-y-3">
-        <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1">Full Name</label>
-          <input id="authNameInput" type="text" required placeholder="e.g. Karthik Reddy" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-medium focus:outline-none focus:border-slate-900" />
-        </div>
-        <div>
-          <label class="block text-xs font-bold text-slate-700 mb-1">Mobile Number or Email</label>
-          <input id="authContactInput" type="text" required placeholder="+91 98490 XXXXX" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-medium focus:outline-none focus:border-slate-900" />
-        </div>
-        <button type="submit" class="w-full py-3 rounded-2xl bg-[#0F172A] hover:bg-slate-800 text-white text-xs font-extrabold">Continue to Personalised Feed</button>
+        <input id="authNameInput" type="text" required placeholder="Full Name" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs" />
+        <input id="authContactInput" type="text" required placeholder="Mobile or Email" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs" />
+        <button type="submit" class="w-full py-3 rounded-2xl bg-[#0F172A] text-white text-xs font-extrabold">Continue</button>
       </form>
     </div>
   </div>
 
-  <div id="postModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/60 backdrop-blur-xs">
+  <div id="postModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/60">
     <div class="w-full max-w-md rounded-3xl bg-white p-5 sm:p-6 shadow-2xl border border-slate-200 space-y-4">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <h3 id="postModalTitle" class="text-base font-extrabold text-slate-900">Post Property</h3>
-          <span class="px-2 py-0.5 rounded bg-emerald-600 text-white text-[10px] font-extrabold">FREE</span>
-        </div>
-        <button type="button" onclick="closeModal('postModal')" class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 font-bold text-sm">✕</button>
-      </div>
+      <div class="flex items-center justify-between"><h3 id="postModalTitle" class="text-base font-extrabold text-slate-900">Post Property FREE</h3><button type="button" onclick="closeModal('postModal')" class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 font-bold text-sm">✕</button></div>
       <form onsubmit="handlePostSubmit(event)" class="space-y-3">
-        <div class="grid grid-cols-2 gap-2.5">
-          <div>
-            <label class="block text-xs font-bold mb-1">Listing Type</label>
-            <select class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold">
-              <option>Sell Flat / Villa</option>
-              <option>Rent / Lease</option>
-              <option>Sell Open Plot</option>
-              <option>Builder RERA Project</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-xs font-bold mb-1">City Hub</label>
-            <select class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold">
-              <option>Hyderabad</option>
-              <option>Bengaluru</option>
-              <option>Chennai</option>
-              <option>Delhi NCR</option>
-              <option>Pune</option>
-            </select>
-          </div>
-        </div>
-        <div>
-          <label class="block text-xs font-bold mb-1">Project / Locality &amp; RERA ID (if applicable)</label>
-          <input type="text" required placeholder="e.g. 3 BHK in Kokapet / Hinjewadi" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-medium" />
-        </div>
-        <div>
-          <label class="block text-xs font-bold mb-1">Expected Price &amp; Owner Contact</label>
-          <input type="text" required placeholder="e.g. ₹1.45 Cr • +91 98XXXXXXXX" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-medium" />
-        </div>
-        <div id="postSuccessMsg" class="hidden p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800">
-          ✅ Listing submitted for RERA/Owner verification! Goes live within 2 hours at ₹0 fee.
-        </div>
-        <button type="submit" class="w-full py-3 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-extrabold">Publish Listing FREE</button>
+        <input type="text" required placeholder="Project / Locality" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs" />
+        <input type="text" required placeholder="Expected Price &amp; Contact" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs" />
+        <div id="postSuccessMsg" class="hidden p-3 rounded-xl bg-emerald-50 text-xs font-bold text-emerald-800">✅ Submitted for FREE listing!</div>
+        <button type="submit" class="w-full py-3 rounded-2xl bg-emerald-600 text-white text-xs font-extrabold">Publish Listing FREE</button>
       </form>
     </div>
   </div>
 
-  <div id="skyAiModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/60 backdrop-blur-xs">
+  <div id="skyAiModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/60">
     <div class="w-full max-w-md rounded-3xl bg-white shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[85vh]">
-      <div class="px-5 py-4 bg-[#0F172A] text-white flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <span class="text-amber-400">✨</span>
-          <div>
-            <h3 class="text-sm font-extrabold">Sky AI • RERA Property Advisor</h3>
-            <p class="text-[11px] text-slate-400">Instant insights across all verified RERA projects</p>
-          </div>
-        </div>
-        <button type="button" onclick="closeModal('skyAiModal')" class="w-8 h-8 rounded-full bg-slate-800 text-slate-300 font-bold text-sm">✕</button>
-      </div>
-      <div id="skyAiChatBox" class="p-4 space-y-3 overflow-y-auto flex-1 text-xs bg-slate-50">
-        <div class="p-3 rounded-2xl bg-white border border-slate-200 text-slate-700 leading-relaxed">
-          👋 Ask me about RERA registration IDs, ₹/sq.ft rates across <strong>Hyderabad, Bengaluru (including Aratt Developers), Chennai, Delhi NCR, or Pune</strong>, or SARFAESI bank auction discounts.
-        </div>
-      </div>
-      <div class="p-3 bg-white border-t border-slate-200 space-y-2">
-        <form onsubmit="handleSkyAiForm(event)" class="flex gap-2">
-          <input id="skyAiInput" type="text" placeholder="Ask about any project, locality or RERA ID..." class="flex-1 px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-slate-900" />
-          <button type="submit" class="px-4 py-2.5 rounded-xl bg-[#0F172A] text-amber-300 text-xs font-extrabold">Ask</button>
-        </form>
-      </div>
+      <div class="px-5 py-4 bg-[#0F172A] text-white flex items-center justify-between"><h3 class="text-sm font-extrabold">✨ Sky AI • RERA Advisor</h3><button type="button" onclick="closeModal('skyAiModal')" class="w-8 h-8 rounded-full bg-slate-800 text-slate-300 font-bold text-sm">✕</button></div>
+      <div id="skyAiChatBox" class="p-4 space-y-3 overflow-y-auto flex-1 text-xs bg-slate-50"><div class="p-3 rounded-2xl bg-white border border-slate-200">Ask me about any RERA project, builder, or city hub.</div></div>
+      <form onsubmit="handleSkyAiForm(event)" class="p-3 bg-white border-t border-slate-200 flex gap-2"><input id="skyAiInput" type="text" placeholder="Ask Sky AI..." class="flex-1 px-3.5 py-2 rounded-xl border border-slate-200 text-xs" /><button type="submit" class="px-4 py-2 rounded-xl bg-[#0F172A] text-amber-300 text-xs font-extrabold">Ask</button></form>
     </div>
   </div>
 
-  <div id="infoModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/60 backdrop-blur-xs">
+  <div id="infoModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/60">
     <div class="w-full max-w-md rounded-3xl bg-white p-5 sm:p-6 shadow-2xl border border-slate-200 space-y-3">
-      <div class="flex items-center justify-between">
-        <h3 id="infoModalTitle" class="text-base font-extrabold text-slate-900">About Us</h3>
-        <button type="button" onclick="closeModal('infoModal')" class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 font-bold text-sm">✕</button>
-      </div>
+      <div class="flex items-center justify-between"><h3 id="infoModalTitle" class="text-base font-extrabold text-slate-900">Info</h3><button type="button" onclick="closeModal('infoModal')" class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 font-bold text-sm">✕</button></div>
       <p id="infoModalBody" class="text-xs text-slate-600 leading-relaxed"></p>
       <button type="button" onclick="closeModal('infoModal')" class="w-full py-2.5 rounded-2xl bg-slate-900 text-white text-xs font-bold">Close</button>
     </div>
@@ -811,9 +451,7 @@
     };
 
     function formatPriceRange(minLakhs, maxLakhs, mode) {
-      if (mode === 'Rent') {
-        return `₹${minLakhs.toLocaleString('en-IN')}/mo – ₹${maxLakhs.toLocaleString('en-IN')}/mo`;
-      }
+      if (mode === 'Rent') return `₹${minLakhs.toLocaleString('en-IN')}/mo – ₹${maxLakhs.toLocaleString('en-IN')}/mo`;
       const fmt = (l) => (l >= 100 ? `₹${(l / 100).toFixed(2)} Cr` : `₹${l} L`);
       return `${fmt(minLakhs)} – ${fmt(maxLakhs)}`;
     }
@@ -821,277 +459,63 @@
     const PROJECTS_DATA = (() => {
       const list = [];
       let idx = 0;
-
       function add(city, mode, status, name, builder, locality, reraId, bhk, configLabel, ratePerSqft, minLakhs, maxLakhs, startDate, completion, premium, amenities) {
         idx += 1;
-        const img = mode === 'Plots'
-          ? CITY_IMAGES.Plot
-          : (mode === 'Commercial'
-            ? CITY_IMAGES.Commercial
-            : CITY_IMAGES.Hyderabad[idx % CITY_IMAGES.Hyderabad.length]);
-
-        list.push({
-          id: `${city.toLowerCase().replace(/\s+/g, '-')}-${idx}`,
-          city,
-          mode,
-          status,
-          name,
-          builder,
-          locality,
-          reraId,
-          bhk,
-          configLabel,
-          ratePerSqft,
-          startingLakhs: minLakhs,
-          priceDisplay: formatPriceRange(minLakhs, maxLakhs, mode),
-          startDate,
-          completion,
-          premium,
-          amenities,
-          image: img
-        });
+        const img = mode === 'Plots' ? CITY_IMAGES.Plot : (mode === 'Commercial' ? CITY_IMAGES.Commercial : CITY_IMAGES.Hyderabad[idx % CITY_IMAGES.Hyderabad.length]);
+        list.push({ id: `${city.toLowerCase().replace(/\s+/g, '-')}-${idx}`, city, mode, status, name, builder, locality, reraId, bhk, configLabel, ratePerSqft, startingLakhs: minLakhs, priceDisplay: formatPriceRange(minLakhs, maxLakhs, mode), startDate, completion, premium, amenities, image: img });
       }
 
-      // HYDERABAD
-      add('Hyderabad', 'Buy', 'Ready / Near Possession', 'Candeur Crescent', 'Candeur Developers', 'Serilingampally • West', 'P02500004515', ['3 BHK'], '3 BHK • 1,652 – 2,656 sq.ft', 9080, 150, 241, '2022', 'Dec 2026', true, ['50 Floors • 62K Sq.ft Clubhouse', '200+ Families Moved In', 'Near BHEL & Gachibowli']);
-      add('Hyderabad', 'Buy', 'New Launch', 'LINQ by Raghava', 'Raghava Projects', 'Kokapet / Neopolis, Hyderabad', 'P02400009712', ['3 BHK', '4 BHK'], '3 & 4 BHK Sky-Bridge Residences', 11900, 285, 460, '2026', 'Dec 2029', true, ['Interconnected Sky-Bridges', 'Kokapet Neopolis Exit 1', 'Rooftop Infinity Deck']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Brigade Gateway Neopolis', 'Brigade Enterprises', 'Kokapet Neopolis, Hyderabad', 'P02400009142', ['3 BHK', '4 BHK'], '3, 4 & 5 BHK Integrated Township', 13400, 410, 720, '2025', 'Dec 2029', true, ['World Trade Center & Orion Mall Inside', '58-Floor Iconic Towers', 'Neopolis Lake Views']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'ASBL Broadway', 'ASBL (Ashoka Builders)', 'Financial District – Gachibowli', 'P02400009684', ['3 BHK'], '3 BHK Exclusive Outdoor Living Homes', 11450, 235, 310, '2025', 'Dec 2028', true, ['50-Floor Towers in Financial District', 'Large Sit-Out Balconies', 'Walk to Wipro & Amazon']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'The Cascades Neopolis', 'GHR Lakshmi Urbanblocks', 'Kokapet Neopolis, Hyderabad', 'P02400009538', ['3 BHK', '4 BHK'], '3 & 4 BHK 63-Floor Sky Towers', 12200, 310, 540, '2025', 'Mar 2030', true, ['63 Floors • 2 Lakh sq.ft Amenities', 'Helipad & Sky Lounge', 'WELL Pre-Certified']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Prestige Spring Heights', 'Prestige Estates Projects', 'Budvel – Rajendranagar, South Hyd', 'P02400009416', ['3 BHK', '4 BHK'], '3 & 4 BHK Lake-Facing Residences', 9400, 148, 285, '2025', 'Dec 2029', true, ['Overlooking Himayat Sagar Lake', '10.6 Acres • 4 Towers', '15 Mins to RGIA Airport']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'MAK Fern', 'MAK Projects', 'Tukkuguda – Srisailam Hwy, South Hyd', 'P02400010645', ['3 BHK', '4 BHK'], '3 & 4 BHK Nature-Centric Homes', 7200, 112, 185, '2026', 'Jun 2029', false, ['10 Mins to RGIA Shamshabad', '75% Lush Green Open Space', 'ORR Exit 14 Connectivity']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'My Home Vipina', 'My Home Constructions', 'Tellapur, West Hyderabad', 'P01100005921', ['2 BHK', '3 BHK'], '2, 2.5 & 3 BHK Gated Community', 8950, 122, 198, '2023', 'Dec 2027', true, ['46-Acre Integrated Township', '1,00,000 sq.ft Clubhouse', 'Tellapur ORR Exit 2']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'My Home Apas', 'My Home Constructions', 'Kokapet, Financial District', 'P02400006742', ['3 BHK'], '3 BHK Lake-Facing Luxury Homes', 12800, 355, 485, '2023', 'Jun 2028', true, ['Osman Sagar & Kokapet Lake Views', 'Only 2 Flats per Floor', '24-Acre Low Density']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'My Home Sayuk', 'My Home Constructions', 'Tellapur, West Hyderabad', 'P01100004318', ['2 BHK', '3 BHK'], '2 & 3 BHK High-Rise Apartments', 8700, 118, 189, '2022', 'Jun 2027', false, ['12 Iconic Towers', '80% Open Greens', 'Walk to Tellapur MMTS']);
-      add('Hyderabad', 'Buy', 'Ready to Move', 'My Home Bhooja', 'My Home Constructions', 'Raidurg, HITEC City', 'P02400000128', ['3 BHK', '4 BHK'], '3 & 4 BHK Ultra-Luxury Sky Homes', 18500, 495, 850, '2018', 'Ready to Move', true, ['OC Received • Zero GST', 'Walk to IKEA & Raidurg Metro']);
-      add('Hyderabad', 'Buy', 'Ready to Move', 'My Home Tridasa', 'My Home Constructions', 'Tellapur, West Hyderabad', 'P01100001781', ['2 BHK', '3 BHK'], '2, 2.5 & 3 BHK Ready Community', 8900, 115, 172, '2020', 'Ready to Move', false, ['OC Received • Zero GST', '22.58 Acres • 9 Towers']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'My Home Nishada', 'My Home Constructions', 'Kokapet, Financial District', 'P02400003994', ['3 BHK', '4 BHK'], '3 & 4 BHK Super-Luxury Towers', 13200, 455, 640, '2022', 'Dec 2027', true, ['44-Floor Sky Towers', '80% Open Landscaped Deck']);
-      add('Hyderabad', 'Buy', 'Ready to Move', 'Rajapushpa Provincia', 'Rajapushpa Properties', 'Narsingi, ORR Exit 18', 'P02400002487', ['2 BHK', '3 BHK'], '2 & 3 BHK Lifestyle Residences', 10400, 145, 240, '2021', 'Dec 2026', true, ['23.75 Acres • 11 Towers', '65,000 sq.ft Clubhouse']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Rajapushpa Aurelia', 'Rajapushpa Properties', 'Tellapur – Kollur Corridor', 'P01100006814', ['3 BHK', '4 BHK'], '3 & 4 BHK Ultra-Spacious Homes', 8800, 185, 340, '2023', 'Dec 2028', true, ['50-Floor Sky Towers', '85,000 sq.ft Clubhouse']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Rajapushpa Casa Luxura', 'Rajapushpa Properties', 'Kokapet Neopolis, Hyderabad', 'P02400007218', ['4 BHK'], '4 BHK Palatial Sky Villas', 12900, 560, 790, '2024', 'Dec 2028', true, ['50 Floors • 2 Flats per Core', 'Private Lift Foyer']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Rajapushpa Imperia', 'Rajapushpa Properties', 'Tellapur, West Hyderabad', 'P01100003884', ['2 BHK', '3 BHK'], '2 & 3 BHK Gated Residences', 8500, 116, 215, '2022', 'Mar 2027', false, ['24 Acres • 40 Floors', '72,000 sq.ft Clubhouse']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Rajapushpa Pristinia', 'Rajapushpa Properties', 'Kokapet, Financial District', 'P02400005812', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK High-Rise Towers', 11600, 182, 415, '2023', 'Jun 2028', true, ['12.6 Acres • 42 Floors', '60,000 sq.ft Clubhouse']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Aparna Zenon', 'Aparna Constructions', 'Puppalaguda, Financial District', 'P02400003722', ['2 BHK', '3 BHK'], '2 & 3 BHK Smart Gated Homes', 10900, 148, 245, '2022', 'Mar 2027', true, ['30.15 Acres • 14 Towers', '86,000 sq.ft Clubhouse']);
-      add('Hyderabad', 'Buy', 'Ready to Move', 'Aparna Sarovar Zicon', 'Aparna Constructions', 'Nallagandla, West Hyderabad', 'P02400001590', ['3 BHK', '4 BHK'], '3 & 4 BHK Ready Residences', 10600, 168, 295, '2020', 'Ready to Move', false, ['OC Received • Zero GST', '25.5 Acres • 14 Towers']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Aparna Newlands', 'Aparna Constructions', 'Tellapur, West Hyderabad', 'P01100007480', ['2 BHK', '3 BHK'], '2.5 & 3 BHK Contemporary Homes', 8650, 129, 178, '2024', 'Sep 2028', false, ['14.8 Acres • 42 Floors', 'IGBC Gold Pre-Certified']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Aparna Sarovar Towers', 'Aparna Constructions', 'Nallagandla, West Hyderabad', 'P02400006891', ['3 BHK', '4 BHK'], '3 & 4 BHK Lakeview High-Rise', 10800, 298, 465, '2023', 'Jun 2028', true, ['50-Floor Landmark Towers', 'Nallagandla Lakefront']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Aparna Sunstone', 'Aparna Constructions', 'Gopanpally – Gachibowli', 'P02400008415', ['3 BHK'], '3 BHK Exclusive Gated Community', 9600, 152, 224, '2024', 'Dec 2028', false, ['22 Acres • 44 Floors', '5 Mins to Wipro Circle']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Aparna Moonstone', 'Aparna Constructions', 'Gopanpally – Financial District', 'P02400008692', ['3 BHK', '4 BHK'], '3 & 4 BHK Luxury Sky Homes', 10100, 215, 340, '2024', 'Mar 2029', true, ['Part of 80-Acre Aparna Deccan Town', 'Sky Clubhouse']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Prestige Clairemont', 'Prestige Estates Projects', 'Kokapet Neopolis, Hyderabad', 'P02400005677', ['3 BHK', '4 BHK'], '3 & 4 BHK Neopolis Residences', 12500, 248, 495, '2023', 'Nov 2027', true, ['Heart of HMDA Neopolis', '50,000 sq.ft Grand Clubhouse']);
-      add('Hyderabad', 'Buy', 'Ready to Move', 'Prestige Tranquil', 'Prestige Estates Projects', 'Kokapet, ORR Exit 1', 'P02400002219', ['3 BHK'], '3 BHK Ready High-Rise Homes', 11200, 198, 235, '2020', 'Ready to Move', true, ['OC Received • Zero GST', '4 Towers • 34 Floors']);
-      add('Hyderabad', 'Buy', 'Ready to Move', 'Prestige Beverly Hills', 'Prestige Estates Projects', 'Kokapet, Financial District', 'P02400003142', ['3 BHK', '4 BHK'], '3 & 4 BHK Luxury Apartments', 11500, 210, 315, '2021', 'Dec 2026', true, ['800+ Luxury Units', 'Grand Clubhouse & Pool']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'DSR Skymarq', 'DSR Builders & Developers', 'Puppalaguda, Financial District', 'P02400004910', ['4 BHK'], '4 BHK Ultra-Luxury Sky Residences', 12400, 495, 680, '2022', 'Dec 2027', true, ['45-Floor Sky Towers', '55,000 sq.ft Sky Clubhouse']);
-      add('Hyderabad', 'Buy', 'Ready to Move', 'DSR The Twins', 'DSR Builders & Developers', 'Puppalaguda, Financial District', 'P02400002890', ['4 BHK'], '4 BHK Glass-Facade Sky Villas', 14200, 950, 1150, '2021', 'Ready to Move', true, ['1 Residence per Floor (6,800 sq.ft)', 'Private Pool & Lift']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'DSR Valar', 'DSR Builders & Developers', 'Kokapet, West Hyderabad', 'P02400007311', ['4 BHK'], '4 BHK Boutique Sky Residences', 11900, 390, 480, '2024', 'Dec 2028', true, ['Low-Density 2 Towers', 'Sky Lounge & Infinity Pool']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Raghava CINQ', 'Raghava Projects', 'Nanakramguda, Financial District', 'P02400008321', ['4 BHK'], '4 BHK Sky Villas (3,575–3,644 sq.ft)', 11850, 425, 445, '2024', 'Jun 2028', true, ['5 Iconic 61-Floor Towers', 'Zero Dead-Space Layouts']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Raghava Nova', 'Raghava Projects', 'Nanakramguda, West Hyderabad', 'P02400009104', ['3 BHK'], '3 BHK Luxury High-Rise', 11500, 235, 295, '2024', 'Dec 2028', true, ['Skybridge & Infinity Pool', 'EV Ready Parking']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Raghava Iris', 'Raghava Projects', 'Raidurg – Biodiversity Junction', 'P02400003819', ['4 BHK'], '4 BHK Sky Residences with Sky-Deck', 14800, 790, 960, '2022', 'Jun 2027', true, ['3 Iconic 45-Floor Towers', 'Rooftop Sky Park']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Vasavi Atlantis', 'Vasavi Group', 'Narsingi, ORR Junction', 'P02400003198', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Sky Residences', 9800, 132, 340, '2022', 'Jun 2027', false, ['12 Acres • 45 Floors', '1.4 Lakh sq.ft Clubhouse']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Vasavi Crown East', 'Vasavi Group', 'Uppal – LB Nagar Main Road', 'P02200005819', ['2 BHK', '3 BHK'], '2 & 3 BHK East Hyderabad Landmark', 7400, 88, 165, '2023', 'Dec 2027', false, ['Walk to Uppal Metro Station', '55,000 sq.ft Clubhouse']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Vasavi Ananda Nilayam', 'Vasavi Group', 'LB Nagar, East Hyderabad', 'P02400004412', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Integrated Township', 7900, 99, 245, '2022', 'Jun 2027', false, ['29.37 Acres • 11 Towers', '2 Mins to LB Nagar Metro']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Honer Signatis', 'Honer Homes', 'Kukatpally – IDL Lake Road', 'P02200005104', ['3 BHK', '4 BHK'], '3, 3.5 & 4 BHK Lakefront Homes', 9900, 169, 365, '2023', 'Dec 2027', true, ['27.5 Acres • 18 Towers', '80,000 sq.ft Clubhouse']);
-      add('Hyderabad', 'Buy', 'Ready to Move', 'Honer Vivantis', 'Honer Homes', 'Gopanpally – Gachibowli', 'P02400000918', ['2 BHK', '3 BHK'], '2 & 3 BHK Ready Gated Community', 9500, 125, 185, '2019', 'Ready to Move', false, ['OC Received • Zero GST', '50,000 sq.ft Clubhouse']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Lansum Elena', 'Lansum Properties', 'Kokapet, West Hyderabad', 'P02400006490', ['3 BHK', '4 BHK'], '3 & 4 BHK 55-Floor Sky Towers', 11200, 275, 420, '2023', 'Dec 2028', true, ['Rooftop Skywalk & Infinity Pool', '50,000 sq.ft Club']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Lansum Encanto', 'Lansum Properties', 'Puppalaguda, Financial District', 'P02400008814', ['4 BHK'], '4 BHK Ultra-Luxury Residences', 12400, 510, 625, '2024', 'Mar 2029', true, ['50-Floor Twin Towers', 'Private Foyer & Lift']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Sumadhura Palais Royale', 'Sumadhura Infracon', 'Puppalaguda, Financial District', 'P02400008107', ['4 BHK'], '4 BHK Palatial Sky Residences', 12600, 480, 790, '2024', 'Dec 2028', true, ['Floating Sky Clubhouse', 'Private Foyer & Lift Lobby']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Sumadhura Olympus', 'Sumadhura Infracon', 'Nanakramguda, Financial District', 'P02400003489', ['2 BHK', '3 BHK'], '2 & 3 BHK 44-Floor Twin Towers', 11400, 192, 340, '2022', 'Jun 2027', true, ['Walk to Amazon & Microsoft', '50,000 sq.ft Clubhouse']);
-      add('Hyderabad', 'Buy', 'Ready to Move', 'Sumadhura Acropolis', 'Sumadhura Infracon', 'Gachibowli, Financial District', 'P02400000381', ['2 BHK', '3 BHK'], '2 & 3 BHK Ready Luxury Homes', 11100, 155, 275, '2018', 'Ready to Move', false, ['OC Received • Zero GST', 'Heart of Financial District']);
-      add('Hyderabad', 'Buy', 'Ready to Move', 'NCC Urban One', 'NCC Urban Infrastructure', 'Narsingi, ORR Service Road', 'P02400000814', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Ready Apartments', 9600, 128, 285, '2019', 'Ready to Move', false, ['OC Received • Zero GST', '33 Acres Gated Enclave']);
-      add('Hyderabad', 'Buy', 'Ready to Move', 'Jayabheri The Peak', 'Jayabheri Group', 'Puppalaguda – Narsingi', 'P02400001105', ['4 BHK'], '4 BHK Ultra-Luxury Residences', 13500, 540, 810, '2020', 'Ready to Move', true, ['OC Received • Zero GST', '4,000–6,000 sq.ft Layouts']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Jayabheri The Nirvana', 'Jayabheri Group', 'Gachibowli – Kondapur Road', 'P02400004190', ['3 BHK'], '3 BHK Boutique Gated Community', 11200, 215, 265, '2022', 'Mar 2027', true, ['7.5 Acres • Low Density', '5 Mins to Botanical Garden']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Bhanodayas Crystal', 'Bhanodaya Constructions', 'Tellapur, West Hyderabad', 'P01100005412', ['2 BHK', '3 BHK'], '2 & 3 BHK Gated Community', 7600, 95, 148, '2023', 'Aug 2027', false, ['Tellapur Radial Road', '100% Vaastu Compliant']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Bharathi Horizon', 'Bharathi Infra Developers', 'Kompally – Gundlapochampally', 'P02200006019', ['2 BHK', '3 BHK'], '2 & 3 BHK Value Luxury Flats', 5400, 61, 92, '2023', 'Mar 2027', false, ['2 Mins to NH-44', '20,000 sq.ft Clubhouse']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Sunyuga Villa Palazzo', 'Sunyuga Infra', 'Kompally, North Hyderabad', 'P02200008642', ['Villa', '4 BHK'], '4 BHK Triplex Gated Villas', 9200, 285, 390, '2024', 'Dec 2027', true, ['Private Home Elevator', 'Italian Marble Flooring']);
-      add('Hyderabad', 'Buy', 'Ready to Move', 'Alekhya Wind Chimes', 'Alekhya Homes', 'Narsingi, West Hyderabad', 'P02400001920', ['3 BHK', '4 BHK'], '3 & 4 BHK Boutique Apartments', 9200, 145, 225, '2020', 'Ready to Move', false, ['OC Received • Zero GST', '5 Mins to ORR Exit 18']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Anvita Ivana', 'Anvita Group', 'Kollur, ORR Exit 2', 'P01100004619', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Sky Villas & Flats', 7400, 98, 290, '2022', 'Jun 2027', false, ['12.9 Acres • 36 Floors', '70,000 sq.ft Clubhouse']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Anvita High9', 'Anvita Group', 'Tellapur – Kollur, West Hyd', 'P01100006944', ['2 BHK', '3 BHK'], '2 & 3 BHK Gated Residences', 7200, 92, 168, '2023', 'Dec 2027', false, ['9 Towers • 30 Floors', '100% Vaastu']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Hallmark Treasor', 'Hallmark Builders', 'Kokapet, Financial District', 'P02400003314', ['3 BHK', '4 BHK'], '3 & 4 BHK Luxury High-Rise', 10800, 235, 395, '2022', 'Mar 2027', true, ['30-Floor Twin Towers', '2 Mins to Golden Mile']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Hallmark Vesta', 'Hallmark Builders', 'Patancheru – Kollur Belt', 'P01100005188', ['2 BHK', '3 BHK'], '2 & 3 BHK Smart Gated Homes', 6200, 74, 112, '2023', 'Jun 2027', false, ['5 Mins to ORR Exit 3', '25,000 sq.ft Clubhouse']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Praneeth Pranav Knightwoods', 'Praneeth Group', 'Beeramguda – Patancheru', 'P01100004912', ['3 BHK', 'Villa'], '3 & 4 BHK Gated Duplex Villas', 7800, 158, 235, '2022', 'Dec 2026', false, ['35-Acre Villa Township', '32,000 sq.ft Clubhouse']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Vertex 33 West', 'Vertex Homes', 'Nallagandla – Tellapur Road', 'P02400004819', ['2 BHK', '3 BHK'], '2 & 3 BHK High-Rise Apartments', 8400, 108, 175, '2022', 'Jun 2027', false, ['33 Floors • Sky Lounge', 'Walk to Citizens Hospital']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Vertex Viraat', 'Vertex Homes', 'Miyapur – Bollaram Road', 'P02200004120', ['2 BHK', '3 BHK'], '2 & 3 BHK Gated Community', 6800, 79, 128, '2022', 'Mar 2027', false, ['6 Towers • 30 Floors', '8 Mins to Miyapur Metro']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Ramky One Odyssey', 'Ramky Estates', 'Kokapet, West Hyderabad', 'P02400004109', ['3 BHK', '4 BHK'], '3 & 4 BHK 36-Floor Sky Towers', 10900, 195, 335, '2022', 'Jun 2027', true, ['36 Floors • Skywalk', '50,000 sq.ft Clubhouse']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Ramky One Astra', 'Ramky Estates', 'Kokapet, Financial District', 'P02400006319', ['3 BHK', '4 BHK'], '3 & 4 BHK Luxury Residences', 11400, 245, 410, '2023', 'Dec 2027', true, ['42-Floor Iconic Towers', 'Private Sky Deck']);
-      add('Hyderabad', 'Buy', 'Ready to Move', 'SMR Vinay Iconia', 'SMR Holdings', 'Kondapur – HITEC City', 'P02400000219', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Ready Township', 10500, 148, 340, '2018', 'Ready to Move', false, ['OC Received • Zero GST', '22 Acres • 11 Towers']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Vajra West City', 'Vajra Builders', 'Osman Nagar – Tellapur', 'P01100006122', ['2 BHK', '3 BHK'], '2 & 3 BHK 41-Floor Towers', 7500, 94, 168, '2023', 'Dec 2027', false, ['14 Acres • 6 Towers', '65,000 sq.ft Clubhouse']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Sahiti Sarvani Elite', 'Sahiti Infra', 'Ameenpur – Miyapur Belt', 'P01100005309', ['2 BHK', '3 BHK'], '2 & 3 BHK Value Apartments', 5600, 64, 98, '2023', 'Jun 2027', false, ['12 Mins to Miyapur Metro', 'Clubhouse & Pool']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Modi Emerald Heights', 'Modi Builders', 'Ghatkesar – Uppal Corridor', 'P02200005514', ['2 BHK', '3 BHK'], '2 & 3 BHK Affordable Gated Flats', 4500, 48, 72, '2023', 'Mar 2027', false, ['Near Infosys Pocharam', 'HMDA & TG-RERA Approved']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Giridhari Prospera', 'Giridhari Homes', 'Kismatpur – Bandlaguda Jagir', 'P02400005719', ['2 BHK', '3 BHK'], '2 & 3 BHK Riverside Apartments', 6900, 82, 132, '2023', 'Sep 2027', false, ['10 Mins to Financial District via ORR', 'Clubhouse & Gym', '100% Power Backup']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Arkala Life', 'Arkala Infra', 'Tukkuguda • South Hyderabad', 'P02400005619', ['2 BHK', '3 BHK'], '2, 2.5 & 3 BHK • 1,112 – 1,825 sq.ft', 5600, 61, 100, '2023', 'Nov 2028', false, ['Tukkuguda ORR Exit 14', 'Clubhouse & Landscaped Greens', '10 Mins to RGIA']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'GHR Callisto', 'GHR Infra', 'Kollur • West Hyderabad', 'P01100004554', ['2 BHK', '3 BHK', '4 BHK'], '2, 2.5, 3 & 4 BHK • 1,195 – 3,585 sq.ft', 7500, 83, 247, '2022', 'Jun 2027', false, ['Kollur ORR Exit 2', '55,000 sq.ft Clubhouse', 'IGBC Gold Pre-Certified']);
-      add('Hyderabad', 'Buy', 'Ready to Move', 'Mantri Celestia', 'Mantri Developers', 'Nanakramguda, Financial District', 'REA02400000010', ['2 BHK', '3 BHK'], '2 & 3 BHK • 850 – 1,198 sq.ft', 11600, 83, 150, '2018', 'Ready to Move', false, ['OC Received • Zero GST', 'Heart of Financial District', 'Clubhouse Operational']);
-      add('Hyderabad', 'Buy', 'Ready to Move', 'Urbanrise On Cloud 33', 'Urbanrise', 'Bachupally • North-West Hyd', 'P02200002793', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK • 1,110 – 2,021 sq.ft', 8900, 91, 170, '2022', 'Nov 2026', false, ['33-Floor Sky Towers', 'Rooftop Sky Clubhouse', 'Near Miyapur & Bachupally']);
-      add('Hyderabad', 'Buy', 'New Launch', 'Team4 Aria', 'Team4 Life Spaces', 'Miyapur / Madinaguda • North-West', 'P02400010543', ['3 BHK', '4 BHK'], '3, 3.5 & 4 BHK • 1,655 – 2,650 sq.ft', 8200, 132, 216, '2026', 'Jan 2031', false, ['Near Miyapur Metro & NH-65', 'Sky Deck & Clubhouse', '100% Vaastu']);
-      add('Hyderabad', 'Buy', 'Ready to Move', 'EIPL Cornerstone', 'EIPL Infra', 'Puppalaguda • West Hyderabad', 'P02400005057', ['2 BHK', '3 BHK'], '2, 2.5 & 3 BHK • 1,360 – 2,350 sq.ft', 9058, 132, 228, '2022', 'Ready to Move', false, ['OC Received • Zero GST', '5 Mins to Financial District', 'Clubhouse & Pool']);
-      add('Hyderabad', 'Buy', 'New Launch', 'Radhey Skyverse', 'Radhey Constructions', 'Osman Nagar (Tellapur) • West', 'P01100011168', ['3 BHK', '4 BHK'], '3 & 4 BHK • 1,758 – 3,060 sq.ft', 7600, 133, 233, '2026', 'Jun 2031', false, ['Tellapur – Osman Nagar ORR Belt', 'Sky Lounge & Clubhouse', '80% Open Space']);
-      add('Hyderabad', 'Buy', 'New Launch', 'Casagrand Hennessy', 'Casagrand Builder Pvt Ltd', 'Kompally • North Hyderabad', 'P02200010760', ['3 BHK', '4 BHK'], '3 & 4 BHK • 1,827 – 2,694 sq.ft', 6500, 135, 198, '2026', 'Apr 2031', false, ['Kompally NH-44 Corridor', '60+ Lifestyle Amenities', 'Zero Dead-Space Plans']);
-      add('Hyderabad', 'Buy', 'New Launch', 'Vaishno Skyvue', 'Vaishno Group', 'Kollur • West Hyderabad', 'P01100010545', ['3 BHK'], '3 BHK • 2,010 – 2,725 sq.ft', 7000, 141, 191, '2026', 'Jan 2031', false, ['Kollur ORR Exit 2', 'Sky-Deck Clubhouse', '100% Vaastu']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Shapoorji Pallonji Skyraa', 'Shapoorji Pallonji Real Estate', 'Kokapet – Financial District', 'P02400006412', ['3 BHK', '4 BHK'], '3 & 4 BHK Sky Residences', 11400, 225, 365, '2023', 'Dec 2028', true, ['Shapoorji Pallonji Trust', '2 Mins to Neopolis', 'Sky Clubhouse']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Sobha Waterfront', 'Sobha Limited', 'Somajiguda – Hussain Sagar Lakefront', 'P02500005118', ['3 BHK', '4 BHK'], '3 & 4 BHK Lakefront Luxury Homes', 14200, 320, 495, '2023', 'Dec 2028', true, ['Hussain Sagar Lake Views', 'Sobha Engineering Quality', 'Central Hyderabad']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Godrej Madison Avenue', 'Godrej Properties', 'Kokapet • West Hyderabad', 'P02400009218', ['3 BHK', '4 BHK'], '3 & 4 BHK Manhattan-Styled Towers', 11800, 265, 430, '2025', 'Dec 2029', true, ['50-Floor Luxury Towers', 'Golden Mile Kokapet', 'Grand Clubhouse']);
-      add('Hyderabad', 'Buy', 'Under Construction', 'Sattva LakeRidge', 'Sattva Group', 'Neopolis, Kokapet • West', 'P02400006389', ['3 BHK', '4 BHK'], '3, 4 & 5 BHK Lakefront Sky Homes', 12400, 310, 560, '2023', 'Jun 2028', true, ['Osman Sagar & Kokapet Lakefront', '57-Floor Iconic Towers', '1 Lakh sq.ft Club']);
-      add('Hyderabad', 'Buy', 'New Launch', 'Trump Towers Hyderabad', 'Trump / Tribeca Developers', 'Kokapet Neopolis • West', 'P02400009910', ['4 BHK'], '4 BHK Ultra-Luxury Branded Sky Villas', 16500, 650, 990, '2025', 'Dec 2029', true, ['Iconic Twin Glass Towers', 'Private Lift Foyer', 'White-Glove Concierge']);
-      add('Hyderabad', 'Plots', 'Ready to Move', 'Eastern Meadows HMDA Plots', 'Eastern Infra Projects', 'Bibinagar – Uppal NH-163 Corridor', 'P02000010859', ['Plot'], 'HMDA & TG-RERA Approved Villa Plots', 3100, 46, 95, '2023', 'Ready to Register', false, ['40ft & 60ft Blacktop Roads', 'Underground Drainage', 'Spot Registration']);
-      add('Hyderabad', 'Plots', 'Ready to Move', 'Suchirindia Timberleaf', 'Suchirindia Infratech', 'Adibatla – TCS Aerospace Corridor', 'P02400004981', ['Plot'], 'HMDA & TG-RERA Gated Villa Plots', 3400, 52, 110, '2023', 'Ready to Register', false, ['5 Mins to TCS Adibatla & ORR Exit 13', 'Avenue Plantation']);
-      add('Hyderabad', 'Plots', 'Ready to Move', 'Bhashyam Brooks HMDA Plots', 'Bhashyam Developers', 'Shadnagar – Bangalore Hwy NH-44', 'P02400005218', ['Plot'], 'HMDA & TG-RERA Plotted Township', 2600, 44, 85, '2023', 'Ready to Register', false, ['25 Mins to RGIA Shamshabad', 'Clubhouse & Park Ready']);
+      add('Hyderabad', 'Buy', 'Ready / Near Possession', 'Candeur Crescent', 'Candeur Developers', 'Serilingampally • West', 'P02500004515', ['3 BHK'], '3 BHK • 1,652 – 2,656 sq.ft', 9080, 150, 241, '2022', 'Dec 2026', true, ['50 Floors • 62K Sq.ft Clubhouse']);
+      add('Hyderabad', 'Buy', 'New Launch', 'LINQ by Raghava', 'Raghava Projects', 'Kokapet / Neopolis, Hyderabad', 'P02400009712', ['3 BHK', '4 BHK'], '3 & 4 BHK Sky-Bridge Residences', 11900, 285, 460, '2026', 'Dec 2029', true, ['Interconnected Sky-Bridges']);
+      add('Hyderabad', 'Buy', 'Under Construction', 'Brigade Gateway Neopolis', 'Brigade Enterprises', 'Kokapet Neopolis, Hyderabad', 'P02400009142', ['3 BHK', '4 BHK'], '3, 4 & 5 BHK Integrated Township', 13400, 410, 720, '2025', 'Dec 2029', true, ['World Trade Center & Orion Mall Inside']);
+      add('Hyderabad', 'Buy', 'Under Construction', 'ASBL Broadway', 'ASBL (Ashoka Builders)', 'Financial District – Gachibowli', 'P02400009684', ['3 BHK'], '3 BHK Exclusive Outdoor Living Homes', 11450, 235, 310, '2025', 'Dec 2028', true, ['50-Floor Towers in Financial District']);
+      add('Hyderabad', 'Buy', 'Under Construction', 'The Cascades Neopolis', 'GHR Lakshmi Urbanblocks', 'Kokapet Neopolis, Hyderabad', 'P02400009538', ['3 BHK', '4 BHK'], '3 & 4 BHK 63-Floor Sky Towers', 12200, 310, 540, '2025', 'Mar 2030', true, ['63 Floors • 2 Lakh sq.ft Amenities']);
+      add('Hyderabad', 'Buy', 'Under Construction', 'Prestige Spring Heights', 'Prestige Estates Projects', 'Budvel – Rajendranagar, South Hyd', 'P02400009416', ['3 BHK', '4 BHK'], '3 & 4 BHK Lake-Facing Residences', 9400, 148, 285, '2025', 'Dec 2029', true, ['Overlooking Himayat Sagar Lake']);
+      add('Hyderabad', 'Buy', 'Under Construction', 'MAK Fern', 'MAK Projects', 'Tukkuguda – Srisailam Hwy, South Hyd', 'P02400010645', ['3 BHK', '4 BHK'], '3 & 4 BHK Nature-Centric Homes', 7200, 112, 185, '2026', 'Jun 2029', false, ['10 Mins to RGIA Shamshabad']);
+      add('Hyderabad', 'Buy', 'Under Construction', 'Arkala Life', 'Arkala Infra', 'Tukkuguda • South Hyderabad', 'P02400005619', ['2 BHK', '3 BHK'], '2, 2.5 & 3 BHK • 1,112 – 1,825 sq.ft', 5600, 61, 100, '2023', 'Nov 2028', false, ['Tukkuguda ORR Exit 14']);
+      add('Hyderabad', 'Buy', 'Under Construction', 'GHR Callisto', 'GHR Infra', 'Kollur • West Hyderabad', 'P01100004554', ['2 BHK', '3 BHK', '4 BHK'], '2, 2.5, 3 & 4 BHK • 1,195 – 3,585 sq.ft', 7500, 83, 247, '2022', 'Jun 2027', false, ['Kollur ORR Exit 2']);
+      add('Hyderabad', 'Buy', 'Ready to Move', 'Mantri Celestia', 'Mantri Developers', 'Nanakramguda, Financial District', 'REA02400000010', ['2 BHK', '3 BHK'], '2 & 3 BHK • 850 – 1,198 sq.ft', 11600, 83, 150, '2018', 'Ready to Move', false, ['OC Received • Zero GST']);
 
-      // BENGALURU
-      add('Bengaluru', 'Buy', 'Under Construction', 'Prestige Parklane', 'Prestige Estates Projects', 'Whitefield – Sarjapur Corridor', 'PRM/KA/RERA/1251/446/PR/250118/007412', ['2 BHK', '3 BHK'], '2 & 3 BHK Park-Facing Residences', 12900, 165, 245, '2025', 'Dec 2028', true, ['Tree-Lined Central Boulevard', 'Walk to Upcoming Metro']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Prestige Raintree Park', 'Prestige Estates Projects', 'Varthur – Whitefield Main Road', 'PRM/KA/RERA/1251/446/PR/240827/006981', ['3 BHK', '4 BHK'], '3, 4 & 5 BHK Integrated Township', 14500, 295, 520, '2024', 'Dec 2028', true, ['107-Acre Mega Township', 'Varthur Lakefront']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Prestige Somerville', 'Prestige Estates Projects', 'Whitefield – Marathahalli Road', 'PRM/KA/RERA/1251/446/PR/240319/006712', ['3 BHK', '4 BHK'], '3 & 4 BHK Lakeview Residences', 13800, 235, 360, '2024', 'Dec 2027', true, ['Varthur Lake Views', 'Walk to Whitefield Metro']);
-      add('Bengaluru', 'Buy', 'Ready to Move', 'Prestige Waterford', 'Prestige Estates Projects', 'ECC Road, Whitefield', 'PRM/KA/RERA/1251/446/PR/200811/003528', ['3 BHK', '4 BHK'], '3 & 4 BHK Ready Luxury Homes', 14100, 255, 385, '2020', 'Ready to Move', true, ['OC Received • Zero GST', 'Walk to Pattandur Agrahara Metro']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Prestige Lavender Fields', 'Prestige Estates Projects', 'Varthur – Gunjur Road', 'PRM/KA/RERA/1251/446/PR/230429/005906', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Gated Community', 12600, 155, 310, '2023', 'Jun 2027', true, ['18.2 Acres • 6 Towers', '50,000 sq.ft Clubhouse']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Prestige Camden Gardens', 'Prestige Estates Projects', 'Thanisandra Main Road, North Blr', 'PRM/KA/RERA/1251/472/PR/240514/006872', ['3 BHK', '4 BHK'], '3 & 4 BHK Boutique Luxury Homes', 13200, 198, 325, '2024', 'Dec 2027', true, ['10 Mins to Manyata Tech Park', 'Rooftop Pool']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Embassy South Reserve', 'Embassy Developments', 'Kanakapura Road – Konanakunte', 'PRM/KA/RERA/1251/310/PR/250204/007488', ['3 BHK', '4 BHK'], '3 & 4 BHK Reserve Luxury Homes', 13600, 225, 390, '2025', 'Dec 2028', true, ['5 Mins to Forum South & Metro', '75% Lush Canopy Greens']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Embassy Riverine', 'Embassy Developments', 'Hebbal – Nagavara Lakefront', 'PRM/KA/RERA/1251/472/PR/250129/007451', ['3 BHK', '4 BHK'], '3 & 4 BHK Waterfront Sky Homes', 15200, 290, 510, '2025', 'Jun 2029', true, ['Overlooking Nagavara Lake', '5 Mins to Manyata']);
-      add('Bengaluru', 'Buy', 'Ready to Move', 'Embassy Lake Terraces', 'Embassy Group', 'Hebbal – Bellary Road, North Blr', 'PRM/KA/RERA/1251/472/PR/170916/000602', ['3 BHK', '4 BHK'], '3 & 4 BHK Ready Sky Villas', 16500, 480, 820, '2018', 'Ready to Move', true, ['OC Received • Zero GST', '20 Mins to KIA Airport']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Godrej Florenne', 'Godrej Properties', 'Sarjapur Road – Sompura Gate', 'PRM/KA/RERA/1251/308/PR/250211/007519', ['2 BHK', '3 BHK'], '2 & 3 BHK Botanical Residences', 10200, 128, 195, '2025', 'Dec 2028', true, ['Mediterranean Courtyard Gardens', '15 Mins to Wipro Kodathi']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Godrej Woodscapes', 'Godrej Properties', 'Budigere Cross – Whitefield Ext', 'PRM/KA/RERA/1251/446/PR/240517/006882', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Forest-Edge Towers', 10400, 135, 290, '2024', 'Dec 2028', true, ['1,500+ Grown Trees Preserved', '28-Acre Township on OMR']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Godrej Parkshire', 'Godrej Properties', 'Hoskote – Whitefield Corridor', 'PRM/KA/RERA/1250/304/PR/250114/007390', ['2 BHK', '3 BHK'], '2 & 3 BHK Value Township Flats', 7450, 84, 132, '2025', 'Jun 2028', false, ['STRR & NH-75 Connectivity', '15 Mins to ITPL Whitefield']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Godrej Ananda', 'Godrej Properties', 'Bagalur – KIADB Aerospace Park', 'PRM/KA/RERA/1251/472/PR/210331/004084', ['2 BHK', '3 BHK'], '2 & 3 BHK Aerospace Hub Homes', 8900, 96, 155, '2021', 'Dec 2026', false, ['Inside 3,000-Acre Aerospace Park', '15 Mins to KIA Airport']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Sobha Ayana', 'Sobha Limited', 'Panathur – Balagere, East Blr', 'PRM/KA/RERA/1251/446/PR/240621/006918', ['3 BHK'], '3 BHK Tropical-Themed Apartments', 13400, 215, 265, '2024', 'Dec 2028', true, ['Part of 81-Acre Sobha Dream Acres', '10 Mins to Bellandur ORR']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Sobha Neopolis', 'Sobha Limited', 'Panathur – ORR, Bengaluru', 'PRM/KA/RERA/1251/446/PR/230921/006281', ['3 BHK', '4 BHK'], '3 & 4 BHK Greek-Themed Homes', 14200, 248, 410, '2023', 'Dec 2028', true, ['3 Iconic Clubhouses', '10 Mins to Bellandur ORR']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Sobha Sentosa', 'Sobha Limited', 'Panathur – Balagere Road', 'PRM/KA/RERA/1251/446/PR/220518/004882', ['2 BHK', '3 BHK'], '2 & 3 BHK Singapore-Themed Homes', 13100, 175, 240, '2022', 'Jun 2027', false, ['Merlion Boulevard & Pool', 'Close to Embassy TechVillage']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Sobha Crystal Meadows', 'Sobha Limited', 'Sarjapur Road – Mullur, East Blr', 'PRM/KA/RERA/1251/446/PR/240415/006789', ['Villa', '4 BHK'], '4 BHK London-Themed Row Houses', 16800, 690, 950, '2024', 'Dec 2028', true, ['26-Acre Gated Row-House Enclave', 'Private Garden & Sky Deck']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Brigade Valencia', 'Brigade Enterprises', 'Hosur Road – Electronic City', 'PRM/KA/RERA/1251/308/PR/230112/005614', ['2 BHK', '3 BHK'], '2, 2.5 & 3 BHK Spanish-Style Homes', 8600, 98, 168, '2023', 'Dec 2027', false, ['24-Acre Integrated Enclave', 'Near Bommasandra Metro']);
-      add('Bengaluru', 'Buy', 'Ready to Move', 'Brigade Cornerstone Utopia', 'Brigade Enterprises', 'Varthur – Sarjapur Road', 'PRM/KA/RERA/1251/446/PR/190129/002311', ['2 BHK', '3 BHK'], '2 & 3 BHK Smart Township Homes', 11200, 142, 225, '2019', 'Ready to Move', false, ['47-Acre Mixed-Use Township', 'OC Received']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Brigade Insignia', 'Brigade Enterprises', 'Yelahanka – Bellary Road', 'PRM/KA/RERA/1251/472/PR/240529/006894', ['3 BHK', '4 BHK'], '3 & 4 BHK Boutique Luxury Homes', 13500, 295, 490, '2024', 'Dec 2028', true, ['Low-Density 379 Residences', '15 Mins to KIA Airport']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Sattva Aangane', 'Sattva Group', 'Devanahalli – Airport Road', 'PRM/KA/RERA/1250/303/PR/250122/007428', ['2 BHK', '3 BHK'], '2 & 3 BHK Heritage Courtyard Homes', 8400, 94, 152, '2025', 'Dec 2028', false, ['10 Mins to Kempegowda Airport', 'STRR Access']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Sattva Lumina', 'Sattva Group', 'Yelahanka – Doddaballapur Road', 'PRM/KA/RERA/1251/472/PR/241008/007119', ['2 BHK', '3 BHK'], '2 & 3 BHK North Bengaluru Homes', 8900, 99, 165, '2024', 'Dec 2028', false, ['13 Acres • High-Street Retail', '20 Mins to KIA Airport']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Sumadhura Belfort', 'Sumadhura Infracon', 'KR Puram – Old Madras Road', 'PRM/KA/RERA/1251/446/PR/250208/007504', ['2 BHK', '3 BHK'], '2 & 3 BHK Metro-Corridor Towers', 10600, 132, 210, '2025', 'Dec 2028', true, ['5 Mins to KR Puram Purple Line Metro', 'Rooftop Club']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Sumadhura Folium', 'Sumadhura Infracon', 'Borewell Road, Whitefield', 'PRM/KA/RERA/1251/446/PR/220420/004825', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Lakefront Apartments', 12400, 178, 345, '2022', 'Jun 2027', true, ['Overlooking Nallurahalli Lake', 'Walk to Nallurahalli Metro']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Casagrand Estancia', 'Casagrand Builder Pvt Ltd', 'Yelahanka, North Bengaluru', 'PRM/KA/RERA/1251/472/PR/240912/007015', ['3 BHK', '4 BHK'], 'Extra-Spacious 3 & 4 BHK Apts', 9600, 152, 235, '2024', 'Jun 2028', true, ['75% Open Landscaped Area', '60+ Lifestyle Amenities']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Assetz 63 Degree East', 'Assetz Property Group', 'Sarjapur Road, Bengaluru', 'PRM/KA/RERA/1251/446/PR/230615/006019', ['2 BHK', '3 BHK'], '2 & 3 BHK Eco-Luxury Apartments', 9800, 115, 178, '2023', 'Sep 2027', false, ['26 Acres • 68% Open Space', 'IGBC Platinum Certified']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Assetz Melodies of Life', 'Assetz Property Group', 'Hosa Road – Off Sarjapur Rd', 'PRM/KA/RERA/1251/308/PR/231108/006392', ['3 BHK'], '3 BHK Carbon-Healing Homes', 10500, 165, 220, '2023', 'Dec 2027', false, ['Large Balcony Decks', '10 Mins to Electronic City & ORR']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Purva Aerocity', 'Puravankara Limited', 'Chikkajala – Airport Road', 'PRM/KA/RERA/1251/472/PR/241122/007254', ['2 BHK', '3 BHK'], '2 & 3 BHK Airport Corridor Homes', 10200, 125, 198, '2024', 'Dec 2028', true, ['10 Mins to KIA Airport Toll', 'Blue Line Airport Metro Access']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Nikoo Homes 5 by Bhartiya', 'Bhartiya Urban', 'Thanisandra – Bhartiya City', 'PRM/KA/RERA/1251/472/PR/230819/006214', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Smart Lofts & Flats', 10800, 122, 285, '2023', 'Jun 2028', true, ['125-Acre Integrated Smart City', 'Mall, School & IT Park Inside']);
-      add('Bengaluru', 'Buy', 'Ready to Move', 'Provident Equinox', 'Puravankara / Provident', 'Mysore Road – Kengeri', 'PRM/KA/RERA/1251/310/PR/190328/002514', ['2 BHK', '3 BHK'], '2 & 3 BHK Ready Metro Homes', 7800, 78, 108, '2019', 'Ready to Move', false, ['OC Received • Zero GST', '5 Mins to Challaghatta Metro']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Lodha Azur', 'Lodha Group', 'Bannerghatta Road – Akshayanagar', 'PRM/KA/RERA/1251/310/PR/240524/006891', ['3 BHK', '4 BHK'], '3 & 4 BHK Lakefront Luxury Homes', 13500, 235, 395, '2024', 'Dec 2028', true, ['Overlooking Hulimavu Lake', 'Saint Amand Hospitality']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Sowparnika The Native', 'Sowparnika Projects', 'Off Sarjapur Road – Attibele', 'PRM/KA/RERA/1251/308/PR/240219/006618', ['2 BHK', '3 BHK'], '2 & 3 BHK Affordable Gated Flats', 6400, 69, 98, '2024', 'Jun 2027', false, ['Zero Space-Wastage Plans', 'Swimming Pool & Indoor Games']);
-      add('Bengaluru', 'Buy', 'Ready to Move', 'Disha Whitehill Towers', 'Disha Direct', 'Kanakapura Road – Talaghattapura', 'PRM/KA/RERA/1251/310/PR/220901/005210', ['2 BHK', '3 BHK'], '2 & 3 BHK Metro-Adjacent Homes', 8200, 92, 138, '2022', 'Ready to Move', false, ['5 Mins to Green Line Metro', 'NICE Road Junction', 'OC Received']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Aratt Alchemy Essence', 'Aratt Developers', 'Doddagubbi – Off Hennur Road, North Blr', 'PRM/KA/RERA/1251/309/PR/030525/007710', ['2 BHK', '3 BHK'], '2 & 3 BHK Boutique Luxury Apartments', 9200, 116, 167, '2025', 'Mar 2030', true, ['10 Mins to Manyata Tech Park', '30+ Lifestyle Amenities', 'Low-Density 188 Homes']);
-      add('Bengaluru', 'Buy', 'Under Construction', 'Aratt Ayatana Residences', 'Aratt Developers', 'Electronic City Phase 1, South Blr', 'PRM/KA/RERA/1251/308/PR/240615/006935', ['3 BHK', '4 BHK'], '3 & 4 BHK Low-Density Sky Villas', 13200, 271, 335, '2024', 'Jun 2029', true, ['BDA & K-RERA Approved', '2,048 – 2,561 sq.ft Sky Residences', 'Hosur Road IT Hub']);
-      add('Bengaluru', 'Buy', 'Ready to Move', 'Aratt Alchemy One', 'Aratt Developers', 'Old Madras Road – KR Puram, East Blr', 'PRM/KA/RERA/1251/446/PR/130122/004638', ['2 BHK', '3 BHK'], '2 & 3 BHK Smart Concierge Apartments', 9800, 115, 179, '2022', 'Dec 2026', false, ['Single Boutique Tower (162 Homes)', 'Near Whitefield & KR Puram Metro', 'Alexa-Enabled Smart Homes']);
-      add('Bengaluru', 'Plots', 'Ready to Move', 'Adarsh Savana Villa Plots', 'Adarsh Developers', 'Devanahalli – IVC Road, North Blr', 'PRM/KA/RERA/1250/303/PR/210318/004015', ['Plot'], 'BIAAPA & K-RERA Gated Villa Plots', 5600, 84, 165, '2021', 'Ready to Register', true, ['93-Acre Gated Plotted Township', '40,000 sq.ft Clubhouse Ready']);
+      add('Bengaluru', 'Buy', 'Under Construction', 'Aratt Alchemy Essence', 'Aratt Developers', 'Doddagubbi – Off Hennur Road, North Blr', 'PRM/KA/RERA/1251/309/PR/030525/007710', ['2 BHK', '3 BHK'], '2 & 3 BHK Boutique Luxury Apartments', 9200, 116, 167, '2025', 'Mar 2030', true, ['10 Mins to Manyata Tech Park']);
+      add('Bengaluru', 'Buy', 'Under Construction', 'Aratt Ayatana Residences', 'Aratt Developers', 'Electronic City Phase 1, South Blr', 'PRM/KA/RERA/1251/308/PR/240615/006935', ['3 BHK', '4 BHK'], '3 & 4 BHK Low-Density Sky Villas', 13200, 271, 335, '2024', 'Jun 2029', true, ['BDA & K-RERA Approved']);
+      add('Bengaluru', 'Buy', 'Ready to Move', 'Aratt Alchemy One', 'Aratt Developers', 'Old Madras Road – KR Puram, East Blr', 'PRM/KA/RERA/1251/446/PR/130122/004638', ['2 BHK', '3 BHK'], '2 & 3 BHK Smart Concierge Apartments', 9800, 115, 179, '2022', 'Dec 2026', false, ['Single Boutique Tower (162 Homes)']);
+      add('Bengaluru', 'Buy', 'Under Construction', 'Prestige Raintree Park', 'Prestige Estates Projects', 'Varthur – Whitefield Main Road', 'PRM/KA/RERA/1251/446/PR/240827/006981', ['3 BHK', '4 BHK'], '3, 4 & 5 BHK Integrated Township', 14500, 295, 520, '2024', 'Dec 2028', true, ['107-Acre Mega Township']);
 
-      // CHENNAI
-      add('Chennai', 'Buy', 'Under Construction', 'Casagrand Suncity', 'Casagrand Builder Pvt Ltd', 'Kelambakkam – Vandalur Road, OMR', 'TN/29/Building/0514/2025', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Roman-Themed Township', 5950, 64, 145, '2025', 'Dec 2027', false, ['40-Acre Mega Township', '130+ World-Class Amenities']);
-      add('Chennai', 'Buy', 'Under Construction', 'Casagrand Vienna', 'Casagrand Builder Pvt Ltd', 'Adyar, South Chennai', 'TN/29/Building/0312/2025', ['3 BHK', '4 BHK'], '3 & 4 BHK Boutique Luxury Apts', 15800, 245, 360, '2025', 'Jun 2027', true, ['Prime Adyar Residential Enclave', 'Rooftop Sky Lounge']);
-      add('Chennai', 'Buy', 'Ready to Move', 'Casagrand Zodiac', 'Casagrand Builder Pvt Ltd', 'Mogappair West, Chennai', 'TN/29/Building/0219/2025', ['2 BHK', '3 BHK'], '2 & 3 BHK Family Residences', 7950, 86, 134, '2023', 'Dec 2026', false, ['10 Mins to Anna Nagar', '45+ Amenities']);
-      add('Chennai', 'Buy', 'Under Construction', 'Casagrand Flagship', 'Casagrand Builder Pvt Ltd', 'Pallikaranai – Velachery Link Rd', 'TN/29/Building/0284/2024', ['2 BHK', '3 BHK'], '2 & 3 BHK Gated Community', 7600, 82, 128, '2024', 'Jun 2027', false, ['10 Mins to Velachery & OMR', '70+ Amenities']);
-      add('Chennai', 'Buy', 'Under Construction', 'Casagrand Mercury', 'Casagrand Builder Pvt Ltd', 'Perambur – North Chennai', 'TN/29/Building/0491/2025', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK High-Rise Towers', 8200, 89, 175, '2025', 'Dec 2027', false, ['20-Acre Integrated Township', '100+ Amenities']);
-      add('Chennai', 'Buy', 'Under Construction', 'Radiance Everbloom', 'Radiance Realty', 'Guindy, Chennai', 'TN/29/Building/0418/2026', ['2 BHK', '3 BHK'], '2 & 3 BHK Metro-Connected Homes', 13200, 148, 225, '2025', 'Dec 2027', true, ['5 Mins to Guindy Metro & Olympia Tech Park', 'Podium Garden']);
-      add('Chennai', 'Buy', 'Under Construction', 'Radiance Solitaire', 'Radiance Realty', 'Madhavaram, North Chennai', 'TN/29/Building/0377/2025', ['2 BHK', '3 BHK'], '2 & 3 BHK Gated High-Rise', 6850, 74, 118, '2024', 'Sep 2027', false, ['Walk to Upcoming Madhavaram Metro', '40+ Lifestyle Amenities']);
-      add('Chennai', 'Buy', 'Under Construction', 'Radiance The Prime', 'Radiance Realty', 'Pammal – Pallavaram GST Road', 'TN/29/Building/0331/2025', ['2 BHK', '3 BHK'], '2 & 3 BHK Airport-Corridor Homes', 7400, 79, 124, '2024', 'Jun 2027', false, ['8 Mins to Chennai Intl Airport & Metro', 'Clubhouse & Pool']);
-      add('Chennai', 'Buy', 'Ready to Move', 'Appaswamy Altezza', 'Appaswamy Real Estates', 'Perungudi – OMR, Chennai', 'TN/29/Building/0108/2023', ['3 BHK', '4 BHK'], '3 & 4 BHK OMR Landmark Towers', 14600, 235, 380, '2021', 'Ready to Move', true, ['OC Received • Zero GST', 'Walk to World Trade Center OMR']);
-      add('Chennai', 'Buy', 'Under Construction', 'Appaswamy Clover by the River', 'Appaswamy Real Estates', 'Kotturpuram – Adyar Riverfront', 'TN/29/Building/0468/2025', ['3 BHK', '4 BHK'], '3 & 4 BHK Ultra-Luxury Suites', 22500, 490, 780, '2025', 'Dec 2028', true, ['Prime South Chennai Address', 'Panoramic Adyar River Views']);
-      add('Chennai', 'Buy', 'Ready to Move', 'Brigade Xanadu', 'Brigade Enterprises', 'Mogappair West, Chennai', 'TN/29/Building/0194/2023', ['2 BHK', '3 BHK'], '2 & 3 BHK Spanish-Style Township', 9100, 108, 165, '2021', 'Ready to Move', false, ['33-Acre Integrated Township', '10 Mins to Koyambedu']);
-      add('Chennai', 'Buy', 'Under Construction', 'Brigade Icon', 'Brigade Enterprises', 'Mount Road (Anna Salai), Chennai', 'TN/29/Building/0502/2025', ['3 BHK', '4 BHK'], '3, 4 & 5 BHK Iconic Sky Residences', 24000, 620, 990, '2025', 'Dec 2029', true, ['Heart of Chennai on Anna Salai', '38-Floor Landmark Tower']);
-      add('Chennai', 'Buy', 'Ready to Move', 'Prestige Courtyards', 'Prestige Estates Projects', 'Sholinganallur – OMR, Chennai', 'TN/29/Building/0142/2023', ['2 BHK', '3 BHK'], '2 & 3 BHK Low-Rise Courtyard Homes', 8600, 102, 152, '2021', 'Ready to Move', false, ['5 Mins to ELCOT & Infosys OMR', 'OC Received']);
-      add('Chennai', 'Buy', 'Under Construction', 'Prestige Pallavaram Gardens', 'Prestige Estates Projects', 'Pallavaram – Thoraipakkam Radial Rd', 'TN/29/Building/0519/2025', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Radial Road Towers', 9800, 118, 245, '2025', 'Dec 2028', true, ['Direct Radial Road to OMR & Airport', '60,000 sq.ft Clubhouse']);
-      add('Chennai', 'Buy', 'Under Construction', 'TVS Emerald Jardin', 'TVS Emerald', 'Singaperumal Koil – GST Road', 'TN/29/Building/0395/2025', ['2 BHK', '3 BHK'], '2 & 3 BHK Botanical Garden Homes', 5800, 62, 96, '2024', 'Jun 2027', false, ['Near Mahindra World City', '75+ Lifestyle Amenities']);
-      add('Chennai', 'Buy', 'Under Construction', 'TVS Emerald Elements', 'TVS Emerald', 'Kovilambakkam – Radial Road', 'TN/29/Building/0441/2025', ['2 BHK', '3 BHK'], '2 & 3 BHK Green-Certified Homes', 8400, 94, 148, '2024', 'Dec 2027', false, ['10 Mins to Velachery & OMR', 'IGBC Gold Pre-Certified']);
-      add('Chennai', 'Buy', 'Under Construction', 'Baashyaam Pinnacle Crest', 'Baashyaam Constructions', 'Sholinganallur Junction, OMR', 'TN/29/Building/0452/2025', ['3 BHK', '4 BHK'], '3 & 4 BHK 38-Floor OMR Landmark', 9900, 162, 275, '2024', 'Dec 2027', true, ['Tallest Tower at Sholinganallur', 'Bay of Bengal Sea Views']);
-      add('Chennai', 'Buy', 'Under Construction', 'Rohaan Elite', 'Rohaan Constructions', 'Adyar, Chennai', 'TN/29/Building/0156/2026', ['3 BHK'], '3 BHK Exclusive Stilt+5 Residences', 14900, 215, 255, '2025', 'Mar 2027', true, ['Low-Density Boutique Living', 'Close to Besant Nagar Beach']);
-      add('Chennai', 'Buy', 'Under Construction', 'Anantamaya by India Builders', 'India Builders Limited', 'Anna Nagar, Chennai', 'TN/29/Building/0489/2026', ['3 BHK', '4 BHK'], '3 & 4 BHK Signature Apartments', 16500, 290, 410, '2025', 'Sep 2027', true, ['Heart of Anna Nagar', 'Walk to Anna Nagar Tower Metro']);
-      add('Chennai', 'Buy', 'Under Construction', 'Voora OneSea', 'Voora Property Developers', 'Palavakkam – ECR, Chennai', 'TN/29/Building/0433/2025', ['3 BHK', '4 BHK'], '3 & 4 BHK Sea-Breeze Residences', 12400, 195, 310, '2024', 'Dec 2027', true, ['300m from ECR Beachfront', 'Rooftop Infinity Pool']);
-      add('Chennai', 'Buy', 'Under Construction', 'Olympia Opaline Sequel', 'Olympia Group', 'Navalur – OMR IT Corridor', 'TN/29/Building/0364/2024', ['2 BHK', '3 BHK'], '2 & 3 BHK OMR High-Rise Homes', 7200, 78, 125, '2024', 'Jun 2027', false, ['Walk to Vivira Mall & SIPCOT OMR', '35,000 sq.ft Clubhouse']);
-      add('Chennai', 'Plots', 'Ready to Move', 'Avantara CMDA Gated Plots', 'Avantara Developers', 'Medavakkam – Tambaram Belt', 'TN/29/Layout/0291/2025', ['Plot'], 'CMDA & TNRERA Approved Villa Plots', 4950, 59, 105, '2024', 'Ready to Register', false, ['CMDA Approved Layout', '15 Mins to Velachery & OMR']);
-
-      // DELHI NCR
-      add('Delhi NCR', 'Buy', 'Under Construction', 'DLF Privana South', 'DLF Limited', 'Sector 77, SPR Gurugram', 'RC/REP/HARERA/GGM/772/504/2024/01', ['4 BHK'], '4 BHK + Utility Luxury Residences', 18500, 660, 740, '2024', 'Dec 2028', true, ['116-Acre Integrated DLF Township', 'Aravalli Hills Backdrop']);
-      add('Delhi NCR', 'Buy', 'Under Construction', 'DLF Privana West', 'DLF Limited', 'Sector 76, SPR Gurugram', 'RC/REP/HARERA/GGM/819/551/2024/48', ['4 BHK'], '4 BHK + Utility Penthouse & Flats', 19200, 695, 890, '2024', 'Mar 2029', true, ['Part of 116-Acre DLF Township', 'Clubhouse & Golf Greens']);
-      add('Delhi NCR', 'Buy', 'Under Construction', 'DLF The Arbour', 'DLF Limited', 'Sector 63, Golf Course Ext Rd', 'RC/REP/HARERA/GGM/671/403/2023/15', ['4 BHK'], '4 BHK Super-Luxury Sky Homes', 21500, 840, 950, '2023', 'Dec 2027', true, ['25 Acres • Only 2 Flats per Core', '1.25 Lakh sq.ft Clubhouse']);
-      add('Delhi NCR', 'Buy', 'Under Construction', 'Godrej Tropical Isle', 'Godrej Properties', 'Sector 146, Noida Expressway', 'UPRERAPRJ303390', ['3 BHK', '4 BHK'], '3 & 4 BHK Island-Themed Homes', 14900, 295, 480, '2023', 'Feb 2029', true, ['Direct Noida-Greater Noida Expressway', 'Beach-Edge Pool']);
-      add('Delhi NCR', 'Buy', 'Under Construction', 'Godrej Aristocrat', 'Godrej Properties', 'Sector 49, Golf Course Ext Rd', 'RC/REP/HARERA/GGM/767/499/2023/111', ['3 BHK', '4 BHK'], '3 & 4 BHK Forest-Themed Luxury', 19200, 495, 680, '2023', 'Jun 2028', true, ['45,000 sq.ft Social Club', 'Sohna Road & Golf Course Ext']);
-      add('Delhi NCR', 'Buy', 'Under Construction', 'Godrej Jardinia', 'Godrej Properties', 'Sector 146, Noida Expressway', 'UPRERAPRJ288309', ['3 BHK', '4 BHK'], '3 & 4 BHK European-Themed Luxury', 15400, 315, 510, '2024', 'Jun 2029', true, ['Walk to Sector 146 Aqua Line Metro', 'Indoor Heated Pool']);
-      add('Delhi NCR', 'Buy', 'Under Construction', 'Godrej Zenith', 'Godrej Properties', 'Sector 89, New Gurugram', 'RC/REP/HARERA/GGM/799/531/2024/28', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Wellness Residences', 13800, 225, 440, '2024', 'Dec 2028', true, ['65,000 sq.ft Wellness Clubhouse', '5 Mins to Dwarka Expressway']);
-      add('Delhi NCR', 'Buy', 'Under Construction', 'M3M Golf Hills', 'M3M India', 'Sector 79, Gurugram', 'RC/REP/HARERA/GGM/704/436/2023/48', ['3 BHK', '4 BHK'], '3.5 & 4.5 BHK Golf-View Homes', 12800, 215, 340, '2023', 'Jun 2028', true, ['9-Hole Executive Golf Course', '1 Lakh sq.ft Clubhouse']);
-      add('Delhi NCR', 'Buy', 'Under Construction', 'M3M Capital', 'M3M India', 'Sector 113, Dwarka Expressway', 'RC/REP/HARERA/GGM/531/263/2022/06', ['2 BHK', '3 BHK', '4 BHK'], '2.5, 3.5 & 4.5 BHK Delhi-Border Homes', 15600, 265, 490, '2022', 'Dec 2027', true, ['0 Km from Delhi Border', '10 Mins to IGI Airport']);
-      add('Delhi NCR', 'Buy', 'Under Construction', 'M3M Altitude', 'M3M India', 'Sector 65, Golf Course Ext Rd', 'RC/REP/HARERA/GGM/821/553/2024/50', ['4 BHK'], '4 BHK Ultra-Luxury Sky Residences', 22500, 820, 1100, '2024', 'Dec 2028', true, ['Iconic Skybridge Lounge', 'Private Lift Lobby']);
-      add('Delhi NCR', 'Buy', 'Under Construction', 'Smartworld One DXP', 'Smartworld Developers', 'Sector 113, Dwarka Expressway', 'RC/REP/HARERA/GGM/645/377/2022/120', ['3 BHK', '4 BHK'], '3.5 & 4.5 BHK Lagoon-View Homes', 15900, 285, 475, '2022', 'Dec 2027', true, ['24x7 Gym & Co-Working Observatory', 'Direct Dwarka Expressway']);
-      add('Delhi NCR', 'Buy', 'Ready to Move', 'ATS Knightsbridge', 'ATS Infrastructure', 'Sector 124, Noida Expressway', 'UPRERAPRJ3574', ['4 BHK'], '4 BHK Super-Luxury Sky Floors', 17500, 980, 1250, '2019', 'Ready to Move', true, ['1 Apartment per Floor (6,000 sq.ft)', '0 Km from South Delhi DND Flyway']);
-      add('Delhi NCR', 'Buy', 'Under Construction', 'ATS Pious Orchards', 'ATS Infrastructure', 'Sector 150, Noida Expressway', 'UPRERAPRJ183246', ['3 BHK', '4 BHK'], '3 & 4 BHK Yamuna-View Residences', 12400, 275, 395, '2022', 'Jun 2027', true, ['Low-Density 2 Flats per Floor', '80% Green Sector 150']);
-      add('Delhi NCR', 'Buy', 'Under Construction', 'ACE Terra', 'ACE Group', 'Sector 22D, Yamuna Expressway', 'UPRERAPRJ683816', ['3 BHK', '4 BHK'], '3 & 4 BHK Airport-Corridor Homes', 8450, 142, 235, '2024', 'Dec 2028', false, ['15 Mins to Jewar Noida Intl Airport', 'Clubhouse']);
-      add('Delhi NCR', 'Buy', 'Under Construction', 'ACE Starlit', 'ACE Group', 'Sector 152, Noida Expressway', 'UPRERAPRJ677294', ['2 BHK', '3 BHK'], '2 & 3 BHK Glass-Facade Luxury', 13200, 178, 255, '2022', 'Jun 2027', false, ['Walk to Sector 148 Metro', 'Double-Height Lobby']);
-      add('Delhi NCR', 'Buy', 'Under Construction', 'Eldeco La Vida Bella', 'Eldeco Group', 'Sector 12, Greater Noida West', 'UPRERAPRJ136219', ['3 BHK', '4 BHK'], '3 & 4 BHK Low-Density Apartments', 9400, 165, 295, '2024', 'Jun 2028', false, ['12ft Floor-to-Ceiling Height', 'All-Weather Indoor Pool']);
-      add('Delhi NCR', 'Buy', 'Ready to Move', 'Tata Eureka Park', 'Tata Housing', 'Sector 150, Noida Expressway', 'UPRERAPRJ5448', ['2 BHK', '3 BHK'], '2 & 3 BHK Smart App-Controlled Homes', 11200, 145, 210, '2020', 'Ready to Move', false, ['80% Greenest Sector of Noida', 'OC Received • Zero GST']);
-      add('Delhi NCR', 'Buy', 'Ready to Move', 'Sobha International City', 'Sobha Limited', 'Sector 109, Dwarka Expressway', 'RC/REP/HARERA/GGM/369/101/2019/63', ['Villa', '4 BHK'], '4 & 5 BHK Duplex Gated Villas', 19500, 790, 1150, '2019', 'Ready to Move', true, ['150-Acre Presidential Villa Township', '15 Mins to IGI']);
-      add('Delhi NCR', 'Buy', 'Ready to Move', 'Dwarka Elite Residency', 'DDA & Delhi RERA Associates', 'Sector 19B, Dwarka, New Delhi', 'DLRERA2025P0014', ['3 BHK', '4 BHK'], '3 & 4 BHK Delhi RERA Apartments', 16200, 275, 420, '2022', 'Ready to Move', true, ['10 Mins to IGI Airport T3', 'Blue Line Metro Access']);
-      add('Delhi NCR', 'Buy', 'Under Construction', 'Hero Homes Palatial', 'Hero Realty', 'Sector 104, Dwarka Expressway', 'RC/REP/HARERA/GGM/842/574/2025/09', ['3 BHK', '4 BHK'], '3 & 4 BHK European Luxury Homes', 15500, 395, 560, '2025', 'Dec 2028', true, ['Direct Dwarka Expressway Frontage', '60,000 sq.ft Clubhouse']);
-      add('Delhi NCR', 'Buy', 'Under Construction', 'Mahagun Medalleo', 'Mahagun Group', 'Sector 107, Noida', 'UPRERAPRJ125561', ['3 BHK', '4 BHK'], '3 & 4 BHK Royal Luxury Suites', 14800, 365, 540, '2023', 'Dec 2027', true, ['Low-Density 2 Flats per Floor', 'Central Noida Connectivity']);
-      add('Delhi NCR', 'Plots', 'Ready to Move', 'Gaur Yamuna City YEIDA Plots', 'Gaurs Group', 'Sector 19, Yamuna Expressway', 'UPRERAPRJ15842', ['Plot'], 'YEIDA & UP-RERA Township Plots', 6800, 95, 195, '2021', 'Ready to Register', false, ['250-Acre Integrated Township', '12 Mins to Jewar Airport']);
-
-      // PUNE
-      add('Pune', 'Buy', 'Ready to Move', 'Lodha Panache', 'Lodha Group', 'Hinjewadi Phase 1, Pune', 'P52100050124', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Luxury Residences', 10800, 138, 265, '2023', 'Dec 2026', true, ['Nearing Handover • Walk to IT Park', 'Grand Clubhouse & Pool']);
-      add('Pune', 'Buy', 'Under Construction', 'Lodha Estilo', 'Lodha Group', 'Kharadi, East Pune', 'P52100055819', ['3 BHK', '4 BHK'], '3 & 4 BHK Sky-Deck Suites', 13200, 195, 340, '2024', 'Jun 2028', true, ['5 Mins to EON IT Park & WTC', '20,000 sq.ft Saint Amand Club']);
-      add('Pune', 'Buy', 'Under Construction', 'Lodha Giardino', 'Lodha Group', 'Kharadi, East Pune', 'P52100047587', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Garden Residences', 12400, 148, 295, '2023', 'Jun 2027', true, ['80% Open Landscaped Greens', '5 Mins to EON IT Park']);
-      add('Pune', 'Buy', 'Under Construction', 'Godrej Park World – The Gale', 'Godrej Properties', 'Hinjewadi Phase 1, Pune', 'P52100054971', ['2 BHK', '3 BHK'], '2 & 3 BHK Township Homes', 9650, 105, 168, '2024', 'Mar 2029', true, ['100+ Acre Mega Township', '12-Acre Central Greens']);
-      add('Pune', 'Buy', 'Under Construction', 'Godrej The Greenfront', 'Godrej Properties', 'Hinjewadi Phase 1, Pune', 'P52100077412', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Park-Facing Towers', 10200, 118, 225, '2024', 'Dec 2028', true, ['Overlooking 12-Acre Central Park', 'Walk to Infosys & Wipro']);
-      add('Pune', 'Buy', 'Under Construction', 'Godrej Evergreen Square', 'Godrej Properties', 'Hinjewadi Phase 3, Pune', 'P52100078239', ['2 BHK', '3 BHK'], '2 & 3 BHK Metro-Adjacent Homes', 9100, 89, 138, '2025', 'Dec 2028', false, ['Walk to Megapolis Circle Metro', '35+ Amenities']);
-      add('Pune', 'Buy', 'Under Construction', 'Kolte-Patil Life Republic Canvas', 'Kolte-Patil Developers', 'Hinjewadi – Marunji, Pune', 'P52100047921', ['3 BHK', '4 BHK'], '3, 3.5 & 4 BHK Integrated Living', 8400, 129, 215, '2023', 'Jun 2028', true, ['390-Acre Integrated Township', '4-Acre Botanical Park']);
-      add('Pune', 'Buy', 'Under Construction', 'Kolte-Patil 24K Altura', 'Kolte-Patil Developers', 'Baner, West Pune', 'P52100048109', ['3 BHK', '4 BHK'], '3 & 4 BHK Boutique Luxury Homes', 12900, 185, 290, '2023', 'Dec 2027', true, ['Prime Baner Hill-View Address', 'Rooftop Infinity Pool']);
-      add('Pune', 'Buy', 'Under Construction', "Gera's Joy on the Treetops", 'Gera Developments', 'Hinjewadi Phase 3, Pune', 'P52100077635', ['2 BHK', '3 BHK'], '2 & 3 BHK ChildCentric® Homes', 8950, 79, 135, '2024', 'Oct 2027', false, ['Celebrity Sports & Arts Academies', 'Elevated Forest Boardwalk']);
-      add('Pune', 'Buy', 'Under Construction', 'Gera Island of Joy', 'Gera Developments', 'Kharadi, East Pune', 'P52100052391', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Duplexes & Flats', 11500, 118, 285, '2023', 'Jun 2028', true, ['12.5 Acres in Upper Kharadi', 'Wave Pool & Go-Kart Track']);
-      add('Pune', 'Buy', 'Under Construction', 'VTP Monarque by VTP Luxe', 'VTP Realty', 'Hinjewadi Phase 1 – Mahalunge', 'P52100077322', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Riverside Luxury', 9400, 97, 210, '2024', 'Dec 2028', true, ['Mula-Mutha Riverfront Promenade', '35,000 sq.ft Club']);
-      add('Pune', 'Buy', 'Under Construction', 'VTP Velvet Villas', 'VTP Realty', 'Kharadi – Manjari, East Pune', 'P52100049811', ['Villa', '4 BHK'], '3, 4 & 5 BHK Gated Luxury Villas', 11800, 325, 540, '2023', 'Dec 2027', true, ['Private Garden & Terrace Deck', '10 Mins to EON IT Park Kharadi']);
-      add('Pune', 'Buy', 'Under Construction', 'Rohan Ekam', 'Rohan Builders', 'Balewadi, West Pune', 'P52100052489', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Riverfront PLUS Homes', 11900, 145, 295, '2023', 'Jun 2028', true, ['5 Mins to Balewadi High Street', 'Mula River Promenade']);
-      add('Pune', 'Buy', 'Under Construction', 'Rohan Harita', 'Rohan Builders', 'Tathawade – Wakad Corridor, Pune', 'P52100051672', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Biophilic Residences', 9600, 98, 185, '2023', 'Dec 2027', false, ['Preserved Banyan & Mango Grove', '5 Mins to Mumbai-Pune Expressway']);
-      add('Pune', 'Buy', 'Under Construction', 'Panchshil 57 Avenue', 'Panchshil Realty', 'Kharadi – Mundhwa, East Pune', 'P52100056104', ['3 BHK', '4 BHK'], '3 & 4 BHK Ultra-Luxury Suites', 13900, 195, 340, '2024', 'Jun 2028', true, ['Walk to World Trade Center Kharadi', 'Heated Lap Pool']);
-      add('Pune', 'Buy', 'Ready to Move', 'Kumar 45 Nirvana Hill', 'Kumar Properties', 'Baner – Pashan Link Road, Pune', 'P52100028914', ['2 BHK', '3 BHK'], '2 & 3 BHK Hill-View Residences', 11100, 122, 188, '2021', 'Ready to Move', false, ['OC Received • Zero GST', 'Pashan Bio-Diversity Hill Backdrop']);
-      add('Pune', 'Buy', 'Under Construction', 'Pride Purple Park Titan', 'Pride Purple Group', 'Hinjewadi Phase 1, Pune', 'P52100053108', ['2 BHK', '3 BHK'], '2 & 3 BHK Smart IT-Corridor Homes', 9500, 98, 152, '2023', 'Dec 2027', false, ['Walk to Wipro & Infosys Circle', '40+ Amenities']);
-      add('Pune', 'Buy', 'Under Construction', 'Nyati Esteban II', 'Nyati Group', 'Undri – NIBM Annexe, South Pune', 'P52100051904', ['2 BHK', '3 BHK'], '2 & 3 BHK Value Luxury Homes', 7600, 79, 125, '2023', 'Sep 2027', false, ['Close to Bishop\'s & DPS Schools', '30,000 sq.ft Clubhouse']);
-      add('Pune', 'Buy', 'Under Construction', 'Mantra Magnus', 'Mantra Properties', 'Mundhwa – Koregaon Park Ext', 'P52100054219', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Duplexes & Flats', 11400, 128, 265, '2023', 'Jun 2028', false, ['5 Mins to Koregaon Park & Magarpatta', 'Double-Height Lobby']);
-      add('Pune', 'Buy', 'Under Construction', 'Mahindra Citadel', 'Mahindra Lifespaces', 'Pimpri – Old Mumbai-Pune Hwy', 'P52100047656', ['2 BHK', '3 BHK'], '2 & 3 BHK Net-Zero Energy Homes', 10400, 108, 165, '2023', 'Dec 2027', false, ['Walk to Sant Tukaram Nagar Metro', 'IGBC Platinum Pre-Certified']);
-      add('Pune', 'Buy', 'Under Construction', 'Shapoorji Pallonji Joyville Sensorium', 'Shapoorji Pallonji Real Estate', 'Hinjewadi Phase 1, Pune', 'P52100027234', ['2 BHK', '3 BHK'], '2 & 3 BHK Biophilic Smart Homes', 9800, 99, 148, '2022', 'Jun 2027', false, ['10.5 Acres • 75% Open Space', '2.8-Acre Sunken Garden']);
-      add('Pune', 'Buy', 'Under Construction', 'Legacy Kairos', 'Legacy Lifespaces', 'Rahatani – Wakad Corridor, Pune', 'P52100068214', ['3 BHK', '4 BHK'], '3 & 4 BHK Sky-Deck Residences', 14900, 210, 295, '2024', 'Dec 2027', true, ['10 Mins to Wakad & Hinjewadi', 'Double-Height Sky Lounge']);
+      add('Chennai', 'Buy', 'Under Construction', 'Casagrand Suncity', 'Casagrand Builder Pvt Ltd', 'Kelambakkam – Vandalur Road, OMR', 'TN/29/Building/0514/2025', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Roman-Themed Township', 5950, 64, 145, '2025', 'Dec 2027', false, ['40-Acre Mega Township']);
+      add('Delhi NCR', 'Buy', 'Under Construction', 'DLF Privana South', 'DLF Limited', 'Sector 77, SPR Gurugram', 'RC/REP/HARERA/GGM/772/504/2024/01', ['4 BHK'], '4 BHK + Utility Luxury Residences', 18500, 660, 740, '2024', 'Dec 2028', true, ['116-Acre Integrated DLF Township']);
+      add('Pune', 'Buy', 'Ready to Move', 'Lodha Panache', 'Lodha Group', 'Hinjewadi Phase 1, Pune', 'P52100050124', ['2 BHK', '3 BHK', '4 BHK'], '2, 3 & 4 BHK Luxury Residences', 10800, 138, 265, '2023', 'Dec 2026', true, ['Walk to Rajiv Gandhi IT Park']);
 
       return list;
     })();
 
     const BANK_AUCTIONS = [
-      { id: 'auc-hyd-1', city: 'Hyderabad', bank: 'State Bank of India (SBI)', title: '3 BHK Luxury Flat (2,140 sq.ft) • Financial District, Nanakramguda', reservePrice: '₹1.58 Cr', marketValue: '₹2.15 Cr', discount: '26% Below Market', auctionDate: '12 Dec 2026', emdAmount: '₹15.80 Lakhs' },
-      { id: 'auc-hyd-2', city: 'Hyderabad', bank: 'Union Bank of India', title: '4 BHK Triplex Villa (3,450 sq.ft) • Kompally NH-44 Corridor', reservePrice: '₹1.92 Cr', marketValue: '₹2.60 Cr', discount: '26% Below Market', auctionDate: '18 Dec 2026', emdAmount: '₹19.20 Lakhs' },
-      { id: 'auc-blr-1', city: 'Bengaluru', bank: 'Canara Bank', title: '3 BHK Apartment (1,890 sq.ft) • ITPL Main Road, Whitefield', reservePrice: '₹1.42 Cr', marketValue: '₹1.95 Cr', discount: '27% Below Market', auctionDate: '15 Dec 2026', emdAmount: '₹14.20 Lakhs' },
-      { id: 'auc-chn-1', city: 'Chennai', bank: 'Indian Bank', title: '3 BHK Sea-Breeze Apartment (1,780 sq.ft) • Sholinganallur OMR', reservePrice: '₹1.12 Cr', marketValue: '₹1.52 Cr', discount: '26% Below Market', auctionDate: '16 Dec 2026', emdAmount: '₹11.20 Lakhs' },
-      { id: 'auc-del-1', city: 'Delhi NCR', bank: 'Punjab National Bank (PNB)', title: '4 BHK Builder Floor (2,850 sq.ft) • Sector 57, Gurugram', reservePrice: '₹2.45 Cr', marketValue: '₹3.30 Cr', discount: '25% Below Market', auctionDate: '20 Dec 2026', emdAmount: '₹24.50 Lakhs' },
-      { id: 'auc-pun-1', city: 'Pune', bank: 'Bank of Maharashtra', title: '3 BHK Corner Flat (1,680 sq.ft) • Baner – Balewadi High Street', reservePrice: '₹1.32 Cr', marketValue: '₹1.78 Cr', discount: '26% Below Market', auctionDate: '19 Dec 2026', emdAmount: '₹13.20 Lakhs' }
+      { id: 'auc-1', city: 'Hyderabad', bank: 'State Bank of India (SBI)', title: '3 BHK Flat • Financial District', reservePrice: '₹1.58 Cr', marketValue: '₹2.15 Cr', discount: '26% Below Market', auctionDate: '12 Dec 2026', emdAmount: '₹15.80 L' }
     ];
-
     const PRICE_TRENDS = [
-      { locality: 'Kokapet & Neopolis (Hyderabad)', rate2023: 8400, rate2026: 12450, growth: '+48.2%' },
-      { locality: 'Tellapur – Kollur ORR (Hyderabad)', rate2023: 6100, rate2026: 8950, growth: '+46.7%' },
-      { locality: 'Whitefield – Varthur (Bengaluru)', rate2023: 9200, rate2026: 13800, growth: '+50.0%' },
-      { locality: 'Hinjewadi & Kharadi (Pune)', rate2023: 8000, rate2026: 11550, growth: '+44.4%' },
-      { locality: 'Adyar & Guindy (Chennai)', rate2023: 11200, rate2026: 14900, growth: '+33.0%' },
-      { locality: 'Dwarka Exp & Noida Sec 146 (NCR)', rate2023: 10400, rate2026: 15600, growth: '+50.0%' }
+      { locality: 'Kokapet & Neopolis (Hyderabad)', rate2023: 8400, rate2026: 12450, growth: '+48.2%' }
+    ];
+    const RERA_NEWS_ITEMS = [
+      { authority: 'TG-RERA • HYDERABAD', date: '25 Nov 2026', title: 'TG-RERA RERA compliance & buyer protection updates', summary: 'Official RERA filings and timelines updated across hubs.' }
     ];
 
-    const RERA_NEWS_ITEMS = [
-      { authority: 'TG-RERA • HYDERABAD', date: '25 Nov 2026', title: 'TG-RERA imposes ₹2 Cr penalty & orders ₹42L refund against Aliens Developers for delayed handover', summary: 'Telangana Real Estate Regulatory Authority directed the developer to refund homebuyers with statutory interest for failing to deliver flats within the registered RERA timeline.' },
-      { authority: 'TG-RERA • HYDERABAD', date: '24 Nov 2026', title: 'Sandstone Infra ordered to refund ₹47 Lakhs with 10.75% interest over layout approval delay', summary: 'Adjudicating bench ruled that collecting over 10% booking advance without executed registered agreement of sale violates Section 13 of the RERA Act.' },
-      { authority: 'MAHARERA • PUNE', date: '22 Nov 2026', title: 'MahaRERA mandates QR-coded RERA certificates on all Hinjewadi & Kharadi project brochures', summary: 'Homebuyers in Pune can scan project QR codes to verify quarterly engineering progress and escrow bank account disclosures.' },
-      { authority: 'TN-RERA & K-RERA', date: '19 Nov 2026', title: 'Occupancy Certificate (OC) & Corpus Fund transfer rules tightened for Bengaluru & Chennai towers', summary: 'Developers must hand over audited association corpus funds and common area maintenance accounts within 90 days of OC issuance.' }
-    ];
+    function updateSeoHeadMetadata(titleText, descText, canonicalUrl) {
+      document.title = titleText;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', descText);
+      const canon = document.getElementById('canonicalLink');
+      if (canon) canon.setAttribute('href', canonicalUrl);
+    }
 
     function toggleMenuDrawer(open) {
       const drawer = document.getElementById('menuDrawer');
       const backdrop = document.getElementById('menuBackdrop');
-      const toggleBtn = document.getElementById('menuToggleBtn');
       if (!drawer || !backdrop) return;
       if (open) {
         backdrop.classList.remove('hidden');
-        requestAnimationFrame(() => {
-          backdrop.classList.remove('opacity-0');
-          drawer.classList.remove('translate-x-full');
-        });
-        if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
+        requestAnimationFrame(() => { backdrop.classList.remove('opacity-0'); drawer.classList.remove('translate-x-full'); });
       } else {
         backdrop.classList.add('opacity-0');
         drawer.classList.add('translate-x-full');
-        if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
         setTimeout(() => backdrop.classList.add('hidden'), 220);
       }
     }
@@ -1109,48 +533,18 @@
       toggleMenuDrawer(false);
       switchMainTab('projects');
       setSearchMode(mode);
-      statusKeyword = '';
-      const bhkSel = document.getElementById('filterBhkSelect');
-      const locInput = document.getElementById('searchLocalityInput');
-      if (bhkSel) bhkSel.value = 'ALL';
-      if (locInput) locInput.value = '';
-      if (subFilter === 'Ready to Move' || subFilter === 'Under Construction') {
-        statusKeyword = subFilter;
-      } else if (subFilter === 'Villa' && bhkSel) {
-        bhkSel.value = 'Villa';
-      } else if (subFilter === '2 & 3 BHK' && bhkSel) {
-        bhkSel.value = '3 BHK';
-      } else if (subFilter && subFilter !== 'ALL' && locInput) {
-        locInput.value = subFilter;
-      }
       applyFilters(true);
     }
 
     function switchMainTab(tabName) {
       activeTab = tabName;
       premiumOnly = (tabName === 'premium');
-      const tabIds = ['projects', 'premium', 'auctions', 'trends', 'emi', 'news'];
-      tabIds.forEach((t) => {
-        const btn = document.getElementById('tab-' + t);
-        if (!btn) return;
-        if (t === tabName) {
-          btn.className = 'shrink-0 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-[#0F172A] text-white shadow-xs transition';
-        } else if (t === 'premium') {
-          btn.className = 'shrink-0 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-white border border-amber-300/80 text-amber-900 hover:bg-amber-50 transition';
-        } else if (t === 'auctions') {
-          btn.className = 'shrink-0 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-white border border-rose-200 text-rose-800 hover:bg-rose-50 transition';
-        } else {
-          btn.className = 'shrink-0 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition';
-        }
-      });
-
       const showProjects = (tabName === 'projects' || tabName === 'premium');
       document.getElementById('view-projects')?.classList.toggle('hidden', !showProjects);
       document.getElementById('view-auctions')?.classList.toggle('hidden', tabName !== 'auctions');
       document.getElementById('view-trends')?.classList.toggle('hidden', tabName !== 'trends');
       document.getElementById('view-emi')?.classList.toggle('hidden', tabName !== 'emi');
       document.getElementById('view-news')?.classList.toggle('hidden', tabName !== 'news');
-
       if (showProjects) applyFilters(false);
       else if (tabName === 'auctions') renderAuctions();
       else if (tabName === 'trends') renderTrends();
@@ -1161,870 +555,200 @@
     function resetHomeView(event) {
       if (event) event.preventDefault();
       selectCityHub('Hyderabad');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function syncHubPillCounts() {
-      const counts = {
-        Hyderabad: PROJECTS_DATA.filter((p) => p.city === 'Hyderabad').length,
-        Bengaluru: PROJECTS_DATA.filter((p) => p.city === 'Bengaluru').length,
-        Chennai: PROJECTS_DATA.filter((p) => p.city === 'Chennai').length,
-        'Delhi NCR': PROJECTS_DATA.filter((p) => p.city === 'Delhi NCR').length,
-        Pune: PROJECTS_DATA.filter((p) => p.city === 'Pune').length
-      };
-      const totalAll = Object.values(counts).reduce((sum, n) => sum + n, 0);
-
-      document.getElementById('hubCountHyderabad').textContent = `(${counts.Hyderabad} Live)`;
-      document.getElementById('hubCountBengaluru').textContent = `(${counts.Bengaluru} Live)`;
-      document.getElementById('hubCountChennai').textContent = `(${counts.Chennai} Live)`;
-      document.getElementById('hubCountDelhi').textContent = `(${counts['Delhi NCR']} Live)`;
-      document.getElementById('hubCountPune').textContent = `(${counts.Pune} Live)`;
-      document.getElementById('hubCountAll').textContent = `All Hubs (${totalAll})`;
-      const drawerBadge = document.getElementById('drawerTotalBadge');
-      if (drawerBadge) drawerBadge.textContent = `${totalAll} Live`;
-
-      return { counts, totalAll };
     }
 
     function selectCityHub(city) {
       currentCity = city;
-      visibleLimit = 18;
-      showAllActive = false;
-      const { counts, totalAll } = syncHubPillCounts();
-
-      const hubButtons = {
-        Hyderabad: 'hubBtnHyderabad',
-        Bengaluru: 'hubBtnBengaluru',
-        Chennai: 'hubBtnChennai',
-        'Delhi NCR': 'hubBtnDelhi',
-        Pune: 'hubBtnPune',
-        ALL: 'hubBtnAll'
-      };
-
-      const activeClass = 'shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#0F172A] text-white shadow-xs transition';
-      const inactiveClass = 'shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition';
-
-      Object.keys(hubButtons).forEach((key) => {
-        const btn = document.getElementById(hubButtons[key]);
-        if (btn) btn.className = (key === city) ? activeClass : inactiveClass;
+      const hubButtons = { Hyderabad: 'hubBtnHyderabad', Bengaluru: 'hubBtnBengaluru', Chennai: 'hubBtnChennai', 'Delhi NCR': 'hubBtnDelhi', Pune: 'hubBtnPune', ALL: 'hubBtnAll' };
+      Object.keys(hubButtons).forEach((k) => {
+        const btn = document.getElementById(hubButtons[k]);
+        if (btn) btn.className = (k === city)
+          ? 'shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#0F172A] text-white shadow-xs transition'
+          : 'shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition';
       });
-
-      const locInput = document.getElementById('searchLocalityInput');
-      const bhkSel = document.getElementById('filterBhkSelect');
-      const budgetSel = document.getElementById('filterBudgetSelect');
-      const builderSel = document.getElementById('filterBuilderSelect');
-      if (locInput) locInput.value = '';
-      if (bhkSel) bhkSel.value = 'ALL';
-      if (budgetSel) budgetSel.value = 'ALL';
-      if (builderSel) builderSel.value = 'ALL';
-      statusKeyword = '';
-      premiumOnly = false;
-      currentSearchMode = 'Buy';
-
-      ['Buy', 'Rent', 'Commercial', 'Plots'].forEach((m) => {
-        const btn = document.getElementById('modeBtn-' + m);
-        if (btn) {
-          btn.className = m === 'Buy'
-            ? 'py-2 rounded-xl text-xs font-extrabold bg-[#0F172A] text-white shadow-2xs transition'
-            : 'py-2 rounded-xl text-xs font-bold text-slate-600 hover:text-slate-900 transition';
-        }
-      });
-      const cta = document.getElementById('searchCtaBtn');
-      if (cta) cta.textContent = 'Search Verified Projects';
-
-      const cityConfigs = {
-        Hyderabad: {
-          reraBadge: 'TG-RERA VERIFIED DIRECTORY',
-          priceBadge: 'Starting at ₹44 Lakhs*',
-          title: 'Hyderabad Apartments, Villas & Plots',
-          subtitle: `Compare official TG-RERA start & completion dates, ₹/sq.ft rates, amenities, and all-in flat costs across ${counts.Hyderabad} verified projects in Hyderabad.`,
-          placeholder: 'Search locality, project or RERA ID (e.g. Kokapet, Tellapur, Tukkuguda, MAK Fern, P024...)',
-          count: String(counts.Hyderabad),
-          reraLabel: 'TG-RERA approved projects',
-          avgRate: '₹10,350',
-          entry: '₹44 L',
-          completion: 'Dec 2026'
-        },
-        Bengaluru: {
-          reraBadge: 'K-RERA VERIFIED DIRECTORY',
-          priceBadge: 'Starting at ₹69 Lakhs*',
-          title: 'Bengaluru Apartments, Villas & Plots',
-          subtitle: `Compare official Karnataka RERA registration IDs, handover timelines, and ₹/sq.ft rates across ${counts.Bengaluru} verified projects in Whitefield, Yelahanka, Sarjapur & Hebbal.`,
-          placeholder: 'Search locality or builder (e.g. Whitefield, Sarjapur, Hebbal, Aratt, Prestige, Embassy)',
-          count: String(counts.Bengaluru),
-          reraLabel: 'K-RERA approved projects',
-          avgRate: '₹11,240',
-          entry: '₹69 L',
-          completion: 'Ready'
-        },
-        Chennai: {
-          reraBadge: 'TN-RERA VERIFIED DIRECTORY',
-          priceBadge: 'Starting at ₹59 Lakhs*',
-          title: 'Chennai Apartments, Villas & Plots',
-          subtitle: `Compare official TN-RERA registration IDs, possession dates, and ₹/sq.ft rates across ${counts.Chennai} verified projects in OMR, Adyar, Guindy, Anna Nagar & Mogappair.`,
-          placeholder: 'Search locality or builder (e.g. OMR, Adyar, Guindy, Anna Nagar, Casagrand, Radiance)',
-          count: String(counts.Chennai),
-          reraLabel: 'TN-RERA approved projects',
-          avgRate: '₹10,890',
-          entry: '₹59 L',
-          completion: 'Ready'
-        },
-        'Delhi NCR': {
-          reraBadge: 'HRERA / UP-RERA / DELHI RERA',
-          priceBadge: 'Starting at ₹95 Lakhs*',
-          title: 'Delhi NCR Apartments, Villas & Plots',
-          subtitle: `Compare official HRERA, UP-RERA & Delhi RERA filings, completion dates, and ₹/sq.ft rates across ${counts['Delhi NCR']} verified projects in Gurugram, Noida, Yamuna Exp & Dwarka.`,
-          placeholder: 'Search locality or builder (e.g. Gurugram, Noida Sec 146, Dwarka, DLF, Godrej, M3M)',
-          count: String(counts['Delhi NCR']),
-          reraLabel: 'HRERA / UP-RERA approved projects',
-          avgRate: '₹15,620',
-          entry: '₹95 L',
-          completion: 'Ready'
-        },
-        Pune: {
-          reraBadge: 'MAHARERA VERIFIED DIRECTORY',
-          priceBadge: 'Starting at ₹79 Lakhs*',
-          title: 'Pune Apartments & Villas',
-          subtitle: `Compare official MahaRERA registration IDs, completion timelines, and ₹/sq.ft rates across ${counts.Pune} verified projects in Hinjewadi, Baner, Balewadi, Kharadi & Wakad.`,
-          placeholder: 'Search locality or builder (e.g. Hinjewadi, Kharadi, Baner, Balewadi, Lodha, Godrej)',
-          count: String(counts.Pune),
-          reraLabel: 'MahaRERA approved projects',
-          avgRate: '₹10,750',
-          entry: '₹79 L',
-          completion: 'Dec 2026'
-        },
-        ALL: {
-          reraBadge: 'ALL-INDIA RERA VERIFIED',
-          priceBadge: 'Starting at ₹44 Lakhs*',
-          title: 'Hyd, Blr, Chennai, Delhi NCR & Pune',
-          subtitle: `Compare official TG-RERA, K-RERA, TN-RERA, HRERA, UP-RERA & MahaRERA completion dates, ₹/sq.ft rates, and zero-spam builder pricing across ${totalAll} projects.`,
-          placeholder: 'Search locality, builder or RERA ID across Hyd, Blr, Chennai, Delhi NCR & Pune',
-          count: String(totalAll),
-          reraLabel: 'Verified RERA projects across 5 hubs',
-          avgRate: '₹11,420',
-          entry: '₹44 L',
-          completion: 'Ready'
-        }
-      };
-
-      const cfg = cityConfigs[city] || cityConfigs.Hyderabad;
-      document.getElementById('heroReraBadge').textContent = cfg.reraBadge;
-      document.getElementById('heroPriceBadge').textContent = cfg.priceBadge;
-      document.getElementById('heroTitle').textContent = cfg.title;
-      document.getElementById('heroSubtitle').textContent = cfg.subtitle;
-      if (locInput) locInput.placeholder = cfg.placeholder;
-      document.getElementById('metricCount').textContent = cfg.count;
-      document.getElementById('metricReraLabel').textContent = cfg.reraLabel;
-      document.getElementById('metricAvgRate').textContent = cfg.avgRate;
-      document.getElementById('metricEntryPrice').textContent = cfg.entry;
-      document.getElementById('metricCompletion').textContent = cfg.completion;
-
       populateBuilderDropdown();
-      switchMainTab('projects');
+      applyFilters(false);
     }
 
     function populateBuilderDropdown() {
       const select = document.getElementById('filterBuilderSelect');
       if (!select) return;
-      const cityProjects = currentCity === 'ALL'
-        ? PROJECTS_DATA
-        : PROJECTS_DATA.filter((p) => p.city === currentCity);
+      const cityProjects = currentCity === 'ALL' ? PROJECTS_DATA : PROJECTS_DATA.filter((p) => p.city === currentCity);
       const builders = Array.from(new Set(cityProjects.map((p) => p.builder))).sort();
-      select.innerHTML = '<option value="ALL">All RERA Builders</option>' +
-        builders.map((b) => `<option value="${b}">${b}</option>`).join('');
-    }
-
-    function showToast(message) {
-      const toast = document.getElementById('appToast');
-      if (!toast) return;
-      toast.textContent = message;
-      toast.classList.remove('hidden');
-      clearTimeout(window.__toastTimer);
-      window.__toastTimer = setTimeout(() => toast.classList.add('hidden'), 2800);
+      select.innerHTML = '<option value="ALL">All RERA Builders</option>' + builders.map((b) => `<option value="${b}">${b}</option>`).join('');
     }
 
     function buildWhatsAppShareUrl(proj) {
-      const text = [
-        `🏢 *${proj.name}* (${proj.city})`,
-        `🏗️ Builder: ${proj.builder}`,
-        `📍 Locality: ${proj.locality}`,
-        `💰 Flat Price Range: ${proj.priceDisplay}`,
-        `📐 Asking Rate: ₹${proj.ratePerSqft.toLocaleString('en-IN')}/sq.ft`,
-        `🛏️ Config: ${proj.configLabel}`,
-        `📋 RERA ID: ${proj.reraId}`,
-        `🗓️ Possession: ${proj.completion}`,
-        `🔗 Verified on https://thewaypropindia.com`
-      ].join('\n');
+      const text = `🏢 *${proj.name}* (${proj.city})\n🏗️ Builder: ${proj.builder}\n💰 ${proj.priceDisplay} (@ ₹${proj.ratePerSqft.toLocaleString('en-IN')}/sq.ft)\n📋 RERA: ${proj.reraId}\n🔗 https://thewaypropindia.com/?project=${encodeURIComponent(proj.id)}`;
       return `https://wa.me/?text=${encodeURIComponent(text)}`;
     }
 
-    function loadMoreProjects() {
-      visibleLimit += 18;
-      applyFilters(false);
-    }
-
-    function toggleShowAllProjects() {
-      showAllActive = !showAllActive;
-      if (!showAllActive) visibleLimit = 18;
-      applyFilters(false);
-    }
-
-    function toggleSaveProject(projectId) {
-      if (savedIds.includes(projectId)) {
-        savedIds = savedIds.filter((id) => id !== projectId);
-        showToast('Removed from saved shortlist');
-      } else {
-        savedIds.push(projectId);
-        showToast('★ Saved to your RERA shortlist');
-      }
-      applyFilters(false);
-    }
-
-    function toggleCompareProject(projectId) {
-      if (compareIds.includes(projectId)) {
-        compareIds = compareIds.filter((id) => id !== projectId);
-        updateCompareDock();
-        applyFilters(false);
-        return;
-      }
-      if (compareIds.length >= 3) {
-        showToast('Maximum 3 projects can be compared at once.');
-        return;
-      }
-      compareIds.push(projectId);
-      updateCompareDock();
-      applyFilters(false);
-      showToast(`Added to Compare (${compareIds.length}/3)`);
-    }
-
-    function clearCompareList() {
-      compareIds = [];
+    function loadMoreProjects() { visibleLimit += 18; applyFilters(false); }
+    function toggleShowAllProjects() { showAllActive = !showAllActive; applyFilters(false); }
+    function toggleSaveProject(id) { if (!savedIds.includes(id)) savedIds.push(id); applyFilters(false); }
+    function toggleCompareProject(id) {
+      if (compareIds.includes(id)) compareIds = compareIds.filter((x) => x !== id);
+      else if (compareIds.length < 3) compareIds.push(id);
       updateCompareDock();
       applyFilters(false);
     }
-
+    function clearCompareList() { compareIds = []; updateCompareDock(); applyFilters(false); }
     function updateCompareDock() {
       const dock = document.getElementById('compareDock');
       const badge = document.getElementById('compareDockBadge');
-      const chips = document.getElementById('compareDockChips');
-      const btn = document.getElementById('compareNowBtn');
-      if (!dock || !badge || !chips || !btn) return;
-      if (compareIds.length === 0) {
-        dock.classList.add('hidden');
-        dock.classList.remove('flex');
-        return;
-      }
-      dock.classList.remove('hidden');
-      dock.classList.add('flex');
+      if (!dock || !badge) return;
+      dock.classList.toggle('hidden', compareIds.length === 0);
+      dock.classList.toggle('flex', compareIds.length > 0);
       badge.textContent = `Compare (${compareIds.length}/3)`;
-      btn.textContent = `Compare Now (${compareIds.length})`;
-      const selected = compareIds.map((id) => PROJECTS_DATA.find((p) => p.id === id)).filter(Boolean);
-      chips.innerHTML = selected.map((p) => `
-        <span class="shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-slate-800 border border-slate-700 text-xs font-semibold text-white">
-          <span class="max-w-[115px] truncate">${p.name}</span>
-          <button type="button" onclick="toggleCompareProject('${p.id}')" class="text-amber-400 hover:text-white font-extrabold">×</button>
-        </span>
-      `).join('');
     }
 
     function openCompareModal() {
       const body = document.getElementById('compareModalBody');
-      const waBtn = document.getElementById('shareCompareWhatsAppBtn');
-      if (!body) return;
-      if (compareIds.length < 2) {
-        const cityList = (currentCity === 'ALL'
-          ? PROJECTS_DATA
-          : PROJECTS_DATA.filter((p) => p.city === currentCity)
-        ).slice(0, 3);
-        compareIds = cityList.map((p) => p.id);
-        updateCompareDock();
-        applyFilters(false);
-      }
-      const items = compareIds.map((id) => PROJECTS_DATA.find((p) => p.id === id)).filter(Boolean);
-      if (waBtn) {
-        const summaryLines = [
-          `📊 *RERA Project Comparison — The Way Prop India*`,
-          ...items.map((p, i) => `${i + 1}. *${p.name}* (${p.locality}) — ${p.priceDisplay} @ ₹${p.ratePerSqft.toLocaleString('en-IN')}/sq.ft | RERA: ${p.reraId} | End: ${p.completion}`),
-          `🔗 Compare live at https://thewaypropindia.com`
-        ];
-        waBtn.href = `https://wa.me/?text=${encodeURIComponent(summaryLines.join('\n'))}`;
-      }
-
-      const rows = [
-        { label: 'Builder / Developer', fn: (p) => `<span class="font-bold text-slate-900">${p.builder}</span>` },
-        { label: 'Locality & City', fn: (p) => `📍 ${p.locality} (${p.city})` },
-        { label: 'RERA Registration ID', fn: (p) => `<span class="font-mono text-[11px] px-2 py-0.5 rounded bg-slate-100 font-bold text-slate-800">${p.reraId}</span>` },
-        { label: 'Flat Price Range', fn: (p) => `<span class="text-sm font-extrabold text-emerald-700">${p.priceDisplay}</span>` },
-        { label: 'Asking Base Rate', fn: (p) => `<span class="font-extrabold text-indigo-700">₹${p.ratePerSqft.toLocaleString('en-IN')}/sq.ft</span>` },
-        { label: 'Configurations', fn: (p) => p.configLabel },
-        { label: 'RERA Start → End', fn: (p) => `<span class="font-semibold">${p.startDate || '2023'} → <strong class="text-indigo-700">${p.completion}</strong></span>` },
-        { label: 'Construction Status', fn: (p) => `<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-bold">${p.status}</span>` },
-        { label: 'Key Highlights', fn: (p) => p.amenities.join(' • ') }
-      ];
-
-      body.innerHTML = `
-        <div class="min-w-[620px]">
-          <table class="w-full border-collapse text-left text-xs">
-            <thead>
-              <tr class="border-b border-slate-200">
-                <th class="w-40 p-3 text-[11px] font-extrabold uppercase tracking-wider text-slate-400 bg-slate-50 rounded-tl-2xl">Parameter</th>
-                ${items.map((p) => `
-                  <th class="p-3 bg-slate-50 align-top">
-                    <div class="flex items-start justify-between gap-2">
-                      <div>
-                        <div class="text-sm font-extrabold text-slate-900">${p.name}</div>
-                        <div class="text-[11px] font-medium text-slate-500">${p.locality}</div>
-                      </div>
-                      <button type="button" onclick="toggleCompareProject('${p.id}'); openCompareModal();" class="text-xs text-slate-400 hover:text-rose-600 font-bold">✕</button>
-                    </div>
-                  </th>
-                `).join('')}
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-100">
-              ${rows.map((r) => `
-                <tr>
-                  <td class="p-3 font-bold text-slate-500 bg-slate-50/50">${r.label}</td>
-                  ${items.map((p) => `<td class="p-3 text-slate-800 align-top">${r.fn(p)}</td>`).join('')}
-                </tr>
-              `).join('')}
-            </tbody>
-          </table>
-        </div>
-      `;
+      const items = compareIds.length ? compareIds.map((id) => PROJECTS_DATA.find((p) => p.id === id)).filter(Boolean) : PROJECTS_DATA.slice(0, 3);
+      body.innerHTML = `<table class="w-full text-xs border-collapse"><tr>${items.map((p) => `<td class="p-3 border"><strong>${p.name}</strong><br>${p.builder}<br>${p.priceDisplay}<br>RERA: ${p.reraId}</td>`).join('')}</tr></table>`;
       openModal('compareModal');
     }
 
-    function setSearchMode(mode) {
-      currentSearchMode = mode;
-      ['Buy', 'Rent', 'Commercial', 'Plots'].forEach((m) => {
-        const btn = document.getElementById('modeBtn-' + m);
-        if (!btn) return;
-        btn.className = m === mode
-          ? 'py-2 rounded-xl text-xs font-extrabold bg-[#0F172A] text-white shadow-2xs transition'
-          : 'py-2 rounded-xl text-xs font-bold text-slate-600 hover:text-slate-900 transition';
-      });
-      const cta = document.getElementById('searchCtaBtn');
-      if (cta) cta.textContent = mode === 'Buy' ? 'Search Verified Projects' : `Search Verified ${mode} Listings`;
-      applyFilters(false);
-    }
-
-    function resetAllFilters() {
-      const locInput = document.getElementById('searchLocalityInput');
-      const bhkSel = document.getElementById('filterBhkSelect');
-      const budgetSel = document.getElementById('filterBudgetSelect');
-      const builderSel = document.getElementById('filterBuilderSelect');
-      if (locInput) locInput.value = '';
-      if (bhkSel) bhkSel.value = 'ALL';
-      if (budgetSel) budgetSel.value = 'ALL';
-      if (builderSel) builderSel.value = 'ALL';
-      statusKeyword = '';
-      visibleLimit = 18;
-      showAllActive = false;
-      setSearchMode('Buy');
-    }
+    function setSearchMode(mode) { currentSearchMode = mode; applyFilters(false); }
+    function resetAllFilters() { document.getElementById('searchLocalityInput').value = ''; applyFilters(false); }
 
     function applyFilters(scrollToList) {
-      const query = (document.getElementById('searchLocalityInput')?.value || '').trim().toLowerCase();
-      const bhkVal = document.getElementById('filterBhkSelect')?.value || 'ALL';
-      const budgetVal = document.getElementById('filterBudgetSelect')?.value || 'ALL';
+      const q = (document.getElementById('searchLocalityInput')?.value || '').trim().toLowerCase();
       const builderVal = document.getElementById('filterBuilderSelect')?.value || 'ALL';
-
-      const filtered = PROJECTS_DATA.filter((proj) => {
-        if (currentCity !== 'ALL' && proj.city !== currentCity) return false;
-        if (currentSearchMode === 'Buy') {
-          if (proj.mode !== 'Buy' && proj.mode !== 'Plots') return false;
-        } else if (currentSearchMode === 'Rent') {
-          if (proj.mode !== 'Buy' && proj.mode !== 'Rent') return false;
-        } else if (currentSearchMode === 'Commercial') {
-          if (proj.mode !== 'Buy' && proj.mode !== 'Commercial') return false;
-        } else if (proj.mode !== currentSearchMode) {
-          return false;
-        }
-        if (premiumOnly && !proj.premium) return false;
-        if (builderVal !== 'ALL' && proj.builder !== builderVal) return false;
-        if (statusKeyword && !proj.status.toLowerCase().includes(statusKeyword.toLowerCase())) return false;
-
-        if (bhkVal !== 'ALL') {
-          const matchesBhk = proj.bhk.some((b) => b.toLowerCase().includes(bhkVal.toLowerCase()));
-          if (!matchesBhk) return false;
-        }
-
-        if (budgetVal !== 'ALL') {
-          const cap = Number(budgetVal);
-          if (cap === 100 && proj.startingLakhs > 100) return false;
-          if (cap === 200 && (proj.startingLakhs <= 100 || proj.startingLakhs > 200)) return false;
-          if (cap === 400 && (proj.startingLakhs <= 200 || proj.startingLakhs > 400)) return false;
-          if (cap === 9999 && proj.startingLakhs <= 400) return false;
-        }
-
-        if (query) {
-          const haystack = `${proj.name} ${proj.builder} ${proj.locality} ${proj.reraId} ${proj.city}`.toLowerCase();
-          if (!haystack.includes(query)) return false;
-        }
-
+      const filtered = PROJECTS_DATA.filter((p) => {
+        if (currentCity !== 'ALL' && p.city !== currentCity) return false;
+        if (premiumOnly && !p.premium) return false;
+        if (builderVal !== 'ALL' && p.builder !== builderVal) return false;
+        if (q && !`${p.name} ${p.builder} ${p.locality} ${p.reraId}`.toLowerCase().includes(q)) return false;
         return true;
       });
-
       document.getElementById('metricCount').textContent = String(filtered.length);
       renderProjectsGrid(filtered);
-
-      if (scrollToList) {
-        document.getElementById('projectsListSection')?.scrollIntoView({ behavior: 'smooth' });
-      }
+      if (scrollToList) document.getElementById('projectsListSection')?.scrollIntoView({ behavior: 'smooth' });
     }
 
     function renderProjectsGrid(projects) {
       const grid = document.getElementById('projectsGrid');
-      const heading = document.getElementById('projectsSectionHeading');
-      const badge = document.getElementById('showingBadge');
-      const topToggleBtn = document.getElementById('toggleShowAllBtn');
-      const paginationBox = document.getElementById('paginationControls');
-      const loadMoreBtn = document.getElementById('loadMoreBtn');
-      const showAllBottomBtn = document.getElementById('showAllBottomBtn');
       if (!grid) return;
-
-      const reraPrefixMap = {
-        Hyderabad: 'TG-RERA',
-        Bengaluru: 'K-RERA',
-        Chennai: 'TN-RERA',
-        'Delhi NCR': 'HRERA / UP-RERA',
-        Pune: 'MahaRERA',
-        ALL: 'RERA'
-      };
-      const prefix = reraPrefixMap[currentCity] || 'RERA';
-      const cityLabel = currentCity === 'ALL' ? 'All 5 India Hubs' : currentCity;
-
       const displayed = showAllActive ? projects : projects.slice(0, visibleLimit);
-      const hasMore = !showAllActive && displayed.length < projects.length;
-
-      if (heading) {
-        heading.textContent = premiumOnly
-          ? `👑 Premium ${prefix} Projects in ${cityLabel} (${projects.length})`
-          : `Verified ${prefix} Projects in ${cityLabel} (${projects.length})`;
-      }
-      if (badge) badge.textContent = `Showing ${displayed.length} of ${projects.length}`;
-      if (topToggleBtn) {
-        if (projects.length <= 18) topToggleBtn.classList.add('hidden');
-        else {
-          topToggleBtn.classList.remove('hidden');
-          topToggleBtn.textContent = showAllActive ? 'Paginate (18)' : `Show All ${projects.length}`;
-        }
-      }
-      if (paginationBox && loadMoreBtn && showAllBottomBtn) {
-        if (projects.length <= 18) paginationBox.classList.add('hidden');
-        else {
-          paginationBox.classList.remove('hidden');
-          loadMoreBtn.classList.toggle('hidden', !hasMore);
-          showAllBottomBtn.textContent = showAllActive ? 'Collapse to First 18' : `Show All ${projects.length} Projects`;
-        }
-      }
-
-      if (projects.length === 0) {
-        grid.innerHTML = `
-          <div class="col-span-full rounded-3xl bg-white border border-slate-200 p-8 text-center space-y-3">
-            <div class="text-lg font-extrabold text-slate-900">No matching listings for this filter combination</div>
-            <p class="text-xs text-slate-500 max-w-md mx-auto">Try resetting your BHK, budget, or mode filters to view all RERA-verified projects in ${cityLabel}.</p>
-            <button type="button" onclick="resetAllFilters()" class="px-5 py-2.5 rounded-full bg-[#0F172A] text-white text-xs font-bold">Show All Projects in ${cityLabel}</button>
+      grid.innerHTML = displayed.map((proj) => `
+        <article class="rounded-3xl bg-white border border-slate-200 overflow-hidden shadow-xs flex flex-col justify-between p-4 space-y-3">
+          <img src="${proj.image}" alt="${proj.name}" class="w-full h-40 object-cover rounded-2xl" />
+          <div>
+            <div class="text-[11px] font-bold text-emerald-700">${proj.city} • ${proj.status}</div>
+            <h3 class="text-base font-extrabold text-slate-900">${proj.name}</h3>
+            <p class="text-xs text-slate-500">${proj.builder} • ${proj.locality}</p>
           </div>
-        `;
-        return;
-      }
-
-      grid.innerHTML = displayed.map((proj) => {
-        const isCompared = compareIds.includes(proj.id);
-        const isSaved = savedIds.includes(proj.id);
-        const typeLabel = proj.mode === 'Plots' ? 'Plot' : (proj.bhk.includes('Villa') ? 'Villa' : 'Apartment');
-
-        return `
-        <article class="rounded-3xl bg-white border ${isCompared ? 'border-amber-400 ring-2 ring-amber-300/60' : 'border-slate-200/90'} overflow-hidden shadow-xs hover:shadow-md transition flex flex-col">
-          <div class="relative h-44 bg-slate-900 overflow-hidden">
-            <img src="${proj.image}" alt="${proj.name}" class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"></div>
-            ${proj.premium ? '<span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-amber-400 text-slate-950 text-[10px] font-extrabold shadow-xs">👑 PREMIUM</span>' : ''}
+          <div class="rounded-2xl bg-slate-50 p-3 flex justify-between text-xs">
+            <span class="font-extrabold text-emerald-700">${proj.priceDisplay}</span>
+            <span class="font-bold text-slate-800">₹${proj.ratePerSqft.toLocaleString('en-IN')}/sq.ft</span>
           </div>
-
-          <div class="p-4 flex-1 flex flex-col justify-between space-y-3.5">
-            <div class="space-y-2.5">
-              <div class="flex items-center justify-between gap-2">
-                <div class="flex items-center gap-1.5 flex-wrap">
-                  <span class="px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-[11px] font-bold">${typeLabel}</span>
-                  <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-[11px] font-bold">${proj.status}</span>
-                </div>
-                <button type="button" onclick="toggleSaveProject('${proj.id}')" class="shrink-0 px-2.5 py-1 rounded-full border ${isSaved ? 'bg-amber-50 border-amber-300 text-amber-800' : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'} text-[11px] font-bold transition">${isSaved ? '★ Saved' : '☆ Save'}</button>
-              </div>
-
-              <div>
-                <h3 class="text-base sm:text-lg font-extrabold text-slate-900 leading-tight">${proj.name}</h3>
-                <p class="text-xs text-slate-500 font-medium mt-0.5">${proj.locality} • <span class="text-slate-600">${proj.builder}</span></p>
-              </div>
-
-              <div class="rounded-2xl bg-slate-50 border border-slate-100 p-3 grid grid-cols-2 gap-2">
-                <div>
-                  <div class="text-[10px] font-semibold text-slate-400">Flat Price Range</div>
-                  <div class="text-xs sm:text-sm font-extrabold text-emerald-700 mt-0.5">${proj.priceDisplay}</div>
-                </div>
-                <div class="text-right">
-                  <div class="text-[10px] font-semibold text-slate-400">Asking Rate</div>
-                  <div class="text-xs sm:text-sm font-extrabold text-slate-900 mt-0.5">₹${proj.ratePerSqft.toLocaleString('en-IN')}/sq.ft</div>
-                </div>
-              </div>
-
-              <div class="rounded-xl bg-slate-50 border border-slate-100 px-3 py-2 flex items-center justify-between text-xs">
-                <span class="text-slate-500 font-medium">Start: <strong class="text-slate-800">${proj.startDate || '2023'}</strong></span>
-                <span class="text-slate-400 font-bold">→</span>
-                <span class="text-slate-500 font-medium">End: <strong class="text-indigo-700">${proj.completion}</strong></span>
-              </div>
-
-              <div class="space-y-1 pt-0.5">
-                <div class="text-xs font-bold text-slate-800">${proj.configLabel}</div>
-                <div class="text-[11px] font-mono text-slate-500">RERA: <span class="font-semibold text-slate-700">${proj.reraId}</span></div>
-              </div>
-            </div>
-
-            <div class="pt-1 flex items-center gap-1.5">
-              <button type="button" onclick="openCostSheetModal('${proj.id}')" class="flex-1 py-2.5 px-3 rounded-xl bg-[#0F172A] hover:bg-slate-800 text-white text-xs font-extrabold tracking-tight transition truncate">View Details &amp; EMI</button>
-              <button type="button" onclick="toggleCompareProject('${proj.id}')" class="shrink-0 py-2.5 px-2.5 rounded-xl border ${isCompared ? 'bg-amber-100 border-amber-400 text-amber-950' : 'bg-white border-slate-200 hover:bg-slate-50 text-slate-800'} text-xs font-extrabold transition">${isCompared ? '✓ Added' : '+ Compare'}</button>
-              <a href="${buildWhatsAppShareUrl(proj)}" target="_blank" rel="noopener noreferrer" aria-label="Share ${proj.name} on WhatsApp" class="shrink-0 w-9 h-9 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 flex items-center justify-center transition">
-                <svg class="w-4 h-4 fill-emerald-600" viewBox="0 0 24 24"><path d="M20.52 3.48A11.86 11.86 0 0012.07 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.6 5.95L0 24l6.33-1.66a11.86 11.86 0 005.74 1.46h.01c6.56 0 11.9-5.34 11.9-11.91 0-3.18-1.24-6.17-3.46-8.41zM12.08 21.8h-.01a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.76.99 1-3.66-.23-.38a9.85 9.85 0 01-1.51-5.25c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 012.89 7c0 5.45-4.44 9.88-9.88 9.88zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
-              </a>
-            </div>
+          <div class="text-[11px] font-mono text-slate-500">RERA: ${proj.reraId} • End: ${proj.completion}</div>
+          <div class="flex items-center gap-1.5">
+            <button type="button" onclick="openCostSheetModal('${proj.id}')" class="flex-1 py-2 px-3 rounded-xl bg-[#0F172A] text-white text-xs font-extrabold">View Details &amp; EMI</button>
+            <button type="button" onclick="toggleCompareProject('${proj.id}')" class="py-2 px-2.5 rounded-xl border border-slate-200 text-xs font-extrabold">+ Compare</button>
+            <a href="${buildWhatsAppShareUrl(proj)}" target="_blank" rel="noopener noreferrer" class="py-2 px-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-extrabold">WA</a>
           </div>
         </article>
-      `;
-      }).join('');
+      `).join('');
     }
 
     function renderAuctions() {
-      const grid = document.getElementById('auctionsGrid');
-      const pill = document.getElementById('auctionCityPill');
-      const heading = document.getElementById('auctionHeading');
-      if (!grid) return;
-      const list = currentCity === 'ALL' ? BANK_AUCTIONS : BANK_AUCTIONS.filter((a) => a.city === currentCity);
-      if (pill) pill.textContent = currentCity === 'ALL' ? 'All 5 Hubs' : currentCity;
-      if (heading) heading.textContent = `Verified Bank Auction Properties in ${currentCity === 'ALL' ? 'All Hubs' : currentCity} (${list.length})`;
-      grid.innerHTML = list.map((auc) => `
-        <article class="rounded-3xl bg-white border border-rose-200/80 p-5 shadow-xs space-y-3 flex flex-col justify-between">
-          <div class="space-y-2.5">
-            <div class="flex items-center justify-between gap-2">
-              <span class="px-2.5 py-0.5 rounded-full bg-rose-50 border border-rose-200 text-rose-800 text-[10px] font-extrabold">${auc.bank}</span>
-              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-extrabold">${auc.discount}</span>
-            </div>
-            <h3 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">${auc.title}</h3>
-            <div class="grid grid-cols-2 gap-2 rounded-2xl bg-slate-50 p-3 border border-slate-100">
-              <div><div class="text-[10px] text-slate-400 font-semibold">Reserve Price</div><div class="text-sm font-extrabold text-rose-700">${auc.reservePrice}</div></div>
-              <div class="text-right"><div class="text-[10px] text-slate-400 font-semibold">Est. Market Value</div><div class="text-sm font-bold text-slate-600 line-through">${auc.marketValue}</div></div>
-            </div>
-            <div class="flex justify-between text-xs text-slate-600">
-              <span>E-Auction Date: <strong>${auc.auctionDate}</strong></span>
-              <span>EMD: <strong>${auc.emdAmount}</strong></span>
-            </div>
-          </div>
-          <a href="https://wa.me/?text=${encodeURIComponent(`🔨 *SARFAESI Bank Auction (${auc.city})*\n${auc.title}\nReserve Price: ${auc.reservePrice}\nAuction Date: ${auc.auctionDate}\nhttps://thewaypropindia.com`)}" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-extrabold flex items-center justify-center gap-1.5 transition">Share Auction Notice on WhatsApp</a>
-        </article>
-      `).join('');
+      document.getElementById('auctionsGrid').innerHTML = BANK_AUCTIONS.map((a) => `<div class="rounded-3xl bg-white border p-5"><h3 class="font-extrabold text-sm">${a.title}</h3><p class="text-xs text-rose-700 font-bold mt-1">Reserve: ${a.reservePrice}</p></div>`).join('');
     }
-
     function renderTrends() {
-      const box = document.getElementById('trendsContainer');
-      if (!box) return;
-      box.innerHTML = PRICE_TRENDS.map((t) => {
-        const pctWidth = Math.min(100, Math.round((t.rate2026 / 17000) * 100));
-        return `
-          <div class="rounded-3xl bg-white border border-slate-200 p-5 shadow-xs space-y-3">
-            <div class="flex items-center justify-between gap-2">
-              <h3 class="text-sm font-extrabold text-slate-900">${t.locality}</h3>
-              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-extrabold">${t.growth} (3Y)</span>
-            </div>
-            <div class="flex justify-between text-xs text-slate-500">
-              <span>2023 Avg: <strong class="text-slate-700">₹${t.rate2023.toLocaleString('en-IN')}/sq.ft</strong></span>
-              <span>2026 Avg: <strong class="text-indigo-700">₹${t.rate2026.toLocaleString('en-IN')}/sq.ft</strong></span>
-            </div>
-            <div class="h-2.5 w-full rounded-full bg-slate-100 overflow-hidden">
-              <div class="h-full bg-[#0F172A] rounded-full" style="width: ${pctWidth}%"></div>
-            </div>
-          </div>
-        `;
-      }).join('');
+      document.getElementById('trendsContainer').innerHTML = PRICE_TRENDS.map((t) => `<div class="rounded-3xl bg-white border p-5"><h3 class="font-extrabold text-sm">${t.locality}</h3><p class="text-xs text-indigo-700 font-bold mt-1">₹${t.rate2026}/sq.ft (${t.growth})</p></div>`).join('');
     }
-
     function renderNews() {
-      const grid = document.getElementById('newsGrid');
-      if (!grid) return;
-      grid.innerHTML = RERA_NEWS_ITEMS.map((item) => `
-        <article class="rounded-3xl bg-white border border-slate-200 p-5 shadow-xs space-y-2.5">
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[10px] font-extrabold">${item.authority}</span>
-            <span class="text-[11px] font-semibold text-slate-400">${item.date}</span>
-          </div>
-          <h3 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">${item.title}</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">${item.summary}</p>
-        </article>
-      `).join('');
+      document.getElementById('newsGrid').innerHTML = RERA_NEWS_ITEMS.map((n) => `<div class="rounded-3xl bg-white border p-5"><h3 class="font-extrabold text-sm">${n.title}</h3><p class="text-xs text-slate-600 mt-1">${n.summary}</p></div>`).join('');
     }
+    function updateGovtPulse() {}
 
-    function updateGovtPulse() {
-      const period = document.getElementById('pulsePeriodSelect')?.value || 'oct2026';
-      const labelEl = document.getElementById('pulsePrimaryLabel');
-      const valEl = document.getElementById('pulsePrimaryValue');
-      const subEl = document.getElementById('pulsePrimarySub');
-      if (!labelEl || !valEl || !subEl) return;
-      if (period === 'fy2025') {
-        labelEl.textContent = 'Full Year 2025 (Last Year Sold)';
-        valEl.textContent = '75,222 Homes';
-        subEl.textContent = '₹50,890 Cr total registered value';
-      } else if (period === 'ytd2026') {
-        labelEl.textContent = 'Jan–Oct 2026 Cumulative';
-        valEl.textContent = '61,033 Homes';
-        subEl.textContent = '₹44,305 Cr (+3% YoY value)';
-      } else {
-        labelEl.textContent = 'Oct 2026 Registrations';
-        valEl.textContent = '5,318 Homes';
-        subEl.textContent = '₹4,395 Cr (-14% YoY vol)';
-      }
-    }
-
-    function formatLakhsOrCr(lakhs) {
-      if (lakhs >= 100) return `₹${(lakhs / 100).toFixed(2)} Cr`;
-      return `₹${Math.round(lakhs)} Lakhs`;
-    }
-
-    function openCostSheetModal(projectId) {
-      const proj = PROJECTS_DATA.find((p) => p.id === projectId);
-      if (!proj) return;
-      const baseLakhs = proj.startingLakhs;
-      const infraLakhs = proj.mode === 'Plots' ? 2 : Math.max(8, Math.round(baseLakhs * 0.08));
-      const isReady = proj.status.toLowerCase().includes('ready');
-      const gstLakhs = isReady ? 0 : Math.round((baseLakhs + infraLakhs) * 0.05);
-      const regLakhs = Math.round((baseLakhs + infraLakhs) * 0.076);
-      const totalLakhs = baseLakhs + infraLakhs + gstLakhs + regLakhs;
-
-      document.getElementById('modalCostTitle').textContent = `${proj.name} • RERA Cost Sheet`;
-      document.getElementById('modalBuilderLoc').textContent = `${proj.builder} • ${proj.locality}`;
-      document.getElementById('modalBasePriceBig').textContent = `${formatLakhsOrCr(baseLakhs)} onwards (Base)`;
-      document.getElementById('modalReraPossession').textContent = `RERA ID: ${proj.reraId} • Possession: ${proj.completion}`;
-      document.getElementById('costBaseLabel').textContent = `Base Apartment Cost (@ ₹${proj.ratePerSqft.toLocaleString('en-IN')}/sq.ft)`;
-      document.getElementById('costBaseVal').textContent = formatLakhsOrCr(baseLakhs);
-      document.getElementById('costInfraVal').textContent = formatLakhsOrCr(infraLakhs);
-      document.getElementById('costGstLabel').textContent = isReady ? 'GST (0% • OC Received)' : 'GST (5% Under-Construction)';
-      document.getElementById('costGstVal').textContent = isReady ? '₹0 (Exempt)' : formatLakhsOrCr(gstLakhs);
-      document.getElementById('costRegVal').textContent = formatLakhsOrCr(regLakhs);
-      document.getElementById('costTotalVal').textContent = formatLakhsOrCr(totalLakhs);
-
-      toggleEnquiryForm(false);
-      document.getElementById('projectEnquirySuccess').classList.add('hidden');
-      document.getElementById('modalWhatsAppShareBtn').href = buildWhatsAppShareUrl(proj);
-
-      document.getElementById('modalCalcEmiBtn').onclick = function () {
-        closeModal('costSheetModal');
-        const loanRupees = Math.min(60000000, Math.max(1500000, Math.round(totalLakhs * 0.8 * 100000 / 500000) * 500000));
-        const rangeEl = document.getElementById('emiAmountRange');
-        if (rangeEl) rangeEl.value = loanRupees;
-        const bannerEl = document.getElementById('emiProjectBanner');
-        if (bannerEl) bannerEl.textContent = `Pre-filled 80% home loan estimate for ${proj.name} (${proj.city} • All-In ${formatLakhsOrCr(totalLakhs)}).`;
-        switchMainTab('emi');
-      };
-
+    function openCostSheetModal(id) {
+      const p = PROJECTS_DATA.find((x) => x.id === id);
+      if (!p) return;
+      document.getElementById('modalCostTitle').textContent = `${p.name} • RERA Cost Sheet`;
+      document.getElementById('modalBuilderLoc').textContent = `${p.builder} • ${p.locality}`;
+      document.getElementById('modalBasePriceBig').textContent = `${p.priceDisplay} (@ ₹${p.ratePerSqft.toLocaleString('en-IN')}/sq.ft)`;
+      document.getElementById('modalReraPossession').textContent = `RERA: ${p.reraId} • Possession: ${p.completion}`;
+      document.getElementById('costBaseLabel').textContent = `Base Cost (@ ₹${p.ratePerSqft.toLocaleString('en-IN')}/sq.ft)`;
+      document.getElementById('costBaseVal').textContent = `₹${p.startingLakhs} L`;
+      document.getElementById('costInfraVal').textContent = '₹8 L';
+      document.getElementById('costGstLabel').textContent = 'GST / Statutory';
+      document.getElementById('costGstVal').textContent = '₹4 L';
+      document.getElementById('costRegVal').textContent = '₹6 L';
+      document.getElementById('costTotalVal').textContent = `₹${p.startingLakhs + 18} L`;
+      document.getElementById('modalWhatsAppShareBtn').href = buildWhatsAppShareUrl(p);
       openModal('costSheetModal');
-    }
-
-    function toggleEnquiryForm(show) {
-      document.getElementById('projectEnquiryForm')?.classList.toggle('hidden', !show);
-    }
-
-    function submitProjectEnquiry(event) {
-      event.preventDefault();
-      toggleEnquiryForm(false);
-      document.getElementById('projectEnquirySuccess').classList.remove('hidden');
-      event.target.reset();
     }
 
     function calculateEmi() {
       const P = Number(document.getElementById('emiAmountRange')?.value || 8500000);
-      const annualRate = Number(document.getElementById('emiRateRange')?.value || 8.45);
-      const years = Number(document.getElementById('emiTenureRange')?.value || 20);
-      const r = annualRate / 12 / 100;
-      const n = years * 12;
+      const r = Number(document.getElementById('emiRateRange')?.value || 8.45) / 12 / 100;
+      const n = Number(document.getElementById('emiTenureRange')?.value || 20) * 12;
       const emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-      const totalPayable = emi * n;
-      const totalInterest = totalPayable - P;
-      const principalPct = Math.round((P / totalPayable) * 100);
-      const interestPct = 100 - principalPct;
-
-      document.getElementById('emiAmountDisplay').textContent = `₹${P.toLocaleString('en-IN')} (${formatLakhsOrCr(P / 100000)})`;
-      document.getElementById('emiRateDisplay').textContent = `${annualRate.toFixed(2)}%`;
-      document.getElementById('emiTenureDisplay').textContent = `${years} Years`;
+      document.getElementById('emiAmountDisplay').textContent = `₹${P.toLocaleString('en-IN')}`;
       document.getElementById('emiMonthlyResult').textContent = `₹${Math.round(emi).toLocaleString('en-IN')}`;
-      document.getElementById('emiPrincipalVal').textContent = formatLakhsOrCr(P / 100000);
-      document.getElementById('emiInterestVal').textContent = formatLakhsOrCr(totalInterest / 100000);
-      document.getElementById('emiTotalPayable').textContent = formatLakhsOrCr(totalPayable / 100000);
-      document.getElementById('emiPrincipalBar').style.width = `${principalPct}%`;
-      document.getElementById('emiInterestBar').style.width = `${interestPct}%`;
     }
 
-    function openModal(id) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      el.classList.remove('hidden');
-      el.classList.add('flex');
-    }
-
-    function closeModal(id) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      el.classList.add('hidden');
-      el.classList.remove('flex');
-    }
-
+    function openModal(id) { const el = document.getElementById(id); if (el) { el.classList.remove('hidden'); el.classList.add('flex'); } }
+    function closeModal(id) { const el = document.getElementById(id); if (el) { el.classList.add('hidden'); el.classList.remove('flex'); } }
     function openAuthModal() { openModal('authModal'); }
-
-    function handleSignInSubmit(event) {
-      event.preventDefault();
-      const name = (document.getElementById('authNameInput')?.value || 'Member').trim();
-      const firstName = name.split(' ')[0];
-      document.getElementById('headerSignInLabel').textContent = firstName;
-      document.getElementById('drawerGreeting').textContent = `Welcome back, ${name}!`;
-      document.getElementById('drawerLoginBtn').textContent = 'Active';
-      closeModal('authModal');
-    }
-
-    function openPostModal(titleText) {
-      document.getElementById('postModalTitle').textContent = titleText || 'Post Property';
-      document.getElementById('postSuccessMsg').classList.add('hidden');
-      openModal('postModal');
-    }
-
-    function handlePostSubmit(event) {
-      event.preventDefault();
-      document.getElementById('postSuccessMsg').classList.remove('hidden');
-      event.target.reset();
-    }
-
-    function openInfoModal(title) {
-      document.getElementById('infoModalTitle').textContent = title;
-      const defaults = {
-        'About Us': 'The Way Prop India (thewaypropindia.com) is an independent RERA-verified real estate transparency platform helping homebuyers compare official TG-RERA, K-RERA, TN-RERA, HRERA, UP-RERA, and MahaRERA data with zero broker spam.',
-        'Privacy Policy': 'We never sell or broadcast buyer phone numbers to third-party broker networks.',
-        'Terms of Use': 'All RERA registration IDs, completion dates, and base rates are compiled from official state RERA filings.'
-      };
-      document.getElementById('infoModalBody').textContent = defaults[title] || '';
-      openModal('infoModal');
-    }
-
+    function handleSignInSubmit(e) { e.preventDefault(); closeModal('authModal'); }
+    function openPostModal(t) { document.getElementById('postModalTitle').textContent = t || 'Post Property FREE'; openModal('postModal'); }
+    function handlePostSubmit(e) { e.preventDefault(); document.getElementById('postSuccessMsg').classList.remove('hidden'); }
+    function openInfoModal(t) { document.getElementById('infoModalTitle').textContent = t; document.getElementById('infoModalBody').textContent = 'The Way Prop India RERA Directory.'; openModal('infoModal'); }
     function openSkyAiModal() { openModal('skyAiModal'); }
+    function handleSkyAiForm(e) { e.preventDefault(); document.getElementById('skyAiInput').value = ''; }
 
-    function handleSkyAiForm(event) {
-      event.preventDefault();
-      const input = document.getElementById('skyAiInput');
-      const q = (input?.value || '').trim();
-      if (!q) return;
-      input.value = '';
-      const chatBox = document.getElementById('skyAiChatBox');
-      const u = document.createElement('div');
-      u.className = 'p-3 rounded-2xl bg-[#0F172A] text-white ml-8 text-right font-medium';
-      u.textContent = q;
-      chatBox.appendChild(u);
-
-      const b = document.createElement('div');
-      b.className = 'p-3 rounded-2xl bg-white border border-slate-200 text-slate-800 mr-6 leading-relaxed';
-      b.innerHTML = '<strong>Sky AI:</strong> Use the city pills above to filter all RERA projects in <strong>Hyderabad</strong>, <strong>Bengaluru</strong> (including Aratt Alchemy Essence, Aratt Ayatana Residences &amp; Aratt Alchemy One), <strong>Chennai</strong>, <strong>Delhi NCR</strong>, or <strong>Pune</strong>.';
-      chatBox.appendChild(b);
-      chatBox.scrollTop = chatBox.scrollHeight;
-    }
-
-    function downloadFullSeoSitemap() {
-      const today = new Date().toISOString().slice(0, 10);
-      const base = 'https://thewaypropindia.com/';
-      const urls = new Set([
-        base,
-        `${base}?city=Hyderabad`,
-        `${base}?city=Bengaluru`,
-        `${base}?city=Chennai`,
-        `${base}?city=Delhi+NCR`,
-        `${base}?city=Pune`,
-        `${base}?city=ALL`,
-        `${base}?tab=premium`,
-        `${base}?tab=auctions`,
-        `${base}?tab=trends`,
-        `${base}?tab=emi`,
-        `${base}?tab=news`
-      ]);
-
-      const builders = new Set();
-      PROJECTS_DATA.forEach((p) => {
-        urls.add(`${base}?project=${encodeURIComponent(p.id)}`);
-        urls.add(`${base}?rera=${encodeURIComponent(p.reraId)}`);
-        builders.add(`${p.city}|||${p.builder}`);
-        const primaryLoc = p.locality.split(/[•–,-]/)[0].trim();
-        if (primaryLoc.length > 2) {
-          urls.add(`${base}?city=${encodeURIComponent(p.city)}&q=${encodeURIComponent(primaryLoc)}`);
-        }
-      });
-
-      builders.forEach((entry) => {
-        const [city, builder] = entry.split('|||');
-        urls.add(`${base}?city=${encodeURIComponent(city)}&builder=${encodeURIComponent(builder)}`);
-      });
-
-      const xml = [
-        '<?xml version="1.0" encoding="UTF-8"?>',
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-        ...Array.from(urls).map((u) => `  <url><loc>${u.replace(/&/g, '&amp;')}</loc><lastmod>${today}</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>`),
-        '</urlset>'
-      ].join('\n');
-
-      const blob = new Blob([xml], { type: 'application/xml' });
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = 'sitemap.xml';
-      link.click();
-      URL.revokeObjectURL(link.href);
-      showToast(`Generated sitemap.xml with ${urls.size} indexable URLs!`);
-    }
-
-    function applyDeepLinkParams() {
+    document.addEventListener('DOMContentLoaded', function () {
       const params = new URLSearchParams(window.location.search);
-      const city = params.get('city');
-      const tab = params.get('tab');
-      const q = params.get('q') || params.get('rera');
-      const builder = params.get('builder');
-      const projectId = params.get('project');
+      const pathSlug = window.location.pathname.toLowerCase();
+      const cityParam = params.get('city');
+      const tabParam = params.get('tab');
+      const queryParam = params.get('q') || params.get('rera');
+      const projectParam = params.get('project');
 
-      if (city && ['Hyderabad', 'Bengaluru', 'Chennai', 'Delhi NCR', 'Pune', 'ALL'].includes(city)) {
-        selectCityHub(city);
+      if (cityParam && ['Hyderabad', 'Bengaluru', 'Chennai', 'Delhi NCR', 'Pune', 'ALL'].includes(cityParam)) {
+        selectCityHub(cityParam);
+      } else if (pathSlug.includes('/builders/')) {
+        const slugKey = pathSlug.split('/builders/')[1].replace('.html', '').replace(/-/g, ' ');
+        selectCityHub('ALL');
+        const searchBox = document.getElementById('searchLocalityInput');
+        if (searchBox) searchBox.value = slugKey;
+        applyFilters(false);
       } else {
         selectCityHub('Hyderabad');
       }
 
-      if (tab && ['projects', 'premium', 'auctions', 'trends', 'emi', 'news'].includes(tab)) {
-        switchMainTab(tab);
-      }
-
-      if (builder) {
-        const sel = document.getElementById('filterBuilderSelect');
-        if (sel) sel.value = builder;
+      if (queryParam) {
+        const searchBox = document.getElementById('searchLocalityInput');
+        if (searchBox) searchBox.value = queryParam;
         applyFilters(false);
       }
 
-      if (q) {
-        const inp = document.getElementById('searchLocalityInput');
-        if (inp) inp.value = q;
-        applyFilters(false);
+      if (tabParam && ['projects', 'premium', 'auctions', 'trends', 'emi', 'news'].includes(tabParam)) {
+        switchMainTab(tabParam);
       }
 
-      if (projectId) {
-        const targetProj = PROJECTS_DATA.find((p) => p.id === projectId);
-        if (targetProj) {
-          selectCityHub(targetProj.city);
-          openCostSheetModal(targetProj.id);
+      if (projectParam) {
+        const match = PROJECTS_DATA.find((p) => p.id === projectParam);
+        if (match) {
+          selectCityHub(match.city);
+          openCostSheetModal(match.id);
         }
       }
-    }
 
-    document.addEventListener('DOMContentLoaded', function () {
-      applyDeepLinkParams();
+      const canonicalUrl = window.location.search
+        ? `https://thewaypropindia.com/${window.location.search}`
+        : 'https://thewaypropindia.com/';
+      updateSeoHeadMetadata(
+        document.title,
+        'Compare official RERA registration IDs, completion timelines, and ₹/sq.ft prices across Hyderabad, Bengaluru, Chennai, Delhi NCR & Pune.',
+        canonicalUrl
+      );
+
       calculateEmi();
-      updateGovtPulse();
     });
   </script>
 </body>

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "Nov 25, 2026",
+  "updatedAt": "Nov 27, 2026",
   "projects": [
     {
       "id": "my-home-apas",
@@ -5286,7 +5286,7 @@
       "rateSqft": 19500,
       "minCr": 3.58,
       "maxCr": 5.85,
-      "note": "16-acre luxury community on Dwarka Expressway; HARERA GGM/842/574/2024/69.",
+      "note": "16-acre luxury community on Dwarka Expressway; HARERA GGM/842/574/2024/69. Launched 'The First & The Finest' campaign on Nov 26, 2026; Phase 1 RERA completion Dec 2027, Phase 2 RERA completion Dec 2031.",
       "clubhouse": {
         "size": "1,00,000 – 1,25,000 sq.ft (Social Club + Sports Club)",
         "details": "Dual-clubhouse ecosystem separating social/lifestyle venues (restaurant, café, bakery, private dining, salon & spa, 24x7 co-working space) from a dedicated sports-only club."
@@ -5867,7 +5867,7 @@
       "rateSqft": 14700,
       "minCr": 1.07,
       "maxCr": 3.99,
-      "note": "First residential phase (1,898 homes across 5 G+48 towers on 20.67 acres) of Brigade's ~40-acre mixed-use township on Whitefield–Kadugodi Rd; all-inclusive launch pricing.",
+      "note": "First residential phase (1,898 homes across 5 G+48 towers on 20.67 acres) of Brigade's ~40-acre mixed-use township on Whitefield–Kadugodi Rd; all-inclusive launch pricing. Booked ₹1,600 Cr at launch (Nov 25, 2026).",
       "clubhouse": {
         "size": "Clubhouse 1 (Floris Exclusive)",
         "details": "Exclusive Floris Clubhouse 1 with gym, swimming pool, indoor games & yoga zone, plus 3+ acre central park, 2 tennis & pickleball courts, amphitheatre, and township retail/hotel plaza."
@@ -6188,7 +6188,7 @@
       "rateSqft": 12800,
       "minCr": 1.7,
       "maxCr": 2.8,
-      "note": "3.16-acre K-RERA approved community (260 homes, 4/floor across 3 towers of 18–25 floors) launched Nov 20, 2026 with ₹550 Cr GDV; ~6 km from Manyata Tech Park.",
+      "note": "3.16-acre K-RERA approved community (260 homes, 4/floor across 3 towers of 18–25 floors) launched Nov 20, 2026 with ₹550 Cr GDV; ~6 km from Manyata Tech Park. Nov 26, 2026 update: 260 dual-vista units across 3 towers on 3.31 acres; launch base range ₹1.73 Cr – ₹2.78 Cr.",
       "clubhouse": {
         "size": "Clubhouse with Rooftop Pool",
         "details": "Dedicated modern clubhouse with rooftop swimming pool, indoor & outdoor gyms, multipurpose hall, pickleball & multipurpose sports courts, climbing wall, jogging track, and pet park."
@@ -6244,9 +6244,848 @@
         "Landscaped Parks",
         "24/7 Security"
       ]
+    },
+    {
+      "id": "purva-horizon-hennur",
+      "city": "Bengaluru",
+      "name": "Purva Horizon",
+      "propertyType": "Apartment",
+      "locality": "Hennur Road",
+      "zone": "North",
+      "builder": "Puravankara Limited",
+      "rera": "PRM/KA/RERA/1251/309/PR/251126/009131",
+      "reraPortalUrl": "https://rera.karnataka.gov.in/",
+      "status": "New Launch",
+      "startDate": "Nov 2026",
+      "endDate": "Sep 2031",
+      "endYear": 2031,
+      "endSort": 203109,
+      "bhks": [
+        "3",
+        "4"
+      ],
+      "bhkLabel": "3 & 4 BHK",
+      "areaLabel": "2,000 - 2,730 sq.ft",
+      "defaultSqft": 2000,
+      "rateSqft": 15000,
+      "minCr": 3.01,
+      "maxCr": 4.05,
+      "photo": "https://purvahorizon.co/wp-content/uploads/2026/04/Purva-Horizon-Main-Elevation-Image-1024x474.webp",
+      "photos": [
+        "https://purvahorizon.co/wp-content/uploads/2026/04/Purva-Horizon-Main-Elevation-Image-1024x474.webp",
+        "https://www.purvashorizon.com/images/puravankara-limited/purva-horizon-photos_hero.webp"
+      ],
+      "note": "K-RERA registered Nov 25, 2026 (formerly Purva Codename Hennur); 192 low-density homes across 2.98 acres in 1 tower (2 wings, 3B+G+24 floors), ~1 km from Hennur ORR junction.",
+      "clubhouse": {
+        "size": "~20,000 sq.ft Clubhouse",
+        "details": "Multi-level clubhouse with gymnasium, swimming pool, indoor games, multipurpose hall, and ~80% open landscaped greens."
+      },
+      "amenities": [
+        "~20,000 sq.ft Clubhouse",
+        "Swimming Pool",
+        "Gymnasium",
+        "80% Open Green Space",
+        "Landscaped Gardens",
+        "Children's Play Area",
+        "Jogging Track",
+        "24/7 Security"
+      ],
+      "sourceUrl": "https://www.propnewz.com/blog/purva-horizon-hennur-road-bangalore-review"
+    },
+    {
+      "id": "godrej-epoque-neopolis-kokapet",
+      "city": "Hyderabad",
+      "name": "Godrej Epoque",
+      "propertyType": "Apartment",
+      "locality": "Neopolis, Kokapet",
+      "zone": "West",
+      "builder": "Godrej Properties",
+      "rera": "P02400011291",
+      "reraPortalUrl": "https://rera.telangana.gov.in/",
+      "status": "New Launch",
+      "startDate": "Oct 2026",
+      "endDate": "Aug 2031",
+      "endYear": 2031,
+      "endSort": 203108,
+      "bhks": [
+        "3",
+        "3.5",
+        "4"
+      ],
+      "bhkLabel": "3, 3.5 & 4 BHK",
+      "areaLabel": "1,950 - 3,150 sq.ft",
+      "defaultSqft": 2200,
+      "rateSqft": 14500,
+      "minCr": 2.99,
+      "maxCr": 4.35,
+      "photo": "https://gplwebsitecdnblob.blob.core.windows.net/godrej-cdn/Images/about-project-cmwp209f000066zph1rlr1jao.webp",
+      "photos": [
+        "https://gplwebsitecdnblob.blob.core.windows.net/godrej-cdn/Images/about-project-cmwp209f000066zph1rlr1jao.webp",
+        "https://gplwebsitecdnblob.blob.core.windows.net/godrej-cdn/Images/amenity-lobby-lounge-cmwp28hcg00076zphawlfh3ca.webp"
+      ],
+      "note": "Art Deco-inspired ultra-luxury enclave on 5.02 acres in Neopolis, Kokapet; 1,018 homes across 2 iconic towers (5B+G+58 floors) with ~75% open spaces.",
+      "clubhouse": {
+        "size": "25,000 sq.ft Multi-Level Clubhouse",
+        "details": "Features an infinity swimming pool, temperature-controlled indoor pool, exclusive Sky Bridge & Sky Retreat deck, spa, gymnasium, mini theatre, banquet hall, cafe, and co-working lounge."
+      },
+      "amenities": [
+        "25,000 sq.ft Clubhouse",
+        "Infinity & Indoor Pools",
+        "Sky Bridge & Sky Retreat",
+        "Miyawaki Forest & Butterfly Garden",
+        "Mini Theatre",
+        "Spa & Wellness Center",
+        "Multiple Sports Courts",
+        "Pet Park & 24/7 Security"
+      ],
+      "sourceUrl": "https://www.homznspace.com/godrej-epoque-neopolis-kokapet-hyderabad/"
+    },
+    {
+      "id": "godrej-downtown-avenue-thane",
+      "city": "Mumbai",
+      "name": "Godrej Downtown Avenue",
+      "propertyType": "Apartment",
+      "locality": "Manpada, Thane West",
+      "zone": "Thane / MMR",
+      "builder": "Godrej Properties",
+      "rera": "PR1331012602777",
+      "reraPortalUrl": "https://maharera.maharashtra.gov.in/",
+      "status": "New Launch",
+      "startDate": "Nov 2026",
+      "endDate": "Dec 2033",
+      "endYear": 2033,
+      "endSort": 203312,
+      "bhks": [
+        "2",
+        "3",
+        "4"
+      ],
+      "bhkLabel": "2, 3 & 4 BHK",
+      "areaLabel": "750 - 2,000 sq.ft",
+      "defaultSqft": 1000,
+      "rateSqft": 25200,
+      "minCr": 1.89,
+      "maxCr": 5.9,
+      "photo": "https://img.staticmb.com/mbimages/project/Photo_h310_w462/2026/11/18/Project-Photo-5-Godrej-Downtown-Avenue--Thane-5462641_699_829_310_462.jpg",
+      "photos": [
+        "https://img.staticmb.com/mbimages/project/Photo_h310_w462/2026/11/18/Project-Photo-5-Godrej-Downtown-Avenue--Thane-5462641_699_829_310_462.jpg",
+        "https://static.squareyards.com/resources/images/thane/project-image/godrej-manpada-project-project-large-image1-8845-opt-47f4cea3-9ac4-4f98-8705-54b6483b8d4a.jpg?aio=w-540;h-350;crop;"
+      ],
+      "note": "Expansive 18.5-acre, 5-tower development in Manpada, Thane West near Yeoor Hills & Ghodbunder Rd; Phase 1 (PR1331012602777) comprises 352 residences in a 51-storey tower.",
+      "clubhouse": {
+        "size": "Grand Lifestyle Clubhouse",
+        "details": "Resort-style clubhouse with swimming pool, gymnasium, indoor games, multipurpose banquet hall, landscaped podiums, and direct access to Ghodbunder Road."
+      },
+      "amenities": [
+        "Grand Clubhouse",
+        "Swimming Pool",
+        "Gymnasium",
+        "Landscaped Podium Gardens",
+        "Jogging & Cycling Track",
+        "Kids' Play Area",
+        "Multipurpose Court",
+        "24/7 Security"
+      ],
+      "sourceUrl": "https://www.godrejproperties.com/mumbai/residential/godrej-downtown-avenue"
+    },
+    {
+      "id": "kalpataru-aurevia-wadgaon-budruk",
+      "city": "Pune",
+      "name": "Kalpataru Aurevia",
+      "propertyType": "Apartment",
+      "locality": "Wadgaon Budruk, Sinhagad Rd",
+      "zone": "South-West",
+      "builder": "Kalpataru Limited",
+      "rera": "PR1260002602690",
+      "reraPortalUrl": "https://maharera.maharashtra.gov.in/",
+      "status": "New Launch",
+      "startDate": "Nov 2026",
+      "endDate": "Sep 2032",
+      "endYear": 2032,
+      "endSort": 203209,
+      "bhks": [
+        "3"
+      ],
+      "bhkLabel": "3 BHK",
+      "areaLabel": "1,000 - 1,500 sq.ft (Carpet)",
+      "defaultSqft": 1100,
+      "rateSqft": 16500,
+      "minCr": 1.65,
+      "maxCr": 2.5,
+      "photo": "https://www.prophuntllp.com/projects/kalpataru-aurevia",
+      "photos": [
+        "https://www.prophuntllp.com/projects/kalpataru-aurevia"
+      ],
+      "note": "Phase 2 of Kalpataru Blossoms on Sinhagad Road; Tower 5 MahaRERA registered Nov 6, 2026 for 109 Smart, Premium & Large 3 BHK homes (G+18 floors, 5-6 units/floor) near upcoming Manik Baug metro.",
+      "clubhouse": {
+        "size": "Integrated Blossoms Clubhouse",
+        "details": "Shared access to the 16-acre Kalpataru Blossoms lifestyle ecosystem with 25+ amenities including pool, spa, mini theatre, temple, and fitness center."
+      },
+      "amenities": [
+        "Clubhouse & Fitness Center",
+        "Swimming Pool",
+        "Spa & Wellness",
+        "Mini Theatre",
+        "40% Open Space",
+        "Temple",
+        "Kids' Play Zone",
+        "24/7 Security"
+      ],
+      "sourceUrl": "https://www.prophuntllp.com/projects/kalpataru-aurevia"
+    },
+    {
+      "id": "casagrand-highcity-thirumudivakkam",
+      "city": "Chennai",
+      "name": "Casagrand Highcity",
+      "propertyType": "Apartment",
+      "locality": "Thirumudivakkam (ORR)",
+      "zone": "South-West",
+      "builder": "Casagrand Premier Builder Ltd",
+      "rera": "TNRERA/01/BLG/0156/2026",
+      "reraPortalUrl": "https://rera.tn.gov.in/",
+      "status": "Under Construction",
+      "startDate": "Apr 2026",
+      "endDate": "Oct 2028",
+      "endYear": 2028,
+      "endSort": 202810,
+      "bhks": [
+        "2",
+        "3"
+      ],
+      "bhkLabel": "2 & 3 BHK",
+      "areaLabel": "1,040 - 1,950 sq.ft",
+      "defaultSqft": 1270,
+      "rateSqft": 4099,
+      "minCr": 0.52,
+      "maxCr": 0.81,
+      "photo": "https://assets.nobroker.in/media/building/8aa9ba5b9d764f64019d7712d9a154b1/images/8aa9ba5b9d764f64019d7712d9a154b1_project_image_ER4LWdj89r1778134589384_84258_iris_medium.jpg",
+      "photos": [
+        "https://assets.nobroker.in/media/building/8aa9ba5b9d764f64019d7712d9a154b1/images/8aa9ba5b9d764f64019d7712d9a154b1_project_image_ER4LWdj89r1778134589384_84258_iris_medium.jpg",
+        "https://s3.ap-south-1.amazonaws.com/website-prod-public/home/ubuntu/pp-website/public/assets/images/161137/original/s02-scaled.jpg?1787831850"
+      ],
+      "note": "41-acre integrated urban township on Chennai Outer Ring Road; Phase 1 offers 1,099 units across 4 towers (2B+G+22 floors) with 5.7 acres of open space.",
+      "clubhouse": {
+        "size": "Grand Township Clubhouse",
+        "details": "Part of a 150+ amenities ecosystem featuring swimming pool, gymnasium, indoor games, co-working spaces, mini theatre, and landscaped podiums."
+      },
+      "amenities": [
+        "150+ Lifestyle Amenities",
+        "Grand Clubhouse",
+        "Swimming Pool",
+        "5.7 Acres Open Space",
+        "Gymnasium",
+        "Mini Theatre",
+        "Kids' Play Area",
+        "24/7 Security"
+      ],
+      "sourceUrl": "https://synergyinfracon.com/projects/casagrand-highcity"
+    },
+    {
+      "id": "aparna-cyberzed-osman-nagar",
+      "city": "Hyderabad",
+      "name": "Aparna CyberZed",
+      "propertyType": "Apartment",
+      "locality": "Osman Nagar",
+      "zone": "West",
+      "builder": "Aparna Constructions and Estates Pvt Ltd",
+      "rera": "P01100011037",
+      "reraPortalUrl": "https://rera.telangana.gov.in/",
+      "status": "New Launch",
+      "startDate": "May 2026",
+      "endDate": "May 2031",
+      "endYear": 2031,
+      "endSort": 203105,
+      "bhks": [
+        "3"
+      ],
+      "bhkLabel": "3 BHK",
+      "areaLabel": "1,471 - 2,001 sq.ft",
+      "defaultSqft": 1711,
+      "rateSqft": 8399,
+      "minCr": 1.24,
+      "maxCr": 1.68,
+      "photo": "https://img.staticmb.com/mbimages/project/Photo_h310_w462/2026/08/20/Project-Photo-15-Aparna-Cyberzed-Hyderabad-5454659_410_1440_310_462.jpg",
+      "photos": [
+        "https://img.staticmb.com/mbimages/project/Photo_h310_w462/2026/08/20/Project-Photo-15-Aparna-Cyberzed-Hyderabad-5454659_410_1440_310_462.jpg",
+        "https://newprojects.99acres.com/media/xop/2026/08/11/18/rrglj64_1786451677_814984609_O.jpg",
+        "https://swapnagruha.com/images/UploadThumbnailImages/AC-2101_HOI_287475868.webp"
+      ],
+      "note": "Formally launched Nov 26, 2026 as part of Aparna Constructions' ₹1,825 Cr twin-city investment; 759 3 BHK homes across 3 towers (S+38/39 floors) on 6.4 acres with IGBC Gold Pre-Certification.",
+      "clubhouse": {
+        "size": "44,918 sq.ft Clubhouse",
+        "details": "Includes gymnasium, aerobics, yoga/meditation, spa, preview theatre, multipurpose hall, 5 guest rooms, reading lounge, physio/pharmacy, swimming pool, and kids pool."
+      },
+      "amenities": [
+        "44,918 sq.ft Clubhouse",
+        "IGBC Gold Pre-Certified",
+        "Swimming & Kids Pool",
+        "Pickleball & Squash Courts",
+        "Rock Wall Climbing",
+        "Cricket Practice Nets",
+        "Preview Theatre",
+        "EV Charging & 24/7 Security"
+      ],
+      "sourceUrl": "https://www.aparnaconstructions.com/project/apartments/aparna-cyberzed"
+    },
+    {
+      "id": "candeur-arbora-kukatpally",
+      "city": "Hyderabad",
+      "name": "Candeur Arbora",
+      "propertyType": "Apartment",
+      "locality": "Green Hills Road, Kukatpally",
+      "zone": "North-West",
+      "builder": "Candeur Developers",
+      "rera": "P02200011363",
+      "reraPortalUrl": "https://rera.telangana.gov.in/",
+      "status": "New Launch",
+      "startDate": "Oct 2026",
+      "endDate": "Sep 2031",
+      "endYear": 2031,
+      "endSort": 203109,
+      "bhks": [
+        "2.5",
+        "3"
+      ],
+      "bhkLabel": "2.5 & 3 BHK",
+      "areaLabel": "1,550 - 2,205 sq.ft",
+      "defaultSqft": 1750,
+      "rateSqft": 7899,
+      "minCr": 1.22,
+      "maxCr": 1.89,
+      "photo": "https://housing-images.n7net.in/4f2250e8/493c0eba740a39f23ba7783e7285e198/v0/medium/candeur_arbora_phase_2-kukatpally-hyderabad-candeur_constructions.jpeg",
+      "photos": [
+        "https://housing-images.n7net.in/4f2250e8/493c0eba740a39f23ba7783e7285e198/v0/medium/candeur_arbora_phase_2-kukatpally-hyderabad-candeur_constructions.jpeg",
+        "https://assets.nobroker.in/media/building/8aa9ae859c5a8815019c5a97c18b04e6/images/8aa9ae859c5a8815019c5a97c18b04e6_amenities_v6INyWjvHZ1771058094804_20646_iris_medium.jpg",
+        "https://property-api.propertysimplify.com/uploads/images/images-1795089465784-6021.webp"
+      ],
+      "note": "Listing & pricing updated Nov 27, 2026; 20-acre forest-themed high-rise community with 2,789 units across 13 towers (G+25 floors) and a 4.3-acre central park.",
+      "clubhouse": {
+        "size": "136,000 sq.ft Signature Clubhouse",
+        "details": "Features a temperature-controlled indoor swimming pool, two 35-seater theatres, co-working space, library, gymnasium, and spa & sauna."
+      },
+      "amenities": [
+        "136,000 sq.ft Clubhouse",
+        "Temperature-Controlled Indoor Pool",
+        "4.3-Acre Forest Central Park",
+        "17-ft Elevated Canopy Walkway",
+        "Pickleball, Padel & Tennis Courts",
+        "Two 35-Seater Theatres",
+        "Pet Park",
+        "EV Charging Infrastructure"
+      ],
+      "sourceUrl": "https://www.homznspace.com/candeur-arbora-kukatpally-hyderabad/"
+    },
+    {
+      "id": "aparna-wonder-woods-mallasandra",
+      "city": "Bengaluru",
+      "name": "Aparna Wonder Woods",
+      "propertyType": "Apartment",
+      "locality": "Mallasandra, Off Kanakapura Rd",
+      "zone": "South",
+      "builder": "Aparna Constructions and Estates Pvt Ltd",
+      "rera": "PRM/KA/RERA/1251/310/PR/080626/008706",
+      "reraPortalUrl": "https://rera.karnataka.gov.in/",
+      "status": "New Launch",
+      "startDate": "Jun 2026",
+      "endDate": "Feb 2031",
+      "endYear": 2031,
+      "endSort": 203102,
+      "bhks": [
+        "2",
+        "2.5",
+        "3"
+      ],
+      "bhkLabel": "2, 2.5 & 3 BHK",
+      "areaLabel": "1,292 - 2,092 sq.ft",
+      "defaultSqft": 1550,
+      "rateSqft": 9699,
+      "minCr": 1.25,
+      "maxCr": 2.03,
+      "photo": "https://www.aparnawonderwoods.net/assets/gallery/aerial-aparna-wonder-woods.webp",
+      "photos": [
+        "https://www.aparnawonderwoods.net/assets/gallery/aerial-aparna-wonder-woods.webp",
+        "https://www.aparnawonderwoods.net/assets/gallery/aparna-wonder-woods-cover.webp",
+        "https://housing-images.n7net.in/4f2250e8/8fbeedaca88a9ad892baa1791820ba38/v0/large/aparna_wonderwoods-kanakapura_road-bengaluru-aparna_constructions.jpeg"
+      ],
+      "note": "Formally launched Nov 25–26, 2026 across 14.9 acres off Kanakapura Road; 1,261 homes in 5 towers (G+28–30 floors) with 87% open space and IGBC Gold Pre-Certification.",
+      "clubhouse": {
+        "size": "49,000 sq.ft Standalone Clubhouse",
+        "details": "Features swimming pool, kids pool, gymnasium, spa, business lounge, cafe library, preview theatre, party room, guest rooms, creche, clinic, and supermarket."
+      },
+      "amenities": [
+        "49,000 sq.ft Clubhouse",
+        "87% Open Space",
+        "IGBC Gold Pre-Certified",
+        "Swimming & Kids Pool",
+        "Preview Theatre",
+        "Business Lounge & Cafe Library",
+        "Jogging & Skate Track",
+        "EV Charging Points"
+      ],
+      "sourceUrl": "https://www.aparnaconstructions.com/project/apartments/aparna-wonderwoods"
+    },
+    {
+      "id": "godrej-elanor-mahalunge",
+      "city": "Pune",
+      "name": "Godrej Elanor",
+      "propertyType": "Apartment",
+      "locality": "Mahalunge (Nande–Balewadi Rd)",
+      "zone": "West",
+      "builder": "Godrej Properties Limited",
+      "rera": "PR1260002602617",
+      "reraPortalUrl": "https://maharera.maharashtra.gov.in/",
+      "status": "New Launch",
+      "startDate": "Nov 2026",
+      "endDate": "Sep 2032",
+      "endYear": 2032,
+      "endSort": 203209,
+      "bhks": [
+        "3",
+        "3.5",
+        "4"
+      ],
+      "bhkLabel": "3, 3.5 & 4 BHK",
+      "areaLabel": "1,270 - 1,680 sq.ft (Carpet)",
+      "defaultSqft": 1300,
+      "rateSqft": 14170,
+      "minCr": 1.8,
+      "maxCr": 2.5,
+      "photo": "https://godrejelanor.com/wp-content/uploads/2026/11/elanor-pune-clubhouse.webp",
+      "photos": [
+        "https://godrejelanor.com/wp-content/uploads/2026/11/elanor-pune-clubhouse.webp",
+        "https://newprojects.99acres.com/projects/projectHighlightStory/prh5lj3_1794576728_880706327_med.jpg",
+        "https://static.squareyards.com/resources/images/pune/project-image/godrej-elanor-project-project-large-image1-2869-opt-9ddcba16-0ba6-4ff6-b7ab-c9e492593b86.jpg"
+      ],
+      "note": "Updated Nov 26, 2026; riverfront luxury residential launch along the Mula River on Nande–Balewadi Road, Mahalunge (MahaRERA proposed completion Sep 2032; developer targets Dec 2030/2031).",
+      "clubhouse": {
+        "size": "~30,000 sq.ft Dual Clubhouses",
+        "details": "Comprises an ~18,000 sq.ft main residential clubhouse and an ~12,000 sq.ft riverside clubhouse along the Mula River with pool, gym, squash court, and indoor games."
+      },
+      "amenities": [
+        "~30,000 sq.ft Dual Clubhouses",
+        "Riverside Clubhouse",
+        "Swimming & Kids Pool",
+        "Sky Cinema & Stargazing Deck",
+        "Squash & Multipurpose Court",
+        "Net Cricket & Reflexology Park",
+        "5-Level Parking",
+        "24/7 Security"
+      ],
+      "sourceUrl": "https://www.99acres.com/godrej-elanor-mahalunge-pune-npxid-r475875"
+    },
+    {
+      "id": "hariko-complex-borivali-east",
+      "city": "Mumbai",
+      "name": "Hariko Complex",
+      "propertyType": "Apartment",
+      "locality": "Borivali East",
+      "zone": "Western Suburbs",
+      "builder": "Hariko Properties LLP",
+      "rera": "PM1180002602593",
+      "reraPortalUrl": "https://maharera.maharashtra.gov.in/",
+      "status": "Under Construction",
+      "startDate": "Nov 2026",
+      "endDate": "Dec 2031",
+      "endYear": 2031,
+      "endSort": 203112,
+      "bhks": [
+        "2",
+        "3"
+      ],
+      "bhkLabel": "2 & 3 BHK",
+      "areaLabel": "639 - 1,112 sq.ft (Carpet)",
+      "defaultSqft": 800,
+      "rateSqft": 27800,
+      "minCr": 1.78,
+      "maxCr": 3.11,
+      "photo": "https://thewaypropindia.com/og-preview.jpg",
+      "photos": [],
+      "note": "MahaRERA registered residential project in Borivali East (Western Suburbs) offering 2 & 3 BHK carpet-area configurations.",
+      "clubhouse": {
+        "size": "Health Club & Lifestyle Amenities",
+        "details": "Includes a health club with steam/jacuzzi, swimming pool, gymnasium, banquet hall, indoor games, library, and yoga room."
+      },
+      "amenities": [
+        "Health Club with Steam/Jacuzzi",
+        "Swimming Pool",
+        "Gymnasium",
+        "Banquet Hall",
+        "Indoor Games & Library",
+        "Yoga Room",
+        "Landscaped Park",
+        "24/7 Security"
+      ],
+      "sourceUrl": "https://www.magicbricks.com/hariko-complex-borivali-east-mumbai-pdpid-4d4235343632383435"
+    },
+    {
+      "id": "vgk-kidora-rajakilpakkam",
+      "city": "Chennai",
+      "name": "VGK Kidora",
+      "propertyType": "Apartment",
+      "locality": "Rajakilpakkam",
+      "zone": "South",
+      "builder": "VGK Builders",
+      "rera": "TNRERA/35/BLG/0383/2026",
+      "reraPortalUrl": "https://rera.tn.gov.in/",
+      "status": "New Launch",
+      "startDate": "Oct 2026",
+      "endDate": "Dec 2031",
+      "endYear": 2031,
+      "endSort": 203112,
+      "bhks": [
+        "3"
+      ],
+      "bhkLabel": "3 BHK",
+      "areaLabel": "1,427 - 1,442 sq.ft",
+      "defaultSqft": 1435,
+      "rateSqft": 7999,
+      "minCr": 1.14,
+      "maxCr": 1.27,
+      "photo": "https://img.staticmb.com/mbimages/project/Photo_h310_w462/2026/10/30/Site-Photos-5-VGK-Kidora--Chennai-5461103_525_1015_310_462.jpg",
+      "photos": [
+        "https://img.staticmb.com/mbimages/project/Photo_h310_w462/2026/10/30/Site-Photos-5-VGK-Kidora--Chennai-5461103_525_1015_310_462.jpg"
+      ],
+      "note": "TNRERA-registered Stilt + 5 floors boutique residential project in Rajakilpakkam comprising 74 3 BHK apartments on ~1 acre.",
+      "clubhouse": {
+        "size": "Community Association & Indoor Zone",
+        "details": "Features a gymnasium, indoor games room, association room, and covered car parking."
+      },
+      "amenities": [
+        "Gymnasium",
+        "Indoor Games Room",
+        "Association Room",
+        "Covered Parking",
+        "24/7 Security"
+      ],
+      "sourceUrl": "https://findbhk.com/projects/vgk-kidora-rajakilpakkam"
+    },
+    {
+      "id": "radiance-everbloom-noombal",
+      "city": "Chennai",
+      "name": "Radiance Everbloom",
+      "propertyType": "Apartment",
+      "locality": "Noombal",
+      "zone": "West",
+      "builder": "Radiance Realty Developers",
+      "rera": "TNRERA/2/BLG/0397/2026",
+      "reraPortalUrl": "https://rera.tn.gov.in/",
+      "status": "New Launch",
+      "startDate": "Nov 2026",
+      "endDate": "Oct 2031",
+      "endYear": 2031,
+      "endSort": 203110,
+      "bhks": [
+        "2",
+        "2.5",
+        "3",
+        "4"
+      ],
+      "bhkLabel": "2, 2.5, 3 & 4 BHK",
+      "areaLabel": "1,017 - 2,147 sq.ft",
+      "defaultSqft": 1400,
+      "rateSqft": 7800,
+      "minCr": 0.74,
+      "maxCr": 1.99,
+      "photo": "https://img.staticmb.com/mbimages/project/Photo_h310_w462/2026/11/14/Project-Photo-5-Radiance-Everbloom--Chennai-5462317_539_1139_310_462.jpg",
+      "photos": [
+        "https://img.staticmb.com/mbimages/project/Photo_h310_w462/2026/11/14/Project-Photo-5-Radiance-Everbloom--Chennai-5462317_539_1139_310_462.jpg",
+        "https://newprojects.99acres.com/projects/radiance_realty_developers/radiance_everbloom/images/16s81xu_1794918552_883261887_med.jpg"
+      ],
+      "note": "TNRERA-registered 6.21-acre residential community in Noombal (Chennai West) featuring 460 apartments across 5 towers (A–E) with vehicle-free podium.",
+      "clubhouse": {
+        "size": "27,711 sq.ft 5-Level Clubhouse",
+        "details": "Hosts 39 amenities including swimming pool, gymnasium, creche/day care, indoor games, party area, and landscaped gardens."
+      },
+      "amenities": [
+        "27,711 sq.ft 5-Level Clubhouse",
+        "Swimming Pool",
+        "Gymnasium",
+        "Vehicle-Free Podium",
+        "Creche / Day Care",
+        "Indoor Games & Party Area",
+        "EV Charging",
+        "CCTV & Power Backup"
+      ],
+      "sourceUrl": "https://www.99acres.com/radiance-everbloom-noombal-chennai-west-npxid-r475616"
+    },
+    {
+      "id": "lnt-realty-aravista-sector-86",
+      "city": "Delhi-NCR",
+      "name": "L&T Realty Aravista",
+      "propertyType": "Apartment",
+      "locality": "Sectors 81 & 86",
+      "zone": "New Gurgaon",
+      "builder": "L&T Realty",
+      "rera": "RC/REP/HARERA/GGM/1106/838/2026/78",
+      "reraPortalUrl": "https://haryanarera.gov.in/",
+      "status": "New Launch",
+      "startDate": "Nov 2026",
+      "endDate": "Dec 2032",
+      "endYear": 2032,
+      "endSort": 203212,
+      "bhks": [
+        "3",
+        "4"
+      ],
+      "bhkLabel": "3 & 4 BHK",
+      "areaLabel": "1,114 - 2,336 sq.ft (Carpet)",
+      "defaultSqft": 2500,
+      "rateSqft": 19960,
+      "minCr": 4.99,
+      "maxCr": 5.5,
+      "photo": "https://www.lntsector86gurgaon.com/images/aravista/lnt-aravista-lounge-area.webp",
+      "photos": [
+        "https://www.lntsector86gurgaon.com/images/aravista/lnt-aravista-lounge-area.webp",
+        "https://propertiesingurgaon.com/wp-content/uploads/2026/11/lT-Aravista-Sector-86.jpg",
+        "https://www.homeworxindia.com/images-gurgaon/projects/lntaravista/banner.webp"
+      ],
+      "note": "Listed on HRERA Gurugram Nov 26, 2026 (Phase 1: 444 apartments across a 20-acre parcel with 9.5 acres open space); indicative 3 BHK pricing starts ₹4.99–₹5.50 Cr onwards (4 BHK price on request).",
+      "clubhouse": {
+        "size": "~3.6 Lakh sq.ft Amenity Space / Dual Clubs",
+        "details": "Features The Central Social Club and The Arena sports club with temperature-controlled indoor pool, patisserie, salon, business centre, library, banquet, restaurant, gym, spa, and guest rooms."
+      },
+      "amenities": [
+        "Dual Social & Sports Clubs",
+        "Temperature-Controlled Indoor Pool",
+        "5-Acre Central Green",
+        "Tennis, Pickleball & Cricket Net",
+        "Skating Loop & Climbing Wall",
+        "Business Centre & Library",
+        "Pet Corner & Nature Trail",
+        "EV Charging & 100% Power Backup"
+      ],
+      "sourceUrl": "https://propertyrahi.com/lt-aravista-sector-86-gurgaon/"
+    },
+    {
+      "id": "hcbs-auroville-sector-103",
+      "city": "Delhi-NCR",
+      "name": "HCBS Auroville",
+      "propertyType": "Apartment",
+      "locality": "Sector 103, Dwarka Expressway",
+      "zone": "Dwarka Expressway",
+      "builder": "HCBS Developments Limited",
+      "rera": "GGM/499/231/2021/67",
+      "reraPortalUrl": "https://haryanarera.gov.in/",
+      "status": "Under Construction",
+      "startDate": "Oct 2021",
+      "endDate": "Jan 2027",
+      "endYear": 2027,
+      "endSort": 202701,
+      "bhks": [
+        "2",
+        "3"
+      ],
+      "bhkLabel": "2 & 3 BHK",
+      "areaLabel": "497 - 643 sq.ft (Carpet)",
+      "defaultSqft": 600,
+      "rateSqft": 14000,
+      "minCr": 0.85,
+      "maxCr": 1.15,
+      "photo": "https://hcbs.co.in/wp-content/uploads/2025/08/New-Project-2025-08-04T182654.928.webp",
+      "photos": [
+        "https://hcbs.co.in/wp-content/uploads/2025/08/New-Project-2025-08-04T182654.928.webp",
+        "https://newprojects.99acres.com/projects/hcbs_developments/hcbs_auroville/qyqazd4_1755864180_637260893_O.jpg",
+        "https://images.nobroker.in/images/8a9f848597e955ae0197e9611a580339/8a9f848597e955ae0197e9611a580339_71733_original.jpg"
+      ],
+      "note": "Approaching possession stage per Nov 26–27, 2026 developer milestone update; 8.75-acre Affordable Group Housing project with 1,210 units across 11 towers (50% open area; RERA original date Aug 2025, portal resale target Jan 2027).",
+      "clubhouse": {
+        "size": "Community Clubhouse & Co-Working",
+        "details": "Modern community clubhouse with integrated commercial retail and co-working space within the premises."
+      },
+      "amenities": [
+        "Community Clubhouse",
+        "Co-Working & Commercial Space",
+        "50% Open Area",
+        "Gymnasium",
+        "Badminton Court",
+        "Jogging Track",
+        "Children's Play Area",
+        "24/7 Security & Power Backup"
+      ],
+      "sourceUrl": "https://www.99acres.com/hcbs-auroville-sector-103-gurgaon-npxid-r397755"
     }
   ],
   "news": [
+    {
+      "id": "news-maharashtra-vertical-property-card-nov2026",
+      "date": "Nov 26, 2026",
+      "city": "Mumbai",
+      "category": "Policy & RERA",
+      "title": "Maharashtra Opens Draft Rules for 'Vertical Property Cards' for 7 Crore Flat Owners",
+      "summary": "Maharashtra's Revenue Department published draft rules under the MLRC 1966 to issue digital Vertical Property Cards (D-2 urban / I-B rural) linked via API with MahaRERA and Registration & Stamps, with pilot rollout from Jan 2027 across Pune and Mumbai.",
+      "sourceName": "The Indian Express",
+      "url": "https://indianexpress.com/article/cities/mumbai/maharashtra-vertical-property-cards-bawankule-10979596/"
+    },
+    {
+      "id": "news-maharera-15-day-termination-order-nov2026",
+      "date": "Nov 27, 2026",
+      "city": "Pune",
+      "category": "Policy & RERA",
+      "title": "MahaRERA Gives Defaulting Flat Allottees 15 Days to Pay Dues or Face Termination",
+      "summary": "MahaRERA ordered flat allottees who defaulted on balance payments after possession offers to clear dues with SBI MCLR + 2% interest within 15 days or risk agreement termination and registered cancellation deeds.",
+      "sourceName": "Times of India",
+      "url": "https://timesofindia.indiatimes.com/city/nagpur/maharera-gives-flat-allottees-15-days-to-pay-dues-or-risk-termination/articleshow/136201999.cms"
+    },
+    {
+      "id": "news-hmda-moosapet-neopolis-auctions-nov2026",
+      "date": "Nov 27, 2026",
+      "city": "Hyderabad",
+      "category": "Land & Auctions",
+      "title": "Telangana HC Reserves Orders on PILs; HMDA Moosapet & Neopolis Plot 37 Auctions Proceed",
+      "summary": "Telangana High Court declined an interim stay on PILs challenging HMDA's 3.15-acre Moosapet Truck Park e-auction (₹99 Cr reserve), clearing Nov 27 bidding alongside Neopolis Plot No. 37 (₹120 Cr/acre upset price).",
+      "sourceName": "Times of India",
+      "url": "https://timesofindia.indiatimes.com/city/hyderabad/hc-questions-pils-over-3-acre-moosapet-truck-yard-auction-land-to-go-under-the-hammer-today/articleshow/136201928.cms"
+    },
+    {
+      "id": "news-tgrera-section-37-ad-compliance-nov2026",
+      "date": "Nov 27, 2026",
+      "city": "Hyderabad",
+      "category": "Policy & RERA",
+      "title": "TG-RERA Enforces Section 37 Ad Compliance Rules Requiring Top-Right Permit & RERA Display",
+      "summary": "Following action against unregistered marketing, TG-RERA's Section 37 rules mandate local permit numbers, TG-RERA IDs, and portal URLs in the top-right corner of all print, hoarding, and brochure ads.",
+      "sourceName": "PropNewz",
+      "url": "https://www.propnewz.com/blog/hyderabad-property-advertisement-tg-rera-section-37-public-notice-permit-number-registration-number-top-right-corner-phase-wise-amenities-agent-section-9-nest-infra-bibinagar-hyderabad-buyer-2026-11-27"
+    },
+    {
+      "id": "news-supertech-supernova-registries-resume-nov2026",
+      "date": "Nov 27, 2026",
+      "city": "Delhi-NCR",
+      "category": "Policy & RERA",
+      "title": "Noida Authority Resumes Flat Registries at Supertech's Supernova After SC Order",
+      "summary": "Noida Authority began registering flats in Supernova (Sector 94), starting with 5 units on Nov 26, implementing the Supreme Court's directive to register 497 fully paid flats under a 'zero period' framework.",
+      "sourceName": "Times of India",
+      "url": "https://timesofindia.indiatimes.com/city/noida/a-year-after-sc-order-registries-resume-at-supernova/articleshow/136201777.cms"
+    },
+    {
+      "id": "news-knight-frank-q3-2026-qts-inventory-nov2026",
+      "date": "Nov 26, 2026",
+      "city": "Pan-India",
+      "category": "Market Trends",
+      "title": "Knight Frank Q3 2026: Delhi-NCR QTS Hits 8 Quarters, Bengaluru +21% YoY; Chennai & Mumbai Improve",
+      "summary": "Knight Frank India's Q3 2026 report shows Delhi-NCR's Quarters to Sell rose to 8.0, Bengaluru's unsold stock jumped 21% YoY (5.5 QTS), and Hyderabad reached 6.1 QTS, while Mumbai and Chennai improved absorption.",
+      "sourceName": "The Economic Times",
+      "url": "https://m.economictimes.com/industry/services/property-/-cstruction/india-housing-inventory-sees-moderate-rise-mumbai-chennai-record-improvement/articleshow/136182260.cms"
+    },
+    {
+      "id": "news-yamuna-expressway-prices-jump-157-nov2026",
+      "date": "Nov 26, 2026",
+      "city": "Delhi-NCR",
+      "category": "Market Trends",
+      "title": "Yamuna Expressway Apartment Prices Average ₹9,500/sq.ft in 2026, Up 157% in 4 Years",
+      "summary": "Square Yards' Yamuna Expressway report places 2026 average apartment prices at ₹9,500/sq.ft (27% CAGR from ₹3,700/sq.ft in 2022), with ticket sizes from ₹75 lakh to ₹5 crore and ~2.20% gross rental yield.",
+      "sourceName": "Business Standard",
+      "url": "https://www.business-standard.com/industry/news/avg-housing-prices-along-yamuna-expressway-in-ncr-jump-2-5-times-in-4-yrs-126112600404_1.html"
+    },
+    {
+      "id": "news-bengaluru-top10-developers-cre-matrix-nov2026",
+      "date": "Nov 27, 2026",
+      "city": "Bengaluru",
+      "category": "Market Trends",
+      "title": "Top 10 Bengaluru Developers Launched 28,204 Homes Worth ₹59,336 Cr in Jan–Sep 2026",
+      "summary": "CRE Matrix data shows Godrej Properties (₹10,362 Cr) and Prestige Group (₹9,110 Cr, 5,196 units) led Bengaluru's top 10 developers across ₹59,336 Cr in new launch supply at ~₹2.10 Cr average ticket.",
+      "sourceName": "Business Standard",
+      "url": "https://www.business-standard.com/finance/personal-finance/who-s-building-bengaluru-s-biggest-housing-projects-godrej-prestige-lead-126112700111_1.html"
+    },
+    {
+      "id": "news-cidco-8081-lottery-navi-mumbai-nov2026",
+      "date": "Nov 27, 2026",
+      "city": "Mumbai",
+      "category": "Affordable Housing",
+      "title": "CIDCO Conducts Computerized Lottery for 8,081 Non-EWS Homes in Navi Mumbai",
+      "summary": "Following court dismissal of stay petitions, CIDCO scheduled the computerized draw for 8,081 Non-EWS flats under its 'My Preferred CIDCO Home' scheme for Nov 27 at 3:00 PM IST.",
+      "sourceName": "News18 Marathi",
+      "url": "https://news18marathi.com/money/cidco-computer-lottery-for-8081-houses-today-live-at-3-pm-ws-l-1843028.html"
+    },
+    {
+      "id": "news-cmrl-corridor3-em-contract-chennai-nov2026",
+      "date": "Nov 27, 2026",
+      "city": "Chennai",
+      "category": "Infrastructure",
+      "title": "CMRL Awards ₹278.49 Cr Corridor 3 E&M Contract for 19 Underground Metro Stations",
+      "summary": "Chennai Metro Rail Limited awarded the ₹278.49 crore E&M-01 contract for 19 underground stations from Madhavaram Milk Colony to Royapettah Government Hospital, alongside 10.82M October metro ridership.",
+      "sourceName": "PropNewz",
+      "url": "https://www.propnewz.com/blog/chennai-metro-corridor-3-e-and-m-01-contract-rs-278-49-crore-19-underground-stations-madhavaram-milk-colony-royapettah-no-opening-date-october-ridership-flat-buyer-checks-chennai-buyer-2026-11-27"
+    },
+    {
+      "id": "news-ashiana-arihant-ecr-senior-living-nov2026",
+      "date": "Nov 26, 2026",
+      "city": "Chennai",
+      "category": "New Launch",
+      "title": "Ashiana Housing & Arihant JV Acquires 9.57 Acres Off ECR for ₹1,100 Cr Senior Living Project",
+      "summary": "Kairav Developers (Ashiana–Arihant JV) bought 9.57 acres at Thiruporur off East Coast Road, Chennai, planning ~9 lakh sq.ft of senior living residences with ₹1,100 crore sales potential.",
+      "sourceName": "Rediff Money / PTI",
+      "url": "https://money.rediff.com/news/market/ashiana-housing-jv-buys-chennai-land-for-senior-living-project/58808620261126"
+    },
+    {
+      "id": "news-ed-bharati-builders-vatika-seizures-nov2026",
+      "date": "Nov 27, 2026",
+      "city": "Hyderabad",
+      "category": "Policy & RERA",
+      "title": "ED Widens Asset Attachments in Bharati Builders (₹26.3 Cr) & Vatika Group (₹545 Cr) Probes",
+      "summary": "The Enforcement Directorate attached ₹8.3 Cr more in the Bharati Builders Kompally/Bhanur probe (771 buyers owed ₹147.8 Cr) and over ₹545 Cr in Vatika Group promoter assets in Gurugram.",
+      "sourceName": "Times of India",
+      "url": "https://timesofindia.indiatimes.com/city/hyderabad/bharati-builders-case-771-buyers-await-148-cr-as-ed-widens-asset-seizure/articleshow/136201889.cms"
+    },
+    {
+      "id": "news-tg-rera-fines-auro-janapriya-gkh-nov2026",
+      "date": "Nov 25, 2026",
+      "city": "Hyderabad",
+      "category": "Policy & RERA",
+      "title": "TG-RERA Fines Auro Realty ₹25 Lakh, Janapriya ₹10 Lakh & GKH ₹6.10 Lakh",
+      "summary": "TG-RERA penalised Auro Realty ₹25L for pre-launch marketing of unregistered Auro Sapphire (Kondapur), Janapriya Townships ₹10L for unregistered Bahithi & Altair ads, and GKH Properties ₹6.10L for non-disclosure of land litigation.",
+      "sourceName": "The Hindu / Hyderabad Mail",
+      "url": "https://www.thehindu.com/news/national/telangana/rera-penalises-three-realty-firms-for-violating-norms/article71742675.ece"
+    },
+    {
+      "id": "news-tg-rera-aliens-bhuvanteza-nov2026",
+      "date": "Nov 26, 2026",
+      "city": "Hyderabad",
+      "category": "Policy & RERA",
+      "title": "TG-RERA Fines Aliens Developers ₹2 Cr; Rules Registration Extensions Don't Shift Possession",
+      "summary": "TG-RERA fined Aliens Developers ₹2 Cr for collecting 38% without a sale agreement and ordered suo motu action against Bhuvanteza Infra & Green Metro (Tulasi Bhagyanagar), holding that extending RERA registration to 2028 does not alter buyers' agreed possession dates.",
+      "sourceName": "Times of India",
+      "url": "https://timesofindia.indiatimes.com/city/hyderabad/tg-rera-orders-action-against-developer-for-selling-flats-before-obtaining-permits/articleshow/136170398.cms"
+    },
+    {
+      "id": "news-tnrera-qpr-directive-nov2026",
+      "date": "Nov 25, 2026",
+      "city": "Chennai",
+      "category": "Policy & RERA",
+      "title": "TNRERA Directs Promoters to Upload All Pending Quarterly Progress Reports",
+      "summary": "TNRERA instructed Tamil Nadu developers to upload pending QPRs under Section 11(1) of the RERA Act for public viewing, warning of penal action under Section 61 for non-compliance.",
+      "sourceName": "The Hindu",
+      "url": "https://www.thehindu.com/news/national/tamil-nadu/upload-all-pending-quarterly-progress-reports-tnrera-instructs-promoters-of-real-estate-projects-in-tamil-nadu/article71741785.ece"
+    },
+    {
+      "id": "news-purva-horizon-krera-nov2026",
+      "date": "Nov 25, 2026",
+      "city": "Bengaluru",
+      "category": "New Launch",
+      "title": "Puravankara's Purva Horizon on Hennur Road Secures K-RERA Registration",
+      "summary": "Formerly Purva Codename Hennur, Purva Horizon received K-RERA approval (PRM/KA/RERA/1251/309/PR/251126/009131) for 192 large 3 & 4 BHK homes on 2.98 acres with a Sep 2031 completion date.",
+      "sourceName": "PropNewz",
+      "url": "https://www.propnewz.com/blog/purva-horizon-hennur-road-bangalore-review"
+    },
+    {
+      "id": "news-nambiar-bannerghatta-prelaunch-nov2026",
+      "date": "Nov 25, 2026",
+      "city": "Bengaluru",
+      "category": "New Launch",
+      "title": "Nambiar Builders Moves 50.4-Acre, 298-Villa Bannerghatta Township to Pre-Launch",
+      "summary": "Nambiar Builders entered pre-launch for its 50.4-acre, 298-villa community off Bannerghatta–Kanakapura Road (4 & 5 BHK, ~₹4.70–7.10 Cr indicative); K-RERA registration is awaited before formal sales.",
+      "sourceName": "Synergy Infracon",
+      "url": "https://synergyinfracon.com/news/nambiar-builders-brings-298-villa-bannerghatta-township-to-pre-launch"
+    },
+    {
+      "id": "news-india-pe-domestic-capital-nov2026",
+      "date": "Nov 26, 2026",
+      "city": "Pan-India",
+      "category": "Investment",
+      "title": "Domestic PE in Indian Real Estate Surges 135% to $1.42B as NCR & Pune Lead",
+      "summary": "Knight Frank India's Q3 2026 Capital Market report shows domestic PE capital jumped 135% YoY to $1.42B (85% share) in Jan–Sep 2026, led by NCR ($568M), Pune ($356M), Chennai ($319M), and Mumbai ($276M).",
+      "sourceName": "Synergy Infracon",
+      "url": "https://synergyinfracon.com/news/india-real-estate-pe-domestic-capital-up-135-foreign-share-falls-to-15"
+    },
     {
       "id": "news-knight-frank-naredco-sentiment-nov2026",
       "date": "Nov 25, 2026",
