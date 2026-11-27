@@ -75,7 +75,7 @@
     </div>
   </header>
 
-  <!-- SLIDE-OUT MENU DRAWER -->
+  <!-- SLIDE-OUT MENU DRAWER (Includes Member Sign In / Profile + Hubs + Tools) -->
   <div id="drawerMenu" class="hidden fixed inset-0 z-50 modal-backdrop flex justify-end" onclick="if(event.target===this) toggleDrawerMenu()">
     <div class="w-80 max-w-[86vw] bg-white h-full shadow-2xl p-5 flex flex-col justify-between overflow-y-auto">
       <div class="space-y-5">
@@ -88,6 +88,20 @@
             </div>
           </div>
           <button onclick="toggleDrawerMenu()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-700 font-bold text-sm">✕</button>
+        </div>
+
+        <!-- BUYER / OWNER ACCOUNT CARD -->
+        <div id="drawerAccountBox" class="rounded-2xl bg-[#0F172A] text-white p-3.5 space-y-2.5">
+          <div class="flex items-center justify-between gap-2">
+            <div>
+              <div id="drawerUserLabel" class="text-xs font-extrabold text-amber-400">Buyer &amp; Owner Account</div>
+              <div id="drawerUserSub" class="text-[11px] text-slate-300 mt-0.5">Sign in to sync saved flats &amp; enquiries</div>
+            </div>
+            <span class="text-lg">👤</span>
+          </div>
+          <button id="drawerAuthBtn" onclick="toggleDrawerMenu(); openLoginModal();" class="w-full py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-extrabold transition">
+            Sign In / Create Free Account
+          </button>
         </div>
 
         <div class="space-y-1.5">
@@ -118,7 +132,7 @@
           <button onclick="switchTab('trends'); toggleDrawerMenu();" class="w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 text-xs font-bold text-slate-700">📈 Corridor ₹/sq.ft Price Trends</button>
           <button onclick="switchTab('emi'); toggleDrawerMenu();" class="w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 text-xs font-bold text-slate-700">🧮 All-In Flat Cost &amp; EMI Calculator</button>
           <button onclick="switchTab('news'); toggleDrawerMenu();" class="w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 text-xs font-bold text-slate-700">📰 RERA &amp; IGRS Registration News</button>
-          <button onclick="openShortlistModal(); toggleDrawerMenu();" class="w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 text-xs font-bold text-slate-700">♥ Saved Shortlist &amp; Compare</button>
+          <button onclick="openShortlistModal(); toggleDrawerMenu();" class="w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 text-xs font-bold text-slate-700">♥ Saved Shortlist &amp; My Enquiries</button>
         </div>
 
         <div class="space-y-1.5 border-t border-slate-100 pt-3">
@@ -131,7 +145,7 @@
       </div>
 
       <div class="pt-4 border-t border-slate-100 text-[11px] text-slate-500">
-        Direct Support: <a href="mailto:thewaypropindia@gmail.com" class="font-bold text-slate-800 underline">thewaypropindia@gmail.com</a>
+        Direct Email Alerts: <a href="mailto:Contactthewaypropindia@gmail.com" class="font-bold text-slate-800 underline">Contactthewaypropindia@gmail.com</a>
       </div>
     </div>
   </div>
@@ -500,8 +514,9 @@
                 <div id="resMonthlyEmi" class="text-lg font-extrabold text-white mt-0.5">₹1,32,210 / month</div>
               </div>
             </div>
-            <button onclick="shareCalculatorWhatsApp()" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold transition">
-              Share All-In Cost Sheet on WhatsApp
+            <button onclick="shareCalculatorWhatsApp()" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold inline-flex items-center justify-center gap-2 transition">
+              <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 20.2c-.151.512.322.986.835.835l3.032-.892A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+              <span>Share All-In Cost Sheet on WhatsApp</span>
             </button>
           </div>
         </div>
@@ -559,7 +574,7 @@
         <p class="text-xs text-slate-400 leading-relaxed">
           For RERA project updates, builder portfolio verification, or direct property listing assistance:
         </p>
-        <div class="text-xs font-bold text-white">Email: <a href="mailto:thewaypropindia@gmail.com" class="text-amber-400 underline">thewaypropindia@gmail.com</a></div>
+        <div class="text-xs font-bold text-white">Email: <a href="mailto:Contactthewaypropindia@gmail.com" class="text-amber-400 underline">Contactthewaypropindia@gmail.com</a></div>
         <div class="text-xs font-bold text-slate-300">Instagram &amp; Social: <span class="text-amber-400">@thewaypropindia</span></div>
         <div class="flex flex-wrap gap-3 pt-2 text-[11px] font-extrabold text-slate-300">
           <button onclick="openLegalModal('privacy')" class="underline hover:text-amber-400">Privacy Policy</button>
@@ -611,7 +626,7 @@
     </div>
   </nav>
 
-  <!-- PROJECT DETAILS, ALL-IN COST SHEET & ENQUIRY MODAL -->
+  <!-- PROJECT DETAILS, ALL-IN COST SHEET & DIRECT EMAIL + WHATSAPP ENQUIRY MODAL -->
   <div id="projectDetailModal" class="hidden fixed inset-0 z-50 modal-backdrop flex items-end sm:items-center justify-center p-0 sm:p-4" onclick="if(event.target===this) closeProjectModal()">
     <div id="projectDetailContent" class="bg-white w-full max-w-xl rounded-t-3xl sm:rounded-3xl max-h-[92vh] overflow-y-auto shadow-2xl p-5 sm:p-6 space-y-4"></div>
   </div>
@@ -626,9 +641,59 @@
     <div id="compareModalContent" class="bg-white w-full max-w-3xl rounded-t-3xl sm:rounded-3xl max-h-[92vh] overflow-y-auto shadow-2xl p-5 sm:p-6 space-y-4"></div>
   </div>
 
-  <!-- ACTIVITY / SAVED SHORTLIST MODAL -->
+  <!-- ACTIVITY / SAVED SHORTLIST & ENQUIRIES MODAL -->
   <div id="shortlistModal" class="hidden fixed inset-0 z-50 modal-backdrop flex items-end sm:items-center justify-center p-0 sm:p-4" onclick="if(event.target===this) closeShortlistModal()">
     <div id="shortlistModalContent" class="bg-white w-full max-w-xl rounded-t-3xl sm:rounded-3xl max-h-[90vh] overflow-y-auto shadow-2xl p-5 sm:p-6 space-y-4"></div>
+  </div>
+
+  <!-- MEMBER SIGN IN / LOGIN MODAL -->
+  <div id="loginModal" class="hidden fixed inset-0 z-50 modal-backdrop flex items-end sm:items-center justify-center p-0 sm:p-4" onclick="if(event.target===this) closeLoginModal()">
+    <div class="bg-white w-full max-w-md rounded-t-3xl sm:rounded-3xl p-5 sm:p-6 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <div>
+          <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-900 text-[10px] font-extrabold uppercase">Zero-Spam Buyer &amp; Owner Portal</span>
+          <h3 class="text-lg font-extrabold text-slate-900 mt-1">Sign In to The Way Prop India</h3>
+        </div>
+        <button onclick="closeLoginModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-700 font-bold text-sm">✕</button>
+      </div>
+      <form onsubmit="submitMemberLogin(event)" class="space-y-3">
+        <div>
+          <label class="block text-[11px] font-extrabold text-slate-700 mb-1">Full Name</label>
+          <input id="loginName" required type="text" placeholder="Enter your name" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-xs font-bold" />
+        </div>
+        <div>
+          <label class="block text-[11px] font-extrabold text-slate-700 mb-1">WhatsApp Mobile Number</label>
+          <input id="loginPhone" required type="tel" placeholder="+91 98765 43210" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-xs font-bold" />
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-[11px] font-extrabold text-slate-700 mb-1">I am a</label>
+            <select id="loginRole" class="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-xs font-bold">
+              <option>Homebuyer</option>
+              <option>Property Owner</option>
+              <option>RERA Builder</option>
+              <option>NRI Investor</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[11px] font-extrabold text-slate-700 mb-1">Preferred City</label>
+            <select id="loginCity" class="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-xs font-bold">
+              <option>Hyderabad</option>
+              <option>Bengaluru</option>
+              <option>Chennai</option>
+              <option>Delhi NCR</option>
+              <option>Pune</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="w-full py-3 rounded-xl bg-[#0F172A] hover:bg-slate-800 text-amber-400 text-xs font-extrabold transition">
+          Continue &amp; Save Shortlist →
+        </button>
+      </form>
+      <p class="text-[10px] text-slate-400 text-center">
+        Your details stay private on your device and are only emailed to <strong>Contactthewaypropindia@gmail.com</strong> when you submit an enquiry.
+      </p>
+    </div>
   </div>
 
   <!-- POST PROPERTY FREE MODAL -->
@@ -643,6 +708,7 @@
       </div>
       <form onsubmit="submitFreeProperty(event)" class="space-y-3">
         <input id="postName" required type="text" placeholder="Your Full Name / Builder Name" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-xs font-bold" />
+        <input id="postPhone" required type="tel" placeholder="Your WhatsApp / Mobile Number" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-xs font-bold" />
         <div class="grid grid-cols-2 gap-2">
           <select id="postCity" class="rounded-xl border border-slate-300 px-3 py-2.5 text-xs font-bold">
             <option>Hyderabad</option>
@@ -659,8 +725,9 @@
         </div>
         <input id="postProject" required type="text" placeholder="Project Name, Locality & BHK / Size" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-xs font-bold" />
         <input id="postPrice" required type="text" placeholder="Expected Price & RERA ID (if applicable)" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-xs font-bold" />
-        <button type="submit" class="w-full py-3 rounded-xl bg-[#0F172A] hover:bg-slate-800 text-amber-400 text-xs font-extrabold transition">
-          Submit Listing via Direct Email / Verification →
+        <button id="postSubmitBtn" type="submit" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold inline-flex items-center justify-center gap-2 transition">
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 20.2c-.151.512.322.986.835.835l3.032-.892A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+          <span>Submit Listing (Auto-Email + WhatsApp) →</span>
         </button>
       </form>
     </div>
@@ -675,6 +742,9 @@
     // =========================================================================
     // 1. COMPLETE 184 VERIFIED RERA PROJECTS DATABASE (HYD 81, BLR 37, CHN 22, NCR 22, PUN 22)
     // =========================================================================
+    const OWNER_EMAIL = "Contactthewaypropindia@gmail.com";
+    const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/Contactthewaypropindia@gmail.com";
+
     const PROJECTS_DATA = [
       // --- HYDERABAD (81 VERIFIED TG-RERA PROJECTS) ---
       { id: 1, city: "Hyderabad", name: "Radhey Raakhee Villa Plots", slug: "radhey-raakhee-villa-plots", builder: "Radhey Constructions", locality: "Shankarpally – Mokila • West", type: "Plot", stage: "Ready / Near Possession", minPrice: 44, maxPrice: 98, rate: 1850, bhk: "267 – 600 Sq.Yds Plot", size: "267 – 600 Sq.Yds", start: "Completed", end: "Ready", rera: "P02400003812", premium: false, club: "30,000 sq.ft Resort Club", amenities: ["HMDA & TG-RERA Approved", "Blacktop 40ft Roads", "Underground Power", "Landscaped Park"] },
@@ -897,15 +967,39 @@
     ];
 
     // =========================================================================
-    // 2. APPLICATION STATE & HELPERS
+    // 2. APPLICATION STATE & SILENT EMAIL DISPATCH (FORMSUBMIT TO OWNER GMAIL)
     // =========================================================================
     let selectedCity = "Hyderabad";
     let activeTab = "projects";
     let activeBudgetTier = "";
     let visibleLimit = 18;
     let savedIds = JSON.parse(localStorage.getItem("twpi_saved_ids") || "[]");
+    let userEnquiries = JSON.parse(localStorage.getItem("twpi_enquiries") || "[]");
+    let currentMember = JSON.parse(localStorage.getItem("twpi_member") || "null");
     let compareIds = [];
     const livePhotoCache = {};
+
+    const WHATSAPP_SVG = `<svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 20.2c-.151.512.322.986.835.835l3.032-.892A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>`;
+
+    async function sendEmailLeadToOwner(payload) {
+      try {
+        const res = await fetch(FORMSUBMIT_ENDPOINT, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            _captcha: "false",
+            _template: "table",
+            ...payload
+          })
+        });
+        return res.ok;
+      } catch (err) {
+        return false;
+      }
+    }
 
     function formatRupees(lakhs) {
       if (lakhs >= 100) {
@@ -933,7 +1027,34 @@
 
     function updateActivityBadge() {
       const badge = document.getElementById("activityBadgeCount");
-      if (badge) badge.textContent = `(${savedIds.length})`;
+      const total = savedIds.length + userEnquiries.length;
+      if (badge) badge.textContent = `(${total})`;
+    }
+
+    function refreshMemberUI() {
+      const label = document.getElementById("drawerUserLabel");
+      const sub = document.getElementById("drawerUserSub");
+      const btn = document.getElementById("drawerAuthBtn");
+      if (!label || !sub || !btn) return;
+      if (currentMember) {
+        label.textContent = `✓ ${currentMember.name} (${currentMember.role})`;
+        sub.textContent = `${currentMember.phone} • ${currentMember.city}`;
+        btn.textContent = "Switch Account / Sign Out";
+        btn.onclick = () => {
+          currentMember = null;
+          localStorage.removeItem("twpi_member");
+          refreshMemberUI();
+          showToastMessage("Signed out of member session.");
+        };
+      } else {
+        label.textContent = "Buyer & Owner Account";
+        sub.textContent = "Sign in to sync saved flats & enquiries";
+        btn.textContent = "Sign In / Create Free Account";
+        btn.onclick = () => {
+          toggleDrawerMenu();
+          openLoginModal();
+        };
+      }
     }
 
     // =========================================================================
@@ -1347,7 +1468,7 @@
                 title="Share Cost Sheet on WhatsApp"
                 class="w-10 h-10 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0 transition"
               >
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 20.2c-.151.512.322.986.835.835l3.032-.892A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+                ${WHATSAPP_SVG}
               </a>
             </div>
           </article>
@@ -1361,7 +1482,7 @@
     }
 
     // =========================================================================
-    // 6. PROJECT DETAILS, ALL-IN COST SHEET & DIRECT ENQUIRY MODAL
+    // 6. PROJECT DETAILS, ALL-IN COST SHEET & DIRECT EMAIL + WHATSAPP ENQUIRY
     // =========================================================================
     function openProjectModal(id) {
       const p = PROJECTS_DATA.find((item) => item.id === id);
@@ -1382,6 +1503,9 @@
 
       const entrySqft = parseInt((p.size.match(/\d[\d,]*/) || ["1500"])[0].replace(/,/g, ""), 10) || 1500;
       const waCostMsg = `*Official All-In Cost Sheet — ${p.name}*\nBuilder: ${p.builder} (${p.locality})\nRERA ID: ${p.rera}\n• Base Entry Price: ${formatRupees(baseLakhs)}\n• Amenities & Parking: ${formatRupees(amenitiesLakhs)}\n• GST: ${formatRupees(gstLakhs)}\n• Stamp Duty & Reg (~${stampPct}%): ${formatRupees(stampLakhs)}\n• *Estimated All-In Cost: ${formatRupees(totalAllIn)}*\n• Est. EMI (80% Loan): ₹${emi.toLocaleString("en-IN")}/mo\nChecked on https://thewaypropindia.com/`;
+
+      const defaultName = currentMember ? escapeHtml(currentMember.name) : "";
+      const defaultPhone = currentMember ? escapeHtml(currentMember.phone) : "";
 
       const modal = document.getElementById("projectDetailModal");
       const content = document.getElementById("projectDetailContent");
@@ -1449,38 +1573,49 @@
           </div>
         </div>
 
-        <!-- INLINE ENQUIRY & CALCULATOR PANEL -->
-        <div id="modalEnquiryBox" class="hidden rounded-2xl bg-amber-50 border border-amber-300 p-3.5 space-y-2.5">
-          <div class="flex items-center justify-between">
+        <!-- DIRECT ENQUIRY (AUTO-EMAILS Contactthewaypropindia@gmail.com + WHATSAPP OPTION) -->
+        <div id="modalEnquiryBox" class="rounded-2xl bg-amber-50 border border-amber-300 p-3.5 space-y-2.5">
+          <div class="flex items-center justify-between gap-2">
             <span class="text-xs font-extrabold text-slate-900">Direct Zero-Spam RERA Enquiry — ${escapeHtml(p.name)}</span>
-            <button onclick="launchFullEmiForProject(${entrySqft}, ${p.rate}, ${amenitiesLakhs}, ${isReady ? 0 : 5}, ${stampPct})" class="text-[11px] font-extrabold text-indigo-700 underline">
-              🧮 Open Full EMI Calculator →
+            <button onclick="launchFullEmiForProject(${entrySqft}, ${p.rate}, ${amenitiesLakhs}, ${isReady ? 0 : 5}, ${stampPct})" class="text-[11px] font-extrabold text-indigo-700 underline shrink-0">
+              🧮 Full EMI Calc →
             </button>
           </div>
-          <form onsubmit="submitProjectEnquiry(event, '${escapeHtml(p.name).replace(/'/g, "\\'")}', '${escapeHtml(p.rera)}')" class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-            <input required id="enqBuyerName" type="text" placeholder="Your Name" class="rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs font-bold" />
-            <input required id="enqBuyerPhone" type="tel" placeholder="WhatsApp / Mobile" class="rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs font-bold" />
-            <button type="submit" class="rounded-xl bg-[#0F172A] text-amber-400 px-3 py-2 text-xs font-extrabold">
-              Request Cost Sheet
-            </button>
+          <form onsubmit="submitProjectEnquiry(event, ${p.id})" class="space-y-2">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <input required id="enqBuyerName" value="${defaultName}" type="text" placeholder="Your Full Name" class="rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs font-bold" />
+              <input required id="enqBuyerPhone" value="${defaultPhone}" type="tel" placeholder="WhatsApp / Mobile Number" class="rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs font-bold" />
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <select id="enqBuyerConfig" class="rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs font-bold text-slate-800">
+                <option value="Cost Sheet & Floor Plans">Request Cost Sheet &amp; Floor Plans</option>
+                <option value="Schedule Site Visit">Schedule Weekend Site Visit</option>
+                <option value="Best Builder Offer & Availability">Check Available Units &amp; Offer</option>
+              </select>
+              <button id="enqSubmitBtn" type="submit" class="rounded-xl bg-[#0F172A] hover:bg-slate-800 text-amber-400 px-3 py-2 text-xs font-extrabold inline-flex items-center justify-center gap-1.5 transition">
+                <span>✉️ Send Direct Enquiry</span>
+              </button>
+            </div>
           </form>
+          <div id="enqLiveConfirmation" class="hidden rounded-xl bg-emerald-50 border border-emerald-300 p-3 text-xs text-emerald-950 space-y-1.5"></div>
         </div>
 
-        <!-- PRIMARY ACTION BUTTONS (Enquire & Calculate EMI + WhatsApp Share) -->
+        <!-- PRIMARY ACTION BUTTONS -->
         <div class="flex flex-col sm:flex-row gap-2.5 pt-1">
           <button
-            onclick="document.getElementById('modalEnquiryBox').classList.toggle('hidden')"
-            class="flex-1 py-3 px-4 rounded-2xl bg-[#0F172A] hover:bg-slate-800 text-amber-400 text-xs font-extrabold transition"
+            onclick="launchFullEmiForProject(${entrySqft}, ${p.rate}, ${amenitiesLakhs}, ${isReady ? 0 : 5}, ${stampPct})"
+            class="flex-1 py-3 px-4 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-extrabold transition"
           >
-            Enquire &amp; Calculate EMI
+            🧮 Open Full EMI &amp; Stamp Duty Calc
           </button>
           <a
             href="${buildWhatsAppLink(waCostMsg)}"
             target="_blank"
             rel="noopener"
-            class="flex-1 py-3 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold text-center transition"
+            class="flex-1 py-3 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold inline-flex items-center justify-center gap-2 transition"
           >
-            Share Cost Sheet on WhatsApp
+            ${WHATSAPP_SVG}
+            <span>Share Cost Sheet on WhatsApp</span>
           </a>
         </div>
       `;
@@ -1502,17 +1637,141 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    function submitProjectEnquiry(e, projectName, reraId) {
+    async function submitProjectEnquiry(e, projectId) {
       e.preventDefault();
+      const p = PROJECTS_DATA.find((item) => item.id === projectId);
+      if (!p) return;
+
       const buyer = document.getElementById("enqBuyerName").value.trim();
       const phone = document.getElementById("enqBuyerPhone").value.trim();
-      closeProjectModal();
-      showToastMessage(`✓ Enquiry logged for ${projectName} (RERA: ${reraId}). Official brochure & cost sheet ready for ${buyer} (${phone}).`);
+      const requestType = document.getElementById("enqBuyerConfig").value;
+      const submitBtn = document.getElementById("enqSubmitBtn");
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending Email Alert...";
+      }
+
+      // 1. Send instant email to Contactthewaypropindia@gmail.com via FormSubmit AJAX
+      const emailSent = await sendEmailLeadToOwner({
+        _subject: `New RERA Project Enquiry: ${p.name} (${p.city}) — ${buyer}`,
+        Project_Name: p.name,
+        Builder: p.builder,
+        City_Locality: `${p.city} • ${p.locality}`,
+        RERA_ID: p.rera,
+        Price_Range: `${formatPriceRange(p.minPrice, p.maxPrice)} (₹${p.rate.toLocaleString("en-IN")}/sq.ft)`,
+        Request_Type: requestType,
+        Buyer_Name: buyer,
+        Buyer_Mobile_WhatsApp: phone,
+        Source_URL: window.location.href
+      });
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `<span>✉️ Send Direct Enquiry</span>`;
+      }
+
+      // 2. Save enquiry to Activity history
+      const record = {
+        id: Date.now(),
+        projectId: p.id,
+        projectName: p.name,
+        builder: p.builder,
+        city: p.city,
+        rera: p.rera,
+        buyer,
+        phone,
+        requestType,
+        date: new Date().toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" })
+      };
+      userEnquiries.unshift(record);
+      localStorage.setItem("twpi_enquiries", JSON.stringify(userEnquiries));
+      updateActivityBadge();
+
+      // 3. Prepare WhatsApp & fallback mailto links
+      const waEnquiryText =
+        `*New RERA Project Enquiry — The Way Prop India*\n` +
+        `• Project: *${p.name}* (${p.locality}, ${p.city})\n` +
+        `• Builder: ${p.builder}\n` +
+        `• RERA ID: ${p.rera}\n` +
+        `• Price Range: ${formatPriceRange(p.minPrice, p.maxPrice)} (₹${p.rate.toLocaleString("en-IN")}/sq.ft)\n` +
+        `• Request: ${requestType}\n` +
+        `• Buyer Name: ${buyer}\n` +
+        `• Contact: ${phone}\n` +
+        `• Source: https://thewaypropindia.com/`;
+
+      const waUrl = buildWhatsAppLink(waEnquiryText);
+      const mailUrl = `mailto:${OWNER_EMAIL}?subject=${encodeURIComponent("RERA Enquiry: " + p.name + " (" + buyer + ")")}&body=${encodeURIComponent(waEnquiryText.replace(/\*/g, ""))}`;
+
+      const confirmBox = document.getElementById("enqLiveConfirmation");
+      confirmBox.classList.remove("hidden");
+      confirmBox.innerHTML = `
+        <div class="font-extrabold text-emerald-800">
+          ${emailSent
+            ? `✓ Enquiry Emailed to ${OWNER_EMAIL} & Saved in Activity!`
+            : `✓ Enquiry Saved in Activity! Tap below to forward via WhatsApp or Email:`}
+        </div>
+        <div class="text-[11px] text-slate-700">
+          Project: <strong>${escapeHtml(p.name)}</strong> • Buyer: <strong>${escapeHtml(buyer)}</strong> (${escapeHtml(phone)})
+        </div>
+        <div class="flex flex-wrap gap-2 pt-1">
+          <a href="${waUrl}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 text-white text-[11px] font-extrabold">
+            ${WHATSAPP_SVG}
+            <span>Share on WhatsApp ↗</span>
+          </a>
+          <a href="${mailUrl}" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-white border border-slate-300 text-slate-800 text-[11px] font-extrabold">
+            ✉️ Open Mail App
+          </a>
+        </div>
+      `;
+
+      showToastMessage(
+        emailSent
+          ? `✓ Enquiry emailed to ${OWNER_EMAIL}!`
+          : `✓ Enquiry recorded for ${p.name}!`
+      );
     }
 
     // =========================================================================
-    // 7. DEVELOPER PROFILE MODAL, COMPARE MODAL & SHORTLIST MODAL
+    // 7. MEMBER LOGIN, DEVELOPER PROFILE, COMPARE & SHORTLIST/ENQUIRIES MODAL
     // =========================================================================
+    function openLoginModal() {
+      if (currentMember) {
+        document.getElementById("loginName").value = currentMember.name;
+        document.getElementById("loginPhone").value = currentMember.phone;
+        document.getElementById("loginRole").value = currentMember.role;
+        document.getElementById("loginCity").value = currentMember.city;
+      }
+      document.getElementById("loginModal").classList.remove("hidden");
+    }
+
+    function closeLoginModal() {
+      document.getElementById("loginModal").classList.add("hidden");
+    }
+
+    async function submitMemberLogin(e) {
+      e.preventDefault();
+      currentMember = {
+        name: document.getElementById("loginName").value.trim(),
+        phone: document.getElementById("loginPhone").value.trim(),
+        role: document.getElementById("loginRole").value,
+        city: document.getElementById("loginCity").value
+      };
+      localStorage.setItem("twpi_member", JSON.stringify(currentMember));
+      refreshMemberUI();
+      closeLoginModal();
+      selectCity(currentMember.city);
+      showToastMessage(`✓ Welcome ${currentMember.name}! Signed in as ${currentMember.role}.`);
+
+      sendEmailLeadToOwner({
+        _subject: `New Member Sign-In (${currentMember.role}): ${currentMember.name} — ${currentMember.city}`,
+        Member_Name: currentMember.name,
+        Mobile_WhatsApp: currentMember.phone,
+        Role: currentMember.role,
+        Preferred_City: currentMember.city
+      });
+    }
+
     function openDeveloperModal(builderName) {
       const builderProjects = PROJECTS_DATA.filter((p) => p.builder === builderName);
       if (!builderProjects.length) return;
@@ -1680,31 +1939,59 @@
       content.innerHTML = `
         <div class="flex items-center justify-between border-b border-slate-100 pb-3">
           <div>
-            <h3 class="text-lg font-extrabold text-slate-900">♥ Your Saved RERA Shortlist (${savedList.length})</h3>
-            <p class="text-xs text-slate-500">Bookmarked apartments, villas &amp; plots across India</p>
+            <h3 class="text-lg font-extrabold text-slate-900">♥ Your Activity — Saved (${savedList.length}) &amp; Enquiries (${userEnquiries.length})</h3>
+            <p class="text-xs text-slate-500">${currentMember ? `Signed in as ${escapeHtml(currentMember.name)} (${escapeHtml(currentMember.phone)})` : "Sign in anytime to sync across sessions"}</p>
           </div>
           <button onclick="closeShortlistModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-700 font-bold text-sm">✕</button>
         </div>
-        ${savedList.length ? `
-          <div class="space-y-2.5">
-            ${savedList.map((p) => `
-              <div class="rounded-2xl border border-slate-200 p-3 flex items-center justify-between gap-2">
-                <div class="min-w-0">
-                  <div class="text-xs font-extrabold text-slate-900 truncate">${escapeHtml(p.name)}</div>
-                  <div class="text-[11px] text-slate-500 truncate">${escapeHtml(p.city)} • ${formatPriceRange(p.minPrice, p.maxPrice)}</div>
+
+        ${!currentMember ? `
+          <div class="rounded-2xl bg-amber-50 border border-amber-200 p-3 flex items-center justify-between gap-2">
+            <span class="text-xs font-bold text-slate-800">Want to save your profile for instant enquiries?</span>
+            <button onclick="closeShortlistModal(); openLoginModal();" class="px-3 py-1.5 rounded-xl bg-[#0F172A] text-amber-400 text-xs font-extrabold shrink-0">Sign In</button>
+          </div>
+        ` : ""}
+
+        ${userEnquiries.length ? `
+          <div class="space-y-2">
+            <div class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700">Your Sent RERA Enquiries (${userEnquiries.length})</div>
+            ${userEnquiries.map((eq) => {
+              const waFollowUp = `*Follow-Up RERA Enquiry — The Way Prop India*\n• Project: *${eq.projectName}* (${eq.city})\n• RERA ID: ${eq.rera}\n• Request: ${eq.requestType}\n• Buyer: ${eq.buyer} (${eq.phone})`;
+              return `
+                <div class="rounded-2xl border border-emerald-200 bg-emerald-50/50 p-3 flex items-center justify-between gap-2">
+                  <div class="min-w-0">
+                    <div class="text-xs font-extrabold text-slate-900 truncate">${escapeHtml(eq.projectName)}</div>
+                    <div class="text-[11px] text-slate-600 truncate">${escapeHtml(eq.requestType)} • ${escapeHtml(eq.date)}</div>
+                  </div>
+                  <a href="${buildWhatsAppLink(waFollowUp)}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-emerald-600 text-white text-[11px] font-extrabold shrink-0">
+                    ${WHATSAPP_SVG}
+                    <span>WhatsApp</span>
+                  </a>
                 </div>
-                <div class="flex items-center gap-1.5 shrink-0">
-                  <button onclick="closeShortlistModal(); openProjectModal(${p.id});" class="px-2.5 py-1.5 rounded-xl bg-[#0F172A] text-amber-400 text-[11px] font-extrabold">Details</button>
-                  <button onclick="toggleSaveProject(${p.id}); openShortlistModal();" class="px-2.5 py-1.5 rounded-xl bg-rose-50 text-rose-700 text-[11px] font-extrabold">Remove</button>
-                </div>
+              `;
+            }).join("")}
+          </div>
+        ` : ""}
+
+        <div class="space-y-2">
+          <div class="text-[11px] font-extrabold uppercase tracking-wider text-slate-500">Bookmarked Projects (${savedList.length})</div>
+          ${savedList.length ? savedList.map((p) => `
+            <div class="rounded-2xl border border-slate-200 p-3 flex items-center justify-between gap-2">
+              <div class="min-w-0">
+                <div class="text-xs font-extrabold text-slate-900 truncate">${escapeHtml(p.name)}</div>
+                <div class="text-[11px] text-slate-500 truncate">${escapeHtml(p.city)} • ${formatPriceRange(p.minPrice, p.maxPrice)}</div>
               </div>
-            `).join("")}
-          </div>
-        ` : `
-          <div class="py-8 text-center text-xs text-slate-500">
-            No projects saved yet. Tap <strong>☆ Save</strong> on any project card to track prices &amp; RERA timelines here.
-          </div>
-        `}
+              <div class="flex items-center gap-1.5 shrink-0">
+                <button onclick="closeShortlistModal(); openProjectModal(${p.id});" class="px-2.5 py-1.5 rounded-xl bg-[#0F172A] text-amber-400 text-[11px] font-extrabold">Details</button>
+                <button onclick="toggleSaveProject(${p.id}); openShortlistModal();" class="px-2.5 py-1.5 rounded-xl bg-rose-50 text-rose-700 text-[11px] font-extrabold">Remove</button>
+              </div>
+            </div>
+          `).join("") : `
+            <div class="py-6 text-center text-xs text-slate-500">
+              No projects saved yet. Tap <strong>☆ Save</strong> on any project card to track prices &amp; RERA timelines here.
+            </div>
+          `}
+        </div>
       `;
       modal.classList.remove("hidden");
     }
@@ -1745,8 +2032,9 @@
               <span>Area: <strong class="text-slate-800">${escapeHtml(a.area)}</strong></span>
               <span class="font-mono">${escapeHtml(a.noticeId)}</span>
             </div>
-            <a href="${buildWhatsAppLink(waMsg)}" target="_blank" rel="noopener" class="block w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold text-center transition">
-              Share Auction Notice on WhatsApp
+            <a href="${buildWhatsAppLink(waMsg)}" target="_blank" rel="noopener" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold inline-flex items-center justify-center gap-2 transition">
+              ${WHATSAPP_SVG}
+              <span>Share Auction Notice on WhatsApp</span>
             </a>
           </div>
         `;
@@ -1855,9 +2143,10 @@
     }
 
     // =========================================================================
-    // 9. NAVIGATION DRAWER, POST PROPERTY, LEGAL & TOAST HELPERS
+    // 9. NAVIGATION DRAWER, POST PROPERTY (AUTO-EMAIL), LEGAL & TOAST HELPERS
     // =========================================================================
     function toggleDrawerMenu() {
+      refreshMemberUI();
       document.getElementById("drawerMenu").classList.toggle("hidden");
     }
 
@@ -1869,6 +2158,11 @@
     }
 
     function openPostModal() {
+      if (currentMember) {
+        document.getElementById("postName").value = currentMember.name;
+        document.getElementById("postPhone").value = currentMember.phone;
+        document.getElementById("postCity").value = currentMember.city;
+      }
       document.getElementById("postPropertyModal").classList.remove("hidden");
     }
 
@@ -1876,18 +2170,54 @@
       document.getElementById("postPropertyModal").classList.add("hidden");
     }
 
-    function submitFreeProperty(e) {
+    async function submitFreeProperty(e) {
       e.preventDefault();
       const name = document.getElementById("postName").value.trim();
+      const phone = document.getElementById("postPhone").value.trim();
       const city = document.getElementById("postCity").value;
       const purpose = document.getElementById("postPurpose").value;
       const proj = document.getElementById("postProject").value.trim();
       const price = document.getElementById("postPrice").value.trim();
+      const btn = document.getElementById("postSubmitBtn");
+
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Emailing Listing to The Way Prop India...";
+      }
+
+      const emailSent = await sendEmailLeadToOwner({
+        _subject: `FREE Property Listing (${purpose} — ${city}): ${proj}`,
+        Owner_Or_Builder: name,
+        Mobile_WhatsApp: phone,
+        City: city,
+        Listing_Type: purpose,
+        Project_And_Config: proj,
+        Expected_Price_RERA: price
+      });
+
+      if (btn) {
+        btn.disabled = false;
+        btn.innerHTML = `${WHATSAPP_SVG}<span>Submit Listing (Auto-Email + WhatsApp) →</span>`;
+      }
+
       closePostModal();
-      const subject = encodeURIComponent(`Free Property Listing (${city}) — ${proj}`);
-      const body = encodeURIComponent(`Owner/Builder: ${name}\nCity: ${city}\nType: ${purpose}\nProject & Config: ${proj}\nExpected Price / RERA: ${price}`);
-      window.location.href = `mailto:thewaypropindia@gmail.com?subject=${subject}&body=${body}`;
-      showToastMessage("✓ Opening direct verification email to thewaypropindia@gmail.com");
+
+      const waListingText =
+        `*Free Property Listing Request — The Way Prop India*\n` +
+        `• Owner / Builder: ${name}\n` +
+        `• Contact: ${phone}\n` +
+        `• City: ${city}\n` +
+        `• Listing Type: ${purpose}\n` +
+        `• Project & Config: ${proj}\n` +
+        `• Expected Price / RERA: ${price}\n` +
+        `• Portal: https://thewaypropindia.com/`;
+
+      window.open(buildWhatsAppLink(waListingText), "_blank", "noopener");
+      showToastMessage(
+        emailSent
+          ? `✓ Property details emailed to ${OWNER_EMAIL} & opened in WhatsApp!`
+          : "✓ Opening WhatsApp listing message for instant verification!"
+      );
     }
 
     function openLegalModal(type) {
@@ -1900,7 +2230,7 @@
             <button onclick="closeLegalModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-700 font-bold text-sm">✕</button>
           </div>
           <p class="text-xs text-slate-600 leading-relaxed">
-            The Way Prop India (thewaypropindia.com) operates on a strict <strong>Zero Broker Spam</strong> policy. You can browse all 184+ RERA project prices, timelines, and EMI breakdowns without mandatory sign-in or phone number capture. Saved shortlists are stored locally on your own device.
+            The Way Prop India (thewaypropindia.com) operates on a strict <strong>Zero Broker Spam</strong> policy. You can browse all 184+ RERA project prices, timelines, and EMI breakdowns without mandatory sign-in or phone number capture. Direct enquiries submitted by buyers are sent strictly to <strong>${OWNER_EMAIL}</strong> for verified RERA cost-sheet assistance.
           </p>
         `;
       } else {
@@ -1929,7 +2259,7 @@
       toast.className = "fixed top-16 inset-x-4 max-w-md mx-auto z-50 rounded-2xl bg-[#0F172A] text-white border border-amber-400/50 px-4 py-3 shadow-2xl text-xs font-bold text-center animate-fade";
       toast.textContent = msg;
       document.body.appendChild(toast);
-      setTimeout(() => toast.remove(), 4000);
+      setTimeout(() => toast.remove(), 4500);
     }
 
     // =========================================================================
@@ -1937,6 +2267,7 @@
     // =========================================================================
     document.addEventListener("DOMContentLoaded", () => {
       updateActivityBadge();
+      refreshMemberUI();
       const params = new URLSearchParams(window.location.search);
       const paramCity = params.get("city");
       const paramTab = params.get("tab");
